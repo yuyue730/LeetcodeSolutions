@@ -7,6 +7,9 @@ class ArrayTest {
 public:
     ArrayTest();
 
+    // 4. Median of Two Sorted Arrays
+    void findMedianSortedArrays3Test();
+
     // 11. Container With Most Water Test
     void maxArea11Test();
 

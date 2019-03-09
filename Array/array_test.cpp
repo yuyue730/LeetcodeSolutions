@@ -7,6 +7,17 @@ ArrayTest::ArrayTest() {
     implObj = new ArrayImpl();
 }
 
+void ArrayTest::findMedianSortedArrays3Test() {
+    cout << "4. Median of Two Sorted Arrays starts\n";
+
+    vector<int> num1 = {1, 3, 5, 7, 9};
+    vector<int> num2 = {2, 4, 6, 8, 10};
+
+    cout << "Median of two array is " << implObj->findMedianSortedArrays4(num1, num2) << "\n\n";
+
+    return;
+}
+
 void ArrayTest::maxArea11Test() {
     cout << "11. Container With Most Water test starts\n";
 

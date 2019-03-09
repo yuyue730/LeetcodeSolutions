@@ -8,6 +8,7 @@ int main() {
     ArrayTest * testObj = new ArrayTest();
     cout << "\nTest for problems starts.\n";
 
+    testObj->findMedianSortedArrays3Test();
     testObj->maxArea11Test();
     testObj->maxSubArray53Test();
     testObj->plusOne66Test();

@@ -8,7 +8,10 @@ class ArrayImpl {
 public:
     ArrayImpl();
 
-    // 11. Container With Most Water Test
+    // 4. Median of Two Sorted Arrays
+    double findMedianSortedArrays4(vector<int>& nums1, vector<int>& nums2);
+
+    // 11. Container With Most Water
     int maxArea11(vector<int>& heights);
 
     // 53. Maximum Subarray
@@ -18,6 +21,11 @@ public:
     vector<int> plusOne66(vector<int>& digits);
 
 private:
+    // 4. Median of Two Sorted Arrays helper
+    double findKthInTwoArray(
+            const vector<int>& nums1, int i, 
+            const vector<int>& nums2, int j, int k);
+
     // 53. Maximum Subarray helper
     int maxSubArrayRec(const vector<int>& nums, int left, int right);
 };
