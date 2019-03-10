@@ -15,6 +15,9 @@ public:
     // 5. Longest Palindromic Substring
     string longestPalindrome5(string s);
 
+    // 6. ZigZag Conversion
+    string convert6(string s, int numRows);
+
 private:
     // 5. Longest Palindromic Substring helper
     void findLongestPalindromeRec(const string str, int left, int right, string & result);

@@ -7,11 +7,14 @@ class StringTest {
 public:
     StringTest();
 
-    //  3. Longest Substring Without Repeating Characters
+    //  3. Longest Substring Without Repeating Characters Test
     void lengthOfLongestSubstring3Test();
 
-    // 5. Longest Palindromic Substring
+    // 5. Longest Palindromic Substring Test
     void longestPalindrome5Test();
+
+    // 6. ZigZag Conversion Test
+    void convert6Test();
 
 private:
     StringImpl * implObj;

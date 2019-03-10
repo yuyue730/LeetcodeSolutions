@@ -1,6 +1,7 @@
 #include "string_impl.h"
 
 #include <unordered_set>
+#include <vector>
 using namespace std;
 
 StringImpl::StringImpl() {
@@ -60,4 +61,25 @@ void StringImpl::findLongestPalindromeRec(const string str, int left, int right,
     }
 
     return;
+}
+
+// 6. ZigZag Conversion
+string StringImpl::convert6(string s, int numRows) {
+    if (s.length() <= numRows || numRows == 1) {
+        return s;
+    }
+
+    vector<string> strArr(numRows);
+    const int nElemInIteration = 2 * numRows - 2;
+    for (int i = 0; i < s.length(); ++i) {
+        int curIterationIdx = i % nElemInIteration;
+        int curRow = curIterationIdx < numRows ? curIterationIdx : 2 * numRows - curIterationIdx - 2;
+        strArr[curRow].push_back(s[i]);
+    }
+
+    string result;
+    for (int j = 0; j < strArr.size(); ++j) {
+        result += strArr[j];
+    }
+    return result;
 }
