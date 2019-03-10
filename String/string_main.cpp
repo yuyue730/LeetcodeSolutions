@@ -8,7 +8,8 @@ int main() {
     StringTest * testObj = new StringTest();
     cout << "\nTest for problems starts.\n";
 
-    testObj->lengthOfLongestSubstringTest();
+    testObj->lengthOfLongestSubstring3Test();
+    testObj->longestPalindrome5Test();
 
     return 0;
 }

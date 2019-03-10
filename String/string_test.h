@@ -8,7 +8,10 @@ public:
     StringTest();
 
     //  3. Longest Substring Without Repeating Characters
-    void lengthOfLongestSubstringTest();
+    void lengthOfLongestSubstring3Test();
+
+    // 5. Longest Palindromic Substring
+    void longestPalindrome5Test();
 
 private:
     StringImpl * implObj;

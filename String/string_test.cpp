@@ -8,11 +8,21 @@ StringTest::StringTest() {
     implObj = new StringImpl();
 }
 
-void StringTest::lengthOfLongestSubstringTest() {
-    cout << "3. Longest Substring Without Repeating Characters starts.\n";
+void StringTest::lengthOfLongestSubstring3Test() {
+    cout << "3. Longest Substring Without Repeating Characters test starts.\n";
 
     string str = "abcabcbb";
-    cout << "Test string has longest non-repeating chars at " << implObj->lengthOfLongestSubstring3(str) << ".\n";
+    cout << "Test string has longest non-repeating chars at " << implObj->lengthOfLongestSubstring3(str) << ".\n\n";
+
+    return;
+}
+
+void StringTest::longestPalindrome5Test() {
+    cout << "5. Longest Palindromic Substring test starts.\n";
+
+    // string str = "babad";
+    string str = "a";
+    cout << "Longest Palindromic substring is " << implObj->longestPalindrome5(str) << ".\n\n";
 
     return;
 }
