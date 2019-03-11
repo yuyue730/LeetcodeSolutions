@@ -10,6 +10,9 @@ public:
     
     // 7. Reverse Integer
     int reverse7(int x);
+
+    // 8. String to Integer (atoi)
+    int myAtoi8(string str);
 };
 
 #endif

@@ -24,3 +24,31 @@ int MathImpl::reverse7(int x) {
         return (isPositive ? 1 : -1) * static_cast<int>(result);
     }
 }
+
+// 8. String to Integer (atoi)
+int MathImpl::myAtoi8(string str) {
+    if (str.empty()) {
+        return 0;
+    }
+
+    int curIdx = 0;
+    bool isPositive = true;
+    while (curIdx < str.size() && str[curIdx] == ' ') {
+        curIdx++;
+    }
+    if (curIdx < str.size() && (str[curIdx] == '+' || str[curIdx] == '-')) {
+        isPositive = (str[curIdx] == '+');
+        curIdx++;
+    }
+
+    long long resultAbs = 0;
+    while (curIdx < str.size() && isdigit(str[curIdx])) {
+        resultAbs = resultAbs * 10 + (str[curIdx] - '0');
+        if (resultAbs > INT_MAX) {
+            return isPositive ? INT_MAX : INT_MIN;
+        }
+        curIdx++;
+    }
+
+    return (isPositive ? 1 : -1) * static_cast<int>(resultAbs);
+}

@@ -9,6 +9,9 @@ public:
     // 7. Reverse Integer Test
     void reverse7Test();
 
+    // 8. String to Integer (atoi) Test
+    void myAtoi8Test();
+
 private:
     MathImpl * implObj;
 };
