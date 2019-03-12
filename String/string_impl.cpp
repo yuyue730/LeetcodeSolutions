@@ -83,3 +83,17 @@ string StringImpl::convert6(string s, int numRows) {
     }
     return result;
 }
+
+// 10. Regular Expression Matching
+bool StringImpl::isMatch10(string s, string p) {
+    if (p.empty()) {
+        return s.empty();
+    }
+
+    bool isFirstMatch = !s.empty() && (s[0] == p[0] || p[0] == '.');
+    if (p.length() > 1 && p[1] == '*') {
+        return isMatch10(s, p.substr(2)) || (isFirstMatch && isMatch10(s.substr(1), p));
+    } else {
+        return isFirstMatch && isMatch10(s.substr(1), p.substr(1));
+    }
+}

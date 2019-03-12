@@ -16,6 +16,9 @@ public:
     // 6. ZigZag Conversion Test
     void convert6Test();
 
+    // 10. Regular Expression Matching test
+    void isMatch10Test();
+
 private:
     StringImpl * implObj;
 };

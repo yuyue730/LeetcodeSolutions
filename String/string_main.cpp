@@ -11,6 +11,7 @@ int main() {
     testObj->lengthOfLongestSubstring3Test();
     testObj->longestPalindrome5Test();
     testObj->convert6Test();
+    testObj->isMatch10Test();
 
     return 0;
 }

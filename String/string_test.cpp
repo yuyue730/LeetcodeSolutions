@@ -37,3 +37,10 @@ void StringTest::convert6Test() {
 
     return;
 }
+
+// 10. Regular Expression Matching test
+void StringTest::isMatch10Test() {
+    cout << "10. Regular Expression Matching test starts.\n";
+    cout << "isMatch between 'aab' and 'c*a*b' is " << implObj->isMatch10("aab", "c*a*b") << ".\n\n";
+    return;
+}
