@@ -52,3 +52,26 @@ int MathImpl::myAtoi8(string str) {
 
     return (isPositive ? 1 : -1) * static_cast<int>(resultAbs);
 }
+
+// 9. Palindrome Number
+bool MathImpl::isPalindrome9(int num) {
+    if (num < 0) {
+        return false;
+    }
+
+    int magnitude = log10(num);
+    int div = pow(10, magnitude);
+
+    while (num > 0) {
+        int left = num / div;
+        int right = num % 10;
+        if (left != right) {
+            return false;
+        }
+
+        num = (num % div) / 10;
+        div /= 100;
+    }
+
+    return true;
+}

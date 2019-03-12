@@ -12,6 +12,9 @@ public:
     // 8. String to Integer (atoi) Test
     void myAtoi8Test();
 
+    // 9. Palindrome Number
+    void isPalindrome9Test();
+
 private:
     MathImpl * implObj;
 };

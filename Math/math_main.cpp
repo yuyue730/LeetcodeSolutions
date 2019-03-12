@@ -10,6 +10,7 @@ int main() {
 
     testObj->reverse7Test();
     testObj->myAtoi8Test();
+    testObj->isPalindrome9Test();
 
     return 0;
 }

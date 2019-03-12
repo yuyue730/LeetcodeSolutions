@@ -16,7 +16,14 @@ void MathTest::reverse7Test() {
 
 // 8. String to Integer (atoi) Test
 void MathTest::myAtoi8Test() {
-    cout << "8. String to Integer (atoi) Test starts\n";
+    cout << "8. String to Integer (atoi) test starts\n";
     cout << "String '     -43' can be atoi-ed to " << implObj->myAtoi8("     -43") << ".\n\n";
+    return;
+}
+
+// 9. Palindrome Number
+void MathTest::isPalindrome9Test() {
+    cout << "9. Palindrome Number test starts\n";
+    cout << "Number 121 isPalindrome = " << implObj->isPalindrome9(121) << ".\n\n";
     return;
 }

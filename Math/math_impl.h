@@ -13,6 +13,9 @@ public:
 
     // 8. String to Integer (atoi)
     int myAtoi8(string str);
+
+    // 9. Palindrome Number
+    bool isPalindrome9(int x);
 };
 
 #endif
