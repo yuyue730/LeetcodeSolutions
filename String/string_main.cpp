@@ -12,6 +12,7 @@ int main() {
     testObj->longestPalindrome5Test();
     testObj->convert6Test();
     testObj->isMatch10Test();
+    testObj->longestCommonPrefix14Test();
 
     return 0;
 }

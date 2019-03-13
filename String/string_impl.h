@@ -21,6 +21,9 @@ public:
     // 10. Regular Expression Matching
     bool isMatch10(string s, string p);
 
+    // 14. Longest Common Prefix
+    string longestCommonPrefix14(vector<string>& strs);
+
 private:
     // 5. Longest Palindromic Substring helper
     void findLongestPalindromeRec(const string str, int left, int right, string & result);

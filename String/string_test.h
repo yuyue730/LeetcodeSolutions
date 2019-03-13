@@ -16,8 +16,11 @@ public:
     // 6. ZigZag Conversion Test
     void convert6Test();
 
-    // 10. Regular Expression Matching test
+    // 10. Regular Expression Matching Test
     void isMatch10Test();
+
+    // 14. Longest Common Prefix Test
+    void longestCommonPrefix14Test();
 
 private:
     StringImpl * implObj;

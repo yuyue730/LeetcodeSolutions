@@ -97,3 +97,23 @@ bool StringImpl::isMatch10(string s, string p) {
         return isFirstMatch && isMatch10(s.substr(1), p.substr(1));
     }
 }
+
+// 14. Longest Common Prefix
+string StringImpl::longestCommonPrefix14(vector<string>& strs) {
+    if (strs.empty()) {
+        return "";
+    }
+    string result = "";
+
+    for (int i = 0; i < strs[0].length(); ++i) {
+        char curCh = strs[0][i];
+        for (int j = 1; j < strs.size(); ++j) {
+            if (i >= strs[j].length() || strs[j][i] != curCh) {
+                return result;
+            }
+        }
+        result.push_back(strs[0][i]);
+    }
+
+    return result;
+}

@@ -1,6 +1,7 @@
 #include "string_test.h"
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 StringTest::StringTest() {
@@ -42,5 +43,13 @@ void StringTest::convert6Test() {
 void StringTest::isMatch10Test() {
     cout << "10. Regular Expression Matching test starts.\n";
     cout << "isMatch between 'aab' and 'c*a*b' is " << implObj->isMatch10("aab", "c*a*b") << ".\n\n";
+    return;
+}
+
+// 14. Longest Common Prefix Test
+void StringTest::longestCommonPrefix14Test() {
+    cout << "14. Longest Common Prefix test starts.\n";
+    vector<string> strArr = {"flower", "flow", "flight"};
+    cout << "Longest Common Prefix is " << implObj->longestCommonPrefix14(strArr) << ".\n\n";
     return;
 }
