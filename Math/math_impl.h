@@ -2,6 +2,7 @@
 #define _MATH_IMPL_H
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class MathImpl {
@@ -16,6 +17,12 @@ public:
 
     // 9. Palindrome Number
     bool isPalindrome9(int x);
+
+    // 12. Integer to Roman
+    string intToRoman12(int num);
+
+    // 13. Roman to Integer
+    int romanToInt13(string s);
 };
 
 #endif

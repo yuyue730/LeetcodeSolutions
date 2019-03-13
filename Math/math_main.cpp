@@ -11,6 +11,8 @@ int main() {
     testObj->reverse7Test();
     testObj->myAtoi8Test();
     testObj->isPalindrome9Test();
+    testObj->intToRoman12Test();
+    testObj->romanToInt13Test();
 
     return 0;
 }

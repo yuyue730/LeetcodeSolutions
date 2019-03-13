@@ -21,9 +21,23 @@ void MathTest::myAtoi8Test() {
     return;
 }
 
-// 9. Palindrome Number
+// 9. Palindrome Number tEST
 void MathTest::isPalindrome9Test() {
     cout << "9. Palindrome Number test starts\n";
     cout << "Number 121 isPalindrome = " << implObj->isPalindrome9(121) << ".\n\n";
     return;
+}
+
+// 12. Integer to Roman Test
+void MathTest::intToRoman12Test() {
+    cout << "12. Integer to Roman test starts\n";
+    cout << "Number 49 can be " << implObj->intToRoman12(49) << ".\n\n";
+    return;
+}
+
+// 13. Roman to Integer Test
+void MathTest::romanToInt13Test() {
+    cout << "// 13. Roman to Integer test starts\n";
+    cout << "Number XLIX is " << implObj->romanToInt13("XLIX") << ".\n\n";
+    return;  
 }
