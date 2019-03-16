@@ -14,6 +14,9 @@ public:
     // 11. Container With Most Water
     int maxArea11(vector<int>& heights);
 
+    // 15. 3Sum
+    vector<vector<int>> threeSum15(vector<int>& nums);
+
     // 53. Maximum Subarray
     int maxSubArray53(vector<int>& nums);
 

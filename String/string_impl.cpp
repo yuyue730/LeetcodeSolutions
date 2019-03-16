@@ -103,6 +103,7 @@ string StringImpl::longestCommonPrefix14(vector<string>& strs) {
     if (strs.empty()) {
         return "";
     }
+
     string result = "";
 
     for (int i = 0; i < strs[0].length(); ++i) {

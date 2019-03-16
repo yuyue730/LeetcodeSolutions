@@ -7,7 +7,8 @@ ArrayTest::ArrayTest() {
     implObj = new ArrayImpl();
 }
 
-void ArrayTest::findMedianSortedArrays3Test() {
+// 4. Median of Two Sorted Arrays Test
+void ArrayTest::findMedianSortedArrays4Test() {
     cout << "4. Median of Two Sorted Arrays starts\n";
 
     vector<int> num1 = {1, 3, 5, 7, 9};
@@ -18,6 +19,7 @@ void ArrayTest::findMedianSortedArrays3Test() {
     return;
 }
 
+// 11. Container With Most Water Test
 void ArrayTest::maxArea11Test() {
     cout << "11. Container With Most Water test starts\n";
 
@@ -25,6 +27,24 @@ void ArrayTest::maxArea11Test() {
     int result = implObj->maxArea11(heights);
     cout << "Current max Area = " << result << "\n\n";
 
+    return;
+}
+
+// 15. 3Sum Test
+void ArrayTest::threeSum15Test() {
+    cout << "15. 3Sum Test starts\n";
+    vector<int> nums = {-4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0};
+    vector<vector<int>> result = implObj->threeSum15(nums);
+
+    cout << "Each sub arrays are\n";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "Subarray " << i << ": [";
+        for (int j = 0; j < result[i].size(); ++j) {
+            cout << result[i][j] << ";";
+        }
+        cout << "]\n";
+    }
+    cout << "\n";
     return;
 }
 

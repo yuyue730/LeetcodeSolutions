@@ -9,6 +9,7 @@ ArrayImpl::ArrayImpl() {
     cout << "Impl object for Leetcode Array problems constructed.\n";
 }
 
+// 4. Median of Two Sorted Arrays
 double ArrayImpl::findMedianSortedArrays4(vector<int>& nums1, vector<int>& nums2) {
     int m = nums1.size(), n = nums2.size();
     double left = findKthInTwoArray(nums1, 0, nums2, 0, (m + n + 1) / 2);
@@ -40,6 +41,7 @@ double ArrayImpl::findKthInTwoArray(
     }
 }
 
+// 11. Container With Most Water
 int ArrayImpl::maxArea11(vector<int>& heights) {
     if (!heights.size()) return -1;
 
@@ -55,6 +57,45 @@ int ArrayImpl::maxArea11(vector<int>& heights) {
     return maxArea;
 }
 
+// 15. 3Sum
+vector<vector<int>> ArrayImpl::threeSum15(vector<int>& nums) {
+    vector<vector<int>> result;
+    sort(nums.begin(), nums.end());
+    if (nums.size() < 3 || nums.front() > 0 || nums.back() < 0) {
+        return {};
+    }
+
+    for (int i = 0; i < nums.size(); ++i) {
+        if (nums[i] > 0) {
+            break;
+        }
+        if (i >= 1 && nums[i] == nums[i - 1]) {
+            continue;
+        }
+        int target = -nums[i];
+        int left = i + 1, right = nums.size() - 1;
+        while (left < right) {
+            if (nums[left] + nums[right] == target) {
+                result.push_back({nums[i], nums[left], nums[right]});
+                while (left < right && nums[left + 1] == nums[left]) {
+                    ++left;
+                }
+                while (right > left && nums[right - 1] == nums[right]) {
+                    --right;
+                }
+                ++left;
+                --right;
+            } else if (nums[left] + nums[right] < target) {
+                ++left;
+            } else {
+                --right;
+            }
+        }
+    }
+    return result;
+}
+
+// 53. Maximum Subarray
 int ArrayImpl::maxSubArray53(vector<int>& nums) {
     if (nums.empty()) return 0;
     return maxSubArrayRec(nums, 0, nums.size() - 1);
@@ -80,6 +121,7 @@ int ArrayImpl::maxSubArrayRec(const vector<int>& nums, int left, int right) {
     return max(curMax, max(lmax, rmax));
 }
 
+// 66. Plus One
 vector<int> ArrayImpl::plusOne66(vector<int>& digits) {
     for (int i = digits.size() - 1; i >= 0; --i) {
         if (digits[i] == 9) {

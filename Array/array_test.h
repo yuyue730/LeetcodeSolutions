@@ -7,16 +7,19 @@ class ArrayTest {
 public:
     ArrayTest();
 
-    // 4. Median of Two Sorted Arrays
-    void findMedianSortedArrays3Test();
+    // 4. Median of Two Sorted Arrays Test
+    void findMedianSortedArrays4Test();
 
     // 11. Container With Most Water Test
     void maxArea11Test();
 
-    // 53. Maximum Subarray
+    // 15. 3Sum Test
+    void threeSum15Test();
+
+    // 53. Maximum Subarray Test
     void maxSubArray53Test();
 
-    // 66. Plus One
+    // 66. Plus One Test
     void plusOne66Test();
 
 private:
