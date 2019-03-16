@@ -16,6 +16,9 @@ public:
     // 15. 3Sum Test
     void threeSum15Test();
 
+    // 16. 3Sum Closest Test
+    void threeSumClosest16Test();
+
     // 53. Maximum Subarray Test
     void maxSubArray53Test();
 

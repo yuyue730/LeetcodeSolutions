@@ -11,6 +11,7 @@ int main() {
     testObj->findMedianSortedArrays4Test();
     testObj->maxArea11Test();
     testObj->threeSum15Test();
+    testObj->threeSumClosest16Test();
     testObj->maxSubArray53Test();
     testObj->plusOne66Test();
 

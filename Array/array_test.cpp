@@ -33,7 +33,7 @@ void ArrayTest::maxArea11Test() {
 // 15. 3Sum Test
 void ArrayTest::threeSum15Test() {
     cout << "15. 3Sum Test starts\n";
-    vector<int> nums = {-4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0};
+    vector<int> nums = {-4, -2, 1, -5, -4, -4, 4, -2, 0, 4, 0, -2, 3, 1, -5, 0};
     vector<vector<int>> result = implObj->threeSum15(nums);
 
     cout << "Each sub arrays are\n";
@@ -45,6 +45,17 @@ void ArrayTest::threeSum15Test() {
         cout << "]\n";
     }
     cout << "\n";
+    return;
+}
+
+// 16. 3Sum Closest Test
+void ArrayTest::threeSumClosest16Test() {
+    cout << "16. 3Sum Closest Test starts\n";
+    vector<int> nums = {-1, 2, 1, -4};
+    int target = 1;
+
+    cout << "The closest difference is " << implObj->threeSumClosest16(nums, target) << ".\n\n";
+
     return;
 }
 
