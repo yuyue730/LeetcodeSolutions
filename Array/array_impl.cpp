@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <set>
 
 #include "array_impl.h"
 
@@ -97,7 +98,7 @@ vector<vector<int>> ArrayImpl::threeSum15(vector<int>& nums) {
 
 // 16. 3Sum Closest
 int ArrayImpl::threeSumClosest16(vector<int>& nums, int target) {
-    assert(nums.size() >= 3);
+    assert(nums.size() > 2);
     int minSum = nums[0] + nums[1] + nums[2];
     int minDiff = abs(minSum - target);
     sort(nums.begin(), nums.end());
@@ -120,6 +121,34 @@ int ArrayImpl::threeSumClosest16(vector<int>& nums, int target) {
     }
     
     return minSum;
+}
+
+// 18. 4Sum
+vector<vector<int>> ArrayImpl::fourSum18(vector<int>& nums, int target) {
+    if (nums.size() <= 3) {
+        return {};
+    }
+    sort(nums.begin(), nums.end());
+    set<vector<int>> resultSet;
+    for (int i = 0; i < nums.size() - 3; ++i) {
+        for (int j = i + 1; j < nums.size() - 2; ++j) {
+            int left = j + 1, right = nums.size() - 1;
+            while (left < right) {
+                int curSum = nums[i] + nums[j] + nums[left] + nums[right];
+                if (curSum == target) {
+                    resultSet.insert({nums[i], nums[j], nums[left], nums[right]});
+                    ++left;
+                    --right;
+                } else if (curSum < target) {
+                    ++left;
+                } else {
+                    --right;
+                }
+            }
+        }
+    }
+
+    return vector<vector<int>>(resultSet.begin(), resultSet.end());
 }
 
 // 53. Maximum Subarray

@@ -13,6 +13,9 @@ public:
     // 2. Add Two Numbers Test
     void addTwoNumbers2Test();
 
+    // 19. Remove Nth Node From End of List Test
+    void removeNthFromEnd19Test();
+
 private:
     LinkedListImpl * implObj;
 };

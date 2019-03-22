@@ -26,3 +26,25 @@ void LinkedListTest::addTwoNumbers2Test() {
 
     return;
 }
+
+// 19. Remove Nth Node From End of List Test
+void LinkedListTest::removeNthFromEnd19Test() {
+    cout << "19. Remove Nth Node From End of List test starts.\n";
+    ListNode * head = new ListNode(1);
+    ListNode * cur = head;
+    cur->next = new ListNode(2); cur = cur->next;
+    cur->next = new ListNode(3); cur = cur->next;
+    cur->next = new ListNode(4); cur = cur->next;
+    cur->next = new ListNode(5); cur = cur->next;
+
+    ListNode * new_head = implObj->removeNthFromEnd19(head, 2);
+    cur = new_head;
+
+    cout << "Output linked list is [";
+    while (cur) {
+        cout << cur->val << "; ";
+        cur = cur->next;
+    }
+    cout << "]\n\n";
+    return;
+}

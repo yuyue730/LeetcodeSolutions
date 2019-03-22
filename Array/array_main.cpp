@@ -12,6 +12,7 @@ int main() {
     testObj->maxArea11Test();
     testObj->threeSum15Test();
     testObj->threeSumClosest16Test();
+    testObj->fourSum18Test();
     testObj->maxSubArray53Test();
     testObj->plusOne66Test();
 

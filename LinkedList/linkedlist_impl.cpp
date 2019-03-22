@@ -1,5 +1,6 @@
 #include "linkedlist_impl.h"
 
+// 2. Add Two Numbers (Reverse Order case)
 ListNode* LinkedListImpl::addTwoNumbers2(ListNode* l1, ListNode* l2) {
     if (!l1 && !l2) return NULL;
 
@@ -30,4 +31,32 @@ ListNode* LinkedListImpl::addTwoNumbers2(ListNode* l1, ListNode* l2) {
     ListNode * newHead = dummy->next;
     delete dummy;
     return newHead;
+}
+
+// 19. Remove Nth Node From End of List
+ListNode* LinkedListImpl::removeNthFromEnd19(ListNode* head, int n) {
+    if (head == NULL) {
+        return NULL;
+    }
+
+    ListNode * cur = head, * prev = head;
+    for (int i = 0; i < n; ++i) {
+        if (cur == NULL) {
+            return NULL;
+        } else {
+            cur = cur->next;
+        }
+    }
+
+    if (cur == NULL) {
+        return head->next;
+    }
+
+    while (cur->next) {
+        prev = prev->next;
+        cur = cur->next;
+    }
+
+    prev->next = prev->next->next;
+    return head;
 }

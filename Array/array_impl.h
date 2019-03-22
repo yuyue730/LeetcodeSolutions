@@ -20,6 +20,9 @@ public:
     // 16. 3Sum Closest
     int threeSumClosest16(vector<int>& nums, int target);
 
+    // 18. 4Sum
+    vector<vector<int>> fourSum18(vector<int>& nums, int target);
+
     // 53. Maximum Subarray
     int maxSubArray53(vector<int>& nums);
 

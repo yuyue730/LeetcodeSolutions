@@ -32,7 +32,7 @@ void ArrayTest::maxArea11Test() {
 
 // 15. 3Sum Test
 void ArrayTest::threeSum15Test() {
-    cout << "15. 3Sum Test starts\n";
+    cout << "15. 3Sum test starts\n";
     vector<int> nums = {-4, -2, 1, -5, -4, -4, 4, -2, 0, 4, 0, -2, 3, 1, -5, 0};
     vector<vector<int>> result = implObj->threeSum15(nums);
 
@@ -50,7 +50,7 @@ void ArrayTest::threeSum15Test() {
 
 // 16. 3Sum Closest Test
 void ArrayTest::threeSumClosest16Test() {
-    cout << "16. 3Sum Closest Test starts\n";
+    cout << "16. 3Sum Closest test starts\n";
     vector<int> nums = {-1, 2, 1, -4};
     int target = 1;
 
@@ -59,6 +59,26 @@ void ArrayTest::threeSumClosest16Test() {
     return;
 }
 
+// 18. 4Sum Test
+void ArrayTest::fourSum18Test() {
+    cout << "18. 4Sum test starts.";
+    vector<int> nums = {1, 0, -1, 0, -2, 2};
+    int target = 0;
+
+    vector<vector<int>> result = implObj->fourSum18(nums, target);
+    cout << "Result array of array is \n";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "subarray " << i << " [";
+        for (int j = 0; j < result[i].size(); ++j) {
+            cout << result[i][j] << "; ";
+        }
+        cout << "]\n";
+    }
+    cout << "\n";
+    return;
+}
+
+// 53. Maximum Subarray Test
 void ArrayTest::maxSubArray53Test() {
     cout << "53. Maximum Subarray test starts (Divide and Conquer method)\n";
 

@@ -14,6 +14,9 @@ class LinkedListImpl {
 public:
     // 2. Add Two Numbers (Reverse Order case)
     ListNode* addTwoNumbers2(ListNode* l1, ListNode* l2);
+
+    // 19. Remove Nth Node From End of List
+    ListNode* removeNthFromEnd19(ListNode* head, int n);
 };
 
 #endif
