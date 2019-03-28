@@ -17,6 +17,9 @@ public:
 
     // 19. Remove Nth Node From End of List
     ListNode* removeNthFromEnd19(ListNode* head, int n);
+
+    // 21. Merge Two Sorted Lists
+    ListNode* mergeTwoLists21(ListNode* l1, ListNode* l2);
 };
 
 #endif

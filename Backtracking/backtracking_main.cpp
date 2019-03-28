@@ -10,6 +10,7 @@ int main() {
     cout << "\nTest for problems starts.\n";
 
     testObj->letterCombinations17Test();
+    testObj->generateParenthesis22Test();
 
     return 0;
 }

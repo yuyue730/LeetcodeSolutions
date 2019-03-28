@@ -13,6 +13,9 @@ public:
     // 17. Letter Combinations of a Phone Number Test
     void letterCombinations17Test();
 
+    // 22. Generate Parentheses Test
+    void generateParenthesis22Test();
+
 private:
     BacktrackingImpl * implObj;
 };

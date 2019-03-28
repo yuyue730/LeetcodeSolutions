@@ -48,3 +48,26 @@ void LinkedListTest::removeNthFromEnd19Test() {
     cout << "]\n\n";
     return;
 }
+
+// 21. Merge Two Sorted Lists Test
+void LinkedListTest::mergeTwoLists21Test() {
+    cout << "21. Merge Two Sorted Lists test starts.\n";
+    ListNode * head1 = new ListNode(1);
+    ListNode * cur = head1; 
+    cur->next = new ListNode(2);
+    cur->next->next = new ListNode(4);
+
+    ListNode * head2 = new ListNode(1);
+    cur = head2;
+    cur->next = new ListNode(3);
+    cur->next->next = new ListNode(4);
+
+    ListNode * head = implObj->mergeTwoLists21(head1, head2);
+    cout << "Output linked list is [";
+    while (cur) {
+        cout << cur->val << "; ";
+        cur = cur->next;
+    }
+    cout << "]\n\n";
+    return;
+}

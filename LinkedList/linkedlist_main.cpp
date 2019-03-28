@@ -10,6 +10,7 @@ int main() {
 
     testObj->addTwoNumbers2Test();
     testObj->removeNthFromEnd19Test();
+    testObj->mergeTwoLists21Test();
 
     return 0;
 }

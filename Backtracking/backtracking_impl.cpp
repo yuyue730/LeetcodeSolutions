@@ -36,3 +36,34 @@ void BacktrackingImpl::generateLetterCombRec(
         generateLetterCombRec(digitLetterMap, digits, curIdx + 1, next, result);
     }
 }
+
+// 22. Generate Parentheses
+vector<string> BacktrackingImpl::generateParenthesis22(int n) {
+    vector<string> result;
+    if (n == 0) {
+        return result;
+    }
+
+    generateParenthesisRec(n, n, "", result);
+    return result;
+}
+
+void BacktrackingImpl::generateParenthesisRec(
+        int left, int right, string curStr, vector<string> & result) {
+    if (left > right) {
+        // We have insert ')' before '('
+        return;
+    }
+
+    if (left == 0 && right == 0) {
+        result.push_back(curStr);
+        return;
+    }
+
+    if (left > 0) {
+        generateParenthesisRec(left - 1, right, curStr + '(', result);
+    }
+    if (right > 0) {
+        generateParenthesisRec(left, right - 1, curStr + ')', result);
+    }
+}
