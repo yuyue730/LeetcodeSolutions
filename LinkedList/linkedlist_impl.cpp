@@ -90,3 +90,21 @@ ListNode* LinkedListImpl::mergeTwoLists21(ListNode* l1, ListNode* l2) {
 
     return dummy->next;
 }
+
+// 23. Merge k Sorted Lists
+ListNode* LinkedListImpl::mergeKLists23(vector<ListNode*>& lists) {
+    if (lists.empty()) {
+        return NULL;
+    }
+
+    int n = lists.size();
+    while (n > 1) {
+        int k = (n + 1) / 2;
+        for (int i = 0; i < n / 2; ++i) {
+            lists[i] = mergeTwoLists21(lists[i], lists[i + k]);
+        }
+        n = k;
+    }
+
+    return lists[0];
+}

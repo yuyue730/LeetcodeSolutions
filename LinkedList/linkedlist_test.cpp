@@ -64,10 +64,39 @@ void LinkedListTest::mergeTwoLists21Test() {
 
     ListNode * head = implObj->mergeTwoLists21(head1, head2);
     cout << "Output linked list is [";
-    while (cur) {
-        cout << cur->val << "; ";
-        cur = cur->next;
+    while (head) {
+        cout << head->val << "; ";
+        head = head->next;
     }
     cout << "]\n\n";
     return;
+}
+
+// 23. Merge k Sorted Lists Test
+void LinkedListTest::mergeKLists23Test() {
+    cout << "23. Merge k Sorted Lists test starts.\n";
+
+    ListNode * head1 = new ListNode(1);
+    ListNode * cur = head1; 
+    cur->next = new ListNode(4);
+    cur->next->next = new ListNode(5);
+
+    ListNode * head2 = new ListNode(1);
+    cur = head2; 
+    cur->next = new ListNode(3);
+    cur->next->next = new ListNode(4);
+
+    ListNode * head3 = new ListNode(2);
+    cur = head3; 
+    cur->next = new ListNode(6);
+
+    vector<ListNode *> lists = {head1, head2, head3};
+    ListNode * head = implObj->mergeKLists23(lists);
+
+    cout << "Output linked list is [";
+    while (head) {
+        cout << head->val << "; ";
+        head = head->next;
+    }
+    cout << "]\n\n";
 }

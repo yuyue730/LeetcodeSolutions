@@ -2,6 +2,7 @@
 #define _LINKEDLIST_IMPL_H
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 struct ListNode {
@@ -20,6 +21,9 @@ public:
 
     // 21. Merge Two Sorted Lists
     ListNode* mergeTwoLists21(ListNode* l1, ListNode* l2);
+
+    // 23. Merge k Sorted Lists
+    ListNode* mergeKLists23(vector<ListNode*>& lists);
 };
 
 #endif

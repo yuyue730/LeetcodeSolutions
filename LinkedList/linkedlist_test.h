@@ -19,6 +19,9 @@ public:
     // 21. Merge Two Sorted Lists Test
     void mergeTwoLists21Test();
 
+    // 23. Merge k Sorted Lists Test
+    void mergeKLists23Test();
+
 private:
     LinkedListImpl * implObj;
 };
