@@ -128,3 +128,40 @@ ListNode* LinkedListImpl::swapPairs24(ListNode* head) {
 
     return dummy->next;
 }
+
+// 25. Reverse Nodes in k-Group
+ListNode* LinkedListImpl::reverseKGroup25(ListNode* head, int k) {
+    if (!head || k == 1) {
+        return head;
+    }
+
+    ListNode* dummy = new ListNode(-1);
+    dummy->next = head;
+    ListNode* cur = head;
+    ListNode* prev = dummy;
+
+    for (int i = 1; cur; ++i) {
+        if (i % k == 0) {
+            prev = reverseOneGroup(prev, cur->next);
+            cur = prev->next;
+        } else {
+            cur = cur->next;
+        }
+    }
+
+    return dummy->next;
+}
+
+ListNode* LinkedListImpl::reverseOneGroup(ListNode* prevEnd, ListNode* nextStart) {
+    ListNode* first = prevEnd->next;
+    ListNode* cur = first->next;
+
+    while (cur != nextStart) {
+        first->next = cur->next;
+        cur->next = prevEnd->next;
+        prevEnd->next = cur;
+        cur = first->next;
+    }
+
+    return first;
+}

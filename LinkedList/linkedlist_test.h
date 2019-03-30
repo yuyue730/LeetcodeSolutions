@@ -25,6 +25,9 @@ public:
     // 24. Swap Nodes in Pairs Test
     void swapPairs24Test();
 
+    // 25. Reverse Nodes in k-Group Test
+    void reverseKGroup25Test();
+
 private:
     LinkedListImpl * implObj;
 };

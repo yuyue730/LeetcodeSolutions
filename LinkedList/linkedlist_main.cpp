@@ -13,6 +13,7 @@ int main() {
     testObj->mergeTwoLists21Test();
     testObj->mergeKLists23Test();
     testObj->swapPairs24Test();
+    testObj->reverseKGroup25Test();
 
     return 0;
 }

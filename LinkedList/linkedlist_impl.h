@@ -27,6 +27,13 @@ public:
 
     // 24. Swap Nodes in Pairs
     ListNode* swapPairs24(ListNode* head);
+
+    // 25. Reverse Nodes in k-Group
+    ListNode* reverseKGroup25(ListNode* head, int k);
+
+private:
+    // 25. Reverse Nodes in k-Group helper
+    ListNode* reverseOneGroup(ListNode* prevEnd, ListNode* nextStart);
 };
 
 #endif

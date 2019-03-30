@@ -120,3 +120,24 @@ void LinkedListTest::swapPairs24Test() {
     }
     cout << "]\n\n";
 }
+
+// 25. Reverse Nodes in k-Group Test
+void LinkedListTest::reverseKGroup25Test() {
+    cout << "25. Reverse Nodes in k-Group test starts.\n";
+
+    ListNode * head = new ListNode(1);
+    ListNode * cur = head; 
+    cur->next = new ListNode(2);  cur = cur->next;
+    cur->next = new ListNode(3);  cur = cur->next;
+    cur->next = new ListNode(4);  cur = cur->next;
+    cur->next = new ListNode(5);
+
+    ListNode* result = implObj->reverseKGroup25(head, 3);
+    cout << "Output linked list is [";
+    while (result) {
+        cout << result->val << "; ";
+        result = result->next;
+    }
+
+    cout << "]\n\n";
+}
