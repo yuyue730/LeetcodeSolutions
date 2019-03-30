@@ -22,6 +22,9 @@ public:
     // 18. 4Sum Test
     void fourSum18Test();
 
+    // 26. Remove Duplicates from Sorted Array Test
+    void removeDuplicates26Test();
+
     // 53. Maximum Subarray Test
     void maxSubArray53Test();
 

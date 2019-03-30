@@ -23,6 +23,9 @@ public:
     // 18. 4Sum
     vector<vector<int>> fourSum18(vector<int>& nums, int target);
 
+    // 26. Remove Duplicates from Sorted Array
+    int removeDuplicates26(vector<int>& nums);
+
     // 53. Maximum Subarray
     int maxSubArray53(vector<int>& nums);
 

@@ -78,6 +78,15 @@ void ArrayTest::fourSum18Test() {
     return;
 }
 
+// 26. Remove Duplicates from Sorted Array Test
+void ArrayTest::removeDuplicates26Test() {
+    cout << "26. Remove Duplicates from Sorted Array test starts\n";
+
+    vector<int> nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+    cout << "Unique # of items is " << implObj->removeDuplicates26(nums) << "\n\n";
+    return;
+}
+
 // 53. Maximum Subarray Test
 void ArrayTest::maxSubArray53Test() {
     cout << "53. Maximum Subarray test starts (Divide and Conquer method)\n";
@@ -89,6 +98,7 @@ void ArrayTest::maxSubArray53Test() {
     return;
 }
 
+// 66. Plus One Test
 void ArrayTest::plusOne66Test() {
     cout << "66. Plus One test starts\n";
 

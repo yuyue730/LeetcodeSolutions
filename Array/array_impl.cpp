@@ -151,6 +151,23 @@ vector<vector<int>> ArrayImpl::fourSum18(vector<int>& nums, int target) {
     return vector<vector<int>>(resultSet.begin(), resultSet.end());
 }
 
+// 26. Remove Duplicates from Sorted Array
+int ArrayImpl::removeDuplicates26(vector<int>& nums) {
+    if (nums.empty()) {
+        return 0;
+    }
+
+    int curIdx = 0;
+    for (int right = 1; right < nums.size(); ++right) {
+        if (nums[right] != nums[right - 1]) {
+            curIdx++;
+            nums[curIdx] = nums[right];
+        }
+    }
+
+    return curIdx + 1;
+}
+
 // 53. Maximum Subarray
 int ArrayImpl::maxSubArray53(vector<int>& nums) {
     if (nums.empty()) return 0;
