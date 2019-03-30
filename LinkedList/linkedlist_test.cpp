@@ -100,3 +100,23 @@ void LinkedListTest::mergeKLists23Test() {
     }
     cout << "]\n\n";
 }
+
+// 24. Swap Nodes in Pairs Test
+void LinkedListTest::swapPairs24Test() {
+    cout << "24. Swap Nodes in Pairs test starts.\n";
+
+    ListNode * head = new ListNode(1);
+    ListNode * cur = head; 
+    cur->next = new ListNode(2);  cur = cur->next;
+    cur->next = new ListNode(3);  cur = cur->next;
+    cur->next = new ListNode(4);
+
+    ListNode* newHead = implObj->swapPairs24(head);
+
+    cout << "Output linked list is [";
+    while (newHead) {
+        cout << newHead->val << "; ";
+        newHead = newHead->next;
+    }
+    cout << "]\n\n";
+}

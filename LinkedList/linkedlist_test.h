@@ -22,6 +22,9 @@ public:
     // 23. Merge k Sorted Lists Test
     void mergeKLists23Test();
 
+    // 24. Swap Nodes in Pairs Test
+    void swapPairs24Test();
+
 private:
     LinkedListImpl * implObj;
 };

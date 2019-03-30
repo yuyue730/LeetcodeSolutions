@@ -12,6 +12,7 @@ int main() {
     testObj->removeNthFromEnd19Test();
     testObj->mergeTwoLists21Test();
     testObj->mergeKLists23Test();
+    testObj->swapPairs24Test();
 
     return 0;
 }

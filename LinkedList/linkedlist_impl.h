@@ -24,6 +24,9 @@ public:
 
     // 23. Merge k Sorted Lists
     ListNode* mergeKLists23(vector<ListNode*>& lists);
+
+    // 24. Swap Nodes in Pairs
+    ListNode* swapPairs24(ListNode* head);
 };
 
 #endif

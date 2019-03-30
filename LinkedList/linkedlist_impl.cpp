@@ -108,3 +108,23 @@ ListNode* LinkedListImpl::mergeKLists23(vector<ListNode*>& lists) {
 
     return lists[0];
 }
+
+// 24. Swap Nodes in Pairs
+ListNode* LinkedListImpl::swapPairs24(ListNode* head) {
+    if (!head || !head->next) {
+        return head;
+    }
+    ListNode* dummy = new ListNode(-1);
+    dummy->next = head;
+    ListNode* cur = dummy;
+
+    while (cur->next && cur->next->next) {
+        ListNode* nextNext = cur->next->next;
+        cur->next->next = nextNext->next;
+        nextNext->next = cur->next;
+        cur->next = nextNext;
+        cur = nextNext->next;
+    }
+
+    return dummy->next;
+}
