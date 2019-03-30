@@ -7,7 +7,7 @@ class StringTest {
 public:
     StringTest();
 
-    //  3. Longest Substring Without Repeating Characters Test
+    // 3. Longest Substring Without Repeating Characters Test
     void lengthOfLongestSubstring3Test();
 
     // 5. Longest Palindromic Substring Test
@@ -21,6 +21,9 @@ public:
 
     // 14. Longest Common Prefix Test
     void longestCommonPrefix14Test();
+
+    // 28. Implement strStr() Test
+    void strStr28Test();
 
 private:
     StringImpl * implObj;

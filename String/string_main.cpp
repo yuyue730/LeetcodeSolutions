@@ -13,6 +13,7 @@ int main() {
     testObj->convert6Test();
     testObj->isMatch10Test();
     testObj->longestCommonPrefix14Test();
+    testObj->strStr28Test();
 
     return 0;
 }

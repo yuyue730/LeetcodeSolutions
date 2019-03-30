@@ -24,6 +24,9 @@ public:
     // 14. Longest Common Prefix
     string longestCommonPrefix14(vector<string>& strs);
 
+    // 28. Implement strStr()
+    int strStr28(string haystack, string needle);
+
 private:
     // 5. Longest Palindromic Substring helper
     void findLongestPalindromeRec(const string str, int left, int right, string & result);

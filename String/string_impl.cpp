@@ -118,3 +118,32 @@ string StringImpl::longestCommonPrefix14(vector<string>& strs) {
 
     return result;
 }
+
+// 28. Implement strStr()
+int StringImpl::strStr28(string haystack, string needle) {
+    if (needle.empty()) {
+        return 0;
+    }
+
+    int hSize = haystack.length();
+    int nSize = needle.length();
+    if (nSize > hSize) {
+        return -1;
+    }
+
+    for (int i = 0; i <= hSize - nSize; ++i) {
+        int j = 0;
+        while (j < nSize) {
+            if (haystack[i + j] != needle[j]) {
+                break;
+            }
+            j++;
+        }
+
+        if (j == nSize) {
+            return i;
+        }
+    }
+
+    return -1;
+}

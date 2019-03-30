@@ -53,3 +53,10 @@ void StringTest::longestCommonPrefix14Test() {
     cout << "Longest Common Prefix is " << implObj->longestCommonPrefix14(strArr) << ".\n\n";
     return;
 }
+
+// 28. Implement strStr() Test
+void StringTest::strStr28Test() {
+    cout << "28. Implement strStr() test starts.\n";
+    cout << "hello and ll will return " << implObj->strStr28("hello", "ll") << ".\n\n";
+    return;
+}
