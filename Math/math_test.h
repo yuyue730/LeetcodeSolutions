@@ -21,6 +21,9 @@ public:
     // 13. Roman to Integer Test
     void romanToInt13Test();
 
+    // 29. Divide Two Integers Test
+    void divide29Test();
+
 private:
     MathImpl * implObj;
 };

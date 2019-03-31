@@ -143,3 +143,36 @@ int MathImpl::romanToInt13(string s) {
 
     return result;
 }
+
+// 29. Divide Two Integers
+int MathImpl::divide29(int dividend, int divisor) {
+    long long absDividend = abs(static_cast<long long>(dividend));
+    long long absDivisor = abs(static_cast<long long>(divisor));
+
+    if (absDivisor > absDividend) {
+        return 0;
+    }
+
+    long long result = 0;
+
+    while (absDividend >= absDivisor) {
+        int p = 1;
+        long long t = absDivisor;
+
+        while (absDividend > (t << 1)) {
+            p <<= 1;
+            t <<= 1;
+        }
+
+        result += p;
+        absDividend -= t;
+    }
+
+    bool isNegative = (dividend < 0) ^ (divisor < 0);
+
+    if (isNegative) {
+        result = -result;
+    }
+
+    return result > INT_MAX ? INT_MAX : result;
+}

@@ -23,6 +23,9 @@ public:
 
     // 13. Roman to Integer
     int romanToInt13(string s);
+
+    // 29. Divide Two Integers
+    int divide29(int dividend, int divisor);
 };
 
 #endif

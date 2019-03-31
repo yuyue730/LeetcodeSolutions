@@ -13,6 +13,7 @@ int main() {
     testObj->isPalindrome9Test();
     testObj->intToRoman12Test();
     testObj->romanToInt13Test();
+    testObj->divide29Test();
 
     return 0;
 }

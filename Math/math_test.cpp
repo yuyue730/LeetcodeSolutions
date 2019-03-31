@@ -37,7 +37,14 @@ void MathTest::intToRoman12Test() {
 
 // 13. Roman to Integer Test
 void MathTest::romanToInt13Test() {
-    cout << "// 13. Roman to Integer test starts\n";
+    cout << "13. Roman to Integer test starts\n";
     cout << "Number XLIX is " << implObj->romanToInt13("XLIX") << ".\n\n";
     return;  
+}
+
+// 29. Divide Two Integers Test
+void MathTest::divide29Test() {
+    cout << "29. Divide Two Integers test starts\n";
+    cout << "16 / 3 = " << implObj->divide29(16, 3) << ".\n\n";
+    return;
 }
