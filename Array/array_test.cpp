@@ -87,6 +87,20 @@ void ArrayTest::removeDuplicates26Test() {
     return;
 }
 
+// 31. Next Permutation Test
+void ArrayTest::nextPermutation31Test() {
+    cout << "31. Next Permutation test starts\n";
+
+    vector<int> nums = {1, 2, 7, 4, 3, 1};
+    implObj->nextPermutation31(nums);
+    cout << "Next Permutation is [";
+    for (int i = 0; i < nums.size(); ++i) {
+        cout << nums[i] << "; ";
+    }
+    cout << "].\n\n";
+    return;
+}
+
 // 53. Maximum Subarray Test
 void ArrayTest::maxSubArray53Test() {
     cout << "53. Maximum Subarray test starts (Divide and Conquer method)\n";

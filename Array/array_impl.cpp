@@ -168,6 +168,39 @@ int ArrayImpl::removeDuplicates26(vector<int>& nums) {
     return curIdx + 1;
 }
 
+// 31. Next Permutation
+void ArrayImpl::nextPermutation31(vector<int>& nums) {
+    if (nums.size() == 0) {
+        return;
+    }
+
+    int smallIdx = -1;
+    for (int i = nums.size() - 2; i >= 0; --i) {
+        if (nums[i] < nums[i + 1]) {
+            smallIdx = i;
+            break;
+        }
+    }
+
+    if (smallIdx == -1) {
+        reverse(nums.begin(), nums.end());
+        return;
+    }
+
+    int largeIdx = -1;
+    for (int j = nums.size() - 1; j >= smallIdx; --j) {
+        if (nums[j] > nums[smallIdx]) {
+            largeIdx = j;
+            break;
+        }
+    }
+
+    swap(nums[smallIdx], nums[largeIdx]);
+
+    reverse(nums.begin() + smallIdx + 1, nums.end());
+    return;
+}
+
 // 53. Maximum Subarray
 int ArrayImpl::maxSubArray53(vector<int>& nums) {
     if (nums.empty()) return 0;

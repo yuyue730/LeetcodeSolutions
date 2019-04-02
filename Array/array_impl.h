@@ -26,6 +26,9 @@ public:
     // 26. Remove Duplicates from Sorted Array
     int removeDuplicates26(vector<int>& nums);
 
+    // 31. Next Permutation
+    void nextPermutation31(vector<int>& nums);
+
     // 53. Maximum Subarray
     int maxSubArray53(vector<int>& nums);
 

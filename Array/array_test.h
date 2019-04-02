@@ -25,6 +25,9 @@ public:
     // 26. Remove Duplicates from Sorted Array Test
     void removeDuplicates26Test();
 
+    // 31. Next Permutation Test
+    void nextPermutation31Test();
+
     // 53. Maximum Subarray Test
     void maxSubArray53Test();
 
