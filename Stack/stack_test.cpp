@@ -15,3 +15,10 @@ void StackTest::isValid20Test() {
     cout << "([)] isValid = " << implObj->isValid20(s) << ".\n\n";
     return;
 }
+
+// 32. Longest Valid Parentheses Test
+void StackTest::longestValidParentheses32Test() {
+    cout << "32. Longest Valid Parentheses test starts.\n";
+    cout << "((())() will have max length = [" << implObj->longestValidParentheses32("((())()") << "]\n\n";
+    return;
+}

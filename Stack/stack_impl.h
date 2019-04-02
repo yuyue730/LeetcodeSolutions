@@ -10,6 +10,9 @@ public:
 
     // 20. Valid Parentheses
     bool isValid20(string s);
+
+    // 32. Longest Valid Parentheses
+    int longestValidParentheses32(string s);
 };
 
 #endif

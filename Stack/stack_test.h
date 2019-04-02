@@ -10,6 +10,9 @@ public:
     // 20. Valid Parentheses Test
     void isValid20Test();
 
+    // 32. Longest Valid Parentheses Test
+    void longestValidParentheses32Test();
+
 private:
     StackImpl * implObj;
 };

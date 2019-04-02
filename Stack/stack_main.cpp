@@ -10,6 +10,7 @@ int main() {
     cout << "\nTest for problems starts.\n";
 
     testObj->isValid20Test();
+    testObj->longestValidParentheses32Test();
 
     return 0;
 }
