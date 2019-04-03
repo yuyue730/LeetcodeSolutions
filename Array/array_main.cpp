@@ -15,6 +15,7 @@ int main() {
     testObj->fourSum18Test();
     testObj->removeDuplicates26Test();
     testObj->nextPermutation31Test();
+    testObj->search33Test();
     testObj->maxSubArray53Test();
     testObj->plusOne66Test();
 

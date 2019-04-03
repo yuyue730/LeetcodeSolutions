@@ -29,6 +29,9 @@ public:
     // 31. Next Permutation
     void nextPermutation31(vector<int>& nums);
 
+    // 33. Search in Rotated Sorted Array
+    int search33(vector<int>& nums, int target);
+
     // 53. Maximum Subarray
     int maxSubArray53(vector<int>& nums);
 

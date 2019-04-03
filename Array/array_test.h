@@ -28,6 +28,9 @@ public:
     // 31. Next Permutation Test
     void nextPermutation31Test();
 
+    // 33. Search in Rotated Sorted Array Test
+    void search33Test();
+
     // 53. Maximum Subarray Test
     void maxSubArray53Test();
 

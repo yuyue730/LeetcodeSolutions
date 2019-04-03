@@ -101,6 +101,14 @@ void ArrayTest::nextPermutation31Test() {
     return;
 }
 
+// 33. Search in Rotated Sorted Array Test
+void ArrayTest::search33Test() {
+    cout << "33. Search in Rotated Sorted Array test starts.\n";
+    vector<int> nums = {1};//{4, 5, 6, 7, 0, 1, 2};
+    cout << "Find 0 will have idx = [" << implObj->search33(nums, 0) << "]\n\n";
+    return;
+}
+
 // 53. Maximum Subarray Test
 void ArrayTest::maxSubArray53Test() {
     cout << "53. Maximum Subarray test starts (Divide and Conquer method)\n";

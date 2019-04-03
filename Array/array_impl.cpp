@@ -201,6 +201,37 @@ void ArrayImpl::nextPermutation31(vector<int>& nums) {
     return;
 }
 
+// 33. Search in Rotated Sorted Array
+int ArrayImpl::search33(vector<int>& nums, int target) {
+    if (nums.empty()) {
+        return -1;
+    }
+
+    int left = 0, right = nums.size() - 1;
+    while (left <= right) {
+        int pivot = left + (right - left) / 2;
+        if (nums[pivot] == target) {
+            return pivot;
+        }
+
+        if (nums[pivot] > nums[right]) {
+            if (target < nums[pivot] && target >= nums[left]) {
+                right = pivot - 1;
+            } else {
+                left = pivot + 1;
+            }
+        } else {
+            if (target > nums[pivot + 1] && target <= nums[right]) {
+                left = pivot + 1;
+            } else {
+                right = pivot - 1;
+            }
+        }
+    }
+
+    return -1;
+}
+
 // 53. Maximum Subarray
 int ArrayImpl::maxSubArray53(vector<int>& nums) {
     if (nums.empty()) return 0;
