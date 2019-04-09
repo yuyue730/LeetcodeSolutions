@@ -34,6 +34,9 @@ public:
     // 34. Find First and Last Position of Element in Sorted Array Test
     void searchRange34Test();
 
+    // 35. Search Insert Position Test
+    void searchInsert35Test();
+
     // 53. Maximum Subarray Test
     void maxSubArray53Test();
 

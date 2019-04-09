@@ -17,6 +17,7 @@ int main() {
     testObj->nextPermutation31Test();
     testObj->search33Test();
     testObj->searchRange34Test();
+    testObj->searchInsert35Test();
     testObj->maxSubArray53Test();
     testObj->plusOne66Test();
 

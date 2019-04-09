@@ -118,6 +118,14 @@ void ArrayTest::searchRange34Test() {
     return; 
 }
 
+// 35. Search Insert Position Test
+void ArrayTest::searchInsert35Test() {
+    cout << "35. Search Insert Position test starts.\n";
+    vector<int> nums = {1, 3, 5, 6};
+    cout << "Insert 2 into index = " << implObj->searchInsert35(nums, 2) << ".\n\n";
+    return;
+}
+
 // 53. Maximum Subarray Test
 void ArrayTest::maxSubArray53Test() {
     cout << "53. Maximum Subarray test starts (Divide and Conquer method)\n";

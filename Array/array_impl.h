@@ -35,6 +35,9 @@ public:
     // 34. Find First and Last Position of Element in Sorted Array
     vector<int> searchRange34(vector<int>& nums, int target);
 
+    // 35. Search Insert Position
+    int searchInsert35(vector<int>& nums, int target);
+
     // 53. Maximum Subarray
     int maxSubArray53(vector<int>& nums);
 

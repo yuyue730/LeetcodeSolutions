@@ -269,6 +269,27 @@ vector<int> ArrayImpl::searchRange34(vector<int> &nums, int target) {
     return result;
 }
 
+// 35. Search Insert Position
+int ArrayImpl::searchInsert35(vector<int>& nums, int target) {
+    if (nums.size() == 0) {
+        return 0;
+    }
+
+    int left = 0, right = nums.size() - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (nums[mid] == target) {
+            return mid;
+        } else if (nums[mid] > target) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+
+    return left;
+}
+
 // 53. Maximum Subarray
 int ArrayImpl::maxSubArray53(vector<int>& nums) {
     if (nums.empty()) return 0;
