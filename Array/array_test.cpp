@@ -104,9 +104,18 @@ void ArrayTest::nextPermutation31Test() {
 // 33. Search in Rotated Sorted Array Test
 void ArrayTest::search33Test() {
     cout << "33. Search in Rotated Sorted Array test starts.\n";
-    vector<int> nums = {1};//{4, 5, 6, 7, 0, 1, 2};
+    vector<int> nums = {4, 5, 6, 7, 0, 1, 2};
     cout << "Find 0 will have idx = [" << implObj->search33(nums, 0) << "]\n\n";
     return;
+}
+
+// 34. Find First and Last Position of Element in Sorted Array Test
+void ArrayTest::searchRange34Test() {
+    cout << "34. Find First and Last Position of Element in Sorted Array test starts.\n";
+    vector<int> nums = {5, 7, 7, 8, 8, 10};
+    vector<int> result = implObj->searchRange34(nums, 8);
+    cout << "Find 8 will have idxes " << result[0] << "; " << result[1] << ".\n\n";
+    return; 
 }
 
 // 53. Maximum Subarray Test

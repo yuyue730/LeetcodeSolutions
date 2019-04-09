@@ -32,6 +32,9 @@ public:
     // 33. Search in Rotated Sorted Array
     int search33(vector<int>& nums, int target);
 
+    // 34. Find First and Last Position of Element in Sorted Array
+    vector<int> searchRange34(vector<int>& nums, int target);
+
     // 53. Maximum Subarray
     int maxSubArray53(vector<int>& nums);
 

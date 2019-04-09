@@ -31,6 +31,9 @@ public:
     // 33. Search in Rotated Sorted Array Test
     void search33Test();
 
+    // 34. Find First and Last Position of Element in Sorted Array Test
+    void searchRange34Test();
+
     // 53. Maximum Subarray Test
     void maxSubArray53Test();
 

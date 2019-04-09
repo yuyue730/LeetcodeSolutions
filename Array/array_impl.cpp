@@ -221,7 +221,7 @@ int ArrayImpl::search33(vector<int>& nums, int target) {
                 left = pivot + 1;
             }
         } else {
-            if (target > nums[pivot + 1] && target <= nums[right]) {
+            if (target > nums[pivot] && target <= nums[right]) {
                 left = pivot + 1;
             } else {
                 right = pivot - 1;
@@ -230,6 +230,43 @@ int ArrayImpl::search33(vector<int>& nums, int target) {
     }
 
     return -1;
+}
+
+// 34. Find First and Last Position of Element in Sorted Array
+vector<int> ArrayImpl::searchRange34(vector<int> &nums, int target) {
+    vector<int> result = {-1, -1};
+    if (nums.size() == 0) {
+        return result;
+    }
+
+    int left = 0, right = nums.size() - 1;
+    int idxFound = -1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (nums[mid] == target) {
+            idxFound = mid;
+            break;
+        } else if (nums[mid] > target) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+
+    if (idxFound == -1) {
+        return result;
+    }
+
+    int lIdx = idxFound, rIdx = idxFound;
+    while (lIdx >= 0 && nums[lIdx] == target) {
+        --lIdx;
+    }
+    while (rIdx < nums.size() && nums[rIdx] == target) {
+        ++rIdx;
+    }
+
+    result = {lIdx + 1, rIdx - 1};
+    return result;
 }
 
 // 53. Maximum Subarray
