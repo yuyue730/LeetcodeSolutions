@@ -10,6 +10,7 @@ int main() {
     cout << "\nTest for problems starts.\n";
 
     testObj->findSubstring30Test();
+    testObj->isValidSudoku36Test();
 
     return 0;
 }

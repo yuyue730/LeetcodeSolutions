@@ -13,6 +13,9 @@ public:
 
     // 30. Substring with Concatenation of All Words
     vector<int> findSubstring30(string s, vector<string>& words);
+
+    // 36. Valid Sudoku
+    bool isValidSudoku36(vector<vector<char>>& board);
 };
 
 #endif

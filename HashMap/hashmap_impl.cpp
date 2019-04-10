@@ -46,3 +46,33 @@ vector<int> HashMapImpl::findSubstring30(string s, vector<string>& words) {
 
     return result;
 }
+
+// 36. Valid Sudoku
+bool HashMapImpl::isValidSudoku36(vector<vector<char>>& board) {
+    const int EDGE_SIZE = 9, SQUARE_SIZE = 3;
+    assert(board.size() == EDGE_SIZE && board[0].size() == EDGE_SIZE);
+
+    vector<vector<bool>> rowBooleanHash(EDGE_SIZE, vector<bool>(EDGE_SIZE, false));
+    vector<vector<bool>> colBooleanHash(EDGE_SIZE, vector<bool>(EDGE_SIZE, false));
+    vector<vector<bool>> sqrBooleanHash(EDGE_SIZE, vector<bool>(EDGE_SIZE, false));
+
+    for (int iRow = 0; iRow < EDGE_SIZE; ++iRow) {
+        for (int iCol = 0; iCol < EDGE_SIZE; ++iCol) {
+            if (board[iRow][iCol] == '.') {
+                continue;
+            }
+            int sqrIdx = SQUARE_SIZE * (iRow / SQUARE_SIZE) + iCol / SQUARE_SIZE;
+            int curNum = board[iRow][iCol] - '1';
+
+            if (rowBooleanHash[iRow][curNum] || colBooleanHash[iCol][curNum] || sqrBooleanHash[sqrIdx][curNum]) {
+                return false;
+            }
+
+            rowBooleanHash[iRow][curNum] = true;
+            colBooleanHash[iCol][curNum] = true;
+            sqrBooleanHash[sqrIdx][curNum] = true;
+        }
+    }
+
+    return true;
+}
