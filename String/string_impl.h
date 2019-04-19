@@ -27,6 +27,9 @@ public:
     // 28. Implement strStr()
     int strStr28(string haystack, string needle);
 
+    // 38. Count and Say
+    string countAndSay38(int n);
+
 private:
     // 5. Longest Palindromic Substring helper
     void findLongestPalindromeRec(const string str, int left, int right, string & result);

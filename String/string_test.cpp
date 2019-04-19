@@ -60,3 +60,10 @@ void StringTest::strStr28Test() {
     cout << "hello and ll will return " << implObj->strStr28("hello", "ll") << ".\n\n";
     return;
 }
+
+// 38. Count and Say Test
+void StringTest::countAndSay38Test() {
+    cout << "38. Count and Say test starts.\n";
+    cout << "6 will generate " << implObj->countAndSay38(6) << ".\n\n";
+    return;
+}
