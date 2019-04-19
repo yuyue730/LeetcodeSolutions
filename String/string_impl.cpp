@@ -156,9 +156,6 @@ string StringImpl::countAndSay38(int n) {
 
     string result = "1";
     while (n > 1) {
-        if (n == 2) {
-            cout << "stop.\n";
-        }
         string curRes = "";
         for (int i = 0; i < result.size(); ++i) {
             int cnt = 1;
@@ -168,7 +165,6 @@ string StringImpl::countAndSay38(int n) {
             }
             curRes += to_string(cnt) + result[i];
         }
-        cout << "curResult = " << curRes << "\n";
         result = curRes;
         n--;
     }
