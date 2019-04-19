@@ -57,4 +57,23 @@ void BacktrackingTest::solveSudoku37Test() {
         cout << "]\n";
     }
     cout << "\n";
+    return;
+}
+
+// 39. Combination Sum Test
+void BacktrackingTest::combinationSum39Test() {
+    cout << "39. Combination Sum test starts.\n";
+    vector<int> candidate = {2,3,5};
+    vector<vector<int>> result = implObj->combinationSum39(candidate, 8);
+    cout << "candidate = {2, 3, 5}, target 8 will have \n";
+
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "row " << i << "[";
+        for (int j = 0; j < result[i].size(); ++j) {
+            cout << result[i][j] << ";";
+        }
+        cout << "]\n";
+    }
+    cout << "\n";
+    return;
 }

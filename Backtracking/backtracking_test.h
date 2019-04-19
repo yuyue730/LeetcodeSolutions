@@ -19,6 +19,9 @@ public:
     // 37. Sudoku Solver Test
     void solveSudoku37Test();
 
+    // 39. Combination Sum Test
+    void combinationSum39Test();
+
 private:
     BacktrackingImpl * implObj;
 };

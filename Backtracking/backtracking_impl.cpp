@@ -125,3 +125,28 @@ bool BacktrackingImpl::isValidSudokuPerUnit(const vector<vector<char>>& board, i
 
     return true;
 }
+
+// 39. Combination Sum
+vector<vector<int>> BacktrackingImpl::combinationSum39(vector<int>& candidates, int target) {
+    vector<vector<int>> allRes;
+    vector<int> curRes;
+    combinationSumRec(0, candidates, curRes, allRes, target);
+    return allRes;
+}
+
+void BacktrackingImpl::combinationSumRec(int startIdx, const vector<int> & candidate, 
+        vector<int> & curRes, vector<vector<int>> & allRes, int remain) {
+    if (remain < 0) {
+        return;
+    }
+    if (remain == 0) {
+        allRes.push_back(curRes);
+        return;
+    }
+
+    for (int i = startIdx; i < candidate.size(); ++i) {
+        curRes.push_back(candidate[i]);
+        combinationSumRec(i, candidate, curRes, allRes, remain - candidate[i]);
+        curRes.pop_back();
+    }
+}

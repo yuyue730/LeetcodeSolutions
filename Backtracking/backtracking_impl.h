@@ -18,6 +18,9 @@ public:
     // 37. Sudoku Solver
     void solveSudoku37(vector<vector<char>>& board);
 
+    // 39. Combination Sum
+    vector<vector<int>> combinationSum39(vector<int>& candidates, int target);
+
 private:
     // 17. Letter Combinations of a Phone Number helper
     void generateLetterCombRec(
@@ -31,6 +34,10 @@ private:
     bool solveSudokuRec(vector<vector<char>>& board, int iRow, int iCol);
 
     bool isValidSudokuPerUnit(const vector<vector<char>>& board, int iRow, int iCol);
+
+    // 39. Combination Sum helper
+    void combinationSumRec(int startIdx, const vector<int> & candidate, 
+            vector<int> & curRes, vector<vector<int>> & allRes, int remain);
 };
 
 #endif
