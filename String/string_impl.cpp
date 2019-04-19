@@ -147,3 +147,31 @@ int StringImpl::strStr28(string haystack, string needle) {
 
     return -1;
 }
+
+// 38. Count and Say
+string StringImpl::countAndSay38(int n) {
+    if (n <= 0) {
+        return "";
+    }
+
+    string result = "1";
+    while (n > 1) {
+        if (n == 2) {
+            cout << "stop.\n";
+        }
+        string curRes = "";
+        for (int i = 0; i < result.size(); ++i) {
+            int cnt = 1;
+            while (i < result.size() - 1 && result[i] == result[i + 1]) {
+                cnt++;
+                i++;
+            }
+            curRes += to_string(cnt) + result[i];
+        }
+        cout << "curResult = " << curRes << "\n";
+        result = curRes;
+        n--;
+    }
+
+    return result;
+}

@@ -14,6 +14,7 @@ int main() {
     testObj->isMatch10Test();
     testObj->longestCommonPrefix14Test();
     testObj->strStr28Test();
+    testObj->countAndSay38Test();
 
     return 0;
 }

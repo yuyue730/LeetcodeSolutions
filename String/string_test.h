@@ -25,6 +25,9 @@ public:
     // 28. Implement strStr() Test
     void strStr28Test();
 
+    // 38. Count and Say Test
+    void countAndSay38Test();
+
 private:
     StringImpl * implObj;
 };
