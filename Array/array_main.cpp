@@ -18,6 +18,7 @@ int main() {
     testObj->search33Test();
     testObj->searchRange34Test();
     testObj->searchInsert35Test();
+    testObj->firstMissingPositive41Test();
     testObj->maxSubArray53Test();
     testObj->plusOne66Test();
 

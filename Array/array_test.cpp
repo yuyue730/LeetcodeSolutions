@@ -126,6 +126,15 @@ void ArrayTest::searchInsert35Test() {
     return;
 }
 
+// 41. First Missing Positive Test
+void ArrayTest::firstMissingPositive41Test() {
+    cout << "41. First Missing Positive test starts.\n";
+    vector<int> nums = {3, 4, -1, 1};
+
+    cout << "First missing postive is " << implObj->firstMissingPositive41(nums) << ".\n\n";
+    return;
+}
+
 // 53. Maximum Subarray Test
 void ArrayTest::maxSubArray53Test() {
     cout << "53. Maximum Subarray test starts (Divide and Conquer method)\n";

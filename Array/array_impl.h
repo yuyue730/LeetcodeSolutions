@@ -38,6 +38,9 @@ public:
     // 35. Search Insert Position
     int searchInsert35(vector<int>& nums, int target);
 
+    // 41. First Missing Positive
+    int firstMissingPositive41(vector<int>& nums);
+
     // 53. Maximum Subarray
     int maxSubArray53(vector<int>& nums);
 
