@@ -16,6 +16,9 @@ public:
     // 22. Generate Parentheses Test
     void generateParenthesis22Test();
 
+    // 37. Sudoku Solver Test
+    void solveSudoku37Test();
+
 private:
     BacktrackingImpl * implObj;
 };

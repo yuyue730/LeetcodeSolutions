@@ -67,3 +67,61 @@ void BacktrackingImpl::generateParenthesisRec(
         generateParenthesisRec(left, right - 1, curStr + ')', result);
     }
 }
+
+// 37. Sudoku Solver
+void BacktrackingImpl::solveSudoku37(vector<vector<char>>& board) {
+    assert(board.size() == 9 && board[0].size() == 9);
+    solveSudokuRec(board, 0, 0);
+}
+
+bool BacktrackingImpl::solveSudokuRec(vector<vector<char>>& board, int iRow, int iCol) {
+    if (iRow == 9) {
+        return true;
+    }
+    if (iCol == 9) {
+        return solveSudokuRec(board, iRow + 1, 0);
+    }
+
+    if (board[iRow][iCol] == '.') {
+        for (int i = 0; i < 9; ++i) {
+            board[iRow][iCol] = static_cast<char>('1' + i);
+            if (isValidSudokuPerUnit(board, iRow, iCol)) {
+                if(solveSudokuRec(board, iRow, iCol + 1)) {
+                    return true;
+                }
+            }
+        }
+        board[iRow][iCol] = '.';
+    } else {
+        return solveSudokuRec(board, iRow, iCol + 1);
+    }
+
+    return false;
+}
+
+bool BacktrackingImpl::isValidSudokuPerUnit(const vector<vector<char>>& board, int iRow, int iCol) {
+    for (int i = 0; i < 9; ++i) {
+        if (i != iRow && board[i][iCol] == board[iRow][iCol]) {
+            return false;
+        }
+    }
+
+    for (int j = 0; j < 9; ++j) {
+        if (j != iCol && board[iRow][j] == board[iRow][iCol]) {
+            return false;
+        }
+    }
+
+    for (int m = 0; m < 3; ++m) {
+        for (int n = 0; n < 3; ++n) {
+            int curRow = (iRow / 3) * 3 + m;
+            int curCol = (iCol / 3) * 3 + n;
+
+            if ((curRow != iRow || curCol != iCol) && board[curRow][curCol] == board[iRow][iCol]) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
