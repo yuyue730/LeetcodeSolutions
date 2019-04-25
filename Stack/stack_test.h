@@ -13,6 +13,9 @@ public:
     // 32. Longest Valid Parentheses Test
     void longestValidParentheses32Test();
 
+    // 42. Trapping Rain Water Test
+    void trap42Test();
+
 private:
     StackImpl * implObj;
 };

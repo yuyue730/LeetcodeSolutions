@@ -2,6 +2,7 @@
 #define _STACK_IMPL_H
 
 #include <string>
+#include <vector>
 using namespace std;
 
 class StackImpl {
@@ -13,6 +14,9 @@ public:
 
     // 32. Longest Valid Parentheses
     int longestValidParentheses32(string s);
+
+    // 42. Trapping Rain Water
+    int trap42(vector<int>& height);
 };
 
 #endif

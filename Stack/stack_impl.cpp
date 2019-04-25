@@ -70,3 +70,36 @@ int StackImpl::longestValidParentheses32(string s) {
 
     return result;
 }
+
+// 42. Trapping Rain Water
+int StackImpl::trap42(vector<int>& height) {
+    if (height.size() < 3) {
+        return 0;
+    }
+
+    stack<int> idxStk;
+    idxStk.push(0);
+    int result = 0;
+
+    cout << "\n";
+    for (int i = 1; i < height.size(); ++i) {
+        if (height[i] > height[idxStk.top()]) {
+            int curButtom = height[idxStk.top()];
+            idxStk.pop();
+
+            while (!idxStk.empty() && height[i] >= height[idxStk.top()]) {
+                result += (i - idxStk.top() - 1) * (height[idxStk.top()] - curButtom);
+                curButtom = height[idxStk.top()];
+                idxStk.pop();
+            }
+
+            if (!idxStk.empty()) { // Meaning we can not remove current top index since it is taller
+                result += (i - idxStk.top() - 1) * (height[i] - curButtom);
+            }
+        }
+
+        idxStk.push(i);
+    }
+
+    return result;
+}

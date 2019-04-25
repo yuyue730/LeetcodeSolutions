@@ -11,6 +11,7 @@ int main() {
 
     testObj->isValid20Test();
     testObj->longestValidParentheses32Test();
+    testObj->trap42Test();
 
     return 0;
 }
