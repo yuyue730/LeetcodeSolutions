@@ -81,7 +81,6 @@ int StackImpl::trap42(vector<int>& height) {
     idxStk.push(0);
     int result = 0;
 
-    cout << "\n";
     for (int i = 1; i < height.size(); ++i) {
         if (height[i] > height[idxStk.top()]) {
             int curButtom = height[idxStk.top()];
