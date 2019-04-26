@@ -48,3 +48,10 @@ void MathTest::divide29Test() {
     cout << "16 / 3 = " << implObj->divide29(16, 3) << ".\n\n";
     return;
 }
+
+// 43. Multiply Strings Test
+void MathTest::multiply43Test() {
+    cout << "43. Multiply Strings test starts\n";
+    cout << "123 * 456 = [" << implObj->multiply43("123", "456") << "].\n\n";
+    return;
+}

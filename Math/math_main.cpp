@@ -14,6 +14,7 @@ int main() {
     testObj->intToRoman12Test();
     testObj->romanToInt13Test();
     testObj->divide29Test();
+    testObj->multiply43Test();
 
     return 0;
 }

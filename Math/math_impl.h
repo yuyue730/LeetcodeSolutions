@@ -26,6 +26,9 @@ public:
 
     // 29. Divide Two Integers
     int divide29(int dividend, int divisor);
+
+    // 43. Multiply Strings
+    string multiply43(string num1, string num2);
 };
 
 #endif

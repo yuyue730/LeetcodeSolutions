@@ -24,6 +24,9 @@ public:
     // 29. Divide Two Integers Test
     void divide29Test();
 
+    // 43. Multiply Strings Test
+    void multiply43Test();
+
 private:
     MathImpl * implObj;
 };

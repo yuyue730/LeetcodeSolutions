@@ -176,3 +176,30 @@ int MathImpl::divide29(int dividend, int divisor) {
 
     return result > INT_MAX ? INT_MAX : result;
 }
+
+// 43. Multiply Strings
+string MathImpl::multiply43(string num1, string num2) {
+    int totalLen = num1.size() + num2.size();
+    vector<int> resVec(totalLen, 0);
+    for (int i = num1.size() - 1; i >= 0; --i) {
+        for (int j = num2.size() - 1; j >= 0; --j) {
+            int pos1 = i + j, pos2 = i + j + 1;
+            int val = (num1[i] - '0') * (num2[j] - '0');
+            int curSum = val + resVec[pos2];
+
+            resVec[pos1] += curSum / 10;
+            resVec[pos2] = curSum % 10;
+        }
+    }
+
+    string resStr = "";
+    int i = 0;
+    while (i < resVec.size() && resVec[i] == 0) {
+        ++i;
+    }
+    for (; i < resVec.size(); ++i) {
+        resStr.push_back('0' + resVec[i]);
+    }
+
+    return resStr == "" ? "0" : resStr;
+}
