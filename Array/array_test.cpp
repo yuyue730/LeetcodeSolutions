@@ -208,6 +208,23 @@ void ArrayTest::canJump55Test() {
     return;
 }
 
+// 56. Merge Intervals Test
+void ArrayTest::merge56Test() {
+    cout << "56. Merge Intervals test starts.\n";
+    vector<vector<int>> intervals = {
+        {1, 3}, {2, 6}, {8, 10}, {15, 18}
+    };
+
+    vector<vector<int>> result = implObj->merge56(intervals);
+    cout << "Merge result is ";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "[" << result[i][0] << ", " << result[i][1] << "]"
+            << ((i == result.size() - 1) ? "" : "; ");
+    }
+    cout << "\n\n";
+    return;
+}
+
 // 66. Plus One Test
 void ArrayTest::plusOne66Test() {
     cout << "66. Plus One test starts\n";

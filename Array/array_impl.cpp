@@ -438,6 +438,32 @@ bool ArrayImpl::canJump55(vector<int>& nums)
     return (maxReach >= nums.size() - 1);
 }
 
+// 56. Merge Intervals
+vector<vector<int>> ArrayImpl::merge56(vector<vector<int>>& intervals)
+{
+    vector<vector<int>> result;
+    if (intervals.size() == 0) {
+        return result;
+    }
+
+    sort(intervals.begin(), intervals.end(), 
+        [] (const vector<int> &a, const vector<int> &b){
+            return a[0] < b[0];
+        }
+    );
+
+    result.push_back(intervals[0]);
+    for (int i = 1; i < intervals.size(); ++i) {
+        if (intervals[i][0] > result.back()[1]) {
+            result.push_back(intervals[i]);
+        } else {
+            result.back()[1] = max(result.back()[1], intervals[i][1]);
+        }
+    }
+
+    return result;
+}
+
 // 66. Plus One
 vector<int> ArrayImpl::plusOne66(vector<int>& digits)
 {

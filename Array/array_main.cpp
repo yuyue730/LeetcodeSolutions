@@ -24,6 +24,7 @@ int main() {
     testObj->maxSubArray53Test();
     testObj->spiralOrder54Test();
     testObj->canJump55Test();
+    testObj->merge56Test();
     testObj->plusOne66Test();
 
     return 0;

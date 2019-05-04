@@ -55,6 +55,9 @@ public:
     // 55. Jump Game Test
     void canJump55Test();
 
+    // 56. Merge Intervals Test
+    void merge56Test();
+
     // 66. Plus One Test
     void plusOne66Test();
 

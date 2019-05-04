@@ -56,6 +56,9 @@ public:
     // 55. Jump Game
     bool canJump55(vector<int>& nums);
 
+    // 56. Merge Intervals
+    vector<vector<int>> merge56(vector<vector<int>>& intervals);
+
     // 66. Plus One
     vector<int> plusOne66(vector<int>& digits);
 
