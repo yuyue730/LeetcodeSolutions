@@ -11,6 +11,7 @@ int main() {
 
     testObj->findSubstring30Test();
     testObj->isValidSudoku36Test();
+    testObj->groupAnagrams49Test();
 
     return 0;
 }

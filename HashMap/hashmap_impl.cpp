@@ -76,3 +76,22 @@ bool HashMapImpl::isValidSudoku36(vector<vector<char>>& board) {
 
     return true;
 }
+
+// 49. Group Anagrams
+vector<vector<string>> HashMapImpl::groupAnagrams49(
+    vector<string>& strs) {
+    unordered_map<string, vector<string>> strVecMap;
+    for (int i = 0; i < strs.size(); ++i) {
+        string p = strs[i];
+        sort(p.begin(), p.end());
+        strVecMap[p].push_back(strs[i]);
+    }
+
+    typedef unordered_map<string, vector<string>>::iterator Iter;
+    vector<vector<string>> result;
+    for (Iter it = strVecMap.begin(); it != strVecMap.end(); ++it) {
+        result.push_back(it->second);
+    }
+
+    return result;
+}
