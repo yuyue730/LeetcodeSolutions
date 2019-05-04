@@ -464,6 +464,33 @@ vector<vector<int>> ArrayImpl::merge56(vector<vector<int>>& intervals)
     return result;
 }
 
+// 57. Insert Interval
+vector<vector<int>> ArrayImpl::insert57(
+    vector<vector<int>>& intervals, 
+    vector<int>& newInterval
+) {
+    vector<vector<int>> results;
+    int cur = 0;
+    while (cur < intervals.size() && intervals[cur][1] < newInterval[0]) {
+        results.push_back(intervals[cur]);
+        cur++;
+    }
+
+    while (cur < intervals.size() && newInterval[1] > intervals[cur][0]) {
+        newInterval[0] = min(intervals[cur][0], newInterval[0]);
+        newInterval[1] = max(intervals[cur][1], newInterval[1]);
+        cur++;
+    }
+    results.push_back(newInterval);
+
+    while (cur < intervals.size()) {
+        results.push_back(intervals[cur]);
+        cur++;
+    }
+
+    return results;
+}
+
 // 66. Plus One
 vector<int> ArrayImpl::plusOne66(vector<int>& digits)
 {

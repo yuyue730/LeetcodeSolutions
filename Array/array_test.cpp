@@ -225,6 +225,24 @@ void ArrayTest::merge56Test() {
     return;
 }
 
+// 57. Insert Interval Test
+void ArrayTest::insert57Test() {
+    cout << "57. Insert Interval test starts.\n";
+    vector<vector<int>> intervals = {
+        {1, 3}, {6, 9}
+    };
+    vector<int> newInterval = {2, 5};
+
+    vector<vector<int>> result = implObj->insert57(intervals, newInterval);
+    cout << "Insert result is ";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "[" << result[i][0] << ", " << result[i][1] << "]"
+            << ((i == result.size() - 1) ? "" : "; ");
+    }
+    cout << "\n\n";
+    return;
+}
+
 // 66. Plus One Test
 void ArrayTest::plusOne66Test() {
     cout << "66. Plus One test starts\n";

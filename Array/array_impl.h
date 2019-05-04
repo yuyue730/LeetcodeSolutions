@@ -59,14 +59,21 @@ public:
     // 56. Merge Intervals
     vector<vector<int>> merge56(vector<vector<int>>& intervals);
 
+    // 57. Insert Interval
+    vector<vector<int>> insert57(
+        vector<vector<int>>& intervals, 
+        vector<int>& newInterval
+    );
+
     // 66. Plus One
     vector<int> plusOne66(vector<int>& digits);
 
 private:
     // 4. Median of Two Sorted Arrays helper
     double findKthInTwoArray(
-            const vector<int>& nums1, int i, 
-            const vector<int>& nums2, int j, int k);
+        const vector<int>& nums1, int i, 
+        const vector<int>& nums2, int j, int k
+    );
 
     // 53. Maximum Subarray helper
     int maxSubArrayRec(const vector<int>& nums, int left, int right);

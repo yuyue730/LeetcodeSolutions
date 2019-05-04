@@ -25,6 +25,7 @@ int main() {
     testObj->spiralOrder54Test();
     testObj->canJump55Test();
     testObj->merge56Test();
+    testObj->insert57Test();
     testObj->plusOne66Test();
 
     return 0;

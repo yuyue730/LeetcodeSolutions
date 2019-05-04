@@ -58,6 +58,9 @@ public:
     // 56. Merge Intervals Test
     void merge56Test();
 
+    // 57. Insert Interval
+    void insert57Test();
+
     // 66. Plus One Test
     void plusOne66Test();
 
