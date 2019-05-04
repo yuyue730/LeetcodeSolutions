@@ -423,6 +423,21 @@ vector<int> ArrayImpl::spiralOrder54(vector<vector<int>>& matrix)
     return result;
 }
 
+// 55. Jump Game
+bool ArrayImpl::canJump55(vector<int>& nums)
+{
+    int maxReach = 0;
+    for (int i = 0; i < nums.size(); ++i) {
+        if (i > maxReach || maxReach >= nums.size() - 1) {
+            break;
+        } else {
+            maxReach = max(maxReach, i + nums[i]);
+        }
+    }
+
+    return (maxReach >= nums.size() - 1);
+}
+
 // 66. Plus One
 vector<int> ArrayImpl::plusOne66(vector<int>& digits)
 {

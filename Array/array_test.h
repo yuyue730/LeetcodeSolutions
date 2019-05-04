@@ -52,6 +52,9 @@ public:
     // 54. Spiral Matrix Test
     void spiralOrder54Test();
 
+    // 55. Jump Game Test
+    void canJump55Test();
+
     // 66. Plus One Test
     void plusOne66Test();
 

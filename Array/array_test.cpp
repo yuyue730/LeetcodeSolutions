@@ -196,6 +196,18 @@ void ArrayTest::spiralOrder54Test() {
     return;
 }
 
+// 55. Jump Game Test
+void ArrayTest::canJump55Test() {
+    cout << "55. Jump Game test starts.\n";
+    vector<int> case1 = {2, 3, 1, 1, 4};
+    cout << "Case 1 [2,3,1,1,4] canJump = " 
+        << (implObj->canJump55(case1) ? "true" : "false") << ".\n";
+    vector<int> case2 = {3, 2, 1, 0, 4};
+    cout << "Case 2 [3,2,1,0,4] canJump = " 
+        << (implObj->canJump55(case2) ? "true" : "false") << ".\n\n";
+    return;
+}
+
 // 66. Plus One Test
 void ArrayTest::plusOne66Test() {
     cout << "66. Plus One test starts\n";

@@ -23,6 +23,7 @@ int main() {
     testObj->rotate48Test();
     testObj->maxSubArray53Test();
     testObj->spiralOrder54Test();
+    testObj->canJump55Test();
     testObj->plusOne66Test();
 
     return 0;

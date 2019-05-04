@@ -53,6 +53,9 @@ public:
     // 54. Spiral Matrix
     vector<int> spiralOrder54(vector<vector<int>>& matrix);
 
+    // 55. Jump Game
+    bool canJump55(vector<int>& nums);
+
     // 66. Plus One
     vector<int> plusOne66(vector<int>& digits);
 
