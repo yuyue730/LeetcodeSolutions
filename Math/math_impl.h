@@ -29,6 +29,9 @@ public:
 
     // 43. Multiply Strings
     string multiply43(string num1, string num2);
+
+    // 50. Pow(x, n)
+    double myPow50(double x, int n);
 };
 
 #endif

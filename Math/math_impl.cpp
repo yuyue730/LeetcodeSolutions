@@ -10,7 +10,8 @@ MathImpl::MathImpl() {
 }
 
 // 7. Reverse Integer
-int MathImpl::reverse7(int x) {
+int MathImpl::reverse7(int x)
+{
     bool isPositive = (x > 0);
     long long absX = abs(static_cast<long long>(x));
     long long result = 0;
@@ -28,7 +29,8 @@ int MathImpl::reverse7(int x) {
 }
 
 // 8. String to Integer (atoi)
-int MathImpl::myAtoi8(string str) {
+int MathImpl::myAtoi8(string str)
+{
     if (str.empty()) {
         return 0;
     }
@@ -56,7 +58,8 @@ int MathImpl::myAtoi8(string str) {
 }
 
 // 9. Palindrome Number
-bool MathImpl::isPalindrome9(int num) {
+bool MathImpl::isPalindrome9(int num)
+{
     if (num < 0) {
         return false;
     }
@@ -79,7 +82,8 @@ bool MathImpl::isPalindrome9(int num) {
 }
 
 // 12. Integer to Roman
-string MathImpl::intToRoman12(int num) {
+string MathImpl::intToRoman12(int num)
+{
     const vector<pair<char, int> > romanIntPairVec = {
         make_pair('M', 1000),
         make_pair('D', 500), 
@@ -120,7 +124,8 @@ string MathImpl::intToRoman12(int num) {
 }
 
 // 13. Roman to Integer
-int MathImpl::romanToInt13(string s) {
+int MathImpl::romanToInt13(string s)
+{
     unordered_map<char, int> charIntMap = {
         {'I', 1},
         {'V', 5},
@@ -145,7 +150,8 @@ int MathImpl::romanToInt13(string s) {
 }
 
 // 29. Divide Two Integers
-int MathImpl::divide29(int dividend, int divisor) {
+int MathImpl::divide29(int dividend, int divisor)
+{
     long long absDividend = abs(static_cast<long long>(dividend));
     long long absDivisor = abs(static_cast<long long>(divisor));
 
@@ -178,7 +184,8 @@ int MathImpl::divide29(int dividend, int divisor) {
 }
 
 // 43. Multiply Strings
-string MathImpl::multiply43(string num1, string num2) {
+string MathImpl::multiply43(string num1, string num2)
+{
     int totalLen = num1.size() + num2.size();
     vector<int> resVec(totalLen, 0);
     for (int i = num1.size() - 1; i >= 0; --i) {
@@ -202,4 +209,18 @@ string MathImpl::multiply43(string num1, string num2) {
     }
 
     return resStr == "" ? "0" : resStr;
+}
+
+// 50. Pow(x, n)
+double MathImpl::myPow50(double x, int n)
+{
+    if (n == 0) {
+        return 1;
+    }
+    double half = myPow50(x, n / 2);
+    if (n % 2 == 0) {
+        return half * half;
+    } else {
+        return (n > 0) ? half * half * x : half * half / x;
+    }
 }

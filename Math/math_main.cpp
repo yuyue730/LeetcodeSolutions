@@ -15,6 +15,7 @@ int main() {
     testObj->romanToInt13Test();
     testObj->divide29Test();
     testObj->multiply43Test();
+    testObj->myPow50Test();
 
     return 0;
 }
