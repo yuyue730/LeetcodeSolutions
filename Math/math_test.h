@@ -27,6 +27,9 @@ public:
     // 43. Multiply Strings Test
     void multiply43Test();
 
+    // 50. Pow(x, n) Test
+    void myPow50Test();
+
 private:
     MathImpl * implObj;
 };

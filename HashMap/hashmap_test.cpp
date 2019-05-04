@@ -37,3 +37,20 @@ void HashMapTest::isValidSudoku36Test() {
     cout << "Current board is [" << implObj->isValidSudoku36(board) << "].\n\n";
     return;
 }
+
+// 49. Group Anagrams Test
+void HashMapTest::groupAnagrams49Test() {
+    cout << "49. Group Anagrams test starts.\n";
+    vector<string> strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+    vector<vector<string>> result = implObj->groupAnagrams49(strs);
+    cout << "Result is \n";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "Patch " << i << ": [";
+        for (int j = 0; j < result[i].size(); ++j) {
+            cout << result[i][j] << ((j < result[i].size() - 1) ? "; " : "");
+        }
+        cout << "]\n";
+    }
+    cout << "\n";
+    return;
+}

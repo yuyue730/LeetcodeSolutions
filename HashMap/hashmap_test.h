@@ -16,6 +16,9 @@ public:
     // 36. Valid Sudoku Test
     void isValidSudoku36Test();
 
+    // 49. Group Anagrams Test
+    void groupAnagrams49Test();
+
 private:
     HashMapImpl* implObj;
 };

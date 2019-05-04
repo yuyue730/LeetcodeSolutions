@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "math_test.h"
 using namespace std;
 
@@ -53,5 +54,12 @@ void MathTest::divide29Test() {
 void MathTest::multiply43Test() {
     cout << "43. Multiply Strings test starts\n";
     cout << "123 * 456 = [" << implObj->multiply43("123", "456") << "].\n\n";
+    return;
+}
+
+// 50. Pow(x, n) Test
+void MathTest::myPow50Test() {
+    cout << "50. Pow(x, n) test starts.\n";
+    cout << "2.1^3 = [" << setprecision(5) << implObj->myPow50(2.1, 3) << "]\n\n";
     return;
 }

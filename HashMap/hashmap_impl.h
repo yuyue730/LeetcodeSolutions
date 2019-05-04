@@ -16,6 +16,9 @@ public:
 
     // 36. Valid Sudoku
     bool isValidSudoku36(vector<vector<char>>& board);
+
+    // 49. Group Anagrams
+    vector<vector<string>> groupAnagrams49(vector<string>& strs);
 };
 
 #endif
