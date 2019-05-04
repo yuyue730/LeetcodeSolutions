@@ -169,11 +169,11 @@ vector<vector<int>> BacktrackingImpl::permute46(vector<int>& nums)
     vector<vector<int>> results;
     vector<int> curRes;
     vector<bool> visited(nums.size(), false);
-    permute46REC(results, curRes, visited, nums);
+    permute46Rec(results, curRes, visited, nums);
     return results;
 }
 
-void BacktrackingImpl::permute46REC(
+void BacktrackingImpl::permute46Rec(
     vector<vector<int>> &results,
     vector<int> &curRes,
     vector<bool> &visited,
@@ -191,8 +191,67 @@ void BacktrackingImpl::permute46REC(
 
         curRes.push_back(nums[i]);
         visited[i] = true;
-        permute46REC(results, curRes, visited, nums);
+        permute46Rec(results, curRes, visited, nums);
         curRes.pop_back();
         visited[i] = false;
     }
+}
+
+// 51. N-Queens
+vector<vector<string>> BacktrackingImpl::solveNQueens51(int n)
+{
+    vector<vector<string>> results;
+    if (n == 0) {
+        return results;
+    }
+
+    vector<string> curRes(n, string(n, '.'));
+    solveNQueens51Rec(results, curRes, 0, n);
+    return results;
+}
+
+void BacktrackingImpl::solveNQueens51Rec(
+    vector<vector<string>> &results,
+    vector<string> &curRes,
+    int curRow,
+    const int nSize
+) {
+    if (curRow  == nSize) {
+        results.push_back(curRes);
+    }
+
+    for (int i = 0; i < nSize; ++i) {
+        if (isCurrentBoardValid(curRes, curRow, i, nSize)) {
+            curRes[curRow][i] = 'Q';
+            solveNQueens51Rec(results, curRes, curRow + 1, nSize);
+            curRes[curRow][i] = '.';
+        }
+    }
+}
+
+bool BacktrackingImpl::isCurrentBoardValid(
+    const vector<string> &board,
+    const int curRow,
+    const int curCol,
+    const int nSize
+) {
+    for (int i = 0; i < curRow; ++i) {
+        if (board[i][curCol] == 'Q') {
+            return false;
+        }
+    }
+
+    for (int i = curRow - 1, j = curCol + 1; i >= 0 && j < nSize; --i, ++j) {
+        if (board[i][j] == 'Q') {
+            return false;
+        }
+    }
+
+    for (int i = curRow - 1, j = curCol - 1; i >= 0 && j >= 0; --i, --j) {
+        if (board[i][j] == 'Q') {
+            return false;
+        }
+    }
+
+    return true;
 }

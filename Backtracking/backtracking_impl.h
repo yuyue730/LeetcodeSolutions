@@ -24,6 +24,9 @@ public:
     // 46. Permutations
     vector<vector<int>> permute46(vector<int>& nums);
 
+    // 51. N-Queens
+    vector<vector<string>> solveNQueens51(int n);
+
 private:
     // 17. Letter Combinations of a Phone Number helper
     void generateLetterCombRec(
@@ -44,12 +47,27 @@ private:
         vector<int> & curRes, vector<vector<int>> & allRes, int remain
     );
 
-    // 46. Permutations
-    void permute46REC(
+    // 46. Permutations helper
+    void permute46Rec(
         vector<vector<int>> &results,
         vector<int> &curRes,
         vector<bool> &visited,
         const vector<int> &nums
+    );
+
+    // 51. N-Queens helper
+    void solveNQueens51Rec(
+        vector<vector<string>> &results,
+        vector<string> &curRes,
+        int curRow,
+        const int nSize
+    );
+
+    bool isCurrentBoardValid(
+        const vector<string> &board,
+        const int curRow,
+        const int curCol,
+        const int nSize
     );
 };
 

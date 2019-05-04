@@ -14,6 +14,7 @@ int main() {
     testObj->solveSudoku37Test();
     testObj->combinationSum39Test();
     testObj->permute46Test();
+    testObj->solveNQueens51Test();
 
     return 0;
 }

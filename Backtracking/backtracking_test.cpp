@@ -95,3 +95,20 @@ void BacktrackingTest::permute46Test() {
     cout << "\n";
     return;
 }
+
+// 51. N-Queens Test
+void BacktrackingTest::solveNQueens51Test() {
+    cout << "51. N-Queens test starts.\n";
+
+    vector<vector<string>> results = implObj->solveNQueens51(4);
+    cout << "N = " << 4 << "; Results are ";
+    for (int i = 0; i < results.size(); ++i) {
+        cout << "Answer " << i << " [\n";
+        for (int j = 0; j < results[i].size(); ++j) {
+            cout << "  [" << results[i][j] << "]\n";
+        }
+        cout << "]\n";
+    }
+    cout << "\n";
+    return;
+}

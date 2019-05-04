@@ -25,6 +25,9 @@ public:
     // 46. Permutations Test
     void permute46Test();
 
+    // 51. N-Queens Test
+    void solveNQueens51Test();
+
 private:
     BacktrackingImpl * implObj;
 };
