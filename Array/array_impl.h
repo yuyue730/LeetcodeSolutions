@@ -41,6 +41,9 @@ public:
     // 41. First Missing Positive
     int firstMissingPositive41(vector<int>& nums);
 
+    // 45. Jump Game II
+    int jump45(vector<int>& nums);
+
     // 53. Maximum Subarray
     int maxSubArray53(vector<int>& nums);
 

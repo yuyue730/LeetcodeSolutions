@@ -40,6 +40,9 @@ public:
     // 41. First Missing Positive Test
     void firstMissingPositive41Test();
 
+    // 45. Jump Game II Test
+    void jump45Test();
+
     // 53. Maximum Subarray Test
     void maxSubArray53Test();
 

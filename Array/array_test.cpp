@@ -135,6 +135,15 @@ void ArrayTest::firstMissingPositive41Test() {
     return;
 }
 
+// 45. Jump Game II Test
+void ArrayTest::jump45Test() {
+    cout << "45. Jump Game II test starts.\n";
+    vector<int> nums = {2, 3, 1, 1, 4};
+
+    cout << "Min step to jump is [" << implObj->jump45(nums) << "].\n\n";
+    return;
+}
+
 // 53. Maximum Subarray Test
 void ArrayTest::maxSubArray53Test() {
     cout << "53. Maximum Subarray test starts (Divide and Conquer method)\n";

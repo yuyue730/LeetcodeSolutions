@@ -11,7 +11,8 @@ ArrayImpl::ArrayImpl() {
 }
 
 // 4. Median of Two Sorted Arrays
-double ArrayImpl::findMedianSortedArrays4(vector<int>& nums1, vector<int>& nums2) {
+double ArrayImpl::findMedianSortedArrays4(vector<int>& nums1, vector<int>& nums2)
+{
     int m = nums1.size(), n = nums2.size();
     double left = findKthInTwoArray(nums1, 0, nums2, 0, (m + n + 1) / 2);
     double right = findKthInTwoArray(nums1, 0, nums2, 0, (m + n + 2) / 2);
@@ -20,8 +21,9 @@ double ArrayImpl::findMedianSortedArrays4(vector<int>& nums1, vector<int>& nums2
 }
 
 double ArrayImpl::findKthInTwoArray(
-        const vector<int>& nums1, int i, 
-        const vector<int>& nums2, int j, int k) {
+    const vector<int>& nums1, int i, 
+    const vector<int>& nums2, int j, int k)
+{
     if (i >= nums1.size()) {
         return static_cast<double>(nums2[j + k - 1]);
     }
@@ -43,7 +45,8 @@ double ArrayImpl::findKthInTwoArray(
 }
 
 // 11. Container With Most Water
-int ArrayImpl::maxArea11(vector<int>& heights) {
+int ArrayImpl::maxArea11(vector<int>& heights)
+{
     if (!heights.size()) return -1;
 
     int left = 0, right = heights.size() - 1;
@@ -59,7 +62,8 @@ int ArrayImpl::maxArea11(vector<int>& heights) {
 }
 
 // 15. 3Sum
-vector<vector<int>> ArrayImpl::threeSum15(vector<int>& nums) {
+vector<vector<int>> ArrayImpl::threeSum15(vector<int>& nums)
+{
     vector<vector<int>> result;
     sort(nums.begin(), nums.end());
     if (nums.size() < 3 || nums.front() > 0 || nums.back() < 0) {
@@ -97,7 +101,8 @@ vector<vector<int>> ArrayImpl::threeSum15(vector<int>& nums) {
 }
 
 // 16. 3Sum Closest
-int ArrayImpl::threeSumClosest16(vector<int>& nums, int target) {
+int ArrayImpl::threeSumClosest16(vector<int>& nums, int target)
+{
     assert(nums.size() > 2);
     int minSum = nums[0] + nums[1] + nums[2];
     int minDiff = abs(minSum - target);
@@ -124,7 +129,8 @@ int ArrayImpl::threeSumClosest16(vector<int>& nums, int target) {
 }
 
 // 18. 4Sum
-vector<vector<int>> ArrayImpl::fourSum18(vector<int>& nums, int target) {
+vector<vector<int>> ArrayImpl::fourSum18(vector<int>& nums, int target)
+{
     if (nums.size() <= 3) {
         return {};
     }
@@ -152,7 +158,8 @@ vector<vector<int>> ArrayImpl::fourSum18(vector<int>& nums, int target) {
 }
 
 // 26. Remove Duplicates from Sorted Array
-int ArrayImpl::removeDuplicates26(vector<int>& nums) {
+int ArrayImpl::removeDuplicates26(vector<int>& nums)
+{
     if (nums.empty()) {
         return 0;
     }
@@ -169,7 +176,8 @@ int ArrayImpl::removeDuplicates26(vector<int>& nums) {
 }
 
 // 31. Next Permutation
-void ArrayImpl::nextPermutation31(vector<int>& nums) {
+void ArrayImpl::nextPermutation31(vector<int>& nums)
+{
     if (nums.size() == 0) {
         return;
     }
@@ -202,7 +210,8 @@ void ArrayImpl::nextPermutation31(vector<int>& nums) {
 }
 
 // 33. Search in Rotated Sorted Array
-int ArrayImpl::search33(vector<int>& nums, int target) {
+int ArrayImpl::search33(vector<int>& nums, int target)
+{
     if (nums.empty()) {
         return -1;
     }
@@ -233,7 +242,8 @@ int ArrayImpl::search33(vector<int>& nums, int target) {
 }
 
 // 34. Find First and Last Position of Element in Sorted Array
-vector<int> ArrayImpl::searchRange34(vector<int> &nums, int target) {
+vector<int> ArrayImpl::searchRange34(vector<int> &nums, int target)
+{
     vector<int> result = {-1, -1};
     if (nums.size() == 0) {
         return result;
@@ -270,7 +280,8 @@ vector<int> ArrayImpl::searchRange34(vector<int> &nums, int target) {
 }
 
 // 35. Search Insert Position
-int ArrayImpl::searchInsert35(vector<int>& nums, int target) {
+int ArrayImpl::searchInsert35(vector<int>& nums, int target)
+{
     if (nums.size() == 0) {
         return 0;
     }
@@ -291,7 +302,8 @@ int ArrayImpl::searchInsert35(vector<int>& nums, int target) {
 }
 
 // 41. First Missing Positive
-int ArrayImpl::firstMissingPositive41(vector<int>& nums) {
+int ArrayImpl::firstMissingPositive41(vector<int>& nums)
+{
     int n = nums.size();
     for (int i = 0; i < n; ++i) {
         while (nums[i] > 0 && nums[i] <= n && nums[nums[i] - 1] != nums[i]) {
@@ -307,13 +319,34 @@ int ArrayImpl::firstMissingPositive41(vector<int>& nums) {
     return n + 1;
 }
 
+// 45. Jump Game II
+int ArrayImpl::jump45(vector<int>& nums)
+{
+    int cur = 0, i = 0, step = 0;
+    while (cur < nums.size() - 1) {
+        int pre = cur;
+        while (i <= pre) {
+            cur = max(cur, nums[i] + i);
+            ++i;
+        }
+        ++step;
+        if (cur == pre) {
+            return -1;
+        }
+    }
+
+    return step;
+}
+
 // 53. Maximum Subarray
-int ArrayImpl::maxSubArray53(vector<int>& nums) {
+int ArrayImpl::maxSubArray53(vector<int>& nums)
+{
     if (nums.empty()) return 0;
     return maxSubArrayRec(nums, 0, nums.size() - 1);
 }
 
-int ArrayImpl::maxSubArrayRec(const vector<int>& nums, int left, int right) {
+int ArrayImpl::maxSubArrayRec(const vector<int>& nums, int left, int right)
+{
     if (left >= right) return nums[left];
     int pivot = left + (right - left) / 2;
     int lmax = maxSubArrayRec(nums, left, pivot - 1);
@@ -334,7 +367,8 @@ int ArrayImpl::maxSubArrayRec(const vector<int>& nums, int left, int right) {
 }
 
 // 66. Plus One
-vector<int> ArrayImpl::plusOne66(vector<int>& digits) {
+vector<int> ArrayImpl::plusOne66(vector<int>& digits)
+{
     for (int i = digits.size() - 1; i >= 0; --i) {
         if (digits[i] == 9) {
             digits[i] = 0;
