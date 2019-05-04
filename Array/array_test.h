@@ -43,6 +43,9 @@ public:
     // 45. Jump Game II Test
     void jump45Test();
 
+    // 48. Rotate Image Test
+    void rotate48Test();
+
     // 53. Maximum Subarray Test
     void maxSubArray53Test();
 

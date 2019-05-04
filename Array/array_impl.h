@@ -44,6 +44,9 @@ public:
     // 45. Jump Game II
     int jump45(vector<int>& nums);
 
+    // 48. Rotate Image
+    void rotate48(vector<vector<int>>& matrix);
+
     // 53. Maximum Subarray
     int maxSubArray53(vector<int>& nums);
 

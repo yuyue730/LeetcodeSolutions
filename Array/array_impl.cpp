@@ -338,6 +338,22 @@ int ArrayImpl::jump45(vector<int>& nums)
     return step;
 }
 
+// 48. Rotate Image
+void ArrayImpl::rotate48(vector<vector<int>>& matrix)
+{
+    int edgeSize = matrix[0].size();
+    for (int i = 0; i < edgeSize / 2; ++i) {
+        for (int j = i; j < edgeSize - 1 - i; ++j) {
+            int temp = matrix[i][j];
+            matrix[i][j] = matrix[edgeSize - 1 - j][i];
+            matrix[edgeSize - 1 - j][i] = matrix[edgeSize - 1 - i][edgeSize - 1 - j];
+            matrix[edgeSize - 1 - i][edgeSize - 1 - j] = matrix[j][edgeSize - 1 - i];
+            matrix[j][edgeSize - 1 - i] = temp;
+        }
+    }
+    return;
+}
+
 // 53. Maximum Subarray
 int ArrayImpl::maxSubArray53(vector<int>& nums)
 {

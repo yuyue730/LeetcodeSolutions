@@ -144,6 +144,29 @@ void ArrayTest::jump45Test() {
     return;
 }
 
+// 48. Rotate Image Test
+void ArrayTest::rotate48Test() {
+    cout << "48. Rotate Image test.\n";
+    vector<vector<int>> matrix = {
+        {5, 1, 9, 11},
+        {2, 4, 8, 10},
+        {13, 3, 6, 7},
+        {15, 14, 12, 16}
+    };
+
+    implObj->rotate48(matrix);
+    cout << "After rotation, matrix is \n";
+    for (int i = 0; i < matrix.size(); ++i) {
+        cout << "Row " << i << "[";
+        for (int j = 0; j < matrix[i].size(); ++j) {
+            cout << matrix[i][j] << "; ";
+        }
+        cout << "]\n";
+    }
+    cout << "\n";
+    return;
+}
+
 // 53. Maximum Subarray Test
 void ArrayTest::maxSubArray53Test() {
     cout << "53. Maximum Subarray test starts (Divide and Conquer method)\n";

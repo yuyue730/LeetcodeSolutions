@@ -20,6 +20,7 @@ int main() {
     testObj->searchInsert35Test();
     testObj->firstMissingPositive41Test();
     testObj->jump45Test();
+    testObj->rotate48Test();
     testObj->maxSubArray53Test();
     testObj->plusOne66Test();
 
