@@ -178,6 +178,24 @@ void ArrayTest::maxSubArray53Test() {
     return;
 }
 
+// 54. Spiral Matrix Test
+void ArrayTest::spiralOrder54Test() {
+    cout << "54. Spiral Matrix test starts.\n";
+    vector<vector<int>> matrix = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12}
+    };
+    vector<int> result = implObj->spiralOrder54(matrix);
+
+    cout << "Spiral order vector [";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << result[i] << ((i == result.size() - 1) ? "" : "; ");
+    }
+    cout << "]\n\n";
+    return;
+}
+
 // 66. Plus One Test
 void ArrayTest::plusOne66Test() {
     cout << "66. Plus One test starts\n";

@@ -22,6 +22,7 @@ int main() {
     testObj->jump45Test();
     testObj->rotate48Test();
     testObj->maxSubArray53Test();
+    testObj->spiralOrder54Test();
     testObj->plusOne66Test();
 
     return 0;

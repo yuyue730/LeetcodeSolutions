@@ -49,6 +49,9 @@ public:
     // 53. Maximum Subarray Test
     void maxSubArray53Test();
 
+    // 54. Spiral Matrix Test
+    void spiralOrder54Test();
+
     // 66. Plus One Test
     void plusOne66Test();
 

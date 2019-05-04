@@ -50,6 +50,9 @@ public:
     // 53. Maximum Subarray
     int maxSubArray53(vector<int>& nums);
 
+    // 54. Spiral Matrix
+    vector<int> spiralOrder54(vector<vector<int>>& matrix);
+
     // 66. Plus One
     vector<int> plusOne66(vector<int>& digits);
 
