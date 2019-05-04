@@ -22,6 +22,9 @@ public:
     // 39. Combination Sum Test
     void combinationSum39Test();
 
+    // 46. Permutations Test
+    void permute46Test();
+
 private:
     BacktrackingImpl * implObj;
 };

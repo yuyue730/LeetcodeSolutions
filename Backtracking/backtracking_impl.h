@@ -21,11 +21,15 @@ public:
     // 39. Combination Sum
     vector<vector<int>> combinationSum39(vector<int>& candidates, int target);
 
+    // 46. Permutations
+    vector<vector<int>> permute46(vector<int>& nums);
+
 private:
     // 17. Letter Combinations of a Phone Number helper
     void generateLetterCombRec(
-            const vector<string>& digitLetterMap, const string digits, 
-            int curIdx, string curResult, vector<string> & result);
+        const vector<string>& digitLetterMap, const string digits, 
+        int curIdx, string curResult, vector<string> & result
+    );
 
     // 22. Generate Parentheses helper
     void generateParenthesisRec(int left, int right, string curStr, vector<string> & result);
@@ -37,7 +41,16 @@ private:
 
     // 39. Combination Sum helper
     void combinationSumRec(int startIdx, const vector<int> & candidate, 
-            vector<int> & curRes, vector<vector<int>> & allRes, int remain);
+        vector<int> & curRes, vector<vector<int>> & allRes, int remain
+    );
+
+    // 46. Permutations
+    void permute46REC(
+        vector<vector<int>> &results,
+        vector<int> &curRes,
+        vector<bool> &visited,
+        const vector<int> &nums
+    );
 };
 
 #endif

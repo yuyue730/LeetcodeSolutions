@@ -13,6 +13,7 @@ int main() {
     testObj->generateParenthesis22Test();
     testObj->solveSudoku37Test();
     testObj->combinationSum39Test();
+    testObj->permute46Test();
 
     return 0;
 }

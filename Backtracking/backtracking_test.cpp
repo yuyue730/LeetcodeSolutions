@@ -77,3 +77,21 @@ void BacktrackingTest::combinationSum39Test() {
     cout << "\n";
     return;
 }
+
+// 46. Permutations Test
+void BacktrackingTest::permute46Test() {
+    cout << "46. Permutations test starts.\n";
+    vector<int> nums = {1, 2, 3};
+    vector<vector<int>> results = implObj->permute46(nums);
+    
+    cout << "Result is \n";
+    for (int i = 0; i < results.size(); ++i) {
+        cout << "Item " << i << " -- [";
+        for (int j = 0; j < results[i].size(); ++j) {
+            cout << results[i][j] << "; ";
+        }
+        cout << "]\n";
+    }
+    cout << "\n";
+    return;
+}

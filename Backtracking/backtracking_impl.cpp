@@ -1,11 +1,13 @@
 #include "backtracking_impl.h"
 
-BacktrackingImpl::BacktrackingImpl() {
+BacktrackingImpl::BacktrackingImpl()
+{
     cout << "Impl object for Leetcode Backtracking problems constructed.\n";
 }
 
 // 17. Letter Combinations of a Phone Number
-vector<string> BacktrackingImpl::letterCombinations17(string digits) {
+vector<string> BacktrackingImpl::letterCombinations17(string digits)
+{
     if (digits.empty()) {
         return {};
     }
@@ -23,8 +25,9 @@ vector<string> BacktrackingImpl::letterCombinations17(string digits) {
 }
 
 void BacktrackingImpl::generateLetterCombRec(
-            const vector<string>& digitLetterMap, const string digits, 
-            int curIdx, string curResult, vector<string> & result) {
+    const vector<string>& digitLetterMap, const string digits, 
+    int curIdx, string curResult, vector<string> & result)
+{
     if (curIdx == digits.length()) {
         result.push_back(curResult);
         return;
@@ -38,7 +41,8 @@ void BacktrackingImpl::generateLetterCombRec(
 }
 
 // 22. Generate Parentheses
-vector<string> BacktrackingImpl::generateParenthesis22(int n) {
+vector<string> BacktrackingImpl::generateParenthesis22(int n)
+{
     vector<string> result;
     if (n == 0) {
         return result;
@@ -49,7 +53,8 @@ vector<string> BacktrackingImpl::generateParenthesis22(int n) {
 }
 
 void BacktrackingImpl::generateParenthesisRec(
-        int left, int right, string curStr, vector<string> & result) {
+    int left, int right, string curStr, vector<string> & result)
+{
     if (left > right) {
         // We have insert ')' before '('
         return;
@@ -69,12 +74,15 @@ void BacktrackingImpl::generateParenthesisRec(
 }
 
 // 37. Sudoku Solver
-void BacktrackingImpl::solveSudoku37(vector<vector<char>>& board) {
+void BacktrackingImpl::solveSudoku37(vector<vector<char>>& board)
+{
     assert(board.size() == 9 && board[0].size() == 9);
     solveSudokuRec(board, 0, 0);
 }
 
-bool BacktrackingImpl::solveSudokuRec(vector<vector<char>>& board, int iRow, int iCol) {
+bool BacktrackingImpl::solveSudokuRec(
+    vector<vector<char>>& board, int iRow, int iCol)
+{
     if (iRow == 9) {
         return true;
     }
@@ -99,7 +107,9 @@ bool BacktrackingImpl::solveSudokuRec(vector<vector<char>>& board, int iRow, int
     return false;
 }
 
-bool BacktrackingImpl::isValidSudokuPerUnit(const vector<vector<char>>& board, int iRow, int iCol) {
+bool BacktrackingImpl::isValidSudokuPerUnit(
+    const vector<vector<char>>& board, int iRow, int iCol)
+{
     for (int i = 0; i < 9; ++i) {
         if (i != iRow && board[i][iCol] == board[iRow][iCol]) {
             return false;
@@ -127,7 +137,8 @@ bool BacktrackingImpl::isValidSudokuPerUnit(const vector<vector<char>>& board, i
 }
 
 // 39. Combination Sum
-vector<vector<int>> BacktrackingImpl::combinationSum39(vector<int>& candidates, int target) {
+vector<vector<int>> BacktrackingImpl::combinationSum39(vector<int>& candidates, int target)
+{
     vector<vector<int>> allRes;
     vector<int> curRes;
     combinationSumRec(0, candidates, curRes, allRes, target);
@@ -135,7 +146,8 @@ vector<vector<int>> BacktrackingImpl::combinationSum39(vector<int>& candidates, 
 }
 
 void BacktrackingImpl::combinationSumRec(int startIdx, const vector<int> & candidate, 
-        vector<int> & curRes, vector<vector<int>> & allRes, int remain) {
+    vector<int> & curRes, vector<vector<int>> & allRes, int remain)
+{
     if (remain < 0) {
         return;
     }
@@ -148,5 +160,39 @@ void BacktrackingImpl::combinationSumRec(int startIdx, const vector<int> & candi
         curRes.push_back(candidate[i]);
         combinationSumRec(i, candidate, curRes, allRes, remain - candidate[i]);
         curRes.pop_back();
+    }
+}
+
+// 46. Permutations
+vector<vector<int>> BacktrackingImpl::permute46(vector<int>& nums)
+{
+    vector<vector<int>> results;
+    vector<int> curRes;
+    vector<bool> visited(nums.size(), false);
+    permute46REC(results, curRes, visited, nums);
+    return results;
+}
+
+void BacktrackingImpl::permute46REC(
+    vector<vector<int>> &results,
+    vector<int> &curRes,
+    vector<bool> &visited,
+    const vector<int> &nums)
+{
+    if (curRes.size() == nums.size()) {
+        results.push_back(curRes);
+        return;
+    }
+
+    for (int i = 0; i < nums.size(); ++i) {
+        if (visited[i]) {
+            continue;
+        }
+
+        curRes.push_back(nums[i]);
+        visited[i] = true;
+        permute46REC(results, curRes, visited, nums);
+        curRes.pop_back();
+        visited[i] = false;
     }
 }
