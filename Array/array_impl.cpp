@@ -386,6 +386,11 @@ int ArrayImpl::maxSubArrayRec(const vector<int>& nums, int left, int right)
 vector<int> ArrayImpl::spiralOrder54(vector<vector<int>>& matrix)
 {
     vector<int> result;
+
+    if (matrix.size() == 0 || matrix[0].size() == 0) {
+        return result;
+    }
+
     int left = 0, right = matrix[0].size() - 1;
     int up = 0, down = matrix.size() - 1;
 
