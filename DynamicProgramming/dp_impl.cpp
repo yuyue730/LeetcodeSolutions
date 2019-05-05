@@ -27,3 +27,27 @@ bool DpImpl::isMatch44(string s, string p) {
 
     return dp[s.size()][p.size()];
 }
+
+// 64. Minimum Path Sum
+int DpImpl::minPathSum64(vector<vector<int>>& grid)
+{
+    vector<vector<int>> dp(grid.size(), vector<int>(grid[0].size(), 0));
+    dp[0][0] = grid[0][0];
+
+    // Deal with border row and column
+    for (int j = 1; j < grid[0].size(); ++j) {
+        dp[0][j] = dp[0][j - 1] + grid[0][j];
+    }
+    for (int i = 1; i < grid.size(); ++i) {
+        dp[i][0] = dp[i - 1][0] + grid[i][0];
+    }
+
+    // Go to center elements
+    for (int m = 1; m < grid.size(); ++m) {
+        for (int n = 1; n < grid[0].size(); ++n) {
+            dp[m][n] = min(dp[m - 1][n], dp[m][n - 1]) + grid[m][n];
+        }
+    }
+
+    return dp[dp.size() - 1][dp[0].size() - 1];
+}

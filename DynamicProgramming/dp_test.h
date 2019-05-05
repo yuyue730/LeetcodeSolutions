@@ -12,6 +12,9 @@ public:
     // 44. Wildcard Matching Test
     void isMatch44Test();
 
+    // 64. Minimum Path Sum Test
+    void minPathSum64Test();
+
 private:
     DpImpl * implObj;
 };

@@ -7,7 +7,19 @@ DpTest::DpTest() {
 
 // 44. Wildcard Matching Test
 void DpTest::isMatch44Test() {
-    cout << "44. Wildcard Matching test.\n";
-    cout << "*a*b and adceb isMatch = [\n" << implObj->isMatch44("adceb", "*a*b") << "].\n\n";
+    cout << "44. Wildcard Matching test starts.\n";
+    cout << "*a*b and adceb isMatch = [" << implObj->isMatch44("adceb", "*a*b") << "].\n\n";
+    return;
+}
+
+// 64. Minimum Path Sum Test
+void DpTest::minPathSum64Test() {
+    cout << "64. Minimum Path Sum test starts.\n";
+    vector<vector<int>> grid = {
+        {1, 3, 1},
+        {1, 5, 1},
+        {4, 2, 1}
+    };
+    cout << "Grid will have min path = " << implObj->minPathSum64(grid) << ".\n\n";
     return;
 }
