@@ -476,7 +476,7 @@ vector<vector<int>> ArrayImpl::insert57(
         cur++;
     }
 
-    while (cur < intervals.size() && newInterval[1] > intervals[cur][0]) {
+    while (cur < intervals.size() && newInterval[1] >= intervals[cur][0]) {
         newInterval[0] = min(intervals[cur][0], newInterval[0]);
         newInterval[1] = max(intervals[cur][1], newInterval[1]);
         cur++;
