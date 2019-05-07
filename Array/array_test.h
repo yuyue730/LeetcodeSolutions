@@ -58,8 +58,11 @@ public:
     // 56. Merge Intervals Test
     void merge56Test();
 
-    // 57. Insert Interval
+    // 57. Insert Interval Test
     void insert57Test();
+
+    // 59. Spiral Matrix II Test
+    void generateMatrix59Test();
 
     // 66. Plus One Test
     void plusOne66Test();

@@ -491,6 +491,45 @@ vector<vector<int>> ArrayImpl::insert57(
     return results;
 }
 
+// 59. Spiral Matrix II
+vector<vector<int>> ArrayImpl::generateMatrix59(int n) {
+    vector<vector<int>> result(n, vector<int>(n, 0));
+    int left = 0, right = n - 1, up = 0, down = n - 1;
+    int curVal = 1;
+
+    while (true) {
+        for (int i = left; i <= right; ++i) {
+            result[up][i] = curVal++;
+        }
+        if (++up > down) {
+            break;
+        }
+
+        for (int j = up; j <= down; ++j) {
+            result[j][right] = curVal++;
+        }
+        if (--right < left) {
+            break;
+        }
+
+        for (int m = right; m >= left; --m) {
+            result[down][m] = curVal++;
+        }
+        if (--down < up) {
+            break;
+        }
+
+        for (int n = down; n >= up; --n) {
+            result[n][left] = curVal++;
+        }
+        if (++left > right) {
+            break;
+        }
+    }
+
+    return result;
+}
+
 // 66. Plus One
 vector<int> ArrayImpl::plusOne66(vector<int>& digits)
 {

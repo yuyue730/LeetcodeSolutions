@@ -243,6 +243,23 @@ void ArrayTest::insert57Test() {
     return;
 }
 
+// 59. Spiral Matrix II Test
+void ArrayTest::generateMatrix59Test() {
+    cout << "59. Spiral Matrix II test.\n";
+    vector<vector<int>> result = implObj->generateMatrix59(3);
+
+    cout << "Generate result [\n";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "  [";
+        for (int j = 0; j < result[0].size(); ++j) {
+            cout << result[i][j] << (j == result.size() - 1 ? "" : ", ");
+        }
+        cout << "]\n";
+    }
+    cout << "]\n";
+    return;
+}
+
 // 66. Plus One Test
 void ArrayTest::plusOne66Test() {
     cout << "66. Plus One test starts\n";

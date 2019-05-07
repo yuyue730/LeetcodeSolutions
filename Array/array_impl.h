@@ -65,6 +65,9 @@ public:
         vector<int>& newInterval
     );
 
+    // 59. Spiral Matrix II
+    vector<vector<int>> generateMatrix59(int n);
+
     // 66. Plus One
     vector<int> plusOne66(vector<int>& digits);
 
