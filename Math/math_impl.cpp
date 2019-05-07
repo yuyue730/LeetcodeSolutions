@@ -224,3 +224,66 @@ double MathImpl::myPow50(double x, int n)
         return (n > 0) ? half * half * x : half * half / x;
     }
 }
+
+// 65. Valid Number
+bool MathImpl::isNumber65(string s)
+{
+    int left = 0, right = s.size() - 1;
+    while (left <= right && s[left] == ' ') {
+        ++left;
+    }
+
+    while (right >= left && s[right] == ' ') {
+        --right;
+    }
+
+    if (left == right) {
+        // Only one character in string
+        return isdigit(s[left]);
+    }
+
+    bool isDotExist = false;
+    bool isEExist = false;
+    bool isDigitExist = false;
+
+    // Process the first non space character
+    if (s[left] == '.') {
+        isDotExist = true;
+    } else if (isdigit(s[left])) {
+        isDigitExist = true;
+    } else if (s[left] != '+' && s[left] != '-') {
+        return false;
+    }
+
+    // Process [left + 1, right - 1]
+    for (int i = left + 1; i <= right - 1; ++i) {
+        if (isdigit(s[i])) {
+            isDigitExist = true;
+        } else if (s[i] == 'e' || s[i] == 'E') {
+            if (isEExist) {
+                return false;
+            } else if (isDigitExist) {
+                isEExist = true;
+            } else {
+                return false;
+            }
+        } else if (s[i] == '.') {
+            if (isEExist || isDotExist) {
+                return false;
+            } else {
+                isDotExist = true;
+            }
+        } else if (s[i] == '+' || s[i] == '-') {
+            if (s[i - 1] != 'e' && s[i - 1] != 'E') {
+                return false;
+            }
+        } else return false;
+    }
+
+    // Process right
+    if (isdigit(s[right])) {
+        return true;
+    } else if (s[right] == '.' && !isDotExist && !isEExist && isDigitExist) {
+        return true;
+    } else return false;
+}

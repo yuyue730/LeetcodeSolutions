@@ -32,6 +32,9 @@ public:
 
     // 50. Pow(x, n)
     double myPow50(double x, int n);
+
+    // 65. Valid Number
+    bool isNumber65(string s);
 };
 
 #endif

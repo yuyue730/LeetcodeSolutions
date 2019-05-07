@@ -16,6 +16,7 @@ int main() {
     testObj->divide29Test();
     testObj->multiply43Test();
     testObj->myPow50Test();
+    testObj->isNumber65Test();
 
     return 0;
 }

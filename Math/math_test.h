@@ -30,6 +30,9 @@ public:
     // 50. Pow(x, n) Test
     void myPow50Test();
 
+    // 65. Valid Number Test
+    void isNumber65Test();
+
 private:
     MathImpl * implObj;
 };

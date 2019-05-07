@@ -63,3 +63,24 @@ void MathTest::myPow50Test() {
     cout << "2.1^3 = [" << setprecision(5) << implObj->myPow50(2.1, 3) << "]\n\n";
     return;
 }
+
+// 65. Valid Number Test
+void MathTest::isNumber65Test() {
+    cout << "65. Valid Number test starts.\n";
+
+    cout << "'0' is valid = " << (implObj->isNumber65("0") ? "True" : "False") << ".\n";
+    cout << "' 0.1' is valid = " << (implObj->isNumber65(" 0.1") ? "True" : "False") << ".\n";
+    cout << "'abc' is valid = " << (implObj->isNumber65("abc") ? "True" : "False") << ".\n";
+    cout << "'1 a' is valid = " << (implObj->isNumber65("1 a") ? "True" : "False") << ".\n";
+    cout << "'2e10' is valid = " << (implObj->isNumber65("2e10") ? "True" : "False") << ".\n";
+    cout << "'-90e3' is valid = " << (implObj->isNumber65("-90e3") ? "True" : "False") << ".\n";
+    cout << "'1e' is valid = " << (implObj->isNumber65("1e") ? "True" : "False") << ".\n";
+    cout << "' 6e-1' is valid = " << (implObj->isNumber65(" 6e-1") ? "True" : "False") << ".\n";
+    cout << "' 99e2.5' is valid = " << (implObj->isNumber65(" 99e2.5") ? "True" : "False") << ".\n";
+    cout << "'53.5e93' is valid = " << (implObj->isNumber65("53.5e93") ? "True" : "False") << ".\n";
+    cout << "' --6' is valid = " << (implObj->isNumber65(" --6") ? "True" : "False") << ".\n";
+    cout << "'-+3' is valid = " << (implObj->isNumber65("-+3") ? "True" : "False") << ".\n";
+    cout << "'95a54e53' is valid = " << (implObj->isNumber65("95a54e53") ? "True" : "False") << ".\n";
+
+    return;
+}
