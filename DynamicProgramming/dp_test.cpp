@@ -12,6 +12,13 @@ void DpTest::isMatch44Test() {
     return;
 }
 
+// 62. Unique Paths Test
+void DpTest::uniquePaths62Test() {
+    cout << "62. Unique Paths test starts.\n";
+    cout << "3 * 2 grid will have " << implObj->uniquePaths62(3, 2) << " methods.\n\n";
+    return;
+}
+
 // 64. Minimum Path Sum Test
 void DpTest::minPathSum64Test() {
     cout << "64. Minimum Path Sum test starts.\n";

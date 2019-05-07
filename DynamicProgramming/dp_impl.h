@@ -15,6 +15,10 @@ public:
 
     // 64. Minimum Path Sum
     int minPathSum64(vector<vector<int>>& grid);
+
+    // 62. Unique Paths
+    int uniquePaths62(int m, int n);
+
 };
 
 #endif

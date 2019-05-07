@@ -9,6 +9,7 @@ int main() {
     cout << "\nTest for problems starts.\n";
 
     testObj->isMatch44Test();
+    testObj->uniquePaths62Test();
     testObj->minPathSum64Test();
 
     return 0;

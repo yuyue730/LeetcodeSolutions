@@ -12,6 +12,9 @@ public:
     // 44. Wildcard Matching Test
     void isMatch44Test();
 
+    // 62. Unique Paths Test
+    void uniquePaths62Test();
+
     // 64. Minimum Path Sum Test
     void minPathSum64Test();
 
