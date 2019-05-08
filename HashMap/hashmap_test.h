@@ -10,6 +10,9 @@ class HashMapTest {
 public:
     HashMapTest();
 
+    // 1. Two Sum Test
+    void twoSum1Test();
+
     // 30. Substring with Concatenation of All Words Test
     void findSubstring30Test();
 

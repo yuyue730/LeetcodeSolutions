@@ -5,6 +5,17 @@ HashMapTest::HashMapTest() {
     implObj = new HashMapImpl();
 }
 
+// 1. Two Sum Test
+void HashMapTest::twoSum1Test() {
+    cout << "1. Two Sum test starts.\n";
+    vector<int> nums = {2, 7, 11, 15};
+    int target = 9;
+
+    vector<int> result = implObj->twoSum1(nums, target);
+    cout << "{2, 7, 11, 15} and 9 will return " << result[0] << " and " << result[1] << "\n\n";
+    return;
+}
+
 // 30. Substring with Concatenation of All Words Test
 void HashMapTest::findSubstring30Test() {
     cout << "30. Substring with Concatenation of All Words test starts.\n";

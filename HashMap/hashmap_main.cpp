@@ -9,6 +9,7 @@ int main() {
     HashMapTest* testObj = new HashMapTest();
     cout << "\nTest for problems starts.\n";
 
+    testObj->twoSum1Test();
     testObj->findSubstring30Test();
     testObj->isValidSudoku36Test();
     testObj->groupAnagrams49Test();

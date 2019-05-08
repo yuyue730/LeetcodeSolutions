@@ -11,6 +11,9 @@ class HashMapImpl {
 public:
     HashMapImpl();
 
+    // 1. Two Sum
+    vector<int> twoSum1(vector<int>& nums, int target);
+
     // 30. Substring with Concatenation of All Words
     vector<int> findSubstring30(string s, vector<string>& words);
 

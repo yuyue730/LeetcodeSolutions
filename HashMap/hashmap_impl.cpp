@@ -4,6 +4,24 @@ HashMapImpl::HashMapImpl() {
     cout << "Impl object for Leetcode HashMap problems constructed.\n";
 }
 
+// 1. Two Sum
+vector<int> HashMapImpl::twoSum1(vector<int>& nums, int target)
+{
+    unordered_map<int, int> valuePairMap;
+    vector<int> result;
+
+    for (int i = 0; i < nums.size(); ++i) {
+        if (valuePairMap.find(nums[i]) != valuePairMap.end()) {
+            result.push_back(valuePairMap[nums[i]]);
+            result.push_back(i);
+        } else {
+            valuePairMap[target - nums[i]] = i;
+        }
+    }
+
+    return result;
+}
+
 // 30. Substring with Concatenation of All Words
 vector<int> HashMapImpl::findSubstring30(string s, vector<string>& words) {
     vector<int> result;
