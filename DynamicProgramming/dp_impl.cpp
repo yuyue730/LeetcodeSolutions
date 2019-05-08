@@ -28,6 +28,62 @@ bool DpImpl::isMatch44(string s, string p) {
     return dp[s.size()][p.size()];
 }
 
+// 62. Unique Paths
+int DpImpl::uniquePaths62(int m, int n) {
+    vector<vector<int>> dp(m, vector<int>(n, 0));
+
+    for (int i = 0; i < m; ++i) {
+        dp[i][0] = 1;
+    }
+    for (int j = 1; j < n; ++j) {
+        dp[0][j] = 1;
+    }
+
+    for (int i = 1; i < m; ++i) {
+        for (int j = 1; j < n; ++j) {
+            dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+        }
+    }
+
+    return dp[m - 1][n - 1];
+}
+
+// 63. Unique Paths II
+int DpImpl::uniquePathsWithObstacles63(vector<vector<int>>& obstacleGrid)
+{
+    vector<vector<long long>> dp(obstacleGrid.size(), vector<long long>(obstacleGrid[0].size()));
+
+    if (obstacleGrid[0][0] == 1) {
+        return 0;
+    } else {
+        dp[0][0] = 1;
+    }
+
+    for (int i = 1; i < obstacleGrid[0].size(); ++i) {
+        if (obstacleGrid[0][i]) {
+            dp[0][i] = 0;
+        } else {
+            dp[0][i] = dp[0][i - 1];
+        }
+    }
+
+    for (int j = 1; j < obstacleGrid.size(); ++j) {
+        if (obstacleGrid[j][0]) {
+            dp[j][0] = 0;
+        } else {
+            dp[j][0] = dp[j - 1][0];
+        }
+    }
+
+    for (int i = 1; i < obstacleGrid.size(); ++i) {
+        for (int j = 1; j < obstacleGrid[0].size(); ++j) {
+            dp[i][j] = (obstacleGrid[i][j] == 1) ? 0 : dp[i - 1][j] + dp[i][j - 1];
+        }
+    }
+
+    return static_cast<int>(dp[obstacleGrid.size() - 1][obstacleGrid[0].size() - 1]);
+}
+
 // 64. Minimum Path Sum
 int DpImpl::minPathSum64(vector<vector<int>>& grid)
 {
@@ -50,24 +106,4 @@ int DpImpl::minPathSum64(vector<vector<int>>& grid)
     }
 
     return dp[dp.size() - 1][dp[0].size() - 1];
-}
-
-// 62. Unique Paths
-int DpImpl::uniquePaths62(int m, int n) {
-    vector<vector<int>> dp(m, vector<int>(n, 0));
-
-    for (int i = 0; i < m; ++i) {
-        dp[i][0] = 1;
-    }
-    for (int j = 1; j < n; ++j) {
-        dp[0][j] = 1;
-    }
-
-    for (int i = 1; i < m; ++i) {
-        for (int j = 1; j < n; ++j) {
-            dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
-        }
-    }
-
-    return dp[m - 1][n - 1];
 }

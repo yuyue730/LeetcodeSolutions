@@ -15,6 +15,9 @@ public:
     // 62. Unique Paths Test
     void uniquePaths62Test();
 
+    // 63. Unique Paths II Test
+    void uniquePathsWithObstacles63Test();
+
     // 64. Minimum Path Sum Test
     void minPathSum64Test();
 

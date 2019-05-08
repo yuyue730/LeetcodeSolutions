@@ -13,12 +13,14 @@ public:
     // 44. Wildcard Matching
     bool isMatch44(string s, string p);
 
-    // 64. Minimum Path Sum
-    int minPathSum64(vector<vector<int>>& grid);
-
     // 62. Unique Paths
     int uniquePaths62(int m, int n);
 
+    // 63. Unique Paths II
+    int uniquePathsWithObstacles63(vector<vector<int>>& obstacleGrid);
+
+    // 64. Minimum Path Sum
+    int minPathSum64(vector<vector<int>>& grid);
 };
 
 #endif

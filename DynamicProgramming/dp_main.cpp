@@ -10,6 +10,7 @@ int main() {
 
     testObj->isMatch44Test();
     testObj->uniquePaths62Test();
+    testObj->uniquePathsWithObstacles63Test();
     testObj->minPathSum64Test();
 
     return 0;

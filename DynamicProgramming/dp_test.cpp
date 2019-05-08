@@ -19,6 +19,18 @@ void DpTest::uniquePaths62Test() {
     return;
 }
 
+// 63. Unique Paths II Test
+void DpTest::uniquePathsWithObstacles63Test() {
+    cout << "63. Unique Paths II test starts.\n";
+    vector<vector<int>> obstacles = {
+        {0, 0, 0},
+        {0, 1, 0},
+        {0, 0, 0}
+    };
+    cout << "Number of unique paths = " << implObj->uniquePathsWithObstacles63(obstacles) << "\n\n";
+    return;
+}
+
 // 64. Minimum Path Sum Test
 void DpTest::minPathSum64Test() {
     cout << "64. Minimum Path Sum test starts.\n";
