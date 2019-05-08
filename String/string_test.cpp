@@ -67,3 +67,18 @@ void StringTest::countAndSay38Test() {
     cout << "6 will generate " << implObj->countAndSay38(6) << ".\n\n";
     return;
 }
+
+// 68. Text Justification Test
+void StringTest::fullJustify68Test() {
+    cout << "68. Text Justification test starts.\n";
+    vector<string> words = {
+        "This", "is", "an", "example", "of", "text", "justification."
+    };
+    vector<string> results = implObj->fullJustify68(words, 16);
+    cout << "Result is [\n";
+    for (int i = 0; i < results.size(); ++i) {
+        cout << results[i] << ",\n";
+    }
+    cout << "]\n\n";
+    return;
+}

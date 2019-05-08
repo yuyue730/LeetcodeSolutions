@@ -28,6 +28,9 @@ public:
     // 38. Count and Say Test
     void countAndSay38Test();
 
+    // 68. Text Justification Test
+    void fullJustify68Test();
+
 private:
     StringImpl * implObj;
 };

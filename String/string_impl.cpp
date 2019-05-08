@@ -171,3 +171,51 @@ string StringImpl::countAndSay38(int n) {
 
     return result;
 }
+
+// 68. Text Justification
+vector<string> StringImpl::fullJustify68(vector<string>& words, int maxWidth)
+{
+    vector<string> result;
+    int pre = 0, cur = 0;
+
+    while (cur < words.size()) {
+        int curWordLen = 0;
+        while (cur < words.size() 
+            && curWordLen + words[cur].size() + cur - pre <= maxWidth) {
+            curWordLen += words[cur].size();
+            ++cur;
+        }
+
+        int allSpace = maxWidth - curWordLen;
+        string curRes = "";
+        
+        for (int i = pre; i < cur; ++i) {
+            curRes += words[i];
+
+            if (allSpace > 0) {
+                int curSpace = 0;
+                if (cur == words.size()) {
+                    // Deal with last line
+                    curSpace = (i != cur - 1) ? 1 : allSpace;
+                } else {
+                    // Other situations
+                    if (i < cur - 1) {
+                        curSpace = (allSpace % (cur - i - 1) == 0)
+                                ? allSpace / (cur - i - 1)
+                                : allSpace / (cur - i - 1) + 1;
+                    } else {
+                        curSpace = allSpace;
+                    }
+                }
+
+                curRes.append(curSpace, ' ');
+                allSpace -= curSpace;
+            }
+        }
+        
+        result.push_back(curRes);
+        pre = cur;
+    }
+
+    return result;
+}

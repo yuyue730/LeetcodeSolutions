@@ -15,6 +15,7 @@ int main() {
     testObj->longestCommonPrefix14Test();
     testObj->strStr28Test();
     testObj->countAndSay38Test();
+    testObj->fullJustify68Test();
 
     return 0;
 }

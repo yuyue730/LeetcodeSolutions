@@ -30,6 +30,9 @@ public:
     // 38. Count and Say
     string countAndSay38(int n);
 
+    // 68. Text Justification
+    vector<string> fullJustify68(vector<string>& words, int maxWidth);
+
 private:
     // 5. Longest Palindromic Substring helper
     void findLongestPalindromeRec(const string str, int left, int right, string & result);
