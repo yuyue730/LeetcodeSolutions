@@ -21,6 +21,9 @@ public:
 
     // 64. Minimum Path Sum
     int minPathSum64(vector<vector<int>>& grid);
+
+    // 70. Climbing Stairs
+    int climbStairs70(int n);
 };
 
 #endif

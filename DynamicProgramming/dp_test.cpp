@@ -42,3 +42,10 @@ void DpTest::minPathSum64Test() {
     cout << "Grid will have min path = " << implObj->minPathSum64(grid) << ".\n\n";
     return;
 }
+
+// 70. Climbing Stairs Test
+void DpTest::climbStairs70Test() {
+    cout << "70. Climbing Stairs test starts.\n";
+    cout << "3 starts will have " << implObj->climbStairs70(3) << " ways.\n\n";
+    return;
+}

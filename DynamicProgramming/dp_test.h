@@ -21,6 +21,9 @@ public:
     // 64. Minimum Path Sum Test
     void minPathSum64Test();
 
+    // 70. Climbing Stairs Test
+    void climbStairs70Test();
+
 private:
     DpImpl * implObj;
 };
