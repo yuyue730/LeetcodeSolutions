@@ -36,6 +36,9 @@ public:
     // 67. Add Binary Test
     void addBinary67Test();
 
+    // 69. Sqrt(x) Test
+    void mySqrt69Test();
+
 private:
     MathImpl * implObj;
 };

@@ -321,3 +321,23 @@ string MathImpl::addBinary67(string a, string b) {
     }
     return result;
 }
+
+// 69. Sqrt(x)
+int MathImpl::mySqrt69(int x)
+{
+    if (x <= 3) {
+        return 1;
+    }
+
+    int left = 0, right = x;
+    while (left < right) {
+        int mid = (left + right) / 2;
+        if (x / mid >= mid) {
+            left = mid + 1;
+        } else {
+            right = mid;
+        }
+    }
+
+    return right - 1;
+}

@@ -91,3 +91,10 @@ void MathTest::addBinary67Test() {
     cout << "a = '1010', b = '1011' will add up to " << implObj->addBinary67("1010", "1011") << "\n\n";
     return;
 }
+
+// 69. Sqrt(x) Test
+void MathTest::mySqrt69Test() {
+    cout << "69. Sqrt(x) test starts.\n";
+    cout << "sqrt(8) = " << implObj->mySqrt69(10) << "\n\n";
+    return;
+}

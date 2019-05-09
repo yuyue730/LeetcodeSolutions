@@ -38,6 +38,9 @@ public:
 
     // 67. Add Binary
     string addBinary67(string a, string b);
+
+    // 69. Sqrt(x)
+    int mySqrt69(int x);
 };
 
 #endif

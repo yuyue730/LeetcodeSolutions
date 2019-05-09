@@ -18,6 +18,7 @@ int main() {
     testObj->myPow50Test();
     testObj->isNumber65Test();
     testObj->addBinary67Test();
+    testObj->mySqrt69Test();
 
     return 0;
 }
