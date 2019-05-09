@@ -110,6 +110,9 @@ int DpImpl::minPathSum64(vector<vector<int>>& grid)
 
 // 70. Climbing Stairs
 int DpImpl::climbStairs70(int n) {
+    if (n <= 1) {
+        return 1;
+    }
     vector<int> dp(n, 0);
     dp[0] = 1; dp[1] = 2;
     for (int i = 2; i < n; ++i) {
