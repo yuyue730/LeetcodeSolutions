@@ -31,6 +31,9 @@ public:
     // 68. Text Justification Test
     void fullJustify68Test();
 
+    // 71. Simplify Path Test
+    void simplifyPath71Test();
+
 private:
     StringImpl * implObj;
 };

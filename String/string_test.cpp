@@ -82,3 +82,10 @@ void StringTest::fullJustify68Test() {
     cout << "]\n\n";
     return;
 }
+
+// 71. Simplify Path Test
+void StringTest::simplifyPath71Test() {
+    cout << "71. Simplify Path test starts.\n";
+    cout << "'/a//b////c/d//././/..' will generate " << implObj->simplifyPath71("/a//b////c/d//././/..") << "\n\n";
+    return;
+}

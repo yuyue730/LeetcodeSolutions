@@ -16,6 +16,7 @@ int main() {
     testObj->strStr28Test();
     testObj->countAndSay38Test();
     testObj->fullJustify68Test();
+    testObj->simplifyPath71Test();
 
     return 0;
 }

@@ -219,3 +219,39 @@ vector<string> StringImpl::fullJustify68(vector<string>& words, int maxWidth)
 
     return result;
 }
+
+// 71. Simplify Path
+string StringImpl::simplifyPath71(string path) {
+    vector<string> allDirectories;
+    int pre = 0, cur = 1;
+    
+    // Parse path into allDirec
+    while (cur < path.size()) {
+        while (cur < path.size() && path[cur] != '/')
+        {
+            ++cur;
+        }
+
+        string curDirec = path.substr(pre + 1, cur - pre - 1);
+        if (curDirec == "." || curDirec == "") {
+            ;
+        } else if (curDirec == "..") {
+            if (!allDirectories.empty())
+                allDirectories.pop_back();
+        } else {
+            allDirectories.push_back(curDirec);
+        }
+
+        pre = cur;
+        cur = pre + 1;
+    }
+
+    // Construct the output string
+    string result = "";
+
+    for (int i = 0; i < allDirectories.size(); ++i) {
+        result += "/" + allDirectories[i];
+    }
+
+    return result.empty() ? "/" : result;
+}
