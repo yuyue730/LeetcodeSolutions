@@ -84,3 +84,10 @@ void MathTest::isNumber65Test() {
 
     return;
 }
+
+// 67. Add Binary Test
+void MathTest::addBinary67Test() {
+    cout << "67. Add Binary test starts.\n";
+    cout << "a = '1010', b = '1011' will add up to " << implObj->addBinary67("1010", "1011") << "\n\n";
+    return;
+}

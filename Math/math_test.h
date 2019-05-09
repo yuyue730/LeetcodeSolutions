@@ -33,6 +33,9 @@ public:
     // 65. Valid Number Test
     void isNumber65Test();
 
+    // 67. Add Binary Test
+    void addBinary67Test();
+
 private:
     MathImpl * implObj;
 };

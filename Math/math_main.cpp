@@ -17,6 +17,7 @@ int main() {
     testObj->multiply43Test();
     testObj->myPow50Test();
     testObj->isNumber65Test();
+    testObj->addBinary67Test();
 
     return 0;
 }

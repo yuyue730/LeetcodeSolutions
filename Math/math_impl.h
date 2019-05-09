@@ -35,6 +35,9 @@ public:
 
     // 65. Valid Number
     bool isNumber65(string s);
+
+    // 67. Add Binary
+    string addBinary67(string a, string b);
 };
 
 #endif

@@ -287,3 +287,37 @@ bool MathImpl::isNumber65(string s)
         return true;
     } else return false;
 }
+
+// 67. Add Binary
+string MathImpl::addBinary67(string a, string b) {
+    string result = "";
+    if (a.empty() && b.empty()) {
+        return result;
+    }
+
+    int nSize = max(a.size(), b.size());
+    while (a.size() < nSize) {
+        a.insert(a.begin(), '0');
+    }
+    while (b.size() < nSize) {
+        b.insert(b.begin(), '0');
+    }
+
+    bool carry = false;
+    for (int i = nSize - 1; i >= 0; --i) {
+        if (a[i] == '1' && b[i] == '1') {
+            result.insert(result.begin(), carry ? '1': '0');
+            carry = true;
+        } else if (a[i] == '1' || b[i] == '1') {
+            result.insert(result.begin(), carry ? '0' : '1');
+        } else {
+            result.insert(result.begin(), carry ? '1' : '0');
+            carry = false;
+        }
+    }
+
+    if (carry) {
+        result.insert(result.begin(), '1');
+    }
+    return result;
+}
