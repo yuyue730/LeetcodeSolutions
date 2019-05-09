@@ -24,6 +24,9 @@ public:
 
     // 70. Climbing Stairs
     int climbStairs70(int n);
+
+    // 72. Edit Distance
+    int minDistance72(string word1, string word2);
 };
 
 #endif

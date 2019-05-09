@@ -24,6 +24,9 @@ public:
     // 70. Climbing Stairs Test
     void climbStairs70Test();
 
+    // 72. Edit Distance Test
+    void minDistance72Test();
+
 private:
     DpImpl * implObj;
 };

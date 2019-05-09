@@ -49,3 +49,10 @@ void DpTest::climbStairs70Test() {
     cout << "3 starts will have " << implObj->climbStairs70(3) << " ways.\n\n";
     return;
 }
+
+// 72. Edit Distance Test
+void DpTest::minDistance72Test() {
+    cout << "72. Edit Distance test starts.\n";
+    cout << "'horse' and 'ros' will have " << implObj->minDistance72("horse", "ros") << " steps.\n\n";
+    return;
+}
