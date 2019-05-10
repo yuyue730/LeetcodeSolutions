@@ -262,7 +262,7 @@ void ArrayTest::generateMatrix59Test() {
 
 // 66. Plus One Test
 void ArrayTest::plusOne66Test() {
-    cout << "66. Plus One test starts\n";
+    cout << "66. Plus One test starts.\n";
 
     vector<int> nums = {9, 9, 9, 9};
     vector<int> result = implObj->plusOne66(nums);
@@ -273,5 +273,20 @@ void ArrayTest::plusOne66Test() {
     }
     cout << "\n\n";
 
+    return;
+}
+
+// 74. Search a 2D Matrix Test
+void ArrayTest::searchMatrix74Test() {
+    cout << "74. Search a 2D Matrix test starts.\n";
+
+    vector<vector<int>> matrix = {
+        {1, 3, 5, 7},
+        {10, 11, 16, 20},
+        {23, 30, 34, 50}
+    };
+
+    cout << "Find 3 result in [" << (implObj->searchMatrix74(matrix, 3) ? "True" : "False") 
+        << "].\n\n";
     return;
 }

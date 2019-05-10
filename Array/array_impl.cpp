@@ -548,3 +548,44 @@ vector<int> ArrayImpl::plusOne66(vector<int>& digits)
 
     return digits;
 }
+
+// 74. Search a 2D Matrix
+bool ArrayImpl::searchMatrix74(vector<vector<int>>& matrix, int target)
+{
+    if (matrix.size() == 0 || matrix[0].size() == 0) {
+        return false;
+    }
+
+    int m = matrix.size(), n = matrix[0].size();
+    int up = 0, down = m - 1;
+
+    if (target < matrix[0][0] || target > matrix[m - 1][n - 1]) {
+        return false;
+    }
+
+    while (up <= down) {
+        int mid = (up + down) / 2;
+        if (matrix[mid][0] == target) {
+            return true;
+        } else if (matrix[mid][0] < target) {
+            up = mid + 1;
+        } else {
+            down = mid - 1;
+        }
+    }
+
+    int targetRow = down;
+    int left = 0, right = n - 1;
+    while (left <= right) {
+        int mid = (left + right) / 2;
+        if (matrix[targetRow][mid] == target) {
+            return true;
+        } else if (matrix[targetRow][mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return false;
+}

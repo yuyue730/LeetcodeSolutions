@@ -28,6 +28,7 @@ int main() {
     testObj->insert57Test();
     testObj->generateMatrix59Test();
     testObj->plusOne66Test();
+    testObj->searchMatrix74Test();
 
     return 0;
 }

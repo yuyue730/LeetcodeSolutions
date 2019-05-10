@@ -71,6 +71,9 @@ public:
     // 66. Plus One
     vector<int> plusOne66(vector<int>& digits);
 
+    // 74. Search a 2D Matrix
+    bool searchMatrix74(vector<vector<int>>& matrix, int target);
+
 private:
     // 4. Median of Two Sorted Arrays helper
     double findKthInTwoArray(

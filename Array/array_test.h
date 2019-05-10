@@ -67,6 +67,9 @@ public:
     // 66. Plus One Test
     void plusOne66Test();
 
+    // 74. Search a 2D Matrix Test
+    void searchMatrix74Test();
+
 private:
     ArrayImpl * implObj;
 };
