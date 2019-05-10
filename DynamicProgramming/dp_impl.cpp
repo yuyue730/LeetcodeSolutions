@@ -142,13 +142,5 @@ int DpImpl::minDistance72(string word1, string word2) {
         }
     }
 
-    cout << "\n";
-    for (int i = 0; i <= word1.size(); ++i) {
-        for (int j = 0; j <= word2.size(); ++j) {
-            cout << dp[i][j] << ", " ;
-        }
-        cout << "\n";
-    }
-
     return dp[word1.size()][word2.size()];
 }
