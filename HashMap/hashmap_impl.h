@@ -22,6 +22,9 @@ public:
 
     // 49. Group Anagrams
     vector<vector<string>> groupAnagrams49(vector<string>& strs);
+
+    // 76. Minimum Window Substring
+    string minWindow76(string s, string t);
 };
 
 #endif

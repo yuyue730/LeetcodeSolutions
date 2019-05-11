@@ -113,3 +113,46 @@ vector<vector<string>> HashMapImpl::groupAnagrams49(
 
     return result;
 }
+
+// 76. Minimum Window Substring
+string HashMapImpl::minWindow76(string s, string t)
+{
+    if (s.size() < t.size()) {
+        return "";
+    }
+
+    unordered_map<char, int> charFreqMap;
+    for (char c : t) {
+        charFreqMap[c]++;
+    }
+
+    int cnt = t.size(), left = 0;
+    string result = "";
+    int minWindowSize = INT_MAX;
+    for (int right = 0; right < s.size(); ++right) {
+        if (charFreqMap.find(s[right]) != charFreqMap.end()) {
+            charFreqMap[s[right]]--;
+            if (charFreqMap[s[right]] >= 0) {
+                cnt--;
+            }
+        }
+
+        while (cnt == 0) {
+            string curResult = s.substr(left, right - left + 1);
+            if (curResult.size() < minWindowSize) {
+                result = curResult;
+                minWindowSize = curResult.size();
+            }
+
+            if (charFreqMap.find(s[left]) != charFreqMap.end()) {
+                charFreqMap[s[left]]++;
+                if (charFreqMap[s[left]] > 0) {
+                    cnt++;
+                }
+            }
+            left++;
+        }
+    }
+
+    return result;
+}

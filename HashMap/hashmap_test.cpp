@@ -65,3 +65,12 @@ void HashMapTest::groupAnagrams49Test() {
     cout << "\n";
     return;
 }
+
+// 76. Minimum Window Substring Test
+void HashMapTest::minWindow76Test() {
+    cout << "76. Minimum Window Substring test starts.\n";
+    string S = "ADOBECODEBANC", T = "ABC";
+    string result = implObj->minWindow76(S, T);
+    cout << "Minimum Window Substring is " << result << ".\n\n";
+    return;
+}

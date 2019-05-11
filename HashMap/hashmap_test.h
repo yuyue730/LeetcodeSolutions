@@ -22,6 +22,9 @@ public:
     // 49. Group Anagrams Test
     void groupAnagrams49Test();
 
+    // 76. Minimum Window Substring Test
+    void minWindow76Test();
+
 private:
     HashMapImpl* implObj;
 };

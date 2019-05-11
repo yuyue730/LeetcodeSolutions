@@ -13,6 +13,7 @@ int main() {
     testObj->findSubstring30Test();
     testObj->isValidSudoku36Test();
     testObj->groupAnagrams49Test();
+    testObj->minWindow76Test();
 
     return 0;
 }
