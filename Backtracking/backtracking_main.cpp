@@ -16,6 +16,7 @@ int main() {
     testObj->permute46Test();
     testObj->solveNQueens51Test();
     testObj->subsets78Test();
+    testObj->exist79Test();
 
     return 0;
 }

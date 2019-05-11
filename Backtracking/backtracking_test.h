@@ -31,6 +31,9 @@ public:
     // 78. Subsets Test
     void subsets78Test();
 
+    // 79. Word Search Test
+    void exist79Test();
+
 private:
     BacktrackingImpl * implObj;
 };

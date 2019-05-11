@@ -127,7 +127,8 @@ bool BacktrackingImpl::isValidSudokuPerUnit(
             int curRow = (iRow / 3) * 3 + m;
             int curCol = (iCol / 3) * 3 + n;
 
-            if ((curRow != iRow || curCol != iCol) && board[curRow][curCol] == board[iRow][iCol]) {
+            if ((curRow != iRow || curCol != iCol) 
+                && board[curRow][curCol] == board[iRow][iCol]) {
                 return false;
             }
         }
@@ -137,17 +138,20 @@ bool BacktrackingImpl::isValidSudokuPerUnit(
 }
 
 // 39. Combination Sum
-vector<vector<int>> BacktrackingImpl::combinationSum39(vector<int>& candidates, int target)
-{
+vector<vector<int>> BacktrackingImpl::combinationSum39(
+    vector<int>& candidates, 
+    int target
+) {
     vector<vector<int>> allRes;
     vector<int> curRes;
     combinationSumRec(0, candidates, curRes, allRes, target);
     return allRes;
 }
 
-void BacktrackingImpl::combinationSumRec(int startIdx, const vector<int> & candidate, 
-    vector<int> & curRes, vector<vector<int>> & allRes, int remain)
-{
+void BacktrackingImpl::combinationSumRec(
+    int startIdx, const vector<int> & candidate, 
+    vector<int> & curRes, vector<vector<int>> & allRes, int remain
+) {
     if (remain < 0) {
         return;
     }
@@ -277,3 +281,51 @@ void BacktrackingImpl::subsets78Rec(
         curRes.pop_back();
     }
 }
+
+// 79. Word Search
+bool BacktrackingImpl::exist79(vector<vector<char>>& board, string word)
+{
+    // Corner pressure test case: Recursion should be avoided 
+    // if (word.size() > 100) {
+    //     return true;
+    // }
+        
+    for (int i = 0; i < board.size(); ++i) {
+        for (int j = 0; j < board[0].size(); ++j) {
+            if (exist79Rec(board, word, 0, i, j)) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+bool BacktrackingImpl::exist79Rec(
+    vector<vector<char>>& board,
+    const string word,
+    const int curWordPos,
+    const int curX,
+    const int curY
+) {
+    if (curWordPos == word.size()) {
+        return true;
+    }
+
+    if (curX < 0 || curX >= board.size() 
+        || curY < 0 || curY >= board[0].size()
+        || board[curX][curY] == '#'
+        || board[curX][curY] != word[curWordPos]) {
+        return false;
+    }
+    
+    char curBoardChar = board[curX][curY];
+    board[curX][curY] = '#';
+    bool down = exist79Rec(board, word, curWordPos + 1, curX + 1, curY);
+    bool up = exist79Rec(board, word, curWordPos + 1, curX - 1, curY);
+    bool right = exist79Rec(board, word, curWordPos + 1, curX, curY + 1);
+    bool left = exist79Rec(board, word, curWordPos + 1, curX, curY - 1);
+    board[curX][curY] = curBoardChar;
+
+    return (down || up || right || left);
+} 

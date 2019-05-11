@@ -29,6 +29,9 @@ public:
 
     // 78. Subsets
     vector<vector<int>> subsets78(vector<int>& nums);
+    
+    // 79. Word Search
+    bool exist79(vector<vector<char>>& board, string word);
 
 private:
     // 17. Letter Combinations of a Phone Number helper
@@ -79,6 +82,15 @@ private:
         vector<vector<int>> & allRes,
         const int curPos,
         const vector<int> & nums
+    );
+
+    // 79. Word Search helpers
+    bool exist79Rec(
+        vector<vector<char>>& board,
+        const string word,
+        const int curWordPos,
+        const int curX,
+        const int curY
     );
 };
 

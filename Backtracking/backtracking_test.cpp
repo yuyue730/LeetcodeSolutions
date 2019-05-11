@@ -115,7 +115,7 @@ void BacktrackingTest::solveNQueens51Test() {
 
 // 78. Subsets Test
 void BacktrackingTest::subsets78Test() {
-    cout << "78. Subsets test.\n";
+    cout << "78. Subsets test starts.\n";
     vector<int> nums = {1, 2, 3};
     vector<vector<int>> result = implObj->subsets78(nums);
     cout << "All subsets [\n";
@@ -127,4 +127,19 @@ void BacktrackingTest::subsets78Test() {
         cout << "]\n";
     }
     cout << "]\n\n";
+}
+
+// 79. Word Search Test
+void BacktrackingTest::exist79Test() {
+    cout << "79. Word Search test starts.\n";
+    vector<vector<char>> board = {
+        {'A', 'B', 'C', 'E'},
+        {'S', 'F', 'C', 'S'},
+        {'A', 'D', 'E', 'E'}
+    };
+    cout << "Find 'ABCCED' is [" 
+        << (implObj->exist79(board, "ABCCED") ? "True" : "False") <<"]\n";
+    cout << "Find 'ABCB' is [" 
+        << (implObj->exist79(board, "ABCB") ? "True" : "False") << "]\n";
+    return;
 }
