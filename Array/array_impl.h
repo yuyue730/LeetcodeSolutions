@@ -74,6 +74,9 @@ public:
     // 74. Search a 2D Matrix
     bool searchMatrix74(vector<vector<int>>& matrix, int target);
 
+    // 75. Sort Colors
+    void sortColors75(vector<int>& nums);
+
 private:
     // 4. Median of Two Sorted Arrays helper
     double findKthInTwoArray(

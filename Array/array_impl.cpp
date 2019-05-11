@@ -589,3 +589,29 @@ bool ArrayImpl::searchMatrix74(vector<vector<int>>& matrix, int target)
 
     return false;
 }
+
+// 75. Sort Colors
+void ArrayImpl::sortColors75(vector<int>& nums)
+{
+    if (nums.size() == 0) {
+        return;
+    }
+
+    int left = 0, right = nums.size() - 1;
+    int cur = 0;
+
+    while (cur <= right) {
+        if (nums[cur] == 0) {
+            swap(nums[cur], nums[left]);
+            ++left;
+            ++cur;
+        } else if (nums[cur] == 1) {
+            ++cur;
+        } else { // nums[cur] == 2
+            swap(nums[cur], nums[right]);
+            --right;
+        }
+    }
+
+    return;
+}

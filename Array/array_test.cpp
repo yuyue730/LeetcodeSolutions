@@ -290,3 +290,17 @@ void ArrayTest::searchMatrix74Test() {
         << "].\n\n";
     return;
 }
+
+// 75. Sort Colors Test
+void ArrayTest::sortColors75Test() {
+    cout << "75. Sort Colors test starts.\n";
+    vector<int> nums = {2, 0, 2, 1, 1, 0};
+    implObj->sortColors75(nums);
+    
+    cout << "Sorted array is [";
+    for (int i = 0; i < nums.size(); ++i) {
+        cout << nums[i] << ((i == nums.size() - 1) ? "" : ", ");
+    }
+    cout << "]\n\n";
+    return;
+}

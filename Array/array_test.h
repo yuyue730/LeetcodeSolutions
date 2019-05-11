@@ -70,6 +70,9 @@ public:
     // 74. Search a 2D Matrix Test
     void searchMatrix74Test();
 
+    // 75. Sort Colors Test
+    void sortColors75Test();
+
 private:
     ArrayImpl * implObj;
 };
