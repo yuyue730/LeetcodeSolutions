@@ -14,6 +14,7 @@ int main() {
     testObj->mergeKLists23Test();
     testObj->swapPairs24Test();
     testObj->reverseKGroup25Test();
+    testObj->deleteDuplicates83Test();
 
     return 0;
 }

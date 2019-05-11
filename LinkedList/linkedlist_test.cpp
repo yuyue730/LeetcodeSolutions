@@ -141,3 +141,24 @@ void LinkedListTest::reverseKGroup25Test() {
 
     cout << "]\n\n";
 }
+
+// 83. Remove Duplicates from Sorted List Test
+void LinkedListTest::deleteDuplicates83Test()
+{
+    cout << "83. Remove Duplicates from Sorted List test starts.\n";
+    ListNode *head = new ListNode(1);
+    ListNode *cur = head;
+    cur->next = new ListNode(1); cur = cur->next;
+    cur->next = new ListNode(2); cur = cur->next;
+    cur->next = new ListNode(3); cur = cur->next;
+    cur->next = new ListNode(3);
+
+    ListNode *result = implObj->deleteDuplicates83(head);
+    cout << "Result LinkedList [";
+    while (result) {
+        cout << result->val << ((result->next == NULL) ? "" : "->");
+        result = result->next;
+    }
+    cout << "]\n\n";
+    return;
+}

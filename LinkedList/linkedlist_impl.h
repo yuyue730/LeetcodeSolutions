@@ -31,6 +31,9 @@ public:
     // 25. Reverse Nodes in k-Group
     ListNode* reverseKGroup25(ListNode* head, int k);
 
+    // 83. Remove Duplicates from Sorted List
+    ListNode* deleteDuplicates83(ListNode* head);
+
 private:
     // 25. Reverse Nodes in k-Group helper
     ListNode* reverseOneGroup(ListNode* prevEnd, ListNode* nextStart);

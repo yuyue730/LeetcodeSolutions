@@ -152,7 +152,9 @@ ListNode* LinkedListImpl::reverseKGroup25(ListNode* head, int k) {
     return dummy->next;
 }
 
-ListNode* LinkedListImpl::reverseOneGroup(ListNode* prevEnd, ListNode* nextStart) {
+ListNode* LinkedListImpl::reverseOneGroup(
+    ListNode* prevEnd, ListNode* nextStart
+) {
     ListNode* first = prevEnd->next;
     ListNode* cur = first->next;
 
@@ -164,4 +166,27 @@ ListNode* LinkedListImpl::reverseOneGroup(ListNode* prevEnd, ListNode* nextStart
     }
 
     return first;
+}
+
+// 83. Remove Duplicates from Sorted List
+ListNode* LinkedListImpl::deleteDuplicates83(ListNode * head)
+{
+    if (head == NULL) {
+        return head;
+    }
+
+    ListNode *pre = head, *cur = head->next;
+    while (cur != NULL) {
+        if (cur->val == pre->val) {
+            pre->next = cur->next;
+            ListNode *tmp = cur;
+            cur = cur->next;
+            delete tmp;
+        } else {
+            pre = cur;
+            cur = cur->next;
+        }
+    }
+
+    return head;
 }

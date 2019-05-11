@@ -28,6 +28,9 @@ public:
     // 25. Reverse Nodes in k-Group Test
     void reverseKGroup25Test();
 
+    // 83. Remove Duplicates from Sorted List Test
+    void deleteDuplicates83Test();
+
 private:
     LinkedListImpl * implObj;
 };
