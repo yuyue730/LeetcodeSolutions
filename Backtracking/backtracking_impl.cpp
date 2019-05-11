@@ -285,7 +285,8 @@ void BacktrackingImpl::subsets78Rec(
 // 79. Word Search
 bool BacktrackingImpl::exist79(vector<vector<char>>& board, string word)
 {
-    // Corner pressure test case: Recursion should be avoided 
+    // Corner pressure test case: Recursion should be avoided
+    // Iteration solution should be used in order to pass these cases 
     // if (word.size() > 100) {
     //     return true;
     // }
