@@ -255,3 +255,25 @@ bool BacktrackingImpl::isCurrentBoardValid(
 
     return true;
 }
+
+// 78. Subsets
+vector<vector<int>> BacktrackingImpl::subsets78(vector<int>& nums) {
+    vector<vector<int>> allResult;
+    vector<int> curResult;
+    subsets78Rec(curResult, allResult, 0, nums);
+    return allResult;
+}
+
+void BacktrackingImpl::subsets78Rec(
+    vector<int> & curRes,
+    vector<vector<int>> & allRes,
+    const int curPos,
+    const vector<int> & nums
+) {
+    allRes.push_back(curRes);
+    for (int i = curPos; i < nums.size(); ++i) {
+        curRes.push_back(nums[i]);
+        subsets78Rec(curRes, allRes, i + 1, nums);
+        curRes.pop_back();
+    }
+}

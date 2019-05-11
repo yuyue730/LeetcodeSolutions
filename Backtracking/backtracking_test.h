@@ -28,6 +28,9 @@ public:
     // 51. N-Queens Test
     void solveNQueens51Test();
 
+    // 78. Subsets Test
+    void subsets78Test();
+
 private:
     BacktrackingImpl * implObj;
 };

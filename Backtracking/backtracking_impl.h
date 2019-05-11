@@ -27,6 +27,9 @@ public:
     // 51. N-Queens
     vector<vector<string>> solveNQueens51(int n);
 
+    // 78. Subsets
+    vector<vector<int>> subsets78(vector<int>& nums);
+
 private:
     // 17. Letter Combinations of a Phone Number helper
     void generateLetterCombRec(
@@ -68,6 +71,14 @@ private:
         const int curRow,
         const int curCol,
         const int nSize
+    );
+
+    // 78. Subsets helpers
+    void subsets78Rec(
+        vector<int> & curRes,
+        vector<vector<int>> & allRes,
+        const int curPos,
+        const vector<int> & nums
     );
 };
 

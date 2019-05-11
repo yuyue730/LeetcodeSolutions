@@ -112,3 +112,19 @@ void BacktrackingTest::solveNQueens51Test() {
     cout << "\n";
     return;
 }
+
+// 78. Subsets Test
+void BacktrackingTest::subsets78Test() {
+    cout << "78. Subsets test.\n";
+    vector<int> nums = {1, 2, 3};
+    vector<vector<int>> result = implObj->subsets78(nums);
+    cout << "All subsets [\n";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "  [";
+        for (int j = 0; j < result[i].size(); ++j) {
+            cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
+        }
+        cout << "]\n";
+    }
+    cout << "]\n\n";
+}
