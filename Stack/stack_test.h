@@ -16,6 +16,9 @@ public:
     // 42. Trapping Rain Water Test
     void trap42Test();
 
+    // 84. Largest Rectangle in Histogram Test
+    void largestRectangleArea84Test();
+
 private:
     StackImpl * implObj;
 };

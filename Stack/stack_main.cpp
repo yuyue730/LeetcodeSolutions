@@ -12,6 +12,7 @@ int main() {
     testObj->isValid20Test();
     testObj->longestValidParentheses32Test();
     testObj->trap42Test();
+    testObj->largestRectangleArea84Test();
 
     return 0;
 }

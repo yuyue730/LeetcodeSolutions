@@ -31,3 +31,12 @@ void StackTest::trap42Test() {
     cout << "[0,1,0,2,1,0,1,3,2,1,2,1] will contain " << implObj->trap42(height) << " units of water.\n\n";
     return;
 }
+
+// 84. Largest Rectangle in Histogram Test
+void StackTest::largestRectangleArea84Test() {
+    cout << "84. Largest Rectangle in Histogram test starts.\n";
+    vector<int> heights = {2};//{2, 1, 5, 6, 2, 3};
+    cout << "Largest rectangle is [" << implObj->largestRectangleArea84(heights)
+        << "].\n\n";
+    return;
+}

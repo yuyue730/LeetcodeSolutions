@@ -92,7 +92,8 @@ int StackImpl::trap42(vector<int>& height) {
                 idxStk.pop();
             }
 
-            if (!idxStk.empty()) { // Meaning we can not remove current top index since it is taller
+            if (!idxStk.empty()) { 
+                // Meaning we can not remove current top index since it is taller
                 result += (i - idxStk.top() - 1) * (height[i] - curButtom);
             }
         }
@@ -100,5 +101,26 @@ int StackImpl::trap42(vector<int>& height) {
         idxStk.push(i);
     }
 
+    return result;
+}
+
+// 84. Largest Rectangle in Histogram
+int StackImpl::largestRectangleArea84(vector<int>& heights)
+{
+    if (heights.empty()) {
+        return 0;
+    }
+
+    stack<int> idxStack;
+    heights.push_back(0);
+    int result = 0;
+    for (int i = 0; i < heights.size(); ++i) {
+        while (!idxStack.empty() && heights[i] < heights[idxStack.top()]) {
+            int curIdx = idxStack.top(); idxStack.pop();
+            int curRes = (idxStack.empty() ? i : (i - idxStack.top() - 1)) * heights[curIdx];
+            result = max(result, curRes);
+        }
+        idxStack.push(i);
+    }
     return result;
 }

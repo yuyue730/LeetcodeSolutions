@@ -17,6 +17,9 @@ public:
 
     // 42. Trapping Rain Water
     int trap42(vector<int>& height);
+
+    // 84. Largest Rectangle in Histogram
+    int largestRectangleArea84(vector<int>& heights);
 };
 
 #endif
