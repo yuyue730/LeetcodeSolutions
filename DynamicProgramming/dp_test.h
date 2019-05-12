@@ -27,6 +27,9 @@ public:
     // 72. Edit Distance Test
     void minDistance72Test();
 
+    // 91. Decode Ways Test
+    void numDecodings91Test();
+
 private:
     DpImpl * implObj;
 };

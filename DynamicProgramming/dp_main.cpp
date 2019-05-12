@@ -14,6 +14,7 @@ int main() {
     testObj->minPathSum64Test();
     testObj->climbStairs70Test();
     testObj->minDistance72Test();
+    testObj->numDecodings91Test();
 
     return 0;
 }

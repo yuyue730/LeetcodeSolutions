@@ -144,3 +144,24 @@ int DpImpl::minDistance72(string word1, string word2) {
 
     return dp[word1.size()][word2.size()];
 }
+
+// 91. Decode Ways
+int DpImpl::numDecodings91(string s) {
+    if (s[0] == '0') {
+        return 0;
+    } else if (s.size() == 1) {
+        return 1;
+    }
+    
+    vector<long long> dp(s.size() + 1, 0);
+    dp[0] = 1;
+
+    for (int i = 1; i <= s.size(); ++i) {
+        int numOneStepBack = (s[i - 1] == '0') ? 0 : dp[i - 1];
+        int numTwoStepBack = (
+            i > 1 && (s[i - 2] == '1' || (s[i - 2] == '2' && s[i - 1] <= '6'))
+            ) ? dp[i - 2] : 0;
+        dp[i] = numOneStepBack + numTwoStepBack;
+    }
+    return static_cast<int>(dp[s.size()]);
+}

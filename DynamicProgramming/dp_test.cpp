@@ -56,3 +56,10 @@ void DpTest::minDistance72Test() {
     cout << "'horse' and 'ros' will have " << implObj->minDistance72("horse", "ros") << " steps.\n\n";
     return;
 }
+
+// 91. Decode Ways Test
+void DpTest::numDecodings91Test() {
+    cout << "91. Decode Ways test starts.\n";
+    cout << "226 will be decoded into [" << implObj->numDecodings91("12") << "].\n\n";
+    return;
+}

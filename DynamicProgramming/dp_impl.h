@@ -27,6 +27,9 @@ public:
 
     // 72. Edit Distance
     int minDistance72(string word1, string word2);
+
+    // 91. Decode Ways
+    int numDecodings91(string s);
 };
 
 #endif
