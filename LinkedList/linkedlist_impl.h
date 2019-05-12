@@ -34,6 +34,9 @@ public:
     // 83. Remove Duplicates from Sorted List
     ListNode* deleteDuplicates83(ListNode* head);
 
+    // 86. Partition List
+    ListNode* partition86(ListNode* head, int x);
+
 private:
     // 25. Reverse Nodes in k-Group helper
     ListNode* reverseOneGroup(ListNode* prevEnd, ListNode* nextStart);

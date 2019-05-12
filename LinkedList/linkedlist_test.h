@@ -31,6 +31,9 @@ public:
     // 83. Remove Duplicates from Sorted List Test
     void deleteDuplicates83Test();
 
+    // 86. Partition List Test
+    void partition86Test();
+
 private:
     LinkedListImpl * implObj;
 };

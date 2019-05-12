@@ -190,3 +190,34 @@ ListNode* LinkedListImpl::deleteDuplicates83(ListNode * head)
 
     return head;
 }
+
+// 86. Partition List
+ListNode* LinkedListImpl::partition86(ListNode* head, int x)
+{
+    if (head == NULL) {
+        return head;
+    }
+
+    ListNode *dummy = new ListNode(-1);
+    dummy->next = head;
+    ListNode *fast = dummy, *slow = dummy;
+
+    while (slow->next && slow->next->val < x) {
+        slow = slow->next;
+    }
+    fast = slow;
+
+    while (fast->next != NULL) {
+        if (fast->next->val < x) {
+            ListNode *tmp = fast->next;
+            fast->next = fast->next->next;
+            tmp->next = slow->next;
+            slow->next = tmp;
+            slow = slow->next;
+        } else {
+            fast = fast->next;
+        }
+    }
+
+    return dummy->next;
+}

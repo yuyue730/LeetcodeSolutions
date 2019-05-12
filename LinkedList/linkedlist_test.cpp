@@ -162,3 +162,25 @@ void LinkedListTest::deleteDuplicates83Test()
     cout << "]\n\n";
     return;
 }
+
+// 86. Partition List Test
+void LinkedListTest::partition86Test() {
+    cout << "86. Partition List test starts.\n";
+    ListNode* head = new ListNode(1);
+    ListNode *cur = head;
+    cur->next = new ListNode(1); cur = cur->next;
+    cur->next = new ListNode(4); cur = cur->next;
+    cur->next = new ListNode(3); cur = cur->next;
+    cur->next = new ListNode(2); cur = cur->next;
+    cur->next = new ListNode(5); cur = cur->next;
+    cur->next = new ListNode(2);
+
+    ListNode *result = implObj->partition86(head, 3);
+    cout << "Result LinkedList [";
+    while (result) {
+        cout << result->val << ((result->next == NULL) ? "" : "->");
+        result = result->next;
+    }
+    cout << "]\n\n";
+    return;
+}
