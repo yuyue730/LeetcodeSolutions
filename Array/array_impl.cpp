@@ -615,3 +615,29 @@ void ArrayImpl::sortColors75(vector<int>& nums)
 
     return;
 }
+
+// 88. Merge Sorted Array
+void ArrayImpl::merge88(vector<int>& nums1, int m, vector<int>& nums2, int n)
+{
+    int mergeIdx = m + n - 1;
+    int i = m - 1, j = n - 1;
+    while (i >= 0 && j >= 0) {
+        if (nums1[i] > nums2[j]) {
+            nums1[mergeIdx] = nums1[i];
+            i--;
+        } else {
+            nums1[mergeIdx] = nums2[j];
+            j--;
+        }
+
+        mergeIdx--;
+    }
+
+    while (j >= 0) {
+        nums1[mergeIdx] = nums2[j];
+        j--;
+        mergeIdx--;
+    }
+
+    return;
+}

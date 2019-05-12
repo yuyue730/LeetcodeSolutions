@@ -77,6 +77,9 @@ public:
     // 75. Sort Colors
     void sortColors75(vector<int>& nums);
 
+    // 88. Merge Sorted Array
+    void merge88(vector<int>& nums1, int m, vector<int>& nums2, int n);
+
 private:
     // 4. Median of Two Sorted Arrays helper
     double findKthInTwoArray(
