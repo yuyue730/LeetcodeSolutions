@@ -35,8 +35,23 @@ void StackTest::trap42Test() {
 // 84. Largest Rectangle in Histogram Test
 void StackTest::largestRectangleArea84Test() {
     cout << "84. Largest Rectangle in Histogram test starts.\n";
-    vector<int> heights = {2};//{2, 1, 5, 6, 2, 3};
+    vector<int> heights = {2, 1, 5, 6, 2, 3};
     cout << "Largest rectangle is [" << implObj->largestRectangleArea84(heights)
         << "].\n\n";
+    return;
+}
+
+// 85. Maximal Rectangle Test
+void StackTest::maximalRectangle85Test() {
+    cout << "85. Maximal Rectangle test starts.\n";
+    vector<vector<char>> matrix = {
+        {'1', '0', '1', '0', '0'},
+        {'1', '0', '1', '1', '1'},
+        {'1', '1', '1', '1', '1'},
+        {'1', '0', '0', '1', '0'}
+    };
+
+    cout << "Largest rectangle is [" << implObj->maximalRectangle85(matrix) 
+        << "]\n";
     return;
 }

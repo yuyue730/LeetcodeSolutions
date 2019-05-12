@@ -20,6 +20,9 @@ public:
 
     // 84. Largest Rectangle in Histogram
     int largestRectangleArea84(vector<int>& heights);
+
+    // 85. Maximal Rectangle
+    int maximalRectangle85(vector<vector<char>>& matrix);
 };
 
 #endif

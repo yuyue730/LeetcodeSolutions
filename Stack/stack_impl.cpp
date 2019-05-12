@@ -124,3 +124,25 @@ int StackImpl::largestRectangleArea84(vector<int>& heights)
     }
     return result;
 }
+
+// 85. Maximal Rectangle
+int StackImpl::maximalRectangle85(vector<vector<char>>& matrix)
+{
+    int result = 0;
+    for (int i = 0; i < matrix.size(); ++i) {
+        vector<int> heights(matrix[i].size(), 0);
+        for (int j = 0; j < matrix[i].size(); ++j) {
+            int curHeight = 0, curX = i;
+            while (curX < matrix.size() && matrix[curX][j] == '1') {
+                ++curHeight;
+                ++curX;
+            }
+            heights[j] = curHeight;
+        }
+
+        int curRowResult = largestRectangleArea84(heights);
+        result = max(curRowResult, result);
+    }
+
+    return result;
+}

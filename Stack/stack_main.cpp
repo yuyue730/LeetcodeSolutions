@@ -13,6 +13,7 @@ int main() {
     testObj->longestValidParentheses32Test();
     testObj->trap42Test();
     testObj->largestRectangleArea84Test();
+    testObj->maximalRectangle85Test();
 
     return 0;
 }

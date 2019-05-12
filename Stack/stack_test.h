@@ -19,6 +19,9 @@ public:
     // 84. Largest Rectangle in Histogram Test
     void largestRectangleArea84Test();
 
+    // 85. Maximal Rectangle Test
+    void maximalRectangle85Test();
+
 private:
     StackImpl * implObj;
 };
