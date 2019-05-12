@@ -16,6 +16,7 @@ int main() {
     testObj->reverseKGroup25Test();
     testObj->deleteDuplicates83Test();
     testObj->partition86Test();
+    testObj->reverseBetween92Test();
 
     return 0;
 }

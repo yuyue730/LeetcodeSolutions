@@ -184,3 +184,23 @@ void LinkedListTest::partition86Test() {
     cout << "]\n\n";
     return;
 }
+
+// 92. Reverse Linked List II Test
+void LinkedListTest::reverseBetween92Test() {
+    cout << "92. Reverse Linked List II test starts.\n";
+    ListNode* head = new ListNode(1);
+    ListNode *cur = head;
+    cur->next = new ListNode(2); cur = cur->next;
+    cur->next = new ListNode(3); cur = cur->next;
+    cur->next = new ListNode(4); cur = cur->next;
+    cur->next = new ListNode(5);
+
+    ListNode *result = implObj->reverseBetween92(head, 2, 4);
+    cout << "Reversed LinkedList [";
+    while (result) {
+        cout << result->val << ((result->next == NULL) ? "" : "->");
+        result = result->next;
+    }
+    cout << "]\n\n";
+    return;
+}

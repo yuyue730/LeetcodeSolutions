@@ -34,6 +34,9 @@ public:
     // 86. Partition List Test
     void partition86Test();
 
+    // 92. Reverse Linked List II Test
+    void reverseBetween92Test();
+
 private:
     LinkedListImpl * implObj;
 };

@@ -221,3 +221,25 @@ ListNode* LinkedListImpl::partition86(ListNode* head, int x)
 
     return dummy->next;
 }
+
+// 92. Reverse Linked List II
+ListNode* LinkedListImpl::reverseBetween92(ListNode* head, int m, int n)
+{
+    ListNode *dummy = new ListNode(-1);
+    dummy->next = head;
+    ListNode *pre = dummy;
+
+    for (int i = 1; i < m; ++i) {
+        pre = pre->next;
+    }
+
+    ListNode *cur = pre->next;
+    for (int i = m; i < n; ++i) {
+        ListNode *tmp = cur->next;
+        cur->next = tmp->next;
+        tmp->next = pre->next;
+        pre->next = tmp;
+    }
+
+    return dummy->next;
+}

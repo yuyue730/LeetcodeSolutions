@@ -37,6 +37,9 @@ public:
     // 86. Partition List
     ListNode* partition86(ListNode* head, int x);
 
+    // 92. Reverse Linked List II
+    ListNode* reverseBetween92(ListNode* head, int m, int n);
+
 private:
     // 25. Reverse Nodes in k-Group helper
     ListNode* reverseOneGroup(ListNode* prevEnd, ListNode* nextStart);
