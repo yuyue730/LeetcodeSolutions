@@ -330,3 +330,57 @@ bool BacktrackingImpl::exist79Rec(
 
     return (down || up || right || left);
 } 
+
+// 93. Restore IP Addresses
+vector<string> BacktrackingImpl::restoreIpAddresses93(string s)
+{
+    vector<string> results;
+    if (s.size() < 4) {
+        return results;
+    }
+
+    vector<string> curRes;
+    restoreIpAddresses93Rec(results, curRes, 0, s);
+    return results;
+}
+
+void BacktrackingImpl::restoreIpAddresses93Rec(
+    vector<string> & allResults,
+    vector<string> & curResult,
+    const int curPos,
+    const string & ipStr
+) {
+    if (curResult.size() == 4) {
+        if (curPos == ipStr.size()) {
+            string curResStr = "";
+            for (int i = 0; i < curResult.size(); ++i) {
+                curResStr += curResult[i] + (i == 3 ? "" : ".");
+            }
+            allResults.push_back(curResStr);
+        }
+        return;
+    }
+
+    for (int i = curPos; i < curPos + 4 && i < ipStr.size(); ++i) {
+        string curNumStr = ipStr.substr(curPos, i - curPos + 1);
+        if (isValidIpNumStr(curNumStr)) {
+            curResult.push_back(curNumStr);
+            restoreIpAddresses93Rec(allResults, curResult, i + 1, ipStr);
+            curResult.pop_back();
+        }
+    }
+}
+
+bool BacktrackingImpl::isValidIpNumStr(string & ipNumStr)
+{
+    if (ipNumStr.empty() || ipNumStr.size() > 3) {
+        return false;
+    }
+    if (ipNumStr[0] == '0' && ipNumStr.size() > 1) {
+        return false;
+    }
+    if (stoi(ipNumStr) > 255) {
+        return false;
+    }
+    return true;
+}

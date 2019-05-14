@@ -17,6 +17,7 @@ int main() {
     testObj->solveNQueens51Test();
     testObj->subsets78Test();
     testObj->exist79Test();
+    testObj->restoreIpAddresses93Test();
 
     return 0;
 }

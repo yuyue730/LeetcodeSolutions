@@ -34,6 +34,9 @@ public:
     // 79. Word Search Test
     void exist79Test();
 
+    // 93. Restore IP Addresses Test
+    void restoreIpAddresses93Test();
+
 private:
     BacktrackingImpl * implObj;
 };

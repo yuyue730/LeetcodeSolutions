@@ -33,6 +33,9 @@ public:
     // 79. Word Search
     bool exist79(vector<vector<char>>& board, string word);
 
+    // 93. Restore IP Addresses
+    vector<string> restoreIpAddresses93(string s);
+
 private:
     // 17. Letter Combinations of a Phone Number helper
     void generateLetterCombRec(
@@ -41,7 +44,10 @@ private:
     );
 
     // 22. Generate Parentheses helper
-    void generateParenthesisRec(int left, int right, string curStr, vector<string> & result);
+    void generateParenthesisRec(
+        int left, int right, 
+        string curStr, vector<string> & result
+    );
 
     // 37. Sudoku Solver helper
     bool solveSudokuRec(vector<vector<char>>& board, int iRow, int iCol);
@@ -92,6 +98,16 @@ private:
         const int curX,
         const int curY
     );
+
+    // 93. Restore IP Addresses helper
+    void restoreIpAddresses93Rec(
+        vector<string> & allResults,
+        vector<string> & curResult,
+        const int curPos,
+        const string & ipStr
+    );
+
+    bool isValidIpNumStr(string & ipNumStr);
 };
 
 #endif

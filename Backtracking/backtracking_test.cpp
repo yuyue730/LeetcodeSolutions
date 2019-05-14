@@ -143,3 +143,16 @@ void BacktrackingTest::exist79Test() {
         << (implObj->exist79(board, "ABCB") ? "True" : "False") << "]\n";
     return;
 }
+
+// 93. Restore IP Addresses Test
+void BacktrackingTest::restoreIpAddresses93Test() {
+    cout << "Restore IP Addresses test starts.\n";
+    string s = "25525511135";
+    vector<string> allIps = implObj->restoreIpAddresses93(s);
+    cout << "All Ips [";
+    for (int i = 0; i < allIps.size(); ++i) {
+        cout << allIps[i] << ((i == allIps.size() - 1) ? "" : ", "); 
+    }
+    cout << "]\n\n";
+    return;
+}
