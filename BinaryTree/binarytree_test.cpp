@@ -25,3 +25,15 @@ void BinaryTreeTest::inorderTraversal94Test() {
     cout << "]\n\n";
     return;
 }
+
+// 95. Unique Binary Search Trees II Test
+void BinaryTreeTest::generateTrees95Test() {
+    cout << "95. Unique Binary Search Trees II test.\n";
+    vector<TreeNode *> result = implObj->generateTrees95(3);
+    cout << "Can generate " << result.size() << " trees.\n";
+    for (int i = 0; i < result.size(); ++i) {
+        TreeNode * cur = result[i];
+        cout << "i = " << i << "; Root value " << cur->val << "\n";
+    }
+    return;
+}

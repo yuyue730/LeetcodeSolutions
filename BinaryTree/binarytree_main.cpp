@@ -9,6 +9,7 @@ int main() {
     cout << "\nTest for problems starts.\n";
 
     testObj->inorderTraversal94Test();
+    testObj->generateTrees95Test();
 
     return 0;
 }

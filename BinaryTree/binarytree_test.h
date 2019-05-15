@@ -12,6 +12,9 @@ public:
 
     // 94. Binary Tree Inorder Traversal Test
     void inorderTraversal94Test();
+
+    // 95. Unique Binary Search Trees II Test
+    void generateTrees95Test();
     
 private:
     BinaryTreeImpl * implObj;
