@@ -15,6 +15,7 @@ int main() {
     testObj->climbStairs70Test();
     testObj->minDistance72Test();
     testObj->numDecodings91Test();
+    testObj->numTrees96Test();
 
     return 0;
 }

@@ -29,7 +29,8 @@ void BinaryTreeImpl::inorderTraversal94DFS(
     }
 }
 
-// 95. Unique Binary Search Trees II
+// 95. Unique Binary Search Trees II 
+// (Unique Binary Search Trees is a Dynamic Programming problem)
 vector<TreeNode *> BinaryTreeImpl::generateTrees95(int n) {
     vector<TreeNode *> result;
     if (n == 0) {

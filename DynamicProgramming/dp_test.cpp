@@ -63,3 +63,11 @@ void DpTest::numDecodings91Test() {
     cout << "226 will be decoded into [" << implObj->numDecodings91("12") << "].\n\n";
     return;
 }
+
+// 96. Unique Binary Search Trees Test
+void DpTest::numTrees96Test() {
+    cout << "96. Unique Binary Search Trees test starts.\n";
+    cout << "4 will generate [" << implObj->numTrees96(4) << "]\n";
+    cout << "5 will generate [" << implObj->numTrees96(5) << "]\n\n";
+    return;
+}

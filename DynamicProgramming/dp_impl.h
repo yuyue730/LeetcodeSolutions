@@ -30,6 +30,9 @@ public:
 
     // 91. Decode Ways
     int numDecodings91(string s);
+
+    // 96. Unique Binary Search Trees
+    int numTrees96(int n);
 };
 
 #endif
