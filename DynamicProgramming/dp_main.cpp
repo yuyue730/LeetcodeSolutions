@@ -16,6 +16,7 @@ int main() {
     testObj->minDistance72Test();
     testObj->numDecodings91Test();
     testObj->numTrees96Test();
+    testObj->isInterleave97Test();
 
     return 0;
 }

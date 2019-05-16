@@ -71,3 +71,12 @@ void DpTest::numTrees96Test() {
     cout << "5 will generate [" << implObj->numTrees96(5) << "]\n\n";
     return;
 }
+
+// 97. Interleaving String Test
+void DpTest::isInterleave97Test() {
+    cout << "97. Interleaving String test.\n";
+    string s1 = "a", s2 = "", s3 = "a";//s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac";
+    cout << "s1 and s2 can generage 3 [" << (implObj->isInterleave97(s1, s2, s3) ? "True" : "False")
+        << "].\n\n";
+    return; 
+}

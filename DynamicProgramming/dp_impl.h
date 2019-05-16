@@ -33,6 +33,9 @@ public:
 
     // 96. Unique Binary Search Trees
     int numTrees96(int n);
+
+    // 97. Interleaving String
+    bool isInterleave97(string s1, string s2, string s3);
 };
 
 #endif

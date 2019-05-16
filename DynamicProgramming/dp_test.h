@@ -33,6 +33,9 @@ public:
     // 96. Unique Binary Search Trees Test
     void numTrees96Test();
 
+    // 97. Interleaving String Test
+    void isInterleave97Test();
+
 private:
     DpImpl * implObj;
 };
