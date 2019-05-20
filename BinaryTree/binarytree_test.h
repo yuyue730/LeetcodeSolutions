@@ -15,6 +15,9 @@ public:
 
     // 95. Unique Binary Search Trees II Test
     void generateTrees95Test();
+
+    // 99. Recover Binary Search Tree Test
+    void recoverTree99Test();
     
 private:
     BinaryTreeImpl * implObj;

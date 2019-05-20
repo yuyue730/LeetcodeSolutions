@@ -22,12 +22,25 @@ public:
     // 95. Unique Binary Search Trees II
     vector<TreeNode*> generateTrees95(int n);
 
+    // 98. Validate Binary Search Tree
+    
+
+    // 99. Recover Binary Search Tree
+    void recoverTree99(TreeNode* root);
+
 private:
     // 94. Binary Tree Inorder Traversal helper
     void inorderTraversal94DFS(TreeNode *curNode, vector<int> & result);
 
     // 95. Unique Binary Search Trees II helper
     vector<TreeNode*> generateTrees95Rec(int start, int end);
+
+    // 99. Recover Binary Search Tree helper
+    void recoverTree99InOrder(
+        TreeNode * cur, 
+        vector<TreeNode *> & allNodes, 
+        vector<int> & allValues
+    );
 };
 
 #endif

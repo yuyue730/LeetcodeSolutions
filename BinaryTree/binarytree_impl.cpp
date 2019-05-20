@@ -62,3 +62,42 @@ vector<TreeNode *> BinaryTreeImpl::generateTrees95Rec(int start, int end) {
     
     return result;
 }
+
+// 98. Validate Binary Search Tree
+void BinaryTreeImpl::recoverTree99(TreeNode* root)
+{
+    if (root == NULL) {
+        return;
+    }
+
+    vector<TreeNode *> allNodes;
+    vector<int> allValues;
+    recoverTree99InOrder(root, allNodes, allValues);
+
+    sort(allValues.begin(), allValues.end());
+    for (int i = 0; i < allValues.size(); ++i) {
+        allNodes[i]->val = allValues[i];
+    }
+    return;
+}
+
+void BinaryTreeImpl::recoverTree99InOrder(
+    TreeNode * cur, 
+    vector<TreeNode *> & allNodes, 
+    vector<int> & allValues
+) {
+    if (cur == NULL) {
+        return;
+    }
+
+    if (cur->left) {
+        recoverTree99InOrder(cur->left, allNodes, allValues);
+    }
+
+    allNodes.push_back(cur);
+    allValues.push_back(cur->val);
+
+    if (cur->right) {
+        recoverTree99InOrder(cur->right, allNodes, allValues);
+    } 
+}
