@@ -38,6 +38,25 @@ void BinaryTreeTest::generateTrees95Test() {
     return;
 }
 
+// 98. Validate Binary Search Tree Test
+void BinaryTreeTest::isValidBST98Test() {
+    cout << "98. Validate Binary Search Tree test starts.\n";
+
+    TreeNode * root = new TreeNode(5);
+    TreeNode * cur = root;
+    root->left = new TreeNode(3);
+    cur = root->left;
+    cur->left = new TreeNode(2); cur->right = new TreeNode(4);
+
+    cur = root;
+    cur->right = new TreeNode(6);
+    cur = cur->right; cur->right = new TreeNode(8);
+
+    cout << "Is Valid BST = [" << (implObj->isValidBST98(root) ? "True" : "False")
+        << "]\n\n";
+    return;
+}
+
 // 99. Recover Binary Search Tree Test
 void BinaryTreeTest::recoverTree99Test() {
     cout << "99. Recover Binary Search Tree test starts.\n";

@@ -16,6 +16,9 @@ public:
     // 95. Unique Binary Search Trees II Test
     void generateTrees95Test();
 
+    // 98. Validate Binary Search Tree Test
+    void isValidBST98Test();
+
     // 99. Recover Binary Search Tree Test
     void recoverTree99Test();
     

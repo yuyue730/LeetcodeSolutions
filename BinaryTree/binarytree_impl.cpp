@@ -64,6 +64,31 @@ vector<TreeNode *> BinaryTreeImpl::generateTrees95Rec(int start, int end) {
 }
 
 // 98. Validate Binary Search Tree
+bool BinaryTreeImpl::isValidBST98(TreeNode* root)
+{
+    if (root == NULL) {
+        return true;
+    }
+
+    return isValidBST98PreOrder(root, LONG_MIN, LONG_MAX);
+}
+
+bool BinaryTreeImpl::isValidBST98PreOrder(
+    TreeNode *cur, long minVal, long maxVal
+) {
+    if (cur == NULL) {
+        return true;
+    }
+
+    if (cur->val < minVal || cur->val > maxVal) {
+        return false;
+    }
+
+    return isValidBST98PreOrder(cur->left, minVal, cur->val)
+        && isValidBST98PreOrder(cur->right, cur->val, maxVal);
+}
+
+// 99. Validate Binary Search Tree
 void BinaryTreeImpl::recoverTree99(TreeNode* root)
 {
     if (root == NULL) {

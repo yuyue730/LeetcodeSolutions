@@ -10,6 +10,7 @@ int main() {
 
     testObj->inorderTraversal94Test();
     testObj->generateTrees95Test();
+    testObj->isValidBST98Test();
     testObj->recoverTree99Test();
 
     return 0;

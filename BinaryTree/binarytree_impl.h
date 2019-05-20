@@ -23,7 +23,7 @@ public:
     vector<TreeNode*> generateTrees95(int n);
 
     // 98. Validate Binary Search Tree
-    
+    bool isValidBST98(TreeNode* root);
 
     // 99. Recover Binary Search Tree
     void recoverTree99(TreeNode* root);
@@ -34,6 +34,9 @@ private:
 
     // 95. Unique Binary Search Trees II helper
     vector<TreeNode*> generateTrees95Rec(int start, int end);
+
+    // 98. Validate Binary Search Tree helper
+    bool isValidBST98PreOrder(TreeNode *cur, long minVal, long maxVal);
 
     // 99. Recover Binary Search Tree helper
     void recoverTree99InOrder(
