@@ -184,3 +184,11 @@ vector<vector<int>> BinaryTreeImpl::levelOrder102(TreeNode* root) {
 
     return result;
 }
+
+// 104. Maximum Depth of Binary Tree (DFS)
+int BinaryTreeImpl::maxDepth104(TreeNode* root) {
+    if (root == NULL) {
+        return 0;
+    }
+    return 1 + max(maxDepth104(root->left), maxDepth104(root->right));
+}

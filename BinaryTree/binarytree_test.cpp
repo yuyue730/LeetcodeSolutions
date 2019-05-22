@@ -98,7 +98,7 @@ void BinaryTreeTest::isSymmetric101Test() {
     return;
 }
 
-// 102. Binary Tree Level Order Traversal
+// 102. Binary Tree Level Order Traversal Test
 void BinaryTreeTest::levelOrder102Test() {
     cout << "102. Binary Tree Level Order Traversal test starts.\n";
 
@@ -118,4 +118,18 @@ void BinaryTreeTest::levelOrder102Test() {
         cout << "]\n";
     }
     cout << "].\n\n";
+}
+
+// 104. Maximum Depth of Binary Tree (DFS) Test
+void BinaryTreeTest::maxDepth104Test() {
+    cout << "104. Maximum Depth of Binary Tree (DFS) test starts.\n";
+
+    TreeNode * root = new TreeNode(1);
+    TreeNode * cur = root;
+    cur->left = new TreeNode(2);  cur->right = new TreeNode(3);
+    cur = cur->right;
+    cur->left = new TreeNode(4);  cur->right = new TreeNode(5);
+
+    cout << "Max depth = [" << implObj->maxDepth104(root) << "]\n\n";
+    return;
 }

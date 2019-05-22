@@ -14,6 +14,7 @@ int main() {
     testObj->recoverTree99Test();
     testObj->isSymmetric101Test();
     testObj->levelOrder102Test();
+    testObj->maxDepth104Test();
 
     return 0;
 }

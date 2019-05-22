@@ -25,8 +25,11 @@ public:
     // 101. Symmetric Tree Test
     void isSymmetric101Test();
 
-    // 102. Binary Tree Level Order Traversal
+    // 102. Binary Tree Level Order Traversal Test
     void levelOrder102Test();
+
+    // 104. Maximum Depth of Binary Tree (DFS) Test
+    void maxDepth104Test();
     
 private:
     BinaryTreeImpl * implObj;

@@ -34,6 +34,9 @@ public:
     // 102. Binary Tree Level Order Traversal
     vector<vector<int>> levelOrder102(TreeNode* root);
 
+    // 104. Maximum Depth of Binary Tree (DFS)
+    int maxDepth104(TreeNode* root);
+
 private:
     // 94. Binary Tree Inorder Traversal helper
     void inorderTraversal94DFS(TreeNode *curNode, vector<int> & result);
