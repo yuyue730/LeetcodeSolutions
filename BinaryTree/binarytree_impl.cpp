@@ -1,6 +1,7 @@
 #include "binarytree_impl.h"
 
 #include <iostream>
+#include <queue>
 using namespace std;
 
 BinaryTreeImpl::BinaryTreeImpl() {
@@ -152,4 +153,34 @@ bool BinaryTreeImpl::isSymmetric101DFS(
 
     return isSymmetric101DFS(left->left, right->right)
         && isSymmetric101DFS(left->right, right->left);
+}
+
+// 102. Binary Tree Level Order Traversal
+vector<vector<int>> BinaryTreeImpl::levelOrder102(TreeNode* root) {
+    vector<vector<int>> result;
+    if (root == NULL) {
+        return result;
+    }
+
+    queue<TreeNode *> curQ;
+    curQ.push(root);
+
+    while (!curQ.empty()) {
+        vector<int> curLevelVec;
+        for (int i = curQ.size(); i > 0; --i) {
+            TreeNode *cur = curQ.front();
+            curQ.pop();
+            curLevelVec.push_back(cur->val);
+            if (cur->left) {
+                curQ.push(cur->left);
+            }
+            if (cur->right) {
+                curQ.push(cur->right);
+            }
+        }
+
+        result.push_back(curLevelVec);
+    }
+
+    return result;
 }

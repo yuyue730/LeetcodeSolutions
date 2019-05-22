@@ -97,3 +97,25 @@ void BinaryTreeTest::isSymmetric101Test() {
         << (implObj->isSymmetric101(root) ? "True" : "False") << "]\n\n";
     return;
 }
+
+// 102. Binary Tree Level Order Traversal
+void BinaryTreeTest::levelOrder102Test() {
+    cout << "102. Binary Tree Level Order Traversal test starts.\n";
+
+    TreeNode * root = new TreeNode(1);
+    TreeNode * cur = root;
+    cur->left = new TreeNode(2);  cur->right = new TreeNode(3);
+    cur = cur->right;
+    cur->left = new TreeNode(4);  cur->right = new TreeNode(5);
+
+    vector<vector<int>> result = implObj->levelOrder102(root);
+    cout << "Result = [\n";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "[";
+        for (int j = 0; j < result[i].size(); ++j) {
+            cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
+        }
+        cout << "]\n";
+    }
+    cout << "].\n\n";
+}

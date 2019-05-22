@@ -13,6 +13,7 @@ int main() {
     testObj->isValidBST98Test();
     testObj->recoverTree99Test();
     testObj->isSymmetric101Test();
+    testObj->levelOrder102Test();
 
     return 0;
 }
