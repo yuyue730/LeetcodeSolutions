@@ -28,6 +28,9 @@ public:
     // 99. Recover Binary Search Tree
     void recoverTree99(TreeNode* root);
 
+    // 101. Symmetric Tree
+    bool isSymmetric101(TreeNode* root);
+
 private:
     // 94. Binary Tree Inorder Traversal helper
     void inorderTraversal94DFS(TreeNode *curNode, vector<int> & result);
@@ -44,6 +47,9 @@ private:
         vector<TreeNode *> & allNodes, 
         vector<int> & allValues
     );
+
+    // 101. Symmetric Tree helper
+    bool isSymmetric101DFS(TreeNode *left, TreeNode *right);
 };
 
 #endif

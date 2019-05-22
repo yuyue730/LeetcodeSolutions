@@ -21,6 +21,9 @@ public:
 
     // 99. Recover Binary Search Tree Test
     void recoverTree99Test();
+
+    // 101. Symmetric Tree Test
+    void isSymmetric101Test();
     
 private:
     BinaryTreeImpl * implObj;

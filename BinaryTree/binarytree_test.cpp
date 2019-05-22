@@ -75,3 +75,25 @@ void BinaryTreeTest::recoverTree99Test() {
     cout << "Please exam the root [" << root->val << "]\n";
     return;
 }
+
+// 101. Symmetric Tree Test
+void BinaryTreeTest::isSymmetric101Test() {
+    cout << "101. Symmetric Tree test starts.\n";
+
+    TreeNode * root = new TreeNode(1);
+    TreeNode * cur = root;
+    cur->left = new TreeNode(2);
+    cur = cur->left;
+    cur->left = new TreeNode(3); cur->right = new TreeNode(4);
+    cur = cur->right; cur->left = new TreeNode(5);
+
+    cur = root;
+    cur->right = new TreeNode(2);
+    cur = cur->right;
+    cur->left = new TreeNode(4); cur->right = new TreeNode(3);
+    cur = cur->left; cur->right = new TreeNode(5);
+
+    cout << "Is tree symmetirc = [" 
+        << (implObj->isSymmetric101(root) ? "True" : "False") << "]\n\n";
+    return;
+}

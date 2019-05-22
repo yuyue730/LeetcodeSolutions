@@ -126,3 +126,30 @@ void BinaryTreeImpl::recoverTree99InOrder(
         recoverTree99InOrder(cur->right, allNodes, allValues);
     } 
 }
+
+// 101. Symmetric Tree
+bool BinaryTreeImpl::isSymmetric101(TreeNode* root) {
+    if (root == NULL) {
+        return true;
+    }
+    return isSymmetric101DFS(root->left, root->right);
+}
+
+bool BinaryTreeImpl::isSymmetric101DFS(
+    TreeNode *left, TreeNode *right
+) {
+    if (left == NULL && right == NULL) {
+        return true;
+    }
+
+    if (left == NULL || right == NULL) {
+        return false;
+    }
+
+    if (left->val != right->val) {
+        return false;
+    }
+
+    return isSymmetric101DFS(left->left, right->right)
+        && isSymmetric101DFS(left->right, right->left);
+}

@@ -12,6 +12,7 @@ int main() {
     testObj->generateTrees95Test();
     testObj->isValidBST98Test();
     testObj->recoverTree99Test();
+    testObj->isSymmetric101Test();
 
     return 0;
 }
