@@ -22,6 +22,9 @@ public:
     // 39. Combination Sum Test
     void combinationSum39Test();
 
+    // 40. Combination Sum II Test
+    void combinationSum2_40Test();
+
     // 46. Permutations Test
     void permute46Test();
 

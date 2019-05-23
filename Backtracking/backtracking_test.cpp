@@ -78,6 +78,23 @@ void BacktrackingTest::combinationSum39Test() {
     return;
 }
 
+// 40. Combination Sum II Test
+void BacktrackingTest::combinationSum2_40Test() {
+    cout << "40. Combination Sum II test starts.\n";
+    vector<int> candidates = {10,1,2,7,6,1,5};
+    int target = 8;
+    vector<vector<int>> result = implObj->combinationSum2_40(candidates, target);
+    cout << "{10,1,2,7,6,1,5} and 8 will generate [\n";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "[";
+        for (int j = 0; j < result[i].size(); ++j) {
+            cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ",");
+        }
+        cout << "]" << ((i == result.size() - 1) ? "\n" : ",\n");
+    }
+    cout << "].\n\n";
+}
+
 // 46. Permutations Test
 void BacktrackingTest::permute46Test() {
     cout << "46. Permutations test starts.\n";

@@ -21,6 +21,9 @@ public:
     // 39. Combination Sum
     vector<vector<int>> combinationSum39(vector<int>& candidates, int target);
 
+    // 40. Combination Sum II
+    vector<vector<int>> combinationSum2_40(vector<int>& candidates, int target);
+
     // 46. Permutations
     vector<vector<int>> permute46(vector<int>& nums);
 
@@ -57,6 +60,15 @@ private:
     // 39. Combination Sum helper
     void combinationSumRec(int startIdx, const vector<int> & candidate, 
         vector<int> & curRes, vector<vector<int>> & allRes, int remain
+    );
+
+    // 40. Combination Sum II helper
+    void combinationSum2Rec(
+        vector<int> & curResult,
+        vector<vector<int>> & allResults,
+        int startIdx,
+        int remain,
+        const vector<int> & candidates
     );
 
     // 46. Permutations helper

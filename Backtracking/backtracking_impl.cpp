@@ -167,6 +167,41 @@ void BacktrackingImpl::combinationSumRec(
     }
 }
 
+// 40. Combination Sum II
+vector<vector<int>> BacktrackingImpl::combinationSum2_40(
+    vector<int>& candidates, int target
+) {
+    vector<vector<int>> allResults;
+    vector<int> curResult;
+    sort(candidates.begin(), candidates.end());
+    combinationSum2Rec(curResult, allResults, 0, target, candidates);
+    return allResults;
+}
+
+void BacktrackingImpl::combinationSum2Rec(
+    vector<int> & curResult,
+    vector<vector<int>> & allResults,
+    int startIdx,
+    int remain,
+    const vector<int> & candidates
+) {
+    if (remain < 0) {
+        return;
+    } else if (remain == 0) {
+        allResults.push_back(curResult);
+    } else {
+        for (int i = startIdx; i < candidates.size(); ++i) {
+            if (i > startIdx && candidates[i] == candidates[i - 1]) {
+                continue;
+            }
+            curResult.push_back(candidates[i]);
+            combinationSum2Rec(curResult, allResults, i + 1, 
+                remain - candidates[i], candidates);
+            curResult.pop_back();
+        }
+    }
+}
+
 // 46. Permutations
 vector<vector<int>> BacktrackingImpl::permute46(vector<int>& nums)
 {
