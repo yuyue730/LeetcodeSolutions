@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <queue>
+#include <stack>
 using namespace std;
 
 BinaryTreeImpl::BinaryTreeImpl() {
@@ -180,6 +181,47 @@ vector<vector<int>> BinaryTreeImpl::levelOrder102(TreeNode* root) {
         }
 
         result.push_back(curLevelVec);
+    }
+
+    return result;
+}
+
+// 103. Binary Tree Zigzag Level Order Traversal
+vector<vector<int>> BinaryTreeImpl::zigzagLevelOrder103(TreeNode* root)
+{
+    vector<vector<int>> result;
+    if (root == NULL) {
+        return result;
+    }
+
+    stack<TreeNode *> * curLevel = new stack<TreeNode *>();
+    bool isLeft = false;
+    curLevel->push(root);
+
+    while (!curLevel->empty()) {
+        vector<int> curResult;
+        stack<TreeNode *> * nextLevel = new stack<TreeNode *>();
+
+        while (!curLevel->empty()) {
+            TreeNode * cur = curLevel->top();
+            curLevel->pop();
+            curResult.push_back(cur->val);
+            if (isLeft) {
+                if (cur->left)
+                    nextLevel->push(cur->left);
+                if (cur->right)
+                    nextLevel->push(cur->right);
+            } else {
+                if (cur->right)
+                    nextLevel->push(cur->right);
+                if (cur->left)
+                    nextLevel->push(cur->left);
+            }
+        }
+
+        result.push_back(curResult);
+        curLevel = nextLevel;
+        isLeft = !isLeft;
     }
 
     return result;

@@ -120,6 +120,28 @@ void BinaryTreeTest::levelOrder102Test() {
     cout << "].\n\n";
 }
 
+// 103. Binary Tree Zigzag Level Order Traversal Test
+void BinaryTreeTest::zigzagLevelOrder103Test() {
+    cout << "103. Binary Tree Zigzag Level Order Traversal test starts.\n";
+
+    TreeNode * root = new TreeNode(1);
+    TreeNode * cur = root;
+    cur->left = new TreeNode(2);  cur->right = new TreeNode(3);
+    cur = cur->right;
+    cur->left = new TreeNode(4);  cur->right = new TreeNode(5);
+
+    vector<vector<int>> result = implObj->zigzagLevelOrder103(root);
+    cout << "Result = [\n";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "[";
+        for (int j = 0; j < result[i].size(); ++j) {
+            cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
+        }
+        cout << "]\n";
+    }
+    cout << "].\n\n";
+}
+
 // 104. Maximum Depth of Binary Tree (DFS) Test
 void BinaryTreeTest::maxDepth104Test() {
     cout << "104. Maximum Depth of Binary Tree (DFS) test starts.\n";
