@@ -42,6 +42,9 @@ public:
 
     // 113. Path Sum II Test
     void pathSum113Test();
+
+    // 114. Flatten Binary Tree to Linked List Test
+    void flatten114Test();
     
 private:
     BinaryTreeImpl * implObj;

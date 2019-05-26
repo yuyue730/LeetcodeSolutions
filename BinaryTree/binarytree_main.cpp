@@ -19,6 +19,7 @@ int main() {
     testObj->buildTree105Test();
     testObj->sortedListToBST109Test();
     testObj->pathSum113Test();
+    testObj->flatten114Test();
 
     return 0;
 }

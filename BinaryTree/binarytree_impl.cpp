@@ -335,3 +335,25 @@ void BinaryTreeImpl::pathSum113helper(
     pathSum113helper(curResult, allResults, remain - cur->val, cur->right);
     curResult.pop_back();
 }
+
+// 114. Flatten Binary Tree to Linked List
+void BinaryTreeImpl::flatten114(TreeNode* root) {
+    if (root == NULL) {
+        return;
+    }
+
+    if (root->left) {
+        flatten114(root->left);
+    }
+    if (root->right) {
+        flatten114(root->right);
+    }
+
+    TreeNode * tmp = root->right;
+    root->right = root->left;
+    root->left = NULL;
+    while (root->right) {
+        root = root->right;
+    }
+    root->right = tmp;
+}

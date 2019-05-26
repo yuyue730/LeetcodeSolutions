@@ -55,6 +55,9 @@ public:
     // 113. Path Sum II
     vector<vector<int>> pathSum113(TreeNode* root, int sum);
 
+    // 114. Flatten Binary Tree to Linked List
+    void flatten114(TreeNode* root);
+
 private:
     // 94. Binary Tree Inorder Traversal helper
     void inorderTraversal94DFS(TreeNode *curNode, vector<int> & result);

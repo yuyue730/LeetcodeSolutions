@@ -211,3 +211,20 @@ void BinaryTreeTest::pathSum113Test() {
     cout << "].\n\n";
     return;
 }
+
+// 114. Flatten Binary Tree to Linked List Test
+void BinaryTreeTest::flatten114Test() {
+    cout << "114. Flatten Binary Tree to Linked List test starts.\n";
+    TreeNode * root = new TreeNode(1);
+    TreeNode * cur = root;
+    cur->left = new TreeNode(2); cur = cur->left;
+    cur->left = new TreeNode(3); cur->right = new TreeNode(4);
+
+    cur = root;
+    cur->right = new TreeNode(5); cur = cur->right;
+    cur->right = new TreeNode(6);
+
+    implObj->flatten114(root);
+    cout << "Please exam result via debugger. root = [" << root->val << "].\n\n";
+    return;
+}
