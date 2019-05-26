@@ -234,3 +234,42 @@ int BinaryTreeImpl::maxDepth104(TreeNode* root) {
     }
     return 1 + max(maxDepth104(root->left), maxDepth104(root->right));
 }
+
+// 105. Construct Binary Tree from Preorder and Inorder Traversal
+TreeNode* BinaryTreeImpl::buildTree105(
+    vector<int>& preorder, vector<int>& inorder
+) {
+    int preLeft = 0, preRight = preorder.size() - 1;
+    int inLeft = 0, inRight = inorder.size() - 1;
+    return buildTree105helper(
+        preorder, 0, preorder.size() - 1,
+        inorder, 0, inorder.size() - 1
+    );
+}
+
+TreeNode * BinaryTreeImpl::buildTree105helper(
+    const vector<int>& pre, int preLeft, int preRight,
+    const vector<int>& in, int inLeft, int inRight
+) {
+    if (preLeft > preRight || inLeft > inRight) {
+        return NULL;
+    }
+
+    int i = inLeft;
+    for (; i <= inRight; ++i) {
+        if (in[i] == pre[preLeft]) {
+            break;
+        }
+    }
+
+    TreeNode * root = new TreeNode(pre[preLeft]);
+    root->left = buildTree105helper(
+        pre, preLeft + 1, preLeft + i - inLeft,
+        in, inLeft, i - 1
+    );
+    root->right = buildTree105helper(
+        pre, preLeft + i - inLeft + 1, preRight,
+        in, i + 1, inRight
+    );
+    return root;
+}

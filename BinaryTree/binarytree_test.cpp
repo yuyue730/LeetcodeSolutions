@@ -155,3 +155,15 @@ void BinaryTreeTest::maxDepth104Test() {
     cout << "Max depth = [" << implObj->maxDepth104(root) << "]\n\n";
     return;
 }
+
+// 105. Construct Binary Tree from Preorder and Inorder Traversal Test
+void BinaryTreeTest::buildTree105Test() {
+    cout << "105. Construct Binary Tree from Preorder and Inorder Traversal " 
+        << "test starts.\n";
+    
+    vector<int> preorder = {3,9,20,15,7};
+    vector<int> inorder = {9,3,15,20,7};
+    TreeNode * result = implObj->buildTree105(preorder, inorder);
+    cout << "Please exam result via debugger. root = [" << result->val << "].\n\n";
+    return;
+}

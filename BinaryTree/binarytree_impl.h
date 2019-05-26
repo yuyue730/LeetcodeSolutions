@@ -40,6 +40,9 @@ public:
     // 104. Maximum Depth of Binary Tree (DFS)
     int maxDepth104(TreeNode* root);
 
+    // 105. Construct Binary Tree from Preorder and Inorder Traversal
+    TreeNode* buildTree105(vector<int>& preorder, vector<int>& inorder);
+
 private:
     // 94. Binary Tree Inorder Traversal helper
     void inorderTraversal94DFS(TreeNode *curNode, vector<int> & result);
@@ -59,6 +62,12 @@ private:
 
     // 101. Symmetric Tree helper
     bool isSymmetric101DFS(TreeNode *left, TreeNode *right);
+
+    // 105. Construct Binary Tree from Preorder and Inorder Traversal
+    TreeNode * buildTree105helper(
+        const vector<int>& pre, int preLeft, int preRight,
+        const vector<int>& in, int inLeft, int inRight
+    );
 };
 
 #endif
