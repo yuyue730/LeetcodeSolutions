@@ -12,6 +12,12 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
 class BinaryTreeImpl {
 public:
     BinaryTreeImpl();
@@ -43,6 +49,9 @@ public:
     // 105. Construct Binary Tree from Preorder and Inorder Traversal
     TreeNode* buildTree105(vector<int>& preorder, vector<int>& inorder);
 
+    // 109. Convert Sorted List to Binary Search Tree
+    TreeNode* sortedListToBST109(ListNode* head);
+
 private:
     // 94. Binary Tree Inorder Traversal helper
     void inorderTraversal94DFS(TreeNode *curNode, vector<int> & result);
@@ -56,7 +65,7 @@ private:
     // 99. Recover Binary Search Tree helper
     void recoverTree99InOrder(
         TreeNode * cur, 
-        vector<TreeNode *> & allNodes, 
+        vector<TreeNode *> & allNodes,
         vector<int> & allValues
     );
 

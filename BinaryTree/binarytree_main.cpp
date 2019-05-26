@@ -17,6 +17,7 @@ int main() {
     testObj->zigzagLevelOrder103Test();
     testObj->maxDepth104Test();
     testObj->buildTree105Test();
+    testObj->sortedListToBST109Test();
 
     return 0;
 }

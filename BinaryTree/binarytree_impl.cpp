@@ -273,3 +273,31 @@ TreeNode * BinaryTreeImpl::buildTree105helper(
     );
     return root;
 }
+
+// 109. Convert Sorted List to Binary Search Tree
+TreeNode * BinaryTreeImpl::sortedListToBST109(ListNode* head) {
+    if (head == NULL) {
+        return NULL;
+    } 
+    if (head->next == NULL) {
+        return new TreeNode(head->val);
+    }
+
+    ListNode * slow = head;
+    ListNode * fast = head;
+    ListNode * last = slow;
+    while (fast->next && fast->next->next) {
+        last = slow;
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    fast = slow->next;
+    last->next = NULL;
+
+    TreeNode * root = new TreeNode(slow->val);
+    if (slow != head) {
+        root->left = sortedListToBST109(head);
+    }
+    root->right = sortedListToBST109(fast);
+    return root;
+}

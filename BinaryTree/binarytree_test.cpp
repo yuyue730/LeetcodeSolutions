@@ -167,3 +167,18 @@ void BinaryTreeTest::buildTree105Test() {
     cout << "Please exam result via debugger. root = [" << result->val << "].\n\n";
     return;
 }
+
+// 109. Convert Sorted List to Binary Search Tree Test
+void BinaryTreeTest::sortedListToBST109Test() {
+    cout << "109. Convert Sorted List to Binary Search Tree test starts.\n";
+    ListNode * head = new ListNode(-10);
+    ListNode * cur = head;
+    cur->next = new ListNode(-3); cur = cur->next;
+    cur->next = new ListNode(0); cur = cur->next;
+    cur->next = new ListNode(5); cur = cur->next;
+    cur->next = new ListNode(9);
+
+    TreeNode * result = implObj->sortedListToBST109(head);
+    cout << "Please exam result via debugger. root = [" << result->val << "].\n\n";
+    return;
+}

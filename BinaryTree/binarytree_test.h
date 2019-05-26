@@ -34,8 +34,11 @@ public:
     // 104. Maximum Depth of Binary Tree (DFS) Test
     void maxDepth104Test();
 
-    // 105. Construct Binary Tree from Preorder and Inorder Traversal
+    // 105. Construct Binary Tree from Preorder and Inorder Traversal Test
     void buildTree105Test();
+
+    // 109. Convert Sorted List to Binary Search Tree Test
+    void sortedListToBST109Test();
     
 private:
     BinaryTreeImpl * implObj;
