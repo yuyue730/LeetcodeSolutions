@@ -18,6 +18,7 @@ int main() {
     testObj->maxDepth104Test();
     testObj->buildTree105Test();
     testObj->sortedListToBST109Test();
+    testObj->pathSum113Test();
 
     return 0;
 }

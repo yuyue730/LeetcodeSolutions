@@ -182,3 +182,32 @@ void BinaryTreeTest::sortedListToBST109Test() {
     cout << "Please exam result via debugger. root = [" << result->val << "].\n\n";
     return;
 }
+
+// 113. Path Sum II Test
+void BinaryTreeTest::pathSum113Test() {
+    cout << "113. Path Sum II test starts.\n";
+    TreeNode * root = new TreeNode(5);
+    TreeNode * cur = root;
+    cur->left = new TreeNode(4);
+    cur = cur->left; cur->left = new TreeNode(11);
+    cur = cur->left;
+    cur->left = new TreeNode(7); cur->right = new TreeNode(2);
+
+    cur = root;
+    cur->right = new TreeNode(8); cur = cur->right;
+    cur->left = new TreeNode(13); cur->right = new TreeNode(4);
+    cur = cur->right;
+    cur->left = new TreeNode(5); cur->right = new TreeNode(1);
+
+    vector<vector<int>> result = implObj->pathSum113(root, 22);
+    cout << "Result = [\n";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "  [";
+        for (int j = 0; j < result[i].size(); ++j) {
+            cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
+        }
+        cout << "]\n";
+    }
+    cout << "].\n\n";
+    return;
+}

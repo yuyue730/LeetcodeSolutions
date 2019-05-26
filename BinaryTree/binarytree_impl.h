@@ -52,6 +52,9 @@ public:
     // 109. Convert Sorted List to Binary Search Tree
     TreeNode* sortedListToBST109(ListNode* head);
 
+    // 113. Path Sum II
+    vector<vector<int>> pathSum113(TreeNode* root, int sum);
+
 private:
     // 94. Binary Tree Inorder Traversal helper
     void inorderTraversal94DFS(TreeNode *curNode, vector<int> & result);
@@ -72,10 +75,18 @@ private:
     // 101. Symmetric Tree helper
     bool isSymmetric101DFS(TreeNode *left, TreeNode *right);
 
-    // 105. Construct Binary Tree from Preorder and Inorder Traversal
+    // 105. Construct Binary Tree from Preorder and Inorder Traversal helper
     TreeNode * buildTree105helper(
         const vector<int>& pre, int preLeft, int preRight,
         const vector<int>& in, int inLeft, int inRight
+    );
+
+    // 113. Path Sum II helper
+    void pathSum113helper(
+        vector<int> & curResult,
+        vector<vector<int>> & allResults,
+        int remain,
+        TreeNode * cur
     );
 };
 

@@ -301,3 +301,37 @@ TreeNode * BinaryTreeImpl::sortedListToBST109(ListNode* head) {
     root->right = sortedListToBST109(fast);
     return root;
 }
+
+// 113. Path Sum II
+vector<vector<int>> BinaryTreeImpl::pathSum113(TreeNode* root, int sum) {
+    vector<vector<int>> allResults;
+    if (root == NULL) {
+        return allResults;
+    }
+    vector<int> curResult;
+    pathSum113helper(curResult, allResults, sum, root);
+    return allResults;
+}
+
+void BinaryTreeImpl::pathSum113helper(
+    vector<int> & curResult,
+    vector<vector<int>> & allResults,
+    int remain,
+    TreeNode * cur
+) {
+    if (cur == NULL) {
+        return;
+    }
+
+    curResult.push_back(cur->val);
+
+    if (remain == cur->val && cur->left == NULL && cur->right == NULL) {
+        allResults.push_back(curResult);
+        curResult.pop_back();
+        return;
+    }
+
+    pathSum113helper(curResult, allResults, remain - cur->val, cur->left);
+    pathSum113helper(curResult, allResults, remain - cur->val, cur->right);
+    curResult.pop_back();
+}

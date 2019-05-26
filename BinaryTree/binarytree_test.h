@@ -39,6 +39,9 @@ public:
 
     // 109. Convert Sorted List to Binary Search Tree Test
     void sortedListToBST109Test();
+
+    // 113. Path Sum II Test
+    void pathSum113Test();
     
 private:
     BinaryTreeImpl * implObj;
