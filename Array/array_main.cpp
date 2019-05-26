@@ -30,6 +30,7 @@ int main() {
     testObj->plusOne66Test();
     testObj->searchMatrix74Test();
     testObj->sortColors75Test();
+    testObj->search81Test();
     testObj->merge88Test();
 
     return 0;

@@ -77,6 +77,9 @@ public:
     // 75. Sort Colors
     void sortColors75(vector<int>& nums);
 
+    // 81. Search in Rotated Sorted Array II
+    bool search81(vector<int>& nums, int target);
+
     // 88. Merge Sorted Array
     void merge88(vector<int>& nums1, int m, vector<int>& nums2, int n);
 

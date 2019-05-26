@@ -305,6 +305,17 @@ void ArrayTest::sortColors75Test() {
     return;
 }
 
+// 81. Search in Rotated Sorted Array II Test
+void ArrayTest::search81Test() {
+    cout << "81. Search in Rotated Sorted Array II test starts.\n";
+    vector<int> nums = {2,5,6,0,0,1,2};
+    cout << "Search for 0 is [" << (implObj->search81(nums, 0) ? "True" : "False")
+        << "].\n";
+    cout << "Search for 8 is [" << (implObj->search81(nums, 8) ? "True" : "False")
+        << "].\n\n";
+    return;
+}
+
 // 88. Merge Sorted Array Test
 void ArrayTest::merge88Test() {
     cout << "88. Merge Sorted Array test starts.\n";

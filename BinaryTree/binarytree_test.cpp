@@ -133,7 +133,7 @@ void BinaryTreeTest::zigzagLevelOrder103Test() {
     vector<vector<int>> result = implObj->zigzagLevelOrder103(root);
     cout << "Result = [\n";
     for (int i = 0; i < result.size(); ++i) {
-        cout << "[";
+        cout << "  [";
         for (int j = 0; j < result[i].size(); ++j) {
             cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
         }

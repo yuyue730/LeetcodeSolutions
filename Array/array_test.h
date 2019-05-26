@@ -73,6 +73,9 @@ public:
     // 75. Sort Colors Test
     void sortColors75Test();
 
+    // 81. Search in Rotated Sorted Array II Test
+    void search81Test();
+
     // 88. Merge Sorted Array Test
     void merge88Test();
 
