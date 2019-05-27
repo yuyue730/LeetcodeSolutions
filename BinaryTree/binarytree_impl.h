@@ -49,6 +49,9 @@ public:
     // 105. Construct Binary Tree from Preorder and Inorder Traversal
     TreeNode* buildTree105(vector<int>& preorder, vector<int>& inorder);
 
+    // 106. Construct Binary Tree from Inorder and Postorder Traversal
+    TreeNode* buildTree106(vector<int>& inorder, vector<int>& postorder);
+
     // 109. Convert Sorted List to Binary Search Tree
     TreeNode* sortedListToBST109(ListNode* head);
 
@@ -82,6 +85,12 @@ private:
     TreeNode * buildTree105helper(
         const vector<int>& pre, int preLeft, int preRight,
         const vector<int>& in, int inLeft, int inRight
+    );
+
+    // 106. Construct Binary Tree from Inorder and Postorder Traversal helper
+    TreeNode * buildTree106helper(
+        const vector<int>& in, int inLeft, int inRight, 
+        const vector<int>& post, int postLeft, int postRight
     );
 
     // 113. Path Sum II helper

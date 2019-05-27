@@ -168,6 +168,18 @@ void BinaryTreeTest::buildTree105Test() {
     return;
 }
 
+// 106. Construct Binary Tree from Inorder and Postorder Traversal Test
+void BinaryTreeTest::buildTree106Test() {
+    cout << "106. Construct Binary Tree from Inorder and Postorder Traversal "
+        << "test starts.\n";
+
+    vector<int> inorder = {9,3,15,20,7};
+    vector<int> postorder = {9,15,7,20,3};
+    TreeNode * result = implObj->buildTree106(inorder, postorder);
+    cout << "Please exam result via debugger. root = [" << result->val << "].\n\n";
+    return;
+}
+
 // 109. Convert Sorted List to Binary Search Tree Test
 void BinaryTreeTest::sortedListToBST109Test() {
     cout << "109. Convert Sorted List to Binary Search Tree test starts.\n";

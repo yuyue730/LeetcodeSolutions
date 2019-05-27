@@ -37,6 +37,9 @@ public:
     // 105. Construct Binary Tree from Preorder and Inorder Traversal Test
     void buildTree105Test();
 
+    // 106. Construct Binary Tree from Inorder and Postorder Traversal Test
+    void buildTree106Test();
+
     // 109. Convert Sorted List to Binary Search Tree Test
     void sortedListToBST109Test();
 

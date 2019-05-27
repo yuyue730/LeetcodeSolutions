@@ -274,6 +274,44 @@ TreeNode * BinaryTreeImpl::buildTree105helper(
     return root;
 }
 
+// 106. Construct Binary Tree from Inorder and Postorder Traversal
+TreeNode * BinaryTreeImpl::buildTree106(
+    vector<int>& inorder, vector<int>& postorder
+) {
+    int inLeft = 0, inRight = inorder.size() - 1;
+    int postLeft = 0, postRight = postorder.size() - 1;
+    return buildTree106helper(
+        inorder, 0, inorder.size() - 1,
+        postorder, 0, postorder.size() - 1
+    );
+}
+
+TreeNode * BinaryTreeImpl::buildTree106helper(
+    const vector<int>& in, int inLeft, int inRight, 
+    const vector<int>& post, int postLeft, int postRight
+) {
+    if (inLeft > inRight || postLeft > postRight) {
+        return NULL;
+    }
+
+    TreeNode * cur = new TreeNode(post[postRight]);
+    int i = inLeft;
+    for (; i <= inRight; ++i) {
+        if (in[i] == cur->val) {
+            break;
+        }
+    }
+
+    cur->left = buildTree106helper(
+        in, inLeft, i - 1, post, postLeft, postLeft + i - inLeft - 1
+    );
+    cur->right = buildTree106helper(
+        in, i + 1, inRight, post, postLeft + i - inLeft, postRight - 1
+    );
+
+    return cur;
+}
+
 // 109. Convert Sorted List to Binary Search Tree
 TreeNode * BinaryTreeImpl::sortedListToBST109(ListNode* head) {
     if (head == NULL) {
