@@ -51,7 +51,7 @@ public:
 
     // 116. Populating Next Right Pointers in Each Node Test
     void connect116Test();
-    
+
 private:
     BinaryTreeImpl * implObj;
 };

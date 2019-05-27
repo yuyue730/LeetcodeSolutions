@@ -79,6 +79,9 @@ public:
     // 88. Merge Sorted Array Test
     void merge88Test();
 
+    // 118. Pascal's Triangle Test
+    void generate118Test();
+
 private:
     ArrayImpl * implObj;
 };

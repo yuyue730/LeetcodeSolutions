@@ -32,6 +32,7 @@ int main() {
     testObj->sortColors75Test();
     testObj->search81Test();
     testObj->merge88Test();
+    testObj->generate118Test();
 
     return 0;
 }

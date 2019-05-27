@@ -260,3 +260,4 @@ void BinaryTreeTest::connect116Test() {
     cout << "Please exam result via debugger. root = [" << result->val << "].\n\n";
     return;
 }
+

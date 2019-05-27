@@ -670,3 +670,28 @@ void ArrayImpl::merge88(vector<int>& nums1, int m, vector<int>& nums2, int n)
 
     return;
 }
+
+// 118. Pascal's Triangle
+vector<vector<int>> ArrayImpl::generate118(int numRows) {
+    vector<vector<int>> result;
+    if (numRows == 0) {
+        return result;
+    }
+    result.push_back({1});
+
+    for (int i = 2; i <= numRows; ++i) {
+        vector<int> curRow(i, 0);
+        for (int j = 0; j < i; ++j) {
+            if (j == 0) {
+                curRow[0] = result.back()[0];
+            } else if (j == i - 1) {
+                curRow[i - 1] = result.back().back();
+            } else {
+                curRow[j] = result.back()[j - 1] + result.back()[j];
+            }
+        }
+        result.push_back(curRow);
+    }
+
+    return result;
+}

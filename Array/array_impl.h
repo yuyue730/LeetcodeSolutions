@@ -83,6 +83,9 @@ public:
     // 88. Merge Sorted Array
     void merge88(vector<int>& nums1, int m, vector<int>& nums2, int n);
 
+    // 118. Pascal's Triangle
+    vector<vector<int>> generate118(int numRows);
+
 private:
     // 4. Median of Two Sorted Arrays helper
     double findKthInTwoArray(

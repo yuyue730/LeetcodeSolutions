@@ -329,3 +329,19 @@ void ArrayTest::merge88Test() {
     cout << "]\n\n";
     return;
 }
+
+// 118. Pascal's Triangle Test
+void ArrayTest::generate118Test() {
+    cout << "118. Pascal's Triangle test starts.\n";
+    vector<vector<int>> result = implObj->generate118(5);
+    cout << "result = [\n";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "  [";
+        for (int j = 0; j < result[i].size(); ++j) {
+            cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
+        }
+        cout << "]\n";
+    }
+    cout << "].\n\n";
+    return;
+}
