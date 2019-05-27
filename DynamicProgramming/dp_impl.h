@@ -36,6 +36,9 @@ public:
 
     // 97. Interleaving String
     bool isInterleave97(string s1, string s2, string s3);
+
+    // 120. Triangle
+    int minimumTotal120(vector<vector<int>>& triangle);
 };
 
 #endif

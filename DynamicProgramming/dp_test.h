@@ -36,6 +36,9 @@ public:
     // 97. Interleaving String Test
     void isInterleave97Test();
 
+    // 120. Triangle Test
+    void minimumTotal120Test();
+
 private:
     DpImpl * implObj;
 };

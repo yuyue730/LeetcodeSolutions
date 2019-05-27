@@ -80,3 +80,17 @@ void DpTest::isInterleave97Test() {
         << "].\n\n";
     return; 
 }
+
+// 120. Triangle Test
+void DpTest::minimumTotal120Test() {
+    cout << "120. Triangle test starts.\n";
+    vector<vector<int>> triangle = {
+        {2},
+        {3,4},
+        {6,5,7},
+        {4,1,8,3}
+    };
+
+    cout << "Min total = [" << implObj->minimumTotal120(triangle) << "]\n";
+    return;
+}

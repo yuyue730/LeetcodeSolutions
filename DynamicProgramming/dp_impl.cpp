@@ -213,6 +213,24 @@ bool DpImpl::isInterleave97(string s1, string s2, string s3)
         }
     }
 
-
     return dp[mSize][nSize];
 }
+
+// 120. Triangle
+int DpImpl::minimumTotal120(vector<vector<int>>& triangle)
+{
+    if (triangle.size() == 1) {
+        return triangle[0][0];
+    }
+
+    vector<int> * dp = &(triangle.back());
+    for (int i = triangle.size() - 2; i >= 0; --i) {
+        vector<int> * nextDp = new vector<int>(i + 1);
+        for (int j = 0; j < nextDp->size(); ++j) {
+            nextDp->at(j) = min(dp->at(j), dp->at(j + 1)) + triangle[i][j];
+        }
+        dp = nextDp;
+    }
+    return dp->at(0);
+}
+
