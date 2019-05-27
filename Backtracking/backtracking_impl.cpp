@@ -295,6 +295,31 @@ bool BacktrackingImpl::isCurrentBoardValid(
     return true;
 }
 
+// 77. Combinations
+vector<vector<int>> BacktrackingImpl::combine77(int n, int k) {
+    vector<int> curRes;
+    vector<vector<int>> allRes;
+    combine77helper(n, k, 1, curRes, allRes);
+    return allRes;
+}
+
+void BacktrackingImpl::combine77helper(
+    const int n, const int k,
+    int curVal, vector<int> & curRes,
+    vector<vector<int>> & allRes
+) {
+    if (curRes.size() == k) {
+        allRes.push_back(curRes);
+        return;
+    }
+
+    for (int i = curVal; i <= n; ++i) {
+        curRes.push_back(i);
+        combine77helper(n, k, i + 1, curRes, allRes);
+        curRes.pop_back();
+    }
+}
+
 // 78. Subsets
 vector<vector<int>> BacktrackingImpl::subsets78(vector<int>& nums) {
     vector<vector<int>> allResult;

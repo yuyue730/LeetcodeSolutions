@@ -30,6 +30,9 @@ public:
     // 51. N-Queens
     vector<vector<string>> solveNQueens51(int n);
 
+    // 77. Combinations
+    vector<vector<int>> combine77(int n, int k);
+
     // 78. Subsets
     vector<vector<int>> subsets78(vector<int>& nums);
     
@@ -92,6 +95,13 @@ private:
         const int curRow,
         const int curCol,
         const int nSize
+    );
+
+    // 77. Combinations helpers
+    void combine77helper(
+        const int n, const int k,
+        int curVal, vector<int> & curRes,
+        vector<vector<int>> & allRes
     );
 
     // 78. Subsets helpers

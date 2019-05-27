@@ -31,6 +31,9 @@ public:
     // 51. N-Queens Test
     void solveNQueens51Test();
 
+    // 77. Combinations Test
+    void combine77Test();
+
     // 78. Subsets Test
     void subsets78Test();
 

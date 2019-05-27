@@ -146,6 +146,21 @@ void BacktrackingTest::subsets78Test() {
     cout << "]\n\n";
 }
 
+// 77. Combinations Test
+void BacktrackingTest::combine77Test() {
+    cout << "77. Combinations test starts.\n";
+    vector<vector<int>> result = implObj->combine77(4, 2);
+    cout << "All subsets [\n";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "  [";
+        for (int j = 0; j < result[i].size(); ++j) {
+            cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
+        }
+        cout << "]\n";
+    }
+    cout << "]\n\n";
+}
+
 // 79. Word Search Test
 void BacktrackingTest::exist79Test() {
     cout << "79. Word Search test starts.\n";

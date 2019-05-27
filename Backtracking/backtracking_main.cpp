@@ -16,6 +16,7 @@ int main() {
     testObj->combinationSum2_40Test();
     testObj->permute46Test();
     testObj->solveNQueens51Test();
+    testObj->combine77Test();
     testObj->subsets78Test();
     testObj->exist79Test();
     testObj->restoreIpAddresses93Test();
