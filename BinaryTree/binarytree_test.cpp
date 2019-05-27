@@ -240,3 +240,23 @@ void BinaryTreeTest::flatten114Test() {
     cout << "Please exam result via debugger. root = [" << root->val << "].\n\n";
     return;
 }
+
+// 116. Populating Next Right Pointers in Each Node Test
+void BinaryTreeTest::connect116Test() {
+    cout << "116. Populating Next Right Pointers in Each Node test starts.\n";
+    Node * root = new Node(
+        3, 
+        new Node(9, NULL, NULL, NULL), 
+        new Node(
+            20, 
+            new Node(15, NULL, NULL, NULL), 
+            new Node(7, NULL, NULL, NULL), 
+            NULL
+        ),
+        NULL
+    );
+
+    Node * result = implObj->connect116(root);
+    cout << "Please exam result via debugger. root = [" << result->val << "].\n\n";
+    return;
+}

@@ -395,3 +395,33 @@ void BinaryTreeImpl::flatten114(TreeNode* root) {
     }
     root->right = tmp;
 }
+
+// 116. Populating Next Right Pointers in Each Node
+Node* BinaryTreeImpl::connect116(Node* root) {
+    if (!root) {
+        return NULL;
+    }
+
+    vector<Node *> * curLevel = new vector<Node *>();
+    curLevel->push_back(root);
+    while (!curLevel->empty()) {
+        vector<Node *> * nextLevel = new vector<Node *>();
+
+        for (int i = 0; i < curLevel->size(); ++i) {
+            if (i < curLevel->size() - 1) {
+                curLevel->at(i)->next = curLevel->at(i + 1);
+            }
+
+            if ((*curLevel)[i]->left) {
+                nextLevel->push_back((*curLevel)[i]->left);
+            }
+            if ((*curLevel)[i]->right) {
+                nextLevel->push_back((*curLevel)[i]->right);
+            }
+        }
+
+        curLevel = nextLevel;
+    }
+
+    return root;
+}

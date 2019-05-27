@@ -21,6 +21,7 @@ int main() {
     testObj->sortedListToBST109Test();
     testObj->pathSum113Test();
     testObj->flatten114Test();
+    testObj->connect116Test();
 
     return 0;
 }

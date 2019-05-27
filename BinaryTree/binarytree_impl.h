@@ -18,6 +18,23 @@ struct ListNode {
     ListNode(int x) : val(x), next(NULL) {}
 };
 
+class Node {
+public:
+    int val;
+    Node* left;
+    Node* right;
+    Node* next;
+
+    Node() {}
+
+    Node(int _val, Node* _left, Node* _right, Node* _next) {
+        val = _val;
+        left = _left;
+        right = _right;
+        next = _next;
+    }
+};
+
 class BinaryTreeImpl {
 public:
     BinaryTreeImpl();
@@ -60,6 +77,9 @@ public:
 
     // 114. Flatten Binary Tree to Linked List
     void flatten114(TreeNode* root);
+
+    // 116. Populating Next Right Pointers in Each Node
+    Node* connect116(Node* root);
 
 private:
     // 94. Binary Tree Inorder Traversal helper

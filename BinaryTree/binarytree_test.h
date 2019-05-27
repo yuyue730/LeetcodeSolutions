@@ -48,6 +48,9 @@ public:
 
     // 114. Flatten Binary Tree to Linked List Test
     void flatten114Test();
+
+    // 116. Populating Next Right Pointers in Each Node Test
+    void connect116Test();
     
 private:
     BinaryTreeImpl * implObj;
