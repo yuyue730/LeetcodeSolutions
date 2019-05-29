@@ -89,6 +89,9 @@ public:
     // 121. Best Time to Buy and Sell Stock
     int maxProfit121(vector<int>& prices);
 
+    // 122. Best Time to Buy and Sell Stock II
+    int maxProfit122(vector<int>& prices);
+
 private:
     // 4. Median of Two Sorted Arrays helper
     double findKthInTwoArray(

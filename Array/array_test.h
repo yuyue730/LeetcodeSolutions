@@ -85,6 +85,9 @@ public:
     // 121. Best Time to Buy and Sell Stock Test
     void maxProfit121Test();
 
+    // 122. Best Time to Buy and Sell Stock II Test
+    void maxProfit122Test();
+
 private:
     ArrayImpl * implObj;
 };

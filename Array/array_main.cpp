@@ -34,6 +34,7 @@ int main() {
     testObj->merge88Test();
     testObj->generate118Test();
     testObj->maxProfit121Test();
+    testObj->maxProfit122Test();
 
     return 0;
 }
