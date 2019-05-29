@@ -86,6 +86,9 @@ public:
     // 118. Pascal's Triangle
     vector<vector<int>> generate118(int numRows);
 
+    // 121. Best Time to Buy and Sell Stock
+    int maxProfit121(vector<int>& prices);
+
 private:
     // 4. Median of Two Sorted Arrays helper
     double findKthInTwoArray(

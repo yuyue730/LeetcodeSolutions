@@ -345,3 +345,11 @@ void ArrayTest::generate118Test() {
     cout << "].\n\n";
     return;
 }
+
+// 121. Best Time to Buy and Sell Stock Test
+void ArrayTest::maxProfit121Test() {
+    cout << "121. Best Time to Buy and Sell Stock test starts.\n";
+    vector<int> nums = {7,1,5,3,6,4};
+    cout << "Max Profit = " << implObj->maxProfit121(nums) << "\n\n";
+    return;
+}

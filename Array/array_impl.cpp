@@ -695,3 +695,20 @@ vector<vector<int>> ArrayImpl::generate118(int numRows) {
 
     return result;
 }
+
+// 121. Best Time to Buy and Sell Stock
+int ArrayImpl::maxProfit121(vector<int>& prices) {
+    if (prices.size() == 0) {
+        return 0;
+    }
+    int minPrice = prices[0], maxProfit = 0;
+    for (int i = 1; i < prices.size(); ++i) {
+        if (prices[i] < minPrice) {
+            minPrice = prices[i];
+        } else {
+            maxProfit = max(maxProfit, prices[i] - minPrice);
+        }
+    }
+
+    return maxProfit;
+}

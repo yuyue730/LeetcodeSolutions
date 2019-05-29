@@ -82,6 +82,9 @@ public:
     // 118. Pascal's Triangle Test
     void generate118Test();
 
+    // 121. Best Time to Buy and Sell Stock Test
+    void maxProfit121Test();
+
 private:
     ArrayImpl * implObj;
 };
