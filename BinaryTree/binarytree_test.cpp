@@ -180,6 +180,15 @@ void BinaryTreeTest::buildTree106Test() {
     return;
 }
 
+// 108. Convert Sorted Array to Binary Search Tree Test
+void BinaryTreeTest::sortedArrayToBST108Test() {
+    cout << "108. Convert Sorted Array to Binary Search Tree test starts.\n";
+    vector<int> nums = {-10, -3, 0, 5, 9};
+    TreeNode * root = implObj->sortedArrayToBST108(nums);
+    cout << "Please exam result via debugger. root = [" << root->val << "].\n\n";
+    return;
+}
+
 // 109. Convert Sorted List to Binary Search Tree Test
 void BinaryTreeTest::sortedListToBST109Test() {
     cout << "109. Convert Sorted List to Binary Search Tree test starts.\n";

@@ -69,6 +69,9 @@ public:
     // 106. Construct Binary Tree from Inorder and Postorder Traversal
     TreeNode* buildTree106(vector<int>& inorder, vector<int>& postorder);
 
+    // 108. Convert Sorted Array to Binary Search Tree
+    TreeNode* sortedArrayToBST108(vector<int>& nums);
+
     // 109. Convert Sorted List to Binary Search Tree
     TreeNode* sortedListToBST109(ListNode* head);
 
@@ -105,6 +108,11 @@ private:
     TreeNode * buildTree105helper(
         const vector<int>& pre, int preLeft, int preRight,
         const vector<int>& in, int inLeft, int inRight
+    );
+
+    // // 108. Convert Sorted Array to Binary Search Tree helper
+    TreeNode * sortedArrayToBST108helper(
+        const vector<int>& arr, int left, int right
     );
 
     // 106. Construct Binary Tree from Inorder and Postorder Traversal helper

@@ -312,6 +312,26 @@ TreeNode * BinaryTreeImpl::buildTree106helper(
     return cur;
 }
 
+// 108. Convert Sorted Array to Binary Search Tree
+TreeNode * BinaryTreeImpl::sortedArrayToBST108(vector<int>& nums) {
+    return sortedArrayToBST108helper(nums, 0, nums.size() - 1);
+}
+
+TreeNode * BinaryTreeImpl::sortedArrayToBST108helper(
+    const vector<int>& arr, int left, int right
+) {
+    if (left > right) {
+        return NULL;
+    }
+
+    int mid = (left + right) / 2;
+    TreeNode * cur = new TreeNode(arr[mid]);
+
+    cur->left = sortedArrayToBST108helper(arr, left, mid - 1);
+    cur->right = sortedArrayToBST108helper(arr, mid + 1, right);
+    return cur;
+}
+
 // 109. Convert Sorted List to Binary Search Tree
 TreeNode * BinaryTreeImpl::sortedListToBST109(ListNode* head) {
     if (head == NULL) {
