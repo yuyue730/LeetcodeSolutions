@@ -75,6 +75,9 @@ public:
     // 109. Convert Sorted List to Binary Search Tree
     TreeNode* sortedListToBST109(ListNode* head);
 
+    // 110. Balanced Binary Tree
+    bool isBalanced110(TreeNode* root);
+
     // 113. Path Sum II
     vector<vector<int>> pathSum113(TreeNode* root, int sum);
 
@@ -110,16 +113,19 @@ private:
         const vector<int>& in, int inLeft, int inRight
     );
 
-    // // 108. Convert Sorted Array to Binary Search Tree helper
-    TreeNode * sortedArrayToBST108helper(
-        const vector<int>& arr, int left, int right
-    );
-
     // 106. Construct Binary Tree from Inorder and Postorder Traversal helper
     TreeNode * buildTree106helper(
         const vector<int>& in, int inLeft, int inRight, 
         const vector<int>& post, int postLeft, int postRight
     );
+
+    // 108. Convert Sorted Array to Binary Search Tree helper
+    TreeNode * sortedArrayToBST108helper(
+        const vector<int>& arr, int left, int right
+    );
+
+    // 110. Balanced Binary Tree helper
+    int checkDepth110(TreeNode * cur);
 
     // 113. Path Sum II helper
     void pathSum113helper(

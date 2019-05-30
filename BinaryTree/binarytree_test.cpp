@@ -204,6 +204,32 @@ void BinaryTreeTest::sortedListToBST109Test() {
     return;
 }
 
+// 110. Balanced Binary Tree Test
+void BinaryTreeTest::isBalanced110Test() {
+    cout << "110. Balanced Binary Tree test starts.\n";
+    TreeNode * root = new TreeNode(5);
+    TreeNode * cur = root;
+    // cur->left = new TreeNode(4);
+    // cur = cur->left; cur->left = new TreeNode(11);
+    // cur = cur->left;
+    // cur->left = new TreeNode(7); cur->right = new TreeNode(2);
+
+    // cur = root;
+    // cur->right = new TreeNode(8); cur = cur->right;
+    // cur->left = new TreeNode(13); cur->right = new TreeNode(4);
+    // cur = cur->right;
+    // cur->left = new TreeNode(5); cur->right = new TreeNode(1);
+
+    ///
+    cur->right = new TreeNode(2);
+    cur = cur->right; cur->right = new TreeNode(3);
+    ///
+
+    cout << "isBalanced = [" << (implObj->isBalanced110(root) ? "True" : "False") 
+        << "].\n\n";
+    return;
+}
+
 // 113. Path Sum II Test
 void BinaryTreeTest::pathSum113Test() {
     cout << "113. Path Sum II test starts.\n";

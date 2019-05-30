@@ -20,6 +20,7 @@ int main() {
     testObj->buildTree106Test();
     testObj->sortedArrayToBST108Test();
     testObj->sortedListToBST109Test();
+    testObj->isBalanced110Test();
     testObj->pathSum113Test();
     testObj->flatten114Test();
     testObj->connect116Test();

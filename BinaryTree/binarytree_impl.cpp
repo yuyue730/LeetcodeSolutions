@@ -360,6 +360,32 @@ TreeNode * BinaryTreeImpl::sortedListToBST109(ListNode* head) {
     return root;
 }
 
+// 110. Balanced Binary Tree
+bool BinaryTreeImpl::isBalanced110(TreeNode* root)
+{
+    return (checkDepth110(root) != -1);
+}
+
+int BinaryTreeImpl::checkDepth110(TreeNode * cur)
+{
+    if (cur == NULL) {
+        return 0;
+    }
+
+    int leftDepth = checkDepth110(cur->left);
+    if (leftDepth == -1) {
+        return -1;
+    }
+    int rightDepth = checkDepth110(cur->right);
+    if (rightDepth == -1) {
+        return -1;
+    }
+
+    if (abs(leftDepth - rightDepth) > 1) 
+        return -1;
+    else return max(leftDepth, rightDepth) + 1;
+}
+
 // 113. Path Sum II
 vector<vector<int>> BinaryTreeImpl::pathSum113(TreeNode* root, int sum) {
     vector<vector<int>> allResults;

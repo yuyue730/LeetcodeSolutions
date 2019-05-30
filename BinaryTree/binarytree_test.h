@@ -46,6 +46,9 @@ public:
     // 109. Convert Sorted List to Binary Search Tree Test
     void sortedListToBST109Test();
 
+    // 110. Balanced Binary Tree Test
+    void isBalanced110Test();
+
     // 113. Path Sum II Test
     void pathSum113Test();
 
