@@ -234,3 +234,41 @@ int DpImpl::minimumTotal120(vector<vector<int>>& triangle)
     return dp->at(0);
 }
 
+// 123. Best Time to Buy and Sell Stock III
+int DpImpl::maxProfit123(vector<int>& prices)
+{
+    if (prices.size() == 0) {
+        return 0;
+    }
+
+    vector<int> leftMaxProfit(prices.size(), 0);
+    int localMinPrice = prices[0];
+    int curMaxLeftProfit = 0;
+    for (int i = 1; i < prices.size(); ++i) {
+        if (prices[i] < localMinPrice) {
+            localMinPrice = prices[i];
+        }
+        else {
+            curMaxLeftProfit = max(
+                curMaxLeftProfit, prices[i] - localMinPrice
+            );
+        }
+        leftMaxProfit[i] = curMaxLeftProfit;
+    }
+
+    int result = leftMaxProfit.back();
+    int localMaxPrice = prices.back();
+    int curMaxRightProfit = 0;
+    for (int i = prices.size() - 2; i >= 0; --i) {
+        if (prices[i] > localMaxPrice) {
+            localMaxPrice = prices[i];
+        } else {
+            curMaxRightProfit = max(
+                curMaxRightProfit, localMaxPrice - prices[i]
+            );
+        }
+        result = max(result, leftMaxProfit[i] + curMaxRightProfit);
+    }
+
+    return result;
+}

@@ -39,6 +39,9 @@ public:
     // 120. Triangle Test
     void minimumTotal120Test();
 
+    // 123. Best Time to Buy and Sell Stock III Test
+    void maxProfit123Test();
+
 private:
     DpImpl * implObj;
 };

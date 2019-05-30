@@ -18,6 +18,7 @@ int main() {
     testObj->numTrees96Test();
     testObj->isInterleave97Test();
     testObj->minimumTotal120Test();
+    testObj->maxProfit123Test();
 
     return 0;
 }

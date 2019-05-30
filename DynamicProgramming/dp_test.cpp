@@ -91,6 +91,14 @@ void DpTest::minimumTotal120Test() {
         {4,1,8,3}
     };
 
-    cout << "Min total = [" << implObj->minimumTotal120(triangle) << "]\n";
+    cout << "Min total = [" << implObj->minimumTotal120(triangle) << "]\n\n";
+    return;
+}
+
+// 123. Best Time to Buy and Sell Stock III Test
+void DpTest::maxProfit123Test() {
+    cout << "123. Best Time to Buy and Sell Stock III test starts.\n";
+    vector<int> prices = {3,3,5,0,0,3,1,4};
+    cout << "Max Profit = [" << implObj->maxProfit123(prices) << "]\n\n";
     return;
 }

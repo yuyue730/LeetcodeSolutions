@@ -39,6 +39,9 @@ public:
 
     // 120. Triangle
     int minimumTotal120(vector<vector<int>>& triangle);
+
+    // 123. Best Time to Buy and Sell Stock III
+    int maxProfit123(vector<int>& prices);
 };
 
 #endif
