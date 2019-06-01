@@ -21,6 +21,7 @@ int main() {
     testObj->sortedArrayToBST108Test();
     testObj->sortedListToBST109Test();
     testObj->isBalanced110Test();
+    testObj->hasPathSum112Test();
     testObj->pathSum113Test();
     testObj->flatten114Test();
     testObj->connect116Test();

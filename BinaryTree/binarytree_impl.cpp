@@ -386,6 +386,21 @@ int BinaryTreeImpl::checkDepth110(TreeNode * cur)
     else return max(leftDepth, rightDepth) + 1;
 }
 
+// 112. Path Sum
+bool BinaryTreeImpl::hasPathSum112(TreeNode* root, int sum)
+{
+    if (root == NULL || sum < 0) {
+        return false;
+    }
+
+    if (root->left == NULL && root->right == NULL) {
+        return true;
+    }
+
+    return hasPathSum112(root->left, sum - root->val)
+        || hasPathSum112(root->right, sum - root->val);
+}
+
 // 113. Path Sum II
 vector<vector<int>> BinaryTreeImpl::pathSum113(TreeNode* root, int sum) {
     vector<vector<int>> allResults;
@@ -443,6 +458,7 @@ void BinaryTreeImpl::flatten114(TreeNode* root) {
 }
 
 // 116. Populating Next Right Pointers in Each Node
+// 117. Populating Next Right Pointers in Each Node II
 Node* BinaryTreeImpl::connect116(Node* root) {
     if (!root) {
         return NULL;

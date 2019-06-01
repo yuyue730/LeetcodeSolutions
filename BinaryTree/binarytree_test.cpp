@@ -209,23 +209,39 @@ void BinaryTreeTest::isBalanced110Test() {
     cout << "110. Balanced Binary Tree test starts.\n";
     TreeNode * root = new TreeNode(5);
     TreeNode * cur = root;
-    // cur->left = new TreeNode(4);
-    // cur = cur->left; cur->left = new TreeNode(11);
-    // cur = cur->left;
-    // cur->left = new TreeNode(7); cur->right = new TreeNode(2);
+    cur->left = new TreeNode(4);
+    cur = cur->left; cur->left = new TreeNode(11);
+    cur = cur->left;
+    cur->left = new TreeNode(7); cur->right = new TreeNode(2);
 
-    // cur = root;
-    // cur->right = new TreeNode(8); cur = cur->right;
-    // cur->left = new TreeNode(13); cur->right = new TreeNode(4);
-    // cur = cur->right;
-    // cur->left = new TreeNode(5); cur->right = new TreeNode(1);
-
-    ///
-    cur->right = new TreeNode(2);
-    cur = cur->right; cur->right = new TreeNode(3);
-    ///
+    cur = root;
+    cur->right = new TreeNode(8); cur = cur->right;
+    cur->left = new TreeNode(13); cur->right = new TreeNode(4);
+    cur = cur->right;
+    cur->left = new TreeNode(5); cur->right = new TreeNode(1);
 
     cout << "isBalanced = [" << (implObj->isBalanced110(root) ? "True" : "False") 
+        << "].\n\n";
+    return;
+}
+
+// 112. Path Sum Test
+void BinaryTreeTest::hasPathSum112Test() {
+    cout << "112. Path Sum test starts.\n";
+    TreeNode * root = new TreeNode(5);
+    TreeNode * cur = root;
+    cur->left = new TreeNode(4);
+    cur = cur->left; cur->left = new TreeNode(11);
+    cur = cur->left;
+    cur->left = new TreeNode(7); cur->right = new TreeNode(2);
+
+    cur = root;
+    cur->right = new TreeNode(8); cur = cur->right;
+    cur->left = new TreeNode(13); cur->right = new TreeNode(4);
+    cur = cur->right;
+    cur->left = new TreeNode(5); cur->right = new TreeNode(1);
+
+    cout << "hasPathSum = [" << (implObj->hasPathSum112(root, 22) ? "True" : "False")
         << "].\n\n";
     return;
 }

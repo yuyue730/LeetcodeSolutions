@@ -49,6 +49,9 @@ public:
     // 110. Balanced Binary Tree Test
     void isBalanced110Test();
 
+    // 112. Path Sum Test
+    void hasPathSum112Test();
+
     // 113. Path Sum II Test
     void pathSum113Test();
 

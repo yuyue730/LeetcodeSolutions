@@ -78,6 +78,9 @@ public:
     // 110. Balanced Binary Tree
     bool isBalanced110(TreeNode* root);
 
+    // 112. Path Sum
+    bool hasPathSum112(TreeNode* root, int sum);
+
     // 113. Path Sum II
     vector<vector<int>> pathSum113(TreeNode* root, int sum);
 
@@ -85,6 +88,7 @@ public:
     void flatten114(TreeNode* root);
 
     // 116. Populating Next Right Pointers in Each Node
+    // 117. Populating Next Right Pointers in Each Node II
     Node* connect116(Node* root);
 
 private:
