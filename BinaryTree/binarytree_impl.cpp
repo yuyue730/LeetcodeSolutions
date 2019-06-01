@@ -487,3 +487,27 @@ Node* BinaryTreeImpl::connect116(Node* root) {
 
     return root;
 }
+
+// 124. Binary Tree Maximum Path Sum
+int BinaryTreeImpl::maxPathSum124(TreeNode* root)
+{
+    if (root == NULL) {
+        return 0;
+    }
+
+    int result = INT_MIN;
+    maxPathSum124helper(root, result);
+    return result;
+}
+
+int BinaryTreeImpl::maxPathSum124helper(TreeNode * cur, int & result)
+{
+    if (cur == NULL) {
+        return 0;
+    }
+
+    int left = max(maxPathSum124helper(cur->left, result), 0);
+    int right = max(maxPathSum124helper(cur->right, result), 0);
+    result = max(result, left + right + cur->val);
+    return max(left, right) + cur->val;
+}

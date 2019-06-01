@@ -91,6 +91,9 @@ public:
     // 117. Populating Next Right Pointers in Each Node II
     Node* connect116(Node* root);
 
+    // 124. Binary Tree Maximum Path Sum
+    int maxPathSum124(TreeNode* root);
+
 private:
     // 94. Binary Tree Inorder Traversal helper
     void inorderTraversal94DFS(TreeNode *curNode, vector<int> & result);
@@ -138,6 +141,9 @@ private:
         int remain,
         TreeNode * cur
     );
+
+    // 124. Binary Tree Maximum Path Sum helper
+    int maxPathSum124helper(TreeNode * cur, int & result);
 };
 
 #endif

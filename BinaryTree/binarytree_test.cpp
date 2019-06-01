@@ -312,3 +312,17 @@ void BinaryTreeTest::connect116Test() {
     return;
 }
 
+// 124. Binary Tree Maximum Path Sum Test
+void BinaryTreeTest::maxPathSum124Test()
+{
+    cout << "124. Binary Tree Maximum Path Sum test starts.\n";
+    TreeNode * root = new TreeNode(-10);
+    TreeNode * cur = root;
+    cur->left = new TreeNode(9);
+    cur->right = new TreeNode(20);
+    cur = cur->right;
+    cur->left = new TreeNode(15); cur->right = new TreeNode(7);
+
+    cout << "BT Max Path Sum = [" << implObj->maxPathSum124(root) << "]\n\n";
+    return;
+}

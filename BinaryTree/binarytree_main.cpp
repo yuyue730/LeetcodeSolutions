@@ -25,6 +25,7 @@ int main() {
     testObj->pathSum113Test();
     testObj->flatten114Test();
     testObj->connect116Test();
+    testObj->maxPathSum124Test();
 
     return 0;
 }

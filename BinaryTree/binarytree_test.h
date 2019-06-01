@@ -61,6 +61,9 @@ public:
     // 116. Populating Next Right Pointers in Each Node Test
     void connect116Test();
 
+    // 124. Binary Tree Maximum Path Sum Test
+    void maxPathSum124Test();
+
 private:
     BinaryTreeImpl * implObj;
 };
