@@ -89,3 +89,12 @@ void StringTest::simplifyPath71Test() {
     cout << "'/a//b////c/d//././/..' will generate " << implObj->simplifyPath71("/a//b////c/d//././/..") << "\n\n";
     return;
 }
+
+// 125. Valid Palindrome Test
+void StringTest::isPalindrome125Test() {
+    cout << "125. Valid Palindrome test starts.\n";
+    cout << "'A man, a plan, a canal: Panama' = " 
+        << (implObj->isPalindrome125("A man, a plan, a canal: Panama") ? "True" : "False")
+        << "\n\n";
+    return;
+}

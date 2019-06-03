@@ -34,6 +34,9 @@ public:
     // 71. Simplify Path Test
     void simplifyPath71Test();
 
+    // 125. Valid Palindrome Test
+    void isPalindrome125Test();
+
 private:
     StringImpl * implObj;
 };

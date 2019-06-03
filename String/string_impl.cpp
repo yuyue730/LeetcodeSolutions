@@ -255,3 +255,23 @@ string StringImpl::simplifyPath71(string path) {
 
     return result.empty() ? "/" : result;
 }
+
+// 125. Valid Palindrome
+bool StringImpl::isPalindrome125(string s)
+{
+    int left = 0, right = s.size() - 1;
+    while (left <= right) {
+        if (!isalpha(s[left]) && !isdigit(s[left])) {
+            ++left;
+        } else if (!isalpha(s[right]) && !isdigit(s[right])) {
+            --right;
+        } else {
+            if (toupper(s[left]) != toupper(s[right])) {
+                return false;
+            } else {
+                ++left; --right;
+            }
+        }
+    }
+    return true;
+}

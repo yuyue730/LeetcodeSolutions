@@ -36,6 +36,9 @@ public:
     // 71. Simplify Path
     string simplifyPath71(string path);
 
+    // 125. Valid Palindrome
+    bool isPalindrome125(string s);
+
 private:
     // 5. Longest Palindromic Substring helper
     void findLongestPalindromeRec(const string str, int left, int right, string & result);

@@ -17,6 +17,7 @@ int main() {
     testObj->countAndSay38Test();
     testObj->fullJustify68Test();
     testObj->simplifyPath71Test();
+    testObj->isPalindrome125Test();
 
     return 0;
 }
