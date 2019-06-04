@@ -14,6 +14,9 @@ public:
     // 126. Word Ladder II Test
     void findLadders126Test();
 
+    // 127. Word Ladder Test
+    void ladderLength127Test();
+
 private:
     GraphImpl * implObj;
 };

@@ -9,6 +9,7 @@ int main() {
     cout << "\nTest for problems starts.\n";
 
     testObj->findLadders126Test();
+    testObj->ladderLength127Test();
 
     return 0;
 }

@@ -1,6 +1,7 @@
 #include "graph_impl.h"
 
 #include <unordered_set>
+#include <unordered_map>
 #include <queue>
 using namespace std;
 
@@ -61,4 +62,43 @@ vector<vector<string>> GraphImpl::findLadders126(
     }
 
     return result;
+}
+
+// 127. Word Ladder
+int GraphImpl::ladderLength127(
+    string beginWord, 
+    string endWord, 
+    vector<string>& wordList
+) {
+    unordered_set<string> dict(wordList.begin(), wordList.end());
+    if (!dict.count(endWord)) {
+        return 0;
+    }
+
+    unordered_map<string, int> wordLevelMap;
+    wordLevelMap.insert({beginWord, 1});
+    queue<string> wordQ({beginWord});
+
+    while (!wordQ.empty()) {
+        string curWord = wordQ.front();
+        wordQ.pop();
+        for (int i = 0; i < curWord.size(); ++i) {
+            string newWord = curWord;
+            for (char ch = 'a'; ch <= 'z'; ++ch) {
+                if (ch == curWord[i]) {
+                    continue;
+                }
+                newWord[i] = ch;
+                if (dict.count(newWord) && newWord == endWord) {
+                    return wordLevelMap[curWord] + 1;
+                }
+
+                if (dict.count(newWord) && !wordLevelMap.count(newWord)) {
+                    wordLevelMap[newWord] = wordLevelMap[curWord] + 1;
+                    wordQ.push(newWord);
+                }
+            }
+        }
+    }
+    return 0;
 }

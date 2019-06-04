@@ -23,3 +23,14 @@ void GraphTest::findLadders126Test() {
     cout << "]\n\n";
     return;
 }
+
+// 127. Word Ladder Test
+void GraphTest::ladderLength127Test() {
+    cout << "127. Word Ladder test starts.\n";
+    string startWord = "hit", endWord = "cog";
+    vector<string> wordList = {"hot","dot","dog","lot","log","cog"};
+
+    cout << "Steps needed from being to end = [" 
+        << implObj->ladderLength127(startWord, endWord, wordList) << "].\n\n";
+    return;
+}
