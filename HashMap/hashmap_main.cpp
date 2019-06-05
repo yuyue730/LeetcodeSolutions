@@ -14,6 +14,7 @@ int main() {
     testObj->isValidSudoku36Test();
     testObj->groupAnagrams49Test();
     testObj->minWindow76Test();
+    testObj->longestConsecutive128Test();
 
     return 0;
 }

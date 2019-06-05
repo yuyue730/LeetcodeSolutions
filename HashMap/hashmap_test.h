@@ -25,6 +25,9 @@ public:
     // 76. Minimum Window Substring Test
     void minWindow76Test();
 
+    // 128. Longest Consecutive Sequence Test
+    void longestConsecutive128Test();
+
 private:
     HashMapImpl* implObj;
 };

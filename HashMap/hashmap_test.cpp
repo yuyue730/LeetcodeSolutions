@@ -74,3 +74,12 @@ void HashMapTest::minWindow76Test() {
     cout << "Minimum Window Substring is " << result << ".\n\n";
     return;
 }
+
+// 128. Longest Consecutive Sequence Test
+void HashMapTest::longestConsecutive128Test() {
+    cout << "128. Longest Consecutive Sequence test starts.\n";
+    vector<int> nums = {100, 4, 200, 1, 3, 2};
+    cout << "Longest Consecutive Sequence = [" << implObj->longestConsecutive128(nums) 
+        << "].\n\n";
+    return;
+}

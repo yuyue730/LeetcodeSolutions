@@ -25,6 +25,9 @@ public:
 
     // 76. Minimum Window Substring
     string minWindow76(string s, string t);
+
+    // 128. Longest Consecutive Sequence
+    int longestConsecutive128(vector<int>& nums);
 };
 
 #endif

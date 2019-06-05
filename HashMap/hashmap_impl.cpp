@@ -156,3 +156,22 @@ string HashMapImpl::minWindow76(string s, string t)
 
     return result;
 }
+
+// 128. Longest Consecutive Sequence
+int HashMapImpl::longestConsecutive128(vector<int>& nums)
+{
+    unordered_map<int, int> numLengthMap;
+    int result = 0;
+    for (int num : nums) {
+        if (numLengthMap.count(num)) {
+            continue;
+        }
+        int left = numLengthMap.count(num - 1) ? numLengthMap[num - 1] : 0;
+        int right = numLengthMap.count(num + 1) ? numLengthMap[num + 1] : 0;
+        int curLength = left + right + 1;
+        numLengthMap[num - left] = curLength;
+        numLengthMap[num + right] = curLength;
+        result = max(result, curLength);
+    }
+    return result;
+}
