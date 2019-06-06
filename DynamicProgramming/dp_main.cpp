@@ -19,6 +19,7 @@ int main() {
     testObj->isInterleave97Test();
     testObj->minimumTotal120Test();
     testObj->maxProfit123Test();
+    testObj->minCut132Test();
 
     return 0;
 }

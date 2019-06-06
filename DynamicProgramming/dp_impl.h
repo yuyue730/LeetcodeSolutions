@@ -42,6 +42,9 @@ public:
 
     // 123. Best Time to Buy and Sell Stock III
     int maxProfit123(vector<int>& prices);
+    
+    // 132. Palindrome Partitioning II
+    int minCut132(string s);
 };
 
 #endif

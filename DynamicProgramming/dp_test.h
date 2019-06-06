@@ -42,6 +42,9 @@ public:
     // 123. Best Time to Buy and Sell Stock III Test
     void maxProfit123Test();
 
+    // 132. Palindrome Partitioning II Test
+    void minCut132Test();
+
 private:
     DpImpl * implObj;
 };

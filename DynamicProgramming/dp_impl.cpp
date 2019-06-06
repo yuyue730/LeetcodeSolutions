@@ -272,3 +272,25 @@ int DpImpl::maxProfit123(vector<int>& prices)
 
     return result;
 }
+
+// 132. Palindrome Partitioning II
+int DpImpl::minCut132(string s) {
+    if (s.empty()) {
+        return 0;
+    }
+
+    int nSize = s.size();
+    vector<vector<bool>> palinState(nSize, vector<bool>(nSize, false));
+    vector<int> dp(nSize);
+
+    for (int i = 0; i < nSize; ++i) {
+        dp[i] = i;
+        for (int j = 0; j <= i; ++j) {
+            if (s[i] == s[j] && (i - j < 2 || palinState[j + 1][i - 1])) {
+                palinState[j][i] = true;
+                dp[i] = (j == 0 ? 0 : min(dp[j - 1] + 1, dp[i]));
+            }
+        }
+    }
+    return dp[nSize - 1];
+}

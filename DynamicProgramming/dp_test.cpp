@@ -102,3 +102,10 @@ void DpTest::maxProfit123Test() {
     cout << "Max Profit = [" << implObj->maxProfit123(prices) << "]\n\n";
     return;
 }
+
+// 132. Palindrome Partitioning II Test
+void DpTest::minCut132Test() {
+    cout << "132. Palindrome Partitioning II test starts.\n";
+    cout << "Min Cut = " << implObj->minCut132("efe") << "\n\n";
+    return;
+}
