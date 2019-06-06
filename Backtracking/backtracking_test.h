@@ -43,6 +43,9 @@ public:
     // 93. Restore IP Addresses Test
     void restoreIpAddresses93Test();
 
+    // 130. Surrounded Regions Test
+    void solve130Test();
+
 private:
     BacktrackingImpl * implObj;
 };

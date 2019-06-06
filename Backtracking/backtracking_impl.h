@@ -42,6 +42,9 @@ public:
     // 93. Restore IP Addresses
     vector<string> restoreIpAddresses93(string s);
 
+    // 130. Surrounded Regions
+    void solve130(vector<vector<char>>& board);
+
 private:
     // 17. Letter Combinations of a Phone Number helper
     void generateLetterCombRec(
@@ -130,6 +133,9 @@ private:
     );
 
     bool isValidIpNumStr(string & ipNumStr);
+
+    // 130. Surrounded Regions helper
+    void solve130DFS(vector<vector<char>>& board, int iIdx, int jIdx);
 };
 
 #endif

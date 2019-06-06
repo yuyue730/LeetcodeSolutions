@@ -188,3 +188,25 @@ void BacktrackingTest::restoreIpAddresses93Test() {
     cout << "]\n\n";
     return;
 }
+
+// 130. Surrounded Regions Test
+void BacktrackingTest::solve130Test() {
+    cout << "130. Surrounded Regions test starts.\n";
+    vector<vector<char>> board = {
+        {'X', 'X', 'X', 'X'},
+        {'X', 'X', 'O', 'X'},
+        {'X', 'O', 'X', 'X'},
+        {'O', 'O', 'X', 'O'}
+    };
+    implObj->solve130(board);
+    cout << "Board = [\n";
+    for (int i = 0; i < board.size(); ++i) {
+        cout << "  [";
+        for (int j = 0; j < board[0].size(); ++j) {
+            cout << board[i][j] << ((j == board[0].size() - 1) ?"" : ", ");
+        }
+        cout << "]\n";
+    }
+    cout << "].\n\n";
+    return;
+}

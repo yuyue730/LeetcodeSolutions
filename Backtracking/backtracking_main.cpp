@@ -20,6 +20,7 @@ int main() {
     testObj->subsets78Test();
     testObj->exist79Test();
     testObj->restoreIpAddresses93Test();
+    testObj->solve130Test();
 
     return 0;
 }

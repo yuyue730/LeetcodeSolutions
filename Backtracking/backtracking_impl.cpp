@@ -444,3 +444,51 @@ bool BacktrackingImpl::isValidIpNumStr(string & ipNumStr)
     }
     return true;
 }
+
+// 130. Surrounded Regions
+void BacktrackingImpl::solve130(vector<vector<char>>& board)
+{
+    if (board.size() == 0) {
+        return;
+    }
+    int mSize = board.size(), nSize = board[0].size();
+    for (int i = 0; i < mSize; ++i) {
+        for (int j = 0; j < nSize; ++j) {
+            if (i == 0 || i == mSize - 1 || j == 0 || j == nSize - 1) {
+                solve130DFS(board, i, j);
+            }
+        }
+    }
+
+    for (int i = 0; i < mSize; ++i) {
+        for (int j = 0; j < nSize; ++j) {
+            if (board[i][j] == 'P') {
+                board[i][j] = 'O';
+            }
+            else if (board[i][j] == 'O') {
+                board[i][j] = 'X';
+            }
+        }
+    }
+}
+
+void BacktrackingImpl::solve130DFS(
+    vector<vector<char>>& board, int iIdx, int jIdx
+) {
+    int mSize = board.size(), nSize = board[0].size();
+    if (board[iIdx][jIdx] == 'O') {
+        board[iIdx][jIdx] = 'P';
+        if (iIdx > 0 && board[iIdx - 1][jIdx] == 'O') {
+            solve130DFS(board, iIdx - 1, jIdx);
+        }
+        if (iIdx < mSize - 1 && board[iIdx + 1][jIdx] == 'O') {
+            solve130DFS(board, iIdx + 1, jIdx);
+        }
+        if (jIdx > 0 && board[iIdx][jIdx - 1] == 'O') {
+            solve130DFS(board, iIdx, jIdx - 1);
+        }
+        if (jIdx < nSize - 1 && board[iIdx][jIdx + 1] == 'O') {
+            solve130DFS(board, iIdx, jIdx + 1);
+        }
+    }
+}
