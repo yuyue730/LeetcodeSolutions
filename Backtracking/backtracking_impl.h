@@ -45,6 +45,9 @@ public:
     // 130. Surrounded Regions
     void solve130(vector<vector<char>>& board);
 
+    // 131. Palindrome Partitioning
+    vector<vector<string>> partition131(string s);
+
 private:
     // 17. Letter Combinations of a Phone Number helper
     void generateLetterCombRec(
@@ -136,6 +139,15 @@ private:
 
     // 130. Surrounded Regions helper
     void solve130DFS(vector<vector<char>>& board, int iIdx, int jIdx);
+
+    // 131. Palindrome Partitioning helper
+    void partition131helper(
+        const string s, int startIdx, 
+        vector<string> & curRes, 
+        vector<vector<string>> & allRes
+    );
+
+    bool isPalindrome(const string s, int left, int right);
 };
 
 #endif

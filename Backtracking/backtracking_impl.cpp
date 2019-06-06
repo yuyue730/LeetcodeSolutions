@@ -492,3 +492,41 @@ void BacktrackingImpl::solve130DFS(
         }
     }
 }
+
+// 131. Palindrome Partitioning
+vector<vector<string>> BacktrackingImpl::partition131(string s)
+{
+    vector<string> curRes;
+    vector<vector<string>> allRes;
+    partition131helper(s, 0, curRes, allRes);
+    return allRes;
+}
+
+void BacktrackingImpl::partition131helper(
+    const string s, int startIdx, 
+    vector<string> & curRes, 
+    vector<vector<string>> & allRes
+) {
+    if (startIdx == s.size()) {
+        allRes.push_back(curRes);
+        return;
+    }
+
+    for (int i = startIdx; i < s.size(); ++i) {
+        if (isPalindrome(s, startIdx, i)) {
+            curRes.push_back(s.substr(startIdx, i - startIdx + 1));
+            partition131helper(s, i + 1, curRes, allRes);
+            curRes.pop_back();
+        }
+    }
+}
+
+bool BacktrackingImpl::isPalindrome(const string s, int left, int right) {
+    while (left <= right) {
+        if (s[left] != s[right]) {
+            return false;
+        }
+        left++; right--;
+    }
+    return true;
+}

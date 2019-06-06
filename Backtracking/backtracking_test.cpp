@@ -210,3 +210,18 @@ void BacktrackingTest::solve130Test() {
     cout << "].\n\n";
     return;
 }
+
+// 131. Palindrome Partitioning Test
+void BacktrackingTest::partition131Test() {
+    cout << "131. Palindrome Partitioning test starts.\n";
+    vector<vector<string>> result = implObj->partition131("aab");
+    cout << "Result = [\n";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "  [";
+        for (int j = 0; j < result[i].size(); ++j) {
+            cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
+        }
+        cout << "]\n";
+    }
+    cout << "].\n\n";
+}

@@ -21,6 +21,7 @@ int main() {
     testObj->exist79Test();
     testObj->restoreIpAddresses93Test();
     testObj->solve130Test();
+    testObj->partition131Test();
 
     return 0;
 }

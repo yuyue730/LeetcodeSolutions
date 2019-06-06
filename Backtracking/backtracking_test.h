@@ -46,6 +46,9 @@ public:
     // 130. Surrounded Regions Test
     void solve130Test();
 
+    // 131. Palindrome Partitioning Test
+    void partition131Test();
+
 private:
     BacktrackingImpl * implObj;
 };
