@@ -17,6 +17,9 @@ public:
     // 127. Word Ladder Test
     void ladderLength127Test();
 
+    // 133. Clone Graph Test
+    void cloneGraph133Test();
+
 private:
     GraphImpl * implObj;
 };

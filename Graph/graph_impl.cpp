@@ -1,7 +1,5 @@
 #include "graph_impl.h"
 
-#include <unordered_set>
-#include <unordered_map>
 #include <queue>
 using namespace std;
 
@@ -101,4 +99,29 @@ int GraphImpl::ladderLength127(
         }
     }
     return 0;
+}
+
+// 133. Clone Graph
+Node* GraphImpl::cloneGraph133(Node* node) {
+    unordered_map<Node *, Node *> curNewMap;
+    return cloneGraph133DFS(node, curNewMap);
+}
+
+Node* GraphImpl::cloneGraph133DFS(
+    Node *node, 
+    unordered_map<Node *, Node *> & curNewMap
+) {
+    if (node == NULL) {
+        return NULL;
+    }
+    if (curNewMap.count(node)) {
+        return curNewMap[node];
+    }
+    Node* clone = new Node();
+    clone->val = node->val;
+    curNewMap[node] = clone;
+    for (int i = 0; i < node->neighbors.size(); ++i) {
+        clone->neighbors.push_back(cloneGraph133DFS(node->neighbors[i], curNewMap));
+    }
+    return clone;
 }
