@@ -35,6 +35,7 @@ int main() {
     testObj->generate118Test();
     testObj->maxProfit121Test();
     testObj->maxProfit122Test();
+    testObj->canCompleteCircuit134Test();
 
     return 0;
 }

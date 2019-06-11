@@ -92,6 +92,9 @@ public:
     // 122. Best Time to Buy and Sell Stock II
     int maxProfit122(vector<int>& prices);
 
+    // 134. Gas Station
+    int canCompleteCircuit134(vector<int>& gas, vector<int>& cost);
+
 private:
     // 4. Median of Two Sorted Arrays helper
     double findKthInTwoArray(

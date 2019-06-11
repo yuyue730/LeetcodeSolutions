@@ -88,6 +88,9 @@ public:
     // 122. Best Time to Buy and Sell Stock II Test
     void maxProfit122Test();
 
+    // 134. Gas Station Test
+    void canCompleteCircuit134Test();
+
 private:
     ArrayImpl * implObj;
 };

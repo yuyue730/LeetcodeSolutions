@@ -724,3 +724,19 @@ int ArrayImpl::maxProfit122(vector<int>& prices) {
     
     return profit;
 }
+
+// 134. Gas Station
+int ArrayImpl::canCompleteCircuit134(vector<int>& gas, vector<int>& cost)
+{
+    int total = 0, curMax = 0, curStart = 0;
+    for (int i = 0; i < gas.size(); ++i) {
+        total += gas[i] - cost[i];
+        curMax += gas[i] - cost[i];
+        if (curMax < 0) {
+            curMax = 0;
+            curStart = i + 1;
+        }
+    }
+
+    return (total < 0) ? -1 : curStart;
+}

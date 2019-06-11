@@ -361,3 +361,14 @@ void ArrayTest::maxProfit122Test() {
     cout << "Max Profit = " << implObj->maxProfit122(nums) << "\n\n";
     return;
 }
+
+// 134. Gas Station Test
+void ArrayTest::canCompleteCircuit134Test() {
+    cout << "134. Gas Station test starts.\n";
+    vector<int> gas = {1,2,3,4,5};
+    vector<int> cost = {3,4,5,1,2};
+
+    cout << "Starting Index = [" << implObj->canCompleteCircuit134(gas, cost)
+        << "].\n\n";
+    return;
+}
