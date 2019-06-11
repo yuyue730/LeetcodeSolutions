@@ -372,3 +372,12 @@ void ArrayTest::canCompleteCircuit134Test() {
         << "].\n\n";
     return;
 }
+
+// 135. Candy Test
+void ArrayTest::candy135Test() {
+    cout << "135. Candy test starts.\n";
+    vector<int> ratings = {1,0,2};
+
+    cout << "# of candies = [" << implObj->candy135(ratings) << "].\n\n";
+    return;
+}

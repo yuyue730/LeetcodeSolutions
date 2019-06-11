@@ -91,6 +91,9 @@ public:
     // 134. Gas Station Test
     void canCompleteCircuit134Test();
 
+    // 135. Candy Test
+    void candy135Test();
+
 private:
     ArrayImpl * implObj;
 };

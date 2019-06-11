@@ -740,3 +740,30 @@ int ArrayImpl::canCompleteCircuit134(vector<int>& gas, vector<int>& cost)
 
     return (total < 0) ? -1 : curStart;
 }
+
+// 135. Candy
+int ArrayImpl::candy135(vector<int>& ratings) {
+    if (ratings.empty()) {
+        return 0;
+    }
+
+    vector<int> candies(ratings.size(), 1);
+    for (int i = 1; i < ratings.size(); ++i) {
+        if (ratings[i] > ratings[i - 1]) {
+            candies[i] = candies[i - 1] + 1;
+        }
+    }
+
+    for (int i = ratings.size() - 2; i >= 0; --i) {
+        if (ratings[i] > ratings[i + 1]) {
+            candies[i] = max(candies[i + 1] + 1, candies[i]);
+        }
+    }
+
+    int result = 0;
+    for (int i = 0; i < candies.size(); ++i) {
+        result += candies[i];
+    }
+
+    return result;
+}

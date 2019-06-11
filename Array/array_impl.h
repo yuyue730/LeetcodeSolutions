@@ -95,6 +95,9 @@ public:
     // 134. Gas Station
     int canCompleteCircuit134(vector<int>& gas, vector<int>& cost);
 
+    // 135. Candy
+    int candy135(vector<int>& ratings);
+
 private:
     // 4. Median of Two Sorted Arrays helper
     double findKthInTwoArray(
