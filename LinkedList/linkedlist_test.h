@@ -37,6 +37,9 @@ public:
     // 92. Reverse Linked List II Test
     void reverseBetween92Test();
 
+    // 138. Copy List with Random Pointer Test
+    void copyRandomList138Test();
+
 private:
     LinkedListImpl * implObj;
 };

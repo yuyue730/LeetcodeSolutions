@@ -204,3 +204,18 @@ void LinkedListTest::reverseBetween92Test() {
     cout << "]\n\n";
     return;
 }
+
+// 138. Copy List with Random Pointer Test
+void LinkedListTest::copyRandomList138Test() {
+    cout << "138. Copy List with Random Pointer test starts.\n";
+    Node * head = new Node(1, NULL, NULL);
+    Node * next = new Node(2, NULL, NULL);
+
+    head->next = next;
+    head->random = next;
+    next->next = NULL;
+    next->random = next;
+    Node * clone = implObj->copyRandomList138(head);
+    cout << "Please exam the cloned linked list [" << clone->val << "]\n\n";
+    return;
+}

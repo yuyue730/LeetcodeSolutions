@@ -3,12 +3,28 @@
 
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 using namespace std;
 
 struct ListNode {
     int val;
     ListNode *next;
     ListNode(int x) : val(x), next(NULL) {}
+};
+
+class Node {
+public:
+    int val;
+    Node* next;
+    Node* random;
+
+    Node() {}
+
+    Node(int _val, Node* _next, Node* _random) {
+        val = _val;
+        next = _next;
+        random = _random;
+    }
 };
 
 class LinkedListImpl {
@@ -40,9 +56,17 @@ public:
     // 92. Reverse Linked List II
     ListNode* reverseBetween92(ListNode* head, int m, int n);
 
+    // 138. Copy List with Random Pointer
+    Node* copyRandomList138(Node* head);
+
 private:
     // 25. Reverse Nodes in k-Group helper
     ListNode* reverseOneGroup(ListNode* prevEnd, ListNode* nextStart);
+
+    // 138. Copy List with Random Pointer helper
+    Node* copyRandomList138DFS(
+        Node * cur, unordered_map<Node *, Node *> &curNewMap
+    );
 };
 
 #endif

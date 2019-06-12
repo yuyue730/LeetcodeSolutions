@@ -17,6 +17,7 @@ int main() {
     testObj->deleteDuplicates83Test();
     testObj->partition86Test();
     testObj->reverseBetween92Test();
+    testObj->copyRandomList138Test();
 
     return 0;
 }

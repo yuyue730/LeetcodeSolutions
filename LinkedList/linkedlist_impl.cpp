@@ -243,3 +243,30 @@ ListNode* LinkedListImpl::reverseBetween92(ListNode* head, int m, int n)
 
     return dummy->next;
 }
+
+// 138. Copy List with Random Pointer
+Node* LinkedListImpl::copyRandomList138(Node* head) {
+    if (head == NULL) {
+        return NULL;
+    }
+
+    unordered_map<Node *, Node *> curNewMap;
+    return copyRandomList138DFS(head, curNewMap);
+}
+
+Node* LinkedListImpl::copyRandomList138DFS(
+    Node * cur, unordered_map<Node *, Node *> &curNewMap
+) {
+    if (cur == NULL) {
+        return NULL;
+    }
+
+    if (curNewMap.count(cur)) {
+        return curNewMap[cur];
+    }
+    Node * newNode = new Node(cur->val, NULL, NULL);
+    curNewMap[cur] = newNode;
+    newNode->next = copyRandomList138DFS(cur->next, curNewMap);
+    newNode->random = copyRandomList138DFS(cur->random, curNewMap);
+    return newNode;
+}
