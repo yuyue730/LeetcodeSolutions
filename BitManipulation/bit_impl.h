@@ -11,6 +11,9 @@ public:
 
     // 136. Single Number
     int singleNumber136(vector<int>& nums);
+
+    // 137. Single Number II
+    int singleNumber137(vector<int>& nums);
 };
 
 #endif

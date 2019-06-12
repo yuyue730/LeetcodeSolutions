@@ -9,5 +9,6 @@ int main() {
     cout << "\nTest for problems starts.\n";
 
     testObj->singleNumber136Test();
+    testObj->singleNumber137Test();
     return 0;
 }

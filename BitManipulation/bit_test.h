@@ -13,6 +13,9 @@ public:
     // 136. Single Number Test
     void singleNumber136Test();
 
+    // 137. Single Number II Test
+    void singleNumber137Test();
+
 private:
     BitManipulationImpl * implObj;
 };

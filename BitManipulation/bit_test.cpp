@@ -15,3 +15,11 @@ void BitManipulationTest::singleNumber136Test() {
     cout << "Single Number = [" << implObj->singleNumber136(nums) << "]\n\n";
     return;
 }
+
+// 137. Single Number II Test
+void BitManipulationTest::singleNumber137Test() {
+    cout << "137. Single Number II test starts.\n";
+    vector<int> nums = {0,1,0,1,0,1,99};
+    cout << "Single Number = [" << implObj->singleNumber137(nums) << "]\n\n";
+    return;
+}
