@@ -22,6 +22,7 @@ int main() {
     testObj->restoreIpAddresses93Test();
     testObj->solve130Test();
     testObj->partition131Test();
+    testObj->wordBreak140Test();
 
     return 0;
 }

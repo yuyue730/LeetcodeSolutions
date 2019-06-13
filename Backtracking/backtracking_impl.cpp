@@ -530,3 +530,42 @@ bool BacktrackingImpl::isPalindrome(const string s, int left, int right) {
     }
     return true;
 }
+
+// 140. Word Break II
+vector<string> BacktrackingImpl::wordBreak140(
+    string s, vector<string>& wordDict
+) {
+    unordered_map<string, vector<string>> strVecMap;
+    return wordBreak140helper(s, wordDict, strVecMap);
+}
+
+vector<string> BacktrackingImpl::wordBreak140helper(
+    string s, const vector<string> & wordDict, 
+    unordered_map<string, vector<string>> & strVecMap
+) {
+    if (strVecMap.count(s)) {
+        return strVecMap[s];
+    }
+    if (s == "") {
+        return {""};
+    }
+
+    vector<string> result;
+    for (int i = 0; i < wordDict.size(); ++i) {
+        if (s.substr(0, wordDict[i].size()) != wordDict[i]) {
+            continue;
+        }
+
+        vector<string> remainResult = wordBreak140helper(
+            s.substr(wordDict[i].size()), wordDict, strVecMap
+        );
+        for (int remIdx = 0; remIdx < remainResult.size(); ++remIdx) {
+            string curRemStr = remainResult[remIdx];
+            result.push_back(
+                wordDict[i] + (curRemStr == "" ? "" : " ") + curRemStr
+            );
+        }
+    }
+    strVecMap[s] = result;
+    return result;
+}

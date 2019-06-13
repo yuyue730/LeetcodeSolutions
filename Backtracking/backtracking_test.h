@@ -49,6 +49,9 @@ public:
     // 131. Palindrome Partitioning Test
     void partition131Test();
 
+    // 140. Word Break II Test
+    void wordBreak140Test();
+
 private:
     BacktrackingImpl * implObj;
 };

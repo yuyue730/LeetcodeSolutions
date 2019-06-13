@@ -199,7 +199,7 @@ void BacktrackingTest::solve130Test() {
         {'O', 'O', 'X', 'O'}
     };
     implObj->solve130(board);
-    cout << "Board = [\n";
+    cout << "Board = [";
     for (int i = 0; i < board.size(); ++i) {
         cout << "  [";
         for (int j = 0; j < board[0].size(); ++j) {
@@ -224,4 +224,19 @@ void BacktrackingTest::partition131Test() {
         cout << "]\n";
     }
     cout << "].\n\n";
+}
+
+// 140. Word Break II Test
+void BacktrackingTest::wordBreak140Test() {
+    cout << "140. Word Break II test starts.\n";
+    string s = "catsanddog";
+    vector<string> wordDict = {"cat", "cats", "and", "sand", "dog"};
+    vector<string> result = implObj->wordBreak140(s, wordDict);
+
+    cout << "Word breaks into [";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << "\"" << result[i] << "\"" << ((i == result.size() - 1) ? "" : ", ");
+    }
+    cout << "]\n\n";
+    return;
 }

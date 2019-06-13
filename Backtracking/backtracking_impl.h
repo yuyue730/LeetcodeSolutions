@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 using namespace std;
 
 class BacktrackingImpl {
@@ -47,6 +48,9 @@ public:
 
     // 131. Palindrome Partitioning
     vector<vector<string>> partition131(string s);
+
+    // 140. Word Break II
+    vector<string> wordBreak140(string s, vector<string>& wordDict);
 
 private:
     // 17. Letter Combinations of a Phone Number helper
@@ -148,6 +152,12 @@ private:
     );
 
     bool isPalindrome(const string s, int left, int right);
+
+    // 140. Word Break II helper
+    vector<string> wordBreak140helper(
+        string s, const vector<string> & wordDict, 
+        unordered_map<string, vector<string>> & strVecMap
+    );
 };
 
 #endif
