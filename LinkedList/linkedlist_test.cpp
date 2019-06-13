@@ -236,3 +236,20 @@ void LinkedListTest::hasCycle141Test() {
     cout << "has Cycle = [" << (implObj->hasCycle141(head) ? "True" : "False") << "]\n\n";
     return;
 }
+
+// 142. Linked List Cycle II Test
+void LinkedListTest::detectCycle142Test() {
+    cout << "142. Linked List Cycle II test starts.\n";
+    ListNode* head = new ListNode(1);
+    ListNode *cur = head;
+    cur->next = new ListNode(2); 
+    ListNode * two = cur->next;
+    cur = cur->next;
+    cur->next = new ListNode(3); cur = cur->next;
+    cur->next = new ListNode(4); cur = cur->next;
+    cur->next = new ListNode(5); cur = cur->next; 
+    cur->next = two;
+
+    cout << "Fist overlap node = [" << implObj->detectCycle142(head)->val << "].\n\n";
+    return;
+}

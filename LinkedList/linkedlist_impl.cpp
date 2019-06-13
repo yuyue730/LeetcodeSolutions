@@ -285,3 +285,27 @@ bool LinkedListImpl::hasCycle141(ListNode *head) {
 
     return false;
 }
+
+// 142. Linked List Cycle II
+ListNode * LinkedListImpl::detectCycle142(ListNode *head) {
+    ListNode * slow = head;
+    ListNode * fast = head;
+    while (fast && fast->next) {
+        slow = slow->next;
+        fast = fast->next->next;
+        if (slow == fast) {
+            break;
+        }
+    }
+
+    if (!fast || !fast->next) {
+        return NULL;
+    }
+    slow = head;
+    while (slow != fast) {
+        slow = slow->next;
+        fast = fast->next;
+    }
+
+    return fast;
+}

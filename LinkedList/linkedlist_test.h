@@ -43,6 +43,9 @@ public:
     // 141. Linked List Cycle Test
     void hasCycle141Test();
 
+    // 142. Linked List Cycle II Test
+    void detectCycle142Test();
+
 private:
     LinkedListImpl * implObj;
 };

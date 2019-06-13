@@ -19,6 +19,7 @@ int main() {
     testObj->reverseBetween92Test();
     testObj->copyRandomList138Test();
     testObj->hasCycle141Test();
+    testObj->detectCycle142Test();
 
     return 0;
 }
