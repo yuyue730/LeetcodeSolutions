@@ -45,6 +45,9 @@ public:
     // 132. Palindrome Partitioning II Test
     void minCut132Test();
 
+    // 139. Word Break Test
+    void wordBreak139Test();
+
 private:
     DpImpl * implObj;
 };

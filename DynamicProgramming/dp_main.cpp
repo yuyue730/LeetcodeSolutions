@@ -20,6 +20,7 @@ int main() {
     testObj->minimumTotal120Test();
     testObj->maxProfit123Test();
     testObj->minCut132Test();
+    testObj->wordBreak139Test();
 
     return 0;
 }

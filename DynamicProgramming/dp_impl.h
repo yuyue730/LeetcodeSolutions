@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <unordered_set>
 using namespace std;
 
 class DpImpl {
@@ -45,6 +46,9 @@ public:
     
     // 132. Palindrome Partitioning II
     int minCut132(string s);
+
+    // 139. Word Break
+    bool wordBreak139(string s, vector<string>& wordDict);
 };
 
 #endif

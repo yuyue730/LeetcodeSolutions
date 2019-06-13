@@ -294,3 +294,26 @@ int DpImpl::minCut132(string s) {
     }
     return dp[nSize - 1];
 }
+
+// 139. Word Break
+bool DpImpl::wordBreak139(string s, vector<string>& wordDict) {
+    if (s.empty()) {
+        return true;
+    }
+
+    vector<bool> dp(s.size() + 1, false);
+    dp[0] = true;
+    unordered_set<string> dictSet(wordDict.begin(), wordDict.end());
+
+    for (int i = 1; i <= s.size(); ++i) {
+        for (int j = 0; j < i; ++j) {
+            string curWord = s.substr(j, i - j);
+            dp[i] = dp[j] && dictSet.count(curWord);
+            if (dp[i]) {
+                break;
+            }
+        }
+    }
+
+    return dp.back();
+}

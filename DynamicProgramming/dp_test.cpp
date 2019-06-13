@@ -109,3 +109,13 @@ void DpTest::minCut132Test() {
     cout << "Min Cut = " << implObj->minCut132("efe") << "\n\n";
     return;
 }
+
+// 139. Word Break Test
+void DpTest::wordBreak139Test() {
+    cout << "139. Word Break test starts.\n";
+    string s = "leetcode";
+    vector<string> strVec = {"leet", "code"};
+    cout << "Word can break = [" << (implObj->wordBreak139(s, strVec) ? "True" : "False")
+        << "].\n\n";
+    return;
+}
