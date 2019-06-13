@@ -270,3 +270,18 @@ Node* LinkedListImpl::copyRandomList138DFS(
     newNode->random = copyRandomList138DFS(cur->random, curNewMap);
     return newNode;
 }
+
+// 141. Linked List Cycle
+bool LinkedListImpl::hasCycle141(ListNode *head) {
+    ListNode * slow = head;
+    ListNode * fast = head;
+    while (fast && fast->next) {
+        slow = slow->next;
+        fast = fast->next->next;
+        if (slow == fast) {
+            return true;
+        }
+    }
+
+    return false;
+}

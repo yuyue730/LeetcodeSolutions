@@ -18,6 +18,7 @@ int main() {
     testObj->partition86Test();
     testObj->reverseBetween92Test();
     testObj->copyRandomList138Test();
+    testObj->hasCycle141Test();
 
     return 0;
 }

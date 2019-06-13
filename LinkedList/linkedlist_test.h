@@ -40,6 +40,9 @@ public:
     // 138. Copy List with Random Pointer Test
     void copyRandomList138Test();
 
+    // 141. Linked List Cycle Test
+    void hasCycle141Test();
+
 private:
     LinkedListImpl * implObj;
 };

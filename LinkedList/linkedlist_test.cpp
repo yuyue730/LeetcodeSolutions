@@ -219,3 +219,20 @@ void LinkedListTest::copyRandomList138Test() {
     cout << "Please exam the cloned linked list [" << clone->val << "]\n\n";
     return;
 }
+
+// 141. Linked List Cycle Test
+void LinkedListTest::hasCycle141Test() {
+    cout << "141. Linked List Cycle test starts.\n";
+    ListNode* head = new ListNode(1);
+    ListNode *cur = head;
+    cur->next = new ListNode(2); 
+    ListNode * two = cur->next;
+    cur = cur->next;
+    cur->next = new ListNode(3); cur = cur->next;
+    cur->next = new ListNode(4); cur = cur->next;
+    cur->next = new ListNode(5); cur = cur->next; 
+    cur->next = two;
+
+    cout << "has Cycle = [" << (implObj->hasCycle141(head) ? "True" : "False") << "]\n\n";
+    return;
+}

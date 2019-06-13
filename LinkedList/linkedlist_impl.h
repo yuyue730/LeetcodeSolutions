@@ -59,6 +59,9 @@ public:
     // 138. Copy List with Random Pointer
     Node* copyRandomList138(Node* head);
 
+    // 141. Linked List Cycle
+    bool hasCycle141(ListNode *head);
+
 private:
     // 25. Reverse Nodes in k-Group helper
     ListNode* reverseOneGroup(ListNode* prevEnd, ListNode* nextStart);
