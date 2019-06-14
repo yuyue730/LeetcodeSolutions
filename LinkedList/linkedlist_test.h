@@ -46,6 +46,9 @@ public:
     // 142. Linked List Cycle II Test
     void detectCycle142Test();
 
+    // 143. Reorder List Test
+    void reorderList143Test();
+
 private:
     LinkedListImpl * implObj;
 };

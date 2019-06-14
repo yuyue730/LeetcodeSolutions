@@ -253,3 +253,18 @@ void LinkedListTest::detectCycle142Test() {
     cout << "Fist overlap node = [" << implObj->detectCycle142(head)->val << "].\n\n";
     return;
 }
+
+// 143. Reorder List Test
+void LinkedListTest::reorderList143Test() {
+    cout << "143. Reorder List test starts.\n";
+    ListNode *head = new ListNode(1);
+    ListNode *cur = head;
+    cur->next = new ListNode(2); cur = cur->next;
+    cur->next = new ListNode(3); cur = cur->next;
+    cur->next = new ListNode(4); cur = cur->next;
+    cur->next = new ListNode(5);
+
+    implObj->reorderList143(head);
+    cout << "Please exam linked list via debugger. [" << head->val << "]\n\n";
+    return;
+}

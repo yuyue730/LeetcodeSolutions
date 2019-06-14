@@ -309,3 +309,35 @@ ListNode * LinkedListImpl::detectCycle142(ListNode *head) {
 
     return fast;
 }
+
+// 143. Reorder List
+void LinkedListImpl::reorderList143(ListNode* head)
+{
+    if (head == NULL || head->next == NULL || head->next->next == NULL) {
+        return;
+    }
+
+    ListNode *fast = head, *slow = head;
+    while (fast->next && fast->next->next) {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+
+    ListNode *mid = slow->next;
+    slow->next = NULL;
+    ListNode *pre = NULL, *cur = mid;
+    while (cur) {
+        ListNode *next = cur->next;
+        cur->next = pre;
+        pre = cur;
+        cur = next;
+    }
+
+    while (head && pre) {
+        ListNode *nextHead = head->next;
+        head->next = pre;
+        pre = pre->next;
+        head->next->next = nextHead;
+        head = nextHead;
+    }
+}

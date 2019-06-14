@@ -65,6 +65,9 @@ public:
     // 142. Linked List Cycle II
     ListNode *detectCycle142(ListNode *head);
 
+    // 143. Reorder List
+    void reorderList143(ListNode* head);
+
 private:
     // 25. Reverse Nodes in k-Group helper
     ListNode* reverseOneGroup(ListNode* prevEnd, ListNode* nextStart);

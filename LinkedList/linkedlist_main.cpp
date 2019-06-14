@@ -20,6 +20,7 @@ int main() {
     testObj->copyRandomList138Test();
     testObj->hasCycle141Test();
     testObj->detectCycle142Test();
+    testObj->reorderList143Test();
 
     return 0;
 }
