@@ -94,6 +94,9 @@ public:
     // 124. Binary Tree Maximum Path Sum
     int maxPathSum124(TreeNode* root);
 
+    // 144. Binary Tree Preorder Traversal
+    vector<int> preorderTraversal144(TreeNode* root);
+
 private:
     // 94. Binary Tree Inorder Traversal helper
     void inorderTraversal94DFS(TreeNode *curNode, vector<int> & result);

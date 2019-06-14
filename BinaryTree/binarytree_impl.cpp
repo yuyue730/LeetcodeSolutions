@@ -511,3 +511,27 @@ int BinaryTreeImpl::maxPathSum124helper(TreeNode * cur, int & result)
     result = max(result, left + right + cur->val);
     return max(left, right) + cur->val;
 }
+
+// 144. Binary Tree Preorder Traversal
+vector<int> BinaryTreeImpl::preorderTraversal144(TreeNode* root)
+{
+    vector<int> result;
+    if (root == NULL) {
+        return result;
+    }
+
+    stack<TreeNode *> preStk({root});
+    while (!preStk.empty()) {
+        TreeNode *cur = preStk.top();
+        preStk.pop();
+        result.push_back(cur->val);
+        if (cur->right) {
+            preStk.push(cur->right);
+        }
+        if (cur->left) {
+            preStk.push(cur->left);
+        }
+    }
+
+    return result;
+}

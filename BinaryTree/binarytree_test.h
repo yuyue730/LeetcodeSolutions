@@ -64,6 +64,9 @@ public:
     // 124. Binary Tree Maximum Path Sum Test
     void maxPathSum124Test();
 
+    // 144. Binary Tree Preorder Traversal Test
+    void preorderTraversal144Test();
+
 private:
     BinaryTreeImpl * implObj;
 };

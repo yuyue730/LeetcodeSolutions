@@ -26,6 +26,7 @@ int main() {
     testObj->flatten114Test();
     testObj->connect116Test();
     testObj->maxPathSum124Test();
+    testObj->preorderTraversal144Test();
 
     return 0;
 }

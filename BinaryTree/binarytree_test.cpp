@@ -326,3 +326,22 @@ void BinaryTreeTest::maxPathSum124Test()
     cout << "BT Max Path Sum = [" << implObj->maxPathSum124(root) << "]\n\n";
     return;
 }
+
+// 144. Binary Tree Preorder Traversal Test
+void BinaryTreeTest::preorderTraversal144Test() {
+    cout << "144. Binary Tree Preorder Traversal test starts.\n";
+    TreeNode * root = new TreeNode(-10);
+    TreeNode * cur = root;
+    cur->left = new TreeNode(9);
+    cur->right = new TreeNode(20);
+    cur = cur->right;
+    cur->left = new TreeNode(15); cur->right = new TreeNode(7);
+
+    vector<int> result = implObj->preorderTraversal144(root);
+    cout << "Pre order output = [";
+    for (int i = 0; i < result.size(); ++i) {
+        cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+    }
+    cout << "].\n\n";
+    return;
+}
