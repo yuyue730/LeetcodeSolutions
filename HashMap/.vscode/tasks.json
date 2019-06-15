@@ -6,7 +6,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "g++ -std=c++11 -g hashmap_impl.cpp hashmap_test.cpp hashmap_main.cpp -o hashmapLC.exe",
+            "command": "g++ -std=c++11 -g hashmap_main.cpp -o hashmapLC.exe",
             "group": {
                 "kind": "build",
                 "isDefault": true

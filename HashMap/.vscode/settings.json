@@ -3,6 +3,9 @@
         "iosfwd": "cpp",
         "vector": "cpp",
         "istream": "cpp",
-        "streambuf": "cpp"
+        "streambuf": "cpp",
+        "unordered_map": "cpp",
+        "string": "cpp",
+        "utility": "cpp"
     }
 }
