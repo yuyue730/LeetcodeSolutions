@@ -2,111 +2,787 @@
 #define _ARRAY_IMPL_H
 
 #include <vector>
+#include <iostream>
+#include <algorithm>
+#include <set>
 using namespace std;
 
 class ArrayImpl {
 public:
-    ArrayImpl();
+    ArrayImpl() {
+        cout << "Impl object for Leetcode Array problems constructed.\n";
+    }
 
     // 4. Median of Two Sorted Arrays
-    double findMedianSortedArrays4(vector<int>& nums1, vector<int>& nums2);
+    double findMedianSortedArrays4(
+        vector<int>& nums1, vector<int>& nums2
+    ) {
+        int m = nums1.size(), n = nums2.size();
+        double left = findKthInTwoArray(nums1, 0, nums2, 0, (m + n + 1) / 2);
+        double right = findKthInTwoArray(nums1, 0, nums2, 0, (m + n + 2) / 2);
+
+        return (left + right) / 2;
+    }
+
+    double findKthInTwoArray(
+        const vector<int>& nums1, int i, 
+        const vector<int>& nums2, int j, int k)
+    {
+        if (i >= nums1.size()) {
+            return static_cast<double>(nums2[j + k - 1]);
+        }
+        if (j >= nums2.size()) {
+            return static_cast<double>(nums1[i + k - 1]);
+        }
+        if (k == 1) {
+            return min(nums1[i], nums2[j]);
+        }
+
+        int midVal1 = i + k / 2 - 1 < nums1.size() ? nums1[i + k / 2 - 1] : INT_MAX;
+        int midVal2 = j + k / 2 - 1 < nums2.size() ? nums2[j + k / 2 - 1] : INT_MAX;
+
+        if (midVal1 < midVal2) {
+            return findKthInTwoArray(nums1, i + k / 2, nums2, j, k - k /2);
+        } else {
+            return findKthInTwoArray(nums1, i, nums2, j + k / 2, k - k /2);
+        }
+    }
 
     // 11. Container With Most Water
-    int maxArea11(vector<int>& heights);
+    int maxArea11(vector<int>& heights) {
+        if (!heights.size()) return -1;
+
+        int left = 0, right = heights.size() - 1;
+        int maxArea = 0;
+        
+        while (left < right) {
+            maxArea = max(maxArea, min(heights[left], heights[right]) * (right - left));
+            if (heights[left] < heights[right]) ++left;
+            else --right;
+        }
+        
+        return maxArea;
+    }
 
     // 15. 3Sum
-    vector<vector<int>> threeSum15(vector<int>& nums);
+    vector<vector<int>> threeSum15(vector<int>& nums) {
+        vector<vector<int>> result;
+        sort(nums.begin(), nums.end());
+        if (nums.size() < 3 || nums.front() > 0 || nums.back() < 0) {
+            return {};
+        }
+
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i] > 0) {
+                break;
+            }
+            if (i >= 1 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            int target = -nums[i];
+            int left = i + 1, right = nums.size() - 1;
+            while (left < right) {
+                if (nums[left] + nums[right] == target) {
+                    result.push_back({nums[i], nums[left], nums[right]});
+                    while (left < right && nums[left + 1] == nums[left]) {
+                        ++left;
+                    }
+                    while (right > left && nums[right - 1] == nums[right]) {
+                        --right;
+                    }
+                    ++left;
+                    --right;
+                } else if (nums[left] + nums[right] < target) {
+                    ++left;
+                } else {
+                    --right;
+                }
+            }
+        }
+        return result;
+    }
 
     // 16. 3Sum Closest
-    int threeSumClosest16(vector<int>& nums, int target);
+    int threeSumClosest16(vector<int>& nums, int target) {
+        assert(nums.size() > 2);
+        int minSum = nums[0] + nums[1] + nums[2];
+        int minDiff = abs(minSum - target);
+        sort(nums.begin(), nums.end());
+
+        for (int i = 0; i < nums.size(); ++i) {
+            int left = i + 1, right = nums.size() - 1;
+            while (left < right) {
+                int curSum = nums[i] + nums[left] + nums[right];
+                int curDiff = abs(curSum - target);
+                if (curDiff < minDiff) {
+                    minDiff = curDiff;
+                    minSum = curSum;
+                }
+                if (curSum < target) {
+                    ++left;
+                } else {
+                    --right;
+                }
+            }
+        }
+        
+        return minSum;
+    }
 
     // 18. 4Sum
-    vector<vector<int>> fourSum18(vector<int>& nums, int target);
+    vector<vector<int>> fourSum18(vector<int>& nums, int target) {
+        if (nums.size() <= 3) {
+            return {};
+        }
+        sort(nums.begin(), nums.end());
+        set<vector<int>> resultSet;
+        for (int i = 0; i < nums.size() - 3; ++i) {
+            for (int j = i + 1; j < nums.size() - 2; ++j) {
+                int left = j + 1, right = nums.size() - 1;
+                while (left < right) {
+                    int curSum = nums[i] + nums[j] + nums[left] + nums[right];
+                    if (curSum == target) {
+                        resultSet.insert({nums[i], nums[j], nums[left], nums[right]});
+                        ++left;
+                        --right;
+                    } else if (curSum < target) {
+                        ++left;
+                    } else {
+                        --right;
+                    }
+                }
+            }
+        }
+
+        return vector<vector<int>>(resultSet.begin(), resultSet.end());
+    }
 
     // 26. Remove Duplicates from Sorted Array
-    int removeDuplicates26(vector<int>& nums);
+    int removeDuplicates26(vector<int>& nums) {
+        if (nums.empty()) {
+            return 0;
+        }
+
+        int curIdx = 0;
+        for (int right = 1; right < nums.size(); ++right) {
+            if (nums[right] != nums[right - 1]) {
+                curIdx++;
+                nums[curIdx] = nums[right];
+            }
+        }
+
+        return curIdx + 1;
+    }
 
     // 31. Next Permutation
-    void nextPermutation31(vector<int>& nums);
+    void nextPermutation31(vector<int>& nums) {
+        if (nums.size() == 0) {
+            return;
+        }
+
+        int smallIdx = -1;
+        for (int i = nums.size() - 2; i >= 0; --i) {
+            if (nums[i] < nums[i + 1]) {
+                smallIdx = i;
+                break;
+            }
+        }
+
+        if (smallIdx == -1) {
+            reverse(nums.begin(), nums.end());
+            return;
+        }
+
+        int largeIdx = -1;
+        for (int j = nums.size() - 1; j >= smallIdx; --j) {
+            if (nums[j] > nums[smallIdx]) {
+                largeIdx = j;
+                break;
+            }
+        }
+
+        swap(nums[smallIdx], nums[largeIdx]);
+
+        reverse(nums.begin() + smallIdx + 1, nums.end());
+        return;
+    }
 
     // 33. Search in Rotated Sorted Array
-    int search33(vector<int>& nums, int target);
+    int search33(vector<int>& nums, int target) {
+        if (nums.empty()) {
+            return -1;
+        }
+
+        int left = 0, right = nums.size() - 1;
+        while (left <= right) {
+            int pivot = left + (right - left) / 2;
+            if (nums[pivot] == target) {
+                return pivot;
+            }
+
+            if (nums[pivot] > nums[right]) {
+                if (target < nums[pivot] && target >= nums[left]) {
+                    right = pivot - 1;
+                } else {
+                    left = pivot + 1;
+                }
+            } else {
+                if (target > nums[pivot] && target <= nums[right]) {
+                    left = pivot + 1;
+                } else {
+                    right = pivot - 1;
+                }
+            }
+        }
+
+        return -1;
+    }
 
     // 34. Find First and Last Position of Element in Sorted Array
-    vector<int> searchRange34(vector<int>& nums, int target);
+    vector<int> searchRange34(vector<int>& nums, int target) {
+        vector<int> result = {-1, -1};
+        if (nums.size() == 0) {
+            return result;
+        }
+
+        int left = 0, right = nums.size() - 1;
+        int idxFound = -1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                idxFound = mid;
+                break;
+            } else if (nums[mid] > target) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+
+        if (idxFound == -1) {
+            return result;
+        }
+
+        int lIdx = idxFound, rIdx = idxFound;
+        while (lIdx >= 0 && nums[lIdx] == target) {
+            --lIdx;
+        }
+        while (rIdx < nums.size() && nums[rIdx] == target) {
+            ++rIdx;
+        }
+
+        result = {lIdx + 1, rIdx - 1};
+        return result;
+    }
 
     // 35. Search Insert Position
-    int searchInsert35(vector<int>& nums, int target);
+    int searchInsert35(vector<int>& nums, int target) {
+        if (nums.size() == 0) {
+            return 0;
+        }
+
+        int left = 0, right = nums.size() - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] > target) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+
+        return left;
+    }
 
     // 41. First Missing Positive
-    int firstMissingPositive41(vector<int>& nums);
+    int firstMissingPositive41(vector<int>& nums) {
+        int n = nums.size();
+        for (int i = 0; i < n; ++i) {
+            while (nums[i] > 0 && nums[i] <= n && nums[nums[i] - 1] != nums[i]) {
+                swap(nums[i], nums[nums[i] - 1]);
+            }
+        }
+
+        for (int i = 0; i < n; ++i) {
+            if (nums[i] != i + 1) {
+                return i + 1;
+            }
+        }
+        return n + 1;
+    }
 
     // 45. Jump Game II
-    int jump45(vector<int>& nums);
+    int jump45(vector<int>& nums)
+    {
+        int cur = 0, i = 0, step = 0;
+        while (cur < nums.size() - 1) {
+            int pre = cur;
+            while (i <= pre) {
+                cur = max(cur, nums[i] + i);
+                ++i;
+            }
+            ++step;
+            if (cur == pre) {
+                return -1;
+            }
+        }
+
+        return step;
+    }
 
     // 48. Rotate Image
-    void rotate48(vector<vector<int>>& matrix);
+    void rotate48(vector<vector<int>>& matrix)
+    {
+        int edgeSize = matrix[0].size();
+        for (int i = 0; i < edgeSize / 2; ++i) {
+            for (int j = i; j < edgeSize - 1 - i; ++j) {
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[edgeSize - 1 - j][i];
+                matrix[edgeSize - 1 - j][i] = matrix[edgeSize - 1 - i][edgeSize - 1 - j];
+                matrix[edgeSize - 1 - i][edgeSize - 1 - j] = matrix[j][edgeSize - 1 - i];
+                matrix[j][edgeSize - 1 - i] = temp;
+            }
+        }
+        return;
+    }
 
     // 53. Maximum Subarray
-    int maxSubArray53(vector<int>& nums);
+    int maxSubArray53(vector<int>& nums)
+    {
+        if (nums.empty()) return 0;
+        return maxSubArrayRec(nums, 0, nums.size() - 1);
+    }
+
+    int maxSubArrayRec(const vector<int>& nums, int left, int right)
+    {
+        if (left >= right) return nums[left];
+        int pivot = left + (right - left) / 2;
+        int lmax = maxSubArrayRec(nums, left, pivot - 1);
+        int rmax = maxSubArrayRec(nums, pivot + 1, right);
+
+        int curMax = nums[pivot], temp = nums[pivot];
+        for (int i = pivot - 1; i >= left; --i) {
+            temp += nums[i];
+            curMax = max(temp, curMax);
+        }
+        temp = curMax;
+        for (int j = pivot + 1; j <= right; ++j) {
+            temp += nums[j];
+            curMax = max(temp, curMax);
+        }
+
+        return max(curMax, max(lmax, rmax));
+    }
 
     // 54. Spiral Matrix
-    vector<int> spiralOrder54(vector<vector<int>>& matrix);
+    vector<int> spiralOrder54(vector<vector<int>>& matrix)
+    {
+        vector<int> result;
+
+        if (matrix.size() == 0 || matrix[0].size() == 0) {
+            return result;
+        }
+
+        int left = 0, right = matrix[0].size() - 1;
+        int up = 0, down = matrix.size() - 1;
+
+        while (true) {
+            for (int i = left; i <= right; ++i) {
+                result.push_back(matrix[up][i]);
+            }
+            ++up;
+            if (up > down) break;
+
+            for (int j = up; j <= down; ++j) {
+                result.push_back(matrix[j][right]);
+            }
+            --right;
+            if (right < left) break;
+
+            for (int m = right; m >= left; --m) {
+                result.push_back(matrix[down][m]);
+            }
+            --down;
+            if (down < up) break;
+
+            for (int n = down; n >= up; --n) {
+                result.push_back(matrix[n][left]);
+            }
+            ++left;
+            if (left > right) break;
+        }
+
+        return result;
+    }
 
     // 55. Jump Game
-    bool canJump55(vector<int>& nums);
+    bool canJump55(vector<int>& nums)
+    {
+        int maxReach = 0;
+        for (int i = 0; i < nums.size(); ++i) {
+            if (i > maxReach || maxReach >= nums.size() - 1) {
+                break;
+            } else {
+                maxReach = max(maxReach, i + nums[i]);
+            }
+        }
+
+        return (maxReach >= nums.size() - 1);
+    }
 
     // 56. Merge Intervals
-    vector<vector<int>> merge56(vector<vector<int>>& intervals);
+    vector<vector<int>> merge56(vector<vector<int>>& intervals)
+    {
+        vector<vector<int>> result;
+        if (intervals.size() == 0) {
+            return result;
+        }
+
+        sort(intervals.begin(), intervals.end(), 
+            [] (const vector<int> &a, const vector<int> &b){
+                return a[0] < b[0];
+            }
+        );
+
+        result.push_back(intervals[0]);
+        for (int i = 1; i < intervals.size(); ++i) {
+            if (intervals[i][0] > result.back()[1]) {
+                result.push_back(intervals[i]);
+            } else {
+                result.back()[1] = max(result.back()[1], intervals[i][1]);
+            }
+        }
+
+        return result;
+    }
 
     // 57. Insert Interval
     vector<vector<int>> insert57(
         vector<vector<int>>& intervals, 
         vector<int>& newInterval
-    );
+    ) {
+        vector<vector<int>> results;
+        int cur = 0;
+        while (cur < intervals.size() && intervals[cur][1] < newInterval[0]) {
+            results.push_back(intervals[cur]);
+            cur++;
+        }
+
+        while (cur < intervals.size() && newInterval[1] >= intervals[cur][0]) {
+            newInterval[0] = min(intervals[cur][0], newInterval[0]);
+            newInterval[1] = max(intervals[cur][1], newInterval[1]);
+            cur++;
+        }
+        results.push_back(newInterval);
+
+        while (cur < intervals.size()) {
+            results.push_back(intervals[cur]);
+            cur++;
+        }
+
+        return results;
+    }
 
     // 59. Spiral Matrix II
-    vector<vector<int>> generateMatrix59(int n);
+    vector<vector<int>> generateMatrix59(int n) {
+        vector<vector<int>> result(n, vector<int>(n, 0));
+        int left = 0, right = n - 1, up = 0, down = n - 1;
+        int curVal = 1;
+
+        while (true) {
+            for (int i = left; i <= right; ++i) {
+                result[up][i] = curVal++;
+            }
+            if (++up > down) {
+                break;
+            }
+
+            for (int j = up; j <= down; ++j) {
+                result[j][right] = curVal++;
+            }
+            if (--right < left) {
+                break;
+            }
+
+            for (int m = right; m >= left; --m) {
+                result[down][m] = curVal++;
+            }
+            if (--down < up) {
+                break;
+            }
+
+            for (int n = down; n >= up; --n) {
+                result[n][left] = curVal++;
+            }
+            if (++left > right) {
+                break;
+            }
+        }
+
+        return result;
+    }
 
     // 66. Plus One
-    vector<int> plusOne66(vector<int>& digits);
+    vector<int> plusOne66(vector<int>& digits)
+    {
+        for (int i = digits.size() - 1; i >= 0; --i) {
+            if (digits[i] == 9) {
+                digits[i] = 0;
+            } else {
+                digits[i]++;
+                return digits;
+            }
+        }
+
+        if (digits[0] == 0) {
+            digits.insert(digits.begin(), 1);
+        }
+
+        return digits;
+    }
 
     // 74. Search a 2D Matrix
-    bool searchMatrix74(vector<vector<int>>& matrix, int target);
+    bool searchMatrix74(vector<vector<int>>& matrix, int target)
+    {
+        if (matrix.size() == 0 || matrix[0].size() == 0) {
+            return false;
+        }
+
+        int m = matrix.size(), n = matrix[0].size();
+        int up = 0, down = m - 1;
+
+        if (target < matrix[0][0] || target > matrix[m - 1][n - 1]) {
+            return false;
+        }
+
+        while (up <= down) {
+            int mid = (up + down) / 2;
+            if (matrix[mid][0] == target) {
+                return true;
+            } else if (matrix[mid][0] < target) {
+                up = mid + 1;
+            } else {
+                down = mid - 1;
+            }
+        }
+
+        int targetRow = down;
+        int left = 0, right = n - 1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (matrix[targetRow][mid] == target) {
+                return true;
+            } else if (matrix[targetRow][mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return false;
+    }
 
     // 75. Sort Colors
-    void sortColors75(vector<int>& nums);
+    void sortColors75(vector<int>& nums)
+    {
+        if (nums.size() == 0) {
+            return;
+        }
+
+        int left = 0, right = nums.size() - 1;
+        int cur = 0;
+
+        while (cur <= right) {
+            if (nums[cur] == 0) {
+                swap(nums[cur], nums[left]);
+                ++left;
+                ++cur;
+            } else if (nums[cur] == 1) {
+                ++cur;
+            } else { // nums[cur] == 2
+                swap(nums[cur], nums[right]);
+                --right;
+            }
+        }
+
+        return;
+    }
 
     // 81. Search in Rotated Sorted Array II
-    bool search81(vector<int>& nums, int target);
+    bool search81(vector<int>& nums, int target)
+    {
+        int left = 0, right = nums.size() - 1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (nums[mid] == target) {
+                return true;
+            }
+
+            if (nums[mid] < nums[right]) {
+                if (nums[mid] < target && nums[right] >= target) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            } else if (nums[mid] > nums[right]) {
+                if (nums[mid] > target && nums[left] <= target) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            } else {
+                right--;
+            }
+        }
+        return false;
+    }
 
     // 88. Merge Sorted Array
-    void merge88(vector<int>& nums1, int m, vector<int>& nums2, int n);
+    void merge88(vector<int>& nums1, int m, vector<int>& nums2, int n)
+    {
+        int mergeIdx = m + n - 1;
+        int i = m - 1, j = n - 1;
+        while (i >= 0 && j >= 0) {
+            if (nums1[i] > nums2[j]) {
+                nums1[mergeIdx] = nums1[i];
+                i--;
+            } else {
+                nums1[mergeIdx] = nums2[j];
+                j--;
+            }
+
+            mergeIdx--;
+        }
+
+        while (j >= 0) {
+            nums1[mergeIdx] = nums2[j];
+            j--;
+            mergeIdx--;
+        }
+
+        return;
+    }
 
     // 118. Pascal's Triangle
-    vector<vector<int>> generate118(int numRows);
+    vector<vector<int>> generate118(int numRows) {
+        vector<vector<int>> result;
+        if (numRows == 0) {
+            return result;
+        }
+        result.push_back({1});
+
+        for (int i = 2; i <= numRows; ++i) {
+            vector<int> curRow(i, 0);
+            for (int j = 0; j < i; ++j) {
+                if (j == 0) {
+                    curRow[0] = result.back()[0];
+                } else if (j == i - 1) {
+                    curRow[i - 1] = result.back().back();
+                } else {
+                    curRow[j] = result.back()[j - 1] + result.back()[j];
+                }
+            }
+            result.push_back(curRow);
+        }
+
+        return result;
+    }
 
     // 121. Best Time to Buy and Sell Stock
-    int maxProfit121(vector<int>& prices);
+    int maxProfit121(vector<int>& prices) {
+        if (prices.size() == 0) {
+            return 0;
+        }
+        int minPrice = prices[0], maxProfit = 0;
+        for (int i = 1; i < prices.size(); ++i) {
+            if (prices[i] < minPrice) {
+                minPrice = prices[i];
+            } else {
+                maxProfit = max(maxProfit, prices[i] - minPrice);
+            }
+        }
+
+        return maxProfit;
+    }
 
     // 122. Best Time to Buy and Sell Stock II
-    int maxProfit122(vector<int>& prices);
+    int maxProfit122(vector<int>& prices) {
+        int profit = 0;
+        for (int i = 1; i < prices.size(); ++i) {
+            if (prices[i] >= prices[i - 1]) {
+                profit += (prices[i] - prices[i - 1]);
+            }
+        }
+        
+        return profit;
+    }
 
     // 134. Gas Station
-    int canCompleteCircuit134(vector<int>& gas, vector<int>& cost);
+    int canCompleteCircuit134(vector<int>& gas, vector<int>& cost)
+    {
+        int total = 0, curMax = 0, curStart = 0;
+        for (int i = 0; i < gas.size(); ++i) {
+            total += gas[i] - cost[i];
+            curMax += gas[i] - cost[i];
+            if (curMax < 0) {
+                curMax = 0;
+                curStart = i + 1;
+            }
+        }
+
+        return (total < 0) ? -1 : curStart;
+    }
 
     // 135. Candy
-    int candy135(vector<int>& ratings);
+    int candy135(vector<int>& ratings) {
+        if (ratings.empty()) {
+            return 0;
+        }
 
-private:
-    // 4. Median of Two Sorted Arrays helper
-    double findKthInTwoArray(
-        const vector<int>& nums1, int i, 
-        const vector<int>& nums2, int j, int k
-    );
+        vector<int> candies(ratings.size(), 1);
+        for (int i = 1; i < ratings.size(); ++i) {
+            if (ratings[i] > ratings[i - 1]) {
+                candies[i] = candies[i - 1] + 1;
+            }
+        }
 
-    // 53. Maximum Subarray helper
-    int maxSubArrayRec(const vector<int>& nums, int left, int right);
+        for (int i = ratings.size() - 2; i >= 0; --i) {
+            if (ratings[i] > ratings[i + 1]) {
+                candies[i] = max(candies[i + 1] + 1, candies[i]);
+            }
+        }
+
+        int result = 0;
+        for (int i = 0; i < candies.size(); ++i) {
+            result += candies[i];
+        }
+
+        return result;
+    }
+
+    // 153. Find Minimum in Rotated Sorted Array
+    int findMin153(vector<int>& nums) {
+        if (nums.size() == 0) {
+            return 0;
+        }
+
+        int left = 0, right = nums.size() - 1;
+        if (nums[left] > nums[right]) {
+            while (left != right - 1) {
+                int mid = (left + right) / 2;
+                if (nums[mid] > nums[right]) {
+                    left = mid;
+                } else {
+                    right = mid;
+                }
+            }
+            return min(nums[left], nums[right]);
+        } else {
+            return nums[0];
+        }     
+    }
 };
 
 #endif
