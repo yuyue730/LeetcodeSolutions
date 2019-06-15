@@ -6,7 +6,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "g++ -std=c++11 -g dp_impl.cpp dp_test.cpp dp_main.cpp -o dpLC.exe",
+            "command": "g++ -std=c++11 -g dp_main.cpp -o dpLC.exe",
             "group": {
                 "kind": "build",
                 "isDefault": true

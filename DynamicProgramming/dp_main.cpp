@@ -21,6 +21,7 @@ int main() {
     testObj->maxProfit123Test();
     testObj->minCut132Test();
     testObj->wordBreak139Test();
+    testObj->maxProduct152Test();
 
     return 0;
 }
