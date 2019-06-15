@@ -10,5 +10,6 @@ int main() {
     cout << "\nTest for problems starts.\n";
 
     testObj->LRUCache146Test();
+    testObj->MinStack155Test();
     return 0;
 }

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <list>
 #include <unordered_map>
+#include <stack>
 using namespace std;
 
 // 146. LRU Cache
@@ -42,6 +43,39 @@ private:
     int d_capacity;
     list<pair<int, int>> d_list;
     unordered_map<int, list<pair<int, int>>::iterator> d_keyIterMap;
+};
+
+// 155. Min Stack
+class MinStack155 {
+public:
+    MinStack155() { }
+    
+    void push(int x) {
+        if (d_minStk.empty() || x <= d_minStk.top()) {
+            d_minStk.push(x);
+        }
+
+        d_valStk.push(x);
+    }
+    
+    void pop() {
+        if (d_minStk.top() == d_valStk.top()) {
+            d_minStk.pop();
+        }
+        d_valStk.pop();
+    }
+    
+    int top() {
+        return d_valStk.top();
+    }
+    
+    int getMin() {
+        return d_minStk.top();
+    }
+
+private:
+    stack<int> d_valStk;
+    stack<int> d_minStk;
 };
 
 #endif

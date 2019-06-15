@@ -28,6 +28,21 @@ public:
         cout << "get 4 = [" << cache.get(4) << "]\n";
         return;
     }
+
+    // 155. Min Stack Test
+    void MinStack155Test() {
+        cout << "155. Min Stack test starts.\n";
+
+        MinStack155 minStack;
+        minStack.push(-2);
+        minStack.push(0);
+        minStack.push(-3);
+        cout << "Cur getMin = [" << minStack.getMin() << "]\n";
+        minStack.pop();
+        cout << "Cur getTop = [" << minStack.top() << "]\n";
+        cout << "Cur getMin = [" << minStack.getMin() << "]\n";
+        return;
+    }
 };
 
 #endif
