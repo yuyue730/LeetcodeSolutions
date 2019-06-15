@@ -21,6 +21,7 @@ int main() {
     testObj->hasCycle141Test();
     testObj->detectCycle142Test();
     testObj->reorderList143Test();
+    testObj->sortList148Test();
 
     return 0;
 }

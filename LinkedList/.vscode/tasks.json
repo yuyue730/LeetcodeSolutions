@@ -6,7 +6,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "g++ -std=c++11 -g linkedlist_impl.cpp linkedlist_test.cpp linkedlist_main.cpp -o linkedlistLC.exe",
+            "command": "g++ -std=c++11 -g linkedlist_main.cpp -o linkedlistLC.exe",
             "group": {
                 "kind": "build",
                 "isDefault": true
