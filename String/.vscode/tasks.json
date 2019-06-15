@@ -8,7 +8,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "g++ -std=c++11 -g string_impl.cpp string_test.cpp string_main.cpp -o stringLC.exe",
+            "command": "g++ -std=c++11 -g string_main.cpp -o stringLC.exe",
             "group": {
                 "kind": "build",
                 "isDefault": true

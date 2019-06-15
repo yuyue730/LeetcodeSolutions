@@ -18,6 +18,7 @@ int main() {
     testObj->fullJustify68Test();
     testObj->simplifyPath71Test();
     testObj->isPalindrome125Test();
+    testObj->reverseWords151Test();
 
     return 0;
 }
