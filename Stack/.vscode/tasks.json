@@ -4,24 +4,10 @@
     {
       "label": "build",
       "type": "shell",
-      "command": "g++ -std=c++11 -g stack_impl.cpp stack_test.cpp stack_main.cpp -o stackLC.exe",
+      "command": "g++ -std=c++11 -g stack_main.cpp -o stackLC.exe",
       "group": {
         "kind": "build",
         "isDefault": true
-      }
-    },
-    {
-      "type": "shell",
-      "label": "clang++ build active file",
-      "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++",
-      "args": [
-        "-g",
-        "${file}",
-        "-o",
-        "${fileDirname}/${fileBasenameNoExtension}"
-      ],
-      "options": {
-        "cwd": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
       }
     }
   ]
