@@ -19,6 +19,7 @@ int main() {
     testObj->simplifyPath71Test();
     testObj->isPalindrome125Test();
     testObj->reverseWords151Test();
+    testObj->read157Test();
 
     return 0;
 }

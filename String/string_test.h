@@ -112,6 +112,31 @@ public:
         return;
     }
 
+    // 157. Read N Characters Given Read4 Test
+    void read157Test() {
+        cout << "157. Read N Characters Given Read4 test starts.\n";
+        implObj->setFileStr("abc");
+        char * result1 = new char[1];
+        int ct1 = implObj->read157(result1, 4);
+        cout << "abc read 3 [" << string(result1).substr(0, ct1) << "]; ct1 = [" << ct1 << "]\n";
+
+        implObj->setFileStr("abcde");
+        char * result2 = new char[1];
+        int ct2 = implObj->read157(result2, 5);
+        cout << "abcde read 5 [" << string(result2).substr(0, ct2) << "]; ct2 = [" << ct2 << "]\n";
+
+        implObj->setFileStr("abcdABCD1234");
+        char * result3 = new char[1];
+        int ct3 = implObj->read157(result3, 12);
+        cout << "abcdABCD1234 read 12 [" << string(result3).substr(0, ct3) << "]; ct3 = [" << ct3 << "]\n";
+
+        implObj->setFileStr("leetcode");
+        char * result4 = new char[1];
+        int ct4 = implObj->read157(result4, 5);
+        cout << "leetcode read 5 [" << string(result4).substr(0, ct4) << "]; ct4 = [" << ct4 << "]\n\n";
+        return;
+    }
+
 private:
     StringImpl * implObj;
 };

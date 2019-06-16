@@ -5,6 +5,7 @@
 #include <string>
 #include <unordered_set>
 #include <vector>
+#include <stdio.h>
 using namespace std;
 
 class StringImpl {
@@ -313,6 +314,44 @@ public:
         }
 
         return s.substr(0, curLastIndex);
+    }
+
+    // 157. Read N Characters Given Read4
+    string d_fileStr = "";
+    int d_curPos = 0;
+
+    void setFileStr(string str) {
+        d_fileStr = str;
+        d_curPos = 0;
+    }
+
+    int read4(char *buf) {
+        if (d_curPos >= d_fileStr.size()) {
+            return 0;
+        }
+        
+        string toReturn = (d_curPos + 4 >= d_fileStr.size()) 
+            ? d_fileStr.substr(d_curPos)
+            : d_fileStr.substr(d_curPos, 4);
+    
+        for (int i = 0; i < toReturn.size(); ++i) {
+            (*(buf + i)) = toReturn.at(i);
+        }
+        d_curPos += toReturn.size();
+        return toReturn.size();
+    }
+
+    int read157(char *buf, int n) {
+        int nCharCt = 0;
+        for (int i = 0; i <= n / 4; ++i) {
+            int curReadSize = read4(buf + nCharCt);
+            if (curReadSize == 0) {
+                break;
+            }
+            nCharCt += curReadSize;
+        }
+
+        return min(nCharCt, n);
     }
 };
 
