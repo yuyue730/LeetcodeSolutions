@@ -5,7 +5,7 @@
 #include <string>
 #include <unordered_set>
 #include <vector>
-#include <stdio.h>
+#include <queue>
 using namespace std;
 
 class StringImpl {
@@ -316,7 +316,7 @@ public:
         return s.substr(0, curLastIndex);
     }
 
-    // 157. Read N Characters Given Read4
+    // The following read4 implementation is used by Problem 157 and Problem 58
     string d_fileStr = "";
     int d_curPos = 0;
 
@@ -340,7 +340,8 @@ public:
         d_curPos += toReturn.size();
         return toReturn.size();
     }
-
+    
+    // 157. Read N Characters Given Read4
     int read157(char *buf, int n) {
         int nCharCt = 0;
         for (int i = 0; i <= n / 4; ++i) {
@@ -352,6 +353,30 @@ public:
         }
 
         return min(nCharCt, n);
+    }
+
+    // 158. Read N Characters Given Read4 II - Call multiple times
+    queue<char> d_bufferQ;
+    bool isEndOfFile = false;
+    int read158(char *buf, int n) {
+        while (d_bufferQ.size() <= n && !isEndOfFile) {
+            char * temp = new char[4];
+            int curReadCt = read4(temp);
+            if (curReadCt < 4) {
+                isEndOfFile = true;
+            }
+
+            for (int i = 0; i < curReadCt; ++i) {
+                d_bufferQ.push(temp[i]);
+            }
+        }
+
+        int outLen = n < d_bufferQ.size() ? n : d_bufferQ.size();
+        for (int i = 0; i < outLen; ++i) {
+            buf[i] = d_bufferQ.front();
+            d_bufferQ.pop();
+        }
+        return outLen;
     }
 };
 

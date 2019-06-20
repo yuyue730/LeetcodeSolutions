@@ -137,6 +137,24 @@ public:
         return;
     }
 
+    // 158. Read N Characters Given Read4 II - Call multiple times Test
+    void read158Test() {
+        cout << "158. Read N Characters Given Read4 II - Call multiple times Test starts.\n";
+        implObj->setFileStr("abcdABCD1234");
+        char * result5 = new char[16];
+        int ct5 = implObj->read158(result5, 5);
+        cout << "abcdABCD1234 read 5 [" << string(result5).substr(0, ct5) << "]\n";
+
+        char * result4 = new char[16];
+        int ct4 = implObj->read158(result4, 4);
+        cout << "abcdABCD1234 read 4 [" << string(result4).substr(0, ct4) << "]\n";
+
+        char * result6 = new char[16];
+        int ct6 = implObj->read158(result6, 6);
+        cout << "abcdABCD1234 read 4 [" << string(result6).substr(0, ct6) << "]\n\n";
+        return;
+    }
+
 private:
     StringImpl * implObj;
 };

@@ -20,6 +20,7 @@ int main() {
     testObj->isPalindrome125Test();
     testObj->reverseWords151Test();
     testObj->read157Test();
+    testObj->read158Test();
 
     return 0;
 }
