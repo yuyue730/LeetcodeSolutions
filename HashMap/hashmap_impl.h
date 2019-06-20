@@ -219,6 +219,27 @@ public:
     int greatestCommonFactor(int a, int b) {
         return b == 0 ? a : greatestCommonFactor(b, a % b);
     }
+
+    // 159. Longest Substring with At Most Two Distinct Characters
+    int lengthOfLongestSubstringTwoDistinct159(string s) {
+        unordered_map<char, int> charFreqMap;
+        int result = 0, left = 0;
+
+        for (int i = 0; i < s.size(); ++i) {
+            ++charFreqMap[s[i]];
+            while (charFreqMap.size() > 2) {
+                --charFreqMap[s[left]];
+                if (charFreqMap[s[left]] == 0) {
+                    charFreqMap.erase(s[left]);
+                }
+                ++left;
+            }
+
+            result = max(result, i - left + 1);
+        }
+
+        return result;
+    }
 };
 
 #endif

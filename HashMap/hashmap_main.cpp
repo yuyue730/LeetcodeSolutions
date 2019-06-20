@@ -16,6 +16,7 @@ int main() {
     testObj->minWindow76Test();
     testObj->longestConsecutive128Test();
     testObj->maxPoints149Test();
+    testObj->lengthOfLongestSubstringTwoDistinct159Test();
 
     return 0;
 }

@@ -100,6 +100,14 @@ public:
         return; 
     }
 
+    // 159. Longest Substring with At Most Two Distinct Characters Test
+    void lengthOfLongestSubstringTwoDistinct159Test() {
+        cout << "159. Longest Substring with At Most Two Distinct Characters test starts.\n";
+        string str = "eceba";
+        cout << "Length = [" << implObj->lengthOfLongestSubstringTwoDistinct159(str) << "]\n\n";
+        return;
+    }
+
 private:
     HashMapImpl* implObj;
 };
