@@ -22,6 +22,7 @@ int main() {
     testObj->detectCycle142Test();
     testObj->reorderList143Test();
     testObj->sortList148Test();
+    testObj->getIntersectionNode160Test();
 
     return 0;
 }

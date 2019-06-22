@@ -415,6 +415,44 @@ public:
 
         return dummy->next;
     }
+
+    // 160. Intersection of Two Linked Lists
+    ListNode * getIntersectionNode160(ListNode *headA, ListNode *headB) {
+        if (headA == NULL || headB == NULL) {
+            return NULL;
+        }
+
+        int lenA = getLinkedListLength(headA);
+        int lenB = getLinkedListLength(headB);
+
+        if (lenA < lenB) {
+            for (int i = 0; i < lenB - lenA; ++i) {
+                headB = headB->next;
+            }
+        } else {
+            for (int i = 0; i < lenA - lenB; ++i) {
+                headA = headA->next;
+            }
+        }
+
+        while (headA && headB && headA != headB) {
+            headA = headA->next;
+            headB = headB->next;
+        }
+
+        return (headA == headB) ? headA : NULL;
+    }
+
+    int getLinkedListLength(ListNode *head) {
+        int result = 0;
+        ListNode * cur = head;
+        while (cur) {
+            ++result;
+            cur = cur->next;
+        }
+
+        return result;
+    }
 };
 
 #endif

@@ -292,6 +292,28 @@ public:
         return;
     }
 
+    // 160. Intersection of Two Linked Lists Test
+    void getIntersectionNode160Test() {
+        cout << "160. Intersection of Two Linked Lists test starts.\n";
+        ListNode *common = new ListNode(8);
+        ListNode *cur = common;
+        cur->next = new ListNode(4); cur = cur->next;
+        cur->next = new ListNode(5);
+
+        ListNode *headA = new ListNode(4);
+        cur = headA; cur->next = new ListNode(1);
+        cur = cur->next; cur->next = common;
+
+        ListNode *headB = new ListNode(5);
+        cur = headB; cur->next = new ListNode(0);
+        cur = cur->next; cur->next = new ListNode(1);
+        cur = cur->next; cur->next = common;
+
+        ListNode *startPoint = implObj->getIntersectionNode160(headA, headB);
+        cout << "Please exam start point in debugger\n";
+        return;
+    }
+
 private:
     LinkedListImpl * implObj;
 };
