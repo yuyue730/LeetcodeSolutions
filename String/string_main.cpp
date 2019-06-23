@@ -22,6 +22,7 @@ int main() {
     testObj->read157Test();
     testObj->read158Test();
     testObj->isOneEditDistance161Test();
+    testObj->compareVersion165Test();
 
     return 0;
 }

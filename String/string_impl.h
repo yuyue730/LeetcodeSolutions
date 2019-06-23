@@ -405,6 +405,36 @@ public:
             return ct == 1;
         }
     }
+
+    // 165. Compare Version Numbers
+    int compareVersion165(string version1, string version2) {
+        int idx1 = 0, idx2 = 0, n1 = version1.size(), n2 = version2.size();
+        while (idx1 < n1 || idx2 < n2) {
+            string v1Str = "0", v2Str = "0"; 
+                // Compiler throws when stoi is called with an empty string
+            while (idx1 < n1 && version1[idx1] != '.') {
+                v1Str.push_back(version1[idx1]);
+                idx1++;
+            }
+            int cur_ver_1 = stoi(v1Str);
+
+            while (idx2 < n2 && version2[idx2] != '.') {
+                v2Str.push_back(version2[idx2]);
+                idx2++;
+            }
+            int cur_ver_2 = stoi(v2Str);
+
+            if (cur_ver_1 > cur_ver_2) {
+                return 1;
+            } else if (cur_ver_1 < cur_ver_2) {
+                return -1;
+            }
+
+            ++idx1;
+            ++idx2;
+        }
+        return 0;
+    }
 };
 
 #endif

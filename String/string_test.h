@@ -161,6 +161,17 @@ public:
         cout << "1213 and 1203 are the same? [" 
             << (implObj->isOneEditDistance161("1213", "1203") ? "True" : "False")
             << "]\n\n";
+        return;
+    }
+
+    // 165. Compare Version Numbers Test
+    void compareVersion165Test() {
+        cout << "165. Compare Version Numbers test starts.\n";
+        string ver_1 = "1.0.1";
+        string ver_2 = "1";
+        cout << "Compare result = [" << implObj->compareVersion165(ver_1, ver_2) 
+            << "]\n\n";
+        return;
     }
 
 private:
