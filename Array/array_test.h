@@ -393,6 +393,14 @@ public:
         return;
     }
 
+    // 162. Find Peak Element Test
+    void findPeakElement162Test() {
+        cout << "162. Find Peak Element test.\n";
+        vector<int> arr = {1,2,11,3,5,6,4};
+        cout << "Peak index = " << implObj->findPeakElement162(arr) << "\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };

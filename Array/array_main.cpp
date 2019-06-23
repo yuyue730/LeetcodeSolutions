@@ -38,6 +38,7 @@ int main() {
     testObj->canCompleteCircuit134Test();
     testObj->candy135Test();
     testObj->findMin153Test();
+    testObj->findPeakElement162Test();
 
     return 0;
 }
