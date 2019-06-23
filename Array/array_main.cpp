@@ -39,6 +39,7 @@ int main() {
     testObj->candy135Test();
     testObj->findMin153Test();
     testObj->findPeakElement162Test();
+    testObj->findMissingRanges163Test();
 
     return 0;
 }

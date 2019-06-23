@@ -395,10 +395,22 @@ public:
 
     // 162. Find Peak Element Test
     void findPeakElement162Test() {
-        cout << "162. Find Peak Element test.\n";
+        cout << "162. Find Peak Element test starts.\n";
         vector<int> arr = {1,2,11,3,5,6,4};
         cout << "Peak index = " << implObj->findPeakElement162(arr) << "\n\n";
         return;
+    }
+
+    // 163. Missing Ranges Test
+    void findMissingRanges163Test() {
+        cout << "163. Missing Ranges test starts.\n";
+        vector<int> arr = {0, 1, 3, 50, 75};
+        vector<string> result = implObj->findMissingRanges163(arr, 0, 99);
+        cout << "Result array = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
     }
 
 private:

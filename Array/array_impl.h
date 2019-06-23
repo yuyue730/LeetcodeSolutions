@@ -798,6 +798,25 @@ public:
 
         return right;
     }
+
+    // 163. Missing Ranges
+    vector<string> findMissingRanges163(vector<int>& nums, int lower, int upper) {
+        int left = lower;
+        vector<string> result;
+        for (int i = 0; i <= nums.size(); ++i) {
+            long long right = (i != nums.size()) 
+                ? nums[i] : static_cast<long long>(upper) + 1;
+            if (left == right) {
+                left = right + 1;
+            } else if (right > left) {
+                string curResult = (right - left == 1)
+                    ? to_string(left) : (to_string(left) + "->" + to_string(right - 1));
+                result.push_back(curResult);
+                left = right + 1;
+            }
+        }
+        return result;
+    }
 };
 
 #endif
