@@ -155,6 +155,14 @@ public:
         return;
     }
 
+    // 161. One Edit Distance Test
+    void isOneEditDistance161Test() {
+        cout << "161. One Edit Distance test starts.\n";
+        cout << "1213 and 1203 are the same? [" 
+            << (implObj->isOneEditDistance161("1213", "1203") ? "True" : "False")
+            << "]\n\n";
+    }
+
 private:
     StringImpl * implObj;
 };

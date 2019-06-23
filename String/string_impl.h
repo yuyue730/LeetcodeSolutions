@@ -378,6 +378,33 @@ public:
         }
         return outLen;
     }
+
+    // 161. One Edit Distance
+    bool isOneEditDistance161(string s, string t) {
+        if (s.length() < t.length()) {
+            swap(s, t);
+        }
+
+        if (s.length() - t.length() >= 2) {
+            return false;
+        } else if (s.length() - t.length() == 1) {
+            for (int i = 0; i < t.length(); ++i) {
+                if (s[i] != t[i]) {
+                    return s.substr(i + 1) == t.substr(i);
+                }
+            }
+            return true;
+        } else {
+            int ct = 0;
+            for (int i = 0; i < s.length(); ++i) {
+                if (s[i] != t[i]) {
+                    ++ct;
+                }
+            }
+
+            return ct == 1;
+        }
+    }
 };
 
 #endif

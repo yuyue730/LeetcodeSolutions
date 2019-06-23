@@ -21,6 +21,7 @@ int main() {
     testObj->reverseWords151Test();
     testObj->read157Test();
     testObj->read158Test();
+    testObj->isOneEditDistance161Test();
 
     return 0;
 }
