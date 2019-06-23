@@ -19,6 +19,7 @@ int main() {
     testObj->isNumber65Test();
     testObj->addBinary67Test();
     testObj->mySqrt69Test();
+    testObj->fractionToDecimal166Test();
 
     return 0;
 }

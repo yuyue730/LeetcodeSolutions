@@ -6,7 +6,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "g++ -std=c++11 -g math_impl.cpp math_test.cpp math_main.cpp -o mathLC.exe",
+            "command": "g++ -std=c++11 -g math_main.cpp -o mathLC.exe",
             "group": {
                 "kind": "build",
                 "isDefault": true
