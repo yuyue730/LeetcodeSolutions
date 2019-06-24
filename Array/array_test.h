@@ -423,6 +423,14 @@ public:
         return;
     }
 
+    // 169. Majority Element Test
+    void majorityElement169Test() {
+        cout << "169. Majority Element test starts.\n";
+        vector<int> nums = {2,2,1,1,1,2,2};
+        cout << "result = [" << implObj->majorityElement169(nums) << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };

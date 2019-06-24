@@ -41,6 +41,7 @@ int main() {
     testObj->findPeakElement162Test();
     testObj->findMissingRanges163Test();
     testObj->twoSum167Test();
+    testObj->majorityElement169Test();
 
     return 0;
 }
