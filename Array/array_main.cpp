@@ -40,6 +40,7 @@ int main() {
     testObj->findMin153Test();
     testObj->findPeakElement162Test();
     testObj->findMissingRanges163Test();
+    testObj->twoSum167Test();
 
     return 0;
 }

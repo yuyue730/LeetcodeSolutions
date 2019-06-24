@@ -411,6 +411,16 @@ public:
             cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
         }
         cout << "]\n\n";
+        return;
+    }
+
+    // 167. Two Sum II - Input array is sorted Test
+    void twoSum167Test() {
+        cout << "167. Two Sum II - Input array is sorted test starts.\n";
+        vector<int> arr = {2,7,11,15};
+        vector<int> result = implObj->twoSum167(arr, 9);
+        cout << "result [0] = " << result[0] << "; [1] = " << result[1] << "\n\n";
+        return;
     }
 
 private:
