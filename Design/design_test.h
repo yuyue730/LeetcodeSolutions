@@ -48,10 +48,33 @@ public:
     void TwoSum170Test() {
         cout << "170. Two Sum III - Data structure design test starts.\n";
         TwoSum170 twoSum;
-        // twoSum.add(1); twoSum.add(3); twoSum.add(5);
-        twoSum.add(0); bool result = twoSum.find(0);
+        twoSum.add(1); twoSum.add(3); twoSum.add(5);
         cout << "Find 4 = " << (twoSum.find(4) ? "True" : "False") << "\n";
         cout << "Find 7 = " << (twoSum.find(7) ? "True" : "False") << "\n\n";
+        return;
+    }
+
+    // 173. Binary Search Tree Iterator Test
+    void BSTIterator173Test() {
+        cout << "173. Binary Search Tree Iterator test starts.\n";
+        TreeNode * root = new TreeNode(7);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(3);
+        cur->right = new TreeNode(15);
+        cur = cur->right;
+        cur->left = new TreeNode(9);
+        cur->right = new TreeNode(20);
+
+        BSTIterator173 iterator(root);
+        cout << "Next = [" << iterator.next() << "]\n";    // return 3
+        cout << "Next = [" << iterator.next() << "]\n";    // return 7
+        cout << "hasNext = [" << iterator.hasNext() << "]\n"; // return true
+        cout << "Next = [" << iterator.next() << "]\n";    // return 3
+        cout << "hasNext = [" << iterator.hasNext() << "]\n"; // return true
+        cout << "Next = [" << iterator.next() << "]\n";    // return 3
+        cout << "hasNext = [" << iterator.hasNext() << "]\n"; // return true
+        cout << "Next = [" << iterator.next() << "]\n";    // return 3
+        cout << "hasNext = [" << iterator.hasNext() << "]\n"; // return true
         return;
     }
 };

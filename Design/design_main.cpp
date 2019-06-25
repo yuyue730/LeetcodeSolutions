@@ -12,5 +12,6 @@ int main() {
     testObj->LRUCache146Test();
     testObj->MinStack155Test();
     testObj->TwoSum170Test();
+    testObj->BSTIterator173Test();
     return 0;
 }

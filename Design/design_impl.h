@@ -108,4 +108,45 @@ private:
     unordered_map<int, int> numberFreqMap;
 };
 
+// 173. Binary Search Tree Iterator
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+class BSTIterator173 {
+public:
+    BSTIterator173(TreeNode* root) {
+        while (root) {
+            node_stk.push(root);
+            root = root->left;
+        }
+    }
+    
+    /** @return the next smallest number */
+    int next() {
+        TreeNode * next = node_stk.top();
+        int result = next->val;
+        node_stk.pop();
+        if (next->right) {
+            TreeNode * cur = next->right;
+            while (cur) {
+                node_stk.push(cur);
+                cur = cur->left;
+            }
+        }
+        return result;
+    }
+    
+    /** @return whether we have a next smallest number */
+    bool hasNext() {
+        return !node_stk.empty();
+    }
+
+private:
+    stack <TreeNode *> node_stk;
+};
+
 #endif
