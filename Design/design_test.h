@@ -40,7 +40,18 @@ public:
         cout << "Cur getMin = [" << minStack.getMin() << "]\n";
         minStack.pop();
         cout << "Cur getTop = [" << minStack.top() << "]\n";
-        cout << "Cur getMin = [" << minStack.getMin() << "]\n";
+        cout << "Cur getMin = [" << minStack.getMin() << "]\n\n";
+        return;
+    }
+
+    // 170. Two Sum III - Data structure design Test
+    void TwoSum170Test() {
+        cout << "170. Two Sum III - Data structure design test starts.\n";
+        TwoSum170 twoSum;
+        // twoSum.add(1); twoSum.add(3); twoSum.add(5);
+        twoSum.add(0); bool result = twoSum.find(0);
+        cout << "Find 4 = " << (twoSum.find(4) ? "True" : "False") << "\n";
+        cout << "Find 7 = " << (twoSum.find(7) ? "True" : "False") << "\n\n";
         return;
     }
 };

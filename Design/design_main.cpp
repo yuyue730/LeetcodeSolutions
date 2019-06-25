@@ -11,5 +11,6 @@ int main() {
 
     testObj->LRUCache146Test();
     testObj->MinStack155Test();
+    testObj->TwoSum170Test();
     return 0;
 }

@@ -78,4 +78,34 @@ private:
     stack<int> d_minStk;
 };
 
+// 170. Two Sum III - Data structure design
+class TwoSum170 {
+public:
+    /** Initialize your data structure here. */
+    TwoSum170() {}
+    
+    /** Add the number to an internal data structure.. */
+    void add(int number) {
+        numberFreqMap[number]++;
+    }
+    
+    /** Find if there exists any pair of numbers which sum is equal to the value. */
+    bool find(int value) {
+        for (unordered_map<int, int>::iterator iter = numberFreqMap.begin();
+            iter != numberFreqMap.end(); ++iter) {
+            int toFind = value - iter->first;
+            if (toFind == iter->first && iter->second > 1) {
+                return true;
+            } else if (toFind != iter->first && numberFreqMap.count(toFind) > 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+private:
+    unordered_map<int, int> numberFreqMap;
+};
+
 #endif
