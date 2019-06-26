@@ -23,6 +23,7 @@ int main() {
     testObj->read158Test();
     testObj->isOneEditDistance161Test();
     testObj->compareVersion165Test();
+    testObj->largestNumber179Test();
 
     return 0;
 }

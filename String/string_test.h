@@ -174,6 +174,16 @@ public:
         return;
     }
 
+    // 179. Largest Number Test
+    void largestNumber179Test() {
+        cout << "179. Largest Number test starts.\n";
+        vector<int> nums1 = {10,2};
+        cout << "[10,2]->[" << implObj->largestNumber179(nums1) << "]\n";
+        vector<int> nums2 = {3,30,34,5,9};
+        cout << "[3,30,34,5,9]->[" << implObj->largestNumber179(nums2) << "]\n\n";
+        return;
+    }
+
 private:
     StringImpl * implObj;
 };

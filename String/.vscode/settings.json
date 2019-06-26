@@ -10,6 +10,8 @@
         "ostream": "cpp",
         "streambuf": "cpp",
         "string": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "bitset": "cpp",
+        "algorithm": "cpp"
     }
 }

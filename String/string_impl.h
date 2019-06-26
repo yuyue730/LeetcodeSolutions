@@ -435,6 +435,21 @@ public:
         }
         return 0;
     }
+
+    // 179. Largest Number
+    string largestNumber179(vector<int>& nums) {
+        string result;
+        struct numStrComparator {
+            bool operator() (int a, int b) {
+                return to_string(a) + to_string(b) > to_string(b) + to_string(a);
+            }
+        } myNumStrComp;
+        sort(nums.begin(), nums.end(), myNumStrComp);
+        for (int i = 0; i < nums.size(); ++i) {
+            result += to_string(nums[i]);
+        }
+        return result[0] == '0' ? "0" : result;
+    }
 };
 
 #endif

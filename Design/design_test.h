@@ -74,7 +74,7 @@ public:
         cout << "Next = [" << iterator.next() << "]\n";    // return 3
         cout << "hasNext = [" << iterator.hasNext() << "]\n"; // return true
         cout << "Next = [" << iterator.next() << "]\n";    // return 3
-        cout << "hasNext = [" << iterator.hasNext() << "]\n"; // return true
+        cout << "hasNext = [" << iterator.hasNext() << "]\n\n"; // return true
         return;
     }
 };
