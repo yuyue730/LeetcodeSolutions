@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
+#include <unordered_set>
 #include <map>
 using namespace std;
 
@@ -239,6 +240,27 @@ public:
         }
 
         return result;
+    }
+
+    // 187. Repeated DNA Sequences
+    vector<string> findRepeatedDnaSequences187(string s) {
+        if (s.size() < 10) {
+            vector<string> result;
+            return result;
+        }
+
+        unordered_set<string> elementSet;
+        unordered_set<string> resultSet;
+
+        for (int i = 0; i <= s.size() - 10; ++i) {
+            string curStr = s.substr(i, 10);
+            if (elementSet.count(curStr)) {
+                resultSet.insert(curStr);
+            } else {
+                elementSet.insert(curStr);
+            }
+        }
+        return vector<string>(resultSet.begin(), resultSet.end());
     }
 };
 

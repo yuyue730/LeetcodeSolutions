@@ -6,6 +6,8 @@
         "streambuf": "cpp",
         "unordered_map": "cpp",
         "string": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "iostream": "cpp",
+        "unordered_set": "cpp"
     }
 }

@@ -108,6 +108,18 @@ public:
         return;
     }
 
+    // 187. Repeated DNA Sequences Test
+    void findRepeatedDnaSequences187Test() {
+        cout << "187. Repeated DNA Sequences test starts.\n";
+        vector<string> result 
+            = implObj->findRepeatedDnaSequences187("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT");
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     HashMapImpl* implObj;
 };
