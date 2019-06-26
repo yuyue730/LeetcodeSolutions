@@ -847,6 +847,21 @@ public:
 
         return result;
     }
+
+    // 189. Rotate Array
+    void rotate189(vector<int>& nums, int k) {
+        if (nums.empty()) {
+            return;
+        }
+
+        k = k % nums.size();
+        if (k == 0) {
+            return;
+        }
+        reverse(nums.begin(), nums.end());
+        reverse(nums.begin(), nums.begin() + k);
+        reverse(nums.begin() + k, nums.end());
+    }
 };
 
 #endif

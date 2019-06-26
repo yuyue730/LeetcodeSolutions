@@ -42,6 +42,7 @@ int main() {
     testObj->findMissingRanges163Test();
     testObj->twoSum167Test();
     testObj->majorityElement169Test();
+    testObj->rotate189Test();
 
     return 0;
 }

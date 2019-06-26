@@ -431,6 +431,18 @@ public:
         return;
     }
 
+    // 189. Rotate Array Test
+    void rotate189Test() {
+        cout << "189. Rotate Array test starts.\n";
+        vector<int> nums = {1,2,3,4,5,6,7};
+        implObj->rotate189(nums, 3);
+        cout << "result [";
+        for (int i = 0; i < nums.size(); ++i) {
+            cout << nums[i] << ((i == nums.size() - 1) ? "" : ",");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     ArrayImpl * implObj;
 };
