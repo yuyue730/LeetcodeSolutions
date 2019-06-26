@@ -135,6 +135,14 @@ public:
         return;
     }
 
+    // 198. House Robber Test
+    void rob198Test() {
+        cout << "198. House Robber test starts.\n";
+        vector<int> nums = {1,2,3,1};
+        cout << "Max money = [" << implObj->rob198(nums) << "]\n\n";
+        return;
+    }
+
 private:
     DpImpl * implObj;
 };
