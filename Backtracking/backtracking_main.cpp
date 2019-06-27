@@ -23,6 +23,7 @@ int main() {
     testObj->solve130Test();
     testObj->partition131Test();
     testObj->wordBreak140Test();
+    testObj->numIslands200Test();
 
     return 0;
 }

@@ -4,7 +4,7 @@
     {
       "label": "build",
       "type": "shell",
-      "command": "g++ -std=c++11 -g backtracking_impl.cpp backtracking_test.cpp backtracking_main.cpp -o backtrackingLC.exe",
+      "command": "g++ -std=c++11 -g backtracking_main.cpp -o backtrackingLC.exe",
       "group": {
         "kind": "build",
         "isDefault": true
