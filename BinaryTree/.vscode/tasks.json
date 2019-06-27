@@ -7,7 +7,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "g++ -std=c++11 -g binarytree_impl.cpp binarytree_test.cpp binarytree_main.cpp -o binarytreeLC.exe",
+            "command": "g++ -std=c++11 -g binarytree_main.cpp -o binarytreeLC.exe",
             "group": {
                 "kind": "build",
                 "isDefault": true
