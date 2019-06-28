@@ -120,6 +120,13 @@ public:
         cout << "]\n\n";
     }
 
+    // 202. Happy Number Test
+    void isHappy202Test() {
+        cout << "202. Happy Number test starts.\n";
+        cout << "19 is happy number = [" << implObj->isHappy202(19) << "]\n\n";
+        return;
+    }
+
 private:
     HashMapImpl* implObj;
 };

@@ -262,6 +262,27 @@ public:
         }
         return vector<string>(resultSet.begin(), resultSet.end());
     }
+
+    // 202. Happy Number
+    bool isHappy202(int n) {
+        unordered_set<int> visited_number;
+        while (n != 1) {
+            int next = 0;
+            while (n > 0) {
+                next += (n % 10) * (n % 10);
+                n /= 10;
+            }
+
+            n = next;
+            if (visited_number.count(n)) {
+                break;
+            }
+
+            visited_number.insert(n);
+        }
+
+        return n == 1;
+    }
 };
 
 #endif

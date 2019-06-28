@@ -18,6 +18,7 @@ int main() {
     testObj->maxPoints149Test();
     testObj->lengthOfLongestSubstringTwoDistinct159Test();
     testObj->findRepeatedDnaSequences187Test();
+    testObj->isHappy202Test();
 
     return 0;
 }
