@@ -374,6 +374,23 @@ public:
 
         return result + decimal_part;
     }
+
+    // 204. Count Primes
+    int countPrimes204(int n) {
+        vector<bool> is_prime(n, true);
+        int result = 0;
+        for (int i = 2; i < n; ++i) {
+            if (!is_prime[i]) {
+                continue;
+            }
+            ++result;
+            for (int j = 2; i * j < n; ++j) {
+                is_prime[i * j] = false;
+            }
+        }
+
+        return result;
+    }
 };
 
 #endif

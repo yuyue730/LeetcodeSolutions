@@ -314,6 +314,23 @@ public:
         return;
     }
 
+    // 203. Remove Linked List Elements Test
+    void removeElements203Test() {
+        cout << "203. Remove Linked List Elements test starts.\n";
+        ListNode *head = new ListNode(1);
+        ListNode *cur = head;
+        cur->next = new ListNode(2); cur = cur->next;
+        cur->next = new ListNode(6); cur = cur->next;
+        cur->next = new ListNode(3); cur = cur->next;
+        cur->next = new ListNode(4); cur = cur->next;
+        cur->next = new ListNode(5); cur = cur->next;
+        cur->next = new ListNode(6);
+
+        ListNode *result = implObj->removeElements203(head, 6);
+        cout << "Please exam result pointer [" << result->val << "]\n\n";
+        return;
+    }
+
 private:
     LinkedListImpl * implObj;
 };

@@ -112,6 +112,13 @@ public:
         return;
     }
 
+    // 204. Count Primes Test
+    void countPrimes204Test() {
+        cout << "204. Count Primes test starts.\n";
+        cout << "10 prime count = [" << implObj->countPrimes204(10) << "]\n\n";
+        return;
+    }
+
 private:
     MathImpl * implObj;
 };

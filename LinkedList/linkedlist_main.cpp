@@ -23,6 +23,7 @@ int main() {
     testObj->reorderList143Test();
     testObj->sortList148Test();
     testObj->getIntersectionNode160Test();
+    testObj->removeElements203Test();
 
     return 0;
 }
