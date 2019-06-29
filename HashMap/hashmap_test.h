@@ -127,6 +127,14 @@ public:
         return;
     }
 
+    // 205. Isomorphic Strings Test
+    void isIsomorphic205Test() {
+        cout << "205. Isomorphic Strings test starts.\n";
+        cout << "paper and title are [" << implObj->isIsomorphic205("paper", "title") 
+            << "]\n\n";
+        return;
+    }
+
 private:
     HashMapImpl* implObj;
 };

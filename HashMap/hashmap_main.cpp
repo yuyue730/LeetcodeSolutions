@@ -19,6 +19,7 @@ int main() {
     testObj->lengthOfLongestSubstringTwoDistinct159Test();
     testObj->findRepeatedDnaSequences187Test();
     testObj->isHappy202Test();
+    testObj->isIsomorphic205Test();
 
     return 0;
 }

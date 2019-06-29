@@ -283,6 +283,29 @@ public:
 
         return n == 1;
     }
+
+    // 205. Isomorphic Strings
+    bool isIsomorphic205(string s, string t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+
+        unordered_map<char, int> char_idx_map1;
+        unordered_map<char, int> char_idx_map2;
+        for (int i = 0; i < s.length(); ++i) {
+            if (!char_idx_map1.count(s[i]) && !char_idx_map2.count(t[i])) {
+                char_idx_map1[s[i]] = i;
+                char_idx_map2[t[i]] = i;
+            } else if (char_idx_map1.count(s[i]) && char_idx_map2.count(t[i])) {
+                if (char_idx_map1[s[i]] != char_idx_map2[t[i]]) {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
 };
 
 #endif
