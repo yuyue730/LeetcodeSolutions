@@ -470,6 +470,24 @@ public:
 
         return dummy->next;
     }
+
+    // 206. Reverse Linked List
+    ListNode* reverseList206(ListNode* head) {
+        if (head == NULL) {
+            return NULL;
+        }
+        ListNode * dummy = new ListNode(-1);
+        ListNode * cur = head;
+        dummy->next = head;
+        while (cur->next) {
+            ListNode * tmp = cur->next;
+            cur->next = tmp->next;
+            tmp->next = dummy->next;
+            dummy->next = tmp;
+        }
+
+        return dummy->next;
+    }
 };
 
 #endif

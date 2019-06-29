@@ -24,6 +24,7 @@ int main() {
     testObj->sortList148Test();
     testObj->getIntersectionNode160Test();
     testObj->removeElements203Test();
+    testObj->reverseList206Test();
 
     return 0;
 }

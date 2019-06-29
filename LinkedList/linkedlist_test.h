@@ -331,6 +331,21 @@ public:
         return;
     }
 
+    // 206. Reverse Linked List Test
+    void reverseList206Test() {
+        cout << "206. Reverse Linked List test starts.\n";
+        ListNode * head = new ListNode(1);
+        ListNode * cur = head;
+        cur->next = new ListNode(2); cur = cur->next;
+        cur->next = new ListNode(3); cur = cur->next;
+        cur->next = new ListNode(4); cur = cur->next;
+        cur->next = new ListNode(5);
+
+        ListNode * result = implObj->reverseList206(head);
+        cout << "Please exam result pointer [" << result->val << "]\n\n";
+        return;
+    }
+
 private:
     LinkedListImpl * implObj;
 };
