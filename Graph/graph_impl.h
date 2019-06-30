@@ -9,7 +9,7 @@
 #include <queue>
 using namespace std;
 
-// For Problem 133
+// Graph Node definition
 class Node {
 public:
     int val;
@@ -182,6 +182,42 @@ public:
             }
         }
         return true;
+    }
+
+    // 210. Course Schedule II
+    vector<int> findOrder210(int numCourses, vector<vector<int>>& prerequisites) {
+        vector<vector<int>> directed_graph(numCourses, vector<int>(0));
+        vector<int> node_requisite(numCourses, 0);
+        vector<int> result;
+        for (int i = 0; i < prerequisites.size(); ++i) {
+            directed_graph[prerequisites[i][1]].push_back(prerequisites[i][0]);
+            ++node_requisite[prerequisites[i][0]];
+        }
+
+        queue<int> course_bfs;
+        for (int i = 0; i < node_requisite.size(); ++i) {
+            if (node_requisite[i] == 0) {
+                course_bfs.push(i);
+            }
+        }
+
+        while (!course_bfs.empty()) {
+            int cur_course = course_bfs.front();
+            result.push_back(cur_course);
+            course_bfs.pop();
+            for (int i = 0; i < directed_graph[cur_course].size(); ++i) {
+                int next_course = directed_graph[cur_course][i];
+                --node_requisite[next_course];
+                if (node_requisite[next_course] == 0) {
+                    course_bfs.push(next_course);
+                }
+            }
+        }
+
+        if (result.size() != numCourses) {
+            result.clear();
+        }
+        return result;
     }
 };
 

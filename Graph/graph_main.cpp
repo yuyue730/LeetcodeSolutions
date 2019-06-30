@@ -12,6 +12,7 @@ int main() {
     testObj->ladderLength127Test();
     testObj->cloneGraph133Test();
     testObj->canFinish207Test();
+    testObj->findOrder210Test();
 
     return 0;
 }

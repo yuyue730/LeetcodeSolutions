@@ -72,6 +72,21 @@ public:
         return;
     }
 
+    // 210. Course Schedule II Test
+    void findOrder210Test() {
+        cout << "210. Course Schedule II test starts.\n";
+        vector<vector<int>> prerequisites = {
+            {1,0},{2,0},{3,1},{3,2}
+        };
+        vector<int> result = implObj->findOrder210(4, prerequisites);
+        cout << "result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     GraphImpl * implObj;
 };
