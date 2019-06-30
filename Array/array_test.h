@@ -443,6 +443,14 @@ public:
         cout << "]\n\n";
     }
 
+    // 209. Minimum Size Subarray Sum Test
+    void minSubArrayLen209Test() {
+        cout << "209. Minimum Size Subarray Sum test starts.\n";
+        vector<int> nums = {2,3,1,2,4,3};
+        cout << "Min size = [" << implObj->minSubArrayLen209(7, nums) << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };

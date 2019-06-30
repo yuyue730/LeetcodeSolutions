@@ -862,6 +862,28 @@ public:
         reverse(nums.begin(), nums.begin() + k);
         reverse(nums.begin() + k, nums.end());
     }
+
+    // 209. Minimum Size Subarray Sum
+    int minSubArrayLen209(int s, vector<int>& nums) {
+        int left = 0, right = 0;
+        int result = INT_MAX, arr_len = nums.size();
+        int cur_sum = 0;
+
+        while (right < arr_len) {
+            while (right < arr_len && cur_sum < s) {
+                cur_sum += nums[right];
+                right++;
+            }
+
+            while (left <= right && cur_sum >= s) {
+                result = min(result, right - left);
+                cur_sum -= nums[left];
+                left++;
+            }
+        }
+
+        return (result > nums.size()) ? 0 : result;
+    }
 };
 
 #endif

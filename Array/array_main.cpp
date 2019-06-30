@@ -43,6 +43,7 @@ int main() {
     testObj->twoSum167Test();
     testObj->majorityElement169Test();
     testObj->rotate189Test();
+    testObj->minSubArrayLen209Test();
 
     return 0;
 }
