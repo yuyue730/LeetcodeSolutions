@@ -13,5 +13,6 @@ int main() {
     testObj->MinStack155Test();
     testObj->TwoSum170Test();
     testObj->BSTIterator173Test();
+    testObj->Trie208Test();
     return 0;
 }

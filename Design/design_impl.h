@@ -149,4 +149,70 @@ private:
     stack <TreeNode *> node_stk;
 };
 
+// 208. Implement Trie (Prefix Tree)
+struct TrieNode {
+    TrieNode * child[26];
+    bool is_word;
+
+    TrieNode() {
+        is_word = false;
+        for (int i = 0; i < 26; ++i) {
+            child[i] = NULL;
+        }
+    }
+};
+
+class Trie208 {
+public:
+    /** Initialize your data structure here. */
+    Trie208() {
+        root = new TrieNode();
+    }
+    
+    /** Inserts a word into the trie. */
+    void insert(string word) {
+        TrieNode * cur = root;
+        for (int i = 0; i < word.size(); ++i) {
+            int next_idx = word[i] - 'a';
+            if (!cur->child[next_idx]) {
+                cur->child[next_idx] = new TrieNode();
+            }
+            cur = cur->child[next_idx];
+        }
+
+        cur->is_word = true;
+    }
+    
+    /** Returns if the word is in the trie. */
+    bool search(string word) {
+        TrieNode * cur = root;
+        for (int i = 0; i < word.size(); ++i) {
+            int next_idx = word[i] - 'a';
+            if (!cur->child[next_idx]) {
+                return false;
+            }
+            cur = cur->child[next_idx];
+        }
+
+        return cur->is_word;
+    }
+    
+    /** Returns if there is any word in the trie that starts with the given prefix. */
+    bool startsWith(string prefix) {
+        TrieNode * cur = root;
+        for (int i = 0; i < prefix.size(); ++i) {
+            int next_idx = prefix[i] - 'a';
+            if (!cur->child[next_idx]) {
+                return false;
+            }
+            cur = cur->child[next_idx];
+        }
+
+        return true;
+    }
+
+private:
+    TrieNode * root;
+};
+
 #endif

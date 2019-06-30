@@ -77,6 +77,20 @@ public:
         cout << "hasNext = [" << iterator.hasNext() << "]\n\n"; // return true
         return;
     }
+
+    // 208. Implement Trie (Prefix Tree) Test
+    void Trie208Test() {
+        cout << "208. Implement Trie (Prefix Tree) test starts.\n";
+
+        Trie208 trie;
+        trie.insert("apple");
+        cout << "Search apple = [" << trie.search("apple") << "]\n";
+        cout << "Search app = [" << trie.search("app") << "]\n";
+        cout << "Start with app = [" << trie.startsWith("app") << "]\n";
+        trie.insert("app");   
+        cout << "Search app = [" << trie.search("app") << "]\n\n";
+        return;
+    }
 };
 
 #endif
