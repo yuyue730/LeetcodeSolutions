@@ -184,6 +184,14 @@ public:
         return;
     }
 
+    // 214. Shortest Palindrome Test
+    void shortestPalindrome214Test() {
+        cout << "214. Shortest Palindrome test starts.\n";
+        string s = "abcd";
+        cout << "Palindrome = [" << implObj->shortestPalindrome214(s) << "]\n\n";
+        return;
+    }
+
 private:
     StringImpl * implObj;
 };

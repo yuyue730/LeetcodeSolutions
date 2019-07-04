@@ -24,6 +24,7 @@ int main() {
     testObj->isOneEditDistance161Test();
     testObj->compareVersion165Test();
     testObj->largestNumber179Test();
+    testObj->shortestPalindrome214Test();
 
     return 0;
 }

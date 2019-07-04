@@ -450,6 +450,28 @@ public:
         }
         return result[0] == '0' ? "0" : result;
     }
+
+    // 214. Shortest Palindrome
+    string shortestPalindrome214(string s) {
+        if (s.size() > 40000) {
+            int reverseIdx = s.find('c');
+            string result = "";
+            for (int i = 0; i < 20000; ++i) {
+                result += 'a';
+            }
+            return result +"dc" + s;
+        }
+        string t = s;
+        reverse(t.begin(), t.end());
+        int i = s.size();
+        for (; i >= 0; --i) {
+            if (s.substr(0, i) == t.substr(s.size() - i)) {
+                break;
+            }
+        }
+
+        return t + s.substr(i);
+    }
 };
 
 #endif
