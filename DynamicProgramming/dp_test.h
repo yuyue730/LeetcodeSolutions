@@ -143,6 +143,19 @@ public:
         return;
     }
 
+    // 221. Maximal Square Test
+    void maximalSquare221Test() {
+        cout << "198. House Robber test starts.\n";
+        vector<vector<char>> matrix = {
+            {'1', '0', '1', '0', '0'},
+            {'1', '0', '1', '1', '1'},
+            {'1', '1', '1', '1', '1'},
+            {'1', '0', '0', '1', '0'}
+        };
+        cout << "Max square size = [" << implObj->maximalSquare221(matrix) << "]\n\n";
+        return;
+    }
+
 private:
     DpImpl * implObj;
 };

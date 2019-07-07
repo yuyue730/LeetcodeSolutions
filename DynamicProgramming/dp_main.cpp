@@ -23,6 +23,7 @@ int main() {
     testObj->wordBreak139Test();
     testObj->maxProduct152Test();
     testObj->rob198Test();
+    testObj->maximalSquare221Test();
 
     return 0;
 }

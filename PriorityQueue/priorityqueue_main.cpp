@@ -9,6 +9,7 @@ int main() {
     cout << "\nTest for problems starts.\n";
 
     testObj->findKthLargest215Test();
+    testObj->getSkyline218Test();
 
     return 0;
 }
