@@ -180,6 +180,42 @@ public:
 
         return valueStk.top();
     }
+
+    // 224. Basic Calculator
+    int calculate224(string s) {
+        int result = 0;
+        stack<int> result_stk;
+        stack<int> sign_stk;
+        int sign = 1;
+
+        for (int i = 0; i < s.size(); ++i) {
+            char cur_ch = s[i];
+            if (isdigit(cur_ch)) {
+                int cur_num = 0;
+                while (i < s.size() && isdigit(s[i])) {
+                    cur_num = cur_num * 10 + (s[i] - '0');
+                    i++;
+                }
+                result += sign * cur_num;
+                i--;
+            } else if (cur_ch == '+') {
+                sign = 1;
+            } else if (cur_ch == '-') {
+                sign = -1;
+            } else if (cur_ch == '(') {
+                result_stk.push(result);
+                sign_stk.push(sign);
+                result = 0;
+                sign = 1;
+            } else if (cur_ch == ')') {
+                result = result_stk.top() + sign_stk.top() * result;
+                result_stk.pop();
+                sign_stk.pop();
+            }
+        }
+
+        return result;
+    }
 };
 
 #endif

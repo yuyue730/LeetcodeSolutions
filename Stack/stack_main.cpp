@@ -15,6 +15,7 @@ int main() {
     testObj->largestRectangleArea84Test();
     testObj->maximalRectangle85Test();
     testObj->evalRPN150Test();
+    testObj->calculate224Test();
 
     return 0;
 }

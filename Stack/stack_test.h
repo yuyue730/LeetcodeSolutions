@@ -65,6 +65,14 @@ public:
         return;
     }
 
+    // 224. Basic Calculator Test
+    void calculate224Test() {
+        cout << "224. Basic Calculator test starts.\n";
+        cout << "(1+(4+5+2)-3)+(6+8) = [" << implObj->calculate224("(1+(4+5+2)-3)+(6+8)") 
+            << "]\n\n";
+        return;
+    }
+
 private:
     StackImpl * implObj;
 };
