@@ -28,6 +28,7 @@ int main() {
     testObj->maxPathSum124Test();
     testObj->preorderTraversal144Test();
     testObj->rightSideView199Test();
+    testObj->countNodes222Test();
 
     return 0;
 }

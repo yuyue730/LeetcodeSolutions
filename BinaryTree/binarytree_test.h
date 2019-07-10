@@ -373,6 +373,23 @@ public:
         return;
     }
 
+    // 222. Count Complete Tree Nodes Test
+    void countNodes222Test() {
+        cout << "222. Count Complete Tree Nodes test starts.\n";
+        TreeNode * root = new TreeNode(1);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(2);
+        cur->right = new TreeNode(3);
+        cur = root->left;
+        cur->left = new TreeNode(4);
+        cur->right = new TreeNode(5);
+        cur = root->right;
+        cur->left = new TreeNode(6);
+
+        cout << "# of nodes = [" << implObj->countNodes222(root) << "]\n\n";
+        return;
+    }
+
 private:
     BinaryTreeImpl * implObj;
 };

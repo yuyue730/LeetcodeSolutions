@@ -5,6 +5,7 @@
 #include <queue>
 #include <stack>
 #include <vector>
+#include <cmath>
 using namespace std;
 
 struct TreeNode {
@@ -595,6 +596,33 @@ public:
         }
 
         return result;
+    }
+
+    // 222. Count Complete Tree Nodes
+    int countNodes222(TreeNode* root) {
+        if (!root) {
+            return 0;
+        }
+
+        TreeNode *p_left = root->left;
+        int h_left = 1;
+        while (p_left) {
+            h_left++;
+            p_left = p_left->left;
+        }
+
+        TreeNode *p_right = root->right;
+        int h_right = 1;
+        while (p_right) {
+            h_right++;
+            p_right = p_right->right;
+        }
+
+        if (h_left == h_right) {
+            return pow(2, h_left) - 1;
+        } else {
+            return countNodes222(root->left) + countNodes222(root->right) + 1;
+        }
     }
 };
 
