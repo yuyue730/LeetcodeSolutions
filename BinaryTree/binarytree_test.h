@@ -390,6 +390,25 @@ public:
         return;
     }
 
+    // 226. Invert Binary Tree Test
+    void invertTree226Test() {
+        cout << "226. Invert Binary Tree test starts.\n";
+        TreeNode * root = new TreeNode(4);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(2);
+        cur->right = new TreeNode(7);
+        cur = root->left;
+        cur->left = new TreeNode(1);
+        cur->right = new TreeNode(3);
+        cur = root->right;
+        cur->left = new TreeNode(6);
+        cur->right = new TreeNode(9);
+
+        TreeNode * result = implObj->invertTree226(root);
+        cout << "Please exam result " << result->val << "\n\n";
+        return;
+    }
+
 private:
     BinaryTreeImpl * implObj;
 };

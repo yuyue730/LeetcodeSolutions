@@ -624,6 +624,18 @@ public:
             return countNodes222(root->left) + countNodes222(root->right) + 1;
         }
     }
+
+    // 226. Invert Binary Tree
+    TreeNode* invertTree226(TreeNode* root) {
+        if (!root) {
+            return NULL;
+        }
+
+        TreeNode * tmp = invertTree226(root->left);
+        root->left = invertTree226(root->right);
+        root->right = tmp;
+        return root;
+    }
 };
 
 #endif

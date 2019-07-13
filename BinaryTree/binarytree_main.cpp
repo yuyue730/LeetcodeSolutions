@@ -29,6 +29,7 @@ int main() {
     testObj->preorderTraversal144Test();
     testObj->rightSideView199Test();
     testObj->countNodes222Test();
+    testObj->invertTree226Test();
 
     return 0;
 }
