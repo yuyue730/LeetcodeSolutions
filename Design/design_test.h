@@ -91,6 +91,19 @@ public:
         cout << "Search app = [" << trie.search("app") << "]\n\n";
         return;
     }
+
+    // 225. Implement Stack using Queues Test
+    void MyStack225Test() {
+        cout << "225. Implement Stack using Queues test starts.\n";
+
+        MyStack225 myStack;
+        myStack.push(1);
+        myStack.push(2);  
+        cout << "top() = " << myStack.top() << "; ";   // returns 2
+        cout << "pop() = " << myStack.pop() << "; ";   // returns 2
+        cout << "empty() = " << myStack.empty() << "\n\n"; // returns false
+        return;
+    }
 };
 
 #endif

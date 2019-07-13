@@ -14,5 +14,6 @@ int main() {
     testObj->TwoSum170Test();
     testObj->BSTIterator173Test();
     testObj->Trie208Test();
+    testObj->MyStack225Test();
     return 0;
 }

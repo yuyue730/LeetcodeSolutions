@@ -5,6 +5,7 @@
 #include <list>
 #include <unordered_map>
 #include <stack>
+#include <queue>
 using namespace std;
 
 // 146. LRU Cache
@@ -213,6 +214,51 @@ public:
 
 private:
     TrieNode * root;
+};
+
+// 225. Implement Stack using Queues
+class MyStack225 {
+public:
+    /** Initialize your data structure here. */
+    MyStack225() { }
+    
+    /** Push element x onto stack. */
+    void push(int x) {
+        front_queue.push(x);
+        while (front_queue.size() > 1) {
+            data_queue.push(front_queue.front());
+            front_queue.pop();
+        }
+    }
+    
+    /** Removes the element on top of the stack and returns that element. */
+    int pop() {
+        int to_return = top();
+        front_queue.pop();
+        return to_return;
+    }
+    
+    /** Get the top element. */
+    int top() {
+        if (front_queue.empty()) {
+            for (int i = 0; i < data_queue.size() - 1; ++i) {
+                data_queue.push(data_queue.front());
+                data_queue.pop();
+            }
+            front_queue.push(data_queue.front());
+            data_queue.pop();
+        }
+        return front_queue.front();
+    }
+    
+    /** Returns whether the stack is empty. */
+    bool empty() {
+        return front_queue.empty() && data_queue.empty();
+    }
+
+private:
+    queue<int> front_queue;
+    queue<int> data_queue;
 };
 
 #endif
