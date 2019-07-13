@@ -73,6 +73,13 @@ public:
         return;
     }
 
+    // 227. Basic Calculator II Test
+    void calculate227Test() {
+        cout << "227. Basic Calculator II test starts.\n";
+        cout << "3+5 / 2 = " << implObj->calculate227("3+5 / 2") << "\n\n";
+        return;
+    }
+
 private:
     StackImpl * implObj;
 };

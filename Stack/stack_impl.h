@@ -216,6 +216,45 @@ public:
 
         return result;
     }
+
+    // 227. Basic Calculator II
+    int calculate227(string s) {
+        int result = 0, number = 0;
+        stack<int> num_stack;
+        char op = '+';
+
+        for (int i = 0; i < s.size(); ++i) {
+            if (isdigit(s[i])) {
+                number = number * 10 + (s[i] - '0');
+            }
+
+            if ((s[i] < '0' && s[i] != ' ') || i == s.size() - 1) {
+                if (op == '+') {
+                    num_stack.push(number);
+                }
+                if (op == '-') {
+                    num_stack.push(-number);
+                }
+                if (op == '*' || op == '/') {
+                    int cur_number = (op == '*')
+                        ? num_stack.top() * number
+                        : num_stack.top() / number;
+                    num_stack.pop();
+                    num_stack.push(cur_number);
+                }
+
+                op = s[i];
+                number = 0;
+            }
+        }
+
+        while (!num_stack.empty()) {
+            result += num_stack.top();
+            num_stack.pop();
+        }
+
+        return result;
+    }
 };
 
 #endif

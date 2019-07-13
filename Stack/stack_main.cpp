@@ -16,6 +16,7 @@ int main() {
     testObj->maximalRectangle85Test();
     testObj->evalRPN150Test();
     testObj->calculate224Test();
+    testObj->calculate227Test();
 
     return 0;
 }
