@@ -464,6 +464,19 @@ public:
         return;
     }
 
+    // 229. Majority Element II Test
+    void majorityElement229Test() {
+        cout << "229. Majority Element II test starts.\n";
+        vector<int> nums = {1,1,1,3,3,2,2,2};
+        vector<int> major = implObj->majorityElement229(nums);
+        cout << "Result = [";
+        for (int i = 0; i < major.size(); ++i) {
+            cout << major[i] << ((i == major.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };

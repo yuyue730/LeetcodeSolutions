@@ -906,6 +906,45 @@ public:
         }
         return result;
     }
+
+    // 229. Majority Element II
+    vector<int> majorityElement229(vector<int>& nums) {
+        int m = -1, ct1 = 0, n = -1, ct2 = 0;
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i] == m) {
+                ++ct1;
+            } else if (nums[i] == n) {
+                ++ct2;
+            } else if (ct1 == 0) {
+                m = nums[i];
+                ct1 = 1;
+            } else if (ct2 == 0) {
+                n = nums[i];
+                ct2 = 1;
+            } else {
+                ct1--;
+                ct2--;
+            }
+        }
+
+        vector<int> result;
+        ct1 = 0;
+        ct2 = 0;
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i] == m) {
+                ct1++;
+            } else if (nums[i] == n) {
+                ct2++;
+            }
+        }
+        if (ct1 > nums.size() / 3) {
+            result.push_back(m);
+        }
+        if (ct2 > nums.size() / 3) {
+            result.push_back(n);
+        }
+        return result;
+    }
 };
 
 #endif
