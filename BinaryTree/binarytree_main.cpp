@@ -30,6 +30,7 @@ int main() {
     testObj->rightSideView199Test();
     testObj->countNodes222Test();
     testObj->invertTree226Test();
+    testObj->kthSmallest230Test();
 
     return 0;
 }

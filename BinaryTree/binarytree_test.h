@@ -409,6 +409,22 @@ public:
         return;
     }
 
+    // 230. Kth Smallest Element in a BST Test
+    void kthSmallest230Test() {
+        cout << "230. Kth Smallest Element in a BST test starts.\n";
+        TreeNode * root = new TreeNode(5);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(3);
+        cur->right = new TreeNode(6);
+        cur = root->left;
+        cur->left = new TreeNode(2);
+        cur->right = new TreeNode(4);
+
+        cout << "Kth smallest elem = [" << implObj->kthSmallest230(root, 2) << "]\n\n";
+        return;
+
+    }
+
 private:
     BinaryTreeImpl * implObj;
 };

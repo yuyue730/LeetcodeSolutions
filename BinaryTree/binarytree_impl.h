@@ -636,6 +636,33 @@ public:
         root->right = tmp;
         return root;
     }
+
+    // 230. Kth Smallest Element in a BST
+    int kthSmallest230(TreeNode* root, int k) {
+        if (!root) {
+            return 0;
+        }
+        stack<TreeNode*> node_stk;
+        TreeNode * cur = root;
+        int ct = 0;
+
+        while (cur || !node_stk.empty()) {
+            while (cur) {
+                node_stk.push(cur);
+                cur = cur->left;
+            }
+
+            cur = node_stk.top();
+            node_stk.pop();
+            ++ct;
+            if (ct == k) {
+                return cur->val;
+            }
+            cur = cur->right;
+        }
+
+        return 0;
+    }
 };
 
 #endif
