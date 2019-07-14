@@ -884,6 +884,28 @@ public:
 
         return (result > nums.size()) ? 0 : result;
     }
+
+    // 228. Summary Ranges
+    vector<string> summaryRanges228(vector<int>& nums) {
+        vector<string> result;
+        int i = 0;
+        while (i < nums.size()) {
+            int j = 1;
+            while (i + j < nums.size() && 
+                static_cast<long>(nums[i + j]) - static_cast<long>(nums[i]) == j
+            ) {
+                ++j;
+            }
+
+            if (j == 1) {
+                result.push_back(to_string(nums[i]));
+            } else {
+                result.push_back(to_string(nums[i]) + "->" + to_string(nums[i + j - 1]));
+            }
+            i += j;
+        }
+        return result;
+    }
 };
 
 #endif

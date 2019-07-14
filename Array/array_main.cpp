@@ -44,6 +44,7 @@ int main() {
     testObj->majorityElement169Test();
     testObj->rotate189Test();
     testObj->minSubArrayLen209Test();
+    testObj->summaryRanges228Test();
 
     return 0;
 }

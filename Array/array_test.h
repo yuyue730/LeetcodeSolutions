@@ -451,6 +451,19 @@ public:
         return;
     }
 
+    // 228. Summary Ranges Test
+    void summaryRanges228Test() {
+        cout << "228. Summary Ranges test starts.\n";
+        vector<int> nums = {0,2,3,4,6,8,9};
+        vector<string> result = implObj->summaryRanges228(nums);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };
