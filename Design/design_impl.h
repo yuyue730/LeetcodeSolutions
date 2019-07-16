@@ -261,4 +261,46 @@ private:
     queue<int> data_queue;
 };
 
+// 232. Implement Queue using Stacks
+class MyQueue232 {
+public:
+    /** Initialize your data structure here. */
+    MyQueue232() {}
+    
+    /** Push element x to the back of queue. */
+    void push(int x) {
+        stack<int> temp;
+        while (!q_stack.empty()) {
+            temp.push(q_stack.top());
+            q_stack.pop();
+        }
+
+        temp.push(x);
+        while (!temp.empty()) {
+            q_stack.push(temp.top());
+            temp.pop();
+        }
+    }
+    
+    /** Removes the element from in front of queue and returns that element. */
+    int pop() {
+        int result = q_stack.top();
+        q_stack.pop();
+        return result;
+    }
+    
+    /** Get the front element. */
+    int peek() {
+        return q_stack.top();
+    }
+    
+    /** Returns whether the queue is empty. */
+    bool empty() {
+        return q_stack.empty();
+    }
+
+private:
+    stack<int> q_stack;
+};
+
 #endif

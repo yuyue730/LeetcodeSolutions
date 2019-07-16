@@ -104,6 +104,19 @@ public:
         cout << "empty() = " << myStack.empty() << "\n\n"; // returns false
         return;
     }
+
+    // 232. Implement Queue using Stacks Test
+    void MyQueue232Test() {
+        cout << "232. Implement Queue using Stacks test starts.\n";
+
+        MyQueue232 myQ;
+        myQ.push(1);
+        myQ.push(2); 
+        cout << "peek = [" << myQ.peek() << "]\n";  // returns 1
+        cout << "pop = [" << myQ.pop() << "]\n";   // returns 1
+        cout << "empty = [" << myQ.empty() << "]\n\n"; // returns false 
+        return;
+    }
 };
 
 #endif

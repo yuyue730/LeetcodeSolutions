@@ -15,5 +15,6 @@ int main() {
     testObj->BSTIterator173Test();
     testObj->Trie208Test();
     testObj->MyStack225Test();
+    testObj->MyQueue232Test();
     return 0;
 }
