@@ -451,6 +451,33 @@ public:
         return;
     }
 
+    // 236. Lowest Common Ancestor of a Binary Tree Test
+    void lowestCommonAncestor236Test() {
+        cout << "236. Lowest Common Ancestor of a Binary Tree test starts.\n";
+        TreeNode * root = new TreeNode(3);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(5);
+        TreeNode * p = cur->left;
+        cur->right = new TreeNode(1);
+
+        cur = root->left;
+        cur->left = new TreeNode(6);
+        cur->right = new TreeNode(2);
+
+        cur = cur->right;
+        cur->left = new TreeNode(7);
+        cur->right = new TreeNode(4);
+        TreeNode * q = cur->right;
+
+        cur = root->right;
+        cur->left = new TreeNode(0);
+        cur->right = new TreeNode(8);
+
+        cout << "Common ancester of <5, 4> is [" 
+            << implObj->lowestCommonAncestor236(root, p, q)->val << "]\n\n";
+        return;
+    }
+
 private:
     BinaryTreeImpl * implObj;
 };

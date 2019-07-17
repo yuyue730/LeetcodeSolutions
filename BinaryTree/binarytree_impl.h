@@ -682,6 +682,25 @@ public:
 
         return root;
     }
+
+    // 236. Lowest Common Ancestor of a Binary Tree
+    TreeNode* lowestCommonAncestor236(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if (!root) {
+            return NULL;
+        }
+        if (root == p || root == q) {
+            return root;
+        }
+
+        TreeNode * left = lowestCommonAncestor236(root->left, p, q);
+        TreeNode * right = lowestCommonAncestor236(root->right, p, q);
+
+        if (left && right) {
+            return root;
+        } else {
+            return left ? left : right;
+        }
+    }
 };
 
 #endif
