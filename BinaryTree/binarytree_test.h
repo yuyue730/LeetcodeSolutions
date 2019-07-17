@@ -422,7 +422,33 @@ public:
 
         cout << "Kth smallest elem = [" << implObj->kthSmallest230(root, 2) << "]\n\n";
         return;
+    }
 
+    // 235. Lowest Common Ancestor of a Binary Search Tree Test
+    void lowestCommonAncestor235Test() {
+        cout << "235. Lowest Common Ancestor of a Binary Search Tree test starts.\n";
+        TreeNode * root = new TreeNode(6);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(2);
+        cur->right = new TreeNode(8);
+
+        cur = root->left;
+        cur->left = new TreeNode(0);
+        cur->right = new TreeNode(4);
+        
+        cur = cur->right;
+        cur->left = new TreeNode(3);
+        TreeNode * p = cur->left;
+        cur->right = new TreeNode(5);
+        TreeNode * q = cur->right;
+
+        cur = root->right;
+        cur->left = new TreeNode(7);
+        cur->right = new TreeNode(9);
+
+        cout << "Common ancester of <3, 5> is [" 
+            << implObj->lowestCommonAncestor235(root, p, q)->val << "]\n\n";
+        return;
     }
 
 private:

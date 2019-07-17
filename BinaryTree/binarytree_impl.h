@@ -663,6 +663,25 @@ public:
 
         return 0;
     }
+
+    // 235. Lowest Common Ancestor of a Binary Search Tree
+    TreeNode* lowestCommonAncestor235(
+        TreeNode* root, TreeNode* p, TreeNode* q
+    ) {
+        if (!root) {
+            return NULL;
+        }
+
+        if (root->val < min(p->val, q->val)) {
+            return lowestCommonAncestor235(root->right, p, q);
+        }
+
+        if (root->val > max(p->val, q->val)) {
+            return lowestCommonAncestor235(root->left, p, q);
+        }
+
+        return root;
+    }
 };
 
 #endif

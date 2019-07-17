@@ -31,6 +31,7 @@ int main() {
     testObj->countNodes222Test();
     testObj->invertTree226Test();
     testObj->kthSmallest230Test();
+    testObj->lowestCommonAncestor235Test();
 
     return 0;
 }
