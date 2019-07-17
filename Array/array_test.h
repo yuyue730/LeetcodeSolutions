@@ -477,6 +477,19 @@ public:
         return;
     }
 
+    // 238. Product of Array Except Self Test
+    void productExceptSelf238Test() {
+        cout << "238. Product of Array Except Self test starts.\n";
+        vector<int> nums = {1,2,3,4};
+        vector<int> result = implObj->productExceptSelf238(nums);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };

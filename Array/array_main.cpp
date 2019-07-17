@@ -46,6 +46,7 @@ int main() {
     testObj->minSubArrayLen209Test();
     testObj->summaryRanges228Test();
     testObj->majorityElement229Test();
+    testObj->productExceptSelf238Test();
 
     return 0;
 }

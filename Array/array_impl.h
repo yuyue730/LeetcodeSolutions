@@ -945,6 +945,25 @@ public:
         }
         return result;
     }
+
+    // 238. Product of Array Except Self
+    vector<int> productExceptSelf238(vector<int>& nums) {
+        vector<int> forward(nums.size(), 1);
+        vector<int> backward(nums.size(), 1);
+        vector<int> result(nums.size(), 1);
+
+        for (int i = 0; i < nums.size() - 1; ++i) {
+            forward[i + 1] = forward[i] * nums[i];
+        }
+        for (int i = nums.size() - 1; i > 0; --i) {
+            backward[i - 1] = backward[i] * nums[i];
+        }
+        for (int i = 0; i < nums.size(); ++i) {
+            result[i] = forward[i] * backward[i];
+        }
+
+        return result;
+    }
 };
 
 #endif
