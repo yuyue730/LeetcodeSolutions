@@ -490,6 +490,19 @@ public:
         return;
     }
 
+    // 239. Sliding Window Maximum Test
+    void maxSlidingWindow239Test() {
+        cout << "239. Sliding Window Maximum test starts.\n";
+        vector<int> nums = {1,3,-1,-3,5,3,6,7};
+        vector<int> result = implObj->maxSlidingWindow239(nums, 3);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };

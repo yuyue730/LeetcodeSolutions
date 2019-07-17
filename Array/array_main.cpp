@@ -47,6 +47,7 @@ int main() {
     testObj->summaryRanges228Test();
     testObj->majorityElement229Test();
     testObj->productExceptSelf238Test();
+    testObj->maxSlidingWindow239Test();
 
     return 0;
 }

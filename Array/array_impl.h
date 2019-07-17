@@ -5,6 +5,7 @@
 #include <iostream>
 #include <algorithm>
 #include <set>
+#include <queue>
 using namespace std;
 
 class ArrayImpl {
@@ -960,6 +961,24 @@ public:
         }
         for (int i = 0; i < nums.size(); ++i) {
             result[i] = forward[i] * backward[i];
+        }
+
+        return result;
+    }
+
+    // 239. Sliding Window Maximum
+    vector<int> maxSlidingWindow239(vector<int>& nums, int k) {
+        priority_queue<pair<int, int>> heap;
+        vector<int> result;
+
+        for (int i = 0; i < nums.size(); ++i) {
+            while (!heap.empty() && heap.top().second <= i - k) {
+                heap.pop();
+            }
+            heap.push({nums[i], i});
+            if (i >= k - 1) {
+                result.push_back(heap.top().first);
+            }
         }
 
         return result;
