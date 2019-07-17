@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <stack>
 using namespace std;
 
 struct ListNode {
@@ -487,6 +488,29 @@ public:
         }
 
         return dummy->next;
+    }
+
+    // 234. Palindrome Linked List
+    bool isPalindrome234(ListNode* head) {
+        if (!head) {
+            return true;
+        }
+        stack<int> val_stack;
+        ListNode * cur = head;
+        while (cur) {
+            val_stack.push(cur->val);
+            cur = cur->next;
+        }
+
+        while (head) {
+            int cur_val = val_stack.top();
+            val_stack.pop();
+            if (cur_val != head->val) {
+                return false;
+            }
+            head = head->next;
+        }
+        return true;
     }
 };
 

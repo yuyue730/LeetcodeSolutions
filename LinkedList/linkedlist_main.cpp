@@ -25,6 +25,7 @@ int main() {
     testObj->getIntersectionNode160Test();
     testObj->removeElements203Test();
     testObj->reverseList206Test();
+    testObj->isPalindrome234Test();
 
     return 0;
 }

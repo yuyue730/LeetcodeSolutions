@@ -346,6 +346,19 @@ public:
         return;
     }
 
+    // 234. Palindrome Linked List Test
+    void isPalindrome234Test() {
+        cout << "234. Palindrome Linked List test starts.\n";
+        ListNode * head = new ListNode(1);
+        ListNode * cur = head;
+        cur->next = new ListNode(2); cur = cur->next;
+        cur->next = new ListNode(2); cur = cur->next;
+        cur->next = new ListNode(1);
+
+        cout << "Is palindrome = [" << implObj->isPalindrome234(head) << "]\n\n";
+        return;
+    }
+
 private:
     LinkedListImpl * implObj;
 };
