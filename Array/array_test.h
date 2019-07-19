@@ -503,6 +503,21 @@ public:
         return;
     }
 
+    // 240. Search a 2D Matrix II Test
+    void searchMatrix240Test() {
+        cout << "240. Search a 2D Matrix II test starts.\n";
+        vector<vector<int>> matrix = {
+            {1, 4, 7, 11, 15},
+            {2, 5, 8, 12, 19},
+            {3, 6, 9, 16, 22},
+            {10, 13, 14, 17, 24},
+            {18, 21, 23, 26, 30}
+        };
+        cout << "Find 5 = [" << implObj->searchMatrix240(matrix, 5) << "]\n";
+        cout << "Find 20 = [" << implObj->searchMatrix240(matrix, 20) << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };

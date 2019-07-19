@@ -983,6 +983,32 @@ public:
 
         return result;
     }
+
+    // 240. Search a 2D Matrix II
+    bool searchMatrix240(vector<vector<int>>& matrix, int target) {
+        if (matrix.empty() || matrix[0].empty()) {
+            return false;
+        }
+
+        if (target < matrix[0][0] || target > matrix.back().back()) {
+            return false;
+        }
+
+        int i = matrix.size() - 1, j = 0;
+        while (true) {
+            if (target > matrix[i][j]) {
+                j++;
+            } else if (target < matrix[i][j]) {
+                i--;
+            } else {
+                return true;
+            }
+            if (i < 0 || j >= matrix[0].size()) {
+                break;
+            }
+        }
+        return false;
+    }
 };
 
 #endif

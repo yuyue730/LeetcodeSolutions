@@ -48,6 +48,7 @@ int main() {
     testObj->majorityElement229Test();
     testObj->productExceptSelf238Test();
     testObj->maxSlidingWindow239Test();
+    testObj->searchMatrix240Test();
 
     return 0;
 }
