@@ -119,6 +119,17 @@ public:
         return;
     }
 
+    // 241. Different Ways to Add Parentheses Test
+    void diffWaysToCompute241Test() {
+        cout << "241. Different Ways to Add Parentheses test starts.\n";
+        cout << "2*3-4*5 = [";
+        vector<int> result = implObj->diffWaysToCompute241("2*3-4*5");
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     MathImpl * implObj;
 };

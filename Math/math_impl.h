@@ -391,6 +391,42 @@ public:
 
         return result;
     }
+
+    // 241. Different Ways to Add Parentheses
+    vector<int> diffWaysToCompute241(string input) {
+        vector<int> result;
+
+        for (int i = 0; i < input.size(); ++i) {
+            if (input[i] == '+' || input[i] == '-' || input[i] == '*') {
+                vector<int> left = diffWaysToCompute241(input.substr(0, i));
+                vector<int> right = diffWaysToCompute241(input.substr(i + 1));
+
+                for (int j = 0; j < left.size(); ++j) {
+                    for (int k = 0; k < right.size(); ++k) {
+                        switch (input[i]) {
+                        case '+':
+                            result.push_back(left[j] + right[k]);
+                            break;
+                        case '-':
+                            result.push_back(left[j] - right[k]);
+                            break;
+                        case '*':
+                            result.push_back(left[j] * right[k]);
+                            break;
+                        default:
+                            assert(false);
+                        }
+                    }
+                }
+            }
+        }
+
+        if (result.empty()) {
+            result.push_back(stoi(input));
+        }
+
+        return result;
+    }
 };
 
 #endif

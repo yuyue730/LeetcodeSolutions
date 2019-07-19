@@ -21,6 +21,7 @@ int main() {
     testObj->mySqrt69Test();
     testObj->fractionToDecimal166Test();
     testObj->countPrimes204Test();
+    testObj->diffWaysToCompute241Test();
 
     return 0;
 }
