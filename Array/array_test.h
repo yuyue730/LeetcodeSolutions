@@ -518,6 +518,17 @@ public:
         return;
     }
 
+    // 243. Shortest Word Distance Test
+    void shortestDistance243Test() {
+        cout << "243. Shortest Word Distance test starts.\n";
+        vector<string> words = {
+            "practice", "makes", "perfect", "coding", "makes"
+        };
+        cout << "Distance = [" << implObj->shortestDistance243(words, "coding", "practice")
+            << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };

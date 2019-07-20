@@ -49,6 +49,7 @@ int main() {
     testObj->productExceptSelf238Test();
     testObj->maxSlidingWindow239Test();
     testObj->searchMatrix240Test();
+    testObj->shortestDistance243Test();
 
     return 0;
 }
