@@ -427,6 +427,37 @@ public:
 
         return result;
     }
+
+    // 247. Strobogrammatic Number II
+    vector<string> findStrobogrammatic247(int n) {
+        return find_by_level(n, n);
+    }
+
+    vector<string> find_by_level(int cur_level, int n) {
+        if (cur_level == 0) {
+            return {""};
+        }
+
+        if (cur_level == 1) {
+            return {"0", "1", "8"};
+        }
+
+        vector<string> lower_level_result = find_by_level(cur_level - 2, n);
+        vector<string> result;
+
+        for (int i = 0; i < lower_level_result.size(); ++i) {
+            string str = lower_level_result[i];
+            if (cur_level != n) {
+                result.push_back("0" + str + "0");
+            }
+            result.push_back("1" + str + "1");
+            result.push_back("6" + str + "9");
+            result.push_back("8" + str + "8");
+            result.push_back("9" + str + "6");
+        }
+
+        return result;
+    }
 };
 
 #endif

@@ -130,6 +130,19 @@ public:
         cout << "]\n\n";
     }
 
+    // 247. Strobogrammatic Number II Test
+    void findStrobogrammatic247Test() {
+        cout << "247. Strobogrammatic Number II test starts.\n";
+        vector<string> result = implObj->findStrobogrammatic247(3);
+
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << (i == (result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     MathImpl * implObj;
 };

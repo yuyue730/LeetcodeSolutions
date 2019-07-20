@@ -22,6 +22,7 @@ int main() {
     testObj->fractionToDecimal166Test();
     testObj->countPrimes204Test();
     testObj->diffWaysToCompute241Test();
+    testObj->findStrobogrammatic247Test();
 
     return 0;
 }
