@@ -306,6 +306,25 @@ public:
         }
         return true;
     }
+
+    // 242. Valid Anagram
+    bool isAnagram242(string s, string t) {
+        if (s.size() != t.size()) {
+            return false;
+        }
+        unordered_map<char, int> charFreqMap;
+        for (int i = 0; i < s.size(); ++i) {
+            charFreqMap[s[i]]++;
+        }
+
+        for (int i = 0; i < t.size(); ++i) {
+            charFreqMap[t[i]]--;
+            if (charFreqMap[t[i]] < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 };
 
 #endif

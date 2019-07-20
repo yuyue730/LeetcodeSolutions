@@ -20,6 +20,7 @@ int main() {
     testObj->findRepeatedDnaSequences187Test();
     testObj->isHappy202Test();
     testObj->isIsomorphic205Test();
+    testObj->isAnagram242Test();
 
     return 0;
 }

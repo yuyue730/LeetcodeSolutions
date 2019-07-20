@@ -135,6 +135,15 @@ public:
         return;
     }
 
+    // 242. Valid Anagram Test
+    void isAnagram242Test() {
+        cout << "242. Valid Anagram test starts.\n";
+        cout << "anagram and nagaram = [" 
+            << (implObj->isAnagram242("anagram", "nagaram") ? "True" : "False")
+            << "]\n\n";
+        return;
+    }
+
 private:
     HashMapImpl* implObj;
 };
