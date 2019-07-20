@@ -701,6 +701,28 @@ public:
             return left ? left : right;
         }
     }
+
+    // 250. Count Univalue Subtrees
+    int countUnivalSubtrees250(TreeNode* root) {
+        int result = 0;
+        is_unival(root, -1, result);
+        return result;
+    }
+
+    bool is_unival(TreeNode * cur, int val, int &result) {
+        if (!cur) {
+            return true;
+        }
+
+        bool is_left_univ = is_unival(cur->left, cur->val, result);
+        bool is_right_univ = is_unival(cur->right, cur->val, result);
+        if (!is_left_univ || !is_right_univ) {
+            return false;
+        }
+
+        ++result;
+        return cur->val == val;
+    }
 };
 
 #endif

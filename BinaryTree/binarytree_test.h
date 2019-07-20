@@ -478,6 +478,25 @@ public:
         return;
     }
 
+    // 250. Count Univalue Subtrees Test
+    void countUnivalSubtrees250Test() {
+        cout << "250. Count Univalue Subtrees test starts.\n";
+        TreeNode * root = new TreeNode(5);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(1);
+        cur->right = new TreeNode(5);
+
+        cur = root->left;
+        cur->left = new TreeNode(5);
+        cur->right = new TreeNode(5);
+
+        cur = root->right;
+        cur->right = new TreeNode(5);
+        cout << "# of unival substrees = [" << implObj->countUnivalSubtrees250(root) 
+            << "]\n\n";
+        return;
+    }
+
 private:
     BinaryTreeImpl * implObj;
 };

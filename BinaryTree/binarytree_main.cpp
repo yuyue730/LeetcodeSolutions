@@ -33,6 +33,7 @@ int main() {
     testObj->kthSmallest230Test();
     testObj->lowestCommonAncestor235Test();
     testObj->lowestCommonAncestor236Test();
+    testObj->countUnivalSubtrees250Test();
 
     return 0;
 }
