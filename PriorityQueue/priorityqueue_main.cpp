@@ -10,6 +10,7 @@ int main() {
 
     testObj->findKthLargest215Test();
     testObj->getSkyline218Test();
+    testObj->minMeetingRooms253Test();
 
     return 0;
 }

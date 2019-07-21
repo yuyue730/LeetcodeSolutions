@@ -82,6 +82,25 @@ public:
 
         return result;
     }
+
+    // 253. Meeting Rooms II
+    int minMeetingRooms253(vector<vector<int>>& intervals) {
+        sort(intervals.begin(), intervals.end(),
+            [] (const vector<int> &a, const vector<int> &b) {
+                return a[0] < b[0];
+            }
+        );
+
+        priority_queue<int, vector<int>, greater<int>> end_pq;
+        for (int i = 0; i < intervals.size(); ++i) {
+            if (!end_pq.empty() && intervals[i][0] >= end_pq.top()) {
+                end_pq.pop();
+            }
+            end_pq.push(intervals[i][1]);
+        }
+
+        return end_pq.size();
+    }
 };
 
 #endif

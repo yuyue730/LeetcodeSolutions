@@ -37,6 +37,16 @@ public:
         return;
     }
 
+    // 253. Meeting Rooms II Test
+    void minMeetingRooms253Test() {
+        cout << "253. Meeting Rooms II test starts.\n";
+        vector<vector<int>> intervals = {
+            {0, 30}, {5, 10}, {15, 20}
+        };
+        cout << "Number of rooms = [" << implObj->minMeetingRooms253(intervals) << "]\n\n";
+        return;
+    }
+
 private:
     PriorityQueueImpl * implObj;
 };
