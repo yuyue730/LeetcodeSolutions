@@ -13,6 +13,7 @@ int main() {
     testObj->cloneGraph133Test();
     testObj->canFinish207Test();
     testObj->findOrder210Test();
+    testObj->validTree261Test();
 
     return 0;
 }

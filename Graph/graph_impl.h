@@ -219,6 +219,47 @@ public:
         }
         return result;
     }
+
+    // 261. Graph Valid Tree
+    bool validTree261(int n, vector<vector<int>>& edges) {
+        vector<vector<int>> graph(n, vector<int>());
+        for (int i = 0; i < edges.size(); ++i) {
+            graph[edges[i][0]].push_back(edges[i][1]);
+            graph[edges[i][1]].push_back(edges[i][0]);
+        }
+        vector<bool> visited(n, false);
+        if (!validTree261DFS(graph, visited, 0, -1)) {
+            return false;
+        }
+
+        for (int i = 0; i < visited.size(); ++i) {
+            if (!visited[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool validTree261DFS(
+        const vector<vector<int>>& graph, vector<bool>& visited, 
+        int cur, int pre
+    ) {
+        if (visited[cur]) {
+            return false;
+        }
+
+        visited[cur] = true;
+        for (int i = 0; i < graph[cur].size(); ++i) {
+            if (graph[cur][i] == pre) {
+                continue;
+            }
+
+            if (!validTree261DFS(graph, visited, graph[cur][i], cur)) {
+                return false;
+            }
+        }
+        return true;
+    }
 };
 
 #endif

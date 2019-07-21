@@ -87,6 +87,17 @@ public:
         return;
     }
 
+    // 261. Graph Valid Tree Test
+    void validTree261Test() {
+        cout << "261. Graph Valid Tree test starts.\n";
+        vector<vector<int>> edges = {
+            {0,1}, {0,2}, {0,3}, {1,4}
+        };
+        cout << "Is tree = [" 
+            << (implObj->validTree261(5, edges) ? "True" : "False") << "]\n\n";
+        return;
+    }
+
 private:
     GraphImpl * implObj;
 };
