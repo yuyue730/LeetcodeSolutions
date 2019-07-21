@@ -34,6 +34,7 @@ int main() {
     testObj->lowestCommonAncestor235Test();
     testObj->lowestCommonAncestor236Test();
     testObj->countUnivalSubtrees250Test();
+    testObj->binaryTreePaths257Test();
 
     return 0;
 }

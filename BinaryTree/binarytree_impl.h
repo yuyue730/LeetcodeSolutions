@@ -723,6 +723,31 @@ public:
         ++result;
         return cur->val == val;
     }
+
+    // 257. Binary Tree Paths
+    vector<string> binaryTreePaths257(TreeNode* root) {
+        vector<string> result;
+        if (!root) {
+            return result;
+        }
+        binaryTreePaths257DFS(root, "", result);
+        return result;
+    }
+
+    void binaryTreePaths257DFS(
+        TreeNode * cur, string cur_str, vector<string> &all_result
+    ) {
+        if (!cur->left && !cur->right) {
+            all_result.push_back(cur_str + to_string(cur->val));
+        }
+        string next = cur_str + to_string(cur->val) + "->";
+        if (cur->left) {
+            binaryTreePaths257DFS(cur->left, next, all_result);
+        }
+        if (cur->right) {
+            binaryTreePaths257DFS(cur->right, next, all_result);
+        }
+    }
 };
 
 #endif

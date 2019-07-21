@@ -497,6 +497,24 @@ public:
         return;
     }
 
+    // 257. Binary Tree Paths Test
+    void binaryTreePaths257Test() {
+        cout << "257. Binary Tree Paths test starts.\n";
+        TreeNode * root = new TreeNode(1);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(2);
+        cur->right = new TreeNode(3);
+        cur->left->right = new TreeNode(5);
+
+        vector<string> result = implObj->binaryTreePaths257(root);
+        cout << "All paths = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     BinaryTreeImpl * implObj;
 };
