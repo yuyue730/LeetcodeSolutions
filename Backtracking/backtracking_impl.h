@@ -240,6 +240,47 @@ public:
         }
     }
 
+    // 47. Permutations II
+    vector<vector<int>> permuteUnique47(vector<int>& nums) {
+        vector<vector<int>> allResult;
+        if (nums.size() == 0) {
+            return allResult;
+        }
+        sort(nums.begin(), nums.end());
+        vector<bool> visited(nums.size(), false);
+        vector<int> curResult;
+        permuteUnique47DFS(nums, 0, curResult, allResult, visited);
+        return allResult;
+    }
+
+    void permuteUnique47DFS(
+        const vector<int> & nums,
+        int level, 
+        vector<int> & curResult,
+        vector<vector<int>> & allResult,
+        vector<bool> & visited
+    ) {
+        if (level >= nums.size()) {
+            allResult.push_back(curResult);
+        }
+
+        for (int i = 0; i < nums.size(); ++i) {
+            if (visited[i]) {
+                continue;
+            }
+
+            if (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1]) {
+                continue;
+            }
+
+            visited[i] = true;
+            curResult.push_back(nums[i]);
+            permuteUnique47DFS(nums, level + 1, curResult, allResult, visited);
+            curResult.pop_back();
+            visited[i] = false;
+        }
+    }
+
     // 51. N-Queens
     vector<vector<string>> solveNQueens51(int n)
     {

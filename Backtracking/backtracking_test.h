@@ -118,6 +118,23 @@ public:
         return;
     }
 
+    // 47. Permutations II Test
+    void permuteUnique47Test() {
+        cout << "47. Permutations II test starts.\n";
+        vector<int> nums = {1,1,2};
+        vector<vector<int>> results = implObj->permuteUnique47(nums);
+        cout << "Result is [\n";
+        for (int i = 0; i < results.size(); ++i) {
+            cout << "  [";
+            for (int j = 0; j < results[i].size(); ++j) {
+                cout << results[i][j] << ((j == results[i].size() - 1) ? "" : ", ");
+            }
+            cout << "]\n";
+        }
+        cout << "]\n";
+        return;
+    }
+
     // 51. N-Queens Test
     void solveNQueens51Test() {
         cout << "51. N-Queens test starts.\n";
