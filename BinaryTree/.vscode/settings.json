@@ -2,6 +2,7 @@
     "files.associations": {
         "vector": "cpp",
         "algorithm": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "__locale": "cpp"
     }
 }

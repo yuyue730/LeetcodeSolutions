@@ -188,6 +188,32 @@ public:
         return;
     }
 
+    // 107. Binary Tree Level Order Traversal II Test
+    void levelOrderBottom107Test() {
+        cout << "107. Binary Tree Level Order Traversal II test starts.\n";
+        TreeNode * root = new TreeNode(3);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(9);
+        cur->right = new TreeNode(20);
+
+        cur = cur->right;
+        cur->left = new TreeNode(15);
+        cur->right = new TreeNode(7);
+
+        vector<vector<int>> result = implObj->levelOrderBottom107(root);
+        cout << "Layers = [\n";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << "  [";
+            for (int j = 0; j < result[i].size(); ++j) {
+                cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
+            }
+            cout << "]\n";
+        }
+        cout << "]\n\n";
+        return;
+
+    }
+
     // 108. Convert Sorted Array to Binary Search Tree Test
     void sortedArrayToBST108Test() {
         cout << "108. Convert Sorted Array to Binary Search Tree test starts.\n";

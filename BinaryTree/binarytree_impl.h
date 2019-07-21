@@ -347,6 +347,33 @@ public:
         return cur;
     }
 
+    // 107. Binary Tree Level Order Traversal II
+    vector<vector<int>> levelOrderBottom107(TreeNode* root) {
+        vector<vector<int>> result;
+        if (!root) {
+            return result;
+        }
+
+        queue<TreeNode *> layer_q({root});
+        while (!layer_q.empty()) {
+            vector<int> cur_layer;
+            int pre_layer_size = layer_q.size();
+            for (int i = 0; i < pre_layer_size; ++i) {
+                TreeNode * cur = layer_q.front();
+                layer_q.pop();
+                cur_layer.push_back(cur->val);
+                if (cur->left) {
+                    layer_q.push(cur->left);
+                }
+                if (cur->right) {
+                    layer_q.push(cur->right);
+                }
+            }
+            result.insert(result.begin(), cur_layer);
+        }
+        return result;
+    }
+
     // 108. Convert Sorted Array to Binary Search Tree
     TreeNode * sortedArrayToBST108(vector<int>& nums) {
         return sortedArrayToBST108helper(nums, 0, nums.size() - 1);
