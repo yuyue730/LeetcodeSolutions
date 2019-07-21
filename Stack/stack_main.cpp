@@ -17,6 +17,7 @@ int main() {
     testObj->evalRPN150Test();
     testObj->calculate224Test();
     testObj->calculate227Test();
+    testObj->verifyPreorder255Test();
 
     return 0;
 }

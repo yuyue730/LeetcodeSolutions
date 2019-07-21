@@ -255,6 +255,24 @@ public:
 
         return result;
     }
+
+    // 255. Verify Preorder Sequence in Binary Search Tree
+    bool verifyPreorder255(vector<int>& preorder) {
+        int min_val = INT_MIN;
+        stack<int> minval_stk;
+        for (int i = 0; i < preorder.size(); ++i) {
+            if (preorder[i] < min_val) {
+                return false;
+            }
+            while (!minval_stk.empty() && preorder[i] > minval_stk.top()) {
+                min_val = minval_stk.top();
+                minval_stk.pop();
+            }
+
+            minval_stk.push(preorder[i]);
+        }
+        return true;
+    }
 };
 
 #endif

@@ -80,6 +80,16 @@ public:
         return;
     }
 
+    // 255. Verify Preorder Sequence in Binary Search Tree Test
+    void verifyPreorder255Test() {
+        cout << "255. Verify Preorder Sequence in Binary Search Tree test starts.\n";
+        vector<int> preorder = {5, 2, 1, 3, 6};
+        cout << "[5,2,1,3,6] can generate BST = [" 
+            << (implObj->verifyPreorder255(preorder) ? "True" : "False")
+            << "]\n\n";
+        return;
+    }
+
 private:
     StackImpl * implObj;
 };
