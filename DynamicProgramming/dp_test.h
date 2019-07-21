@@ -156,6 +156,14 @@ public:
         return;
     }
 
+    // 256. Paint House Test
+    void minCost256Test() {
+        cout << "256. Paint House test starts.\n";
+        vector<vector<int>> costs = {{17,2,17},{16,16,5},{14,3,19}};
+        cout << "Min cost = [" << implObj->minCost256(costs) << "]\n\n";
+        return;
+    }
+
 private:
     DpImpl * implObj;
 };
