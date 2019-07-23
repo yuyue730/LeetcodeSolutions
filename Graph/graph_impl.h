@@ -6,6 +6,7 @@
 #include <vector>
 #include <unordered_set>
 #include <unordered_map>
+#include <set>
 #include <queue>
 using namespace std;
 
@@ -259,6 +260,61 @@ public:
             }
         }
         return true;
+    }
+
+    // 269. Alien Dictionary
+    string alienOrder269(vector<string>& words) {
+        set<pair<char, char>> graph;
+        for (int i = 0; i < words.size() - 1; ++i) {
+            int min_len = min(words[i].size(), words[i + 1].size());
+            int j = 0;
+            for (; j < min_len; ++j) {
+                if (words[i][j] != words[i + 1][j]) {
+                    graph.insert({words[i][j], words[i + 1][j]});
+                    break;
+                }
+            }
+
+            // Pay attention to the following corner case; 
+            // abcd -> abc should return ""
+            if (j == min_len && words[i].size() > words[i + 1].size()) {
+                return "";
+            }
+        }
+
+        unordered_set<char> all_alpha;
+        for (auto w : words) {
+            all_alpha.insert(w.begin(), w.end());
+        }
+
+        unordered_map<char, int> node_in_edge_map;
+        for (auto edge : graph) {
+            node_in_edge_map[edge.second]++;
+        }
+        queue<char> bfs_queue;
+        for (auto node : all_alpha) {
+            if (!node_in_edge_map[node]) {
+                bfs_queue.push(node);
+            }
+        }
+
+        string result = "";
+        while (!bfs_queue.empty()) {
+            char cur = bfs_queue.front();
+            bfs_queue.pop();
+            result.push_back(cur);
+
+            for (auto iter : graph) {
+                if (iter.first == cur) {
+                    node_in_edge_map[iter.second]--;
+                    if (!node_in_edge_map[iter.second]) {
+                        bfs_queue.push(iter.second);
+                    }
+                }
+            }
+        }
+
+        return (result.size() == all_alpha.size()) ? result : "";
     }
 };
 

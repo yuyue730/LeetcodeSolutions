@@ -29,6 +29,14 @@ public:
         return;
     }
 
+    // 268. Missing Number Test
+    void missingNumber268Test() {
+        cout << "268. Missing Number test.\n";
+        vector<int> nums = {9,6,4,2,3,5,7,0,1};
+        cout << "Missing number = [" << implObj->missingNumber268(nums) << "]\n\n";
+        return;
+    }
+
 private:
     BitManipulationImpl * implObj;
 };

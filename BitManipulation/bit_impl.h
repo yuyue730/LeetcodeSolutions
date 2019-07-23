@@ -36,6 +36,15 @@ public:
 
         return result;
     }
+
+    // 268. Missing Number
+    int missingNumber268(vector<int>& nums) {
+        int result = 0;
+        for (int i = 0; i < nums.size(); ++i) {
+            result ^= ((i+1) ^ nums[i]);
+        }
+        return result;
+    }
 };
 
 #endif

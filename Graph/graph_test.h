@@ -98,6 +98,14 @@ public:
         return;
     }
 
+    // 269. Alien Dictionary Test
+    void alienOrder269Test() {
+        cout << "269. Alien Dictionary test starts.\n";
+        vector<string> words = {"wrt", "wrf", "er", "ett", "rftt"};
+        cout << "Order = [" << implObj->alienOrder269(words) << "]\n\n";
+        return;
+    }
+
 private:
     GraphImpl * implObj;
 };

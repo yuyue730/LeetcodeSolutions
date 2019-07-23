@@ -2,7 +2,9 @@
     "files.associations": {
         "iostream": "cpp",
         "unordered_map": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "unordered_set": "cpp",
+        "iosfwd": "cpp"
     },
     "git.ignoreLimitWarning": true
 }

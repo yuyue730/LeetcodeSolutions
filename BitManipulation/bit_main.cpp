@@ -10,5 +10,6 @@ int main() {
 
     testObj->singleNumber136Test();
     testObj->singleNumber137Test();
+    testObj->missingNumber268Test();
     return 0;
 }
