@@ -472,6 +472,29 @@ public:
 
         return t + s.substr(i);
     }
+
+    // 271. Encode and Decode Strings
+    string encode271(vector<string>& strs) {
+        string result;
+        for (auto str: strs) {
+            result += to_string(str.size()) + "/" + str;
+        }
+        return result;
+    }
+
+    vector<string> decode271(string s) {
+        int i = 0;
+        vector<string> result;
+        while (i < s.size()) {
+            int slash_idx = s.find('/', i);
+            int length = stoi(s.substr(i, slash_idx - i));
+            string cur_str = s.substr(slash_idx + 1, length);
+            result.push_back(cur_str);
+            i = length + slash_idx + 1;
+        }
+
+        return result;
+    }
 };
 
 #endif

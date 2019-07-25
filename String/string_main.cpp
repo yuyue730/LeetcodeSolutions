@@ -25,6 +25,7 @@ int main() {
     testObj->compareVersion165Test();
     testObj->largestNumber179Test();
     testObj->shortestPalindrome214Test();
+    testObj->encodeDecode271Test();
 
     return 0;
 }

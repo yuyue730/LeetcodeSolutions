@@ -192,6 +192,20 @@ public:
         return;
     }
 
+    // 271. Encode and Decode Strings Test
+    void encodeDecode271Test() {
+        cout << "271. Encode and Decode Strings test starts.\n";
+        vector<string> str_arr = {"a", "ab", "abc"};
+        string encode = implObj->encode271(str_arr);
+        cout << "encode = [" << encode << "]\n";
+        vector<string> str_decode = implObj->decode271(encode);
+        cout << "decode = [";
+        for (int i = 0; i < str_decode.size(); ++i) {
+            cout << str_decode[i] << ((i == str_decode.size() - 1) ? "" : "; ");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     StringImpl * implObj;
 };
