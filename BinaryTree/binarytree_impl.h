@@ -775,6 +775,41 @@ public:
             binaryTreePaths257DFS(cur->right, next, all_result);
         }
     }
+
+    // 272. Closest Binary Search Tree Value II
+    vector<int> closestKValues272(TreeNode* root, double target, int k) {
+        vector<int> result;
+        if (!root) {
+            return result;
+        }
+        
+        closestKValues272InorderDFS(result, root, target, k);
+        return result;
+    }
+
+    void closestKValues272InorderDFS(
+        vector<int> &result, TreeNode * cur, const double target, const int k
+    ) {
+        if (!cur) {
+            return;
+        }
+
+        closestKValues272InorderDFS(result, cur->left, target, k);
+
+        if (result.size() < k) {
+            result.push_back(cur->val);
+        } else {
+            if (abs(cur->val - target) < abs(result[0] - target)) {
+                result.push_back(cur->val);
+                result.erase(result.begin());
+            }
+            else {
+                return;
+            }
+        }
+    
+        closestKValues272InorderDFS(result, cur->right, target, k);
+    }
 };
 
 #endif

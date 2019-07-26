@@ -541,6 +541,27 @@ public:
         return;
     }
 
+    // 272. Closest Binary Search Tree Value II Test
+    void closestKValues272Test() {
+        cout << "272. Closest Binary Search Tree Value II test starts.\n";
+        TreeNode * root = new TreeNode(4);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(2);
+        cur->right = new TreeNode(5);
+
+        cur = root->left;
+        cur->left = new TreeNode(1);
+        cur->right = new TreeNode(3);
+
+        vector<int> result = implObj->closestKValues272(root, 3.714286, 2);
+        cout << "k values = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     BinaryTreeImpl * implObj;
 };
