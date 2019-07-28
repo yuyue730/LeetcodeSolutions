@@ -1031,6 +1031,34 @@ public:
         }
         return result;
     }
+
+    // 277. Find the Celebrity
+    bool knows277(int a, int b) {
+        vector<vector<bool>> knows = {
+            {true, true, false},
+            {false, true, false},
+            {true, true, true}
+        };
+        return knows[a][b];
+    }
+
+    int findCelebrity277(int n) {
+        int result = 0;
+        for (int i = 0; i < n; ++i) {
+            if (knows277(result, i)) {
+                result = i;
+            }
+        }
+
+        for (int i = 0; i < n; ++i) {
+            if (i != result) {
+                if (knows277(result, i) || !knows277(i, result)) {
+                    return -1;
+                }
+            }
+        }
+        return result;
+    }
 };
 
 #endif

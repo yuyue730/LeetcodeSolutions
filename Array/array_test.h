@@ -529,6 +529,13 @@ public:
         return;
     }
 
+    // 277. Find the Celebrity Test
+    void findCelebrity277Test() {
+        cout << "277. Find the Celebrity test starts.\n";
+        cout << "Result = [" << implObj->findCelebrity277(3) << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };

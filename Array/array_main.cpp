@@ -50,6 +50,7 @@ int main() {
     testObj->maxSlidingWindow239Test();
     testObj->searchMatrix240Test();
     testObj->shortestDistance243Test();
+    testObj->findCelebrity277Test();
 
     return 0;
 }
