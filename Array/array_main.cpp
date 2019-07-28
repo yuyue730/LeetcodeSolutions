@@ -52,6 +52,7 @@ int main() {
     testObj->shortestDistance243Test();
     testObj->findCelebrity277Test();
     testObj->firstBadVersion278Test();
+    testObj->wiggleSort280Test();
 
     return 0;
 }

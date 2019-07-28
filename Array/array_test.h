@@ -543,6 +543,20 @@ public:
         return;
     }
 
+    // 280. Wiggle Sort Test
+    void wiggleSort280Test() {
+        cout << "280. Wiggle Sort test starts.\n";
+        vector<int> nums = {3, 5, 2, 1, 6, 4};
+        implObj->wiggleSort280(nums);
+
+        cout << "Result = [";
+        for (int i = 0; i < nums.size(); ++i) {
+            cout << nums[i] << ((i == nums.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };
