@@ -536,6 +536,13 @@ public:
         return;
     }
 
+    // 278. First Bad Version Test
+    void firstBadVersion278Test() {
+        cout << "278. First Bad Version test starts.\n";
+        cout << "First bad version = [" << implObj->firstBadVersion278(7) << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };

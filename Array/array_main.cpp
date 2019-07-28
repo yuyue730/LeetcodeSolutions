@@ -51,6 +51,7 @@ int main() {
     testObj->searchMatrix240Test();
     testObj->shortestDistance243Test();
     testObj->findCelebrity277Test();
+    testObj->firstBadVersion278Test();
 
     return 0;
 }
