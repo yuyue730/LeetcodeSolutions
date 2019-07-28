@@ -164,6 +164,13 @@ public:
         return;
     }
 
+    // 279. Perfect Squares Test
+    void numSquares279Test() {
+        cout << "279. Perfect Squares test starts.\n";
+        cout << "Min number of perfect squares [" << implObj->numSquares279(13) << "]\n\n";
+        return;
+    }
+
 private:
     DpImpl * implObj;
 };

@@ -25,6 +25,7 @@ int main() {
     testObj->rob198Test();
     testObj->maximalSquare221Test();
     testObj->minCost256Test();
+    testObj->numSquares279Test();
 
     return 0;
 }
