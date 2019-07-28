@@ -204,6 +204,16 @@ public:
             cout << str_decode[i] << ((i == str_decode.size() - 1) ? "" : "; ");
         }
         cout << "]\n\n";
+        return;
+    }
+
+    // 273. Integer to English Words Test
+    void numberToWords273Test() {
+        cout << "273. Integer to English Words test starts.\n";
+        cout << "123 = [" << implObj->numberToWords273(123) << "]\n";
+        cout << "12345 = [" << implObj->numberToWords273(12345) << "]\n";
+        cout << "12134567 = [" << implObj->numberToWords273(12134567) << "]\n";
+        return;
     }
 
 private:

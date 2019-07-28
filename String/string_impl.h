@@ -495,6 +495,70 @@ public:
 
         return result;
     }
+
+    // 273. Integer to English Words
+    string numberToWords273(int num) {
+        string result = convert_three_digit(num % 1000);
+
+        vector<string> three_zeros = {
+            "Thousand", "Million", "Billion"
+        };
+
+        for (int i = 0; i < 3; ++i) {
+            num /= 1000;
+            if (num % 1000) {
+                result = convert_three_digit(num % 1000) + " " + three_zeros[i]
+                    + " " + result;
+            }
+        }
+
+        while (result.back() == ' ') {
+            result.pop_back();
+        }
+
+        return (result.length() == 0) ? "Zero" : result;
+    }
+
+    string convert_three_digit(int three_digit) {
+        string result;
+        vector<string> less_than_20 = {
+            "",
+            "One", "Two", "Three", "Four", "Five",
+            "Six", "Seven", "Eight", "Nine", "Ten",
+            "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen",
+            "Sixteen", "Seventeen", "Eighteen", "Nineteen"
+        };
+        vector<string> tens = {
+            "", 
+            "", "Twenty", "Thirty", "Forty", "Fifty",
+            "Sixty", "Seventy", "Eighty", "Ninety"
+        };
+
+        int hundred_digit = three_digit / 100;
+        if (hundred_digit != 0) {
+            result += less_than_20[hundred_digit] + " Hundred";
+        }
+
+        int ten_digit = (three_digit % 100) / 10;
+        int last_digit = three_digit % 10;
+
+        if (ten_digit == 0 && last_digit == 0) {
+            return result;
+        }
+        else if (ten_digit < 2) {
+            result += (result.empty() ? "" : " ") 
+                + less_than_20[ten_digit * 10 + last_digit];
+        }
+        else {
+            result += (result.empty() ? "" : " ") + tens[ten_digit];
+            
+            if (last_digit) {
+                result += " " + less_than_20[last_digit];
+            }
+        }
+
+        return result;
+    }
 };
 
 #endif
