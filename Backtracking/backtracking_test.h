@@ -275,6 +275,20 @@ public:
         cout << "Num of islands = [" << implObj->numIslands200(grid) << "]\n\n";
     }
 
+    // 282. Expression Add Operators Test
+    void addOperators282Test() {
+        cout << "282. Expression Add Operators test starts.\n";
+        string num = "105";
+        int target = 5;
+        vector<string> result = implObj->addOperators282(num, target);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << "\"" << result[i] << "\"" << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     BacktrackingImpl * implObj;
 };

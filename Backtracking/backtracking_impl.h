@@ -658,6 +658,51 @@ public:
         visitIslandDFS(grid, visitedMatrix, curI, curJ + 1);
         visitIslandDFS(grid, visitedMatrix, curI, curJ - 1);
     }
+
+    // 282. Expression Add Operators
+    vector<string> addOperators282(string num, int target) {
+        vector<string> result;
+        if (num.empty()) {
+            return result;
+        }
+        addOperators282Rec(num, target, 0, 0, "", result);
+        return result;
+    }
+
+    void addOperators282Rec(
+        string num, const int target, long cur_num, long diff, 
+        string cur_res, vector<string> & all_res
+    ) {
+        if (num.size() == 0 && cur_num == target) {
+            all_res.push_back(cur_res);
+            return;
+        }
+
+        for (int i = 1; i <= num.size(); ++i) {
+            string cur = num.substr(0, i);
+            if (cur.size() > 1 && cur[0] == '0') {
+                return;
+            }
+
+            string next = num.substr(i);
+            if (cur_res.empty()) {
+                addOperators282Rec(next, target, stoll(cur), stoll(cur), cur, all_res);
+            } else {
+                addOperators282Rec(
+                    next, target, cur_num + stoll(cur), stoll(cur), 
+                    cur_res + "+" + cur, all_res
+                );
+                addOperators282Rec(
+                    next, target, cur_num - stoll(cur), -stoll(cur), 
+                    cur_res + "-" + cur, all_res
+                );
+                addOperators282Rec(
+                    next, target, cur_num - diff + diff * stoll(cur), 
+                    diff * stoll(cur), cur_res + "*" + cur, all_res
+                );
+            }
+        }
+    }
 };
 
 #endif

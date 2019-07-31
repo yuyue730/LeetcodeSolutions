@@ -25,6 +25,7 @@ int main() {
     testObj->partition131Test();
     testObj->wordBreak140Test();
     testObj->numIslands200Test();
+    testObj->addOperators282Test();
 
     return 0;
 }
