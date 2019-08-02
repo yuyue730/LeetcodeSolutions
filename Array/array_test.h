@@ -557,6 +557,19 @@ public:
         return;
     }
 
+    // 283. Move Zeroes Test
+    void moveZeroes283Test() {
+        cout << "283. Move Zeroes test starts.\n";
+        vector<int> nums = {0, 1, 0, 3, 12};
+        implObj->moveZeroes283(nums);
+        cout << "Result = [";
+        for (int i = 0; i < nums.size(); ++i) {
+            cout << nums[i] << ((i == nums.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };

@@ -53,6 +53,7 @@ int main() {
     testObj->findCelebrity277Test();
     testObj->firstBadVersion278Test();
     testObj->wiggleSort280Test();
+    testObj->moveZeroes283Test();
 
     return 0;
 }
