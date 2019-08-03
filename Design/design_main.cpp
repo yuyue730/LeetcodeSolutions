@@ -16,5 +16,7 @@ int main() {
     testObj->Trie208Test();
     testObj->MyStack225Test();
     testObj->MyQueue232Test();
+    testObj->PeekingIterator284Test();
+
     return 0;
 }

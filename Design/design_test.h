@@ -117,6 +117,18 @@ public:
         cout << "empty = [" << myQ.empty() << "]\n\n"; // returns false 
         return;
     }
+
+    // 284. Peeking Iterator Test
+    void PeekingIterator284Test() {
+        cout << "284. Peeking Iterator test starts.\n";
+        PeekingIterator iter(vector<int>({1, 2, 3}));
+        cout << "next = [" << iter.next() << "]\n";
+        cout << "peek = [" << iter.peek() << "]\n";
+        cout << "next = [" << iter.next() << "]\n";
+        cout << "next = [" << iter.next() << "]\n";
+        cout << "has_next = [" << (iter.hasNext() ? "True" : "False") << "]\n\n";
+        return;
+    }
 };
 
 #endif

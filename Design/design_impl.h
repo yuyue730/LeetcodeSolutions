@@ -303,4 +303,81 @@ private:
     stack<int> q_stack;
 };
 
+// 284. Peeking Iterator
+class Iterator {
+public:
+    struct Data {
+        vector<int> d_arr;
+
+        Data(vector<int> nums) {
+            d_arr.clear();
+            for (auto i : nums) {
+                d_arr.push_back(i);
+            }
+        }
+    };
+
+	Data* data;
+
+    int d_idx;
+
+public:
+	Iterator(const vector<int>& nums) {
+        data = new Data(nums);
+        d_idx = 0;
+    }
+
+	Iterator(const Iterator& iter) { }
+
+	virtual ~Iterator() { }
+
+	// Returns the next element in the iteration.
+	int next() {
+        int result = data->d_arr[d_idx];
+        d_idx++;
+        return result;
+    }
+
+	// Returns true if the iteration has more elements.
+	bool hasNext() const {
+        return (d_idx < data->d_arr.size());
+    }
+};
+
+class PeekingIterator : public Iterator {
+public:
+	PeekingIterator(const vector<int>& nums) : Iterator(nums) {
+        d_peek = false;
+    }
+
+    // Returns the next element in the iteration without advancing the iterator.
+	int peek() {
+        if (!d_peek) {
+            d_cur_peek = Iterator::next();
+            d_peek = true;
+        }
+
+        return d_cur_peek;
+	}
+
+	// hasNext() and next() should behave the same as in the Iterator interface.
+	// Override them if needed.
+	int next() {
+	    if (d_peek) {
+            d_peek = false;
+            return d_cur_peek;
+        } else {
+            return Iterator::next();
+        }
+	}
+
+	bool hasNext() const {
+	    return d_peek || Iterator::hasNext();
+	}
+
+private:
+    int d_cur_peek;
+    bool d_peek;
+};
+
 #endif
