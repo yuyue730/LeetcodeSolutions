@@ -1163,6 +1163,32 @@ public:
             }
         }
     }
+
+    // 296. Best Meeting Point
+    int minTotalDistance296(vector<vector<int>>& grid) {
+        vector<int> rows, cols;
+        for (int i = 0; i < grid.size(); ++i) {
+            for (int j = 0; j < grid[0].size(); ++j) {
+                if (grid[i][j] == 1) {
+                    rows.push_back(i);
+                    cols.push_back(j);
+                }
+            }
+        }
+        return vector_min_dist(rows) + vector_min_dist(cols);
+    }
+
+    int vector_min_dist(vector<int> & arr) {
+        sort(arr.begin(), arr.end());
+        int i = 0, j = arr.size() - 1;
+        int result = 0;
+        while (i < j) {
+            result += arr[j] - arr[i];
+            j--;
+            i++;
+        }
+        return result;
+    }
 };
 
 #endif

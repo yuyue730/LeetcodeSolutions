@@ -601,6 +601,19 @@ public:
         cout << "]\n\n";
     }
 
+    // 296. Best Meeting Point Test
+    void minTotalDistance296Test() {
+        cout << "296. Best Meeting Point test starts.\n";
+        vector<vector<int>> matrix = {
+            {1, 0, 0, 0, 1},
+            {0, 0, 0, 0, 0},
+            {0, 0, 1, 0, 0}
+        };
+
+        cout << "Min total dist = [" << implObj->minTotalDistance296(matrix) << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };
