@@ -570,6 +570,14 @@ public:
         return;
     }
 
+    // 287. Find the Duplicate Number Test
+    void findDuplicate287Test() {
+        cout << "287. Find the Duplicate Number test starts.\n";
+        vector<int> nums = {1, 3, 4, 2, 2};
+        cout << "Duplicate = [" << implObj->findDuplicate287(nums) << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };

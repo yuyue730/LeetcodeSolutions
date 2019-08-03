@@ -54,6 +54,7 @@ int main() {
     testObj->firstBadVersion278Test();
     testObj->wiggleSort280Test();
     testObj->moveZeroes283Test();
+    testObj->findDuplicate287Test();
 
     return 0;
 }
