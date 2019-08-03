@@ -703,6 +703,34 @@ public:
             }
         }
     }
+
+    // 286. Walls and Gates
+    void wallsAndGates286(vector<vector<int>>& rooms) {
+        for (int i = 0; i < rooms.size(); ++i) {
+            for (int j = 0; j < rooms[i].size(); ++j) {
+                if (rooms[i][j] == 0) {
+                    wallsAndGates286_dfs(rooms, i, j, 0);
+                }
+            }
+        }
+    }
+
+    void wallsAndGates286_dfs(
+        vector<vector<int>> & rooms, int x, int y, int next_dist
+    ) {
+        if (x < 0 || x >= rooms.size() || y < 0 || y >= rooms[0].size()) {
+            return;
+        }
+        if (rooms[x][y] < next_dist) {
+            return;
+        }
+
+        rooms[x][y] = next_dist;
+        wallsAndGates286_dfs(rooms, x + 1, y, next_dist + 1);
+        wallsAndGates286_dfs(rooms, x, y + 1, next_dist + 1);
+        wallsAndGates286_dfs(rooms, x - 1, y, next_dist + 1);
+        wallsAndGates286_dfs(rooms, x, y - 1, next_dist + 1);
+    }
 };
 
 #endif

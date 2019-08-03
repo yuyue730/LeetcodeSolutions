@@ -289,6 +289,27 @@ public:
         return;
     }
 
+    // 286. Walls and Gates Test
+    void wallsAndGates286Test() {
+        cout << "286. Walls and Gates test starts.\n";
+        vector<vector<int>> nums = {
+            {INT_MAX, -1, 0, INT_MAX},
+            {INT_MAX, INT_MAX, INT_MAX, -1},
+            {INT_MAX, -1, INT_MAX, -1},
+            {0, -1, INT_MAX, INT_MAX}
+        };
+        implObj->wallsAndGates286(nums);
+        cout << "Result = [\n";
+        for (int i = 0; i < nums.size(); ++i) {
+            cout << "  [";
+            for (int j = 0; j < nums[i].size(); ++j) {
+                cout << nums[i][j] << ((j == nums[i].size() - 1) ? "" : ", ");
+            }
+            cout << "]\n";
+        }
+        cout << "].\n\n";
+    }
+
 private:
     BacktrackingImpl * implObj;
 };

@@ -26,6 +26,7 @@ int main() {
     testObj->wordBreak140Test();
     testObj->numIslands200Test();
     testObj->addOperators282Test();
+    testObj->wallsAndGates286Test();
 
     return 0;
 }
