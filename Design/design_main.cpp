@@ -17,6 +17,7 @@ int main() {
     testObj->MyStack225Test();
     testObj->MyQueue232Test();
     testObj->PeekingIterator284Test();
+    testObj->MedianFinder295Test();
 
     return 0;
 }

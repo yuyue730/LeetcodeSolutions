@@ -344,9 +344,9 @@ public:
     }
 };
 
-class PeekingIterator : public Iterator {
+class PeekingIterator284 : public Iterator {
 public:
-	PeekingIterator(const vector<int>& nums) : Iterator(nums) {
+	PeekingIterator284(const vector<int>& nums) : Iterator(nums) {
         d_peek = false;
     }
 
@@ -378,6 +378,34 @@ public:
 private:
     int d_cur_peek;
     bool d_peek;
+};
+
+// 295. Find Median from Data Stream
+class MedianFinder295 {
+public:
+    MedianFinder295() { }
+    
+    void addNum(int num) {
+        small.push(num);
+        large.push(-small.top());
+        small.pop();
+
+        while (small.size() < large.size()) {
+            small.push(-large.top());
+            large.pop();
+        }
+    }
+    
+    double findMedian() {
+        if (small.size() == large.size()) {
+            return 0.5 * (small.top() - large.top());
+        } else {
+            return small.top();
+        }
+    }
+
+private:
+    priority_queue<int> small, large;
 };
 
 #endif

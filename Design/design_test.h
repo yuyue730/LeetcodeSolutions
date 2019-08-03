@@ -121,12 +121,25 @@ public:
     // 284. Peeking Iterator Test
     void PeekingIterator284Test() {
         cout << "284. Peeking Iterator test starts.\n";
-        PeekingIterator iter(vector<int>({1, 2, 3}));
+        PeekingIterator284 iter(vector<int>({1, 2, 3}));
         cout << "next = [" << iter.next() << "]\n";
         cout << "peek = [" << iter.peek() << "]\n";
         cout << "next = [" << iter.next() << "]\n";
         cout << "next = [" << iter.next() << "]\n";
         cout << "has_next = [" << (iter.hasNext() ? "True" : "False") << "]\n\n";
+        return;
+    }
+
+    // 295. Find Median from Data Stream Test
+    void MedianFinder295Test() {
+        cout << "295. Find Median from Data Stream test starts.\n";
+        MedianFinder295 finder;
+        finder.addNum(1);
+        cout << "median = [" << finder.findMedian() << "]\n";
+        finder.addNum(2);
+        cout << "median = [" << finder.findMedian() << "]\n";
+        finder.addNum(3);
+        cout << "median = [" << finder.findMedian() << "]\n\n";
         return;
     }
 };
