@@ -578,6 +578,29 @@ public:
         return;
     }
 
+    // 289. Game of Life Test
+    void gameOfLife289Test() {
+        cout << "289. Game of Life test starts.\n";
+        vector<vector<int>> nums = {
+            {0, 1, 0},
+            {0, 0, 1},
+            {1, 1, 1},
+            {0, 0, 0}
+        };
+
+        implObj->gameOfLife289(nums);
+
+        cout << "Result = [\n";
+        for (int i = 0; i < nums.size(); ++i) {
+            cout << "  [";
+            for (int j = 0; j < nums[0].size(); ++j) {
+                cout << nums[i][j] << ((j == nums[0].size() - 1) ? "" : ", ");
+            }
+            cout << "]\n";
+        }
+        cout << "]\n\n";
+    }
+
 private:
     ArrayImpl * implObj;
 };

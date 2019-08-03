@@ -55,6 +55,7 @@ int main() {
     testObj->wiggleSort280Test();
     testObj->moveZeroes283Test();
     testObj->findDuplicate287Test();
+    testObj->gameOfLife289Test();
 
     return 0;
 }

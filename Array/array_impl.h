@@ -1128,6 +1128,41 @@ public:
 
         return right;
     }
+
+    // 289. Game of Life
+    void gameOfLife289(vector<vector<int>>& board) {
+        const vector<pair<int, int>> direc = {
+            {0, 1}, {1, 1}, {1, 0}, {1, -1},
+            {0, -1}, {-1, -1}, {-1, 0}, {-1, 1}
+        };
+        for (int i = 0; i < board.size(); ++i) {
+            for (int j = 0; j < board[0].size(); ++j) {
+                int live_cell_ct = 0;
+                for (int k = 0; k < 8; ++k) {
+                    int x = i + direc[k].first;
+                    int y = j + direc[k].second;
+                    if (x < 0 || x >= board.size() || y < 0 || y >= board[0].size()) {
+                        continue;
+                    }
+                    if (board[x][y] == 1 || board[x][y] == 2) {
+                        ++live_cell_ct;
+                    }
+                }
+
+                if (board[i][j] == 1 && (live_cell_ct < 2 || live_cell_ct > 3)) {
+                    board[i][j] = 2;
+                } else if (board[i][j] == 0 && live_cell_ct == 3) {
+                    board[i][j] = 3;
+                }
+            }
+        }
+
+        for (int i = 0; i < board.size(); ++i) {
+            for (int j = 0; j < board[0].size(); ++j) {
+                board[i][j] %= 2;
+            }
+        }
+    }
 };
 
 #endif
