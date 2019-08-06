@@ -142,6 +142,26 @@ public:
         cout << "median = [" << finder.findMedian() << "]\n\n";
         return;
     }
+
+    // 297. Serialize and Deserialize Binary Tree Test
+    void Codec297Test() {
+        cout << "297. Serialize and Deserialize Binary Tree test.\n";
+        Codec297 implObj;
+        TreeNode * root = new TreeNode(1);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(2);
+        cur->right = new TreeNode(3);
+
+        cur = cur->right;
+        cur->left = new TreeNode(4);
+        cur->right = new TreeNode(5);
+
+        string code = implObj.serialize(root);
+        cout << "Serialize result = [" << code << "].\n";
+        TreeNode * result = implObj.deserialize(code);
+        cout << "Please exam result = [" << result->val << "]\n\n";
+        return;
+    }
 };
 
 #endif

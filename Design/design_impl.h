@@ -6,7 +6,15 @@
 #include <unordered_map>
 #include <stack>
 #include <queue>
+#include <sstream>
 using namespace std;
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
 
 // 146. LRU Cache
 class LRUCache146 {
@@ -110,13 +118,6 @@ private:
 };
 
 // 173. Binary Search Tree Iterator
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
-
 class BSTIterator173 {
 public:
     BSTIterator173(TreeNode* root) {
@@ -406,6 +407,76 @@ public:
 
 private:
     priority_queue<int> small, large;
+};
+
+// 297. Serialize and Deserialize Binary Tree
+class Codec297 {
+public:
+    // Encodes a tree to a single string.
+    string serialize(TreeNode* root) {
+        if (!root) {
+            return "";
+        }
+
+        ostringstream out;
+        queue<TreeNode *> node_q;
+        node_q.push(root);
+
+        while (!node_q.empty()) {
+            TreeNode * cur = node_q.front();
+            node_q.pop();
+            if (cur) {
+                out << to_string(cur->val) << " ";
+                node_q.push(cur->left);
+                node_q.push(cur->right);
+            } else {
+                out << "# ";
+            }
+        }
+
+        return out.str();
+    }
+
+    // Decodes your encoded data to tree.
+    TreeNode* deserialize(string data) {
+        if (data.empty()) {
+            return NULL;
+        }
+
+        istringstream in(data);
+        string cur_str;
+        in >> cur_str;
+        int cur_val = stoi(cur_str);
+        TreeNode * root = new TreeNode(cur_val);
+        queue<TreeNode *> node_q;
+        node_q.push(root);
+        while (!node_q.empty()) {
+            TreeNode * cur = node_q.front();
+            node_q.pop();
+
+            string next_left;
+            if (!(in >> next_left)) {
+                break;
+            }
+            if (next_left != "#") {
+                int left_val = stoi(next_left);
+                cur->left = new TreeNode(left_val);
+                node_q.push(cur->left);
+            }
+            
+            string next_right;
+            if (!(in >> next_right)) {
+                break;
+            }
+            if (next_right != "#") {
+                int right_val = stoi(next_right);
+                cur->right = new TreeNode(right_val);
+                node_q.push(cur->right);
+            }
+        }
+
+        return root;
+    }
 };
 
 #endif
