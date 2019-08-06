@@ -171,6 +171,14 @@ public:
         return;
     }
 
+    // 300. Longest Increasing Subsequence Test
+    void lengthOfLIS300Test() {
+        cout << "300. Longest Increasing Subsequence test starts.\n";
+        vector<int> nums({10,9,2,5,3,7,101,18});
+        cout << "Longest # = [" << implObj->lengthOfLIS300(nums) << "]\n\n";
+        return;
+    }
+
 private:
     DpImpl * implObj;
 };

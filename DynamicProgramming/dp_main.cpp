@@ -26,6 +26,7 @@ int main() {
     testObj->maximalSquare221Test();
     testObj->minCost256Test();
     testObj->numSquares279Test();
+    testObj->lengthOfLIS300Test();
 
     return 0;
 }
