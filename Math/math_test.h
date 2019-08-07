@@ -108,7 +108,14 @@ public:
         cout << "166. Fraction to Recurring Decimal test starts.\n";
         cout << "1/2 = [" << implObj->fractionToDecimal166(1, 2) << "]\n";
         cout << "2/1 = [" << implObj->fractionToDecimal166(2, 1) << "]\n";
-        cout << "2/3 = [" << implObj->fractionToDecimal166(2, 3) << "]\n";
+        cout << "2/3 = [" << implObj->fractionToDecimal166(2, 3) << "]\n\n";
+        return;
+    }
+
+    // 168. Excel Sheet Column Title Test
+    void convertToTitle168Test() {
+        cout << "168. Excel Sheet Column Title test starts.\n";
+        cout << "52 = " << implObj->convertToTitle168(52) << "\n\n";
         return;
     }
 

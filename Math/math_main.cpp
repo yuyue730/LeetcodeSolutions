@@ -20,6 +20,7 @@ int main() {
     testObj->addBinary67Test();
     testObj->mySqrt69Test();
     testObj->fractionToDecimal166Test();
+    testObj->convertToTitle168Test();
     testObj->countPrimes204Test();
     testObj->diffWaysToCompute241Test();
     testObj->findStrobogrammatic247Test();

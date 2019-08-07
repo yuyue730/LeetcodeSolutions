@@ -375,6 +375,24 @@ public:
         return result + decimal_part;
     }
 
+    // 168. Excel Sheet Column Title
+    string convertToTitle168(int n) {
+        string res;
+        while (n) {
+            if (n % 26) {
+                res += (n % 26) - 1 + 'A';
+                n -= n % 26;
+            } else {
+                res += 'Z';
+                n -= 26;
+            }
+            n /= 26;
+        }
+
+        reverse(res.begin(), res.end());
+        return res;
+    }
+
     // 204. Count Primes
     int countPrimes204(int n) {
         vector<bool> is_prime(n, true);
