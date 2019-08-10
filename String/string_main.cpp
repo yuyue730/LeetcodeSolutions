@@ -27,6 +27,7 @@ int main() {
     testObj->shortestPalindrome214Test();
     testObj->encodeDecode271Test();
     testObj->numberToWords273Test();
+    testObj->removeInvalidParentheses301Test();
 
     return 0;
 }

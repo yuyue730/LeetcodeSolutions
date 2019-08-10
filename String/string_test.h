@@ -216,6 +216,19 @@ public:
         return;
     }
 
+    // 301. Remove Invalid Parentheses Test
+    void removeInvalidParentheses301Test() {
+        cout << "301. Remove Invalid Parentheses test starts.\n";
+        string str = "()())()";
+        vector<string> results = implObj->removeInvalidParentheses301(str);
+        cout << "Result is [\n";
+        for (int i = 0; i < results.size(); ++i) {
+            cout << results[i] << ",\n";
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     StringImpl * implObj;
 };

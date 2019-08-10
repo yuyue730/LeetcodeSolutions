@@ -559,6 +559,64 @@ public:
 
         return result;
     }
+
+    // 301. Remove Invalid Parentheses
+    vector<string> removeInvalidParentheses301(string s) {
+        vector<string> result;
+        if (s.empty()) {
+            return result;
+        }
+
+        queue<string> str_q;
+        unordered_set<string> visited;
+        str_q.push(s);
+        bool is_found = false;
+
+        while (!str_q.empty()) {
+            string cur_str = str_q.front();
+            str_q.pop();
+
+            if (is_valid_parentheses(cur_str))
+            {
+                result.push_back(cur_str);
+                is_found = true;
+            }
+
+            if (is_found) {
+                continue;
+            }
+
+            for (int i = 0; i < cur_str.size(); ++i) {
+                if (cur_str[i] != '(' && cur_str[i] != ')') {
+                    continue;
+                }
+
+                string next_str = cur_str.substr(0, i) + cur_str.substr(i + 1);
+                if (visited.find(next_str) == visited.end()) {
+                    visited.insert(next_str);
+                    str_q.push(next_str);
+                }
+            }
+        }
+
+        return result;
+    }
+
+    bool is_valid_parentheses(string s) {
+        int ct = 0;
+        for (int i = 0; i < s.size(); ++i) {
+            if (s[i] == '(') {
+                ct++;
+            } else if (s[i] == ')') {
+                ct--;
+                if (ct < 0) {
+                    return false;
+                }
+            }
+        }
+
+        return (ct == 0);
+    }
 };
 
 #endif
