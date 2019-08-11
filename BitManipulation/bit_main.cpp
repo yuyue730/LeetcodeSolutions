@@ -10,6 +10,7 @@ int main() {
 
     testObj->singleNumber136Test();
     testObj->singleNumber137Test();
+    testObj->rangeBitwiseAnd201Test();
     testObj->missingNumber268Test();
     return 0;
 }

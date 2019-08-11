@@ -29,6 +29,14 @@ public:
         return;
     }
 
+    // 201. Bitwise AND of Numbers Range Test
+    void rangeBitwiseAnd201Test() {
+        cout << "201. Bitwise AND of Numbers Range test starts.\n";
+        int result = implObj->rangeBitwiseAnd201(26, 30);
+        cout << "range AND = [" << result << "]\n\n";
+        return;
+    }
+
     // 268. Missing Number Test
     void missingNumber268Test() {
         cout << "268. Missing Number test.\n";

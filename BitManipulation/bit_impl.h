@@ -37,6 +37,16 @@ public:
         return result;
     }
 
+    // 201. Bitwise AND of Numbers Range
+    int rangeBitwiseAnd201(int m, int n) {
+        long long mask = INT_MAX;
+        while ((m & mask) != (n & mask)) {
+            mask <<= 1;
+        }
+
+        return (m & mask);
+    }
+
     // 268. Missing Number
     int missingNumber268(vector<int>& nums) {
         int result = 0;
