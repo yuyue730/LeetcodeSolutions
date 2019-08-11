@@ -217,6 +217,61 @@ private:
     TrieNode * root;
 };
 
+// 211. Add and Search Word - Data structure design
+class WordDictionary211 {
+public:
+    /** Initialize your data structure here. */
+    WordDictionary211() {
+        d_root = new TrieNode();
+    }
+    
+    /** Adds a word into the data structure. */
+    void addWord(string word) {
+        TrieNode * cur = d_root;
+        for (int i = 0; i < word.size(); ++i) {
+            int next_idx = word[i] - 'a';
+            if (!cur->child[next_idx]) {
+                cur->child[next_idx] = new TrieNode();
+            }
+            cur = cur->child[next_idx];
+        }
+
+        cur->is_word = true;
+    }
+    
+    /** Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter. */
+    bool search(string word) {
+        return searchRec(word, d_root, 0);
+    }
+
+private:
+    TrieNode * d_root;
+
+    bool searchRec(const string word, TrieNode * cur, int cur_idx) {
+        if (cur_idx == word.size()) {
+            return cur->is_word;
+        }
+
+        if (word[cur_idx] == '.') {
+            for (char c = 'a'; c <= 'z'; ++c) {
+                if (cur->child[c - 'a']) {
+                    if (searchRec(word, cur->child[c - 'a'], cur_idx + 1)) {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        } else {
+            if (cur->child[word[cur_idx] - 'a']) {
+                return searchRec(word, cur->child[word[cur_idx] - 'a'], cur_idx + 1);
+            } else {
+                return false;
+            }
+        }
+    }
+};
+
 // 225. Implement Stack using Queues
 class MyStack225 {
 public:

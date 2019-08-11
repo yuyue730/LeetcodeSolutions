@@ -14,6 +14,7 @@ int main() {
     testObj->TwoSum170Test();
     testObj->BSTIterator173Test();
     testObj->Trie208Test();
+    testObj->WordDictionary211Test();
     testObj->MyStack225Test();
     testObj->MyQueue232Test();
     testObj->PeekingIterator284Test();

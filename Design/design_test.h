@@ -25,7 +25,7 @@ public:
         cache.put(4, 4);
         cout << "get 1 = [" << cache.get(1) << "]\n";
         cout << "get 3 = [" << cache.get(3) << "]\n";
-        cout << "get 4 = [" << cache.get(4) << "]\n";
+        cout << "get 4 = [" << cache.get(4) << "]\n\n";
         return;
     }
 
@@ -89,6 +89,20 @@ public:
         cout << "Start with app = [" << trie.startsWith("app") << "]\n";
         trie.insert("app");   
         cout << "Search app = [" << trie.search("app") << "]\n\n";
+        return;
+    }
+
+    // 211. Add and Search Word - Data structure design Test
+    void WordDictionary211Test() {
+        cout << "// 211. Add and Search Word - Data structure design test starts.\n";
+        WordDictionary211 dict;
+        dict.addWord("bad");
+        dict.addWord("dad");
+        dict.addWord("mad");
+        cout << "find pad = [" << dict.search("pad") << "]\n";
+        cout << "find bad = [" << dict.search("bad") << "]\n";
+        cout << "find .ad = [" << dict.search(".ad") << "]\n";
+        cout << "find b.. = [" << dict.search("b..") << "]\n\n";
         return;
     }
 
