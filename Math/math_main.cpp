@@ -24,6 +24,7 @@ int main() {
     testObj->countPrimes204Test();
     testObj->diffWaysToCompute241Test();
     testObj->findStrobogrammatic247Test();
+    testObj->multiply311Test();
 
     return 0;
 }

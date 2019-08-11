@@ -476,6 +476,31 @@ public:
 
         return result;
     }
+
+    // 311. Sparse Matrix Multiplication
+    vector<vector<int>> multiply311(
+        vector<vector<int>>& A, vector<vector<int>>& B
+    ) {
+        vector<vector<int>> result(A.size(), vector<int>(B[0].size(), 0));
+    
+        if (A[0].size() != B.size()) {
+            return result;
+        }
+
+        for (int i = 0; i < A.size(); ++i) {
+            for (int j = 0; j < A[0].size(); ++j) {
+                if (A[i][j] != 0) {
+                    for (int k = 0; k < B[0].size(); ++k) {
+                        if (B[j][k] != 0) {
+                            result[i][k] += A[i][j] * B[j][k];
+                        }
+                    }
+                }
+            }
+        }
+
+        return result;
+    }
 };
 
 #endif

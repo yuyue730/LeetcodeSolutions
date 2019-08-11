@@ -150,6 +150,32 @@ public:
         return;
     }
 
+    // 311. Sparse Matrix Multiplication Test
+    void multiply311Test() {
+        cout << "311. Sparse Matrix Multiplication test starts.\n";
+        vector<vector<int>> A = {
+            {1, 0, 0},
+            {-1, 0, 3}
+        };
+        vector<vector<int>> B = {
+            {7, 0, 0},
+            {0, 0, 0},
+            {0, 0, 1}
+        };
+
+        vector<vector<int>> result = implObj->multiply311(A, B);
+        cout << "Result = [\n";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << "  [";
+            for (int j = 0; j < result[0].size(); ++j) {
+                cout << result[i][j] << ((j == result[0].size() - 1) ? "": ", ");
+            }
+            cout << "]\n";
+        }
+        cout << "]\n\n";
+
+    }
+
 private:
     MathImpl * implObj;
 };
