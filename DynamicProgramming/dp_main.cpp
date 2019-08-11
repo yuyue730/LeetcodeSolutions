@@ -22,6 +22,7 @@ int main() {
     testObj->minCut132Test();
     testObj->wordBreak139Test();
     testObj->maxProduct152Test();
+    testObj->maxProfit188Test();
     testObj->rob198Test();
     testObj->maximalSquare221Test();
     testObj->minCost256Test();

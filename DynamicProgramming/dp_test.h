@@ -127,6 +127,14 @@ public:
         return;
     }
 
+    // 188. Best Time to Buy and Sell Stock IV Test
+    void maxProfit188Test() {
+        cout << "188. Best Time to Buy and Sell Stock IV test starts.\n";
+        vector<int> prices = {3, 2, 6, 5, 0, 3};
+        cout << "max profit = [" << implObj->maxProfit188(2, prices) << "]\n\n";
+        return;
+    }
+
     // 152. Maximum Product Subarray Test
     void maxProduct152Test() {
         cout << "152. Maximum Product Subarray test starts.\n";

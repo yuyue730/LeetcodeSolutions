@@ -347,6 +347,38 @@ public:
         return result;
     }
 
+    // 188. Best Time to Buy and Sell Stock IV
+    int maxProfit188(int k, vector<int>& prices) {
+        int n = prices.size();
+
+        if (n == 0) {
+            return 0;
+        }
+
+        if (k > n) {
+            int max_profit = 0;
+            for (int i = 1; i < prices.size(); ++i) {
+                if (prices[i] > prices[i - 1]) {
+                    max_profit += prices[i] - prices[i - 1];
+                }
+            }
+            return max_profit;
+        }
+
+        vector<int> local(k + 1, 0);
+        vector<int> global(k + 1, 0);
+
+        for (int i = 1; i < n; ++i) {
+            int diff = prices[i] - prices[i - 1];
+            for (int j = k; j >= 1; --j) {
+                local[j] = max(global[j - 1] + max(diff, 0), local[j] + diff);
+                global[j] = max(global[j], local[j]);
+            }
+        }
+
+        return global.back();
+    }
+
     // 198. House Robber
     int rob198(vector<int>& nums) {
         if (nums.size() <= 1) {
