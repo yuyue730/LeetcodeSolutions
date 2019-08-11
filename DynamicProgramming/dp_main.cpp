@@ -28,6 +28,7 @@ int main() {
     testObj->minCost256Test();
     testObj->numSquares279Test();
     testObj->lengthOfLIS300Test();
+    testObj->NumMatrix304Test();
 
     return 0;
 }
