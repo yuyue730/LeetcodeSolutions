@@ -504,6 +504,29 @@ public:
     private:
         vector<vector<int>> d_dp;
     };
+
+    // 309. Best Time to Buy and Sell Stock with Cooldown
+    int maxProfit309(vector<int>& prices) {
+        if (prices.empty()) {
+            return 0;
+        }
+        
+        int n = prices.size();
+        vector<int> buy(n);
+        vector<int> sell(n);
+        vector<int> rest(n);
+        
+        buy[0] = -prices[0];
+
+        for (int i = 1; i < prices.size(); ++i) {
+            int cur_price = prices[i];
+            buy[i] = max(rest[i - 1] - cur_price, buy[i - 1]);
+            sell[i] = max(buy[i - 1] + cur_price, sell[i - 1]);
+            rest[i] = max(max(rest[i - 1], buy[i - 1]), sell[i - 1]);
+        }
+
+        return max(buy.back(), max(sell.back(), rest.back()));
+    }
 };
 
 #endif

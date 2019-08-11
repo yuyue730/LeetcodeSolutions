@@ -29,6 +29,7 @@ int main() {
     testObj->numSquares279Test();
     testObj->lengthOfLIS300Test();
     testObj->NumMatrix304Test();
+    testObj->maxProfit309Test();
 
     return 0;
 }

@@ -202,6 +202,14 @@ public:
         return;
     }
 
+    // 309. Best Time to Buy and Sell Stock with Cooldown Test
+    void maxProfit309Test() {
+        cout << "309. Best Time to Buy and Sell Stock with Cooldown test starts.\n";
+        vector<int> prices = {1, 2, 3, 0, 2};
+        cout << "max profit = [" << implObj->maxProfit309(prices) << "]\n\n";
+        return;
+    }
+
 private:
     DpImpl * implObj;
 };
