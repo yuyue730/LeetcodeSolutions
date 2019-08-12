@@ -210,6 +210,14 @@ public:
         return;
     }
 
+    // 312. Burst Balloons Test
+    void maxCoins312Test() {
+        cout << "312. Burst Balloons test starts.\n";
+        vector<int> nums = {3, 1, 5, 8};
+        cout << "max coins = [" << implObj->maxCoins312(nums) << "]\n\n";
+        return;
+    }
+
 private:
     DpImpl * implObj;
 };

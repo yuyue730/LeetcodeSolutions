@@ -527,6 +527,35 @@ public:
 
         return max(buy.back(), max(sell.back(), rest.back()));
     }
+
+
+    // 312. Burst Balloons
+    int maxCoins312(vector<int>& nums) {
+        if (nums.empty()) {
+            return 0;
+        }
+
+        int size = nums.size();
+
+        nums.insert(nums.begin(), 1);
+        nums.push_back(1);
+
+        vector<vector<int>> dp(size + 2, vector<int>(size + 2));
+
+        for (int len = 1; len <= size; ++len) {
+            for (int i = 1; i <= size - len + 1; ++i) {
+                int j = i + len - 1;
+                for (int k = i; k <= j; ++k) {
+                    dp[i][j] = max(
+                        dp[i][j], 
+                        dp[i][k - 1] + dp[k + 1][j] + nums[i - 1] * nums[k] * nums[j + 1]
+                    );
+                }
+            }
+        }
+
+        return dp[1][size];
+    }
 };
 
 #endif
