@@ -232,6 +232,37 @@ public:
         return new_head;
     }
 
+    // 82. Remove Duplicates from Sorted List II
+    ListNode* deleteDuplicates82(ListNode* head) {
+        if (head == NULL) {
+            return head;
+        }
+
+        ListNode * dummy = new ListNode(-1);
+        ListNode * prev = dummy;
+        ListNode * cur = head;
+        
+        while (cur) {
+            ListNode * next = cur;
+            int count = 1;
+
+            while (next->next && next->next->val == next->val) {
+                count++;
+                next = next->next;
+            }
+
+            if (count == 1) {
+                prev->next = cur;
+                prev = prev->next;
+            }
+
+            cur = next->next;
+        }
+
+        prev->next = NULL;
+        return dummy->next;
+    }
+
     // 83. Remove Duplicates from Sorted List
     ListNode* deleteDuplicates83(ListNode* head) {
         if (head == NULL) {

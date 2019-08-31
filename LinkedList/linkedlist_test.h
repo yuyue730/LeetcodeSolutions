@@ -171,6 +171,28 @@ public:
         cout << "]\n\n";
     }
 
+    // 82. Remove Duplicates from Sorted List II Test
+    void deleteDuplicates82Test() {
+        cout << "82. Remove Duplicates from Sorted List II test.\n";
+        ListNode *head = new ListNode(1);
+        ListNode *cur = head;
+        cur->next = new ListNode(2); cur = cur->next;
+        cur->next = new ListNode(3); cur = cur->next;
+        cur->next = new ListNode(3); cur = cur->next;
+        cur->next = new ListNode(4); cur = cur->next;
+        cur->next = new ListNode(4); cur = cur->next;
+        cur->next = new ListNode(5);
+
+        ListNode *result = implObj->deleteDuplicates82(head);
+        cout << "Result LinkedList [";
+        while (result) {
+            cout << result->val << ((result->next == NULL) ? "" : "->");
+            result = result->next;
+        }
+        cout << "]\n\n";
+        return;
+    }
+
     // 83. Remove Duplicates from Sorted List Test
     void deleteDuplicates83Test() {
         cout << "83. Remove Duplicates from Sorted List test starts.\n";
