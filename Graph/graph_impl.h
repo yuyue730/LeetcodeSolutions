@@ -317,7 +317,54 @@ public:
         return (result.size() == all_alpha.size()) ? result : "";
     }
 
-    
+    // 317. Shortest Distance from All Buildings
+    int shortestDistance317(vector<vector<int>>& grid) {
+        int m = grid.size(), n = grid[0].size();
+        int result = INT_MAX;
+        int cur_val = 0;
+
+        vector<vector<int>> sum = grid;
+        const vector<pair<int, int>> directions = {
+            {0, 1}, {1, 0}, {0, -1}, {-1, 0}
+        };
+
+        for (int i = 0; i < grid.size(); ++i) {
+            for (int j = 0; j < grid[i].size(); ++j) {
+                if (grid[i][j] == 1) {
+                    result = INT_MAX;
+                    vector<vector<int>> distance = grid;
+                    queue<pair<int, int>> point_q;
+                    point_q.push({i, j});
+                    while (!point_q.empty()) {
+                        int cur_x = point_q.front().first;
+                        int cur_y = point_q.front().second;
+                        point_q.pop();
+                        for (auto direc : directions) {
+                            int next_x = cur_x + direc.first;
+                            int next_y = cur_y + direc.second;
+
+                            if (next_x < 0 || next_x >= grid.size() 
+                                || next_y < 0 || next_y >= grid[0].size()
+                                || grid[next_x][next_y] != cur_val 
+                                || grid[next_x][next_y] == 2) {
+                                continue;
+                            }
+
+                            distance[next_x][next_y] = distance[cur_x][cur_y] + 1;
+                            sum[next_x][next_y] += (distance[next_x][next_y] - 1);
+                            result = min(sum[next_x][next_y], result);
+
+                            point_q.push({next_x, next_y});
+                            grid[next_x][next_y]--;
+                        }
+                    }
+                    cur_val--;
+                }
+            }
+        }
+
+        return (result == INT_MAX) ? -1 : result;
+    }
 };
 
 #endif

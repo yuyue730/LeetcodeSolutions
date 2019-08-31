@@ -4,7 +4,8 @@
         "unordered_map": "cpp",
         "vector": "cpp",
         "unordered_set": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "queue": "cpp"
     },
     "git.ignoreLimitWarning": true
 }

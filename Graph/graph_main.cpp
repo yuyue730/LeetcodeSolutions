@@ -15,6 +15,7 @@ int main() {
     testObj->findOrder210Test();
     testObj->validTree261Test();
     testObj->alienOrder269Test();
+    testObj->shortestDistance317Test();
 
     return 0;
 }

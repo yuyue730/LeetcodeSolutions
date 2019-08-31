@@ -106,6 +106,18 @@ public:
         return;
     }
 
+    // 317. Shortest Distance from All Buildings Test
+    void shortestDistance317Test() {
+        cout << "317. Shortest Distance from All Buildings test starts.\n";
+        vector<vector<int>> grid = {
+            {1, 0, 2, 0, 1},
+            {0, 0, 0, 0, 0},
+            {0, 0, 1, 0, 0}
+        };
+        cout << "Distance = [" << implObj->shortestDistance317(grid) << "]\n\n";
+        return;
+    }
+
 private:
     GraphImpl * implObj;
 };
