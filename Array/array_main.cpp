@@ -57,6 +57,7 @@ int main() {
     testObj->findDuplicate287Test();
     testObj->gameOfLife289Test();
     testObj->minTotalDistance296Test();
+    testObj->countSmaller315Test();
 
     return 0;
 }

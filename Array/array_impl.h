@@ -1189,6 +1189,30 @@ public:
         }
         return result;
     }
+
+    // 315. Count of Smaller Numbers After Self
+    vector<int> countSmaller315(vector<int>& nums) {
+        vector<int> sort_arr;
+        vector<int> result(nums.size(), 0);
+
+        for (int i = nums.size() - 1; i >= 0; --i) {
+            int left = 0;
+            int right = sort_arr.size();
+            while (left < right) {
+                int mid = (left + right) / 2;
+                if (sort_arr[mid] < nums[i]) {
+                    left = mid + 1;
+                } else {
+                    right = mid;
+                }
+            }
+
+            result[i] = right;
+            sort_arr.insert(sort_arr.begin() + right, nums[i]);
+        }
+
+        return result;
+    }
 };
 
 #endif

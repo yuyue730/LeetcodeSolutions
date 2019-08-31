@@ -614,6 +614,20 @@ public:
         return;
     }
 
+    // 315. Count of Smaller Numbers After Self Test
+    void countSmaller315Test() {
+        cout << "315. Count of Smaller Numbers After Self test starts.\n";
+        vector<int> nums = {5, 2, 6, 1};
+        vector<int> result = implObj->countSmaller315(nums);
+
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };
