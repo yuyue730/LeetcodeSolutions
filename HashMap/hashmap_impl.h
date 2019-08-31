@@ -325,6 +325,35 @@ public:
         }
         return true;
     }
+
+    // 316. Remove Duplicate Letters
+    string removeDuplicateLetters316(string s) {
+        unordered_map<char, int> freq_map;
+        unordered_map<char, bool> visited_map;
+        string result = "0";
+
+        for (auto ch : s) {
+            freq_map[ch]++;
+        }
+
+        for (auto ch : s) {
+            freq_map[ch]--;
+
+            if (visited_map[ch]) {
+                continue;
+            }
+
+            while (freq_map[result.back()] && ch < result.back()) {
+                visited_map[result.back()] = false;
+                result.pop_back();
+            }
+
+            result += ch;
+            visited_map[ch] = true;
+        }
+
+        return result.substr(1);
+    }
 };
 
 #endif

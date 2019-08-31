@@ -316,6 +316,8 @@ public:
 
         return (result.size() == all_alpha.size()) ? result : "";
     }
+
+    
 };
 
 #endif

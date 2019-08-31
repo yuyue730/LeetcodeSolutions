@@ -144,6 +144,13 @@ public:
         return;
     }
 
+    // 316. Remove Duplicate Letters Test
+    void removeDuplicateLetters316Test() {
+        cout << "316. Remove Duplicate Letters test starts.\n";
+        cout << "Result = [" << implObj->removeDuplicateLetters316("cbacdcbc") << "]\n\n";
+        return;
+    }
+
 private:
     HashMapImpl* implObj;
 };

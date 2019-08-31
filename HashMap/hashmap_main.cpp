@@ -21,6 +21,7 @@ int main() {
     testObj->isHappy202Test();
     testObj->isIsomorphic205Test();
     testObj->isAnagram242Test();
+    testObj->removeDuplicateLetters316Test();
 
     return 0;
 }
