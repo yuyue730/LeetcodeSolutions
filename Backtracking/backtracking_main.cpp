@@ -27,6 +27,7 @@ int main() {
     testObj->numIslands200Test();
     testObj->addOperators282Test();
     testObj->wallsAndGates286Test();
+    testObj->longestIncreasingPath329Test();
 
     return 0;
 }

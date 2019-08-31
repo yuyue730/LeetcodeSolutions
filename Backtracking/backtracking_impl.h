@@ -731,6 +731,58 @@ public:
         wallsAndGates286_dfs(rooms, x - 1, y, next_dist + 1);
         wallsAndGates286_dfs(rooms, x, y - 1, next_dist + 1);
     }
+
+    // 329. Longest Increasing Path in a Matrix
+    int longestIncreasingPath329(vector<vector<int>>& matrix) {
+        if (matrix.empty() || matrix[0].empty()) {
+            return 0;
+        }
+
+        int m = matrix.size(), n = matrix[0].size();
+        int result = 0;
+        vector<vector<int>> dp(m, vector<int>(n, 0));
+        vector<pair<int, int>> direc = {
+            {0, 1}, {1, 0}, {0, -1}, {-1, 0}
+        };
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                int cur_len = longestIncreasingPath329_dfs(
+                    dp, matrix, direc, i, j
+                );
+                result = max(result, cur_len);
+            }
+        }
+
+        return result;
+    }
+
+    int longestIncreasingPath329_dfs(
+        vector<vector<int>> & dp,
+        const vector<vector<int>> & matrix,
+        const vector<pair<int, int>> & direc,
+        const int i, const int j
+    ) {
+        if (dp[i][j]) {
+            return dp[i][j];
+        }
+
+        int m = matrix.size(), n = matrix[0].size();
+        int cur_max = 1;
+
+        for (auto iter : direc) {
+            int next_x = i + iter.first, next_y = j + iter.second;
+            if (next_x < 0 || next_x >= m || next_y < 0 || next_y >= n
+                || matrix[next_x][next_y] <= matrix[i][j]) {
+                continue;
+            }
+
+            int len = 1 + longestIncreasingPath329_dfs(dp, matrix, direc, next_x, next_y);
+            cur_max = max(cur_max, len);
+        }
+
+        dp[i][j] = cur_max;
+        return cur_max;
+    }
 };
 
 #endif

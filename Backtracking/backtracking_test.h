@@ -308,6 +308,19 @@ public:
             cout << "]\n";
         }
         cout << "].\n\n";
+        return;
+    }
+
+    // 329. Longest Increasing Path in a Matrix Test
+    void longestIncreasingPath329Test() {
+        cout << "329. Longest Increasing Path in a Matrix test starts.\n";
+        vector<vector<int>> nums = {
+            {9, 9, 4},
+            {6, 6, 8},
+            {2, 1, 1}
+        };
+        cout << "Max increasing length = [" << implObj->longestIncreasingPath329(nums) << "]\n\n";
+        return;
     }
 
 private:
