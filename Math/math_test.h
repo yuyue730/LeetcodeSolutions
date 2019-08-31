@@ -176,6 +176,13 @@ public:
         return;
     }
 
+    // 319. Bulb Switcher Test
+    void bulbSwitch319Test() {
+        cout << "319. Bulb Switcher test starts.\n";
+        cout << "36 will result in [" << implObj->bulbSwitch319(36) << "]\n\n";
+        return;
+    }
+
 private:
     MathImpl * implObj;
 };

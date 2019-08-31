@@ -25,6 +25,7 @@ int main() {
     testObj->diffWaysToCompute241Test();
     testObj->findStrobogrammatic247Test();
     testObj->multiply311Test();
+    testObj->bulbSwitch319Test();
 
     return 0;
 }
