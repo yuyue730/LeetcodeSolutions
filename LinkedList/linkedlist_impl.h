@@ -198,6 +198,40 @@ public:
         return first;
     }
 
+    // 61. Rotate List
+    ListNode* rotateRight61(ListNode* head, int k) {
+        if (!head) {
+            return NULL;
+        }
+
+        int length = 0;
+        ListNode * cur = head;
+        while (cur) {
+            length++;
+            cur = cur->next;
+        }
+
+        k %= length;
+        if (k == 0) {
+            return head;
+        }
+
+        ListNode * fast = head, * slow = head;
+        for (int i = 0; i < k; ++i) {
+            fast = fast->next;
+        }
+
+        while (fast->next) {
+            slow = slow->next;
+            fast = fast->next;
+        }
+
+        ListNode * new_head = slow->next;
+        fast->next = head;
+        slow->next = NULL;
+        return new_head;
+    }
+
     // 83. Remove Duplicates from Sorted List
     ListNode* deleteDuplicates83(ListNode* head) {
         if (head == NULL) {

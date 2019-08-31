@@ -151,6 +151,26 @@ public:
         cout << "]\n\n";
     }
 
+    // 61. Rotate List Test
+    void rotateRight61Test() {
+        cout << "61. Rotate List test starts.\n";
+                ListNode * head = new ListNode(1);
+        ListNode * cur = head; 
+        cur->next = new ListNode(2);  cur = cur->next;
+        cur->next = new ListNode(3);  cur = cur->next;
+        cur->next = new ListNode(4);  cur = cur->next;
+        cur->next = new ListNode(5);
+
+        ListNode* result = implObj->rotateRight61(head, 2);
+        cout << "Output linked list is [";
+        while (result) {
+            cout << result->val << "; ";
+            result = result->next;
+        }
+
+        cout << "]\n\n";
+    }
+
     // 83. Remove Duplicates from Sorted List Test
     void deleteDuplicates83Test() {
         cout << "83. Remove Duplicates from Sorted List test starts.\n";
