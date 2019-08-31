@@ -562,6 +562,31 @@ public:
         return;
     }
 
+    // 314. Binary Tree Vertical Order Traversal Test
+    void verticalOrder314Test() {
+        cout << "314. Binary Tree Vertical Order Traversal test starts.\n";
+        TreeNode * root = new TreeNode(3);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(9);
+        cur->right = new TreeNode(20);
+
+        cur = cur->right;
+        cur->left = new TreeNode(15);
+        cur->right = new TreeNode(7);
+
+        vector<vector<int>> result = implObj->verticalOrder314(root);
+        cout << "Vector result = [\n";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << "[";
+            for (int j = 0; j < result[i].size(); ++j) {
+                cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
+            }
+            cout << "]\n";
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     BinaryTreeImpl * implObj;
 };

@@ -6,6 +6,7 @@
 #include <stack>
 #include <vector>
 #include <cmath>
+#include <map>
 using namespace std;
 
 struct TreeNode {
@@ -809,6 +810,39 @@ public:
         }
     
         closestKValues272InorderDFS(result, cur->right, target, k);
+    }
+
+    // 314. Binary Tree Vertical Order Traversal
+    vector<vector<int>> verticalOrder314(TreeNode* root) {
+        vector<vector<int>> result;
+        if (!root) {
+            return result;
+        }
+
+        map<int, vector<int>> idx_value_map;
+        queue<pair<int, TreeNode *>> q;
+        q.push({0, root});
+        while (!q.empty()) {
+            auto cur = q.front();
+            q.pop();
+            int cur_idx = cur.first;
+            TreeNode * cur_node = cur.second;
+
+            idx_value_map[cur_idx].push_back(cur_node->val);
+
+            if (cur_node->left) {
+                q.push({cur_idx - 1, cur_node->left});
+            }
+            if (cur_node->right) {
+                q.push({cur_idx + 1, cur_node->right});
+            }
+        }
+
+        for (auto iter: idx_value_map) {
+            result.push_back(iter.second);
+        }
+
+        return result;
     }
 };
 

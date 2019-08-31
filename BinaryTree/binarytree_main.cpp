@@ -37,6 +37,7 @@ int main() {
     testObj->countUnivalSubtrees250Test();
     testObj->binaryTreePaths257Test();
     testObj->closestKValues272Test();
+    testObj->verticalOrder314Test();
 
     return 0;
 }
