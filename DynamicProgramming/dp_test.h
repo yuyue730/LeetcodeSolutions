@@ -218,6 +218,14 @@ public:
         return;
     }
 
+    // 322. Coin Change Test
+    void coinChange322Test() {
+        cout << "322. Coin Change test starts.\n";
+        vector<int> coins = {1, 2, 5};
+        cout << "# of coins = [" << implObj->coinChange322(coins, 11) << "]\n\n";
+        return;
+    }
+
 private:
     DpImpl * implObj;
 };

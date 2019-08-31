@@ -31,6 +31,7 @@ int main() {
     testObj->NumMatrix304Test();
     testObj->maxProfit309Test();
     testObj->maxCoins312Test();
+    testObj->coinChange322Test();
 
     return 0;
 }

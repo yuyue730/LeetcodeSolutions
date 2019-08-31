@@ -528,7 +528,6 @@ public:
         return max(buy.back(), max(sell.back(), rest.back()));
     }
 
-
     // 312. Burst Balloons
     int maxCoins312(vector<int>& nums) {
         if (nums.empty()) {
@@ -555,6 +554,21 @@ public:
         }
 
         return dp[1][size];
+    }
+
+    // 322. Coin Change
+    int coinChange322(vector<int>& coins, int amount) {
+        vector<int> dp(amount + 1, amount + 1);
+        dp[0] = 0;
+        for (int i = 1; i <= amount; ++i) {
+            for (int j = 0; j < coins.size(); ++j) {
+                if (i >= coins[j]) {
+                    dp[i] = min(dp[i - coins[j]] + 1, dp[i]);
+                }
+            }
+        }
+
+        return (dp.back() == amount + 1) ? -1 : dp.back();
     }
 };
 
