@@ -5,7 +5,8 @@
         "vector": "cpp",
         "unordered_set": "cpp",
         "iosfwd": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "set": "cpp"
     },
     "git.ignoreLimitWarning": true
 }

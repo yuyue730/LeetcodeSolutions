@@ -365,6 +365,32 @@ public:
 
         return (result == INT_MAX) ? -1 : result;
     }
+
+    // 332. Reconstruct Itinerary
+    vector<string> findItinerary332(vector<vector<string>>& tickets) {
+        vector<string> result;
+        unordered_map<string, multiset<string>> dest_map;
+        for (auto iter : tickets) {
+            dest_map[iter[0]].insert(iter[1]);
+        }
+        findItinerary332_dfs(result, dest_map, "JFK");
+
+        return result;
+    }
+
+    void findItinerary332_dfs(
+        vector<string> &result,
+        unordered_map<string, multiset<string>> &dest_map,
+        string cur
+    ) {
+        while (dest_map[cur].size() > 0) {
+            string next = *(dest_map[cur].begin());
+            dest_map[cur].erase(dest_map[cur].begin());
+            findItinerary332_dfs(result, dest_map, next);
+        }
+
+        result.insert(result.begin(), cur);
+    }
 };
 
 #endif

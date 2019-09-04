@@ -118,6 +118,22 @@ public:
         return;
     }
 
+    // 332. Reconstruct Itinerary Test
+    void findItinerary332Test() {
+        cout << "332. Reconstruct Itinerary test starts.\n";
+        vector<vector<string>> tickets = {
+            {"MUC", "LHR"}, {"JFK", "MUC"}, {"SFO", "SJC"}, {"LHR", "SFO"}
+        };
+
+        vector<string> result = implObj->findItinerary332(tickets);
+        cout << "result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     GraphImpl * implObj;
 };
