@@ -1219,7 +1219,8 @@ public:
         if (nums.size() < 3) {
             return false;
         }
-        
+
+        int n = nums.size();
         vector<int> forward(n, nums[0]);
         vector<int> backward(n, nums[n - 1]);
 
