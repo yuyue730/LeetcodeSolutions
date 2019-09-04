@@ -1213,6 +1213,32 @@ public:
 
         return result;
     }
+
+    // 334. Increasing Triplet Subsequence
+    bool increasingTriplet334(vector<int>& nums) {
+        if (nums.size() < 3) {
+            return false;
+        }
+        
+        vector<int> forward(n, nums[0]);
+        vector<int> backward(n, nums[n - 1]);
+
+        for (int i = 1; i < n; ++i) {
+            forward[i] = min(forward[i - 1], nums[i]);
+        }
+
+        for (int i = n - 2; i >= 0; --i) {
+            backward[i] = max(backward[i + 1], nums[i]);
+        }
+
+        for (int i = 1; i <= n - 1; ++i) {
+            if (nums[i] > forward[i] && nums[i] < backward[i]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 };
 
 #endif

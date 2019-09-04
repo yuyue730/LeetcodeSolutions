@@ -866,7 +866,7 @@ public:
             return true;
         }
 
-        if (cur->val < min || cur->val > max) {
+        if (cur->val <= min || cur->val >= max) {
             return false;
         }
 

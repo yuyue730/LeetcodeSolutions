@@ -628,6 +628,14 @@ public:
         return;
     }
 
+    // 334. Increasing Triplet Subsequence Test
+    void increasingTriplet334Test() {
+        cout << "334. Increasing Triplet Subsequence test.\n";
+        vector<int> nums = {3, 2, 5, 4, 8, 1};
+        cout << "Is increasing triplet = [" << implObj->increasingTriplet334(nums) << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };

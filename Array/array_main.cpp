@@ -58,6 +58,7 @@ int main() {
     testObj->gameOfLife289Test();
     testObj->minTotalDistance296Test();
     testObj->countSmaller315Test();
+    testObj->increasingTriplet334Test();
 
     return 0;
 }
