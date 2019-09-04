@@ -844,6 +844,43 @@ public:
 
         return result;
     }
+
+    // 333. Largest BST Subtree
+    int largestBSTSubtree333(TreeNode* root) {
+        if (!root) {
+            return 0;
+        }
+
+        if (is_valid_BST(root, INT_MIN, INT_MAX)) {
+            return count_node(root);
+        } else {
+            return max(
+                largestBSTSubtree333(root->left),
+                largestBSTSubtree333(root->right)
+            );
+        }
+    }
+
+    bool is_valid_BST(TreeNode *cur, int min, int max) {
+        if (!cur) {
+            return true;
+        }
+
+        if (cur->val < min || cur->val > max) {
+            return false;
+        }
+
+        return is_valid_BST(cur->left, min, cur->val) 
+            && is_valid_BST(cur->right, cur->val, max);
+    }
+
+    int count_node(TreeNode *cur) {
+        if (!cur) {
+            return 0;
+        }
+
+        return count_node(cur->left) + count_node(cur->right) + 1;
+    }
 };
 
 #endif

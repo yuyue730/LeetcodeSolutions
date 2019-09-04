@@ -587,6 +587,27 @@ public:
         return;
     }
 
+    // 333. Largest BST Subtree Test
+    void largestBSTSubtree333Test() {
+        cout << "333. Largest BST Subtree test starts.\n";
+        TreeNode *root = new TreeNode(10);
+        TreeNode *cur = root;
+        cur->left = new TreeNode(5);
+        cur->right = new TreeNode(15);
+
+        cur = cur->left;
+        cur->left = new TreeNode(1);
+        cur->right = new TreeNode(8);
+
+        cur = root;
+        cur->right = new TreeNode(15);
+        cur = cur->right;
+        cur->right = new TreeNode(7);
+
+        cout << "Size of max BST = [" << implObj->largestBSTSubtree333(root) << "]\n\n";
+        return;
+    }
+
 private:
     BinaryTreeImpl * implObj;
 };
