@@ -783,6 +783,28 @@ public:
         dp[i][j] = cur_max;
         return cur_max;
     }
+
+    // 339. Nested List Weight Sum (Cannot build locally)
+    /*
+    int depthSum339(vector<NestedInteger>& nestedList) {
+        return depthSum_dfs(nestedList, 1);
+    }
+    
+    int depthSum_dfs(vector<NestedInteger>& nestedList, int cur_depth) {
+        int result = 0;
+        
+        for (int i = 0; i < nestedList.size(); ++i) {
+            if (nestedList[i].isInteger()) {
+                result += cur_depth * nestedList[i].getInteger();
+            } else {
+                result += depthSum_dfs(nestedList[i].getList(), cur_depth + 1);
+            }
+        }
+        
+        return result;
+    }
+    */
+
 };
 
 #endif
