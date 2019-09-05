@@ -7,6 +7,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <map>
+#include <set>
 using namespace std;
 
 class HashMapImpl {
@@ -353,6 +354,57 @@ public:
         }
 
         return result.substr(1);
+    }
+
+    // 336. Palindrome Pairs
+    vector<vector<int>> palindromePairs336(vector<string>& words) {
+        unordered_map<string, int> word_idx_map;
+        set<int> len_set;
+
+        vector<vector<int>> result;
+
+        for (int i = 0; i < words.size(); ++i) {
+            word_idx_map[words[i]] = i;
+            len_set.insert(words[i].size());
+        }
+
+        for (int i = 0; i < words.size(); ++i) {
+            string cur_word_reverse = words[i];
+            const int word_len = words[i].size();
+            reverse(cur_word_reverse.begin(), cur_word_reverse.end());
+
+            if (word_idx_map.count(cur_word_reverse) 
+                && word_idx_map[cur_word_reverse] != i) {
+                result.push_back({i, word_idx_map[cur_word_reverse]});
+            }
+
+            for (auto iter = len_set.begin(); *iter != word_len; ++iter) {
+                int cur_len = *iter;
+                if (word_idx_map.count(cur_word_reverse.substr(0, cur_len)) 
+                    && is_palin(cur_word_reverse, cur_len, word_len - 1)) {
+                    result.push_back({word_idx_map[cur_word_reverse.substr(0, cur_len)], i});
+                }
+
+                if (word_idx_map.count(cur_word_reverse.substr(word_len - cur_len)) 
+                    && is_palin(cur_word_reverse, 0, word_len - cur_len - 1)) {
+                    result.push_back({i, word_idx_map[cur_word_reverse.substr(word_len - cur_len)]});
+                }
+            }
+        }
+
+        return result;
+    }
+
+    bool is_palin(const string word, int left, int right) {
+        while (left < right) {
+            if (word[left] != word[right]) {
+                return false;
+            }
+            ++left;
+            --right;
+        }
+
+        return true;
     }
 };
 

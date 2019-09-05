@@ -22,6 +22,7 @@ int main() {
     testObj->isIsomorphic205Test();
     testObj->isAnagram242Test();
     testObj->removeDuplicateLetters316Test();
+    testObj->palindromePairs336Test();
 
     return 0;
 }

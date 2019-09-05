@@ -151,6 +151,21 @@ public:
         return;
     }
 
+    // 336. Palindrome Pairs Test
+    void palindromePairs336Test() {
+        cout << "336. Palindrome Pairs test starts.\n";
+        vector<string> words = {"abcd", "dcba", "lls", "s", "sssll"};
+        vector<vector<int>> result = implObj->palindromePairs336(words);
+
+        cout << "Result = [\n";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << "  [" << result[i][0] << ", " << result[i][1] << "]\n";
+        }
+
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     HashMapImpl* implObj;
 };
