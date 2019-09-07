@@ -534,4 +534,40 @@ public:
     }
 };
 
+// 341. Flatten Nested List Iterator
+/*
+class NestedIterator {
+public:
+    NestedIterator(vector<NestedInteger> &nestedList) {
+        for (int i = nestedList.size() - 1; i >= 0; --i) {
+            st.push(nestedList[i]);
+        }
+    }
+
+    int next() {
+        int result = st.top().getInteger();
+        st.pop();
+        return result;
+    }
+
+    bool hasNext() {
+        while (!st.empty()) {
+            NestedInteger cur = st.top();
+            if (cur.isInteger()) {
+                return true;
+            }
+            st.pop();
+            
+            for (int i = cur.getList().size() - 1; i >= 0; --i) {
+                st.push(cur.getList()[i]);
+            }
+        }
+        return false;
+    }
+    
+private:
+    stack<NestedInteger> st;
+};
+*/
+
 #endif
