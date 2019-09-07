@@ -28,6 +28,7 @@ int main() {
     testObj->encodeDecode271Test();
     testObj->numberToWords273Test();
     testObj->removeInvalidParentheses301Test();
+    testObj->reverseString344Test();
 
     return 0;
 }

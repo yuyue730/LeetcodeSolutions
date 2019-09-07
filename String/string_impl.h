@@ -617,6 +617,16 @@ public:
 
         return (ct == 0);
     }
+
+    // 344. Reverse String
+    void reverseString344(vector<char>& s) {
+        int left = 0, right = s.size() - 1;
+        while (left <= right) {
+            swap(s[left], s[right]);
+            left++;
+            right--;
+        }
+    }
 };
 
 #endif

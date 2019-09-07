@@ -229,6 +229,19 @@ public:
         return;
     }
 
+    // 344. Reverse String Test
+    void reverseString344Test() {
+        cout << "344. Reverse String test starts.\n";
+        vector<char> ch = {'h', 'e', 'l', 'l', 'o'};
+        implObj->reverseString344(ch);
+        cout << "result = [";
+        for (int i = 0; i < ch.size(); ++i) {
+            cout << ch[i];
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     StringImpl * implObj;
 };
