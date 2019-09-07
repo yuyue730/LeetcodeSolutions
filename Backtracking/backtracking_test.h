@@ -275,6 +275,24 @@ public:
         cout << "Num of islands = [" << implObj->numIslands200(grid) << "]\n\n";
     }
 
+    // 212. Word Search II Test
+    void findWords212Test() {
+        cout << "212. Word Search II test.\n";
+        vector<vector<char>> board = {
+            {'o', 'a', 'a', 'n'},
+            {'e', 't', 'a', 'e'},
+            {'i', 'h', 'k', 'r'},
+            {'i', 'f', 'l', 'v'}
+        };
+        vector<string> words = {"oath", "pea", "eat", "rain"};
+        vector<string> result = implObj->findWords212(board, words);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "": ", ");
+        }
+        cout << "]\n\n";
+    }
+
     // 282. Expression Add Operators Test
     void addOperators282Test() {
         cout << "282. Expression Add Operators test starts.\n";

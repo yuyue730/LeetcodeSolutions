@@ -25,6 +25,7 @@ int main() {
     testObj->partition131Test();
     testObj->wordBreak140Test();
     testObj->numIslands200Test();
+    testObj->findWords212Test();
     testObj->addOperators282Test();
     testObj->wallsAndGates286Test();
     testObj->longestIncreasingPath329Test();

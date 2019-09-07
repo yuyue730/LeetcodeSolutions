@@ -659,6 +659,102 @@ public:
         visitIslandDFS(grid, visitedMatrix, curI, curJ - 1);
     }
 
+    // 212. Word Search II
+    struct TrieNode {
+        TrieNode *children[26];
+        string endWord;
+
+        TrieNode() {
+            endWord = "";
+            for (int i = 0; i < 26; ++i) {
+                children[i] = NULL;
+            }
+        }
+    };
+
+    struct Trie {
+        TrieNode *root;
+        Trie() {
+            root = new TrieNode();
+        }
+
+        void insert(string word) {
+            TrieNode *cur = root;
+            for (int i = 0; i < word.size(); ++i) {
+                int curCh = word[i] - 'a';
+                if (!cur->children[curCh]) {
+                    cur->children[curCh] = new TrieNode();
+                }
+                cur = cur->children[curCh];
+            }
+            cur->endWord = word;
+        }
+    };
+
+    vector<string> findWords212(vector<vector<char>>& board, vector<string>& words) {
+        vector<string> result;
+        if (board.empty() || board[0].empty() || words.empty()) {
+            return result;
+        }
+
+        Trie tr;
+        for (auto &word: words) {
+            tr.insert(word);
+        }
+
+        vector<vector<bool>> visited(board.size(), vector<bool>(board[0].size(), false));
+
+        for (int i = 0; i < board.size(); ++i) {
+            for (int j = 0; j < board[0].size(); ++j) {
+                if (tr.root->children[board[i][j] - 'a']) {
+                    findWords212_dfs(
+                        result, visited, 
+                        tr.root->children[board[i][j] - 'a'], 
+                        i, j, board
+                    );
+                }
+            }
+        }
+
+        return result;
+    }
+
+    void findWords212_dfs(
+        vector<string> &result,
+        vector<vector<bool>> visited,
+        TrieNode *p,
+        const int x, const int y,
+        const vector<vector<char>> &board
+    ) {
+        if (!p->endWord.empty()) {
+            result.push_back(p->endWord);
+            p->endWord.clear();
+        }
+
+        const vector<pair<int, int>> directions = {
+            {0, 1}, {1, 0}, {0, -1}, {-1, 0}
+        };
+        visited[x][y] = true;
+        for (auto &direc: directions) {
+            int next_x = x + direc.first;
+            int next_y = y + direc.second;
+
+            if (next_x < 0 || next_x >= board.size() 
+                || next_y < 0 || next_y >= board[0].size()
+                || visited[next_x][next_y] 
+                || !p->children[board[next_x][next_y] - 'a']) {
+                continue;
+            }
+
+            findWords212_dfs(
+                result, visited, p->children[board[next_x][next_y] - 'a'], 
+                next_x, next_y, board
+            );
+        }
+
+        visited[x][y] = false;
+    }
+
     // 282. Expression Add Operators
     vector<string> addOperators282(string num, int target) {
         vector<string> result;
