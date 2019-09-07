@@ -20,6 +20,7 @@ int main() {
     testObj->PeekingIterator284Test();
     testObj->MedianFinder295Test();
     testObj->Codec297Test();
+    testObj->MovingAverage346Test();
 
     return 0;
 }

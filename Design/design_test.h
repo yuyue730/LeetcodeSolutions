@@ -176,6 +176,17 @@ public:
         cout << "Please exam result = [" << result->val << "]\n\n";
         return;
     }
+
+    // 346. Moving Average from Data Stream Test
+    void MovingAverage346Test() {
+        cout << "346. Moving Average from Data Stream test starts.\n";
+        MovingAverage346 m(3);
+        cout << "Push 1 = [" << (double)m.next(1) << "];\n";
+        cout << "Push 10 = [" << (double)m.next(10) << "];\n";
+        cout << "Push 3 = [" << (double)m.next(3) << "];\n";
+        cout << "Push 5 = [" << (double)m.next(5) << "]\n\n";
+        return;
+    }
 };
 
 #endif

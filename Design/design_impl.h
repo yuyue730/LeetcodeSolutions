@@ -570,4 +570,30 @@ private:
 };
 */
 
+// 346. Moving Average from Data Stream
+class MovingAverage346 {
+public:
+    /** Initialize your data structure here. */
+    MovingAverage346(int size) {
+        m_size = size;
+        m_curSum = 0;
+    }
+    
+    double next(int val) {
+        if (m_window.size() == m_size) {
+            m_curSum -= m_window.front();
+            m_window.pop();
+        }
+
+        m_curSum += val;
+        m_window.push(val);
+        return static_cast<double>(m_curSum) / m_window.size();
+    }
+
+private:
+    int m_size;
+    int m_curSum;
+    queue<int> m_window;
+};
+
 #endif
