@@ -24,6 +24,7 @@ int main() {
     testObj->removeDuplicateLetters316Test();
     testObj->palindromePairs336Test();
     testObj->lengthOfLongestSubstringKDistinct340Test();
+    testObj->topKFrequent347Test();
 
     return 0;
 }

@@ -161,7 +161,6 @@ public:
         for (int i = 0; i < result.size(); ++i) {
             cout << "  [" << result[i][0] << ", " << result[i][1] << "]\n";
         }
-
         cout << "]\n\n";
         return;
     }
@@ -172,7 +171,20 @@ public:
         cout << "eceba and 2 will have max length = [" 
             << implObj->lengthOfLongestSubstringKDistinct340("eceba", 2)
             << "]\n\n";
-            return;
+        return;
+    }
+
+    // 347. Top K Frequent Elements Test
+    void topKFrequent347Test() {
+        cout << "347. Top K Frequent Elements test starts.\n";
+        vector<int> nums = {1, 1, 1, 2, 2, 3};
+        vector<int> result = implObj->topKFrequent347(nums, 2);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
     }
 
 private:

@@ -427,6 +427,33 @@ public:
 
         return result;
     }
+
+    // 347. Top K Frequent Elements
+    vector<int> topKFrequent347(vector<int>& nums, int k) {
+        vector<int> result;
+        unordered_map<int, int> num_freq_map;
+        for (int i = 0; i < nums.size(); ++i) {
+            num_freq_map[nums[i]]++;
+        }
+        
+        map<int, vector<int>> freq_num_map;
+        for (auto &iter : num_freq_map) {
+            freq_num_map[iter.second].push_back(iter.first);
+        }
+        
+        for (auto rit = freq_num_map.rbegin(); rit != freq_num_map.rend(); ++rit) {
+            for (int i = 0; i < rit->second.size() && k > 0; ++i) {
+                result.push_back(rit->second[i]);
+                k--;
+            }
+            
+            if (k == 0) {
+                return result;
+            }
+        }
+        
+        return result;
+    }
 };
 
 #endif
