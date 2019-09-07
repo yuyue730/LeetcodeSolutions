@@ -166,6 +166,15 @@ public:
         return;
     }
 
+    // 340. Longest Substring with At Most K Distinct Characters Test
+    void lengthOfLongestSubstringKDistinct340Test() {
+        cout << "340. Longest Substring with At Most K Distinct Characters test starts.\n";
+        cout << "eceba and 2 will have max length = [" 
+            << implObj->lengthOfLongestSubstringKDistinct340("eceba", 2)
+            << "]\n\n";
+            return;
+    }
+
 private:
     HashMapImpl* implObj;
 };

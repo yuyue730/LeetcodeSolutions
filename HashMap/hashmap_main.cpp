@@ -23,6 +23,7 @@ int main() {
     testObj->isAnagram242Test();
     testObj->removeDuplicateLetters316Test();
     testObj->palindromePairs336Test();
+    testObj->lengthOfLongestSubstringKDistinct340Test();
 
     return 0;
 }

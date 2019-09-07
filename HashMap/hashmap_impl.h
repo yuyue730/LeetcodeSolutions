@@ -406,6 +406,27 @@ public:
 
         return true;
     }
+
+    // 340. Longest Substring with At Most K Distinct Characters
+    int lengthOfLongestSubstringKDistinct340(string s, int k) {
+        int result = 0;
+        unordered_map<char, int> charFreqMap;
+        int left = 0;
+
+        for (int i = 0; i < s.length(); ++i) {
+            charFreqMap[s[i]]++;
+            while (charFreqMap.size() > k) {
+                charFreqMap[s[left]]--;
+                if (charFreqMap[s[left]] == 0) {
+                    charFreqMap.erase(s[left]);
+                }
+                ++left;
+            }
+            result = max(result, i - left + 1);
+        }
+
+        return result;
+    }
 };
 
 #endif
