@@ -469,6 +469,25 @@ public:
         
         return result;
     }
+
+    // 350. Intersection of Two Arrays II
+    vector<int> intersect350(vector<int>& nums1, vector<int>& nums2) {
+        vector<int> result;
+        unordered_map<int, int> nums1Freq_map;
+        
+        for (int i = 0; i < nums1.size(); ++i) {
+            nums1Freq_map[nums1[i]]++;
+        }
+        
+        for (int i = 0; i < nums2.size(); ++i) {
+            if (nums1Freq_map[nums2[i]] > 0) {
+                result.push_back(nums2[i]);
+                nums1Freq_map[nums2[i]]--;
+            }
+        }
+        
+        return result;
+    }
 };
 
 #endif

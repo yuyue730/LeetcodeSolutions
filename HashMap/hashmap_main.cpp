@@ -26,6 +26,7 @@ int main() {
     testObj->lengthOfLongestSubstringKDistinct340Test();
     testObj->topKFrequent347Test();
     testObj->intersection349Test();
+    testObj->intersect350Test();
 
     return 0;
 }

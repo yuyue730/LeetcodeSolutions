@@ -200,6 +200,19 @@ public:
         return;
     }
 
+    // 350. Intersection of Two Arrays II Test
+    void intersect350Test() {
+        cout << "350. Intersection of Two Arrays II test starts.\n";
+        vector<int> nums1 = {1,2,2,1}, nums2 = {2,2};
+        vector<int> result = implObj->intersect350(nums1, nums2);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     HashMapImpl* implObj;
 };
