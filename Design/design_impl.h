@@ -675,4 +675,64 @@ private:
     int m_size;
 };
 
+// 353. Design Snake Game
+class SnakeGame353 {
+public:
+    /** Initialize your data structure here.
+        @param width - screen width
+        @param height - screen height 
+        @param food - A list of food positions
+        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0]. */
+    SnakeGame353(int width, int height, vector<vector<int>>& food) {
+        m_height = height;
+        m_width = width;
+        m_score = 0;
+
+        for (int i = 0; i < food.size(); ++i) {
+            m_food.push_back({food[i][0], food[i][1]});
+        }
+
+        m_snake.push_back({0, 0});
+    }
+    
+    /** Moves the snake.
+        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down 
+        @return The game's score after the move. Return -1 if game over. 
+        Game over when snake crosses the screen boundary or bites its body. */
+    int move(string direction) {
+        auto head = m_snake.front(), tail = m_snake.back();
+        m_snake.pop_back();
+
+        if (direction == "U") {
+            head.first--;
+        } else if (direction == "D") {
+            head.first++;
+        } else if (direction == "L") {
+            head.second--;
+        } else if (direction == "R") {
+            head.second++;
+        }
+
+        if (head.first < 0 || head.first >= m_height || 
+            head.second < 0 || head.second >= m_width || 
+            count(m_snake.begin(), m_snake.end(), head))
+        {
+            return -1;
+        }
+
+        m_snake.insert(m_snake.begin(), head);
+        if (!m_food.empty() && m_food.front() == head) {
+            ++m_score;
+            m_food.erase(m_food.begin());
+            m_snake.push_back(tail);
+        }
+
+        return m_score;
+    }
+
+private:
+    vector<pair<int, int>> m_food, m_snake;
+    int m_height, m_width, m_score;
+};
+
 #endif

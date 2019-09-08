@@ -22,6 +22,7 @@ int main() {
     testObj->Codec297Test();
     testObj->MovingAverage346Test();
     testObj->TicTacToe348Test();
+    testObj->SnakeGame353Test();
 
     return 0;
 }

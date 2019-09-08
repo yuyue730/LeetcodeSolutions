@@ -199,6 +199,24 @@ public:
         cout << "Step 5 (2,0,1) = [" << toe.move(2, 0, 1) << "]\n";
         cout << "Step 6 (1,0,2) = [" << toe.move(1, 0, 2) << "]\n";
         cout << "Step 7 (2,1,1) = [" << toe.move(2, 1, 1) << "]\n\n";
+        return;
+    }
+
+    // 353. Design Snake Game Test
+    void SnakeGame353Test() {
+        cout << "353. Design Snake Game test starts.\n";
+        int width = 3, height = 2; 
+        vector<vector<int>> food = {{1, 2}, {0, 1}};
+
+        SnakeGame353 snake(width, height, food);
+
+        cout << "R => " << snake.move("R") << "; ";
+        cout << "D => " << snake.move("D") << "; ";
+        cout << "R => " << snake.move("R") << "\n";
+        cout << "U => " << snake.move("U") << "; ";
+        cout << "L => " << snake.move("L") << "; ";
+        cout << "U => " << snake.move("U") << "\n";
+        return;
     }
 };
 
