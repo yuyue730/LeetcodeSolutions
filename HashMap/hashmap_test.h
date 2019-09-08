@@ -187,6 +187,19 @@ public:
         return;
     }
 
+    // 349. Intersection of Two Arrays Test
+    void intersection349Test() {
+        cout << "349. Intersection of Two Arrays test starts.\n";
+        vector<int> nums1 = {1,2,2,1}, nums2 = {2,2};
+        vector<int> result = implObj->intersection349(nums1, nums2);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     HashMapImpl* implObj;
 };
