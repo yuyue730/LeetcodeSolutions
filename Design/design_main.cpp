@@ -21,6 +21,7 @@ int main() {
     testObj->MedianFinder295Test();
     testObj->Codec297Test();
     testObj->MovingAverage346Test();
+    testObj->TicTacToe348Test();
 
     return 0;
 }

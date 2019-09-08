@@ -596,4 +596,83 @@ private:
     queue<int> m_window;
 };
 
+// 348. Design Tic-Tac-Toe
+class TicTacToe348 {
+public:
+    /** Initialize your data structure here. */
+    TicTacToe348(int n) {
+        board.resize(n, vector<int>(n, 0));
+        m_size = n;
+    }
+    
+    /** Player {player} makes a move at ({row}, {col}).
+        @param row The row of the board.
+        @param col The column of the board.
+        @param player The player, can be either 1 or 2.
+        @return The current winning condition, can be either:
+                0: No one wins.
+                1: Player 1 wins.
+                2: Player 2 wins. */
+    int move(int row, int col, int player) {
+        if (board[row][col] != 0) {
+            throw "Cannot play on non zero grid";
+        }
+
+        board[row][col] = player;
+        int i = 1;
+        while (i < m_size) {
+            if (board[i][col] != board[i - 1][col]) {
+                break;
+            }
+            ++i;
+        }
+        if (i == m_size) {
+            return player;
+        }
+
+        int j = 1;
+        while (j < m_size) {
+            if (board[row][j] != board[row][j - 1]) {
+                break;
+            }
+            ++j;
+        }
+        if (j == m_size) {
+            return player;
+        }
+
+        if (col == row) {
+            int m = 1;
+            while (m < m_size) {
+                if (board[m][m] != board[m - 1][m - 1]) {
+                    break;
+                }
+                ++m;
+            }
+            if (m == m_size) {
+                return player;
+            }
+        }
+
+        if (row + col == m_size - 1) {
+            int n = 1;
+            while (n < m_size) {
+                if (board[n][m_size - n - 1] != board[n - 1][m_size - n]) {
+                    break;
+                }
+                ++n;
+            }
+            if (n == m_size) {
+                return player;
+            }
+        }
+
+        return 0;
+    }
+
+private:
+    vector<vector<int>> board;
+    int m_size;
+};
+
 #endif

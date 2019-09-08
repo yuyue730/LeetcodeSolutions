@@ -187,6 +187,19 @@ public:
         cout << "Push 5 = [" << (double)m.next(5) << "]\n\n";
         return;
     }
+
+    // 348. Design Tic-Tac-Toe Test
+    void TicTacToe348Test() {
+        cout << "348. Design Tic-Tac-Toe test starts.\n";
+        TicTacToe348 toe(3);
+        cout << "Step 1 (0,0,1) = [" << toe.move(0, 0, 1) << "]\n";
+        cout << "Step 2 (0,2,2) = [" << toe.move(0, 2, 2) << "]\n";
+        cout << "Step 3 (2,2,1) = [" << toe.move(2, 2, 1) << "]\n";
+        cout << "Step 4 (1,1,2) = [" << toe.move(1, 1, 2) << "]\n";
+        cout << "Step 5 (2,0,1) = [" << toe.move(2, 0, 1) << "]\n";
+        cout << "Step 6 (1,0,2) = [" << toe.move(1, 0, 2) << "]\n";
+        cout << "Step 7 (2,1,1) = [" << toe.move(2, 1, 1) << "]\n\n";
+    }
 };
 
 #endif
