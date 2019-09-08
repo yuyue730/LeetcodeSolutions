@@ -414,6 +414,14 @@ public:
         return;
     }
 
+    // 164. Maximum Gap Test
+    void maximumGap164Test() {
+        cout << "164. Maximum Gap test starts.\n";
+        vector<int> nums = {3,6,9,1};
+        cout << "Result = [" << implObj->maximumGap164(nums) << "]\n\n";
+        return;
+    }
+
     // 167. Two Sum II - Input array is sorted Test
     void twoSum167Test() {
         cout << "167. Two Sum II - Input array is sorted test starts.\n";

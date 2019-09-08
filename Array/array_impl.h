@@ -819,6 +819,43 @@ public:
         return result;
     }
 
+    // 164. Maximum Gap
+    int maximumGap164(vector<int>& nums) {
+        if (nums.size() < 2) {
+            return 0;
+        }
+
+        int g_max = INT_MIN, g_min = INT_MAX;
+        for (int i = 0; i < nums.size(); ++i) {
+            g_max = max(g_max, nums[i]);
+            g_min = min(g_min, nums[i]);
+        }
+
+        int n_size = nums.size();
+        int b_size = (g_max - g_min) / n_size + 1;
+        int b_ct = (g_max - g_min) / b_size + 1;
+
+        vector<pair<int, int>> b_minmax(b_ct, {INT_MAX, INT_MIN});
+        for (int i = 0; i < n_size; ++i) {
+            int b_id = (nums[i] - g_min) / b_size;
+            b_minmax[b_id].first = min(b_minmax[b_id].first, nums[i]);
+            b_minmax[b_id].second = max(b_minmax[b_id].second, nums[i]);
+        }
+
+        int pre = 0;
+        int result = 0;
+        for (int i = 1; i < b_ct; ++i) {
+            if (b_minmax[i].first == INT_MAX || b_minmax[i].second == INT_MIN) {
+                continue;
+            }
+
+            result = max(result, b_minmax[i].first - b_minmax[pre].second);
+            pre = i;
+        }
+
+        return result;
+    }
+
     // 167. Two Sum II - Input array is sorted
     vector<int> twoSum167(vector<int>& numbers, int target) {
         int left = 0, right = numbers.size() - 1;
