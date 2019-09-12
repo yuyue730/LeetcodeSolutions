@@ -24,6 +24,7 @@ int main() {
     testObj->TicTacToe348Test();
     testObj->SnakeGame353Test();
     testObj->Twitter355Test();
+    testObj->Logger359Test();
 
     return 0;
 }

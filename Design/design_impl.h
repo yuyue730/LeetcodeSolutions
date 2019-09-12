@@ -791,4 +791,31 @@ private:
     int m_time;
 };
 
+// 359. Logger Rate Limiter
+class Logger359 {
+public:
+    /** Initialize your data structure here. */
+    Logger359() { }
+    
+    /** Returns true if the message should be printed in the given timestamp, otherwise returns false.
+        If this method returns false, the message will not be printed.
+        The timestamp is in seconds granularity. */
+    bool shouldPrintMessage(int timestamp, string message) {
+        if (!msg_time_map.count(message)) {
+            msg_time_map[message] = timestamp;
+            return true;
+        }
+        else {
+            bool isPrint = (timestamp - 10) >= msg_time_map[message];
+            if (isPrint) {
+                msg_time_map[message] = timestamp;
+            }
+            return isPrint;
+        }
+    }
+    
+private:
+    map<string ,int> msg_time_map;
+};
+
 #endif

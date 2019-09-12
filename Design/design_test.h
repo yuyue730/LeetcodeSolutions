@@ -242,6 +242,19 @@ public:
         }
         cout << "]\n\n";
     }
+
+    // 359. Logger Rate Limiter Test
+    void Logger359Test() {
+        cout << "359. Logger Rate Limiter test starts.\n";
+        Logger359 logger;
+
+        cout << "1, foo -> [" << logger.shouldPrintMessage(1, "foo") << "]\n";
+        cout << "2, bar -> [" << logger.shouldPrintMessage(2, "bar") << "]\n";
+        cout << "3, foo -> [" << logger.shouldPrintMessage(3,"foo") << "]\n";
+        cout << "8, bar -> [" << logger.shouldPrintMessage(8,"bar") << "]\n";
+        cout << "10, foo -> [" << logger.shouldPrintMessage(10,"foo") << "]\n";
+        cout << "11, foo -> [" << logger.shouldPrintMessage(11,"foo") << "]\n\n";
+    }
 };
 
 #endif
