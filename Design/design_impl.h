@@ -3,7 +3,9 @@
 
 #include <iostream>
 #include <list>
+#include <map>
 #include <unordered_map>
+#include <unordered_set>
 #include <stack>
 #include <queue>
 #include <sstream>
@@ -733,6 +735,60 @@ public:
 private:
     vector<pair<int, int>> m_food, m_snake;
     int m_height, m_width, m_score;
+};
+
+// 355. Design Twitter
+class Twitter355 {
+public:
+    /** Initialize your data structure here. */
+    Twitter355() {
+        m_time = 0;
+    }
+    
+    /** Compose a new tweet. */
+    void postTweet(int userId, int tweetId) {
+        m_person_tweets_map[userId].insert({m_time, tweetId});
+        m_time++;
+    }
+    
+    /** Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent. */
+    vector<int> getNewsFeed(int userId) {
+        m_person_friends_map[userId].insert(userId);
+
+        map<int, int> latest10;
+
+        for (auto each_friend: m_person_friends_map[userId]) {
+            for (auto each_tweet: m_person_tweets_map[each_friend]) {
+                latest10.insert(each_tweet);
+                while (latest10.size() > 10) {
+                    latest10.erase(latest10.begin());
+                }
+            }
+        }
+
+        vector<int> result;
+        for (auto each: latest10) {
+            result.push_back(each.second);
+        }
+        reverse(result.begin(), result.end());
+
+        return result;
+    }
+    
+    /** Follower follows a followee. If the operation is invalid, it should be a no-op. */
+    void follow(int followerId, int followeeId) {
+        m_person_friends_map[followerId].insert(followeeId);
+    }
+    
+    /** Follower unfollows a followee. If the operation is invalid, it should be a no-op. */
+    void unfollow(int followerId, int followeeId) {
+        m_person_friends_map[followerId].erase(followeeId);
+    }
+
+private:
+    unordered_map<int, unordered_set<int>> m_person_friends_map;
+    unordered_map<int, unordered_map<int, int>> m_person_tweets_map;
+    int m_time;
 };
 
 #endif

@@ -218,6 +218,30 @@ public:
         cout << "U => " << snake.move("U") << "\n";
         return;
     }
+
+    // 355. Design Twitter Test
+    void Twitter355Test() {
+        cout << "355. Design Twitter test starts.\n";
+        Twitter355 twitter;
+        twitter.postTweet(1, 5);
+        twitter.follow(1, 2);
+        twitter.postTweet(2, 6);
+
+        vector<int> get1_follow2 = twitter.getNewsFeed(1);
+        cout << "postTweet(1, 5) -> follow(1, 2) -> postTweet(2, 6) -> Get 1 = [";
+        for (int i = 0; i < get1_follow2.size(); ++i) {
+            cout << get1_follow2[i] << ((i == get1_follow2.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n";
+
+        twitter.unfollow(1, 2);
+        vector<int> get1_unfollow2 = twitter.getNewsFeed(1);
+        cout << "unfollow(1, 2) -> Get 1 = [";
+        for (int i = 0; i < get1_unfollow2.size(); ++i) {
+            cout << get1_unfollow2[i] << ((i == get1_unfollow2.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
 };
 
 #endif
