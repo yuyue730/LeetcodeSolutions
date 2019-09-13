@@ -410,6 +410,19 @@ public:
         return result;
     }
 
+    // 223. Rectangle Area
+    int computeArea223(int A, int B, int C, int D, int E, int F, int G, int H) {
+        long long area1 = (D - B) * (C - A);
+        long long area2 = (G - E) * (H - F);
+        
+        if (E >= C || G <= A || H <= B || F >= D) {
+            return static_cast<int>(area1 + area2);
+        } else {
+            long long overlap = (min(C, G) - max(A, E)) * (min(D, H) - max(B, F));
+            return static_cast<int>(area1 + area2 - overlap);
+        }
+    }
+
     // 241. Different Ways to Add Parentheses
     vector<int> diffWaysToCompute241(string input) {
         vector<int> result;

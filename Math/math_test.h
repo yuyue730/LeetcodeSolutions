@@ -126,6 +126,14 @@ public:
         return;
     }
 
+    // 223. Rectangle Area Test
+    void computeArea223Test() {
+        cout << "223. Rectangle Area test starts.\n";
+        cout << "Example area = [" << implObj->computeArea223(-3, 0, 3, 4, 0, -1, 9, 2)
+            << "]\n\n";
+        return;
+    }
+
     // 241. Different Ways to Add Parentheses Test
     void diffWaysToCompute241Test() {
         cout << "241. Different Ways to Add Parentheses test starts.\n";
