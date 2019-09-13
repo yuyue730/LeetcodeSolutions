@@ -25,6 +25,7 @@ int main() {
     testObj->SnakeGame353Test();
     testObj->Twitter355Test();
     testObj->Logger359Test();
+    testObj->HitCounter362Test();
 
     return 0;
 }

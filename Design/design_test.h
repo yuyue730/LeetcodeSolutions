@@ -250,10 +250,24 @@ public:
 
         cout << "1, foo -> [" << logger.shouldPrintMessage(1, "foo") << "]\n";
         cout << "2, bar -> [" << logger.shouldPrintMessage(2, "bar") << "]\n";
-        cout << "3, foo -> [" << logger.shouldPrintMessage(3,"foo") << "]\n";
-        cout << "8, bar -> [" << logger.shouldPrintMessage(8,"bar") << "]\n";
-        cout << "10, foo -> [" << logger.shouldPrintMessage(10,"foo") << "]\n";
-        cout << "11, foo -> [" << logger.shouldPrintMessage(11,"foo") << "]\n\n";
+        cout << "3, foo -> [" << logger.shouldPrintMessage(3, "foo") << "]\n";
+        cout << "8, bar -> [" << logger.shouldPrintMessage(8, "bar") << "]\n";
+        cout << "10, foo -> [" << logger.shouldPrintMessage(10, "foo") << "]\n";
+        cout << "11, foo -> [" << logger.shouldPrintMessage(11, "foo") << "]\n\n";
+    }
+
+    // 362. Design Hit Counter Test
+    void HitCounter362Test() {
+        cout << "362. Design Hit Counter test starts.\n";
+        HitCounter362 counter;
+        counter.hit(1);
+        counter.hit(2);
+        counter.hit(3);
+        cout << "Get hit @4 = [" << counter.getHits(4) << "]\n";
+        counter.hit(300);
+        cout << "Get hit @300 = [" << counter.getHits(300) << "]\n";
+        cout << "Get hit @301 = [" << counter.getHits(301) << "]\n\n";
+        return; 
     }
 };
 

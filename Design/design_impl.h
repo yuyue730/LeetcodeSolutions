@@ -818,4 +818,30 @@ private:
     map<string ,int> msg_time_map;
 };
 
+// 362. Design Hit Counter
+class HitCounter362 {
+public:
+    /** Initialize your data structure here. */
+    HitCounter362() { }
+    
+    /** Record a hit.
+        @param timestamp - The current timestamp (in seconds granularity). */
+    void hit(int timestamp) {
+        q.push(timestamp);
+    }
+    
+    /** Return the number of hits in the past 5 minutes.
+        @param timestamp - The current timestamp (in seconds granularity). */
+    int getHits(int timestamp) {
+        while (!q.empty() && timestamp - q.front() >= 5 * 60) {
+            q.pop();
+        }
+        
+        return q.size();
+    }
+
+private:
+    queue<int> q;
+};
+
 #endif
