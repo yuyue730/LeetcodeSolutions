@@ -45,6 +45,13 @@ public:
         return;
     }
 
+    // 371. Sum of Two Integers Test
+    void getSum371Test() {
+        cout << "371. Sum of Two Integers test starts.\n";
+        cout << "1 + 2 = [" << implObj->getSum371(1, 2) << "]\n\n";
+        return; 
+    }
+
 private:
     BitManipulationImpl * implObj;
 };

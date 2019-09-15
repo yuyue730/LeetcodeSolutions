@@ -55,6 +55,17 @@ public:
         }
         return result;
     }
+
+    // 371. Sum of Two Integers
+    int getSum371(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        
+        int curSum = a ^ b;
+        int carry = (a & b & 0x7ffffffff) << 1;
+        return getSum371(curSum, carry);
+    }
 };
 
 #endif

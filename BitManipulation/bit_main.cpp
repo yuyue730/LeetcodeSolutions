@@ -12,5 +12,6 @@ int main() {
     testObj->singleNumber137Test();
     testObj->rangeBitwiseAnd201Test();
     testObj->missingNumber268Test();
+    testObj->getSum371Test();
     return 0;
 }
