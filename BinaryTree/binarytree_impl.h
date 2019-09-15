@@ -881,6 +881,32 @@ public:
 
         return count_node(cur->left) + count_node(cur->right) + 1;
     }
+
+    // 366. Find Leaves of Binary Tree
+    vector<vector<int>> findLeaves366(TreeNode* root) {
+        vector<vector<int>> result;
+        if (!root) {
+            return result;
+        }
+        
+        findLeaves_dfs(root, result);
+        
+        return result;
+    }
+    
+    int findLeaves_dfs(TreeNode* cur, vector<vector<int>> &result) {
+        if (!cur) {
+            return -1;
+        }
+        
+        int depth = max(findLeaves_dfs(cur->left, result), findLeaves_dfs(cur->right, result)) + 1;
+        if (depth >= result.size()) {
+            result.resize(depth + 1);
+        }
+        
+        result[depth].push_back(cur->val);
+        return depth;
+    }
 };
 
 #endif

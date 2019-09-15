@@ -39,6 +39,7 @@ int main() {
     testObj->closestKValues272Test();
     testObj->verticalOrder314Test();
     testObj->largestBSTSubtree333Test();
+    testObj->findLeaves366Test();
 
     return 0;
 }

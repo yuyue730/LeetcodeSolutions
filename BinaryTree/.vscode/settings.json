@@ -3,6 +3,8 @@
         "vector": "cpp",
         "algorithm": "cpp",
         "ios": "cpp",
-        "__locale": "cpp"
+        "__locale": "cpp",
+        "iosfwd": "cpp",
+        "iterator": "cpp"
     }
 }

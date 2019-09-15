@@ -608,6 +608,31 @@ public:
         return;
     }
 
+    // 366. Find Leaves of Binary Tree Test
+    void findLeaves366Test() {
+        cout << "366. Find Leaves of Binary Tree test starts.\n";
+        TreeNode *root = new TreeNode(1);
+        TreeNode *cur = root;
+        cur->left = new TreeNode(2);
+        cur->right = new TreeNode(3);
+
+        cur = cur->left;
+        cur->left = new TreeNode(4);
+        cur->right = new TreeNode(5);
+
+        vector<vector<int>> result = implObj->findLeaves366(root);
+        cout << "Vector result = [\n";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << "[";
+            for (int j = 0; j < result[i].size(); ++j) {
+                cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
+            }
+            cout << "]\n";
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     BinaryTreeImpl * implObj;
 };
