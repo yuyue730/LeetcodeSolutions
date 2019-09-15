@@ -1277,6 +1277,36 @@ public:
 
         return false;
     }
+
+    // 363. Max Sum of Rectangle No Larger Than K
+    int maxSumSubmatrix363(vector<vector<int>>& matrix, int k) {
+        if (matrix.size() == 0 || matrix[0].size() == 0) {
+            return 0;
+        }
+
+        int m = matrix.size(), n = matrix[0].size();
+        int result = INT_MIN;
+        for (int left = 0; left < n; ++left) {
+            vector<int> sum(m, 0);
+            for (int j = left; j < n; ++j) {
+                for (int i = 0; i < m; ++i) {
+                    sum[i] += matrix[i][j];
+                }
+
+                for (int i = 0; i < sum.size(); ++i) {
+                    int curSum = 0;
+                    for (int j = i; j < sum.size(); ++j) {
+                        curSum += sum[j];
+                        if (curSum <= k) {
+                            result = max(result, curSum);
+                        }
+                    }
+                }
+            }
+        }
+        
+        return result;
+    }
 };
 
 #endif
