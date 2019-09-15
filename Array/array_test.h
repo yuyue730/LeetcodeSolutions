@@ -655,6 +655,19 @@ public:
         return;
     }
 
+    // 378. Kth Smallest Element in a Sorted Matrix Test
+    void kthSmallest378Test() {
+        cout << "378. Kth Smallest Element in a Sorted Matrix test starts.\n";
+        vector<vector<int>> matrix = {
+            {1, 5, 9},
+            {10, 11, 13},
+            {12, 13, 15}
+        };
+
+        cout << "8th smallest = [" << implObj->kthSmallest378(matrix, 8) << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };

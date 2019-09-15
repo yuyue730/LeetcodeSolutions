@@ -61,6 +61,7 @@ int main() {
     testObj->countSmaller315Test();
     testObj->increasingTriplet334Test();
     testObj->maxSumSubmatrix363Test();
+    testObj->kthSmallest378Test();
 
     return 0;
 }

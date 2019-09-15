@@ -1307,6 +1307,26 @@ public:
         
         return result;
     }
+
+    // 378. Kth Smallest Element in a Sorted Matrix
+    int kthSmallest378(vector<vector<int>>& matrix, int k) {
+        int left = matrix[0][0], right = matrix.back().back();
+        
+        while (left < right) {
+            int mid = (left + right) / 2;
+            int count = 0;
+            for (int i = 0; i < matrix.size(); ++i) {
+                count += upper_bound(matrix[i].begin(), matrix[i].end(), mid) - matrix[i].begin();
+            }
+            
+            if (count < k) {
+                left = mid + 1;
+            }
+            else right = mid;
+        }
+        
+        return left;
+    }
 };
 
 #endif
