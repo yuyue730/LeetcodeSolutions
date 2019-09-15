@@ -60,6 +60,7 @@ int main() {
     testObj->minTotalDistance296Test();
     testObj->countSmaller315Test();
     testObj->increasingTriplet334Test();
+    testObj->maxSumSubmatrix363Test();
 
     return 0;
 }

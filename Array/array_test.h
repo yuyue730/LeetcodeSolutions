@@ -644,6 +644,17 @@ public:
         return;
     }
 
+    // 363. Max Sum of Rectangle No Larger Than K Test
+    void maxSumSubmatrix363Test() {
+        cout << "363. Max Sum of Rectangle No Larger Than K test starts.\n";
+        vector<vector<int>> matrix = {
+            {1, 0, 1}, 
+            {0, -2, 3}
+        };
+        cout << "Max Sum = [" << implObj->maxSumSubmatrix363(matrix, 2) << "]\n\n";
+        return;
+    }
+
 private:
     ArrayImpl * implObj;
 };
