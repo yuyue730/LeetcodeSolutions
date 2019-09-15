@@ -391,6 +391,56 @@ public:
 
         result.insert(result.begin(), cur);
     }
+
+    // 364. Nested List Weight Sum II
+    /** This problem can only be run online
+    int depthSumInverse364(vector<NestedInteger>& nestedList) {
+        if (nestedList.empty()) {
+            return 0;
+        }
+        
+        vector<vector<int>> level;
+        queue<NestedInteger> q;
+        
+        for (int i = 0; i < nestedList.size(); ++i) {
+            q.push(nestedList[i]);
+        }
+        
+        while (!q.empty()) {
+            int levelSize = q.size();
+            vector<int> curLevel;
+            
+            for (int i = 0; i < levelSize; ++i) {
+                auto cur = q.front();
+                q.pop();
+                
+                if (cur.isInteger()) {
+                    curLevel.push_back(cur.getInteger());
+                } else {
+                    auto nextLevel = cur.getList();
+                    for (int j = 0; j < nextLevel.size(); ++j) {
+                        q.push(nextLevel[j]);
+                    }
+                }
+            }
+            
+            level.push_back(curLevel);
+        }
+        
+        int levelCt = 1;
+        int result = 0;
+        for (int i = level.size() - 1; i >= 0; --i) {
+            int curSum = 0;
+            for (int j = 0; j < level[i].size(); ++j) {
+                curSum += level[i][j];
+            }
+            
+            result += levelCt * curSum;
+            ++levelCt;
+        }
+        
+        return result;
+    }*/
 };
 
 #endif
