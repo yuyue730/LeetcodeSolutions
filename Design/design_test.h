@@ -269,6 +269,20 @@ public:
         cout << "Get hit @301 = [" << counter.getHits(301) << "]\n\n";
         return; 
     }
+
+    // 379. Design Phone Directory Test
+    void PhoneDirectory379Test() {
+        cout << "379. Design Phone Directory test starts.\n";
+        PhoneDirectory379 directory(3);
+        cout << "Get = " << directory.get() << "; ";
+        cout << "Get = " << directory.get() << "; ";
+        cout << "Check(2) = " << directory.check(2) << "\n";
+        cout << "Get = " << directory.get() << "; ";
+        cout << "Check(2) = " << directory.check(2) << "; ";
+        directory.release(2);
+        cout << "Release (2) and Check(2) = " << directory.check(2) << "\n\n";
+        return;
+    }
 };
 
 #endif

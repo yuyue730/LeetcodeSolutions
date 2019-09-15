@@ -26,6 +26,7 @@ int main() {
     testObj->Twitter355Test();
     testObj->Logger359Test();
     testObj->HitCounter362Test();
+    testObj->PhoneDirectory379Test();
 
     return 0;
 }

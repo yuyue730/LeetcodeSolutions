@@ -844,4 +844,48 @@ private:
     queue<int> q;
 };
 
+// 379. Design Phone Directory
+class PhoneDirectory379 {
+public:
+    /** Initialize your data structure here
+        @param maxNumbers - The maximum numbers that can be stored in the phone directory. */
+    PhoneDirectory379(int maxNumbers) {
+        isAvailable.resize(maxNumbers, true);
+        for (int i = 0; i < maxNumbers; ++i) {
+            pq.push(i);
+        }
+    }
+    
+    /** Provide a number which is not assigned to anyone.
+        @return - Return an available number. Return -1 if none is available. */
+    int get() {
+        if (!pq.size()) {
+            return -1;
+        }
+        int result = pq.top();
+        pq.pop();
+        isAvailable[result] = false;
+        return result;
+    }
+    
+    /** Check if a number is available or not. */
+    bool check(int number) {
+        return isAvailable[number];
+    }
+    
+    /** Recycle or release a number. */
+    void release(int number) {
+        if (isAvailable[number]) {
+            return;
+        }
+        
+        isAvailable[number] = true;
+        pq.push(number);
+    }
+    
+private:
+    vector<bool> isAvailable;
+    priority_queue<int, vector<int>, greater<int>> pq;
+};
+
 #endif
