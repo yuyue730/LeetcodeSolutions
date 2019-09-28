@@ -27,6 +27,7 @@ int main() {
     testObj->Logger359Test();
     testObj->HitCounter362Test();
     testObj->PhoneDirectory379Test();
+    testObj->RandomizedSet380Test();
 
     return 0;
 }

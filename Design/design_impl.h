@@ -888,4 +888,48 @@ private:
     priority_queue<int, vector<int>, greater<int>> pq;
 };
 
+// 380. Insert Delete GetRandom O(1)
+class RandomizedSet380 {
+public:
+    /** Initialize your data structure here. */
+    RandomizedSet380() {}
+    
+    /** Inserts a value to the set. Returns true if the set did not already 
+     * contain the specified element. */
+    bool insert(int val) {
+        if (num_idx_map.count(val)) {
+            return false;
+        }
+
+        nums.push_back(val);
+        num_idx_map[val] = nums.size() - 1;
+        return true;
+    }
+    
+    /** Removes a value from the set. Returns true if the set contained the 
+     * specified element. */
+    bool remove(int val) {
+        if (!num_idx_map.count(val)) {
+            return false;
+        }
+
+        int last = nums.back();
+        int val_idx = num_idx_map[val];
+        nums[val_idx] = last;
+        num_idx_map[last] = val_idx;
+        num_idx_map.erase(val);
+        nums.pop_back();
+        return true;
+    }
+    
+    /** Get a random element from the set. */
+    int getRandom() {
+        return nums[rand() % nums.size()];
+    }
+
+private:
+    vector<int> nums;
+    unordered_map<int, int> num_idx_map;
+};
+
 #endif

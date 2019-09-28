@@ -283,6 +283,20 @@ public:
         cout << "Release (2) and Check(2) = " << directory.check(2) << "\n\n";
         return;
     }
+
+    // 380. Insert Delete GetRandom O(1) Test
+    void RandomizedSet380Test() {
+        cout << "380. Insert Delete GetRandom O(1) test starts.\n";
+        RandomizedSet380 randomSet;
+        cout << "Insert 1 = [" << randomSet.insert(1) << "]\n";
+        cout << "Remove 2 = [" << randomSet.remove(2) << "]\n";
+        cout << "Insert 2 = [" << randomSet.insert(2) << "]\n";
+        cout << "getRandom = [" << randomSet.getRandom() << "]\n";
+        cout << "Remove 1 = [" << randomSet.remove(1) << "]\n";
+        cout << "Insert 2 = [" << randomSet.insert(2) << "]\n";
+        cout << "getRandom = [" << randomSet.getRandom() << "]\n\n";
+        return;
+    }
 };
 
 #endif
