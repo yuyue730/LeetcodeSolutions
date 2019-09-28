@@ -932,4 +932,47 @@ private:
     unordered_map<int, int> num_idx_map;
 };
 
+// 381. Insert Delete GetRandom O(1) - Duplicates allowed
+class RandomizedCollection381 {
+public:
+    /** Initialize your data structure here. */
+    RandomizedCollection381() { }
+    
+    /** Inserts a value to the collection. Returns true if the collection did not already contain the specified element. */
+    bool insert(int val) {
+        int newIdx = nums.size();
+        idxHeapMap[val].push(newIdx);
+        nums.push_back(val);
+        return idxHeapMap[val].size() == 1;
+    }
+    
+    /** Removes a value from the collection. Returns true if the collection contained the specified element. */
+    bool remove(int val) {
+        if (idxHeapMap[val].empty()) {
+            return false;
+        }
+        
+        int maxIdx = idxHeapMap[val].top();
+        idxHeapMap[val].pop();
+        if (maxIdx != nums.size() - 1) {
+            int swapVal = nums.back();
+            idxHeapMap[swapVal].pop();
+            idxHeapMap[swapVal].push(maxIdx);
+            nums[maxIdx] = swapVal;
+        }
+
+        nums.pop_back();
+        return true;
+    }
+    
+    /** Get a random element from the collection. */
+    int getRandom() {
+        return nums[rand() % nums.size()];
+    }
+
+private:
+    vector<int> nums;
+    unordered_map<int, priority_queue<int>> idxHeapMap;
+};
+
 #endif

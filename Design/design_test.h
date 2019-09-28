@@ -297,6 +297,26 @@ public:
         cout << "getRandom = [" << randomSet.getRandom() << "]\n\n";
         return;
     }
+
+    // 381. Insert Delete GetRandom O(1) - Duplicates allowed Test
+    void RandomizedCollection381Test() {
+        cout << "381. Insert Delete GetRandom O(1) - Duplicates allowed test starts.\n";
+        RandomizedCollection381 randomCollection;
+        cout << "Insert 1 = [" << randomCollection.insert(1) << "]\n";
+        cout << "Insert 1 = [" << randomCollection.insert(1) << "]\n";
+        cout << "Insert 2 = [" << randomCollection.insert(2) << "]\n";
+        cout << "Get random for 10 times [";
+        for (int i = 0; i < 10; ++i) {
+            cout << randomCollection.getRandom();
+        }
+        cout << "]\n";
+        cout << "Remove 1 = [" << randomCollection.remove(1) << "]\n";
+        cout << "Get random for 10 times [";
+        for (int i = 0; i < 10; ++i) {
+            cout << randomCollection.getRandom();
+        }
+        cout << "]\n\n";
+    }
 };
 
 #endif
