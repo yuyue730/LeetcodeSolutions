@@ -144,6 +144,18 @@ public:
         return;
     }
 
+    // 244. Shortest Word Distance II Test
+    void WordDistance244Test() {
+        cout << "244. Shortest Word Distance II test starts.\n";
+        vector<string> strVec = {
+            "practice", "makes", "perfect", "coding", "makes"
+        };
+        HashMapImpl::WordDistance244 dist(strVec);
+        cout << "Min Distance between coding and makes = [" << dist.shortest("coding", "makes")
+            << "]\n\n";
+        return;
+    }
+
     // 316. Remove Duplicate Letters Test
     void removeDuplicateLetters316Test() {
         cout << "316. Remove Duplicate Letters test starts.\n";

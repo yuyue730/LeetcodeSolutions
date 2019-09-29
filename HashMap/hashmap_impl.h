@@ -327,6 +327,30 @@ public:
         return true;
     }
 
+    // 244. Shortest Word Distance II
+    class WordDistance244 {
+    public:
+        WordDistance244(vector<string>& words) {
+            for (int i = 0; i < words.size(); ++i) {
+                strIdxMap[words[i]].push_back(i);
+            }
+        }
+        
+        int shortest(string word1, string word2) {
+            int a = 0, b = 0;
+            int result = INT_MAX;
+            while (a < strIdxMap[word1].size() && b < strIdxMap[word2].size()) {
+                result = min(result, abs(strIdxMap[word1][a] - strIdxMap[word2][b]));
+                (strIdxMap[word1][a] < strIdxMap[word2][b]) ? ++a : ++b;
+            }
+
+            return result;
+        }
+
+    private:
+        unordered_map<string, vector<int>> strIdxMap;
+    };
+
     // 316. Remove Duplicate Letters
     string removeDuplicateLetters316(string s) {
         unordered_map<char, int> freq_map;

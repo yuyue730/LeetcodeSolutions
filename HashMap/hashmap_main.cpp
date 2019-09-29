@@ -21,6 +21,7 @@ int main() {
     testObj->isHappy202Test();
     testObj->isIsomorphic205Test();
     testObj->isAnagram242Test();
+    testObj->WordDistance244Test();
     testObj->removeDuplicateLetters316Test();
     testObj->palindromePairs336Test();
     testObj->lengthOfLongestSubstringKDistinct340Test();
