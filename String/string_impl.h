@@ -4,8 +4,10 @@
 #include <iostream>
 #include <string>
 #include <unordered_set>
+#include <unordered_map>
 #include <vector>
 #include <queue>
+#include <sstream>
 using namespace std;
 
 class StringImpl {
@@ -626,6 +628,40 @@ public:
             left++;
             right--;
         }
+    }
+
+    // 388. Longest Absolute File Path
+    int lengthLongestPath388(string input) {
+        if (input.empty()) {
+            return 0;
+        }
+
+        int result = 0;
+        istringstream iss(input);
+        string curLine;
+        unordered_map<int, int> levelLenMap { {0, 0} };
+
+        while (getline(iss, curLine)) {
+            if (curLine.find('\t') == string::npos) {
+                if (curLine.find('.') != string::npos) {
+                    result = max((int)curLine.length(), result);
+                } else {
+                    levelLenMap[0] = curLine.length();
+                }
+                continue;
+            }
+
+            int level = curLine.find_last_of('\t') + 1;
+            string curFileDirec = curLine.substr(level);
+            if (curFileDirec.find('.') != string::npos) {
+                result = max(
+                    levelLenMap[level - 1] + 1 + (int)curFileDirec.length(), result);
+            } else {
+                levelLenMap[level] = levelLenMap[level - 1] + 1 + curFileDirec.length();
+            }
+        }
+
+        return result;
     }
 };
 

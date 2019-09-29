@@ -29,6 +29,7 @@ int main() {
     testObj->numberToWords273Test();
     testObj->removeInvalidParentheses301Test();
     testObj->reverseString344Test();
+    testObj->lengthLongestPath388Test();
 
     return 0;
 }

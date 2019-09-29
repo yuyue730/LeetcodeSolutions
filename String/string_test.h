@@ -242,6 +242,14 @@ public:
         return;
     }
 
+    // 388. Longest Absolute File Path Test
+    void lengthLongestPath388Test() {
+        cout << "388. Longest Absolute File Path test starts.\n";
+        string s = "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext";
+        cout << "Max len = [" << implObj->lengthLongestPath388(s) << "]\n\n";
+        return;
+    }
+
 private:
     StringImpl * implObj;
 };
