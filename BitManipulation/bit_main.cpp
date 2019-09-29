@@ -13,5 +13,6 @@ int main() {
     testObj->rangeBitwiseAnd201Test();
     testObj->missingNumber268Test();
     testObj->getSum371Test();
+    testObj->validUtf8_393Test();
     return 0;
 }

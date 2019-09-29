@@ -341,6 +341,13 @@ public:
         return;
     }
 
+    // 394. Decode String Test
+    void decodeString394Test() {
+        cout << "394. Decode String test starts.\n";
+        cout << "Decode 3[a2[c]] = [" << implObj->decodeString394("3[a2[c]]") << "]\n\n";
+        return;
+    }
+
 private:
     BacktrackingImpl * implObj;
 };

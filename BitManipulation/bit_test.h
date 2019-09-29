@@ -49,7 +49,15 @@ public:
     void getSum371Test() {
         cout << "371. Sum of Two Integers test starts.\n";
         cout << "1 + 2 = [" << implObj->getSum371(1, 2) << "]\n\n";
-        return; 
+        return;
+    }
+
+    // 393. UTF-8 Validation Test
+    void validUtf8_393Test() {
+        cout << "393. UTF-8 Validation test starts.\n";
+        vector<int> data = {248, 130, 1};
+        cout << "Is valid = [" << implObj->validUtf8_393(data) << "]\n\n";
+        return;
     }
 
 private:

@@ -29,6 +29,7 @@ int main() {
     testObj->addOperators282Test();
     testObj->wallsAndGates286Test();
     testObj->longestIncreasingPath329Test();
+    testObj->decodeString394Test();
 
     return 0;
 }

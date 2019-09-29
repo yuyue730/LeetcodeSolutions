@@ -901,6 +901,38 @@ public:
     }
     */
 
+    // 394. Decode String
+    string decodeString394(string s) {
+        int idx = 0;
+        return decodeString394Rec(s, idx);
+    }
+
+    string decodeString394Rec(const string s, int &idx) {
+        string result = "";
+        while (idx < s.length() && s[idx] != ']') {
+            if (s[idx] < '0' || s[idx] > '9') {
+                result += s[idx];
+                ++idx;
+            } else {
+                int cnt = 0;
+                while (idx < s.length() && s[idx] >= '0' && s[idx] <= '9') {
+                    cnt = (cnt * 10 + (s[idx] - '0'));
+                    idx++;
+                }
+                assert(s[idx] == '[');
+                idx++;
+                string inner = decodeString394Rec(s, idx);
+                assert(s[idx] == ']');
+                idx++;
+
+                for (int j = 0; j < cnt; ++j) {
+                    result += inner;
+                }
+            }
+        }
+
+        return result;
+    }
 };
 
 #endif

@@ -66,6 +66,41 @@ public:
         int carry = (a & b & 0x7ffffffff) << 1;
         return getSum371(curSum, carry);
     }
+
+    // 393. UTF-8 Validation
+    bool validUtf8_393(vector<int>& data) {
+        int n = data.size();
+        for (int i = 0; i < n; ++i) {
+            if (data[i] < 0b10000000) {
+                continue;
+            } else {
+                int cnt1 = 0;
+                int curVal = data[i];
+                for (int j = 7; j >= 0; --j) {
+                    if (curVal >= pow(2, j)) {
+                        cnt1++;
+                    } else {
+                        break;
+                    }
+
+                    curVal -= pow(2, j);
+                }
+
+                if (cnt1 == 1 || cnt1 > 4 || i + cnt1 > n) {
+                    return false;
+                }
+
+                for (int j = i + 1; j < i + cnt1; ++j) {
+                    if (data[j] > 0b10111111 || data[j] < 0b10000000) {
+                        return false;
+                    }
+                }
+
+                i += (cnt1 - 1);
+            }
+        }
+        return true;
+    }
 };
 
 #endif
