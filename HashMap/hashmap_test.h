@@ -213,6 +213,14 @@ public:
         return;
     }
 
+    // 387. First Unique Character in a String Test
+    void firstUniqChar387Test() {
+        cout << "387. First Unique Character in a String test starts.\n";
+        cout << "First unique index of leetcode is [" << implObj->firstUniqChar387("leetcode") 
+            << "]\n\n";
+        return;
+    }
+
 private:
     HashMapImpl* implObj;
 };

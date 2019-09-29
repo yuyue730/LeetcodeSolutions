@@ -488,6 +488,22 @@ public:
         
         return result;
     }
+
+    // 387. First Unique Character in a String
+    int firstUniqChar387(string s) {
+        unordered_map<char, int> charFreqMap;
+        for (char &c : s) {
+            charFreqMap[c]++;
+        }
+        
+        for (int i = 0; i < s.size(); ++i) {
+            if (charFreqMap[s[i]] == 1) {
+                return i;
+            }
+        }
+        
+        return -1;
+    }
 };
 
 #endif

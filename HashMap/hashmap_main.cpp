@@ -27,6 +27,7 @@ int main() {
     testObj->topKFrequent347Test();
     testObj->intersection349Test();
     testObj->intersect350Test();
+    testObj->firstUniqChar387Test();
 
     return 0;
 }
