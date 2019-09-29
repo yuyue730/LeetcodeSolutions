@@ -423,6 +423,26 @@ public:
         }
     }
 
+    // 233. Number of Digit One
+    int countDigitOne233(int n) {
+        int result = 0;
+        int a = 1;
+        int b = 1;
+        while (n > 0) {
+            if (n % 10 == 0) {
+                result += (n / 10) * a;
+            } else if (n % 10 == 1) {
+                result += (n / 10) * a + b;
+            } else {
+                result += (n / 10 + 1) * a;
+            }
+            b += (n % 10) * a;
+            a *= 10;
+            n /= 10;
+        }
+        return result;
+    }
+
     // 241. Different Ways to Add Parentheses
     vector<int> diffWaysToCompute241(string input) {
         vector<int> result;

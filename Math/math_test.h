@@ -134,6 +134,13 @@ public:
         return;
     }
 
+    // 233. Number of Digit One Test
+    void countDigitOne233Test() {
+        cout << "233. Number of Digit One test starts.\n";
+        cout << "13 has ones = [" << implObj->countDigitOne233(13) << "]\n\n";
+        return;
+    }
+
     // 241. Different Ways to Add Parentheses Test
     void diffWaysToCompute241Test() {
         cout << "241. Different Ways to Add Parentheses test starts.\n";
@@ -143,6 +150,7 @@ public:
             cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
         }
         cout << "]\n\n";
+        return;
     }
 
     // 247. Strobogrammatic Number II Test
