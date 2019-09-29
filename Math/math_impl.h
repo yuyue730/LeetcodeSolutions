@@ -541,6 +541,54 @@ public:
          */
     }
 
+    // 384. Shuffle an Array
+    class Solution384 {
+    public:
+        Solution384(vector<int>& nums)
+          : d_nums(nums) { }
+        
+        /** Resets the array to its original configuration and return it. */
+        vector<int> reset() {
+            return d_nums;
+        }
+
+        /** Returns a random shuffling of the array. */
+        vector<int> shuffle() {
+            vector<int> shuffle(d_nums);
+            for (int i = 0; i < shuffle.size(); ++i) {
+                int nextRandomIdx = i + rand() % (shuffle.size() - i);
+                swap(shuffle[nextRandomIdx], shuffle[i]);
+            }
+
+            return shuffle;
+        }
+
+    private:
+        vector<int> d_nums;
+    };
+
+    // 386. Lexicographical Numbers
+    vector<int> lexicalOrder386(int n) {
+        vector<int> result;
+        for (int i = 1; i <= 9; ++i) {
+            lexicalOrder386Rec(i, n, result);
+        }
+        return result;
+    }
+
+    void lexicalOrder386Rec(int cur, const int n, vector<int> &result) {
+        if (cur > n) {
+            return;
+        }
+        result.push_back(cur);
+        for (int i = 0; i <= 9; ++i) {
+            int next = cur * 10 + i;
+            if (cur <= n) {
+                lexicalOrder386Rec(next, n, result);
+            }
+            else break;
+        }
+    }
 };
 
 #endif

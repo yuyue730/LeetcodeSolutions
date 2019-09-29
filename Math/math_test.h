@@ -191,6 +191,37 @@ public:
         return;
     }
 
+    // 384. Shuffle an Array Test
+    void Solution384Test() {
+        cout << "384. Shuffle an Array test starts.\n";
+        vector<int> nums = {1, 2, 3};
+        MathImpl::Solution384 sol(nums);
+        vector<int> shuffle = sol.shuffle();
+        cout << "Shuffle = [";
+        for (int i = 0; i < shuffle.size(); ++i) {
+            cout << shuffle[i] << ((i == shuffle.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n";
+
+        vector<int> reset = sol.reset();
+        cout << "Reset = [";
+        for (int i = 0; i < reset.size(); ++i) {
+            cout << reset[i] << ((i == reset.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
+    // 386. Lexicographical Numbers Test
+    void lexicalOrder386Test() {
+        cout << "386. Lexicographical Numbers test starts.\n";
+        vector<int> result = implObj->lexicalOrder386(13);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     MathImpl * implObj;
 };

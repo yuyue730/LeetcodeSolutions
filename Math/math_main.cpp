@@ -27,6 +27,8 @@ int main() {
     testObj->findStrobogrammatic247Test();
     testObj->multiply311Test();
     testObj->bulbSwitch319Test();
+    testObj->Solution384Test();
+    testObj->lexicalOrder386Test();
 
     return 0;
 }
