@@ -132,6 +132,23 @@ public:
         return;
     }
 
+    // 251. Flatten 2D Vector Test
+    void Vector2D251Test() {
+        cout << "251. Flatten 2D Vector test starts.\n";
+        vector<vector<int>> vec = {
+            {1, 2}, {3}, {4}
+        };
+
+        Vector2D251 vec2d(vec);
+        cout << "Next = [" << vec2d.next() << "]\n";
+        cout << "Next = [" << vec2d.next() << "]\n";
+        cout << "Next = [" << vec2d.next() << "]\n";
+        cout << "hasNext = [" << vec2d.hasNext() << "]\n";
+        cout << "Next = [" << vec2d.next() << "]\n";
+        cout << "hasNext = [" << vec2d.hasNext() << "]\n\n";
+        return;
+    }
+
     // 284. Peeking Iterator Test
     void PeekingIterator284Test() {
         cout << "284. Peeking Iterator test starts.\n";

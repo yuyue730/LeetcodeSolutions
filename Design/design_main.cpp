@@ -17,6 +17,7 @@ int main() {
     testObj->WordDictionary211Test();
     testObj->MyStack225Test();
     testObj->MyQueue232Test();
+    testObj->Vector2D251Test();
     testObj->PeekingIterator284Test();
     testObj->MedianFinder295Test();
     testObj->Codec297Test();

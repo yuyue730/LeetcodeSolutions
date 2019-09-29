@@ -361,6 +361,34 @@ private:
     stack<int> q_stack;
 };
 
+// 251. Flatten 2D Vector
+class Vector2D251 {
+public:
+    Vector2D251(vector<vector<int>>& v) 
+        : d_vec(v), a(0), b(0) { }
+    
+    int next() {
+        hasNext();
+        int result = d_vec[a][b];
+        ++b;
+        return result;
+    }
+    
+    bool hasNext() {
+        while (a < d_vec.size() && b == d_vec[a].size()) {
+            ++a;
+            b = 0;
+        }
+        
+        return a < d_vec.size();
+    }
+    
+private:
+    vector<vector<int>> d_vec;
+    int a;
+    int b;
+};
+
 // 284. Peeking Iterator
 class Iterator {
 public:
