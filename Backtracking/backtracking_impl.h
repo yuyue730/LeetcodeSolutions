@@ -828,6 +828,52 @@ public:
         wallsAndGates286_dfs(rooms, x, y - 1, next_dist + 1);
     }
 
+    // 291. Word Pattern II
+    bool wordPatternMatch291(string pattern, string str) {
+        unordered_map<char, string> charWordMap;
+        return wordPatternMatch291_rec(pattern, 0, str, 0, charWordMap);
+    }
+
+    bool wordPatternMatch291_rec(
+        string const pattern, int pIdx, string const str, int sIdx,
+        unordered_map<char, string> &charWordMap
+    ) {
+        if (pIdx == pattern.size() && sIdx == str.size()) {
+            return true;
+        }
+
+        if (pIdx == pattern.size() || sIdx == str.size()) {
+            return false;
+        }
+
+        char c = pattern[pIdx];
+        for (int i = sIdx; i < str.size(); ++i) {
+            string curWord = str.substr(sIdx, i - sIdx + 1);
+            if (charWordMap.count(c) && charWordMap[c] == curWord) {
+                if (wordPatternMatch291_rec(pattern, pIdx + 1, str, i + 1, charWordMap)) {
+                    return true;
+                }
+            } else if (!charWordMap.count(c)) {
+                bool isFound = false;
+                for (auto it: charWordMap) {
+                    if (curWord == it.second) {
+                        isFound = true;
+                    }
+                }
+
+                if (!isFound) {
+                    charWordMap[c] = curWord;
+                    if (wordPatternMatch291_rec(pattern, pIdx + 1, str, i + 1, charWordMap)) {
+                        return true;
+                    }
+                    charWordMap.erase(c);
+                }
+            }
+        }
+
+        return false;
+    }
+
     // 329. Longest Increasing Path in a Matrix
     int longestIncreasingPath329(vector<vector<int>>& matrix) {
         if (matrix.empty() || matrix[0].empty()) {

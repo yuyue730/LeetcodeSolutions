@@ -329,6 +329,14 @@ public:
         return;
     }
 
+    // 291. Word Pattern II Test
+    void wordPatternMatch291Test() {
+        cout << "291. Word Pattern II test starts.\n";
+        string pattern = "abab", str = "redblueredblue";
+        cout << "isMatch = [" << implObj->wordPatternMatch291(pattern, str) << "]\n\n";
+        return;
+    }
+
     // 329. Longest Increasing Path in a Matrix Test
     void longestIncreasingPath329Test() {
         cout << "329. Longest Increasing Path in a Matrix test starts.\n";

@@ -28,6 +28,7 @@ int main() {
     testObj->findWords212Test();
     testObj->addOperators282Test();
     testObj->wallsAndGates286Test();
+    testObj->wordPatternMatch291Test();
     testObj->longestIncreasingPath329Test();
     testObj->decodeString394Test();
 
