@@ -146,7 +146,7 @@ public:
             return false;
         }
 
-        string sum_str = to_string(stoi(num1_str) + stoi(num2_str));
+        string sum_str = to_string(stol(num1_str) + stol(num2_str));
         if (sum_str == remain_str) {
             return true;
         }
