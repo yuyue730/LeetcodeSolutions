@@ -58,6 +58,7 @@ int main() {
     testObj->encodeDecode271Test();
     testObj->closestKValues272Test();
     testObj->numberToWords273Test();
+    testObj->hIndex274Test();
     testObj->findCelebrity277Test();
     testObj->firstBadVersion278Test();
     testObj->numSquares279Test();

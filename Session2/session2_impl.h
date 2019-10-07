@@ -1507,6 +1507,18 @@ public:
         return result;
     }
 
+    // 274. H-Index
+    int hIndex274(vector<int>& citations) {
+        sort(citations.begin(), citations.end(), greater<int>());
+        for (int i = 0; i < citations.size(); ++i) {
+            if (citations[i] < i + 1) {
+                return i;
+            }
+        }
+        
+        return citations.size();
+    }
+
     // 277. Find the Celebrity
     bool knows277(int a, int b) {
         vector<vector<bool>> knows = {

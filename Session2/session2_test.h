@@ -644,7 +644,15 @@ public:
         cout << "273. Integer to English Words test starts.\n";
         cout << "123 = [" << implObj->numberToWords273(123) << "]\n";
         cout << "12345 = [" << implObj->numberToWords273(12345) << "]\n";
-        cout << "12134567 = [" << implObj->numberToWords273(12134567) << "]\n";
+        cout << "12134567 = [" << implObj->numberToWords273(12134567) << "]\n\n";
+        return;
+    }
+
+    // 274. H-Index Test
+    void hIndex274Test() {
+        cout << "274. H-Index test starts.\n";
+        vector<int> citations = {3, 0, 6, 1, 5};
+        cout << "h idx = [" << implObj->hIndex274(citations) << "]\n\n";
         return;
     }
 
