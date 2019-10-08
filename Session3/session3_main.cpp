@@ -19,6 +19,7 @@ int main() {
     testObj->removeDuplicateLetters316Test();
     testObj->shortestDistance317Test();
     testObj->bulbSwitch319Test();
+    testObj->maxNumber321Test();
     testObj->coinChange322Test();
     testObj->longestIncreasingPath329Test();
     testObj->findItinerary332Test();

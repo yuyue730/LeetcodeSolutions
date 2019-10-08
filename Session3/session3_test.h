@@ -152,6 +152,22 @@ public:
         return;
     }
 
+    // 321. Create Maximum Number Test
+    void maxNumber321Test()
+    {
+        cout << "321. Create Maximum Number test starts.\n";
+        vector<int> nums1 = {3, 4, 6, 5};
+        vector<int> nums2 = {9, 1, 2, 5, 8, 3};
+        vector<int> res = implObj->maxNumber321(nums1, nums2, 5);
+
+        cout << "Merge result = [";
+        for (int i = 0; i < res.size(); ++i) {
+            cout << res[i] << ((i == res.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
     // 322. Coin Change Test
     void coinChange322Test() {
         cout << "322. Coin Change test starts.\n";
@@ -330,7 +346,7 @@ public:
         cout << "R => " << snake.move("R") << "\n";
         cout << "U => " << snake.move("U") << "; ";
         cout << "L => " << snake.move("L") << "; ";
-        cout << "U => " << snake.move("U") << "\n";
+        cout << "U => " << snake.move("U") << "\n\n";
         return;
     }
 

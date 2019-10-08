@@ -403,6 +403,47 @@ public:
          */
     }
 
+    // 321. Create Maximum Number
+    vector<int> maxNumber321(vector<int>& nums1, vector<int>& nums2, int k) {
+        int n1 = nums1.size(), n2 = nums2.size();
+        vector<int> result;
+        for (int i = max(0, k - n2); i <= min(k, n1); ++i) {
+            int j = k - i;
+            vector<int> cur = mergeMaxVector(getMaxVector(nums1, i), getMaxVector(nums2, j));
+            result = max(cur, result);
+        }
+
+        return result;
+    }
+
+    vector<int> getMaxVector(const vector<int> & nums, int k)
+    {
+        int drop = nums.size() - k;
+        vector<int> result;
+        for (int i = 0; i < nums.size(); ++i) {
+            while (!result.empty() && nums[i] > result.back() && drop > 0) {
+                result.pop_back();
+                drop--;
+            }
+            result.push_back(nums[i]);
+        }
+
+        result.resize(k);
+        return result;
+    }
+
+    vector<int> mergeMaxVector(vector<int> res1, vector<int> res2)
+    {
+        vector<int> cur_res;
+        while (!res1.empty() || !res2.empty()) {
+            vector<int> & tmp = (res1 > res2) ? res1 : res2;
+            cur_res.push_back(tmp[0]);
+            tmp.erase(tmp.begin());
+        }
+        
+        return cur_res;
+    }
+
     // 322. Coin Change
     int coinChange322(vector<int>& coins, int amount) {
         vector<int> dp(amount + 1, amount + 1);
