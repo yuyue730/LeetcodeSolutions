@@ -906,6 +906,41 @@ public:
         return result;
     }
 
+    // 352. Data Stream as Disjoint Intervals
+    class SummaryRanges352 {
+    public:
+        /** Initialize your data structure here. */
+        SummaryRanges352() { }
+        
+        void addNum(int val) {
+            vector<int> newInterval = {val, val};
+            vector<vector<int>> result;
+            int pos = 0;
+
+            for (auto intv : intervals) {
+                if (newInterval[0] > intv[1] + 1) {
+                    result.push_back(intv);
+                    pos++;
+                } else if (newInterval[1] + 1 < intv[0]) {
+                    result.push_back(intv);
+                } else {
+                    newInterval[0] = min(intv[0], newInterval[0]);
+                    newInterval[1] = max(intv[1], newInterval[1]);
+                }
+            }
+
+            result.insert(result.begin() + pos, newInterval);
+            intervals = result;
+        }
+        
+        vector<vector<int>> getIntervals() {
+            return intervals;
+        }
+
+    private:
+        vector<vector<int>> intervals;
+    };
+
     // 353. Design Snake Game
     class SnakeGame353 {
     public:
