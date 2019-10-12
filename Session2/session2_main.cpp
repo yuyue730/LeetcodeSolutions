@@ -48,6 +48,7 @@ int main() {
     testObj->findStrobogrammatic247Test();
     testObj->countUnivalSubtrees250Test();
     testObj->Vector2D251Test();
+    testObj->canAttendMeetings252Test();
     testObj->minMeetingRooms253Test();
     testObj->verifyPreorder255Test();
     testObj->minCost256Test();

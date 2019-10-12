@@ -333,6 +333,25 @@ public:
         return;
     }
 
+    // 352. Data Stream as Disjoint Intervals Test
+    void SummaryRanges352Test() {
+        cout << "352. Data Stream as Disjoint Intervals test starts.\n";
+        Session3Impl::SummaryRanges352 range;
+        range.addNum(1);
+        range.addNum(3);
+        range.addNum(7);
+        range.addNum(2);
+        range.addNum(6);
+        vector<vector<int>> result = range.getIntervals();
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << "[" << result[i][0] << ", " << result[i][1] 
+                << ((i == result.size() - 1) ? "]" : "], ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
     // 353. Design Snake Game Test
     void SnakeGame353Test() {
         cout << "353. Design Snake Game test starts.\n";

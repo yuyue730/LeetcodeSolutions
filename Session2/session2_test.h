@@ -530,6 +530,16 @@ public:
         return;
     }
 
+    // 252. Meeting Rooms Test
+    void canAttendMeetings252Test() {
+        cout << "252. Meeting Rooms test starts.\n";
+        vector<vector<int>> meeting = {
+            {0, 30}, {5, 10}, {15, 20}
+        };
+        cout << "Can meeting = [" << implObj->canAttendMeetings252(meeting) << "]\n\n";
+        return;
+    }
+
     // 253. Meeting Rooms II Test
     void minMeetingRooms253Test() {
         cout << "253. Meeting Rooms II test starts.\n";

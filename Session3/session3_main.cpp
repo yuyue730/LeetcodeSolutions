@@ -33,6 +33,7 @@ int main() {
     testObj->TicTacToe348Test();
     testObj->intersection349Test();
     testObj->intersect350Test();
+    testObj->SummaryRanges352Test();
     testObj->SnakeGame353Test();
     testObj->Twitter355Test();
     testObj->Logger359Test();
