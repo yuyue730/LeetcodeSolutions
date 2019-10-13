@@ -35,6 +35,7 @@ int main() {
     testObj->intersect350Test();
     testObj->SummaryRanges352Test();
     testObj->SnakeGame353Test();
+    testObj->maxEnvelopes354Test();
     testObj->Twitter355Test();
     testObj->Logger359Test();
     testObj->HitCounter362Test();
@@ -51,6 +52,7 @@ int main() {
     testObj->lengthLongestPath388Test();
     testObj->validUtf8_393Test();
     testObj->decodeString394Test();
+    testObj->longestSubstring395Test();
 
     return 0;
 }

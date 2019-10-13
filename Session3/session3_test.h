@@ -369,6 +369,17 @@ public:
         return;
     }
 
+    // 354. Russian Doll Envelopes Test
+    void maxEnvelopes354Test() {
+        cout << "354. Russian Doll Envelopes test starts.\n";
+        vector<vector<int>> envelopes = {
+            {5, 4}, {6, 4}, {6, 7}, {2, 3}
+        };
+
+        cout << "Number of envelopes = [" << implObj->maxEnvelopes354(envelopes) << "]\n\n";
+        return;
+    }
+
     // 355. Design Twitter Test
     void Twitter355Test() {
         cout << "355. Design Twitter test starts.\n";
@@ -583,6 +594,15 @@ public:
     void decodeString394Test() {
         cout << "394. Decode String test starts.\n";
         cout << "Decode 3[a2[c]] = [" << implObj->decodeString394("3[a2[c]]") << "]\n\n";
+        return;
+    }
+
+    // 395. Longest Substring with At Least K Repeating Characters Test
+    void longestSubstring395Test()
+    {
+        cout << "395. Longest Substring with At Least K Repeating Characters test starts.\n";
+        cout << "s = \"ababbc\", k = 2 will return [" << implObj->longestSubstring395("ababbc", 2)
+            << "].\n\n";
         return;
     }
 

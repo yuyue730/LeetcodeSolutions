@@ -1001,6 +1001,40 @@ public:
         int m_height, m_width, m_score;
     };
 
+    // 354. Russian Doll Envelopes
+    int maxEnvelopes354(vector<vector<int>>& envelopes) {
+        sort(envelopes.begin(), envelopes.end(), 
+            [](const vector<int> &e1, const vector<int> &e2) {
+                if (e1[0] == e2[0]) {
+                    return e1[1] > e2[1];
+                }
+                return e1[0] < e2[0];
+            }
+        );
+
+        vector<int> dp;
+
+        for (auto e: envelopes) {
+            int left = 0, right = dp.size(), pivot = e[1];
+            while (left < right) {
+                int mid = (left + right) / 2;
+                if (pivot > dp[mid]) {
+                    left = mid + 1;
+                } else {
+                    right = mid;
+                }
+            }
+
+            if (right >= dp.size()) {
+                dp.push_back(pivot);
+            } else {
+                dp[right] = pivot;
+            }
+        }
+
+        return dp.size();
+    }
+
     // 355. Design Twitter
     class Twitter355 {
     public:
@@ -1541,6 +1575,40 @@ public:
         }
 
         return result;
+    }
+
+    // 395. Longest Substring with At Least K Repeating Characters
+    int longestSubstring395(string s, int k) {
+        return longestSubstring395_rec(s, k, 0, s.size() - 1);
+    }
+
+    int longestSubstring395_rec(string const &s, int const k, int start, int end)
+    {
+        if (start > end)
+        {
+            return 0;
+        }
+
+        vector<int> charFreqMap(26, 0);
+        for (int i = start; i <= end; ++i)
+        {
+            charFreqMap[s[i] - 'a']++;
+        }
+
+        for (int i = 0; i < charFreqMap.size(); ++i)
+        {
+            int freq = charFreqMap[i];
+            if (freq > 0 && freq < k)
+            {
+                int firstIndex = s.find_first_of(('a' + i), start);
+                return max(
+                    longestSubstring395_rec(s, k, start, firstIndex - 1),
+                    longestSubstring395_rec(s, k, firstIndex + 1, end)
+                );
+            }
+        }
+
+        return end - start + 1;
     }
 };
 
