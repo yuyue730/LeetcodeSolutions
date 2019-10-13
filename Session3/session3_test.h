@@ -606,6 +606,26 @@ public:
         return;
     }
 
+    // 399. Evaluate Division Test
+    void calcEquation399Test()
+    {
+        cout << "399. Evaluate Division test starts.\n";
+        vector<vector<string>> equations = {
+            {"a", "e"}, {"b", "e"}// {"a", "b"}, {"b", "c"}
+        };
+        vector<double> values = {4.0, 3.0};//{2.0, 3.0};
+        vector<vector<string>> queries = {
+            {"a", "b"}, {"e", "e"}, {"x", "x"}//{"a", "c"}, {"b", "a"}, {"a", "e"}, {"a", "a"}, {"x", "x"}
+        };
+        vector<double> results = implObj->calcEquation399(equations, values, queries);
+        cout << "Result = [";
+        for (int i = 0; i < results.size(); ++i) {
+            cout << results[i] << ((i == results.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     Session3Impl * implObj;
 };

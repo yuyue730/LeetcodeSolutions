@@ -1610,6 +1610,81 @@ public:
 
         return end - start + 1;
     }
+
+    // 399. Evaluate Division
+    vector<double> calcEquation399(
+        vector<vector<string>>& equations,
+        vector<double>& values,
+        vector<vector<string>>& queries)
+    {
+        unordered_map<string, pair<string, double>> parents;
+
+        assert(equations.size() == values.size());
+        for (int i = 0; i < equations.size(); ++i)
+        {
+            string A = equations[i][0];
+            string B = equations[i][1];
+            double K = values[i];
+
+            if (!parents.count(A) && !parents.count(B))
+            {
+                parents[A] = {B, K};
+                parents[B] = {B, 1.0};
+            }
+            else if (!parents.count(A))
+            {
+                parents[A] = {B, K};
+            }
+            else if (!parents.count(B))
+            {
+                parents[B] = {A, 1.0 / K};
+            }
+            else
+            {
+                pair<string, double> rootA = findParent(A, parents);
+                pair<string, double> rootB = findParent(B, parents);
+                parents[rootA.first] = {rootB.first, K * rootB.second / rootA.second};
+            }
+        }
+
+        vector<double> results;
+        for (auto &it: queries)
+        {
+            const string& X = it[0];
+            const string& Y = it[1];
+
+            if (!parents.count(X) || !parents.count(Y))
+            {
+                results.push_back(-1.0);
+                continue;
+            }
+
+            pair<string, double> rootX = findParent(X, parents);
+            pair<string, double> rootY = findParent(Y, parents);
+            if (rootX.first != rootY.first)
+            {
+                results.push_back(-1.0);
+            }
+            else
+            {
+                results.push_back(rootX.second / rootY.second);
+            }
+        }
+
+        return results;
+    }
+
+    pair<string, double> findParent(
+        string const &in, unordered_map<string, pair<string, double>> &parents)
+    {
+        if (in != parents[in].first)
+        {
+            const auto &it = findParent(parents[in].first, parents);
+            parents[in].first = it.first;
+            parents[in].second *= it.second;
+        }
+        return parents[in];
+    }
 };
 
 #endif

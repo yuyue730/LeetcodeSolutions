@@ -53,6 +53,7 @@ int main() {
     testObj->validUtf8_393Test();
     testObj->decodeString394Test();
     testObj->longestSubstring395Test();
+    testObj->calcEquation399Test();
 
     return 0;
 }
