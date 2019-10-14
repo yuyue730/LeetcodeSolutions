@@ -11,6 +11,7 @@ int main() {
     testObj->removeKdigits402Test();
     testObj->canCross403Test();
     testObj->reconstructQueue406Test();
+    testObj->splitArray410Test();
 
     return 0;
 }

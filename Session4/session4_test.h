@@ -44,6 +44,14 @@ public:
         return;
     }
 
+    // 410. Split Array Largest Sum Test
+    void splitArray410Test() {
+        cout << "410. Split Array Largest Sum test starts.\n";
+        vector<int> nums = {7, 2, 5, 10, 8};
+        cout << "Min(Max(sub array sum)) = [" << implObj->splitArray410(nums, 2) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

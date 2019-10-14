@@ -92,6 +92,28 @@ public:
         }
         return result;
     }
+
+    // 410. Split Array Largest Sum
+    int splitArray410(vector<int>& nums, int m) {
+        const int n = nums.size();
+        vector<long long> sum(n + 1, 0);
+        for (int i = 1; i < sum.size(); ++i) {
+            sum[i] = sum[i - 1] + nums[i - 1];
+        }
+
+        vector<vector<long long>> dp(m + 1, vector<long long>(n + 1, LLONG_MAX));
+        dp[0][0] = 0;
+        for (int i = 1; i <= m; ++i) {
+            for (int j = 1; j <= n; ++j) {
+                for (int k = i - 1; k < j; ++k) {
+                    long long value = max(dp[i - 1][k], sum[j] - sum[k]);
+                    dp[i][j] = min(value, dp[i][j]);
+                }
+            }
+        }
+
+        return static_cast<int>(dp.back().back());
+    }
 };
 
 #endif
