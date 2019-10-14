@@ -9,6 +9,7 @@ int main() {
     cout << "\nTest for problems starts.\n";
 
     testObj->removeKdigits402Test();
+    testObj->canCross403Test();
 
     return 0;
 }

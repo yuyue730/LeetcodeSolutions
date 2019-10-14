@@ -21,6 +21,15 @@ public:
         return;
     }
 
+    // 403. Frog Jump Test
+    void canCross403Test()
+    {
+        cout << "403. Frog Jump test starts.\n";
+        vector<int> nums = {0, 1, 3, 5, 6, 8, 12, 17};
+        cout << "Can find = [" << implObj->canCross403(nums) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

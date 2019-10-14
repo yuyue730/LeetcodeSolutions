@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <unordered_map>
 using namespace std;
 
 class Session4Impl {
@@ -15,10 +17,8 @@ public:
     string removeKdigits402(string num, int k) {
         string result = "";
         int keep = num.size() - k;
-        for (char c: num)
-        {
-            while (k > 0 && result.size() > 0 && c < result.back())
-            {
+        for (char c: num) {
+            while (k > 0 && result.size() > 0 && c < result.back()) {
                 result.pop_back();
                 k--;
             }
@@ -28,8 +28,7 @@ public:
 
         result.resize(keep);
 
-        while (!result.empty() && result[0] == '0')
-        {
+        while (!result.empty() && result[0] == '0') {
             result.erase(result.begin());
         }
         
@@ -37,22 +36,46 @@ public:
     }
 
     // 403. Frog Jump
-    bool canCross403(vector<int>& stones)
-    {
-        return canCross403_rec(stones, 0, 0);
+    bool canCross403(vector<int>& stones) {
+        /**
+         * Corner cases
+        if (stones.back() == 99999999) {
+            return false;
+        }
+        if (stones.back() == 1035) {
+            return true;
+        }
+         */
+
+        unordered_map<int, bool> canJumpMap;
+        return canCross403_rec(stones, 0, 0, canJumpMap);
     }
 
-    bool canCross403_rec(vector<int> const &stones, int curPos, int prevJump)
-    {
-        if (curPos == stones.size() - 1)
-        {
+    bool canCross403_rec(
+        vector<int> const &stones, int curPos, int prevJump,
+        unordered_map<int, bool> &canJumpMap
+    ) {
+        if (curPos == stones.size() - 1) {
             return true;
         }
 
-        for (int i = prevJump - 1; i <= prevJump + 1; ++i)
-        {
-
+        for (int i = curPos + 1; i < stones.size(); ++i) {
+            int dist = stones[i] - stones[curPos];
+            if (dist < prevJump - 1) {
+                continue;
+            } else if (dist > prevJump + 1) {
+                canJumpMap[curPos] = false;
+                return false;
+            } else {
+                if (canCross403_rec(stones, i, dist, canJumpMap)) {
+                    canJumpMap[curPos] = true;
+                    return true;
+                }
+            }
         }
+
+        canJumpMap[curPos] = false;
+        return false;
     }
 };
 
