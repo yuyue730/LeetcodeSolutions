@@ -13,8 +13,7 @@ public:
     }
 
     // 402. Remove K Digits Test
-    void removeKdigits402Test()
-    {
+    void removeKdigits402Test() {
         cout << "402. Remove K Digits test starts.\n";
         string num = "1432219";
         cout << "1432219 => [" << implObj->removeKdigits402(num, 3) << "]\n\n";
@@ -22,11 +21,26 @@ public:
     }
 
     // 403. Frog Jump Test
-    void canCross403Test()
-    {
+    void canCross403Test() {
         cout << "403. Frog Jump test starts.\n";
         vector<int> nums = {0, 1, 3, 5, 6, 8, 12, 17};
         cout << "Can find = [" << implObj->canCross403(nums) << "]\n\n";
+        return;
+    }
+
+    // 406. Queue Reconstruction by Height Test
+    void reconstructQueue406Test() {
+        cout << "406. Queue Reconstruction by Height test starts.\n";
+        vector<vector<int>> people = {
+            {7, 0}, {4, 4}, {7, 1}, {5, 0}, {6, 1}, {5, 2}
+        };
+        cout << "result = [";
+        vector<vector<int>> result = implObj->reconstructQueue406(people);
+        for (int i = 0; i < result.size(); ++i) {
+            cout << "[" << result[i][0] << ", " << result[i][1] << "]"
+                << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
         return;
     }
 

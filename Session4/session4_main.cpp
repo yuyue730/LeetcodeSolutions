@@ -10,6 +10,7 @@ int main() {
 
     testObj->removeKdigits402Test();
     testObj->canCross403Test();
+    testObj->reconstructQueue406Test();
 
     return 0;
 }

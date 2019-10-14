@@ -77,6 +77,21 @@ public:
         canJumpMap[curPos] = false;
         return false;
     }
+
+    // 406. Queue Reconstruction by Height
+    vector<vector<int>> reconstructQueue406(vector<vector<int>>& people) {
+        sort(people.begin(), people.end(), 
+            [](const vector<int> &p1, const vector<int> &p2) {
+                return (p1[0] > p2[0]) || (p1[0] == p2[0] && p1[1] < p2[1]);
+            }
+        );
+
+        vector<vector<int>> result;
+        for (auto p : people) {
+            result.insert(result.begin() + p[1], p);
+        }
+        return result;
+    }
 };
 
 #endif
