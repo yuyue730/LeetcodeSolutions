@@ -13,6 +13,7 @@ int main() {
     testObj->reconstructQueue406Test();
     testObj->splitArray410Test();
     testObj->fizzBuzz412Test();
+    testObj->thirdMax414Test();
 
     return 0;
 }

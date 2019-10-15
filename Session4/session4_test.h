@@ -61,6 +61,15 @@ public:
             cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
         }
         cout << "]\n\n";
+        return;
+    }
+
+    // 414. Third Maximum Number Test
+    void thirdMax414Test() {
+        cout << "414. Third Maximum Number test starts.\n";
+        vector<int> nums = {3, 2, 1};
+        cout << "Third Max = [" << implObj->thirdMax414(nums) << "].\n\n";
+        return;
     }
 
 private:
