@@ -12,6 +12,7 @@ int main() {
     testObj->canCross403Test();
     testObj->reconstructQueue406Test();
     testObj->splitArray410Test();
+    testObj->fizzBuzz412Test();
 
     return 0;
 }

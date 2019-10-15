@@ -52,6 +52,17 @@ public:
         return;
     }
 
+    // 412. Fizz Buzz Test
+    void fizzBuzz412Test() {
+        cout << "412. Fizz Buzz test starts.\n";
+        vector<string> result = implObj->fizzBuzz412(15);
+        cout << "result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     Session4Impl * implObj;
 };
