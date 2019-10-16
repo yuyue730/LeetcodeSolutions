@@ -18,6 +18,7 @@ int main() {
     testObj->canPartition416Test();
     testObj->pacificAtlantic417Test();
     testObj->wordsTyping418Test();
+    testObj->countBattleships419Test();
 
     return 0;
 }

@@ -116,6 +116,19 @@ public:
         return;
     }
 
+    // 419. Battleships in a Board Test
+    void countBattleships419Test() {
+        cout << "419. Battleships in a Board test starts.\n";
+        vector<vector<char>> ships = {
+            {'X', '.', '.', 'X'},
+            {'.', '.', '.', 'X'},
+            {'.', '.', '.', 'X'}
+        };
+
+        cout << "# of ships = [" << implObj->countBattleships419(ships) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };
