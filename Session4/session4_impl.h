@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <numeric>
 #include <unordered_map>
 using namespace std;
 
@@ -154,6 +155,60 @@ public:
         
         return (secondMax == LLONG_MIN || thirdMax == LLONG_MIN)
             ? firstMax : thirdMax;
+    }
+
+    // 415. Add Strings
+    string addStrings415(string num1, string num2) {
+        reverse(num1.begin(), num1.end());
+        reverse(num2.begin(), num2.end());
+        
+        string result;
+        int add1 = 0;
+        
+        for (int i = 0; i < min(num1.size(), num2.size()); ++i) {
+            int cur = (num1[i] - '0') + (num2[i] - '0') + add1;
+            add1 = (cur >= 10) ? 1 : 0;
+            result += (cur % 10 + '0');
+        }
+
+        if (num1.size() > num2.size())
+        {
+            for (int i = num2.size(); i < num1.size(); ++i) {
+                int cur = (num1[i] - '0') + add1;
+                add1 = (cur >= 10) ? 1 : 0;
+                result += (cur % 10 + '0');
+            }
+        } else if (num1.size() < num2.size()) {
+            for (int i = num1.size(); i < num2.size(); ++i) {
+                int cur = (num2[i] - '0') + add1;
+                add1 = (cur >= 10) ? 1 : 0;
+                result += (cur % 10 + '0');
+            }
+        }
+        
+        if (add1) {
+            result += '1';
+        }
+        
+        reverse(result.begin(), result.end());
+        return result;
+    }
+
+    // 416. Partition Equal Subset Sum
+    bool canPartition416(vector<int>& nums) {
+        int sum = accumulate(nums.begin(), nums.end(), 0);
+        if (sum % 2 == 1) {
+            return false;
+        }
+
+        int target = sum / 2;
+        vector<bool> dp(target + 1, false);
+        for (int val: nums) {
+            for (int j = target; j >= val; --j) {
+                dp[j] = dp[j] || dp[j - val];
+            }
+        }
+        return dp[target];
     }
 };
 

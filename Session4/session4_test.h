@@ -72,6 +72,8 @@ public:
         return;
     }
 
+    
+
 private:
     Session4Impl * implObj;
 };
