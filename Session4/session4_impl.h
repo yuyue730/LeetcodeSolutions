@@ -211,6 +211,110 @@ public:
         }
         return dp[target];
     }
+
+    // 417. Pacific Atlantic Water Flow
+    vector<vector<int>> pacificAtlantic417(vector<vector<int>>& matrix) {
+        vector<vector<int>> result;
+        if (matrix.empty() || matrix[0].empty()) {
+            return result;
+        }
+
+        int m = matrix.size(), n = matrix[0].size();
+        vector<vector<bool>> pacific(m, vector<bool>(n, false));
+        vector<vector<bool>> atlantic(m, vector<bool>(n, false));
+
+        for (int i = 0; i < m; ++i) {
+            pacificAtlantic417_rec(i, 0, INT_MIN, pacific, matrix);
+            pacificAtlantic417_rec(i, n - 1, INT_MIN, atlantic, matrix);
+        }
+
+        for (int j = 0; j < n; ++j) {
+            pacificAtlantic417_rec(0, j, INT_MIN, pacific, matrix);
+            pacificAtlantic417_rec(m - 1, j, INT_MIN, atlantic, matrix);
+        }
+
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (pacific[i][j] && atlantic[i][j]) {
+                    result.push_back({i, j});
+                }
+            }
+        }
+        return result;
+    }
+
+    void pacificAtlantic417_rec(
+        int X, int Y, int pre, vector<vector<bool>> & canVisit, 
+        vector<vector<int>> const & matrix
+    ) {
+        if (X < 0 || X >= matrix.size() || Y < 0 || Y >= matrix[0].size()
+            || canVisit[X][Y] || matrix[X][Y] < pre) {
+            return;
+        }
+        canVisit[X][Y] = true;
+        pacificAtlantic417_rec(X + 1, Y, matrix[X][Y], canVisit, matrix);
+        pacificAtlantic417_rec(X - 1, Y, matrix[X][Y], canVisit, matrix);
+        pacificAtlantic417_rec(X, Y + 1, matrix[X][Y], canVisit, matrix);
+        pacificAtlantic417_rec(X, Y - 1, matrix[X][Y], canVisit, matrix);
+    }
+
+    // 418. Sentence Screen Fitting
+    int wordsTyping418(vector<string>& sentence, int rows, int cols) {
+        int result = 0;
+        string all = "";
+        for (auto word: sentence) {
+            all += word + " ";
+        }
+        
+        int start = 0, len = all.size();
+        
+        for (int i = 0; i < rows; ++i) {
+            start += cols;
+            if (all[start % len] == ' ') {
+                ++start;
+            }
+            else {
+                while (start > 0 && all[(start - 1) % len] != ' ') {
+                    --start;
+                }
+            }
+        }
+        
+        return start / len;
+    }
+
+    /** Alternative Brutle Force solution
+    int wordsTyping(vector<string>& sentence, int rows, int cols) {
+        int result = 0;
+        int stnce_idx = 0;
+        
+        for (int i = 0; i < rows; ++i) {
+            int curColIdx = 0;
+            while (true) {
+                curColIdx += sentence[stnce_idx].size();
+                
+                if (curColIdx > cols) {
+                    break;
+                } else {
+                    if (stnce_idx == sentence.size() - 1) {
+                        result++;
+                        stnce_idx = 0;
+                    } else {
+                        stnce_idx ++;
+                    }
+                    
+                    if (curColIdx == cols) {
+                        break;
+                    } else {
+                        curColIdx++;
+                    }
+                }
+            }
+        }
+        
+        return result;
+    }
+     */
 };
 
 #endif

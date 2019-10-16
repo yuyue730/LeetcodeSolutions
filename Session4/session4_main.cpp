@@ -16,6 +16,8 @@ int main() {
     testObj->thirdMax414Test();
     testObj->addStrings415Test();
     testObj->canPartition416Test();
+    testObj->pacificAtlantic417Test();
+    testObj->wordsTyping418Test();
 
     return 0;
 }

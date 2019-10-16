@@ -87,6 +87,35 @@ public:
         return;
     }
 
+    // 417. Pacific Atlantic Water Flow Test
+    void pacificAtlantic417Test() {
+        cout << "417. Pacific Atlantic Water Flow test starts.\n";
+        vector<vector<int>> matrix = {
+            {1, 2, 2, 3, 5},
+            {3, 2, 3, 4, 4},
+            {2, 4, 5, 3, 1},
+            {6, 7, 1, 4, 5},
+            {5, 1, 1, 2, 4}
+        };
+        vector<vector<int>> result = implObj->pacificAtlantic417(matrix);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << "(" << result[i][0] << ", " << result[i][1] << ")"
+                << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
+    // 418. Sentence Screen Fitting Test
+    void wordsTyping418Test() {
+        cout << "418. Sentence Screen Fitting test starts.\n";
+        int rows = 3, cols = 6; 
+        vector<string> sentence = {"a", "bcd", "e"};
+        cout << "Repeating = [" << implObj->wordsTyping418(sentence, rows, cols) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };
