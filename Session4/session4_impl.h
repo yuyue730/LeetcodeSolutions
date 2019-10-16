@@ -203,6 +203,7 @@ public:
 
         int target = sum / 2;
         vector<bool> dp(target + 1, false);
+        dp[0] = true;
         for (int val: nums) {
             for (int j = target; j >= val; --j) {
                 dp[j] = dp[j] || dp[j - val];

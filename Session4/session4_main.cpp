@@ -14,6 +14,8 @@ int main() {
     testObj->splitArray410Test();
     testObj->fizzBuzz412Test();
     testObj->thirdMax414Test();
+    testObj->addStrings415Test();
+    testObj->canPartition416Test();
 
     return 0;
 }

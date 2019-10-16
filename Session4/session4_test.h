@@ -72,7 +72,20 @@ public:
         return;
     }
 
-    
+    // 415. Add Strings Test
+    void addStrings415Test() {
+        cout << "415. Add Strings test starts.\n";
+        cout << "123 + 568 = [" << implObj->addStrings415("123", "568") << "]\n\n";
+        return;
+    }
+
+    // 416. Partition Equal Subset Sum Test
+    void canPartition416Test() {
+        cout << "416. Partition Equal Subset Sum test starts.\n";
+        vector<int> nums = {1, 5, 11, 5};
+        cout << "Can partition = [" << implObj->canPartition416(nums) << "]\n\n";
+        return;
+    }
 
 private:
     Session4Impl * implObj;
