@@ -8,6 +8,21 @@
 #include <unordered_map>
 using namespace std;
 
+class Node426 {
+public:
+    int val;
+    Node426* left;
+    Node426* right;
+
+    Node426() {}
+
+    Node426(int _val, Node426* _left, Node426* _right) {
+        val = _val;
+        left = _left;
+        right = _right;
+    }
+};
+
 class Session4Impl {
 public:
     Session4Impl() {
@@ -357,7 +372,37 @@ public:
     }
     
     // 426. Convert Binary Search Tree to Sorted Doubly Linked List
+    Node426* treeToDoublyList426(Node426* root) {
+        if (!root) {
+            return NULL;
+        }
+        Node426* head = NULL;
+        Node426* pre = NULL;
 
+        inorder426(root, head, pre);
+        head->left = pre;
+        pre->right = head; 
+
+        return head;
+    }
+
+    void inorder426(Node426* cur, Node426* & head, Node426* & pre) {
+        if (!cur) {
+            return;
+        }
+        inorder426(cur->left, head, pre);
+
+        if (!head) {
+            head = cur;
+            pre = cur;
+        } else {
+            pre->right = cur;
+            cur->left = pre;
+            pre = cur;
+        }
+
+        inorder426(cur->right, head, pre);
+    }
 };
 
 #endif

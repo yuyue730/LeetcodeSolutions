@@ -136,6 +136,23 @@ public:
         return;
     }
 
+    // 426. Convert Binary Search Tree to Sorted Doubly Linked List Test
+    void treeToDoublyList426Test() {
+        cout << "426. Convert Binary Search Tree to Sorted Doubly Linked List test starts.\n";
+        Node426 * root = new Node426(4, NULL, NULL);
+        root->left = new Node426(2, NULL, NULL);
+        root->right = new Node426(5, NULL, NULL);;
+
+        Node426 * cur = root->left;
+        cur->left = new Node426(1, NULL, NULL);
+        cur->right = new Node426(3, NULL, NULL);
+
+        Node426 * result = implObj->treeToDoublyList426(root);
+        cout << "Please exam result = [" << result->val << "]\n\n";
+        return;
+
+    }
+
 private:
     Session4Impl * implObj;
 };

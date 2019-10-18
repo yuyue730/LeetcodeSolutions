@@ -20,6 +20,7 @@ int main() {
     testObj->wordsTyping418Test();
     testObj->countBattleships419Test();
     testObj->characterReplacement424Test();
+    testObj->treeToDoublyList426Test();
 
     return 0;
 }
