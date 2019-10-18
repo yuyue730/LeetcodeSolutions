@@ -724,6 +724,20 @@ public:
         return curIdx + 1;
     }
 
+    // 27. Remove Element
+    int removeElement27(vector<int>& nums, int val) {
+        int pre = 0;
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i] != val) {
+                nums[pre] = nums[i];
+                pre++;
+            }
+        }
+        
+        nums.resize(pre);
+        return pre;
+    }
+
     // 28. Implement strStr()
     int strStr28(string haystack, string needle) {
         if (needle.empty()) {

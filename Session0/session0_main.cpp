@@ -34,6 +34,7 @@ int main() {
     testObj->swapPairs24Test();
     testObj->reverseKGroup25Test();
     testObj->removeDuplicates26Test();
+    testObj->removeElement27Test();
     testObj->strStr28Test();
     testObj->divide29Test();
     testObj->findSubstring30Test();

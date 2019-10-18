@@ -354,6 +354,14 @@ public:
         return;
     }
 
+    // 27. Remove Element Test
+    void removeElement27Test() {
+        cout << "27. Remove Element test starts.\n";
+        vector<int> nums = {3, 2, 2, 3};
+        cout << "length = [" << implObj->removeElement27(nums, 3) << "]\n\n";
+        return;
+    }
+
     // 28. Implement strStr() Test
     void strStr28Test() {
         cout << "28. Implement strStr() test starts.\n";
@@ -1152,7 +1160,7 @@ public:
         cout << "Can generate " << result.size() << " trees.\n";
         for (int i = 0; i < result.size(); ++i) {
             TreeNode * cur = result[i];
-            cout << "i = " << i << "; Root value " << cur->val << "\n";
+            cout << "i = " << i << "; Root value " << cur->val << "\n\n";
         }
         return;
     }
