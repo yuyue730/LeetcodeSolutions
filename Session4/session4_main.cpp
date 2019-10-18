@@ -19,6 +19,7 @@ int main() {
     testObj->pacificAtlantic417Test();
     testObj->wordsTyping418Test();
     testObj->countBattleships419Test();
+    testObj->characterReplacement424Test();
 
     return 0;
 }

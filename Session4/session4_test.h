@@ -129,6 +129,13 @@ public:
         return;
     }
 
+    // 424. Longest Repeating Character Replacement Test
+    void characterReplacement424Test() {
+        cout << "424. Longest Repeating Character Replacement test starts.\n";
+        cout << "Longest replacement len = [" << implObj->characterReplacement424("AABABBA", 2) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

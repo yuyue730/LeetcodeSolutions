@@ -337,8 +337,27 @@ public:
         return result;
     }
 
-    // 420. Strong Password Checker
+    // 424. Longest Repeating Character Replacement
+    int characterReplacement424(string s, int k) {
+        int start = 0, maxCount = 0;
+        int result = 0;
+        vector<int> charMap(26, 0);
+        for (int i = 0; i < s.size(); ++i) {
+            charMap[s[i] - 'A']++;
+            maxCount = max(maxCount, charMap[s[i] - 'A']);
+            while (i - start + 1 - maxCount > k) {
+                charMap[s[start] - 'A']--;
+                start++;
+            }
+
+            result = max(result, i - start + 1);
+        }
+
+        return result;
+    }
     
+    // 426. Convert Binary Search Tree to Sorted Doubly Linked List
+
 };
 
 #endif
