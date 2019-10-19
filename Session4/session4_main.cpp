@@ -22,6 +22,7 @@ int main() {
     testObj->characterReplacement424Test();
     testObj->treeToDoublyList426Test();
     testObj->Codec428Test();
+    testObj->flatten430Test();
 
     return 0;
 }

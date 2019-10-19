@@ -169,6 +169,28 @@ public:
         return;
     }
 
+    // 430. Flatten a Multilevel Doubly Linked List Test
+    void flatten430Test() {
+        cout << "430. Flatten a Multilevel Doubly Linked List test starts.\n";
+        Node430* head = new Node430(1, NULL, NULL, NULL);
+        Node430* node2 = new Node430(2, NULL, NULL, NULL);
+        Node430* node3 = new Node430(3, NULL, NULL, NULL);
+        Node430* node4 = new Node430(4, NULL, NULL, NULL);
+        Node430* node5 = new Node430(5, NULL, NULL, NULL);
+        Node430* node6 = new Node430(6, NULL, NULL, NULL);
+
+        head->next = node2; node2->prev = head;
+        node2->next = node3; node3->prev = node2;
+        node3->next = node4; node4->prev = node3;
+
+        node5->next = node6; node6->prev = node5;
+        node3->child = node5;
+
+        Node430* result = implObj->flatten430(head);
+        cout << "Please exam [" << result << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

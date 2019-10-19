@@ -37,6 +37,23 @@ public:
     }
 };
 
+class Node430 {
+public:
+    int val;
+    Node430* prev;
+    Node430* next;
+    Node430* child;
+
+    Node430() {}
+
+    Node430(int _val, Node430* _prev, Node430* _next, Node430* _child) {
+        val = _val;
+        prev = _prev;
+        next = _next;
+        child = _child;
+    }
+};
+
 class Session4Impl {
 public:
     Session4Impl() {
@@ -463,6 +480,37 @@ public:
             return cur;
         }
     };
+
+    // 430. Flatten a Multilevel Doubly Linked List
+    Node430* flatten430(Node430* head) {
+        if (!head) {
+            return NULL;
+        }
+
+        Node430* cur = head;
+        while (cur) {
+            if (cur->child) {
+                Node430* next = cur->next;
+                cur->child = flatten430(cur->child);
+                Node430* last = cur->child;
+                while (last->next) {
+                    last = last->next;
+                }
+
+                cur->next = cur->child;
+                cur->next->prev = cur;
+                cur->child = NULL;
+                last->next = next;
+                if (next) {
+                    next->prev = last;
+                }
+            }
+
+            cur = cur->next;
+        }
+
+        return head;
+    }
 };
 
 #endif
