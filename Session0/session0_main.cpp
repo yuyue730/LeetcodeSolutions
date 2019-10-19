@@ -65,6 +65,7 @@ int main() {
     testObj->merge56Test();
     testObj->insert57Test();
     testObj->generateMatrix59Test();
+    testObj->getPermutation60Test();
     testObj->rotateRight61Test();
     testObj->uniquePaths62Test();
     testObj->uniquePathsWithObstacles63Test();

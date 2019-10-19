@@ -753,14 +753,21 @@ public:
             }
             cout << "]\n";
         }
-        cout << "]\n";
+        cout << "]\n\n";
+        return;
+    }
+
+    // 60. Permutation Sequence Test
+    void getPermutation60Test() {
+        cout << "60. Permutation Sequence test starts.\n";
+        cout << "n = 4; k = 17 -> [" << implObj->getPermutation60(4, 17) << "]\n\n";
         return;
     }
 
     // 61. Rotate List Test
     void rotateRight61Test() {
         cout << "61. Rotate List test starts.\n";
-                ListNode * head = new ListNode(1);
+        ListNode * head = new ListNode(1);
         ListNode * cur = head; 
         cur->next = new ListNode(2);  cur = cur->next;
         cur->next = new ListNode(3);  cur = cur->next;
@@ -824,7 +831,7 @@ public:
         cout << "'53.5e93' is valid = " << (implObj->isNumber65("53.5e93") ? "True" : "False") << ".\n";
         cout << "' --6' is valid = " << (implObj->isNumber65(" --6") ? "True" : "False") << ".\n";
         cout << "'-+3' is valid = " << (implObj->isNumber65("-+3") ? "True" : "False") << ".\n";
-        cout << "'95a54e53' is valid = " << (implObj->isNumber65("95a54e53") ? "True" : "False") << ".\n";
+        cout << "'95a54e53' is valid = " << (implObj->isNumber65("95a54e53") ? "True" : "False") << ".\n\n";
 
         return;
     }
@@ -975,7 +982,7 @@ public:
         cout << "Find 'ABCCED' is [" 
             << (implObj->exist79(board, "ABCCED") ? "True" : "False") <<"]\n";
         cout << "Find 'ABCB' is [" 
-            << (implObj->exist79(board, "ABCB") ? "True" : "False") << "]\n";
+            << (implObj->exist79(board, "ABCB") ? "True" : "False") << "]\n\n";
         return;
     }
 
@@ -1160,8 +1167,9 @@ public:
         cout << "Can generate " << result.size() << " trees.\n";
         for (int i = 0; i < result.size(); ++i) {
             TreeNode * cur = result[i];
-            cout << "i = " << i << "; Root value " << cur->val << "\n\n";
+            cout << "i = " << i << "; Root value " << cur->val << "\n";
         }
+        cout << "\n";
         return;
     }
 

@@ -1654,6 +1654,27 @@ public:
         return result;
     }
 
+    // 60. Permutation Sequence
+    string getPermutation60(int n, int k) {
+        string res;
+        string nums("123456789");
+        nums.substr(0, n);
+        vector<int> f(n + 1, 1);
+        for (int i = 1; i <= n; ++i) {
+            f[i] = f[i - 1] * i;
+        }
+
+        --k;
+        for (int i = n; i >= 1; --i) {
+            int a = k / f[i - 1];
+            k = k % f[i - 1];
+            res.push_back(nums[a]);
+            nums.erase(a, 1);
+        }
+
+        return res;
+    }
+
     // 61. Rotate List
     ListNode* rotateRight61(ListNode* head, int k) {
         if (!head) {
