@@ -2,6 +2,7 @@
 #define _SESSION_4_IMPL_H
 
 #include <iostream>
+#include <sstream>
 #include <vector>
 #include <algorithm>
 #include <numeric>
@@ -20,6 +21,19 @@ public:
         val = _val;
         left = _left;
         right = _right;
+    }
+};
+
+class Node428 {
+public:
+    int val = 0;
+    vector<Node428*> children;
+
+    Node428() {}
+
+    Node428(int _val, vector<Node428*> _children) {
+        val = _val;
+        children = _children;
     }
 };
 
@@ -403,6 +417,52 @@ public:
 
         inorder426(cur->right, head, pre);
     }
+
+    // 428. Serialize and Deserialize N-ary Tree
+    class Codec428 {
+    public:
+        // Encodes a tree to a single string.
+        string serialize(Node428* root) {
+            ostringstream result;
+            serialize_dfs(result, root);
+            return result.str();
+        }
+
+        // Decodes your encoded data to tree.
+        Node428* deserialize(string data) {
+            istringstream iss(data);
+            return deserialize_dfs(iss);
+        }
+
+    private:
+        void serialize_dfs(ostringstream & result, Node428* cur) {
+            if (!cur) {
+                result << " # ";
+                return;
+            }
+
+            result << " " << cur->val << " " << (cur->children.size()) << " ";
+            for (int i = 0; i < cur->children.size(); ++i) {
+                serialize_dfs(result, cur->children[i]);
+            }
+        }
+
+        Node428* deserialize_dfs(istringstream & iss) {
+            string value = "", count = "";
+            iss >> value;
+            if (value == "#") {
+                return NULL;
+            }
+
+            iss >> count;
+            Node428 *cur = new Node428(stoi(value), {});
+            for (int i = 0; i < stoi(count); ++i) {
+                cur->children.push_back(deserialize_dfs(iss));
+            }
+
+            return cur;
+        }
+    };
 };
 
 #endif

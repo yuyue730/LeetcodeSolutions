@@ -21,6 +21,7 @@ int main() {
     testObj->countBattleships419Test();
     testObj->characterReplacement424Test();
     testObj->treeToDoublyList426Test();
+    testObj->Codec428Test();
 
     return 0;
 }

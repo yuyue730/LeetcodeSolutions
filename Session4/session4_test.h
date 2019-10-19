@@ -150,7 +150,23 @@ public:
         Node426 * result = implObj->treeToDoublyList426(root);
         cout << "Please exam result = [" << result->val << "]\n\n";
         return;
+    }
 
+    // 428. Serialize and Deserialize N-ary Tree Test
+    void Codec428Test() {
+        cout << "428. Serialize and Deserialize N-ary Tree test starts.\n";
+        Session4Impl::Codec428 codec;
+        Node428 * child1 = new Node428(3, {
+            new Node428(5, {}), new Node428(6, {})
+        });
+        Node428 * child2 = new Node428(2, {});
+        Node428 * child3 = new Node428(4, {});
+        Node428 * root = new Node428(1, {child1, child2, child3});
+        
+        string str_res = codec.serialize(root);
+        cout << "Serilize result = [" << str_res << "]\n";
+        cout << "Please exam deserilze result = [" << codec.deserialize(str_res)->val << "]\n\n";
+        return;
     }
 
 private:
