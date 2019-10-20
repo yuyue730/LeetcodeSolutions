@@ -25,6 +25,7 @@ int main() {
     testObj->flatten430Test();
     testObj->AllOne432Test();
     testObj->minMutation433Test();
+    testObj->eraseOverlapIntervals435Test();
 
     return 0;
 }

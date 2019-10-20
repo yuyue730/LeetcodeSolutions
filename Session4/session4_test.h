@@ -216,6 +216,16 @@ public:
         return;
     }
 
+    // 435. Non-overlapping Intervals Test
+    void eraseOverlapIntervals435Test() {
+        cout << "435. Non-overlapping Intervals test starts.\n";
+        vector<vector<int>> intervals = {
+            {2, 3}, {1, 2}, {1, 5}, {1, 3}
+        };
+        cout << "# to remove = [" << implObj->eraseOverlapIntervals435(intervals) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

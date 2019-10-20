@@ -723,6 +723,27 @@ public:
 
         return result;
     }
+
+    // 435. Non-overlapping Intervals
+    int eraseOverlapIntervals435(vector<vector<int>>& intervals) {
+        if (intervals.empty()) {
+            return 0;
+        }
+        sort(intervals.begin(), intervals.end());
+        int result = 0, last = 0;
+        for (int i = 1; i < intervals.size(); ++i) {
+            if (intervals[i][0] < intervals[last][1]) {
+                ++result;
+                if (intervals[i][1] < intervals[last][1]) {
+                    last = i; // Remove the interval with larger end value
+                }
+            } else {
+                last = i;
+            }
+        }
+
+        return result;
+    }
 };
 
 #endif
