@@ -23,6 +23,7 @@ int main() {
     testObj->treeToDoublyList426Test();
     testObj->Codec428Test();
     testObj->flatten430Test();
+    testObj->AllOne432Test();
 
     return 0;
 }

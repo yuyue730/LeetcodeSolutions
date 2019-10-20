@@ -4,9 +4,11 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <list>
 #include <algorithm>
 #include <numeric>
 #include <unordered_map>
+#include <unordered_set>
 using namespace std;
 
 class Node426 {
@@ -511,6 +513,159 @@ public:
 
         return head;
     }
+
+    // 432. All O`one Data Structure
+    class AllOne432 {
+    public:
+        /** Initialize your data structure here. */
+        AllOne432(): head(NULL), tail(NULL) { }
+
+        /** Inserts a new key <Key> with value 1. Or increments an existing key by 1. */
+        void inc(string key) {
+            if (keyIterMap.count(key)) {
+                BucketNode* curBucket = keyIterMap[key];
+
+                if (curBucket == tail || curBucket->next->freq != curBucket->freq + 1) {
+                    BucketNode* newBucket = new BucketNode(curBucket->freq + 1, {key});
+                    if (curBucket == tail) {
+                        curBucket->next = newBucket;
+                        newBucket->pre = curBucket;
+                        tail = newBucket;
+                    } else {
+                        BucketNode* tmp = curBucket->next;
+                        curBucket->next = newBucket;
+                        newBucket->pre = curBucket;
+                        newBucket->next = tmp;
+                        tmp->pre = newBucket;
+                    }
+                    keyIterMap[key] = newBucket;
+                } else {
+                    curBucket->next->keys.insert(key);
+                    keyIterMap[key] = curBucket->next;
+                }
+
+                curBucket->keys.erase(key);
+                if (curBucket->keys.empty()) {
+                    BucketNode* n = curBucket->next;
+                    BucketNode* p = curBucket->pre;
+                    if (p) {
+                        p->next = n;
+                    }
+                    if (n) {
+                        n->pre = p;
+                    }
+
+                    if (curBucket == head) {
+                        head = curBucket->next;
+                    }
+                    delete curBucket;
+                }
+            } else {
+                if (head == NULL || head->freq != 1) {
+                    BucketNode* newBucket = new BucketNode(1, {key});
+                    if (head == NULL && tail == NULL) {
+                        head = newBucket;
+                        tail = newBucket;
+                    } else {
+                        newBucket->next = head;
+                        head->pre = newBucket;
+                        head = newBucket;
+                    }
+                } else {
+                    head->keys.insert(key);
+                }
+
+                keyIterMap[key] = head;
+            }
+        }
+
+        /** Decrements an existing key by 1. If Key's value is 1, remove it from the data structure. */
+        void dec(string key) {
+            if (!keyIterMap.count(key)) {
+                return;
+            }
+
+            BucketNode* curBucket = keyIterMap[key];
+            if (curBucket->freq == 1) {
+                assert(curBucket == head);
+                curBucket->keys.erase(key);
+                if (curBucket->keys.empty()) {
+                    if (head->next) {
+                        head = head->next;
+                        head->pre = NULL;
+                    } else {
+                        assert(head == tail);
+                        head = tail = NULL;
+                    }
+                    delete curBucket;
+                }
+                keyIterMap.erase(key);
+                return;
+            }
+
+            BucketNode* proposedBucket = curBucket->pre;
+            if (curBucket->pre == NULL || curBucket->pre->freq != curBucket->freq - 1) {
+                BucketNode* newBucket = new BucketNode(curBucket->freq - 1, {key});
+                if (curBucket == head) {
+                    head = newBucket;
+                    head->next = curBucket;
+                    curBucket->pre = head;
+                } else {
+                    proposedBucket->next = newBucket;
+                    newBucket->pre = proposedBucket;
+                    newBucket->next = curBucket;
+                    curBucket->pre = newBucket;
+                }
+                keyIterMap[key] = newBucket;
+            } else {
+                proposedBucket->keys.insert(key);
+                keyIterMap[key] = proposedBucket;
+            }
+
+            curBucket->keys.erase(key);
+            if (curBucket->keys.empty()) {
+                BucketNode* n = curBucket->next;
+                BucketNode* p = curBucket->pre;
+                if (p) {
+                    p->next = n;
+                }
+                if (n) {
+                    n->pre = p;
+                }
+
+                if (curBucket == tail) {
+                    tail = curBucket->pre;
+                }
+                delete curBucket;
+            }
+        }
+
+        /** Returns one of the keys with maximal value. */
+        string getMaxKey() {
+            return (head == NULL && tail == NULL) ? "" : *(tail->keys.begin());
+        }
+
+        /** Returns one of the keys with Minimal value. */
+        string getMinKey() {
+            return (head == NULL && tail == NULL) ? "" : *(head->keys.begin());
+        }
+
+    private:
+        struct BucketNode {
+            int freq;
+            unordered_set<string> keys;
+
+            BucketNode* pre;
+            BucketNode* next;
+
+            BucketNode(int inputFreq, unordered_set<string> inputKeys)
+                : freq(inputFreq), keys(inputKeys), pre(NULL), next(NULL) { }
+        };
+
+        BucketNode* head;      // Min Value
+        BucketNode* tail;      // Max Value
+        unordered_map<string, BucketNode*> keyIterMap;
+    };
 };
 
 #endif

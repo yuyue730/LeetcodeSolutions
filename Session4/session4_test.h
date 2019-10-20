@@ -191,6 +191,21 @@ public:
         return;
     }
 
+    // 432. All O`one Data Structure Test
+    void AllOne432Test() {
+        cout << "432. All O`one Data Structure test starts.\n";
+        Session4Impl::AllOne432 obj;
+        obj.inc("A");
+        obj.inc("B");
+        obj.inc("B");
+        obj.inc("B");
+        obj.inc("B");
+        obj.inc("B");
+        obj.dec("B");
+        obj.dec("B");
+        cout << "getMax = [" << obj.getMaxKey() << "]; getMin = [" << obj.getMinKey() << "]\n\n";
+    }
+
 private:
     Session4Impl * implObj;
 };
