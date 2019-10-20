@@ -24,6 +24,7 @@ int main() {
     testObj->Codec428Test();
     testObj->flatten430Test();
     testObj->AllOne432Test();
+    testObj->minMutation433Test();
 
     return 0;
 }

@@ -206,6 +206,16 @@ public:
         cout << "getMax = [" << obj.getMaxKey() << "]; getMin = [" << obj.getMinKey() << "]\n\n";
     }
 
+    // 433. Minimum Genetic Mutation Test
+    void minMutation433Test() {
+        cout << "433. Minimum Genetic Mutation test starts.\n";
+        string start = "AAAAACCC";
+        string end = "AACCCCCC";
+        vector<string> bank = {"AAAACCCC", "AAACCCCC", "AACCCCCC"};
+        cout << "# of steps to reach = [" << implObj->minMutation433(start, end, bank) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

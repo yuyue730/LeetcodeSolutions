@@ -4,7 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-#include <list>
+#include <queue>
 #include <algorithm>
 #include <numeric>
 #include <unordered_map>
@@ -666,6 +666,63 @@ public:
         BucketNode* tail;      // Max Value
         unordered_map<string, BucketNode*> keyIterMap;
     };
+
+    // 433. Minimum Genetic Mutation
+    int minMutation433(string start, string end, vector<string>& bank) {
+        bank.push_back(start);
+        int n = bank.size();
+        int result = 0;
+        vector<vector<int>> distMatrix(n, vector<int>(n, 0));
+
+        for (int i = 0; i < bank.size(); ++i) {
+            for (int j = 0; j < bank.size(); ++j) {
+                distMatrix[i][j] = calculateDistance(bank[i], bank[j]);
+            }
+        }
+
+        unordered_set<int> visited;
+        queue<int> q({n - 1});
+
+        while (!q.empty()) { 
+            ++result;
+            for (int i = q.size(); i > 0; --i) {
+                int curWordIdx = q.front();
+                q.pop();
+                for (int i = 0; i < bank.size(); ++i) {
+                    if (i == curWordIdx || visited.count(curWordIdx) 
+                        || (distMatrix[curWordIdx][i] != 1 || distMatrix[i][curWordIdx] != 1)) {
+                        continue;
+                    }
+
+                    if (bank[i] == end) {
+                        return result;
+                    }
+
+                    if (distMatrix[curWordIdx][i] == 1 && distMatrix[i][curWordIdx] == 1) {
+                        q.push(i);
+                    }
+                }
+
+                visited.insert(curWordIdx);
+            }
+        }
+
+        return -1;
+    }
+
+    int calculateDistance(string s1, string s2) {
+        assert(s1.length() == s2.length());
+        int n = s1.length();
+        int result = 0;
+
+        for (int i = 0; i < n; ++i) {
+            if (s1[i] != s2[i]) {
+                ++result;
+            }
+        }
+
+        return result;
+    }
 };
 
 #endif
