@@ -28,6 +28,7 @@ int main() {
     testObj->eraseOverlapIntervals435Test();
     testObj->pathSum437Test();
     testObj->findAnagrams438Test();
+    testObj->findKthNumber440Test();
 
     return 0;
 }

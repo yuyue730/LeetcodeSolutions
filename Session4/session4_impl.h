@@ -820,6 +820,34 @@ public:
 
         return result;
     }
+
+    // 440. K-th Smallest in Lexicographical Order
+    int findKthNumber440(int n, int k) {
+        long long cur = 1;
+        k--;
+
+        while (k > 0) {
+            long long pre = cur, next = cur + 1;
+            long long steps = 0;
+            while (pre <= n) {
+                steps += min(next, static_cast<long long>(n + 1)) - pre;
+                pre *= 10;
+                next *= 10;
+            }
+
+            if (steps <= k) {
+                // Go to the next sibling tree
+                cur++;
+                k -= steps;
+            } else {
+                // Go to the child tree
+                cur *= 10;
+                k--;
+            }
+        }
+
+        return static_cast<int>(cur);
+    }
 };
 
 #endif

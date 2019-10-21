@@ -13,7 +13,11 @@
         "iterator": "cpp",
         "string": "cpp",
         "string_view": "cpp",
-        "__hash_table": "cpp"
+        "__hash_table": "cpp",
+        "algorithm": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp",
+        "ratio": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

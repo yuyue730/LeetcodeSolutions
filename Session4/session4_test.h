@@ -266,6 +266,13 @@ public:
         return;
     }
 
+    // 440. K-th Smallest in Lexicographical Order Test
+    void findKthNumber440Test() {
+        cout << "440. K-th Smallest in Lexicographical Order test starts.\n";
+        cout << "(13, 3) will return [" << implObj->findKthNumber440(13, 3) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };
