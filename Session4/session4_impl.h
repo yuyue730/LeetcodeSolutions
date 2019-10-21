@@ -789,6 +789,37 @@ public:
         pathSum437_rec(result, path, cur->right, curSum, target);
         path.pop_back();
     }
+
+    // 438. Find All Anagrams in a String
+    vector<int> findAnagrams438(string s, string p) {
+        if (s.size() < p.size()) {
+            return {};
+        }
+        
+        vector<int> result;
+        vector<int> charFreqMap(256, 0);
+        for (char c: p) {
+            charFreqMap[c]++;
+        }
+
+        int left = 0, right = 0;
+        int cnt = p.size();
+        while (right < s.size()) {
+            if (charFreqMap[s[right++]]-- >= 1) {
+                cnt--;
+            }
+
+            if (cnt == 0) {
+                result.push_back(left);
+            }
+
+            if (right - left == p.size() && charFreqMap[s[left++]]++ >= 0) {
+                cnt++;
+            }
+        }
+
+        return result;
+    }
 };
 
 #endif

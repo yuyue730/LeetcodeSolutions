@@ -251,6 +251,21 @@ public:
         return;
     }
 
+    // 438. Find All Anagrams in a String Test
+    void findAnagrams438Test() {
+        cout << "438. Find All Anagrams in a String test starts.\n";
+        string s = "cbaebabacd"; 
+        string p = "abc";
+
+        vector<int> result = implObj->findAnagrams438(s, p);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

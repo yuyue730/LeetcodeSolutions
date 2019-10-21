@@ -27,6 +27,7 @@ int main() {
     testObj->minMutation433Test();
     testObj->eraseOverlapIntervals435Test();
     testObj->pathSum437Test();
+    testObj->findAnagrams438Test();
 
     return 0;
 }
