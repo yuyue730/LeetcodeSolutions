@@ -11,6 +11,14 @@
 #include <unordered_set>
 using namespace std;
 
+// Definition for a binary tree node.
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
 class Node426 {
 public:
     int val;
@@ -743,6 +751,43 @@ public:
         }
 
         return result;
+    }
+
+    // 437. Path Sum III
+    int pathSum437(TreeNode* root, int sum) {
+        if (!root) {
+            return 0;
+        }
+        int result = 0;
+        vector<TreeNode*> path;
+        pathSum437_rec(result, path, root, 0, sum);
+        return result;
+    }
+
+    void pathSum437_rec(int& result, vector<TreeNode*> &path, 
+        TreeNode* cur, int curSum, int const target
+    ) {
+        if (!cur) {
+            return;
+        }
+
+        curSum += cur->val;
+        path.push_back(cur);
+        if (curSum == target) {
+            ++result;
+        }
+
+        int temp = curSum;
+        for (int i = 0; i < path.size() - 1; ++i) {
+            temp -= path[i]->val;
+            if (temp == target) {
+                ++result;
+            }
+        }
+
+        pathSum437_rec(result, path, cur->left, curSum, target);
+        pathSum437_rec(result, path, cur->right, curSum, target);
+        path.pop_back();
     }
 };
 

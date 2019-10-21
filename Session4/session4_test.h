@@ -226,6 +226,31 @@ public:
         return;
     }
 
+    // 437. Path Sum III Test
+    void pathSum437Test() {
+        cout << "437. Path Sum III test starts.\n";
+        TreeNode* root = new TreeNode(10);
+        root->left = new TreeNode(5);
+        root->right = new TreeNode(-3);
+
+        TreeNode* cur = root->left;
+        cur->left = new TreeNode(3);
+        cur->right = new TreeNode(2);
+
+        cur = cur->left;
+        cur->left = new TreeNode(3);
+        cur->right = new TreeNode(-2);
+
+        cur = root->left->right;
+        cur->right = new TreeNode(1);
+
+        cur = root->right;
+        cur->right = new TreeNode(11);
+
+        cout << "# of paths = [" << implObj->pathSum437(root, 8) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };
