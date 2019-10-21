@@ -78,6 +78,7 @@ int main() {
     testObj->climbStairs70Test();
     testObj->simplifyPath71Test();
     testObj->minDistance72Test();
+    testObj->setZeroes73Test();
     testObj->searchMatrix74Test();
     testObj->sortColors75Test();
     testObj->minWindow76Test();

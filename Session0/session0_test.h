@@ -902,6 +902,28 @@ public:
         return;
     }
 
+    // 73. Set Matrix Zeroes Test
+    void setZeroes73Test() {
+        cout << "73. Set Matrix Zeroes test starts.\n";
+        vector<vector<int>> matrix = {
+            {0, 1, 2, 0},
+            {3, 4, 0, 2},
+            {1, 3, 1, 5}
+        };
+
+        implObj->setZeroes73(matrix);
+        cout << "Result = [\n";
+        for (int i = 0; i < matrix.size(); ++i) {
+            cout << "  [";
+            for (int j = 0; j < matrix[i].size(); ++j) {
+                cout << matrix[i][j] << ((j == matrix[i].size() - 1) ? "" : ", ");
+            }
+            cout << "]\n";
+        }
+        cout << "]\n\n";
+        return;
+    }
+
     // 74. Search a 2D Matrix Test
     void searchMatrix74Test() {
         cout << "74. Search a 2D Matrix test starts.\n";
