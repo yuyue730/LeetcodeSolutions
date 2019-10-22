@@ -29,6 +29,8 @@ int main() {
     testObj->pathSum437Test();
     testObj->findAnagrams438Test();
     testObj->findKthNumber440Test();
+    testObj->findDuplicates442Test();
+    testObj->compress443Test();
 
     return 0;
 }

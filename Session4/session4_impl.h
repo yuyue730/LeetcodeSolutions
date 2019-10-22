@@ -848,6 +848,47 @@ public:
 
         return static_cast<int>(cur);
     }
+
+    // 442. Find All Duplicates in an Array
+    vector<int> findDuplicates442(vector<int>& nums) {
+        vector<int> result;
+        for (int i = 0; i < nums.size(); ++i) {
+            int val = abs(nums[i]) - 1;
+            if (nums[val] < 0) {
+                result.push_back(val + 1);
+            } else {
+                nums[val] = -nums[val];
+            }
+        }
+        
+        return result;
+    }
+
+    // 443. String Compression
+    int compress443(vector<char>& chars) {
+        int left = 0, right = 0;
+        while (right < chars.size()) {
+            int count = 0;
+            char curChar = chars[right];
+            while (right < chars.size() && chars[right] == curChar) {
+                ++right;
+                ++count;
+            }
+            
+            chars[left] = curChar;
+            left++;
+            if (count > 1) {
+                string cntStr = to_string(count);
+                for (char c : cntStr) {
+                    chars[left] = c;
+                    left++;
+                }
+            }
+        }
+        
+        chars.resize(left);
+        return left;
+    }
 };
 
 #endif
