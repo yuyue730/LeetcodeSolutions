@@ -299,6 +299,30 @@ public:
         return;
     }
 
+    // 445. Add Two Numbers II Test
+    void addTwoNumbers445Test() {
+        cout << "445. Add Two Numbers II test starts.\n";
+        ListNode *head1 = new ListNode(7);
+        ListNode *cur = head1;
+        cur->next = new ListNode(2); cur = cur->next;
+        cur->next = new ListNode(4); cur = cur->next;
+        cur->next = new ListNode(3);
+        
+        ListNode *head2 = new ListNode(5);
+        cur = head2;
+        cur->next = new ListNode(6); cur = cur->next;
+        cur->next = new ListNode(4);
+
+        ListNode* result = implObj->addTwoNumbers445(head1, head2);
+        cout << "Result = [";
+        while (result) {
+            cout << result->val << (result->next ? "->" : "");
+            result = result->next;
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

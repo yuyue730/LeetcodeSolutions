@@ -5,6 +5,7 @@
 #include <sstream>
 #include <vector>
 #include <queue>
+#include <stack>
 #include <algorithm>
 #include <numeric>
 #include <unordered_map>
@@ -17,6 +18,13 @@ struct TreeNode {
     TreeNode *left;
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+// Definition for singly-linked list.
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
 };
 
 class Node426 {
@@ -888,6 +896,56 @@ public:
         
         chars.resize(left);
         return left;
+    }
+
+    // 445. Add Two Numbers II
+    ListNode* addTwoNumbers445(ListNode* l1, ListNode* l2) {
+        stack<int> l1_stk = listToStack(l1);
+        stack<int> l2_stk = listToStack(l2);
+        
+        ListNode* newHead = NULL;
+        int carryOver = 0;
+        while (!l1_stk.empty() && !l2_stk.empty()) {
+            int dig1 = l1_stk.top(); l1_stk.pop();
+            int dig2 = l2_stk.top(); l2_stk.pop();
+            
+            int curVal = dig1 + dig2 + carryOver;
+            carryOver = curVal >= 10 ? 1 : 0;
+
+            ListNode* nextHead = new ListNode(curVal % 10);
+            nextHead->next = newHead;
+            newHead = nextHead;
+        }
+        
+        stack<int>* remainStk = l1_stk.empty() ? &l2_stk : &l1_stk;
+        while (!remainStk->empty()) {
+            int dig = remainStk->top(); remainStk->pop();
+            int curVal = dig + carryOver;
+            carryOver = curVal >= 10 ? 1 : 0;
+            
+            ListNode* nextHead = new ListNode(curVal % 10);
+            nextHead->next = newHead;
+            newHead = nextHead;
+        }
+        
+        if (carryOver) {
+            ListNode* result = new ListNode(1);
+            result->next = newHead;
+            return result;
+        } else {
+            return newHead;
+        }
+    }
+    
+    stack<int> listToStack(ListNode* head) {
+        stack<int> result;
+        ListNode* cur = head;
+        while (cur) {
+            result.push(cur->val);
+            cur = cur->next;
+        }
+        
+        return result;
     }
 };
 

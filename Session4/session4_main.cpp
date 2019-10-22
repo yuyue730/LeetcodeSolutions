@@ -31,6 +31,7 @@ int main() {
     testObj->findKthNumber440Test();
     testObj->findDuplicates442Test();
     testObj->compress443Test();
+    testObj->addTwoNumbers445Test();
 
     return 0;
 }
