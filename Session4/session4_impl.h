@@ -967,6 +967,47 @@ public:
         
         return result;
     }
+
+    // 449. Serialize and Deserialize BST
+    class Codec449 {
+    public:
+        // Encodes a tree to a single string.
+        string serialize(TreeNode* root) {
+            ostringstream oss;
+            serialize_dfs(root, oss);
+            return oss.str();
+        }
+
+        // Decodes your encoded data to tree.
+        TreeNode* deserialize(string data) {
+            istringstream iss(data);
+            return deserialize_dfs(iss);
+        }
+
+    private:
+        void serialize_dfs(TreeNode* cur, ostringstream& oss) {
+            if (!cur) {
+                oss << "# ";
+            } else {
+                oss << cur->val << " ";
+                serialize_dfs(cur->left, oss);
+                serialize_dfs(cur->right, oss);
+            }
+        }
+
+        TreeNode* deserialize_dfs(istringstream& iss) {
+            string val_str;
+            iss >> val_str;
+            if (val_str == "#") {
+                return NULL;
+            }
+
+            TreeNode* cur = new TreeNode(stoi(val_str));
+            cur->left = deserialize_dfs(iss);
+            cur->right = deserialize_dfs(iss);
+            return cur;
+        }
+    };
 };
 
 #endif

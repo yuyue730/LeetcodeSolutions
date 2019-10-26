@@ -33,6 +33,7 @@ int main() {
     testObj->compress443Test();
     testObj->addTwoNumbers445Test();
     testObj->findDisappearedNumbers448Test();
+    testObj->Codec449Test();
 
     return 0;
 }

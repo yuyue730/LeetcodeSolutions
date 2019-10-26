@@ -336,6 +336,26 @@ public:
         return;
     }
 
+    // 449. Serialize and Deserialize BST Test
+    void Codec449Test() {
+        cout << "449. Serialize and Deserialize BST test starts.\n";
+        TreeNode* root = new TreeNode(4);
+        TreeNode* cur = root;
+        cur->left = new TreeNode(2);
+        cur->right = new TreeNode(5);
+
+        cur = cur->left;
+        cur->left = new TreeNode(1);
+        cur->right = new TreeNode(3);
+
+        Session4Impl::Codec449 obj;
+        string serialize = obj.serialize(root);
+        cout << "Serialize = [" << serialize << "]\n";
+        TreeNode* deserialize = obj.deserialize(serialize);
+        cout << "Please exam deserialize = [" << deserialize->val << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };
