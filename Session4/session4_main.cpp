@@ -32,6 +32,7 @@ int main() {
     testObj->findDuplicates442Test();
     testObj->compress443Test();
     testObj->addTwoNumbers445Test();
+    testObj->findDisappearedNumbers448Test();
 
     return 0;
 }

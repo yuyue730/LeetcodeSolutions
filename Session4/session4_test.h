@@ -323,6 +323,19 @@ public:
         return;
     }
 
+    // 448. Find All Numbers Disappeared in an Array Test
+    void findDisappearedNumbers448Test() {
+        cout << "448. Find All Numbers Disappeared in an Array test starts.\n";
+        vector<int> nums = {4,3,2,7,8,2,3,1};
+        vector<int> result = implObj->findDisappearedNumbers448(nums);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };
