@@ -36,6 +36,7 @@ int main() {
     testObj->Codec449Test();
     testObj->deleteNode450Test();
     testObj->frequencySort451Test();
+    testObj->findMinArrowShots452Test();
 
     return 0;
 }
