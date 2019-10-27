@@ -356,6 +356,27 @@ public:
         return;
     }
 
+    // 450. Delete Node in a BST Test
+    void deleteNode450Test() {
+        cout << "450. Delete Node in a BST test starts.\n";
+        TreeNode* root = new TreeNode(4);
+        TreeNode* cur = root;
+        cur->left = new TreeNode(2);
+        cur->right = new TreeNode(6);
+
+        cur = cur->left;
+        cur->left = new TreeNode(1);
+        cur->right = new TreeNode(3);
+
+        cur = root->right;
+        cur->left = new TreeNode(5);
+        cur->right = new TreeNode(7);
+
+        TreeNode* result = implObj->deleteNode450(root, 5);
+        cout << "Please exam result [" << result->val << "]\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

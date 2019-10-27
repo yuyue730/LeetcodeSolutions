@@ -34,6 +34,7 @@ int main() {
     testObj->addTwoNumbers445Test();
     testObj->findDisappearedNumbers448Test();
     testObj->Codec449Test();
+    testObj->deleteNode450Test();
 
     return 0;
 }

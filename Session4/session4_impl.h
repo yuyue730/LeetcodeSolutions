@@ -1008,6 +1008,31 @@ public:
             return cur;
         }
     };
+
+    // 450. Delete Node in a BST
+    TreeNode* deleteNode450(TreeNode* root, int key) {
+        if (!root) {
+            return NULL;
+        }
+        if (key < root->val) {
+            root->left = deleteNode450(root->left, key);
+        } else if (key > root->val) {
+            root->right = deleteNode450(root->right, key);
+        } else {
+            if (root->left == NULL || root->right == NULL) {
+                return (root->left) ? root->left : root->right;
+            }
+
+            TreeNode* cur = root->right;
+            while (cur->left) {
+                cur = cur->left;
+            }
+
+            root->val = cur->val;
+            root->right = deleteNode450(root->right, cur->val);
+        }
+        return root;
+    }
 };
 
 #endif
