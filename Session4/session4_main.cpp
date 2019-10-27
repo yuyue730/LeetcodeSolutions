@@ -35,6 +35,7 @@ int main() {
     testObj->findDisappearedNumbers448Test();
     testObj->Codec449Test();
     testObj->deleteNode450Test();
+    testObj->frequencySort451Test();
 
     return 0;
 }

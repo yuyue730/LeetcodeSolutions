@@ -373,7 +373,14 @@ public:
         cur->right = new TreeNode(7);
 
         TreeNode* result = implObj->deleteNode450(root, 5);
-        cout << "Please exam result [" << result->val << "]\n";
+        cout << "Please exam result [" << result->val << "]\n\n";
+        return;
+    }
+
+    // 451. Sort Characters By Frequency Test
+    void frequencySort451Test() {
+        cout << "451. Sort Characters By Frequency test starts.\n";
+        cout << "tree => [" << implObj->frequencySort451("tree") << "]\n\n";
         return;
     }
 

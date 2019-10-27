@@ -1033,6 +1033,26 @@ public:
         }
         return root;
     }
+
+    // 451. Sort Characters By Frequency
+    string frequencySort451(string s) {
+        unordered_map<char, int> freqMap;
+        for (char c: s) {
+            freqMap[c]++;
+        }
+
+        priority_queue<pair<int, char>> pq;
+        for (auto it: freqMap) {
+            pq.push({it.second, it.first});
+        }
+
+        string result = "";
+        while (!pq.empty()) {
+            result.append(pq.top().first, pq.top().second);
+            pq.pop();
+        }
+        return result;
+    }
 };
 
 #endif
