@@ -37,6 +37,7 @@ int main() {
     testObj->deleteNode450Test();
     testObj->frequencySort451Test();
     testObj->findMinArrowShots452Test();
+    testObj->find132pattern456Test();
 
     return 0;
 }

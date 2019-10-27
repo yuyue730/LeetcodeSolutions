@@ -394,6 +394,14 @@ public:
         return;
     }
 
+    // 456. 132 Pattern Test
+    void find132pattern456Test() {
+        cout << "456. 132 Pattern test starts.\n";
+        vector<int> nums = {3, 1, 4, 2};
+        cout << "Can find 132 = [" << implObj->find132pattern456(nums) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

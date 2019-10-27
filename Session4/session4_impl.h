@@ -1075,6 +1075,25 @@ public:
 
         return res;
     }
+
+    // 456. 132 Pattern
+    bool find132pattern456(vector<int>& nums) {
+        int curMin = INT_MAX, n = nums.size();
+        for (int j = 0; j < n; ++j) {
+            curMin = min(curMin, nums[j]);
+            if (curMin == nums[j]) {
+                continue;
+            }
+
+            for (int k = n - 1; k > j; --k) {
+                if (nums[k] > curMin && nums[k] < nums[j]) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 };
 
 #endif
