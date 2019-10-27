@@ -92,6 +92,7 @@ int main() {
     testObj->maximalRectangle85Test();
     testObj->partition86Test();
     testObj->merge88Test();
+    testObj->subsetsWithDup90Test();
     testObj->numDecodings91Test();
     testObj->reverseBetween92Test();
     testObj->restoreIpAddresses93Test();

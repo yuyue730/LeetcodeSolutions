@@ -1121,6 +1121,23 @@ public:
         return;
     }
 
+    // 90. Subsets II Test
+    void subsetsWithDup90Test() {
+        cout << "90. Subsets II test starts.\n";
+        vector<int> nums = {1,2,2};
+        vector<vector<int>> result = implObj->subsetsWithDup90(nums);
+        cout << "Result = [\n";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << "  [";
+            for (int j = 0; j < result[i].size(); ++j) {
+                cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
+            }
+            cout << "]\n";
+        }
+        cout << "]\n\n";
+        return;
+    }
+
     // 91. Decode Ways Test
     void numDecodings91Test() {
         cout << "91. Decode Ways test starts.\n";

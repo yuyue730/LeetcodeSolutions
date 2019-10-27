@@ -2482,6 +2482,32 @@ public:
         return;
     }
 
+    // 90. Subsets II
+    vector<vector<int>> subsetsWithDup90(vector<int>& nums) {
+        vector<vector<int>> result;
+        if (nums.size() == 0) {
+            return result;
+        }
+        
+        sort(nums.begin(), nums.end());
+        vector<int> curResult;
+        subsetsWithDup_rec(0, nums, curResult, result);
+        return result;
+    }
+    
+    void subsetsWithDup_rec(int idx, const vector<int>& nums,
+        vector<int>& curRes, vector<vector<int>>& allRes) {
+        allRes.push_back(curRes);
+        for (int i = idx; i < nums.size(); ++i) {
+            curRes.push_back(nums[i]);
+            subsetsWithDup_rec(i + 1, nums, curRes, allRes);
+            curRes.pop_back();
+            while (i + 1 < nums.size() && nums[i] == nums[i + 1]) {
+                i++;
+            }
+        }
+    }
+
     // 91. Decode Ways
     int numDecodings91(string s) {
         if (s[0] == '0') {
