@@ -1094,6 +1094,28 @@ public:
 
         return false;
     }
+
+    // 459. Repeated Substring Pattern
+    bool repeatedSubstringPattern459(string s) {
+        int n = s.size();
+        for (int i = n / 2; i >= 1; --i) {
+            if (n % i == 0) {
+                string curSubstr = s.substr(0, i);
+                int repeat = n / i;
+                string curStr = "";
+                
+                for (int j = 0; j < repeat; ++j) {
+                    curStr += curSubstr;
+                }
+                
+                if (curStr == s) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
 };
 
 #endif

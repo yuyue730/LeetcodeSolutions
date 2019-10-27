@@ -402,6 +402,14 @@ public:
         return;
     }
 
+    // 459. Repeated Substring Pattern Test
+    void repeatedSubstringPattern459Test() {
+        cout << "459. Repeated Substring Pattern test starts.\n";
+        string s = "abab";
+        cout << "Is repeated = [" << implObj->repeatedSubstringPattern459(s) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

@@ -38,6 +38,7 @@ int main() {
     testObj->frequencySort451Test();
     testObj->findMinArrowShots452Test();
     testObj->find132pattern456Test();
+    testObj->repeatedSubstringPattern459Test();
 
     return 0;
 }
