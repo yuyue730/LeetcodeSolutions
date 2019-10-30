@@ -410,6 +410,23 @@ public:
         return;
     }
 
+    // 460. LFU Cache Test
+    void LFUCache460Test() {
+        cout << "460. LFU Cache test starts.\n";
+        Session4Impl::LFUCache460 cache(2);
+        cache.put(1, 1);
+        cache.put(2, 2);
+        cout << "Get 1 = [" << cache.get(1) << "]\n";
+        cache.put(3, 3);
+        cout << "Get 2 = [" << cache.get(2) << "]\n";
+        cout << "Get 3 = [" << cache.get(3) << "]\n";
+        cache.put(4, 4);
+        cout << "Get 1 = [" << cache.get(1) << "]\n";
+        cout << "Get 3 = [" << cache.get(3) << "]\n";
+        cout << "Get 4 = [" << cache.get(4) << "]\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

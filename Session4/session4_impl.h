@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <list>
 #include <queue>
 #include <stack>
 #include <algorithm>
@@ -1116,6 +1117,70 @@ public:
         
         return false;
     }
+
+    // 460. LFU Cache
+    class LFUCache460 {
+    public:
+        LFUCache460(int capacity)
+            : d_limit(capacity), d_minFreq(0) { }
+        
+        int get(int key) {
+            if (d_keyKVNIterMap.count(key) == 0) {
+                return -1;
+            }
+
+            int curFreq = d_keyKVNIterMap[key]->d_freq;
+            int curVal = d_keyKVNIterMap[key]->d_val;
+            d_freqDLLMap[curFreq].erase(d_keyKVNIterMap[key]);
+
+            KVNode next(key, curVal, curFreq + 1);
+            d_freqDLLMap[curFreq + 1].push_back(next);
+            d_keyKVNIterMap[key] = --d_freqDLLMap[curFreq + 1].end();
+
+            if (d_freqDLLMap[d_minFreq].empty()) {
+                ++d_minFreq;
+            }
+            return curVal;
+        }
+        
+        void put(int key, int value) {
+            if (d_limit <= 0) {
+                return;    
+            }
+
+            if (get(key) != -1) {
+                d_keyKVNIterMap[key]->d_val = value;
+                return;
+            }
+
+            if (d_keyKVNIterMap.size() >= d_limit) {
+                int toRemove = d_freqDLLMap[d_minFreq].front().d_key;
+                d_keyKVNIterMap.erase(toRemove);
+                d_freqDLLMap[d_minFreq].pop_front();
+            }
+
+            KVNode cur(key, value, 1);
+            d_freqDLLMap[1].push_back(cur);
+            d_keyKVNIterMap[key] = --d_freqDLLMap[1].end();
+            d_minFreq = 1;
+        }
+
+    private:
+        struct KVNode {
+            int d_key;
+            int d_val;
+            int d_freq;
+
+            KVNode(int key, int val, int freq)
+                : d_key(key), d_val(val), d_freq(freq) { }
+        };
+
+        unordered_map<int, list<KVNode>::iterator> d_keyKVNIterMap;
+        unordered_map<int, list<KVNode>> d_freqDLLMap;
+
+        int d_limit;
+        int d_minFreq;
+    };
 };
 
 #endif

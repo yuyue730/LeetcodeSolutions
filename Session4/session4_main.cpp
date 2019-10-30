@@ -39,6 +39,7 @@ int main() {
     testObj->findMinArrowShots452Test();
     testObj->find132pattern456Test();
     testObj->repeatedSubstringPattern459Test();
+    testObj->LFUCache460Test();
 
     return 0;
 }
