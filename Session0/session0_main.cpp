@@ -102,6 +102,7 @@ int main() {
     testObj->isInterleave97Test();
     testObj->isValidBST98Test();
     testObj->recoverTree99Test();
+    testObj->isSameTree100Test();
 
     return 0;
 }

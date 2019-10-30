@@ -2769,7 +2769,24 @@ public:
 
         if (cur->right) {
             recoverTree99InOrder(cur->right, allNodes, allValues);
-        } 
+        }
+    }
+
+    // 100. Same Tree
+    bool isSameTree100(TreeNode* p, TreeNode* q) {
+        if (!p && !q) {
+            return true;
+        }
+        
+        if (!p || !q) {
+            return false;
+        }
+        
+        if (p->val != q->val) {
+            return false;
+        }
+        
+        return isSameTree100(p->left, q->left) && isSameTree100(p->right, q->right);
     }
 };
 

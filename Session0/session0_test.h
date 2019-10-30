@@ -1263,7 +1263,23 @@ public:
         cur = cur->right; cur->right = new TreeNode(8);
 
         implObj->recoverTree99(root);
-        cout << "Please exam the root [" << root->val << "]\n";
+        cout << "Please exam the root [" << root->val << "]\n\n";
+        return;
+    }
+
+    // 100. Same Tree Test
+    void isSameTree100Test() {
+        cout << "100. Same Tree test starts.\n";
+        TreeNode * root1 = new TreeNode(1);
+        TreeNode * cur = root1;
+        cur->left = new TreeNode(2);
+        cur->right = new TreeNode(3);
+
+        TreeNode * root2 = new TreeNode(1);
+        cur = root2;
+        cur->left = new TreeNode(2);
+        
+        cout << "isSame = [" << implObj->isSameTree100(root1, root2) << "]\n\n";
         return;
     }
 
