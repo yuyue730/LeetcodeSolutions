@@ -423,7 +423,28 @@ public:
         cache.put(4, 4);
         cout << "Get 1 = [" << cache.get(1) << "]\n";
         cout << "Get 3 = [" << cache.get(3) << "]\n";
-        cout << "Get 4 = [" << cache.get(4) << "]\n";
+        cout << "Get 4 = [" << cache.get(4) << "]\n\n";
+        return;
+    }
+
+    // 463. Island Perimeter Test
+    void islandPerimeter463Test() {
+        cout << "463. Island Perimeter test starts.\n";
+        vector<vector<int>> grid = {
+            {0,1,0,0},
+            {1,1,1,0},
+            {0,1,0,0},
+            {1,1,0,0}
+        };
+
+        cout << "Perimeter = [" << implObj->islandPerimeter463(grid) << "]\n\n";
+        return;
+    }
+
+    // 464. Can I Win Test
+    void canIWin464Test() {
+        cout << "464. Can I Win test starts.\n";
+        cout << "Can win with (4, 6) = [" << implObj->canIWin464(4, 6) << "]\n\n";
         return;
     }
 

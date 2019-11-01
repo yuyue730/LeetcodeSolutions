@@ -1181,6 +1181,64 @@ public:
         int d_limit;
         int d_minFreq;
     };
+
+    // 463. Island Perimeter
+    int islandPerimeter463(vector<vector<int>>& grid) {
+        int result = 0;
+        for (int i = 0; i < grid.size(); ++i) {
+            for (int j = 0; j < grid[i].size(); ++j) {
+                if (grid[i][j] == 1) {
+                    result += 4;
+                    if (i > 0 && grid[i - 1][j] == 1) {
+                    result -= 2;
+                    }
+                    if (j > 0 && grid[i][j - 1] == 1) {
+                        result -= 2;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    // 464. Can I Win
+    bool canIWin464(int maxChoosableInteger, int desiredTotal) {
+        if (desiredTotal <= 0) {
+            return true;
+        }
+        if (maxChoosableInteger * (maxChoosableInteger + 1) / 2 < desiredTotal) {
+            return false;
+        }
+
+        unordered_map<int, bool> maskUsedMap;
+        return canIWin464_rec(maxChoosableInteger, desiredTotal, 0, maskUsedMap);
+    }
+
+    bool canIWin464_rec(const int maxChoosableInteger, const int desiredTotal,
+        int curUsed, unordered_map<int, bool>& maskUsedMap) {
+        if (desiredTotal <= 0) {
+            return false;
+        }
+
+        if (maskUsedMap.count(curUsed)) {
+            return maskUsedMap[curUsed];
+        }
+
+        for (int i = 0; i < maxChoosableInteger; ++i) {
+            if ((1 << i) & curUsed) {
+                continue;
+            }
+
+            if (!canIWin464_rec(maxChoosableInteger, desiredTotal - (i + 1), 
+                curUsed | (1 << i), maskUsedMap)) {
+                maskUsedMap[curUsed] = true;
+                return true;
+            }
+        }
+
+        maskUsedMap[curUsed] = false;
+        return false;
+    }
 };
 
 #endif

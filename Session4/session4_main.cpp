@@ -40,6 +40,8 @@ int main() {
     testObj->find132pattern456Test();
     testObj->repeatedSubstringPattern459Test();
     testObj->LFUCache460Test();
+    testObj->islandPerimeter463Test();
+    testObj->canIWin464Test();
 
     return 0;
 }
