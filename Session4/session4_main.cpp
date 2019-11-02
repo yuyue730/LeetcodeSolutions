@@ -43,6 +43,7 @@ int main() {
     testObj->islandPerimeter463Test();
     testObj->canIWin464Test();
     testObj->minTransfers465Test();
+    testObj->validIPAddress468Test();
 
     return 0;
 }

@@ -458,6 +458,15 @@ public:
         return;
     }
 
+    // 468. Validate IP Address Test
+    void validIPAddress468Test() {
+        cout << "468. Validate IP Address test starts.\n";
+        cout << "2001:0db8:85a3:0:0:8A2E:0370:7334 => [" 
+            << implObj->validIPAddress468("2001:0db8:85a3:0:0:8A2E:0370:7334") 
+            << "]\n";
+        cout << "256.256.256.256 => [" << implObj->validIPAddress468("256.256.256.256") << "]\n\n";
+    }
+
 private:
     Session4Impl * implObj;
 };

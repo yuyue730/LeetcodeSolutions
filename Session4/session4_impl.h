@@ -1288,6 +1288,48 @@ public:
             }
         }
     }
+
+    // 468. Validate IP Address
+    string validIPAddress468(string IP) {
+        istringstream IPis(IP);
+        string cur;
+        int count = 0;
+        if (IP.find(':') == string::npos) {
+            // IPv4
+            while (getline(IPis, cur, '.')) {
+                ++count;
+                if (count > 4 || cur.empty() || (cur.size() > 1 && cur[0] == '0') 
+                    || cur.size() > 3) {
+                    return "Neither";
+                }
+                for (auto c: cur) {
+                    if (!isdigit(c)) {
+                        return "Neither";
+                    }
+                }
+                int val = stoi(cur);
+                if (val < 0 || val > 255) {
+                    return "Neither";
+                }
+            }
+            return (count == 4 && IP.back() != '.') ? "IPv4" : "Neither";
+        } else {
+            // IPv6
+            while (getline(IPis, cur, ':')) {
+                ++count;
+                if (count > 8 || cur.empty() || cur.size() > 4) {
+                    return "Neither";
+                }
+                for (auto c: cur) {
+                    if (!isdigit(c) && !(c >= 'a' && c <= 'f') 
+                        && !(c >= 'A' && c <= 'F')) {
+                        return "Neither";
+                    }
+                }
+            }
+            return (count == 8 && IP.back() != ':') ? "IPv6" : "Neither";
+        }
+    }
 };
 
 #endif
