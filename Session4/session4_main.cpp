@@ -42,6 +42,7 @@ int main() {
     testObj->LFUCache460Test();
     testObj->islandPerimeter463Test();
     testObj->canIWin464Test();
+    testObj->minTransfers465Test();
 
     return 0;
 }

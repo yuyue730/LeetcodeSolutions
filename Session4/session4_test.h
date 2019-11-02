@@ -448,6 +448,16 @@ public:
         return;
     }
 
+    // 465. Optimal Account Balancing Test
+    void minTransfers465Test() {
+        cout << "465. Optimal Account Balancing test starts.\n";
+        vector<vector<int>> transactions = {
+            {0, 1, 10}, {2, 0, 5}
+        };
+        cout << "# of transactions = [" << implObj->minTransfers465(transactions) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

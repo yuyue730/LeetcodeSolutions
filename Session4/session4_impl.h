@@ -1239,6 +1239,55 @@ public:
         maskUsedMap[curUsed] = false;
         return false;
     }
+
+    // 465. Optimal Account Balancing
+    int minTransfers465(vector<vector<int>>& transactions) {
+        if (transactions.empty()) {
+            return 0;
+        }
+
+        unordered_map<int, int> personAcctMap;
+        for (auto t: transactions) {
+            personAcctMap[t[0]] -= t[2];
+            personAcctMap[t[1]] += t[2];
+        }
+
+        vector<int> acct;
+        for (auto iter: personAcctMap) {
+            if (iter.second) {
+                acct.push_back(iter.second);
+            }
+        }
+        int result = INT_MAX;
+        minTransfers465_rec(acct, 0, 0, result);
+        return result;
+    }
+
+    void minTransfers465_rec(
+        vector<int>& account, int start, int count, int& result) {
+        int size = account.size();
+        while (start < size && account[start] == 0) {
+            ++start;
+        }
+
+        if (start == size) {
+            result = min(result, count);
+            return;
+        }
+
+        for (int i = start + 1; i < size; ++i) {
+            if (account[i] * account[start] < 0) {
+                int temp = account[start];
+                account[start] = 0;
+                account[i] += temp;
+
+                minTransfers465_rec(account, start + 1, count + 1, result);
+
+                account[start] = temp;
+                account[i] -= temp;
+            }
+        }
+    }
 };
 
 #endif
