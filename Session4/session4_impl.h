@@ -1330,6 +1330,18 @@ public:
             return (count == 8 && IP.back() != ':') ? "IPv6" : "Neither";
         }
     }
+
+    // 470. Implement Rand10() Using Rand7()
+    /** Cannot run locally, no rand7() implementation.
+    int rand10_470() {
+        while (true) {
+            int rand49 = (rand7() - 1) * 7 + rand7();
+            if (rand49 <= 40) {
+                return rand49 % 10 + 1;
+            }
+        }
+    }
+     */ 
 };
 
 #endif
