@@ -185,6 +185,22 @@ public:
         return;
     }
 
+    // 111. Minimum Depth of Binary Tree Test
+    void minDepth111Test() {
+        cout << "111. Minimum Depth of Binary Tree test starts.\n";
+        TreeNode * root = new TreeNode(3);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(9);
+        cur->right = new TreeNode(20);
+
+        cur = cur->right;
+        cur->left = new TreeNode(15);
+        cur->right = new TreeNode(7);
+
+        cout << "MinDepth = [" << implObj->minDepth111(root) << "]\n\n";
+        return;
+    }
+
     // 112. Path Sum Test
     void hasPathSum112Test() {
         cout << "112. Path Sum test starts.\n";
@@ -750,7 +766,7 @@ public:
         cur = cur->next; cur->next = common;
 
         ListNode *startPoint = implObj->getIntersectionNode160(headA, headB);
-        cout << "Please exam start point in debugger\n";
+        cout << "Please exam start point in debugger\n\n";
         return;
     }
 

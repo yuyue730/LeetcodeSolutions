@@ -360,6 +360,31 @@ public:
         else return max(leftDepth, rightDepth) + 1;
     }
 
+    // 111. Minimum Depth of Binary Tree
+    int minDepth111(TreeNode* root) {
+        if (!root) {
+            return 0;
+        }
+        
+        int result = INT_MAX;
+        minDepth_rec(root, result, 1);
+        return result;
+    }
+    
+    void minDepth_rec(TreeNode* curNode, int& result, int curDepth) {
+        if (!curNode->left && !curNode->right) {
+            result = min(result, curDepth);
+            return;
+        }
+        
+        if (curNode->left) {
+            minDepth_rec(curNode->left, result, curDepth + 1);
+        }
+        if (curNode->right) {
+            minDepth_rec(curNode->right, result, curDepth + 1);
+        }
+    }
+
     // 112. Path Sum
     bool hasPathSum112(TreeNode* root, int sum)
     {
