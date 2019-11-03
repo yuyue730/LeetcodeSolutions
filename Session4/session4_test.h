@@ -483,6 +483,14 @@ public:
         return;
     }
 
+    // 477. Total Hamming Distance Test
+    void totalHammingDistance477Test() {
+        cout << "477. Total Hamming Distance test starts.\n";
+        vector<int> nums = {4, 14, 2};
+        cout << "Hamming distance = [" << implObj->totalHammingDistance477(nums) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

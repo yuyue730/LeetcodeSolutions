@@ -1377,6 +1377,23 @@ public:
 
         return result;
     }
+
+    // 477. Total Hamming Distance
+    int totalHammingDistance477(vector<int>& nums) {
+        int result = 0;
+        int n = nums.size();
+        for (int i = 0; i < 32; ++i) {
+            int cnt0 = 0;
+            for (auto num: nums) {
+                if (num & (1 << i)) {
+                    ++cnt0;
+                }
+            }
+
+            result += cnt0 * (n - cnt0);
+        }
+        return result;
+    }
 };
 
 #endif
