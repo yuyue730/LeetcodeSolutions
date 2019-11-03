@@ -1342,6 +1342,41 @@ public:
         }
     }
      */ 
+
+    // 472. Concatenated Words
+    vector<string> findAllConcatenatedWordsInADict472(vector<string>& words) {
+        if (words.size() <= 2) {
+            return {};
+        }
+        unordered_set<string> wordSet(words.begin(), words.end());
+        vector<string> result;
+
+        for (auto & w: words) {
+            wordSet.erase(w);
+            int n = w.size();
+            if (n == 0) {
+                continue;
+            }
+            vector<bool> dp(n + 1, false);
+            dp[0] = true;
+
+            for (int i = 0; i < n + 1; ++i) {
+                for (int k = 0; k < i; ++k) {
+                    if (dp[k] && wordSet.count(w.substr(k, i - k))) {
+                        dp[i] = true;
+                        break;
+                    }
+                }
+            }
+
+            if (dp[n]) {
+                result.push_back(w);
+            }
+            wordSet.insert(w);
+        }
+
+        return result;
+    }
 };
 
 #endif

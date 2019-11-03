@@ -467,6 +467,22 @@ public:
         cout << "256.256.256.256 => [" << implObj->validIPAddress468("256.256.256.256") << "]\n\n";
     }
 
+    // 472. Concatenated Words Test
+    void findAllConcatenatedWordsInADict472Test() {
+        cout << "472. Concatenated Words test starts.\n";
+        vector<string> words = {
+            "cat", "cats", "catsdogcats", "dog",
+            "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat"
+        };
+        vector<string> result = implObj->findAllConcatenatedWordsInADict472(words);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

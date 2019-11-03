@@ -44,6 +44,7 @@ int main() {
     testObj->canIWin464Test();
     testObj->minTransfers465Test();
     testObj->validIPAddress468Test();
+    testObj->findAllConcatenatedWordsInADict472Test();
 
     return 0;
 }
