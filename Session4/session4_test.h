@@ -491,6 +491,19 @@ public:
         return;
     }
 
+    // 480. Sliding Window Median Test
+    void medianSlidingWindow480Test() {
+        cout << "480. Sliding Window Median test starts.\n";
+        vector<int> nums = {1, 2, 3, 4, 2, 3, 1, 4, 2};
+        vector<double> result = implObj->medianSlidingWindow480(nums, 3);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

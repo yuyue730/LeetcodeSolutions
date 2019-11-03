@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <numeric>
 #include <unordered_map>
+#include <set>
 #include <unordered_set>
 using namespace std;
 
@@ -1392,6 +1393,53 @@ public:
 
             result += cnt0 * (n - cnt0);
         }
+        return result;
+    }
+
+    // 480. Sliding Window Median
+    vector<double> medianSlidingWindow480(vector<int>& nums, int k) {
+        multiset<int> small, large;
+        vector<double> result;
+
+        for (int i = 0; i < nums.size(); ++i) {
+            if (i >= k) {
+                if (small.count(nums[i - k])) {
+                    small.erase(small.find(nums[i - k]));
+                } else if (large.count(nums[i - k])) {
+                    large.erase(large.find(nums[i - k]));
+                }
+            }
+
+            if (small.size() <= large.size()) {
+                if (large.empty() || nums[i] <= (*large.begin())) {
+                    small.insert(nums[i]);
+                } else {
+                    small.insert(*large.begin());
+                    large.erase(large.begin());
+                    large.insert(nums[i]);
+                }
+            } else {
+                if (nums[i] > (*small.rbegin())) {
+                    large.insert(nums[i]);
+                } else {
+                    large.insert(*small.rbegin());
+                    small.erase(--small.end());
+                    small.insert(nums[i]);
+                }
+            }
+
+            if (i >= (k - 1)) {
+                if (k % 2) {
+                    result.push_back(static_cast<double>(*small.rbegin()));
+                } else {
+                    result.push_back(
+                        (static_cast<double>(*small.rbegin()) 
+                            + static_cast<double>(*large.begin())) / 2
+                    );
+                }
+            }
+        }
+
         return result;
     }
 };

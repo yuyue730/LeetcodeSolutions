@@ -46,6 +46,7 @@ int main() {
     testObj->validIPAddress468Test();
     testObj->findAllConcatenatedWordsInADict472Test();
     testObj->totalHammingDistance477Test();
+    testObj->medianSlidingWindow480Test();
 
     return 0;
 }
