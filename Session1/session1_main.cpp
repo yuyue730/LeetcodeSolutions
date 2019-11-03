@@ -22,6 +22,7 @@ int main() {
     testObj->hasPathSum112Test();
     testObj->pathSum113Test();
     testObj->flatten114Test();
+    testObj->numDistinct115Test();
     testObj->connect116Test();
     testObj->generate118Test();
     testObj->minimumTotal120Test();

@@ -268,9 +268,18 @@ public:
         return;
     }
 
+    // 115. Distinct Subsequences Test
+    void numDistinct115Test() {
+        cout << "115. Distinct Subsequences test starts.\n";
+        cout << "numDistinct = [" << implObj->numDistinct115("rabbbit", "rabbit") << "]\n\n";
+        return;
+    }
+
     // 116. Populating Next Right Pointers in Each Node Test
+    // 117. Populating Next Right Pointers in Each Node II Test
     void connect116Test() {
         cout << "116. Populating Next Right Pointers in Each Node test starts.\n";
+        cout << "117. Populating Next Right Pointers in Each Node II test starts.\n";
         Node * root = new Node(
             3, 
             new Node(9, NULL, NULL, NULL), 

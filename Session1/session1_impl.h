@@ -456,6 +456,23 @@ public:
         root->right = tmp;
     }
 
+    // 115. Distinct Subsequences
+    int numDistinct115(string s, string t) {
+        int m = s.size(), n = t.size();
+        vector<vector<long long>> dp(n + 1, vector<long long>(m + 1, 0));
+        for (int j = 0; j < dp[0].size(); ++j) {
+            dp[0][j] = 1;
+        }
+
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= m; ++j) {
+                dp[i][j] = dp[i][j - 1] + ((s[j - 1] == t[i - 1]) ? dp[i - 1][j - 1] : 0);
+            }
+        }
+
+        return static_cast<int>(dp.back().back());
+    }
+
     // 116. Populating Next Right Pointers in Each Node
     // 117. Populating Next Right Pointers in Each Node II
     Node* connect116(Node* root) {
