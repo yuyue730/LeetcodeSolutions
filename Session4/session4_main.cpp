@@ -48,6 +48,7 @@ int main() {
     testObj->totalHammingDistance477Test();
     testObj->medianSlidingWindow480Test();
     testObj->licenseKeyFormatting482Test();
+    testObj->PredictTheWinner486Test();
 
     return 0;
 }

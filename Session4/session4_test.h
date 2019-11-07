@@ -512,6 +512,14 @@ public:
         return;
     }
 
+    // 486. Predict the Winner Test
+    void PredictTheWinner486Test() {
+        cout << "486. Predict the Winner test starts.\n";
+        vector<int> nums = {1, 2, 3, 4};
+        cout << "Can win {1,2,3,4} = [" << implObj->PredictTheWinner486(nums) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

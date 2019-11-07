@@ -1467,6 +1467,32 @@ public:
         reverse(result.begin(), result.end());
         return result;
     }
+
+    // 486. Predict the Winner
+    bool PredictTheWinner486(vector<int>& nums) {
+        vector<vector<int>> dp(nums.size(), vector<int>(nums.size(), INT_MIN));
+        return PredictTheWinner486_rec(nums, 0, nums.size() - 1, dp) > 0;
+    }
+
+    int PredictTheWinner486_rec(
+        vector<int>& nums, int left, int right,
+        vector<vector<int>>& dp) {
+        if (dp[left][right] == INT_MIN) {
+            int curMinmax;
+            if (left == right) {
+                curMinmax = nums[left];
+            } else {
+                curMinmax = max(
+                    nums[left] - PredictTheWinner486_rec(nums, left + 1, right, dp),
+                    nums[right] - PredictTheWinner486_rec(nums, left, right - 1, dp)
+                );
+            }
+
+            dp[left][right] = curMinmax;
+        }
+
+        return dp[left][right];
+    }
 };
 
 #endif
