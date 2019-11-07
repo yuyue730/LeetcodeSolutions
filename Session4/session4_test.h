@@ -504,6 +504,14 @@ public:
         return;
     }
 
+    // 482. License Key Formatting Test
+    void licenseKeyFormatting482Test() {
+        cout << "482. License Key Formatting test starts.\n";
+        cout << "5F3Z-2e-9-w => [" << implObj->licenseKeyFormatting482("5F3Z-2e-9-w", 4) 
+            << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

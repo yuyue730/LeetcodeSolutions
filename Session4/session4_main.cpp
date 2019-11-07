@@ -47,6 +47,7 @@ int main() {
     testObj->findAllConcatenatedWordsInADict472Test();
     testObj->totalHammingDistance477Test();
     testObj->medianSlidingWindow480Test();
+    testObj->licenseKeyFormatting482Test();
 
     return 0;
 }

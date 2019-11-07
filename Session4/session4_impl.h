@@ -1442,6 +1442,31 @@ public:
 
         return result;
     }
+
+    // 482. License Key Formatting
+    string licenseKeyFormatting482(string S, int K) {
+        string result;
+        int cnt = 0;
+        
+        for (int i = S.size() - 1; i >= 0; --i) {
+            if (S[i] == '-') {
+                continue;
+            }
+            
+            result += isalpha(S[i]) ? toupper(S[i]) : S[i];
+            ++cnt;
+            if (cnt % K == 0) {
+                result += "-";
+                cnt = 0;
+            }
+        }
+        
+        if (!result.empty() && result.back() == '-') {
+            result.pop_back();
+        }
+        reverse(result.begin(), result.end());
+        return result;
+    }
 };
 
 #endif
