@@ -1493,6 +1493,42 @@ public:
 
         return dp[left][right];
     }
+
+    // 489. Robot Room Cleaner
+    /**
+    void cleanRoom(Robot& robot) {
+        vector<vector<int>> const direc = {
+            {-1, 0}, {0, 1}, {1, 0}, {0, -1}
+        };
+        unordered_set<string> visited;
+        cleanRoom_rec(robot, 0, 0, 0, direc, visited);
+    }
+    
+    void cleanRoom_rec(
+        Robot& robot, const int x, const int y,
+        int preDirec, const vector<vector<int>> & direc,
+        unordered_set<string> & visited)
+    {
+        robot.clean();
+        visited.insert(to_string(x) + "-" + to_string(y));
+        
+        for (int i = 0; i < 4; ++i) {
+            int nextDirec = (preDirec + i) % 4;
+            int nextX = x + direc[nextDirec][0];
+            int nextY = y + direc[nextDirec][1];
+            
+            if (!visited.count(to_string(nextX) + "-" + to_string(nextY)) && robot.move())
+            {
+                cleanRoom_rec(robot, nextX, nextY, nextDirec, direc, visited);
+                robot.turnLeft(); robot.turnLeft();
+                robot.move();
+                robot.turnRight(); robot.turnRight();
+            }
+            
+            robot.turnRight();
+        }
+    }
+     */
 };
 
 #endif
