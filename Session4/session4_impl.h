@@ -1529,6 +1529,58 @@ public:
         }
     }
      */
+
+    // 490. The Maze
+    bool hasPath490(
+        vector<vector<int>>& maze, 
+        vector<int>& start, vector<int>& destination) 
+    {
+        vector<vector<int>> direc = {
+            {0, 1}, {1, 0}, {0, -1}, {-1, 0}
+        };
+
+        vector<vector<int>> visited(maze.size(), vector<int>(maze[0].size(), -1));
+        return hasPath490_dfs(
+            visited, maze, direc, {start[0], start[1]}, {destination[0], destination[1]});
+    }
+
+    bool hasPath490_dfs(
+        vector<vector<int>>& visited, vector<vector<int>>& maze, 
+        const vector<vector<int>>& directions, pair<int, int> cur,
+        const pair<int, int> dest)
+    {
+        if (cur == dest) {
+            return true;
+        }
+
+        if (visited[cur.first][cur.second] != -1)
+        {
+            return static_cast<bool>(visited[cur.first][cur.second]);
+        }
+
+        maze[cur.first][cur.second] = -1; //Mark as visited
+        int m = maze.size(), n = maze[0].size();
+        bool result = false;
+
+        for (auto direc: directions)
+        {
+            int x = cur.first, y = cur.second;
+            while (x >= 0 && x < m && y >= 0 && y < n && maze[x][y] != 1) {
+                x += direc[0];
+                y += direc[1];
+            }
+
+            x -= direc[0];
+            y -= direc[1];
+
+            if (maze[x][y] != -1) {
+                result |= hasPath490_dfs(visited, maze, directions, {x, y}, dest);
+            }
+        }
+
+        visited[cur.first][cur.second] = static_cast<int>(result);
+        return result;
+    }
 };
 
 #endif

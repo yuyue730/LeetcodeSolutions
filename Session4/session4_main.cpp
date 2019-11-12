@@ -49,6 +49,7 @@ int main() {
     testObj->medianSlidingWindow480Test();
     testObj->licenseKeyFormatting482Test();
     testObj->PredictTheWinner486Test();
+    testObj->hasPath490Test();
 
     return 0;
 }

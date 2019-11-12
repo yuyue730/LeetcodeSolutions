@@ -520,6 +520,23 @@ public:
         return;
     }
 
+    // 490. The Maze Test
+    void hasPath490Test() {
+        cout << "490. The Maze test starts.\n";
+        vector<vector<int>> maze = {
+            {0, 0, 1, 0, 0},
+            {0, 0, 0, 0, 0},
+            {0, 0, 0, 1, 0},
+            {1, 1, 0, 1, 1},
+            {0, 0, 0, 0, 0}
+        };
+
+        vector<int> start = {0, 4};
+        vector<int> destination = {3, 2};
+        cout << "Has path = [" << implObj->hasPath490(maze, start, destination) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };
