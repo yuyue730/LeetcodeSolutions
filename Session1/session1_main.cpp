@@ -25,6 +25,7 @@ int main() {
     testObj->numDistinct115Test();
     testObj->connect116Test();
     testObj->generate118Test();
+    testObj->getRow119Test();
     testObj->minimumTotal120Test();
     testObj->maxProfit121Test();
     testObj->maxProfit122Test();

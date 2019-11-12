@@ -529,6 +529,21 @@ public:
         return result;
     }
 
+    // 119. Pascal's Triangle II
+    vector<int> getRow119(int rowIndex) {
+        vector<int> * cur = new vector<int>(1, 1);
+        for (int i = 1; i <= rowIndex; ++i) {
+            vector<int> * next = new vector<int>(i + 1, 1);
+            for (int j = 1; j < i; ++j) {
+                (*next)[j] = (*cur)[j - 1] + (*cur)[j];
+            }
+            
+            cur = next;
+        }
+        
+        return *cur;
+    }
+
     // 120. Triangle
     int minimumTotal120(vector<vector<int>>& triangle) {
         if (triangle.size() == 1) {

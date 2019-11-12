@@ -313,6 +313,17 @@ public:
         return;
     }
 
+    // 119. Pascal's Triangle II Test
+    void getRow119Test() {
+        cout << "119. Pascal's Triangle II test starts.\n";
+        vector<int> result = implObj->getRow119(3);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n";
+    }
+
     // 120. Triangle Test
     void minimumTotal120Test() {
         cout << "120. Triangle test starts.\n";
