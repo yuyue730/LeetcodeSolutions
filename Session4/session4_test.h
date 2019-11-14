@@ -545,6 +545,14 @@ public:
         return;
     }
 
+    // 494. Target Sum Test
+    void findTargetSumWays494Test() {
+        cout << "494. Target Sum test starts.\n";
+        vector<int> nums = {1, 1, 1, 1, 1};
+        cout << "Number of ways = [" << implObj->findTargetSumWays494(nums, 3) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

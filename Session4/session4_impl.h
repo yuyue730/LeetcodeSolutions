@@ -1607,6 +1607,29 @@ public:
         sort(nums.begin() + left, nums.begin() + right + 1);
         return res;
     }
+
+    // 494. Target Sum
+    int findTargetSumWays494(vector<int>& nums, int S) {
+        vector<unordered_map<int, int>> startSumMap(nums.size());
+        return findTargetSumWays494_rec(nums, 0, S, startSumMap);
+    }
+
+    int findTargetSumWays494_rec(
+        const vector<int>& nums, int start, int sum, 
+        vector<unordered_map<int, int>> & startSumMap) {
+        if (start == nums.size()) {
+            return static_cast<int>(sum == 0);
+        }
+
+        if (startSumMap[start].count(sum)) {
+            return startSumMap[start][sum];
+        }
+
+        int ct_mins = findTargetSumWays494_rec(nums, start + 1, sum - nums[start], startSumMap);
+        int ct_plus = findTargetSumWays494_rec(nums, start + 1, sum + nums[start], startSumMap);
+        startSumMap[start][sum] = ct_mins + ct_plus;
+        return startSumMap[start][sum];
+    }
 };
 
 #endif

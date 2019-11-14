@@ -51,6 +51,7 @@ int main() {
     testObj->PredictTheWinner486Test();
     testObj->hasPath490Test();
     testObj->reversePairs493Test();
+    testObj->findTargetSumWays494Test();
 
     return 0;
 }
