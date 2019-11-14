@@ -537,6 +537,14 @@ public:
         return;
     }
 
+    // 493. Reverse Pairs Test
+    void reversePairs493Test() {
+        cout << "493. Reverse Pairs test starts.\n";
+        vector<int> nums = {2, 4, 3, 5, 1};
+        cout << "Reverse pairs number = [" << implObj->reversePairs493(nums) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

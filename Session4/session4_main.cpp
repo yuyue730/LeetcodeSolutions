@@ -50,6 +50,7 @@ int main() {
     testObj->licenseKeyFormatting482Test();
     testObj->PredictTheWinner486Test();
     testObj->hasPath490Test();
+    testObj->reversePairs493Test();
 
     return 0;
 }
