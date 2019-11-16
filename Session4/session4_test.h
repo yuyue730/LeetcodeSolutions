@@ -567,6 +567,23 @@ public:
         return;
     }
 
+    // 498. Diagonal Traverse Test
+    void findDiagonalOrder498Test() {
+        cout << "498. Diagonal Traverse test starts.\n";
+        vector<vector<int>> matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9} 
+        };
+        vector<int> result = implObj->findDiagonalOrder498(matrix);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

@@ -53,6 +53,7 @@ int main() {
     testObj->reversePairs493Test();
     testObj->findTargetSumWays494Test();
     testObj->nextGreaterElement496Test();
+    testObj->findDiagonalOrder498Test();
 
     return 0;
 }

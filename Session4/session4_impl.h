@@ -1651,6 +1651,40 @@ public:
         }
         return result;
     }
+
+    // 498. Diagonal Traverse
+    vector<int> findDiagonalOrder498(vector<vector<int>>& matrix) {
+        if (matrix.empty() || matrix[0].empty()) {
+            return {};
+        }
+
+        vector<vector<int>> const direc = {{-1, 1}, {1, -1}};
+        vector<int> result;
+        int x = 0, y = 0;
+        int k = 0;
+        int m = matrix.size(), n = matrix[0].size();
+
+        for (int i = 0; i < m * n; ++i) {
+            result.push_back(matrix[x][y]);
+            x += direc[k][0];
+            y += direc[k][1];
+
+            if (x >= m) {
+                x = m - 1; y += 2; k = 1 - k;
+            }
+            if (y >= n) {
+                y = n - 1; x += 2; k = 1 - k;
+            }
+            if (x < 0) {
+                x = 0; k = 1 - k;
+            }
+            if (y < 0) {
+                y = 0; k = 1 - k;
+            }
+        }
+
+        return result;
+    }
 };
 
 #endif
