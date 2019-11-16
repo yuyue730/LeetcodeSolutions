@@ -52,6 +52,7 @@ int main() {
     testObj->hasPath490Test();
     testObj->reversePairs493Test();
     testObj->findTargetSumWays494Test();
+    testObj->nextGreaterElement496Test();
 
     return 0;
 }

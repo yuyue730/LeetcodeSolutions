@@ -553,6 +553,20 @@ public:
         return;
     }
 
+    // 496. Next Greater Element I Test
+    void nextGreaterElement496Test() {
+        cout << "496. Next Greater Element I test starts.\n";
+        vector<int> nums1 = {4, 1, 2};
+        vector<int> nums2 = {1, 3, 4, 2};
+        vector<int> result = implObj->nextGreaterElement496(nums1, nums2);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };

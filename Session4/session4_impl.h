@@ -1630,6 +1630,27 @@ public:
         startSumMap[start][sum] = ct_mins + ct_plus;
         return startSumMap[start][sum];
     }
+
+    // 496. Next Greater Element I
+    vector<int> nextGreaterElement496(vector<int>& nums1, vector<int>& nums2) {
+        unordered_map<int, int> nextGreaterMap;
+        stack<int> prevNumStk;
+
+        for (int q: nums2) {
+            while (!prevNumStk.empty() && prevNumStk.top() < q) {
+                nextGreaterMap[prevNumStk.top()] = q;
+                prevNumStk.pop();
+            }
+
+            prevNumStk.push(q);
+        }
+
+        vector<int> result;
+        for (int p: nums1) {
+            result.push_back(nextGreaterMap.count(p) ? nextGreaterMap[p] : -1);
+        }
+        return result;
+    }
 };
 
 #endif
