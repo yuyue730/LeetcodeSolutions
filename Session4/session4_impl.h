@@ -1685,6 +1685,63 @@ public:
 
         return result;
     }
+
+    // 499. The Maze III
+    string findShortestWay499(
+        vector<vector<int>>& maze, vector<int>& ball, vector<int>& hole) {
+        int m = maze.size(), n = maze[0].size();
+        vector<char> const way = {'l', 'u', 'r', 'd'};
+        vector<pair<int, int>> const direction = {
+            {0, -1}, {-1, 0}, {0, 1}, {1, 0}
+        };
+        vector<vector<int>> distance(m, vector<int>(n, INT_MAX));
+        unordered_map<int, string> pathMap;
+        queue<pair<int, int>> q;
+        q.push({ball[0], ball[1]});
+        pathMap[ball[0] * m + ball[1]] = "";
+        distance[ball[0]][ball[1]] = 0;
+
+        while (!q.empty()) {
+            auto cur = q.front(); q.pop();
+            for (int i = 0; i < 4; ++i) {
+                int curX = cur.first, curY = cur.second;
+                int curDistance = distance[curX][curY];
+                string curPath = pathMap[curX * m + curY];
+                while (curX >= 0 && curX < m && curY >= 0 && curY < n
+                    && maze[curX][curY] == 0
+                    && (curX != hole[0] || curY != hole[1])) {
+                    curX += direction[i].first;
+                    curY += direction[i].second;
+                    curDistance++;
+                }
+
+                if (curX != hole[0] || curY != hole[1]) {
+                    curX -= direction[i].first;
+                    curY -= direction[i].second;
+                    curDistance--;
+                }
+
+                curPath.push_back(way[i]);
+                if (distance[curX][curY] > curDistance) {
+                    distance[curX][curY] = curDistance;
+                    pathMap[curX * m + curY] = curPath;
+                    if (curX != hole[0] || curY != hole[1]) {
+                        q.push({curX, curY});
+                    }
+                } else if (distance[curX][curY] == curDistance
+                    && pathMap[curX * m + curY].compare(curPath) > 0) {
+                    pathMap[curX * m + curY] = curPath;
+                    if (curX != hole[0] || curY != hole[1]) {
+                        q.push({curX, curY});
+                    }
+                }
+                    
+            }
+        }
+
+        string result = pathMap[hole[0] * m + hole[1]];
+        return result.empty() ? "impossible" : result;
+    }
 };
 
 #endif

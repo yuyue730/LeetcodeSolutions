@@ -54,6 +54,7 @@ int main() {
     testObj->findTargetSumWays494Test();
     testObj->nextGreaterElement496Test();
     testObj->findDiagonalOrder498Test();
+    testObj->findShortestWay499Test();
 
     return 0;
 }

@@ -584,6 +584,22 @@ public:
         return;
     }
 
+    // 499. The Maze III Test
+    void findShortestWay499Test() {
+        cout << "499. The Maze III test starts.\n";
+        vector<vector<int>> matrix = {
+            {0, 0, 0, 0, 0},        
+            {1, 1, 0, 0, 1},
+            {0, 0, 0, 0, 0},
+            {0, 1, 0, 0, 1},
+            {0, 1, 0, 0, 0}
+        };
+        vector<int> ball = {4, 3}; 
+        vector<int> hole = {0, 1};
+        cout << "Result path = [" << implObj->findShortestWay499(matrix, ball, hole) << "]\n\n";
+        return;
+    }
+
 private:
     Session4Impl * implObj;
 };
