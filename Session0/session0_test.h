@@ -1008,6 +1008,19 @@ public:
         return;
     }
 
+    // 80. Remove Duplicates from Sorted Array II Test
+    void removeDuplicates80Test() {
+        cout << "80. Remove Duplicates from Sorted Array II test starts.\n";
+        vector<int> nums = {0, 0, 1, 1, 1, 1, 2, 3, 3};
+        int len = implObj->removeDuplicates80(nums);
+        cout << "Result = [";
+        for (int i = 0; i < len; ++i) {
+            cout << nums[i] << ((i == len - 1) ? "" : ", ");
+        }
+        cout << "].\n\n";
+        return;
+    }
+
     // 81. Search in Rotated Sorted Array II Test
     void search81Test() {
         cout << "81. Search in Rotated Sorted Array II test starts.\n";

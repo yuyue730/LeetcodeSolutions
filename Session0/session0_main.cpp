@@ -85,6 +85,7 @@ int main() {
     testObj->combine77Test();
     testObj->subsets78Test();
     testObj->exist79Test();
+    testObj->removeDuplicates80Test();
     testObj->search81Test();
     testObj->deleteDuplicates82Test();
     testObj->deleteDuplicates83Test();

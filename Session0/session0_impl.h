@@ -2301,7 +2301,36 @@ public:
         board[curX][curY] = curBoardChar;
 
         return (down || up || right || left);
-    } 
+    }
+
+    // 80. Remove Duplicates from Sorted Array II
+    int removeDuplicates80(vector<int>& nums) {
+        if (nums.empty()) {
+            return 0;
+        }
+
+        int pre = 0, curNum = nums[0], count = 2;
+
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i] == curNum && count == 0) {
+                continue;
+            } 
+            else {
+                if (nums[i] == curNum) {
+                    count--;
+                }
+                else {
+                    curNum = nums[i];
+                    count = 1;
+                }
+
+                nums[pre] = nums[i];
+                pre++;
+            }
+        }
+
+        return pre;
+    }
 
     // 81. Search in Rotated Sorted Array II
     bool search81(vector<int>& nums, int target)
