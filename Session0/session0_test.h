@@ -664,6 +664,14 @@ public:
         return;
     }
 
+    // 52. N-Queens II Test
+    void totalNQueens52Test() {
+        cout << "52. N-Queens II test starts.\n";
+        cout << "n = 4 will generate # of unique board = [" << implObj->totalNQueens52(4) 
+            << "]\n\n";
+        return;
+    }
+
     // 53. Maximum Subarray Test
     void maxSubArray53Test() {
         cout << "53. Maximum Subarray test starts (Divide and Conquer method)\n";

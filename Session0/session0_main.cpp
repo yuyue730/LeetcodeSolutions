@@ -59,6 +59,7 @@ int main() {
     testObj->groupAnagrams49Test();
     testObj->myPow50Test();
     testObj->solveNQueens51Test();
+    testObj->totalNQueens52Test();
     testObj->maxSubArray53Test();
     testObj->spiralOrder54Test();
     testObj->canJump55Test();

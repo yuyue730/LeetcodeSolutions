@@ -1478,6 +1478,40 @@ public:
         return true;
     }
 
+    // 52. N-Queens II
+    int totalNQueens52(int n) {
+        int result = 0;
+        vector<int> pos(n, -1);
+        totalNQueens52_dfs(pos, 0, result);
+        return result;
+    }
+
+    void totalNQueens52_dfs(vector<int> & pos, int row, int &result) {
+        const int n = pos.size();
+        if (row == n) {
+            result++;
+        }
+
+        for (int col = 0; col < n; ++col) {
+            if (isValidBoard(pos, row, col)) {
+                pos[row] = col;
+                totalNQueens52_dfs(pos, row + 1, result);
+                pos[row] = -1;
+            }
+        }
+    }
+
+    bool isValidBoard(const vector<int>& pos, int row, int col) {
+        for (int i = 0; i < row; ++i) {
+            if (col == pos[i] 
+                || abs(pos[i] - col) == abs(row - i)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     // 53. Maximum Subarray
     int maxSubArray53(vector<int>& nums)
     {
