@@ -9,4 +9,5 @@ int main() {
     cout << "\nTest for problems starts.\n";
 
     testObj->nextGreaterElements503Test();
+    testObj->shortestDistance505Test();
 }

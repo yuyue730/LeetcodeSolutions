@@ -23,6 +23,23 @@ public:
         cout << "]\n\n";
     }
 
+    // 505. The Maze II Test
+    void shortestDistance505Test() {
+        cout << "505. The Maze II test starts.\n";
+        vector<vector<int>> maze = {
+            {0, 0, 1, 0, 0},
+            {0, 0, 0, 0, 0},
+            {0, 0, 0, 1, 0},
+            {1, 1, 0, 1, 1},
+            {0, 0, 0, 0, 0}
+        };
+        vector<int> start = {0, 4};
+        vector<int> end = {4, 4};
+
+        cout << "Shortest distance = [" << implObj->shortestDistance505(maze, start, end)
+            << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };
