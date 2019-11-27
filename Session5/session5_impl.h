@@ -5,7 +5,16 @@
 #include <vector>
 #include <stack>
 #include <queue>
+#include <unordered_map>
 using namespace std;
+
+// Definition for a binary tree node.
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
 
 class Session5Impl {
 public:
@@ -82,6 +91,39 @@ public:
 
         return (distance[destination[0]][destination[1]] == INT_MAX) 
             ? -1 : distance[destination[0]][destination[1]];
+    }
+
+    // 508. Most Frequent Subtree Sum
+    vector<int> findFrequentTreeSum508(TreeNode* root) {
+        vector<int> result;
+        unordered_map<int, int> sumFreqMap;
+        int curCnt = 0;
+        findFrequentTreeSum508_postorder(root, sumFreqMap, curCnt, result);
+        return result;
+    }
+
+    int findFrequentTreeSum508_postorder(
+        TreeNode *cur, unordered_map<int, int> &sumFreqMap, 
+        int &curCnt, vector<int> &result) {
+        if (!cur) {
+            return 0;
+        }
+
+        int left = findFrequentTreeSum508_postorder(cur->left, sumFreqMap, curCnt, result);
+        int right = findFrequentTreeSum508_postorder(cur->right, sumFreqMap, curCnt, result);
+
+        int curSum = left + right + cur->val;
+        sumFreqMap[curSum]++;
+        if (sumFreqMap[curSum] >= curCnt) {
+            if (sumFreqMap[curSum] > curCnt) {
+                result.clear();
+            }
+
+            curCnt = sumFreqMap[curSum];
+            result.push_back(curSum);
+        }
+
+        return curSum;
     }
 };
 

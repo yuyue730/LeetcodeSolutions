@@ -19,7 +19,6 @@ public:
         for (int i = 0; i < result.size(); ++i) {
             cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
         }
-
         cout << "]\n\n";
     }
 
@@ -38,6 +37,20 @@ public:
 
         cout << "Shortest distance = [" << implObj->shortestDistance505(maze, start, end)
             << "]\n\n";
+    }
+
+    // 508. Most Frequent Subtree Sum Test
+    void findFrequentTreeSum508Test() {
+        cout << "508. Most Frequent Subtree Sum test starts.\n";
+        TreeNode* root = new TreeNode(5);
+        root->left = new TreeNode(2);
+        root->right = new TreeNode(-3);
+        vector<int> result = implObj->findFrequentTreeSum508(root);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
     }
 
 private:

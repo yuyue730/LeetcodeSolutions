@@ -10,4 +10,5 @@ int main() {
 
     testObj->nextGreaterElements503Test();
     testObj->shortestDistance505Test();
+    testObj->findFrequentTreeSum508Test();
 }
