@@ -58,6 +58,7 @@ int main() {
     testObj->reverseWords151Test();
     testObj->maxProduct152Test();
     testObj->findMin153Test();
+    testObj->findMin154Test();
     testObj->MinStack155Test();
     testObj->read157Test();
     testObj->read158Test();

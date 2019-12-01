@@ -720,6 +720,14 @@ public:
         cout << "Find min = [" << implObj->findMin153(nums) << "]\n\n";
         return;
     }
+    
+    // 154. Find Minimum in Rotated Sorted Array II Test
+    void findMin154Test() {
+        cout << "154. Find Minimum in Rotated Sorted Array II test starts.\n";
+        vector<int> nums = {4,5,6,7,0,1,2};
+        cout << "Find min = [" << implObj->findMin154(nums) << "]\n\n";
+        return;
+    }
 
     // 155. Min Stack Test
     void MinStack155Test() {

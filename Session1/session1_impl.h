@@ -1185,8 +1185,10 @@ public:
                 head = curTop;
                 stk.pop();
             } else {
-                stk.push(curTop->right);
-                stk.push(curTop->left);
+                if (curTop->right)
+                    stk.push(curTop->right);
+                if (curTop->left)
+                    stk.push(curTop->left);
             }
         }
 
@@ -1423,6 +1425,26 @@ public:
         } else {
             return nums[0];
         }     
+    }
+
+    // 154. Find Minimum in Rotated Sorted Array II
+    int findMin154(vector<int>& nums) {
+        return findMin154_rec(nums, 0, nums.size() - 1);
+    }
+
+    int findMin154_rec(vector<int>& nums, int left, int right) {
+        if (right - left <= 1) {
+            return min(nums[left], nums[right]);
+        }
+
+        if (nums[left] < nums[right]) {
+            return nums[left];
+        }
+
+        int mid = (left + right) / 2;
+        return min(
+            findMin154_rec(nums, left, mid),
+            findMin154_rec(nums, mid + 1, right));
     }
 
     // 155. Min Stack
