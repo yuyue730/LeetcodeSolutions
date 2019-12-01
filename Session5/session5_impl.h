@@ -8,6 +8,15 @@
 #include <unordered_map>
 using namespace std;
 
+// Definition for a Binary Tree Node with pointer to parent.
+class Node510 {
+public:
+    int val;
+    Node510* left;
+    Node510* right;
+    Node510* parent;
+};
+
 // Definition for a binary tree node.
 struct TreeNode {
     int val;
@@ -139,6 +148,35 @@ public:
         }
         
         return result[N];
+    }
+
+    // 510. Inorder Successor in BST II
+    Node510* inorderSuccessor510(Node510* node) {
+        if (!node) {
+            return nullptr;
+        }
+
+        if (node->right) {
+            Node510 * cur = node->right;
+            while (cur->left) {
+                cur = cur->left;
+            }
+
+            return cur;
+        }
+
+        Node510* cur = node;
+        while (cur) {
+            if (!cur->parent) {
+                return nullptr;
+            }
+            if (cur == cur->parent->left) {
+                return cur->parent;
+            }
+            cur = cur->parent;
+        }
+
+        return nullptr;
     }
 };
 

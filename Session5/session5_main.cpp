@@ -12,4 +12,5 @@ int main() {
     testObj->shortestDistance505Test();
     testObj->findFrequentTreeSum508Test();
     testObj->fib509Test();
+    testObj->inorderSuccessor510Test();
 }

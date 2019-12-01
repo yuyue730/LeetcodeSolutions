@@ -60,6 +60,22 @@ public:
         return;
     }
 
+    // 510. Inorder Successor in BST II Test
+    void inorderSuccessor510Test() {
+        cout << "510. Inorder Successor in BST II test starts.\n";
+        Node510 * root;
+        root->val = 2;
+        root->left = new Node510();
+        root->left->val = 1;
+        root->left->parent = root;
+        root->right = new Node510();
+        root->right->val = 3;
+        root->right->parent = root;
+
+        cout << "1 next large is [" << implObj->inorderSuccessor510(root->left)->val << "]\n";
+        cout << "2 next large is [" << implObj->inorderSuccessor510(root)->val << "]\n";
+    }
+
 private:
     Session5Impl * implObj;
 };
