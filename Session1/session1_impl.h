@@ -1167,6 +1167,32 @@ public:
         return result;
     }
 
+    // 145. Binary Tree Postorder Traversal
+    vector<int> postorderTraversal145(TreeNode* root) {
+        vector<int> result;
+        if (!root) {
+            return result;
+        }
+
+        stack<TreeNode*> stk({root});
+        TreeNode* head = root;
+
+        while (!stk.empty()) {
+            TreeNode* curTop = stk.top();
+            if ((!curTop->left && !curTop->right) 
+                || curTop->left == head || curTop->right == head) {
+                result.push_back(curTop->val);
+                head = curTop;
+                stk.pop();
+            } else {
+                stk.push(curTop->right);
+                stk.push(curTop->left);
+            }
+        }
+
+        return result;
+    }
+
     // 146. LRU Cache
     class LRUCache146 {
     public:

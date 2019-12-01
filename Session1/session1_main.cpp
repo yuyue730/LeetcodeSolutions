@@ -50,6 +50,7 @@ int main() {
     testObj->detectCycle142Test();
     testObj->reorderList143Test();
     testObj->preorderTraversal144Test();
+    testObj->postorderTraversal145Test();
     testObj->LRUCache146Test();
     testObj->sortList148Test();
     testObj->maxPoints149Test();

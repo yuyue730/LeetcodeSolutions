@@ -631,6 +631,25 @@ public:
         return;
     }
 
+    // 145. Binary Tree Postorder Traversal Test
+    void postorderTraversal145Test() {
+        cout << "145. Binary Tree Postorder Traversal test starts.\n";
+        TreeNode * root = new TreeNode(-10);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(9);
+        cur->right = new TreeNode(20);
+        cur = cur->right;
+        cur->left = new TreeNode(15); cur->right = new TreeNode(7);
+
+        vector<int> result = implObj->postorderTraversal145(root);
+        cout << "Post order output = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "].\n\n";
+        return;
+    }
+
     // 146. LRU Cache Test
     void LRUCache146Test() {
         cout << "146. LRU Cache test starts.\n";
