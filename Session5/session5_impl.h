@@ -125,6 +125,21 @@ public:
 
         return curSum;
     }
+
+    // 509. Fibonacci Number
+    int fib509(int N) {
+        if (N == 0) {
+            return 0;
+        }
+        
+        vector<int> result(N + 1, -1);
+        result[0] = 0; result[1] = 1;
+        for (int i = 2; i <= N; ++i) {
+            result[i] = result[i - 1] + result[i - 2];
+        }
+        
+        return result[N];
+    }
 };
 
 #endif

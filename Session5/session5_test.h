@@ -53,6 +53,13 @@ public:
         cout << "]\n\n";
     }
 
+    // 509. Fibonacci Number Test
+    void fib509Test() {
+        cout << "509. Fibonacci Number test starts.\n";
+        cout << "N = 10 => Sum = [" << implObj->fib509(10) << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };
