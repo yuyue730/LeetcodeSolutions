@@ -73,7 +73,19 @@ public:
         root->right->parent = root;
 
         cout << "1 next large is [" << implObj->inorderSuccessor510(root->left)->val << "]\n";
-        cout << "2 next large is [" << implObj->inorderSuccessor510(root)->val << "]\n";
+        cout << "2 next large is [" << implObj->inorderSuccessor510(root)->val << "]\n\n";
+    }
+
+    // 513. Find Bottom Left Tree Value
+    void findBottomLeftValue513Test() {
+        cout << "513. Find Bottom Left Tree Value test starts.\n";
+        TreeNode* root = new TreeNode(2);
+        root->left = new TreeNode(1);
+        root->right = new TreeNode(3);
+
+        cout << "Left most node value in the last row = [" 
+            << implObj->findBottomLeftValue513(root) << "]\n\n";
+        return;
     }
 
 private:

@@ -178,6 +178,34 @@ public:
 
         return nullptr;
     }
+
+    // 513. Find Bottom Left Tree Value
+    int findBottomLeftValue513(TreeNode* root) {
+        if (!root) {
+            return 0;
+        }
+        
+        TreeNode* result = root;
+        queue<TreeNode*> q({root});
+        
+        while (!q.empty()) {
+            int qSize = q.size();
+            result = q.front();
+            
+            for (int i = 0; i < qSize; ++i) {
+                TreeNode * tmp = q.front();
+                q.pop();
+                if (tmp->left) {
+                    q.push(tmp->left);
+                }
+                if (tmp->right) {
+                    q.push(tmp->right);
+                }
+            }
+        }
+        
+        return result->val;
+    }
 };
 
 #endif
