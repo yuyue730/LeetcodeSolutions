@@ -117,6 +117,14 @@ public:
         cout << "]\n\n";
     }
 
+    // 516. Longest Palindromic Subsequence Test
+    void longestPalindromeSubseq516Test() {
+        cout << "516. Longest Palindromic Subsequence test starts.\n";
+        cout << "Longest palindromic subsequence of bbbab = [" 
+            << implObj->longestPalindromeSubseq516("bbbab") << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };
