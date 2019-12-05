@@ -14,4 +14,5 @@ int main() {
     testObj->fib509Test();
     testObj->inorderSuccessor510Test();
     testObj->findBottomLeftValue513Test();
+    testObj->findRotateSteps514Test();
 }

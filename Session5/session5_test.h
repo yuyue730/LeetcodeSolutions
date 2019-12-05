@@ -76,7 +76,7 @@ public:
         cout << "2 next large is [" << implObj->inorderSuccessor510(root)->val << "]\n\n";
     }
 
-    // 513. Find Bottom Left Tree Value
+    // 513. Find Bottom Left Tree Value Test
     void findBottomLeftValue513Test() {
         cout << "513. Find Bottom Left Tree Value test starts.\n";
         TreeNode* root = new TreeNode(2);
@@ -85,6 +85,14 @@ public:
 
         cout << "Left most node value in the last row = [" 
             << implObj->findBottomLeftValue513(root) << "]\n\n";
+        return;
+    }
+
+    // 514. Freedom Trail Test
+    void findRotateSteps514Test() {
+        cout << "514. Freedom Trail test starts.\n";
+        cout << "ring = godding, key = gd => steps = [" 
+            << implObj->findRotateSteps514("godding", "gd") << "]\n\n";
         return;
     }
 

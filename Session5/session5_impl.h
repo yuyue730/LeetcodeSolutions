@@ -206,6 +206,47 @@ public:
         
         return result->val;
     }
+
+    // 514. Freedom Trail
+    int findRotateSteps514(string ring, string key) {
+        if (key.empty() || ring.empty()) {
+            return 0;
+        }
+
+        vector<vector<int>> charPosMap(26);
+        for (int i = 0; i < ring.size(); ++i) {
+            charPosMap[ring[i] - 'A'].push_back(i);
+        }
+
+        int rSize = ring.size(), kSize = key.size();
+        vector<vector<int>> state(rSize, vector<int>(kSize, 0));
+        return findRotateSteps514_dfs(ring, key, 0, 0, charPosMap, state);
+    }
+
+    int findRotateSteps514_dfs(
+        const string& ring, const string& key, int x, int y,
+        const vector<vector<int>> & charPosMap,
+        vector<vector<int>> & state)
+    {
+        if (y == key.size()) {
+            return 0;
+        }
+        if (state[x][y]) {
+            return state[x][y];
+        }
+        const int rSize = ring.size();
+        int result = INT_MAX;
+        for (int nextPos: charPosMap[key[y] - 'A']) {
+            int dist = abs(nextPos - x);
+            int step = min(dist, rSize - dist);
+            result = min(
+                result, 
+                step + findRotateSteps514_dfs(
+                    ring, key, nextPos, y + 1, charPosMap, state));
+        }
+        state[x][y] = result + 1;
+        return state[x][y];
+    }
 };
 
 #endif
