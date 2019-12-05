@@ -96,6 +96,27 @@ public:
         return;
     }
 
+    // 515. Find Largest Value in Each Tree Row Test
+    void largestValues515Test() {
+        cout << "515. Find Largest Value in Each Tree Row test starts.\n";
+        TreeNode* root = new TreeNode(1);
+        root->left = new TreeNode(3);
+        root->right = new TreeNode(2);
+
+        TreeNode* cur = root->left;
+        cur->left = new TreeNode(5);
+        cur->right = new TreeNode(3);
+
+        cur = root->right;
+        cur->right = new TreeNode(9);
+        vector<int> result = implObj->largestValues515(root);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };

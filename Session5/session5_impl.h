@@ -247,6 +247,37 @@ public:
         state[x][y] = result + 1;
         return state[x][y];
     }
+
+    // 515. Find Largest Value in Each Tree Row
+    vector<int> largestValues515(TreeNode* root) {
+        vector<int> result;
+        if (!root) {
+            return result;
+        }
+        
+        queue<TreeNode *> q({root});
+        while (!q.empty()) {
+            int qSize = q.size();
+            int curMax = INT_MIN;
+            for (int i = 0; i < qSize; ++i) {
+                TreeNode * cur = q.front();
+                if (cur->val > curMax) {
+                    curMax = cur->val;
+                }
+                q.pop();
+                if (cur->left) {
+                    q.push(cur->left);
+                }
+                if (cur->right) {
+                    q.push(cur->right);
+                }
+            }
+            
+            result.push_back(curMax);
+        }
+        
+        return result;
+    }
 };
 
 #endif
