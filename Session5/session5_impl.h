@@ -6,6 +6,7 @@
 #include <stack>
 #include <queue>
 #include <unordered_map>
+#include <numeric>
 using namespace std;
 
 // Definition for a Binary Tree Node with pointer to parent.
@@ -295,6 +296,23 @@ public:
         }
 
         return dp[0][sSize - 1];
+    }
+
+    // 517. Super Washing Machines
+    int findMinMoves517(vector<int>& machines) {
+        int sum = accumulate(machines.begin(), machines.end(), 0);
+        int mSize = machines.size();
+        if (sum % mSize != 0) {
+            return -1;
+        }
+        int average = sum / mSize;
+        int cnt = 0, result = 0;
+        for (int curLoad: machines) {
+            int curDiff = curLoad - average;
+            cnt += curDiff;
+            result = max(result, max(abs(cnt), curDiff));
+        }
+        return result;
     }
 };
 

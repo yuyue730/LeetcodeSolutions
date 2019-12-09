@@ -125,6 +125,14 @@ public:
         return;
     }
 
+    // 517. Super Washing Machines Test
+    void findMinMoves517Test() {
+        cout << "517. Super Washing Machines test starts.\n";
+        vector<int> machines = {0, 0, 11, 5};
+        cout << "Minimum Number of moves = [" << implObj->findMinMoves517(machines) << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };
