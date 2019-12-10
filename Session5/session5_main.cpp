@@ -18,6 +18,7 @@ int main() {
     testObj->largestValues515Test();
     testObj->longestPalindromeSubseq516Test();
     testObj->findMinMoves517Test();
+    testObj->change518Test();
 
     return 0;
 }

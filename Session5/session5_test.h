@@ -133,6 +133,14 @@ public:
         return;
     }
 
+    // 518. Coin Change 2 Test
+    void change518Test() {
+        cout << "518. Coin Change 2 test starts.\n";
+        vector<int> coins = {1, 2 ,5};
+        cout << "# of ways to reach 5 = [" << implObj->change518(5, coins) << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };
