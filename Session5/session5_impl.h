@@ -5,6 +5,7 @@
 #include <vector>
 #include <stack>
 #include <queue>
+#include <unordered_set>
 #include <unordered_map>
 #include <numeric>
 using namespace std;
@@ -328,6 +329,31 @@ public:
         }
         return dp[coins.size()][amount];
     }
+
+    // 519. Random Flip Matrix
+    class Solution519 {
+    public:
+        Solution519(int n_rows, int n_cols)
+          : d_row(n_rows), d_col(n_cols) { }
+        
+        vector<int> flip() {
+            while (true) {
+                int randIdx = rand() % (d_row * d_col);
+                if (!d_inserted.count(randIdx)) {
+                    d_inserted.insert(randIdx);
+                    return {randIdx / d_col, randIdx % d_col};
+                }
+            }
+        }
+        
+        void reset() {
+            d_inserted.clear();
+        }
+    
+    private:
+        int d_row, d_col;
+        unordered_set<int> d_inserted;
+    };
 };
 
 #endif

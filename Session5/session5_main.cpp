@@ -19,6 +19,7 @@ int main() {
     testObj->longestPalindromeSubseq516Test();
     testObj->findMinMoves517Test();
     testObj->change518Test();
+    testObj->Solution519Test();
 
     return 0;
 }

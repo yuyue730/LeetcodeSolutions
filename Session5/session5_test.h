@@ -141,6 +141,19 @@ public:
         return;
     }
 
+    // 519. Random Flip Matrix Test
+    void Solution519Test() {
+        cout << "519. Random Flip Matrix test starts.\n";
+        Session5Impl::Solution519 sol(2, 3);
+        vector<int> flip1 = sol.flip();
+        cout << "Flip 1 = [" << flip1[0] << ", " << flip1[1] << "]\n";
+        vector<int> flip2 = sol.flip();
+        cout << "Flip 1 = [" << flip2[0] << ", " << flip2[1] << "]\n";
+        vector<int> flip3 = sol.flip();
+        cout << "Flip 1 = [" << flip3[0] << ", " << flip3[1] << "]\n";
+        sol.reset();
+    }
+
 private:
     Session5Impl * implObj;
 };
