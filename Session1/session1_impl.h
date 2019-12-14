@@ -8,6 +8,7 @@
 #include <list>
 #include <set>
 #include <map>
+#include <numeric>
 #include <unordered_set>
 #include <unordered_map>
 using namespace std;
@@ -781,6 +782,32 @@ public:
             result = max(result, curLength);
         }
         return result;
+    }
+
+    // 129. Sum Root to Leaf Numbers
+    int sumNumbers128(TreeNode* root) {
+        if (!root) {
+            return 0;
+        }
+        
+        vector<int> allNumbers;
+        sumNumbers_dfs(allNumbers, 0, root);
+        return accumulate(allNumbers.begin(), allNumbers.end(), 0);
+    }
+    
+    void sumNumbers_dfs(vector<int> &allNumbers, int curVal, TreeNode* curNode) {
+        curVal = curVal * 10 + curNode->val;
+        
+        if (!curNode->left && !curNode->right) {
+            allNumbers.push_back(curVal);
+        }
+        
+        if (curNode->left) {
+            sumNumbers_dfs(allNumbers, curVal, curNode->left);
+        }
+        if (curNode->right) {
+            sumNumbers_dfs(allNumbers, curVal, curNode->right);
+        }
     }
 
     // 130. Surrounded Regions

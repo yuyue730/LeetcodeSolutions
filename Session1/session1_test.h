@@ -425,6 +425,17 @@ public:
         return;
     }
 
+    // 129. Sum Root to Leaf Numbers Test
+    void sumNumbers128Test() {
+        cout << "129. Sum Root to Leaf Numbers test starts.\n";
+        TreeNode * root = new TreeNode(1);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(2);
+        cur->right = new TreeNode(3);
+        cout << "Sum = [" << implObj->sumNumbers128(root) << "]\n\n";
+        return;
+    }
+
     // 130. Surrounded Regions Test
     void solve130Test() {
         cout << "130. Surrounded Regions test starts.\n";

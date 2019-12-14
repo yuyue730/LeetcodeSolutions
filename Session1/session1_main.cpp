@@ -35,6 +35,7 @@ int main() {
     testObj->findLadders126Test();
     testObj->ladderLength127Test();
     testObj->longestConsecutive128Test();
+    testObj->sumNumbers128Test();
     testObj->solve130Test();
     testObj->partition131Test();
     testObj->minCut132Test();
