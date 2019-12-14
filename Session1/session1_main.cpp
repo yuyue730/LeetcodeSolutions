@@ -75,6 +75,7 @@ int main() {
     testObj->convertToTitle168Test();
     testObj->majorityElement169Test();
     testObj->TwoSum170Test();
+    testObj->titleToNumber171Test();
     testObj->BSTIterator173Test();
     testObj->largestNumber179Test();
     testObj->findRepeatedDnaSequences187Test();

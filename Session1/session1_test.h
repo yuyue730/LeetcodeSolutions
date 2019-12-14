@@ -919,6 +919,14 @@ public:
         return;
     }
 
+    // 171. Excel Sheet Column Number Test
+    void titleToNumber171Test() {
+        cout << "171. Excel Sheet Column Number test starts.\n";
+        cout << "AA = [" << implObj->titleToNumber171("AA") << "]\n\n";
+        return;
+    }
+
+
     // 173. Binary Search Tree Iterator Test
     void BSTIterator173Test() {
         cout << "173. Binary Search Tree Iterator test starts.\n";
