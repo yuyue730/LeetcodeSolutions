@@ -371,6 +371,32 @@ public:
 
         return false;
     }
+
+    // 524. Longest Word in Dictionary through Deleting
+    string findLongestWord524(string s, vector<string>& d) {
+        sort(d.begin(), d.end(), [](string a, string b) {
+            if (a.size() == b.size()) {
+                return a < b;
+            } 
+            return a.size() > b.size();
+        });
+        
+        for (auto word: d) {
+            int wIdx = 0, sIdx = 0;
+            while (sIdx < s.length() && wIdx < word.length()) {
+                if (s[sIdx] == word[wIdx]) {
+                    wIdx++;
+                }
+                sIdx++;
+            }
+            
+            if (wIdx == word.length()) {
+                return word;
+            }
+        }
+        
+        return "";
+    }
 };
 
 #endif

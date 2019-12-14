@@ -163,6 +163,15 @@ public:
         return;
     }
 
+    // 524. Longest Word in Dictionary through Deleting Test
+    void findLongestWord524Test() {
+        cout << "524. Longest Word in Dictionary through Deleting test starts.\n";
+        string s = "abpcplea";
+        vector<string> d = {"ale", "apple", "monkey", "plea"};
+        cout << "Longest word = [" << implObj->findLongestWord524(s, d) << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };
