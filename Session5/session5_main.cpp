@@ -20,6 +20,7 @@ int main() {
     testObj->findMinMoves517Test();
     testObj->change518Test();
     testObj->Solution519Test();
+    testObj->checkSubarraySum523Test();
 
     return 0;
 }

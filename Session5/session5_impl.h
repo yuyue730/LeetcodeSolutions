@@ -354,6 +354,23 @@ public:
         int d_row, d_col;
         unordered_set<int> d_inserted;
     };
+
+    // 523. Continuous Subarray Sum
+    bool checkSubarraySum523(vector<int>& nums, int k) {
+        int pre = 0, sum = 0;
+        unordered_set<int> remainSet;
+        for (auto num: nums) {
+            sum += num;
+            int curRemain = (k == 0) ? sum : (sum % k);
+            if (remainSet.count(curRemain)) {
+                return true;
+            }
+            remainSet.insert(pre);
+            pre = curRemain;
+        }
+
+        return false;
+    }
 };
 
 #endif

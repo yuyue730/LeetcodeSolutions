@@ -150,8 +150,17 @@ public:
         vector<int> flip2 = sol.flip();
         cout << "Flip 1 = [" << flip2[0] << ", " << flip2[1] << "]\n";
         vector<int> flip3 = sol.flip();
-        cout << "Flip 1 = [" << flip3[0] << ", " << flip3[1] << "]\n";
+        cout << "Flip 1 = [" << flip3[0] << ", " << flip3[1] << "]\n\n";
         sol.reset();
+    }
+
+    // 523. Continuous Subarray Sum Test
+    void checkSubarraySum523Test() {
+        cout << "523. Continuous Subarray Sum test starts.\n";
+        vector<int> nums = {23, 2, 6, 4, 7};
+        int k = 6;
+        cout << "Can get subarray sum = [" << implObj->checkSubarraySum523(nums, k) << "]\n\n";
+        return;
     }
 
 private:
