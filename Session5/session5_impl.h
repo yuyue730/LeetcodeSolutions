@@ -349,7 +349,7 @@ public:
         void reset() {
             d_inserted.clear();
         }
-    
+
     private:
         int d_row, d_col;
         unordered_set<int> d_inserted;
@@ -380,7 +380,7 @@ public:
             } 
             return a.size() > b.size();
         });
-        
+
         for (auto word: d) {
             int wIdx = 0, sIdx = 0;
             while (sIdx < s.length() && wIdx < word.length()) {
@@ -389,13 +389,31 @@ public:
                 }
                 sIdx++;
             }
-            
+
             if (wIdx == word.length()) {
                 return word;
             }
         }
-        
+
         return "";
+    }
+
+    // 525. Contiguous Array
+    int findMaxLength525(vector<int>& nums) {
+        unordered_map<int, int> offsetMap;
+        offsetMap[0] = -1;
+        int sum = 0, result = 0;
+        for (int i = 0; i < nums.size(); ++i) {
+            sum += (nums[i] == 1) ? 1 : -1;
+            if (offsetMap.count(sum)) {
+                result = max(result, i - offsetMap[sum]);
+            }
+            else {
+                offsetMap[sum] = i;
+            }
+        }
+        
+        return result;
     }
 };
 

@@ -172,6 +172,13 @@ public:
         return;
     }
 
+    // 525. Contiguous Array Test
+    void findMaxLength525Test() {
+        cout << "525. Contiguous Array test starts.\n";
+        vector<int> nums = {0, 1, 0};
+        cout << "Max Length = [" << implObj->findMaxLength525(nums) << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };
