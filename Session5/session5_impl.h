@@ -415,6 +415,29 @@ public:
         
         return result;
     }
+
+    // 526. Beautiful Arrangement
+    int countArrangement526(int N) {
+        int result = 0;
+        vector<bool> visited(N + 1, false);
+        countArrangement_dfs(N, 1, visited, result);
+        return result;
+    }
+    
+    void countArrangement_dfs(int N, int curPos, vector<bool> &visited, int &result) {
+        if (curPos > N) {
+            result++;
+            return;
+        }
+        
+        for (int i = 1; i <= N; ++i) {
+            if (!visited[i] && (i % curPos == 0 || curPos % i == 0)) {
+                visited[i] = true;
+                countArrangement_dfs(N, curPos + 1, visited, result);
+                visited[i] = false;
+            }
+        }
+    }
 };
 
 #endif

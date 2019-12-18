@@ -177,6 +177,14 @@ public:
         cout << "525. Contiguous Array test starts.\n";
         vector<int> nums = {0, 1, 0};
         cout << "Max Length = [" << implObj->findMaxLength525(nums) << "]\n\n";
+        return;
+    }
+
+    // 526. Beautiful Arrangement Test
+    void countArrangement526Test() {
+        cout << "526. Beautiful Arrangement test starts.\n";
+        cout << "N = 2; countArrangement = [" << implObj->countArrangement526(2) << "]\n\n";
+        return;
     }
 
 private:

@@ -23,6 +23,7 @@ int main() {
     testObj->checkSubarraySum523Test();
     testObj->findLongestWord524Test();
     testObj->findMaxLength525Test();
+    testObj->countArrangement526Test();
 
     return 0;
 }
