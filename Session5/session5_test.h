@@ -203,6 +203,19 @@ public:
         return;
     }
 
+    // 528. Random Pick with Weight Test
+    void Solution528Test() {
+        cout << "528. Random Pick with Weight test starts.\n";
+        vector<int> w = {1, 3};
+        Session5Impl::Solution528 obj(w);
+        cout << "Result = [";
+        for (int i = 0; i < 10; ++i) {
+            cout << obj.pickIndex() << ((i == 9) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };

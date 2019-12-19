@@ -478,6 +478,39 @@ public:
             : word.substr(0, preLength) + to_string(word.size() - preLength - 1)
                 + word.back();
     }
+
+    // 528. Random Pick with Weight
+    class Solution528 {
+    public:
+        Solution528(vector<int>& w) {
+            sumWeight.resize(w.size());
+            sumWeight[0] = w[0];
+            
+            for (int i = 1; i < w.size(); ++i) {
+                sumWeight[i] = sumWeight[i - 1] + w[i];
+            }
+        }
+        
+        int pickIndex() {
+            int x = rand() * sumWeight.back();
+            int left = 0, right = sumWeight.size() - 1;
+
+            while (left < right) {
+                int mid = (left + right) / 2;
+                if (sumWeight[mid] <= x) {
+                    left = mid + 1;
+                }
+                else {
+                    right = mid;
+                }
+            }
+
+            return right;
+        }
+    
+    private:
+        vector<int> sumWeight;
+    };
 };
 
 #endif

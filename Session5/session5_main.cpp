@@ -25,6 +25,7 @@ int main() {
     testObj->findMaxLength525Test();
     testObj->countArrangement526Test();
     testObj->wordsAbbreviation527Test();
+    testObj->Solution528Test();
 
     return 0;
 }
