@@ -438,6 +438,46 @@ public:
             }
         }
     }
+
+    // 527. Word Abbreviation
+    vector<string> wordsAbbreviation527(vector<string>& dict) {
+        const int nDict = dict.size();
+        vector<string> result(nDict);
+        vector<int> lengthPre(nDict, 1);
+
+        for (int i = 0; i < nDict; ++i) {
+            result[i] = abbreviate(dict[i], 1);
+        }
+
+        for (int i = 0; i < nDict; ++i) {
+            while (true) {
+                unordered_set<int> duplicateSet;
+                for (int j = i + 1; j < nDict; ++j) {
+                    if (result[j] == result[i]) {
+                        duplicateSet.insert(j);
+                    }
+                }
+
+                if (duplicateSet.empty()) {
+                    break;
+                }
+                duplicateSet.insert(i);
+                for (auto dupIndex: duplicateSet) {
+                    lengthPre[dupIndex]++;
+                    result[dupIndex] = abbreviate(dict[dupIndex], lengthPre[dupIndex]);
+                }
+            }
+        }
+
+        return result;
+    }
+
+    string abbreviate(const string word, int preLength) {
+        return (preLength >= (word.size() - 2))
+            ? word
+            : word.substr(0, preLength) + to_string(word.size() - preLength - 1)
+                + word.back();
+    }
 };
 
 #endif

@@ -187,6 +187,22 @@ public:
         return;
     }
 
+    // 527. Word Abbreviation Test
+    void wordsAbbreviation527Test() {
+        cout << "527. Word Abbreviation test starts.\n";
+        vector<string> dict = {
+            "like", "god", "internal", "me", "internet", 
+            "interval", "intension", "face", "intrusion"
+        };
+        vector<string> result = implObj->wordsAbbreviation527(dict);
+        cout << "Result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };
