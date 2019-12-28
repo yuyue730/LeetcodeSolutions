@@ -26,6 +26,7 @@ int main() {
     testObj->countArrangement526Test();
     testObj->wordsAbbreviation527Test();
     testObj->Solution528Test();
+    testObj->updateBoard529Test();
 
     return 0;
 }

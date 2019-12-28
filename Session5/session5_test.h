@@ -216,6 +216,31 @@ public:
         return;
     }
 
+    // 529. Minesweeper Test
+    void updateBoard529Test() {
+        cout << "529. Minesweeper test starts.\n";
+        vector<vector<char>> board = {
+            {'E', 'E', 'E', 'E', 'E'},
+            {'E', 'E', 'M', 'E', 'E'},
+            {'E', 'E', 'E', 'E', 'E'},
+            {'E', 'E', 'E', 'E', 'E'}
+        };
+
+        vector<int> click = {3, 0};
+        vector<vector<char>> result = implObj->updateBoard529(board, click);
+
+        cout << "Result = [\n";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << "  [";
+            for (int j = 0; j < result[0].size(); ++j) {
+                cout << result[i][j] << ((j == result[0].size() - 1) ? "" : ", ");
+            }
+            cout << "]\n";
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };

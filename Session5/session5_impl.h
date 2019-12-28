@@ -511,6 +511,57 @@ public:
     private:
         vector<int> sumWeight;
     };
+
+    // 529. Minesweeper
+    vector<vector<char>> updateBoard529(
+        vector<vector<char>>& board, vector<int>& click) {
+        if (board.empty() || board[0].empty()) {
+            return {};
+        }
+
+        int x = click[0], y = click[1];
+        int m = board.size(), n = board[0].size();
+        if (board[x][y] == 'M') {
+            board[x][y] = 'X';
+        }
+        else {
+            int countMine = 0;
+            for (int i = -1; i < 2; ++i) {
+                for (int j = -1; j < 2; ++j) {
+                    int nextX = x + i, nextY = y + j;
+                    if (nextX < 0 || nextX >= m || nextY < 0 || nextY >= n) {
+                        continue;
+                    }
+
+                    if (board[nextX][nextY] == 'M') {
+                        countMine++;
+                    }
+                }
+            }
+
+            if (countMine > 0) {
+                board[x][y] = '0' + countMine;
+            }
+            else {
+                board[x][y] = 'B';
+                for (int i = -1; i < 2; ++i) {
+                    for (int j = -1; j < 2; ++j) {
+                        int nextX = x + i, nextY = y + j;
+                        if (nextX < 0 || nextX >= m || nextY < 0 || nextY >= n) {
+                            continue;
+                        }
+
+                        if (board[nextX][nextY] == 'E') {
+                            vector<int> nextClick = {nextX, nextY};
+                            updateBoard529(board, nextClick);
+                        }
+                    }
+                }
+            }
+        }
+
+        return board;
+    }
 };
 
 #endif
