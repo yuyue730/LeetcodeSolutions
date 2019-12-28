@@ -974,6 +974,23 @@ public:
         return;
     }
 
+    // 186. Reverse Words in a String II Test
+    void reverseWords186Test() {
+        cout << "186. Reverse Words in a String II test starts.\n";
+        vector<char> s = {
+            't', 'h', 'e', ' ',
+            's', 'k', 'y', ' ',
+            'i', 's', ' ',
+            'b', 'l', 'u', 'e'
+        };
+        implObj->reverseWords186(s);
+        cout << "Reverse `the sky is blue` = [";
+        for (int i = 0; i < s.size(); ++i) {
+            cout << s[i] << ((i == s.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
     // 187. Repeated DNA Sequences Test
     void findRepeatedDnaSequences187Test() {
         cout << "187. Repeated DNA Sequences test starts.\n";

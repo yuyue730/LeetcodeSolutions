@@ -1949,6 +1949,22 @@ public:
         return result[0] == '0' ? "0" : result;
     }
 
+    // 186. Reverse Words in a String II
+    void reverseWords186(vector<char>& s) {
+        int pre = 0, last = 0;
+        while (last < s.size()) {
+            while (last < s.size() && s[last] != ' ') {
+                last++;
+            }
+
+            reverse(s.begin() + pre, s.begin() + last);
+            last++;
+            pre = last;
+        }
+        
+        reverse(s.begin(), s.end());
+    }
+
     // 187. Repeated DNA Sequences
     vector<string> findRepeatedDnaSequences187(string s) {
         if (s.size() < 10) {

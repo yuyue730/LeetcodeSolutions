@@ -79,6 +79,7 @@ int main() {
     testObj->BSTIterator173Test();
     testObj->calculateMinimumHP174Test();
     testObj->largestNumber179Test();
+    testObj->reverseWords186Test();
     testObj->findRepeatedDnaSequences187Test();
     testObj->maxProfit188Test();
     testObj->rotate189Test();
