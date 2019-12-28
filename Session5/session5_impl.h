@@ -582,6 +582,33 @@ public:
         pre = cur->val;
         getMinimumDifference530_inorder(cur->right, pre, result);
     }
+
+    // 531. Lonely Pixel I
+    int findLonelyPixel531(vector<vector<char>>& picture) {
+        int m = picture.size(), n = picture[0].size();
+        vector<int> rowBlackMap(m, 0);
+        vector<int> colBlackMap(n, 0);
+        
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (picture[i][j] == 'B') {
+                    rowBlackMap[i]++;
+                    colBlackMap[j]++;
+                }
+            }
+        }
+        
+        int result = 0;
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (picture[i][j] == 'B' 
+                    && rowBlackMap[i] == 1 && colBlackMap[j] == 1) {
+                    result++;
+                }
+            }
+        }
+        return result;
+    }
 };
 
 #endif

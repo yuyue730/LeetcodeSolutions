@@ -28,6 +28,7 @@ int main() {
     testObj->Solution528Test();
     testObj->updateBoard529Test();
     testObj->getMinimumDifference530Test();
+    testObj->findLonelyPixel531Test();
 
     return 0;
 }

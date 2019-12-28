@@ -252,6 +252,19 @@ public:
         return;
     }
 
+    // 531. Lonely Pixel I Test
+    void findLonelyPixel531Test() {
+        cout << "531. Lonely Pixel I test starts.\n";
+        vector<vector<char>> picture = {
+            {'W', 'W', 'B'},
+            {'W', 'B', 'W'},
+            {'B', 'W', 'W'}
+        };
+
+        cout << "Number of lonely pixel = [" << implObj->findLonelyPixel531(picture) << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };
