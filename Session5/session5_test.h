@@ -241,6 +241,17 @@ public:
         return;
     }
 
+    // 530. Minimum Absolute Difference in BST Test
+    void getMinimumDifference530Test() {
+        cout << "530. Minimum Absolute Difference in BST test starts.\n";
+        TreeNode* root = new TreeNode(1);
+        root->right = new TreeNode(3);
+        root->right->left = new TreeNode(2);
+
+        cout << "Min Abs Diff = [" << implObj->getMinimumDifference530(root) << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };

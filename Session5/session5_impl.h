@@ -562,6 +562,26 @@ public:
 
         return board;
     }
+
+    // 530. Minimum Absolute Difference in BST
+    int getMinimumDifference530(TreeNode* root) {
+        int result = INT_MAX, preVal = -1;
+        getMinimumDifference530_inorder(root, preVal, result);
+        return result;
+    }
+
+    void getMinimumDifference530_inorder(TreeNode* cur, int& pre, int& result) {
+        if (!cur) {
+            return;
+        }
+
+        getMinimumDifference530_inorder(cur->left, pre, result);
+        if (pre != -1) {
+            result = min(result, cur->val - pre);
+        }
+        pre = cur->val;
+        getMinimumDifference530_inorder(cur->right, pre, result);
+    }
 };
 
 #endif

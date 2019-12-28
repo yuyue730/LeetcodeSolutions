@@ -27,6 +27,7 @@ int main() {
     testObj->wordsAbbreviation527Test();
     testObj->Solution528Test();
     testObj->updateBoard529Test();
+    testObj->getMinimumDifference530Test();
 
     return 0;
 }
