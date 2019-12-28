@@ -77,6 +77,7 @@ int main() {
     testObj->TwoSum170Test();
     testObj->titleToNumber171Test();
     testObj->BSTIterator173Test();
+    testObj->calculateMinimumHP174Test();
     testObj->largestNumber179Test();
     testObj->findRepeatedDnaSequences187Test();
     testObj->maxProfit188Test();

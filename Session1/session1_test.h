@@ -951,6 +951,19 @@ public:
         return;
     }
 
+    // 174. Dungeon Game Test
+    void calculateMinimumHP174Test() {
+        cout << "174. Dungeon Game test starts.\n";
+        vector<vector<int>> dungeon = {
+            {-2, -3, 3},
+            {-5, -10, 1},
+            {10, 30, -5}
+        };
+
+        cout << "Min HP = [" << implObj->calculateMinimumHP174(dungeon) << "]\n\n";
+        return;
+    }
+
     // 179. Largest Number Test
     void largestNumber179Test() {
         cout << "179. Largest Number test starts.\n";
