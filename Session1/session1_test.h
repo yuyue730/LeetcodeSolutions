@@ -1031,6 +1031,13 @@ public:
         return;
     }
 
+    // 191. Number of 1 Bits Test
+    void hammingWeight191Test() {
+        cout << "191. Number of 1 Bits test starts.\n";
+        cout << "11 in decimal has [" << implObj->hammingWeight191(11) << "] 1's.\n\n";
+        return;
+    }
+
     // 198. House Robber Test
     void rob198Test() {
         cout << "198. House Robber test starts.\n";

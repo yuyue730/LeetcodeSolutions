@@ -83,10 +83,12 @@ int main() {
     testObj->findRepeatedDnaSequences187Test();
     testObj->maxProfit188Test();
     testObj->rotate189Test();
+    testObj->reverseBits190Test();
+    testObj->hammingWeight191Test();
     testObj->rob198Test();
     testObj->rightSideView199Test();
     testObj->numIslands200Test();
-    testObj->reverseBits190Test();
+    
 
     return 0;
 }

@@ -2050,6 +2050,20 @@ public:
         return result;
     }
 
+    // 191. Number of 1 Bits
+    int hammingWeight191(uint32_t n) {
+        int result = 0;
+        for (int i = 0; i < 32; ++i) {
+            if ((n & 1) == 1) {
+                result++;
+            }
+            
+            n = n >> 1;
+        }
+        
+        return result;
+    }
+
     // 198. House Robber
     int rob198(vector<int>& nums) {
         if (nums.size() <= 1) {
