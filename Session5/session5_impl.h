@@ -609,6 +609,42 @@ public:
         }
         return result;
     }
+
+    // 536. Construct Binary Tree from String
+    TreeNode* str2tree536(string s) {
+        if (s.empty()) {
+            return NULL;
+        }
+
+        int firstLeftBracket = s.find_first_of('(');
+        int curVal = (firstLeftBracket == string::npos)
+            ? stoi(s) : stoi(s.substr(0, firstLeftBracket));
+        
+        TreeNode* root = new TreeNode(curVal);
+        if (firstLeftBracket == string::npos) {
+            return root;
+        }
+
+        int left = firstLeftBracket;
+        int count = 0;
+
+        for (int i = firstLeftBracket; i < s.size(); ++i) {
+            if (s[i] == '(') {
+                count++;
+            } else if (s[i] == ')') {
+                count--;
+            }
+
+            if (count == 0 && left == firstLeftBracket) {
+                root->left = str2tree536(s.substr(left + 1, i - left - 1));
+                left = i + 1;
+            } else if (count == 0) {
+                root->right = str2tree536(s.substr(left + 1, i - left - 1));
+            }
+        }
+
+        return root;
+    }
 };
 
 #endif

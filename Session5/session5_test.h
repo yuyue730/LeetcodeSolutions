@@ -265,6 +265,14 @@ public:
         return;
     }
 
+    // 536. Construct Binary Tree from String Test
+    void str2tree536Test() {
+        cout << "536. Construct Binary Tree from String test starts.\n";
+        TreeNode* result = implObj->str2tree536("4(2(3)(1))(6(5))");
+        cout << "4(2(3)(1))(6(5)) will generate root = [" << result->val << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };

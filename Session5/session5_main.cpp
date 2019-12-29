@@ -29,6 +29,7 @@ int main() {
     testObj->updateBoard529Test();
     testObj->getMinimumDifference530Test();
     testObj->findLonelyPixel531Test();
+    testObj->str2tree536Test();
 
     return 0;
 }
