@@ -273,6 +273,25 @@ public:
         return;
     }
 
+    // 538. Convert BST to Greater Tree Test
+    void convertBST538Test() {
+        cout << "538. Convert BST to Greater Tree test starts.\n";
+        TreeNode * root = new TreeNode(5);
+        root->left = new TreeNode(2);
+        root->right = new TreeNode(13);
+        TreeNode * result = implObj->convertBST538(root);
+        cout << "BST Greater root = [" << result->val << "]\n\n";
+        return;
+    }
+
+    // 539. Minimum Time Difference Test
+    void findMinDifference539Test() {
+        cout << "539. Minimum Time Difference test starts.\n";
+        vector<string> timeSpots = {"23:59", "00:00"};
+        cout << "Min Diff = [" << implObj->findMinDifference539(timeSpots) << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };

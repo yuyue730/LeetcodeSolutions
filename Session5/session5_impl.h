@@ -645,6 +645,48 @@ public:
 
         return root;
     }
+
+    // 538. Convert BST to Greater Tree
+    TreeNode* convertBST538(TreeNode* root) {
+        int sum = 0;
+        convertBST_inorder_reverse(root, sum);
+        return root;
+    }
+    
+    void convertBST_inorder_reverse(TreeNode* cur, int& sum) {
+        if (!cur) {
+            return;
+        }
+        
+        convertBST_inorder_reverse(cur->right, sum);
+        sum += cur->val;
+        cur->val = sum;
+        convertBST_inorder_reverse(cur->left, sum);
+    }
+
+    // 539. Minimum Time Difference
+    int findMinDifference539(vector<string>& timePoints) {
+        sort(timePoints.begin(), timePoints.end());
+        int result = INT_MAX;
+        int ptsSize = timePoints.size();
+        
+        for (int i = 0; i < ptsSize; ++i) {
+            int l = i, r = (i + 1) % ptsSize;
+            int h_l = (timePoints[l][0] - '0') * 10 + (timePoints[l][1] - '0');
+            int m_l = (timePoints[l][3] - '0') * 10 + (timePoints[l][4] - '0');
+            int h_r = (timePoints[r][0] - '0') * 10 + (timePoints[r][1] - '0');
+            int m_r = (timePoints[r][3] - '0') * 10 + (timePoints[r][4] - '0');
+            
+            int diff = (h_r - h_l) * 60 + (m_r - m_l);
+            if (i == ptsSize - 1) {
+                diff += 24 * 60;
+            }
+            
+            result = min(result, diff);
+        }
+        
+        return result;
+    }
 };
 
 #endif

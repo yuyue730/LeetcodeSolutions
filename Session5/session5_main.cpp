@@ -30,6 +30,8 @@ int main() {
     testObj->getMinimumDifference530Test();
     testObj->findLonelyPixel531Test();
     testObj->str2tree536Test();
+    testObj->convertBST538Test();
+    testObj->findMinDifference539Test();
 
     return 0;
 }
