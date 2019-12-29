@@ -32,6 +32,7 @@ int main() {
     testObj->str2tree536Test();
     testObj->convertBST538Test();
     testObj->findMinDifference539Test();
+    testObj->singleNonDuplicate540Test();
 
     return 0;
 }

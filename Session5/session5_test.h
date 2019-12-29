@@ -291,6 +291,14 @@ public:
         cout << "Min Diff = [" << implObj->findMinDifference539(timeSpots) << "]\n\n";
         return;
     }
+    
+    // 540. Single Element in a Sorted Array Test
+    void singleNonDuplicate540Test() {
+        cout << "540. Single Element in a Sorted Array test starts.\n";
+        vector<int> nums = {3, 3, 7, 7, 10, 11, 11};
+        cout << "Non dup element = [" << implObj->singleNonDuplicate540(nums) << "]\n\n";
+        return;
+    }
 
 private:
     Session5Impl * implObj;

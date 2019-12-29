@@ -687,6 +687,38 @@ public:
         
         return result;
     }
+
+    // 540. Single Element in a Sorted Array
+    int singleNonDuplicate540(vector<int>& nums) {
+        if (nums.size() == 1) {
+            return nums[0];
+        }
+        
+        int left = 0, right = nums.size() - 1;
+        int nSize = nums.size();
+
+        while (left < right) {
+            int mid = (left + right) / 2;
+            if (nums[mid] == nums[mid + 1]) {
+                if ((nSize - mid - 1) % 2 == 1) {
+                    right = mid;
+                } else {
+                    left = mid + 1;
+                }
+            } else {
+                if (mid == 0 || nums[mid] != nums[mid - 1]) {
+                    return nums[mid];
+                }
+                if ((nSize - mid - 1) % 2 == 0) {
+                    right = mid;
+                } else {
+                    left = mid + 1;
+                }
+            }
+        }
+
+        return nums[left];
+    }
 };
 
 #endif
