@@ -1023,6 +1023,14 @@ public:
         cout << "]\n\n";
     }
 
+    // 190. Reverse Bits Test
+    void reverseBits190Test() {
+        cout << "190. Reverse Bits test starts.\n";
+        cout << "Reverse 00000010100101000001111010011100 = ["
+            << implObj->reverseBits190(43261596) << "]\n\n";
+        return;
+    }
+
     // 198. House Robber Test
     void rob198Test() {
         cout << "198. House Robber test starts.\n";

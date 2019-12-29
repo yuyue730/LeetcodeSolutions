@@ -86,6 +86,7 @@ int main() {
     testObj->rob198Test();
     testObj->rightSideView199Test();
     testObj->numIslands200Test();
+    testObj->reverseBits190Test();
 
     return 0;
 }

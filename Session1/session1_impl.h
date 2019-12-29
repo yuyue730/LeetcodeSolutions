@@ -2033,6 +2033,23 @@ public:
         reverse(nums.begin() + k, nums.end());
     }
 
+    // 190. Reverse Bits
+    uint32_t reverseBits190(uint32_t n) {
+        uint32_t result = 0;
+        
+        for (int i = 0; i < 32; ++i) {
+            if ((n & 1) == 1) {
+                result = (result << 1) + 1;
+            } else {
+                result = result << 1;
+            }
+            
+            n = n >> 1;
+        }
+        
+        return result;
+    }
+
     // 198. House Robber
     int rob198(vector<int>& nums) {
         if (nums.size() <= 1) {
