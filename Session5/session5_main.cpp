@@ -34,6 +34,7 @@ int main() {
     testObj->findMinDifference539Test();
     testObj->singleNonDuplicate540Test();
     testObj->updateMatrix542Test();
+    testObj->diameterOfBinaryTree543Test();
 
     return 0;
 }

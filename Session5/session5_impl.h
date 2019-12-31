@@ -757,6 +757,25 @@ public:
 
         return matrix;
     }
+
+    // 543. Diameter of Binary Tree
+    int diameterOfBinaryTree543(TreeNode* root) {
+        int result = 0;
+        diameterOfBinaryTree_postorder(root, result);
+        return result;
+    }
+    
+    int diameterOfBinaryTree_postorder(TreeNode* cur, int& result) {
+        if (!cur) {
+            return 0;
+        }
+        
+        int leftDepth = diameterOfBinaryTree_postorder(cur->left, result);
+        int rightDepth = diameterOfBinaryTree_postorder(cur->right, result);
+        
+        result = max(result, leftDepth + rightDepth);
+        return max(leftDepth, rightDepth) + 1;
+    }
 };
 
 #endif

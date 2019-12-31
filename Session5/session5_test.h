@@ -321,6 +321,21 @@ public:
         return;
     }
 
+    // 543. Diameter of Binary Tree Test
+    void diameterOfBinaryTree543Test() {
+        cout << "543. Diameter of Binary Tree test starts.\n";
+        TreeNode * root = new TreeNode(1);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(2);
+        cur->right = new TreeNode(3);
+        cur = cur->left;
+        cur->left = new TreeNode(4);
+        cur->right = new TreeNode(5);
+
+        cout << "Diameter of BT = [" << implObj->diameterOfBinaryTree543(root) << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };
