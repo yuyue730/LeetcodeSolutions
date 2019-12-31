@@ -719,6 +719,44 @@ public:
 
         return nums[left];
     }
+
+    // 542. 01 Matrix
+    vector<vector<int>> updateMatrix542(vector<vector<int>>& matrix) {
+        int m = matrix.size(), n = matrix[0].size();
+        const vector<vector<int>> directions = {
+            {0, 1}, {1, 0}, {0, -1}, {-1, 0}
+        };
+
+        queue<pair<int, int>> gridQ;
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (matrix[i][j] == 0) {
+                    gridQ.push({i, j});
+                } else {
+                    matrix[i][j] = INT_MAX;
+                }
+            }
+        }
+
+        while (!gridQ.empty()) {
+            pair<int, int> cur = gridQ.front();
+            gridQ.pop();
+            for (int k = 0; k < directions.size(); ++k) {
+                int nextX = cur.first + directions[k][0];
+                int nextY = cur.second + directions[k][1];
+                if (nextX < 0 || nextX >= m || nextY < 0 || nextY >= n
+                    || matrix[nextX][nextY] < matrix[cur.first][cur.second] + 1)
+                {
+                    continue;
+                }
+
+                matrix[nextX][nextY] = matrix[cur.first][cur.second] + 1;
+                gridQ.push({nextX, nextY});
+            }
+        }
+
+        return matrix;
+    }
 };
 
 #endif

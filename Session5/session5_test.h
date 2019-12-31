@@ -300,6 +300,27 @@ public:
         return;
     }
 
+    // 542. 01 Matrix Test
+    void updateMatrix542Test() {
+        cout << "542. 01 Matrix test starts.\n";
+        vector<vector<int>> matrix = {
+            {0, 0, 0},
+            {0, 1, 0},
+            {1, 1, 1}
+        };
+        vector<vector<int>> result = implObj->updateMatrix542(matrix);
+        cout << "Result = [\n";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << "  [";
+            for (int j = 0; j < result[i].size(); ++j) {
+                cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
+            }
+            cout << "]\n";
+        }
+        cout << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };

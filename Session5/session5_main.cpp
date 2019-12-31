@@ -33,6 +33,7 @@ int main() {
     testObj->convertBST538Test();
     testObj->findMinDifference539Test();
     testObj->singleNonDuplicate540Test();
+    testObj->updateMatrix542Test();
 
     return 0;
 }
