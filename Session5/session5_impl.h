@@ -776,6 +776,23 @@ public:
         result = max(result, leftDepth + rightDepth);
         return max(leftDepth, rightDepth) + 1;
     }
+
+    // 544. Output Contest Matches
+    string findContestMatch544(int n) {
+        vector<string> strArr(n, "");
+        for (int i = 1; i <= n; ++i) {
+            strArr[i - 1] = to_string(i);
+        }
+        
+        while (n > 0) {
+            for (int i = 0; i < n / 2; ++i) {
+                strArr[i] = '(' + strArr[i] + ',' + strArr[n - i - 1] + ')';
+            }
+            n /= 2;
+        }
+        
+        return strArr[0];
+    }
 };
 
 #endif

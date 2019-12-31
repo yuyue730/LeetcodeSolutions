@@ -336,6 +336,13 @@ public:
         return;
     }
 
+    // 544. Output Contest Matches Test
+    void findContestMatch544Test() {
+        cout << "544. Output Contest Matches test starts.\n";
+        cout << "8 Team will have [" << implObj->findContestMatch544(8) << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };
