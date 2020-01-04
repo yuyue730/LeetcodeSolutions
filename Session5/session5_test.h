@@ -351,6 +351,26 @@ public:
         return;
     }
 
+    // 547. Friend Circles Test
+    void findCircleNum547Test() {
+        cout << "547. Friend Circles test starts.\n";
+        vector<vector<int>> friends = {
+            {1, 1, 0},
+            {1, 1, 0},
+            {0, 0, 1}
+        };
+        cout << "# of circles = [" << implObj->findCircleNum547(friends) << "]\n\n";
+        return;
+    }
+
+    // 548. Split Array with Equal Sum Test
+    void splitArray548Test() {
+        cout << "548. Split Array with Equal Sum test starts.\n";
+        vector<int> arr = {1, 2, 1, 2, 1, 2, 1};
+        cout << "Can split = [" << (implObj->splitArray548(arr) ? "True" : "False")
+            << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };

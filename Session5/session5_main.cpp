@@ -37,6 +37,8 @@ int main() {
     testObj->diameterOfBinaryTree543Test();
     testObj->findContestMatch544Test();
     testObj->removeBoxes546Test();
+    testObj->findCircleNum547Test();
+    testObj->splitArray548Test();
 
     return 0;
 }

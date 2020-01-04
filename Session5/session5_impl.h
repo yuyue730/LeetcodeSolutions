@@ -830,6 +830,74 @@ public:
         dp[i][j][k] = result;
         return result;
     }
+
+    // 547. Friend Circles
+    int findCircleNum547(vector<vector<int>>& M) {
+        if (M.empty() || M[0].empty()) {
+            return 0;
+        }
+
+        int result = 0;
+        int n = M.size();
+        vector<bool> visited(n, false);
+        queue<int> Mq;
+        for (int i = 0; i < n; ++i) {
+            if (visited[i]) {
+                continue;
+            }
+            
+            Mq.push(i);
+            while (!Mq.empty()) {
+                int cur = Mq.front(); Mq.pop();
+                visited[cur] = true;
+                for (int j = 0; j < n; ++j) {
+                    if (i != j && !visited[j] && (M[cur][j] || M[j][cur]))
+                    {
+                        Mq.push(j);
+                    }
+                }
+            }
+            
+            result++;
+        }
+        
+        return result;
+    }
+
+    // 548. Split Array with Equal Sum
+    bool splitArray548(vector<int>& nums) {
+        if (nums.size() < 7) {
+            return false;
+        }
+        
+        int n = nums.size();
+        vector<int> allSum(n, 0);
+        allSum[0] = nums[0];
+        for (int i = 1; i < n; ++i) {
+            allSum[i] = allSum[i - 1] + nums[i];
+        }
+        
+        for (int j = 3; j < n - 3; ++j) {
+            unordered_set<int> sumSet;
+            for (int i = 1; i < j - 1; ++i) {
+                int leftSum = allSum[i - 1];
+                int rightSum = allSum[j - 1] - allSum[i];
+                if (leftSum == rightSum) {
+                    sumSet.insert(leftSum);
+                }
+            }
+            
+            for (int k = j + 1; k < n - 1; ++k) {
+                int leftSum = allSum[k - 1] - allSum[j];
+                int rightSum = allSum[n - 1] - allSum[k];
+                if (leftSum == rightSum && sumSet.count(leftSum)) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
 };
 
 #endif
