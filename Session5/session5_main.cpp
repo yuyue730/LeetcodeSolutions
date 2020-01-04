@@ -36,6 +36,7 @@ int main() {
     testObj->updateMatrix542Test();
     testObj->diameterOfBinaryTree543Test();
     testObj->findContestMatch544Test();
+    testObj->removeBoxes546Test();
 
     return 0;
 }

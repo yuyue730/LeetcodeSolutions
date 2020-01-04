@@ -793,6 +793,43 @@ public:
         
         return strArr[0];
     }
+
+    // 546. Remove Boxes
+    int removeBoxes546(vector<int>& boxes) {
+        int n = boxes.size();
+        vector<vector<vector<int>>> dp(n, vector<vector<int>>(n, vector<int>(n, 0)));
+        return removeBoxes546_rec(boxes, 0, n - 1, 0, dp);
+    }
+
+    int removeBoxes546_rec(
+        const vector<int>& boxes, int i, int j, int k,
+        vector<vector<vector<int>>> & dp)
+    {
+        if (i > j) {
+            return 0;
+        }
+        if (dp[i][j][k] > 0) {
+            return dp[i][j][k];
+        }
+
+        while (i + 1 <= j && boxes[i + 1] == boxes[i]) {
+            i++; k++;
+        }
+
+        int result = (k + 1) * (k + 1) + removeBoxes546_rec(boxes, i + 1, j, 0, dp);
+        for (int m = i + 1; m <= j; ++m) {
+            if (boxes[m] == boxes[i]) {
+                result = max(
+                    result,
+                    removeBoxes546_rec(boxes, i + 1, m - 1, 0, dp) 
+                        + removeBoxes546_rec(boxes, m, j, k + 1, dp)
+                );
+            }
+        }
+
+        dp[i][j][k] = result;
+        return result;
+    }
 };
 
 #endif

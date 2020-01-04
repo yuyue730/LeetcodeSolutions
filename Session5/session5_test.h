@@ -343,6 +343,14 @@ public:
         return;
     }
 
+    // 546. Remove Boxes Test
+    void removeBoxes546Test() {
+        cout << "546. Remove Boxes test starts.\n";
+        vector<int> boxes = {1, 3, 2, 2, 2, 3, 4, 3, 1};
+        cout << "max points = [" << implObj->removeBoxes546(boxes) << "]\n\n";
+        return;
+    }
+
 private:
     Session5Impl * implObj;
 };
