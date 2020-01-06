@@ -898,6 +898,50 @@ public:
         
         return false;
     }
+
+    // 549. Binary Tree Longest Consecutive Sequence II
+    int longestConsecutive549(TreeNode* root) {
+        if (!root) {
+            return 0;
+        }
+        
+        int maxLength = 1;
+        longestConsecutive_rec(root, maxLength);
+        return maxLength;
+    }
+    
+    pair<int, int> longestConsecutive_rec(TreeNode * cur, int & maxLength) {
+        if (!cur) {
+            return {0, 0};
+        }
+        
+        int inc = 1, dec = 1;
+        
+        if (cur->left) {
+            pair<int, int> leftResult
+                = longestConsecutive_rec(cur->left, maxLength);
+            if (cur->val == cur->left->val + 1) {
+                inc = leftResult.first + 1;
+            }
+            if (cur->val == cur->left->val - 1) {
+                dec = leftResult.second + 1;
+            }
+        }
+        
+        if (cur->right) {
+            pair<int, int> rightResult
+                = longestConsecutive_rec(cur->right, maxLength);
+            if (cur->val == cur->right->val + 1) {
+                inc = max(inc, rightResult.first + 1);
+            }
+            if (cur->val == cur->right->val - 1) {
+                dec = max(dec, rightResult.second + 1);
+            }
+        }
+        
+        maxLength = max(maxLength, inc + dec - 1);
+        return {inc, dec};
+    }
 };
 
 #endif

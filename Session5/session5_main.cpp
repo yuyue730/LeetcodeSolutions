@@ -39,6 +39,7 @@ int main() {
     testObj->removeBoxes546Test();
     testObj->findCircleNum547Test();
     testObj->splitArray548Test();
+    testObj->longestConsecutive549Test();
 
     return 0;
 }

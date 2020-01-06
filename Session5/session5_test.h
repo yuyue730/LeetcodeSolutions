@@ -371,6 +371,17 @@ public:
             << "]\n\n";
     }
 
+    // 549. Binary Tree Longest Consecutive Sequence II Test
+    void longestConsecutive549Test() {
+        cout << "549. Binary Tree Longest Consecutive Sequence II test starts.\n";
+        TreeNode * root = new TreeNode(2);
+        root->left = new TreeNode(1);
+        root->right = new TreeNode(3);
+
+        cout << "Longest Consecutive = [" << implObj->longestConsecutive549(root)
+            << "].\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };
