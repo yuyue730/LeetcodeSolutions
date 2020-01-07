@@ -174,6 +174,21 @@ public:
         return;
     }
 
+    // 216. Combination Sum III Test
+    void combinationSum3_216Test() {
+        cout << "216. Combination Sum III test starts.\n";
+        vector<vector<int>> result = implObj->combinationSum3_216(3, 9);
+        cout << "Result = [\n";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << "  [";
+            for (int j = 0; j < result[i].size(); ++j) {
+                cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
+            }
+            cout << "]\n";
+        }
+        cout << "]\n\n";
+    }
+
     // 218. The Skyline Problem Test
     void getSkyline218Test() {
         cout << "218. The Skyline Problem test starts.\n";
@@ -192,7 +207,7 @@ public:
 
     // 221. Maximal Square Test
     void maximalSquare221Test() {
-        cout << "198. House Robber test starts.\n";
+        cout << "221. Maximal Square test starts.\n";
         vector<vector<char>> matrix = {
             {'1', '0', '1', '0', '0'},
             {'1', '0', '1', '1', '1'},
