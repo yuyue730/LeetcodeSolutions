@@ -20,6 +20,7 @@ int main() {
     testObj->findOrder210Test();
     testObj->WordDictionary211Test();
     testObj->findWords212Test();
+    testObj->rob213Test();
     testObj->shortestPalindrome214Test();
     testObj->findKthLargest215Test();
     testObj->getSkyline218Test();

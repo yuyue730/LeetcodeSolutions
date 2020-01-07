@@ -151,6 +151,13 @@ public:
         cout << "]\n\n";
     }
 
+    // 213. House Robber II Test
+    void rob213Test() {
+        cout << "213. House Robber II test starts.\n";
+        vector<int> houses = {2, 3, 2};
+        cout << "Max profit = [" << implObj->rob213(houses) << "]\n\n";
+    }
+
     // 214. Shortest Palindrome Test
     void shortestPalindrome214Test() {
         cout << "214. Shortest Palindrome test starts.\n";

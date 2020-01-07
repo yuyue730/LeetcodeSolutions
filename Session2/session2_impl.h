@@ -447,6 +447,37 @@ public:
         visited[x][y] = false;
     }
 
+    // 213. House Robber II
+    int rob213(vector<int>& nums) {
+        if (nums.empty()) {
+            return 0;
+        }
+        
+        if (nums.size() == 1) {
+            return nums[0];
+        }
+        
+        return max(
+            rob_help(nums, 0, nums.size() - 2),
+            rob_help(nums, 1, nums.size() - 1));
+    }
+    
+    int rob_help(const vector<int> & nums, int left, int right) {
+        if (right - left <= 1) {
+            return nums[left];
+        }
+        
+        vector<int> dp(nums.size(), 0);
+        dp[left] = nums[left];
+        dp[left + 1] = max(nums[left], nums[left + 1]);
+        
+        for (int i = left + 2; i <= right; ++i) {
+            dp[i] = max(dp[i - 1], dp[i - 2] + nums[i]);
+        }
+        
+        return dp[right];
+    }
+
     // 214. Shortest Palindrome
     string shortestPalindrome214(string s) {
         if (s.size() > 40000) {
