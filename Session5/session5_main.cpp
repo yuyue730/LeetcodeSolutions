@@ -40,6 +40,7 @@ int main() {
     testObj->findCircleNum547Test();
     testObj->splitArray548Test();
     testObj->longestConsecutive549Test();
+    testObj->checkRecord552Test();
 
     return 0;
 }

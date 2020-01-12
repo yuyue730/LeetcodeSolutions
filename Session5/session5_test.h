@@ -382,6 +382,12 @@ public:
             << "].\n\n";
     }
 
+    // 552. Student Attendance Record II Test
+    void checkRecord552Test() {
+        cout << "552. Student Attendance Record II test starts.\n";
+        cout << "n = 6 will result [" << implObj->checkRecord552(6) << "]\n";
+    }
+
 private:
     Session5Impl * implObj;
 };

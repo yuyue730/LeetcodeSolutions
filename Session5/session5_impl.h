@@ -942,6 +942,41 @@ public:
         maxLength = max(maxLength, inc + dec - 1);
         return {inc, dec};
     }
+
+    // 552. Student Attendance Record II
+    int checkRecord552(int n) {
+        int LIMIT = 1e9 + 7;
+        vector<int> total(n, 0);
+        vector<int> P(n, 0);
+        vector<int> L(n, 0);
+        vector<int> A(n, 0);
+
+        P[0] = 1;
+        L[0] = 1;
+        A[0] = 1;
+        
+        if (n >= 2) {
+            L[1] = 3;
+            A[1] = 2;
+        }
+        
+        if (n >= 3) {
+            A[2] = 4;
+        }
+
+        for (int i = 1; i < n; ++i) {
+            P[i] = ((A[i - 1] + P[i - 1]) % LIMIT + L[i - 1]) % LIMIT;
+            if (i >= 2) {
+                L[i] = ((P[i - 1] + A[i - 1]) % LIMIT 
+                    + (P[i - 2] + A[i - 2]) % LIMIT) % LIMIT;
+            }
+            if (i >= 3) {
+                A[i] = ((A[i - 1] + A[i - 2]) % LIMIT + A[i - 3]) % LIMIT;
+            }
+        }
+        
+        return ((P[n - 1] + L[n - 1]) % LIMIT + A[n - 1]) % LIMIT;
+    }
 };
 
 #endif
