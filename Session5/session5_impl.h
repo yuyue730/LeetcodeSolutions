@@ -977,6 +977,23 @@ public:
         
         return ((P[n - 1] + L[n - 1]) % LIMIT + A[n - 1]) % LIMIT;
     }
+
+    // 554. Brick Wall
+    int leastBricks554(vector<vector<int>>& wall) {
+        unordered_map<int, int> breakHash;
+        int maxGap = 0;
+        
+        for (int i = 0; i < wall.size(); ++i) {
+            int curSum = 0;
+            for (int j = 0; j < wall[i].size() - 1; ++j) {
+                curSum += wall[i][j];
+                ++breakHash[curSum];
+                maxGap = max(maxGap, breakHash[curSum]);
+            }
+        }
+        
+        return wall.size() - maxGap;
+    }
 };
 
 #endif

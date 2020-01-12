@@ -41,6 +41,7 @@ int main() {
     testObj->splitArray548Test();
     testObj->longestConsecutive549Test();
     testObj->checkRecord552Test();
+    testObj->leastBricks554Test();
 
     return 0;
 }

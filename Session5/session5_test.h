@@ -385,7 +385,21 @@ public:
     // 552. Student Attendance Record II Test
     void checkRecord552Test() {
         cout << "552. Student Attendance Record II test starts.\n";
-        cout << "n = 6 will result [" << implObj->checkRecord552(6) << "]\n";
+        cout << "n = 6 will result [" << implObj->checkRecord552(6) << "]\n\n";
+    }
+
+    // 554. Brick Wall Test
+    void leastBricks554Test() {
+        cout << "554. Brick Wall test starts.\n";
+        vector<vector<int>> bricks = {
+            {1, 2, 2, 1},
+            {3, 1, 2},
+            {1, 3, 2},
+            {2, 4},
+            {3, 1, 2},
+            {1, 3, 1, 1}
+        };
+        cout << "Minimum brick break = [" << implObj->leastBricks554(bricks) << "]\n\n";
     }
 
 private:
