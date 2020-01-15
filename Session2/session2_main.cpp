@@ -35,6 +35,7 @@ int main() {
     testObj->summaryRanges228Test();
     testObj->majorityElement229Test();
     testObj->kthSmallest230Test();
+    testObj->isPowerOfTwo231Test();
     testObj->MyQueue232Test();
     testObj->countDigitOne233Test();
     testObj->isPalindrome234Test();

@@ -890,6 +890,18 @@ public:
         return 0;
     }
 
+    // 231. Power of Two
+    bool isPowerOfTwo231(int n) {
+        int count = 0;
+        while (n > 0) {
+            if (n & 1) {
+                count++;
+            }
+            n >>= 1;
+        }
+        return count == 1;
+    }
+
     // 232. Implement Queue using Stacks
     class MyQueue232 {
     public:

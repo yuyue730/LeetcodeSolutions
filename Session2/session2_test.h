@@ -331,6 +331,12 @@ public:
         return;
     }
 
+    // 231. Power of Two Test
+    void isPowerOfTwo231Test() {
+        cout << "231. Power of Two test starts.\n";
+        cout << "8 is power of 2 = [" << implObj->isPowerOfTwo231(8) << "]\n\n";
+    }
+
     // 232. Implement Queue using Stacks Test
     void MyQueue232Test() {
         cout << "232. Implement Queue using Stacks test starts.\n";
