@@ -44,6 +44,7 @@ int main() {
     testObj->leastBricks554Test();
     testObj->nextGreaterElement556Test();
     testObj->reverseWords557Test();
+    testObj->maxDepth559Test();
 
     return 0;
 }

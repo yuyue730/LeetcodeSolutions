@@ -416,6 +416,21 @@ public:
             << implObj->reverseWords557("Let's take LeetCode contest") << "]\n\n";
     }
 
+    // 559. Maximum Depth of N-ary Tree Test
+    void maxDepth559Test() {
+        cout << "559. Maximum Depth of N-ary Tree test starts.\n";
+        Node559* node5 = new Node559(5);
+        Node559* node6 = new Node559(6);
+        vector<Node559*> subChildren = {node5, node6};
+        Node559* node3 = new Node559(3, subChildren);
+        Node559* node2 = new Node559(2);
+        Node559* node4 = new Node559(4);
+        vector<Node559*> children = {node3, node2, node4};
+        Node559* node1 = new Node559(1, children);
+
+        cout << "Depth of N-ary Tree = [" << implObj->maxDepth559(node1) << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };

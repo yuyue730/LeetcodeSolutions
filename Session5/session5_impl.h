@@ -28,6 +28,24 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
+// Definition for a N-ary Tree Node.
+class Node559 {
+public:
+    int val;
+    vector<Node559*> children;
+
+    Node559() {}
+
+    Node559(int _val) {
+        val = _val;
+    }
+
+    Node559(int _val, vector<Node559*> _children) {
+        val = _val;
+        children = _children;
+    }
+};
+
 class Session5Impl {
 public:
     Session5Impl() {
@@ -1035,6 +1053,32 @@ public:
         }
         
         result.pop_back();
+        return result;
+    }
+
+    // 559. Maximum Depth of N-ary Tree
+    int maxDepth559(Node559* root) {
+        if (!root) {
+            return 0;
+        }
+
+        queue<Node559*> qNode;
+        qNode.push(root);
+        int result = 0;
+
+        while (!qNode.empty()) {
+            result++;
+            int curLevelSize = qNode.size();
+            for (int i = 0; i < curLevelSize; ++i) {
+                Node559* cur = qNode.front();
+                qNode.pop();
+
+                for (int j = 0; j < cur->children.size(); ++j) {
+                    qNode.push(cur->children[j]);
+                }
+            }
+        }
+
         return result;
     }
 };
