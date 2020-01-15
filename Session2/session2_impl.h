@@ -1189,6 +1189,32 @@ public:
         unordered_map<string, vector<int>> strIdxMap;
     };
 
+    // 245. Shortest Word Distance III
+    int shortestWordDistance245(
+        vector<string>& words, string word1, string word2) {
+        int pos1 = -1, pos2 = -1;
+        int result = INT_MAX;
+        for (int i = 0; i < words.size(); ++i) {
+            int temp = pos1;
+            if (words[i] == word1) {
+                pos1 = i;
+            }
+            if (words[i] == word2) {
+                pos2 = i;
+            }
+
+            if (pos1 != -1 && pos2 != -1) {
+                if (word1 == word2 && temp != -1 && temp != pos1) {
+                    result = min(result, pos1 - temp);
+                } else if (pos1 != pos2) {
+                    result = min(result, abs(pos2 - pos1));
+                }
+            }
+        }
+
+        return result;
+    }
+
     // 247. Strobogrammatic Number II
     vector<string> findStrobogrammatic247(int n) {
         return find_by_level(n, n);

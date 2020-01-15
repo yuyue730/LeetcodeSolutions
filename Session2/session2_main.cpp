@@ -48,6 +48,7 @@ int main() {
     testObj->isAnagram242Test();
     testObj->shortestDistance243Test();
     testObj->WordDistance244Test();
+    testObj->shortestWordDistance245Test();
     testObj->findStrobogrammatic247Test();
     testObj->countUnivalSubtrees250Test();
     testObj->Vector2D251Test();

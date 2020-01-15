@@ -522,6 +522,16 @@ public:
         return;
     }
 
+    // 245. Shortest Word Distance III Test
+    void shortestWordDistance245Test() {
+        cout << "245. Shortest Word Distance III test starts.\n";
+        vector<string> words = {
+            "practice", "makes", "perfect", "coding", "makes"};
+        cout << "Shortest distance = [" 
+            << implObj->shortestWordDistance245(words, "makes", "makes") 
+            << "]\n\n";
+    }
+
     // 250. Count Univalue Subtrees Test
     void countUnivalSubtrees250Test() {
         cout << "250. Count Univalue Subtrees test starts.\n";
