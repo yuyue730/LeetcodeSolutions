@@ -994,6 +994,34 @@ public:
         
         return wall.size() - maxGap;
     }
+
+    // 556. Next Greater Element III
+    int nextGreaterElement556(int n) {
+        string numInStr = to_string(n);
+        int pivot = numInStr.size() - 1;
+        while (pivot > 0) {
+            if (numInStr[pivot] > numInStr[pivot - 1]) {
+                break;
+            }
+            pivot--;
+        }
+
+        if (pivot == 0) {
+            return -1;
+        }
+
+        int toSwap = numInStr.size() - 1;
+        while (toSwap >= pivot) {
+            if (numInStr[toSwap] > numInStr[pivot - 1]) {
+                swap(numInStr[toSwap], numInStr[pivot - 1]);
+                break;
+            }
+            toSwap--;
+        }
+
+        reverse(numInStr.begin() + pivot, numInStr.end());
+        return stoll(numInStr) > INT_MAX ? -1 : stoi(numInStr);
+    }
 };
 
 #endif

@@ -402,6 +402,13 @@ public:
         cout << "Minimum brick break = [" << implObj->leastBricks554(bricks) << "]\n\n";
     }
 
+    // 556. Next Greater Element III Test
+    void nextGreaterElement556Test() {
+        cout << "556. Next Greater Element III test starts.\n";
+        cout << "next large to 12443322 is [" << implObj->nextGreaterElement556(12443322)
+            << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };
