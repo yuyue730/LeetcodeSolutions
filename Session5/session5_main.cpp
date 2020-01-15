@@ -43,6 +43,7 @@ int main() {
     testObj->checkRecord552Test();
     testObj->leastBricks554Test();
     testObj->nextGreaterElement556Test();
+    testObj->reverseWords557Test();
 
     return 0;
 }

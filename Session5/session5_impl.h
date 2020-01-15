@@ -8,6 +8,7 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <numeric>
+#include <sstream>
 using namespace std;
 
 // Definition for a Binary Tree Node with pointer to parent.
@@ -1021,6 +1022,20 @@ public:
 
         reverse(numInStr.begin() + pivot, numInStr.end());
         return stoll(numInStr) > INT_MAX ? -1 : stoi(numInStr);
+    }
+
+    // 557. Reverse Words in a String III
+    string reverseWords557(string s) {
+        istringstream iss(s);
+        string result = "", curWord = "";
+        
+        while (iss >> curWord) {
+            reverse(curWord.begin(), curWord.end());
+            result += curWord + " ";
+        }
+        
+        result.pop_back();
+        return result;
     }
 };
 

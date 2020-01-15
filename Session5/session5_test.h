@@ -409,6 +409,13 @@ public:
             << "]\n\n";
     }
 
+    // 557. Reverse Words in a String III Test
+    void reverseWords557Test() {
+        cout << "557. Reverse Words in a String III test starts.\n";
+        cout << "Reverse 'Let's take LeetCode contest' = ["
+            << implObj->reverseWords557("Let's take LeetCode contest") << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };
