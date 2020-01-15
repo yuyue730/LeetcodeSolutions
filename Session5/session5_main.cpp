@@ -45,6 +45,7 @@ int main() {
     testObj->nextGreaterElement556Test();
     testObj->reverseWords557Test();
     testObj->maxDepth559Test();
+    testObj->subarraySum560Test();
 
     return 0;
 }

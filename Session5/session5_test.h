@@ -431,6 +431,14 @@ public:
         cout << "Depth of N-ary Tree = [" << implObj->maxDepth559(node1) << "]\n\n";
     }
 
+    // 560. Subarray Sum Equals K Test
+    void subarraySum560Test() {
+        cout << "560. Subarray Sum Equals K test starts.\n";
+        vector<int> arr = {1, 1, 1};
+        cout << "# of subarray equals 2 = [" << implObj->subarraySum560(arr, 2)
+            << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };

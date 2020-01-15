@@ -1081,6 +1081,20 @@ public:
 
         return result;
     }
+
+    // 560. Subarray Sum Equals K
+    int subarraySum560(vector<int>& nums, int k) {
+        unordered_map<int, int> sumFreqMap;
+        sumFreqMap.insert(pair<int, int>(0, 1));
+        int curSum = 0, result = 0;
+        for (int i = 0; i < nums.size(); ++i) {
+            curSum += nums[i];
+            result += sumFreqMap[curSum - k];
+            ++sumFreqMap[curSum];
+        }
+
+        return result;
+    }
 };
 
 #endif
