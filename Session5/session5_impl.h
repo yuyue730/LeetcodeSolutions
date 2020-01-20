@@ -1095,6 +1095,43 @@ public:
 
         return result;
     }
+
+    // 562. Longest Line of Consecutive One in Matrix
+    int longestLine562(vector<vector<int>>& M) {
+        if (M.empty() || M[0].empty()) {
+            return 0;
+        }
+
+        int result = 0;
+        const vector<vector<int>> directions = {
+            {1, 0}, {0, 1}, {-1, -1}, {-1, 1}
+        };
+
+        int rowSize = M.size(), colSize = M[0].size();
+
+        for (int i = 0; i < rowSize; ++i) {
+            for (int j = 0; j < colSize; ++j) {
+                if (M[i][j] == 0) {
+                    continue;
+                }
+
+                for (int k = 0; k < directions.size(); ++k) {
+                    int count = 0;
+                    int x = i, y = j;
+                    while (x >= 0 && x < rowSize 
+                        && y >= 0 && y < colSize && M[x][y] == 1) {
+                        count++;
+                        x += directions[k][0];
+                        y += directions[k][1];
+                    }
+
+                    result = max(result, count);
+                }
+            }
+        }
+
+        return result;
+    }
 };
 
 #endif

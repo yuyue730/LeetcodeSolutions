@@ -439,6 +439,19 @@ public:
             << "]\n\n";
     }
 
+    // 562. Longest Line of Consecutive One in Matrix Test
+    void longestLine562Test() {
+        cout << "562. Longest Line of Consecutive One in Matrix test starts.\n";
+        vector<vector<int>> matrix = {
+            {0, 1, 1, 0},
+            {0, 1, 1, 0},
+            {0, 0, 0, 1}
+        };
+
+        cout << "Longest Consecutive One = [" 
+            << implObj->longestLine562(matrix) << "]\n\n"; 
+    }
+
 private:
     Session5Impl * implObj;
 };
