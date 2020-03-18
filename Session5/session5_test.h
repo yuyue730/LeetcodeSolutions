@@ -452,6 +452,14 @@ public:
             << implObj->longestLine562(matrix) << "]\n\n"; 
     }
 
+    // 565. Array Nesting Test
+    void arrayNesting565Test() {
+        cout << "565. Array Nesting test starts.\n";
+        vector<int> nums = {5, 4, 0, 3, 1, 6, 2};
+        int result = implObj->arrayNesting565(nums);
+        cout << "Longest set S has size of [" << result << "].\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };

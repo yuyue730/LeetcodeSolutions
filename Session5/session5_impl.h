@@ -1132,6 +1132,31 @@ public:
 
         return result;
     }
+
+    // 565. Array Nesting
+    int arrayNesting565(vector<int>& nums) {
+        int n = nums.size(), result = 0;
+        vector<bool> visited(n, false);
+        for (int i = 0; i < n; ++i) {
+            if (visited[i]) {
+                continue;
+            }
+            result = max(result, arrayNest565_forEach(nums, i, visited));
+        }
+        return result;
+    }
+
+    int arrayNest565_forEach(
+        vector<int> const & nums, int const start, 
+        vector<bool>& visited) {
+        int i = start, count = 0;
+        while (count == 0 || i != start) {
+            visited[i] = true;
+            i = nums[i];
+            count++;
+        }
+        return count;
+    }
 };
 
 #endif

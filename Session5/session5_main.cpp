@@ -47,6 +47,7 @@ int main() {
     testObj->maxDepth559Test();
     testObj->subarraySum560Test();
     testObj->longestLine562Test();
+    testObj->arrayNesting565Test();
 
     return 0;
 }
