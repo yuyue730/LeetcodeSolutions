@@ -460,6 +460,25 @@ public:
         cout << "Longest set S has size of [" << result << "].\n\n";
     }
 
+    // 566. Reshape the Matrix
+    void matrixReshape566Test() {
+        cout << "566. Reshape the Matrix test starts.\n";
+        vector<vector<int>> matrix = {
+            {1, 2},
+            {3, 4}
+        };
+        vector<vector<int>> result = implObj->matrixReshape566(matrix, 1, 4);
+        cout << "Result = [\n";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << "  [";
+            for (int j = 0; j < result[i].size(); ++j) {
+                cout << result[i][j] << ((j == result[i].size() - 1) ? "" : ", ");
+            }
+            cout << "]\n";
+        }
+        cout << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };

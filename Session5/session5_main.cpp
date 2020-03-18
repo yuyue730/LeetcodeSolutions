@@ -48,6 +48,7 @@ int main() {
     testObj->subarraySum560Test();
     testObj->longestLine562Test();
     testObj->arrayNesting565Test();
+    testObj->matrixReshape566Test();
 
     return 0;
 }

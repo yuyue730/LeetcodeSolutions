@@ -1157,6 +1157,28 @@ public:
         }
         return count;
     }
+
+    // 566. Reshape the Matrix
+    vector<vector<int>> matrixReshape566(vector<vector<int>>& nums, int r, int c) {
+        int originalRowCount = nums.size();
+        int originalColCount = nums[0].size();
+        
+        if (originalRowCount * originalColCount != r * c) {
+            return nums;
+        }
+        
+        vector<vector<int>> result(r, vector<int>(c, 0));
+        int i = 0, j = 0, cur = 0;
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                int X = cur / originalColCount, Y = cur % originalColCount;
+                result[i][j] = nums[X][Y];
+                cur++;
+            }
+        }
+        
+        return result;
+    }
 };
 
 #endif
