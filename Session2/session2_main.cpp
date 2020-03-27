@@ -55,6 +55,7 @@ int main() {
     testObj->Vector2D251Test();
     testObj->canAttendMeetings252Test();
     testObj->minMeetingRooms253Test();
+    testObj->getFactors254Test();
     testObj->verifyPreorder255Test();
     testObj->minCost256Test();
     testObj->binaryTreePaths257Test();

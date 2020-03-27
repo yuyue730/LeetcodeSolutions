@@ -547,7 +547,6 @@ public:
             }
             cout << "]" << ((i == groups.size() - 1) ? "" : ",") << "\n";
         }
-
         cout << "]\n\n";
     }
 
@@ -605,6 +604,21 @@ public:
         };
         cout << "Number of rooms = [" << implObj->minMeetingRooms253(intervals) << "]\n\n";
         return;
+    }
+
+    // 254. Factor Combinations Test
+    void getFactors254Test() {
+        cout << "254. Factor Combinations test starts.\n";
+        vector<vector<int>> results = implObj->getFactors254(32);
+        cout << "32 will generate result = [\n";
+        for (int i = 0; i < results.size(); ++i) {
+            cout << "  [";
+            for (int j = 0; j < results[i].size(); ++j) {
+                cout << results[i][j] << ((j == results[i].size() - 1) ? "" : ", ");
+            }
+            cout << "]" << ((i == results.size() - 1) ? "" : ",") << "\n";
+        }
+        cout << "]\n\n";
     }
 
     // 255. Verify Preorder Sequence in Binary Search Tree Test
