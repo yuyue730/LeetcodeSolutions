@@ -509,6 +509,16 @@ public:
         return;
     }
 
+    // 245. Shortest Word Distance III Test
+    void shortestWordDistance245Test() {
+        cout << "245. Shortest Word Distance III test starts.\n";
+        vector<string> words = {
+            "practice", "makes", "perfect", "coding", "makes"};
+        cout << "Shortest distance = [" 
+            << implObj->shortestWordDistance245(words, "makes", "makes") 
+            << "]\n\n";
+    }
+
     // 247. Strobogrammatic Number II Test
     void findStrobogrammatic247Test() {
         cout << "247. Strobogrammatic Number II test starts.\n";
@@ -522,14 +532,23 @@ public:
         return;
     }
 
-    // 245. Shortest Word Distance III Test
-    void shortestWordDistance245Test() {
-        cout << "245. Shortest Word Distance III test starts.\n";
-        vector<string> words = {
-            "practice", "makes", "perfect", "coding", "makes"};
-        cout << "Shortest distance = [" 
-            << implObj->shortestWordDistance245(words, "makes", "makes") 
-            << "]\n\n";
+    // 249. Group Shifted Strings Test
+    void groupStrings249Test() {
+        cout << "249. Group Shifted Strings test starts.\n";
+        vector<string> strings = {
+            "abc", "bcd", "acef", "xyz", "az", "ba", "a", "z"
+        };
+        vector<vector<string>> groups = implObj->groupStrings249(strings);
+        cout << "Result = [\n";
+        for (int i = 0; i < groups.size(); ++i) {
+            cout << "  [";
+            for (int j = 0; j < groups[i].size(); ++j) {
+                cout << groups[i][j] << ((j == groups[i].size() - 1) ? "" : ", ");
+            }
+            cout << "]" << ((i == groups.size() - 1) ? "" : ",") << "\n";
+        }
+
+        cout << "]\n\n";
     }
 
     // 250. Count Univalue Subtrees Test

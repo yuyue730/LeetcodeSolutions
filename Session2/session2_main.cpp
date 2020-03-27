@@ -50,6 +50,7 @@ int main() {
     testObj->WordDistance244Test();
     testObj->shortestWordDistance245Test();
     testObj->findStrobogrammatic247Test();
+    testObj->groupStrings249Test();
     testObj->countUnivalSubtrees250Test();
     testObj->Vector2D251Test();
     testObj->canAttendMeetings252Test();

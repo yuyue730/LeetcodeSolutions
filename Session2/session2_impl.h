@@ -1246,6 +1246,35 @@ public:
         return result;
     }
 
+    // 249. Group Shifted Strings
+    vector<vector<string>> groupStrings249(vector<string>& strings) {
+        vector<vector<string>> result;
+        unordered_map<string, vector<string>> tokenVectorMap;
+
+        for (auto word : strings) {
+            string token = tokenizeWord(word);
+            tokenVectorMap[token].push_back(word);
+        }
+
+        for (auto iter : tokenVectorMap) {
+            result.push_back(
+                vector<string>(iter.second.begin(), iter.second.end()));
+        }
+        return result;
+    }
+
+    string tokenizeWord(string word) {
+        string result = "0";
+        for (int i = 1; i < word.size(); ++i) {
+            int curShift = word[i] - word[0];
+            if (curShift < 0) {
+                curShift += 26;
+            }
+            result += "," + to_string(curShift);
+        }
+        return result;
+    }
+
     // 250. Count Univalue Subtrees
     int countUnivalSubtrees250(TreeNode* root) {
         int result = 0;
