@@ -479,6 +479,14 @@ public:
         cout << "]\n\n";
     }
 
+    // 567. Permutation in String Test
+    void checkInclusion567Test() {
+        cout << "567. Permutation in String test starts.\n";
+        string s1 = "adc", s2 = "dcda";
+        bool result = implObj->checkInclusion567(s1, s2);
+        cout << "Is inclusive = [" << (result ? "True" : "False") << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };

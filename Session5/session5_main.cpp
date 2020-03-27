@@ -49,6 +49,7 @@ int main() {
     testObj->longestLine562Test();
     testObj->arrayNesting565Test();
     testObj->matrixReshape566Test();
+    testObj->checkInclusion567Test();
 
     return 0;
 }

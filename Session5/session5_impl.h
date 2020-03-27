@@ -236,7 +236,7 @@ public:
 
         vector<vector<int>> charPosMap(26);
         for (int i = 0; i < ring.size(); ++i) {
-            charPosMap[ring[i] - 'A'].push_back(i);
+            charPosMap[ring[i] - 'a'].push_back(i);
         }
 
         int rSize = ring.size(), kSize = key.size();
@@ -257,7 +257,7 @@ public:
         }
         const int rSize = ring.size();
         int result = INT_MAX;
-        for (int nextPos: charPosMap[key[y] - 'A']) {
+        for (int nextPos: charPosMap[key[y] - 'a']) {
             int dist = abs(nextPos - x);
             int step = min(dist, rSize - dist);
             result = min(
@@ -1178,6 +1178,50 @@ public:
         }
         
         return result;
+    }
+
+    // 567. Permutation in String
+    bool checkInclusion567(string s1, string s2) {
+        int n1 = s1.size(), n2 = s2.size();
+        if (n1 > n2) {
+            return false;
+        }
+        if (n1 == 0) {
+            return true;
+        }
+
+        unordered_map<char, int> freq1Map, freq2Map;
+        for (char c : s1) {
+            freq1Map[c]++;
+        }
+
+        int right = 0, left = 0;
+        for (; right < n1; ++right) {
+            freq2Map[s2[right]]++;
+        }
+
+        while (right < n2) {
+            if (compareTwoMap(freq1Map, freq2Map)) {
+                return true;
+            }
+
+            freq2Map[s2[left]]--; left++;
+            freq2Map[s2[right]]++; right++;
+        }
+
+        return compareTwoMap(freq1Map, freq2Map);
+    }
+
+    bool compareTwoMap(unordered_map<char, int> benchmark, 
+        unordered_map<char, int> target) {
+        for (auto iter : benchmark) {
+            char curChar = iter.first;
+            if (benchmark[curChar] != target[curChar]) {
+                return false;
+            }
+        }
+
+        return true;
     }
 };
 
