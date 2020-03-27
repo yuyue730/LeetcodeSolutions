@@ -487,6 +487,24 @@ public:
         cout << "Is inclusive = [" << (result ? "True" : "False") << "]\n\n";
     }
 
+    // 568. Maximum Vacation Days Test
+    void maxVacationDays568Test() {
+        cout << "568. Maximum Vacation Days test starts.\n";
+        vector<vector<int>> flights = {
+            {0, 1, 1},
+            {1, 0, 1},
+            {1, 1, 0}
+        };
+        vector<vector<int>> days = {
+            {1, 3, 1},
+            {6, 0, 3},
+            {3, 3, 3}
+        };
+
+        int result = implObj->maxVacationDays568(flights, days);
+        cout << "Max number of vacation days = [" << result << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };

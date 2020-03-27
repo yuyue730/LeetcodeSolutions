@@ -50,6 +50,7 @@ int main() {
     testObj->arrayNesting565Test();
     testObj->matrixReshape566Test();
     testObj->checkInclusion567Test();
+    testObj->maxVacationDays568Test();
 
     return 0;
 }

@@ -1223,6 +1223,36 @@ public:
 
         return true;
     }
+
+    // 568. Maximum Vacation Days
+    int maxVacationDays568(
+        vector<vector<int>>& flights, vector<vector<int>>& days) {
+        int numCity = flights.size(), K = days[0].size();
+        vector<vector<int>> dp(numCity, vector<int>(K, 0));
+        
+        for (int i = 0; i < numCity; ++i) {
+            dp[i][K - 1] = days[i][K - 1];
+        }
+
+        for (int j = K - 2; j >= 0; --j) {
+            for (int i = 0; i < numCity; ++i) {
+                dp[i][j] = days[i][j];
+                for (int p = 0; p < numCity; ++p) {
+                    if (i == p || flights[i][p]) {
+                        dp[i][j] = max(dp[i][j], days[i][j] + dp[p][j + 1]);
+                    }
+                }
+            }
+        }
+
+        int result = dp[0][0];
+        for (int i = 0; i < numCity; ++i) {
+            if (flights[0][i]) {
+                result = max(result, dp[i][0]);
+            }
+        }
+        return result;
+    }
 };
 
 #endif
