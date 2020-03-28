@@ -657,6 +657,14 @@ public:
         return;
     }
 
+    // 259. 3Sum Smaller Test
+    void threeSumSmaller259Test() {
+        cout << "259. 3Sum Smaller test starts.\n";
+        vector<int> nums = {-2, 0, 1, 3};
+        int result = implObj->threeSumSmaller259(nums, 2);
+        cout << "# of triplets = [" << result << "]\n\n";
+    }
+
     // 261. Graph Valid Tree Test
     void validTree261Test() {
         cout << "261. Graph Valid Tree test starts.\n";

@@ -1446,6 +1446,28 @@ public:
         }
     }
 
+    // 259. 3Sum Smaller
+    int threeSumSmaller259(vector<int>& nums, int target) {
+        if (nums.size() < 3) {
+            return 0;
+        }
+        sort(nums.begin(), nums.end());
+        int result = 0, N = nums.size();
+        for (int i = 0; i < N; ++i) {
+            int left = i + 1, right = N - 1;
+            while (left < right) {
+                if (nums[i] + nums[left] + nums[right] < target) {
+                    result += right - left;
+                    ++left;
+                }
+                else {
+                    --right;
+                }
+            }
+        }
+        return result;
+    }
+
     // 261. Graph Valid Tree
     bool validTree261(int n, vector<vector<int>>& edges) {
         vector<vector<int>> graph(n, vector<int>());
