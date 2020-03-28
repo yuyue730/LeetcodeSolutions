@@ -1308,6 +1308,25 @@ public:
         }
         return result;
     }
+
+    // 576. Out of Boundary Paths
+    int findPaths576(int m, int n, int N, int i, int j) {
+        vector<vector<vector<int>>> dp(N + 1,
+            vector<vector<int>>(m, vector<int>(n, 0)));
+        for (int k = 1; k <= N; ++k) {
+            for (int i = 0; i < m; ++i) {
+                for (int j = 0; j < n; ++j) {
+                    long long v1 = (i == 0) ? 1 : dp[k - 1][i - 1][j];
+                    long long v2 = (i == m - 1) ? 1 : dp[k - 1][i + 1][j];
+                    long long v3 = (j == 0) ? 1 : dp[k - 1][i][j - 1];
+                    long long v4 = (j == n - 1) ? 1 : dp[k - 1][i][j + 1];
+                    dp[k][i][j] =
+                        (v1 + v2 + v3 + v4) % 1000000007;
+                }
+            }
+        }
+        return dp[N][i][j];
+    }
 };
 
 #endif

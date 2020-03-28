@@ -53,6 +53,7 @@ int main() {
     testObj->maxVacationDays568Test();
     testObj->isSubtree572Test();
     testObj->minDistance573Test();
+    testObj->findPaths576Test();
 
     return 0;
 }

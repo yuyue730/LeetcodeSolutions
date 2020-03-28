@@ -523,19 +523,20 @@ public:
     // 573. Squirrel Simulation Test
     void minDistance573Test() {
         cout << "573. Squirrel Simulation test starts.\n";
-        // int height = 5, width = 7;
-        // vector<int> tree = {2, 2};
-        // vector<int> squirrel = {4, 4};
-        // vector<vector<int>> nuts = {{3, 0}, {2, 5}};
-        
-        int height = 1, width = 3;
-        vector<int> tree = {0, 1};
-        vector<int> squirrel = {0, 0};
-        vector<vector<int>> nuts = {{0, 2}};
-        
+        int height = 5, width = 7;
+        vector<int> tree = {2, 2};
+        vector<int> squirrel = {4, 4};
+        vector<vector<int>> nuts = {{3, 0}, {2, 5}};
         int result = implObj->minDistance573(height, width, tree, squirrel, 
             nuts);
         cout << "Min distance = [" << result << "]\n\n";
+    }
+
+    // 576. Out of Boundary Paths Test
+    void findPaths576Test() {
+        cout << "576. Out of Boundary Paths test starts.\n";
+        int result = implObj->findPaths576(2, 2, 2, 0, 0);
+        cout << "(2, 2, 2, 0, 0) will result = [" << result << "]\n\n";
     }
 
 private:
