@@ -505,6 +505,21 @@ public:
         cout << "Max number of vacation days = [" << result << "]\n\n";
     }
 
+    // 572. Subtree of Another Tree Test
+    void isSubtree572Test() {
+        cout << "572. Subtree of Another Tree test starts.\n";
+        TreeNode *s = new TreeNode(3);
+        s->left = new TreeNode(4); s->right = new TreeNode(5);
+        TreeNode *tmp = s->left;
+        tmp->left = new TreeNode(1); tmp->right = new TreeNode(2);
+
+        TreeNode *t = new TreeNode(4);
+        t->left = new TreeNode(1); t->right = new TreeNode(2);
+
+        bool result = implObj->isSubtree572(s, t);
+        cout << "t is subtree of s = [" << (result ? "True" : "False") << "]\n";
+    }
+
 private:
     Session5Impl * implObj;
 };

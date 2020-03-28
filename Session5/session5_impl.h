@@ -1253,6 +1253,30 @@ public:
         }
         return result;
     }
+
+    // 572. Subtree of Another Tree
+    bool isSubtree572(TreeNode* s, TreeNode* t) {
+        if (!s) {
+            return false;
+        }
+        if (isSameTree(s, t)) {
+            return true;
+        }
+        return isSubtree572(s->left, t) || isSubtree572(s->right, t);
+    }
+
+    bool isSameTree(TreeNode* s, TreeNode* t) {
+        if (!s && !t) {
+            return true;
+        }
+        if (!s || !t) {
+            return false;
+        }
+        if (s->val != t->val) {
+            return false;
+        }
+        return isSameTree(s->left, t->left) && isSameTree(s->right, t->right);
+    }
 };
 
 #endif

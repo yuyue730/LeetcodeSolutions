@@ -51,6 +51,7 @@ int main() {
     testObj->matrixReshape566Test();
     testObj->checkInclusion567Test();
     testObj->maxVacationDays568Test();
+    testObj->isSubtree572Test();
 
     return 0;
 }
