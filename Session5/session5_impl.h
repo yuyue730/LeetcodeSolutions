@@ -1277,6 +1277,37 @@ public:
         }
         return isSameTree(s->left, t->left) && isSameTree(s->right, t->right);
     }
+
+    // 573. Squirrel Simulation
+    int minDistance573(int height, int width, vector<int>& tree, 
+        vector<int>& squirrel, vector<vector<int>>& nuts) {
+        int targetNutsIdx = 0, maxDistDiff = INT_MIN;
+        for (int i = 0; i < nuts.size(); ++i) {
+            int distToTree = 
+                abs(nuts[i][0] - tree[0]) + abs(nuts[i][1] - tree[1]);
+            int distToSquirrel = 
+                abs(nuts[i][0] - squirrel[0]) + abs(nuts[i][1]- squirrel[1]);
+            if (distToTree - distToSquirrel > maxDistDiff) {
+                targetNutsIdx = i;
+                maxDistDiff = distToTree - distToSquirrel;
+            }
+        }
+
+        int result = 0;
+        for (int i = 0; i < nuts.size(); ++i) {
+            int distToTree = 
+                abs(nuts[i][0] - tree[0]) + abs(nuts[i][1] - tree[1]);
+            if (i == targetNutsIdx) {
+                int distToSquirrel = 
+                    abs(nuts[i][0] - squirrel[0]) + abs(nuts[i][1]- squirrel[1]);
+                result += distToSquirrel + distToTree;
+            }
+            else {
+                result += 2 * distToTree;
+            }
+        }
+        return result;
+    }
 };
 
 #endif

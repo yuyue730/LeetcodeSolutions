@@ -517,7 +517,25 @@ public:
         t->left = new TreeNode(1); t->right = new TreeNode(2);
 
         bool result = implObj->isSubtree572(s, t);
-        cout << "t is subtree of s = [" << (result ? "True" : "False") << "]\n";
+        cout << "t is subtree of s = [" << (result ? "True" : "False") << "]\n\n";
+    }
+
+    // 573. Squirrel Simulation Test
+    void minDistance573Test() {
+        cout << "573. Squirrel Simulation test starts.\n";
+        // int height = 5, width = 7;
+        // vector<int> tree = {2, 2};
+        // vector<int> squirrel = {4, 4};
+        // vector<vector<int>> nuts = {{3, 0}, {2, 5}};
+        
+        int height = 1, width = 3;
+        vector<int> tree = {0, 1};
+        vector<int> squirrel = {0, 0};
+        vector<vector<int>> nuts = {{0, 2}};
+        
+        int result = implObj->minDistance573(height, width, tree, squirrel, 
+            nuts);
+        cout << "Min distance = [" << result << "]\n\n";
     }
 
 private:
