@@ -1342,6 +1342,33 @@ public:
 
         return (right == -1 || left == nums.size()) ? 0 : right - left + 1;
     }
+
+    // 582. Kill Process
+    vector<int> killProcess582(vector<int>& pid, vector<int>& ppid, int kill) {
+        vector<int> result;
+        if (pid.empty() || ppid.empty() || pid.size() != ppid.size()) {
+            return result;
+        }
+
+        unordered_map<int, vector<int>> adjacentMatrix;
+        const int n = pid.size();
+        for (int i = 0; i < n; ++i) {
+            adjacentMatrix[ppid[i]].push_back(pid[i]);
+        }
+
+        queue<int> processQ;
+        processQ.push(kill);
+        while (!processQ.empty()) {
+            int front = processQ.front(); processQ.pop();
+            result.push_back(front);
+            if (adjacentMatrix.find(front) != adjacentMatrix.end()) {
+                for (int i = 0; i < adjacentMatrix[front].size(); ++i) {
+                    processQ.push(adjacentMatrix[front][i]);
+                }
+            }
+        }
+        return result;
+    }
 };
 
 #endif

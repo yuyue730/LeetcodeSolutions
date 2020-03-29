@@ -547,6 +547,20 @@ public:
         cout << "Subarray length = [" << result << "]\n\n";
     }
 
+    // 582. Kill Process Test
+    void killProcess582Test() {
+        cout << "582. Kill Process test starts.\n";
+        vector<int> pid = {1, 3, 10, 5};
+        vector<int> ppid = {3, 0, 5, 3};
+        int kill = 5;
+        vector<int> result = implObj->killProcess582(pid, ppid, kill);
+        cout << "Processes to kill are [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };
