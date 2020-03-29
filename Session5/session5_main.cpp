@@ -56,6 +56,7 @@ int main() {
     testObj->findPaths576Test();
     testObj->findUnsortedSubarray581Test();
     testObj->killProcess582Test();
+    testObj->minDistance583Test();
 
     return 0;
 }

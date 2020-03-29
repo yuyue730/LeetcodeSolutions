@@ -561,6 +561,14 @@ public:
         cout << "]\n\n";
     }
 
+    // 583. Delete Operation for Two Strings Test
+    void minDistance583Test() {
+        cout << "583. Delete Operation for Two Strings test starts.\n";
+        string word1 = "sea", word2 = "eat";
+        int result = implObj->minDistance583(word1, word2);
+        cout << "Min Delete steps = [" << result << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };
