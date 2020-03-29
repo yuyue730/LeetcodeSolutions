@@ -60,6 +60,7 @@ int main() {
     testObj->minCost256Test();
     testObj->binaryTreePaths257Test();
     testObj->threeSumSmaller259Test();
+    testObj->singleNumber260Test();
     testObj->validTree261Test();
     testObj->missingNumber268Test();
     testObj->alienOrder269Test();

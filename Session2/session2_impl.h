@@ -9,6 +9,7 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <sstream>
+#include <numeric>
 using namespace std;
 
 struct TreeNode {
@@ -1463,6 +1464,22 @@ public:
                 else {
                     --right;
                 }
+            }
+        }
+        return result;
+    }
+
+    // 260. Single Number III
+    vector<int> singleNumber260(vector<int>& nums) {
+        int diff = accumulate(nums.begin(), nums.end(), 0, bit_xor<int>());
+        diff &= -diff;
+        vector<int> result(2, 0);
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i] & diff) {
+                result[0] ^= nums[i];
+            }
+            else {
+                result[1] ^= nums[i];
             }
         }
         return result;

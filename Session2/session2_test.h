@@ -665,6 +665,14 @@ public:
         cout << "# of triplets = [" << result << "]\n\n";
     }
 
+    // 260. Single Number III Test
+    void singleNumber260Test() {
+        cout << "260. Single Number III test starts.\n";
+        vector<int> nums = {1, 2, 1, 3, 2, 5};
+        vector<int> result = implObj->singleNumber260(nums);
+        cout << "Two single numbers = [" << nums[0] << ", " << nums[1] << "]\n\n";
+    }
+
     // 261. Graph Valid Tree Test
     void validTree261Test() {
         cout << "261. Graph Valid Tree test starts.\n";
