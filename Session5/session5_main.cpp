@@ -54,6 +54,7 @@ int main() {
     testObj->isSubtree572Test();
     testObj->minDistance573Test();
     testObj->findPaths576Test();
+    testObj->findUnsortedSubarray581Test();
 
     return 0;
 }

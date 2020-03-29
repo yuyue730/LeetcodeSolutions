@@ -539,6 +539,14 @@ public:
         cout << "(2, 2, 2, 0, 0) will result = [" << result << "]\n\n";
     }
 
+    // 581. Shortest Unsorted Continuous Subarray Test
+    void findUnsortedSubarray581Test() {
+        cout << "581. Shortest Unsorted Continuous Subarray test starts.\n";
+        vector<int> nums = {2, 6, 4, 8, 10, 9, 15};
+        int result = implObj->findUnsortedSubarray581(nums);
+        cout << "Subarray length = [" << result << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };

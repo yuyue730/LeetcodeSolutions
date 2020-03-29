@@ -1327,6 +1327,21 @@ public:
         }
         return dp[N][i][j];
     }
+
+    // 581. Shortest Unsorted Continuous Subarray
+    int findUnsortedSubarray581(vector<int>& nums) {
+        vector<int> temp = nums;
+        sort(temp.begin(), temp.end());
+        int n = nums.size(), left = 0, right = n - 1;
+        while (left < nums.size() && nums[left] == temp[left]) {
+            left++;
+        }
+        while (right >= 0 && nums[right] == temp[right]) {
+            right--;
+        }
+
+        return (right == -1 || left == nums.size()) ? 0 : right - left + 1;
+    }
 };
 
 #endif
