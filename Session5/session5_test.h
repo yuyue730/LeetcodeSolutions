@@ -584,6 +584,24 @@ public:
         cout << "]\n\n";
     }
 
+    // 588. Design In-Memory File System Test
+    void FileSystem588Test() {
+        cout << "588. Design In-Memory File System test starts.\n";
+        Session5Impl::FileSystem588 fs;
+        vector<string> ls1 = fs.ls("/");
+        cout << "Initial ls will have [" << ls1.size() << "] output(s).\n";
+        fs.mkdir("/a/b/c");
+        fs.addContentToFile("/a/b/c/d", "hello");
+        vector<string> ls2 = fs.ls("/");
+        cout << "Current ls = [";
+        for (int i = 0; i < ls2.size(); ++i) {
+            cout << ls2[i] << ((i == ls2.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n";
+        string readResult = fs.readContentFromFile("/a/b/c/d");
+        cout << "Read from /a/b/c/d is [" << readResult << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };

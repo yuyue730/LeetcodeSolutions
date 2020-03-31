@@ -5,6 +5,7 @@
 #include <vector>
 #include <stack>
 #include <queue>
+#include <set>
 #include <unordered_set>
 #include <unordered_map>
 #include <numeric>
@@ -1440,6 +1441,66 @@ public:
         bool isYBetween = (r[1] - p[1]) * (r[1] - q[1]) <= 0;
         return isXBetween && isYBetween;
     }
+
+    // 588. Design In-Memory File System
+    class FileSystem588 {
+    public:
+        FileSystem588() {
+            direcs["/"];
+        }
+        
+        vector<string> ls(string path) {
+            if (files.count(path)) {
+                int lastIdxOfSlash = path.find_last_of("/");
+                return { path.substr(lastIdxOfSlash + 1) };
+            }
+            else {
+                auto lsInSet = direcs[path];
+                return vector<string>(lsInSet.begin(), lsInSet.end());
+            }
+        }
+        
+        void mkdir(string path) {
+            istringstream iss(path);
+            string curDir = "", allDir = "";
+            while (getline(iss, curDir, '/')) {
+                if (curDir.empty()) {
+                    continue;
+                }
+                if (allDir.empty()) {
+                    allDir += "/";
+                }
+                direcs[allDir].insert(curDir);
+                if (allDir.size() > 1) {
+                    allDir += "/";
+                }
+                allDir += curDir;
+            }
+        }
+        
+        void addContentToFile(string filePath, string content) {
+            int lastIdxOfSlash = filePath.find_last_of("/");
+            string direc = filePath.substr(0, lastIdxOfSlash);
+            string fileName = filePath.substr(lastIdxOfSlash + 1);
+            if (direc.empty()) {
+                direc = "/";
+            }
+
+            if (!direcs.count(direc)) {
+                mkdir(direc);
+            }
+            direcs[direc].insert(fileName);
+            files[filePath].append(content);
+        }
+        
+        string readContentFromFile(string filePath) {
+            return files[filePath];
+        }
+    
+    private:
+        unordered_map<string, set<string>> direcs;
+        unordered_map<string, string> files;
+    };
 };
 
 #endif

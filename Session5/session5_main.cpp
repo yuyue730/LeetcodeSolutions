@@ -58,6 +58,7 @@ int main() {
     testObj->killProcess582Test();
     testObj->minDistance583Test();
     testObj->outerTrees587Test();
+    testObj->FileSystem588Test();
 
     return 0;
 }
