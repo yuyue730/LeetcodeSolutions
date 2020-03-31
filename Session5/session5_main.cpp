@@ -60,6 +60,7 @@ int main() {
     testObj->outerTrees587Test();
     testObj->FileSystem588Test();
     testObj->preorder589Test();
+    testObj->postorder590Test();
 
     return 0;
 }

@@ -1518,6 +1518,23 @@ public:
             preorder_dfs(cur->children[i], result);
         }
     }
+
+    // 590. N-ary Tree Postorder Traversal
+    vector<int> postorder590(NaryNode* root) {
+        vector<int> result;
+        if (!root) {
+            return result;
+        }
+        postorder_dfs(root, result);
+        return result;
+    }
+    
+    void postorder_dfs(NaryNode* cur, vector<int> &result) {
+        for (int i = 0; i < cur->children.size(); ++i) {
+            postorder_dfs(cur->children[i], result);
+        }
+        result.push_back(cur->val);
+    }
 };
 
 #endif

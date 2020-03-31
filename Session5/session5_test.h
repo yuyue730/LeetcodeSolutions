@@ -622,6 +622,26 @@ public:
         cout << "]\n\n";
     }
 
+    // 590. N-ary Tree Postorder Traversal Test
+    void postorder590Test() {
+        cout << "590. N-ary Tree Postorder Traversal test starts.\n";
+        NaryNode* node5 = new NaryNode(5);
+        NaryNode* node6 = new NaryNode(6);
+        vector<NaryNode*> subChildren = {node5, node6};
+        NaryNode* node3 = new NaryNode(3, subChildren);
+        NaryNode* node2 = new NaryNode(2);
+        NaryNode* node4 = new NaryNode(4);
+        vector<NaryNode*> children = {node3, node2, node4};
+        NaryNode* node1 = new NaryNode(1, children);
+        
+        vector<int> result = implObj->postorder590(node1);
+        cout << "Postorder array = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };
