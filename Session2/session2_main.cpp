@@ -62,6 +62,7 @@ int main() {
     testObj->threeSumSmaller259Test();
     testObj->singleNumber260Test();
     testObj->validTree261Test();
+    testObj->nthUglyNumber264Test();
     testObj->missingNumber268Test();
     testObj->alienOrder269Test();
     testObj->encodeDecode271Test();

@@ -681,7 +681,12 @@ public:
         };
         cout << "Is tree = [" 
             << (implObj->validTree261(5, edges) ? "True" : "False") << "]\n\n";
-        return;
+    }
+
+    // 264. Ugly Number II Test
+    void nthUglyNumber264Test() {
+        cout << "264. Ugly Number II test starts.\n";
+        cout << "7-th Ugly Number = [" << implObj->nthUglyNumber264(7) << "]\n\n";
     }
 
     // 268. Missing Number Test
