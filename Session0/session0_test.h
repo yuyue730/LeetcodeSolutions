@@ -748,6 +748,13 @@ public:
         return;
     }
 
+    // 58. Length of Last Word Test
+    void lengthOfLastWord58Test() {
+        cout << "58. Length of Last Word test starts.\n";
+        cout << "Hello World's last word length = [" 
+            << implObj->lengthOfLastWord58("Hello World") << "]\n\n";
+    }
+
     // 59. Spiral Matrix II Test
     void generateMatrix59Test() {
         cout << "59. Spiral Matrix II test.\n";

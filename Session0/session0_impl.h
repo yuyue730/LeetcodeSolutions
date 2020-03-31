@@ -1649,6 +1649,25 @@ public:
         return results;
     }
 
+    // 58. Length of Last Word
+    int lengthOfLastWord58(string s) {
+        if (s.empty()) {
+            return 0;
+        }
+        int n = s.size(), right = n - 1;
+        while (right >= 0 && s[right] == ' ') {
+            right--;
+        }
+        if (right < 0) {
+            return 0;
+        }
+        int left = right;
+        while (left >= 0 && s[left] != ' ') {
+            left--;
+        }
+        return right - left;
+    }
+
     // 59. Spiral Matrix II
     vector<vector<int>> generateMatrix59(int n) {
         vector<vector<int>> result(n, vector<int>(n, 0));

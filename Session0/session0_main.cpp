@@ -65,6 +65,7 @@ int main() {
     testObj->canJump55Test();
     testObj->merge56Test();
     testObj->insert57Test();
+    testObj->lengthOfLastWord58Test();
     testObj->generateMatrix59Test();
     testObj->getPermutation60Test();
     testObj->rotateRight61Test();
