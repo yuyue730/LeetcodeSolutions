@@ -30,18 +30,18 @@ struct TreeNode {
 };
 
 // Definition for a N-ary Tree Node.
-class Node559 {
+class NaryNode {
 public:
     int val;
-    vector<Node559*> children;
+    vector<NaryNode*> children;
 
-    Node559() {}
+    NaryNode() {}
 
-    Node559(int _val) {
+    NaryNode(int _val) {
         val = _val;
     }
 
-    Node559(int _val, vector<Node559*> _children) {
+    NaryNode(int _val, vector<NaryNode*> _children) {
         val = _val;
         children = _children;
     }
@@ -1058,12 +1058,12 @@ public:
     }
 
     // 559. Maximum Depth of N-ary Tree
-    int maxDepth559(Node559* root) {
+    int maxDepth559(NaryNode* root) {
         if (!root) {
             return 0;
         }
 
-        queue<Node559*> qNode;
+        queue<NaryNode*> qNode;
         qNode.push(root);
         int result = 0;
 
@@ -1071,7 +1071,7 @@ public:
             result++;
             int curLevelSize = qNode.size();
             for (int i = 0; i < curLevelSize; ++i) {
-                Node559* cur = qNode.front();
+                NaryNode* cur = qNode.front();
                 qNode.pop();
 
                 for (int j = 0; j < cur->children.size(); ++j) {
@@ -1501,6 +1501,23 @@ public:
         unordered_map<string, set<string>> direcs;
         unordered_map<string, string> files;
     };
+
+    // 589. N-ary Tree Preorder Traversal
+    vector<int> preorder589(NaryNode* root) {
+        vector<int> result;
+        if (!root) {
+            return result;
+        }
+        preorder_dfs(root, result);
+        return result;
+    }
+    
+    void preorder_dfs(NaryNode* cur, vector<int> &result) {
+        result.push_back(cur->val);
+        for (int i = 0; i < cur->children.size(); ++i) {
+            preorder_dfs(cur->children[i], result);
+        }
+    }
 };
 
 #endif

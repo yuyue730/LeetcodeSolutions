@@ -419,14 +419,14 @@ public:
     // 559. Maximum Depth of N-ary Tree Test
     void maxDepth559Test() {
         cout << "559. Maximum Depth of N-ary Tree test starts.\n";
-        Node559* node5 = new Node559(5);
-        Node559* node6 = new Node559(6);
-        vector<Node559*> subChildren = {node5, node6};
-        Node559* node3 = new Node559(3, subChildren);
-        Node559* node2 = new Node559(2);
-        Node559* node4 = new Node559(4);
-        vector<Node559*> children = {node3, node2, node4};
-        Node559* node1 = new Node559(1, children);
+        NaryNode* node5 = new NaryNode(5);
+        NaryNode* node6 = new NaryNode(6);
+        vector<NaryNode*> subChildren = {node5, node6};
+        NaryNode* node3 = new NaryNode(3, subChildren);
+        NaryNode* node2 = new NaryNode(2);
+        NaryNode* node4 = new NaryNode(4);
+        vector<NaryNode*> children = {node3, node2, node4};
+        NaryNode* node1 = new NaryNode(1, children);
 
         cout << "Depth of N-ary Tree = [" << implObj->maxDepth559(node1) << "]\n\n";
     }
@@ -600,6 +600,26 @@ public:
         cout << "]\n";
         string readResult = fs.readContentFromFile("/a/b/c/d");
         cout << "Read from /a/b/c/d is [" << readResult << "]\n\n";
+    }
+
+    // 589. N-ary Tree Preorder Traversal Test
+    void preorder589Test() {
+        cout << "589. N-ary Tree Preorder Traversal test starts.\n";
+        NaryNode* node5 = new NaryNode(5);
+        NaryNode* node6 = new NaryNode(6);
+        vector<NaryNode*> subChildren = {node5, node6};
+        NaryNode* node3 = new NaryNode(3, subChildren);
+        NaryNode* node2 = new NaryNode(2);
+        NaryNode* node4 = new NaryNode(4);
+        vector<NaryNode*> children = {node3, node2, node4};
+        NaryNode* node1 = new NaryNode(1, children);
+        
+        vector<int> result = implObj->preorder589(node1);
+        cout << "Preorder array = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
     }
 
 private:

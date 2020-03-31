@@ -59,6 +59,7 @@ int main() {
     testObj->minDistance583Test();
     testObj->outerTrees587Test();
     testObj->FileSystem588Test();
+    testObj->preorder589Test();
 
     return 0;
 }
