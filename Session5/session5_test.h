@@ -641,6 +641,14 @@ public:
         }
         cout << "]\n\n";
     }
+    
+    // 594. Longest Harmonious Subsequence Test
+    void findLHS594Test() {
+        cout << "594. Longest Harmonious Subsequence test starts.\n";
+        vector<int> nums = {1, 3, 2, 2, 5, 2, 3, 7};
+        int result = implObj->findLHS594(nums);
+        cout << "LHS Length = [" << result << "]\n\n";
+    }
 
 private:
     Session5Impl * implObj;

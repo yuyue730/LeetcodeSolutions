@@ -7,6 +7,7 @@
 #include <queue>
 #include <set>
 #include <unordered_set>
+#include <map>
 #include <unordered_map>
 #include <numeric>
 #include <sstream>
@@ -1534,6 +1535,26 @@ public:
             postorder_dfs(cur->children[i], result);
         }
         result.push_back(cur->val);
+    }
+
+    // 594. Longest Harmonious Subsequence
+    int findLHS594(vector<int>& nums) {
+        if (nums.empty()) {
+            return 0;
+        }
+        map<int, int> numFreqMap;
+        int result = 0;
+        for (int i = 0; i < nums.size(); ++i) {
+            numFreqMap[nums[i]]++;
+        }
+
+        for (auto iter = numFreqMap.begin(); iter != prev(numFreqMap.end()); ++iter) {
+            auto nextIter = next(iter);
+            if (nextIter->first == iter->first + 1) {
+                result = max(result, iter->second + nextIter->second);
+            }
+        }
+        return result;
     }
 };
 

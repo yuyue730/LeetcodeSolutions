@@ -61,6 +61,7 @@ int main() {
     testObj->FileSystem588Test();
     testObj->preorder589Test();
     testObj->postorder590Test();
+    testObj->findLHS594Test();
 
     return 0;
 }
