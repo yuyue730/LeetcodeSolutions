@@ -650,6 +650,19 @@ public:
         cout << "LHS Length = [" << result << "]\n\n";
     }
 
+    // 599. Minimum Index Sum of Two Lists Test
+    void findRestaurant599Test() {
+        cout << "599. Minimum Index Sum of Two Lists test starts.\n";
+        vector<string> l1 = {"Shogun", "Tapioca Express", "Burger King", "KFC"};
+        vector<string> l2 = {"KFC", "Shogun", "Burger King"};
+        vector<string> result = implObj->findRestaurant599(l1, l2);
+        cout << "Common Least Index Restaurant = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };

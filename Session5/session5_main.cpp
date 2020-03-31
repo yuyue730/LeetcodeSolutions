@@ -62,6 +62,7 @@ int main() {
     testObj->preorder589Test();
     testObj->postorder590Test();
     testObj->findLHS594Test();
+    testObj->findRestaurant599Test();
 
     return 0;
 }

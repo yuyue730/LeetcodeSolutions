@@ -1556,6 +1556,32 @@ public:
         }
         return result;
     }
+
+    // 599. Minimum Index Sum of Two Lists
+    vector<string> findRestaurant599(vector<string>& list1, vector<string>& list2) {
+        unordered_map<string, int> list1Map, totalIdxMap;
+        for (int i = 0; i < list1.size(); ++i) {
+            list1Map[list1[i]] = i;
+        }
+        for (int i = 0; i < list2.size(); ++i) {
+            if (list1Map.count(list2[i])) {
+                totalIdxMap[list2[i]] += list1Map[list2[i]] + i;
+            }
+        }
+        
+        int minIdx = INT_MAX;
+        vector<string> result;
+        for (auto iter : totalIdxMap) {
+            if (iter.second < minIdx) {
+                minIdx = iter.second;
+                result = { iter.first };
+            }
+            else if (iter.second == minIdx) {
+                result.push_back(iter.first);
+            }
+        }
+        return result;
+    }
 };
 
 #endif
