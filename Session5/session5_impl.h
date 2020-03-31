@@ -1386,6 +1386,60 @@ public:
         }
         return n1 + n2 - 2 * dp[n1][n2];
     }
+
+    // 587. Erect the Fence
+    vector<vector<int>> outerTrees587(vector<vector<int>>& points) {
+        if (points.size() < 4) {
+            return points;
+        }
+        vector<vector<int>> result;
+        int n = points.size(), leftMostIdx = 0;
+        
+        for (int i = 1; i < n; ++i) {
+            if (points[i][0] < points[leftMostIdx][0]) {
+                leftMostIdx = i;
+            }
+        }
+
+        result.push_back(points[leftMostIdx]);
+        int curIdx = leftMostIdx;
+        while (true) {
+            int nextIdx = (curIdx + 1) % n;
+            for (int i = 0; i < n; ++i) {
+                if (i != nextIdx && crossProduct(
+                    points[curIdx], points[nextIdx], points[i]) < 0) {
+                    nextIdx = i;
+                }
+            }
+
+            for (int i = 0; i < n; ++i) {
+                if (i != curIdx && i != nextIdx && crossProduct(
+                    points[curIdx], points[nextIdx], points[i]) == 0 &&
+                    isBetween(points[curIdx], points[nextIdx], points[i])) {
+                    result.push_back(points[i]);
+                }
+            }
+
+            if (nextIdx == leftMostIdx) {
+                break;
+            }
+            result.push_back(points[nextIdx]);
+            curIdx = nextIdx;
+        }
+        return result;
+    }
+
+    int crossProduct(const vector<int> &p, const vector<int> &q, 
+        const vector<int> &r) {
+        return (q[0] - p[0]) * (r[1] - q[1]) - (q[1] - p[1]) * (r[0] - q[0]);
+    }
+
+    bool isBetween(const vector<int> &p, const vector<int> &q, 
+        const vector<int> &r) {
+        bool isXBetween = (r[0] - p[0]) * (r[0] - q[0]) <= 0;
+        bool isYBetween = (r[1] - p[1]) * (r[1] - q[1]) <= 0;
+        return isXBetween && isYBetween;
+    }
 };
 
 #endif

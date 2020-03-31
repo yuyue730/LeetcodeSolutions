@@ -57,6 +57,7 @@ int main() {
     testObj->findUnsortedSubarray581Test();
     testObj->killProcess582Test();
     testObj->minDistance583Test();
+    testObj->outerTrees587Test();
 
     return 0;
 }

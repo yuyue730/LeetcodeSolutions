@@ -569,6 +569,21 @@ public:
         cout << "Min Delete steps = [" << result << "]\n\n";
     }
 
+    // 587. Erect the Fence Test
+    void outerTrees587Test() {
+        cout << "587. Erect the Fence test starts.\n";
+        vector<vector<int>> points = {
+            {1, 1}, {2, 2}, {2, 0}, {2, 4}, {3, 3}, {4, 2}
+        };
+        vector<vector<int>> results = implObj->outerTrees587(points);
+        cout << "Outline points are [";
+        for (int i = 0; i < results.size(); ++i) {
+            cout << "[" << results[i][0] << ", " << results[i][1] << "]" 
+                << ((i == results.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };
