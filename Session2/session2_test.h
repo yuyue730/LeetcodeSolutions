@@ -697,6 +697,14 @@ public:
         cout << "Minimal costs = [" << result << "]\n\n";
     }
 
+    // 266. Palindrome Permutation Test
+    void canPermutePalindrome266Test() {
+        cout << "266. Palindrome Permutation test starts.\n";
+        cout << "'Code' can generate palindrome = [" 
+            << (implObj->canPermutePalindrome266("code") ? "True" : "False")
+            << "]\n\n";
+    }
+
     // 268. Missing Number Test
     void missingNumber268Test() {
         cout << "268. Missing Number test.\n";

@@ -1580,6 +1580,26 @@ public:
         return dp.back()[min1];
     }
 
+    // 266. Palindrome Permutation
+    bool canPermutePalindrome266(string s) {
+        unordered_map<char, int> charFreq;
+        int n = s.length();
+        for (int i = 0; i < n; ++i) {
+            charFreq[s[i]]++;
+        }
+        
+        int numOfOdd = 0;
+        for (auto iter : charFreq) {
+            if (iter.second % 2 == 1) {
+                numOfOdd++;
+                if (numOfOdd > 1) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     // 268. Missing Number
     int missingNumber268(vector<int>& nums) {
         int result = 0;
