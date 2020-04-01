@@ -189,6 +189,15 @@ public:
         cout << "]\n\n";
     }
 
+    // 217. Contains Duplicate Test
+    void containsDuplicate217Test() {
+        cout << "217. Contains Duplicate test starts.\n";
+        vector<int> nums = {1, 2, 3, 1};
+        cout << "Contains duplicate = [" 
+            << (implObj->containsDuplicate217(nums) ? "True" : "False") 
+            << "]\n\n";
+    }
+
     // 218. The Skyline Problem Test
     void getSkyline218Test() {
         cout << "218. The Skyline Problem test starts.\n";

@@ -24,6 +24,7 @@ int main() {
     testObj->shortestPalindrome214Test();
     testObj->findKthLargest215Test();
     testObj->combinationSum3_216Test();
+    testObj->containsDuplicate217Test();
     testObj->getSkyline218Test();
     testObj->maximalSquare221Test();
     testObj->countNodes222Test();

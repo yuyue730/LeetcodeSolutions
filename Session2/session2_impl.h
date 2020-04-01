@@ -511,6 +511,18 @@ public:
         return pq.top();
     }
 
+    // 217. Contains Duplicate
+    bool containsDuplicate217(vector<int>& nums) {
+        unordered_set<int> numSet;
+        for (int i = 0; i < nums.size(); ++i) {
+            if (numSet.count(nums[i])) {
+                return true;
+            }
+            numSet.insert(nums[i]);
+        }
+        return false;
+    }
+
     // 218. The Skyline Problem
     struct SkylineNode {
         int d_x;
