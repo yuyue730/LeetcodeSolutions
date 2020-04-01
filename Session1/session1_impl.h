@@ -1883,6 +1883,16 @@ public:
         
         return result;
     }
+    
+    // 172. Factorial Trailing Zeroes
+    int trailingZeroes172(int n) {
+        int result = 0;
+        while (n > 0) {
+            result += n / 5;
+            n /= 5;
+        }
+        return result;
+    }
 
     // 173. Binary Search Tree Iterator
     class BSTIterator173 {

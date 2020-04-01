@@ -926,6 +926,11 @@ public:
         return;
     }
 
+    // 172. Factorial Trailing Zeroes Test
+    void trailingZeroes172Test() {
+        cout << "172. Factorial Trailing Zeroes test starts.\n";
+        cout << "20! has [" << implObj->trailingZeroes172(20) << "] 0's.\n\n";
+    }
 
     // 173. Binary Search Tree Iterator Test
     void BSTIterator173Test() {

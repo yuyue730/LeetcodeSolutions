@@ -76,6 +76,7 @@ int main() {
     testObj->majorityElement169Test();
     testObj->TwoSum170Test();
     testObj->titleToNumber171Test();
+    testObj->trailingZeroes172Test();
     testObj->BSTIterator173Test();
     testObj->calculateMinimumHP174Test();
     testObj->largestNumber179Test();
@@ -88,7 +89,6 @@ int main() {
     testObj->rob198Test();
     testObj->rightSideView199Test();
     testObj->numIslands200Test();
-    
 
     return 0;
 }
