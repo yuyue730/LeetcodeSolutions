@@ -65,6 +65,7 @@ int main() {
     testObj->nthUglyNumber264Test();
     testObj->minCostII265Test();
     testObj->canPermutePalindrome266Test();
+    testObj->generatePalindromes267Test();
     testObj->missingNumber268Test();
     testObj->alienOrder269Test();
     testObj->encodeDecode271Test();

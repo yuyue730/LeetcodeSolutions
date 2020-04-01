@@ -1600,6 +1600,57 @@ public:
         return true;
     }
 
+    // 267. Palindrome Permutation II
+    vector<string> generatePalindromes267(string s) {
+        if (s.empty()) {
+            return {};
+        }
+
+        unordered_map<char, int> charFreqMap;
+        int n = s.length();
+        for (int i = 0; i < n; ++i) {
+            charFreqMap[s[i]]++;
+        }
+
+        string mid = "";
+        string toPermutate = "";
+        for (auto iter : charFreqMap) {
+            char curChar = iter.first;
+            int curFreq = iter.second;
+            if (curFreq % 2 == 1) {
+                mid += curChar;
+                if (mid.size() > 1) {
+                    return {};
+                }
+            }
+            toPermutate += string(curFreq / 2, curChar);
+        }
+
+        unordered_set<string> allResultsSet;
+        generatePalindromes267_dfs(toPermutate, 0, mid, allResultsSet);
+        return vector<string>(allResultsSet.begin(), allResultsSet.end());
+    }
+
+    void generatePalindromes267_dfs(
+        string &toPermutate, int start, const string mid,
+        unordered_set<string>& allResultsSet) {
+        if (start >= toPermutate.size()) {
+            string tmp = toPermutate;
+            reverse(tmp.begin(), tmp.end());
+            string curResult = toPermutate + mid + tmp;
+            allResultsSet.insert(curResult);
+        }
+
+        for (int i = start; i < toPermutate.size(); ++i) {
+            if (i != start && toPermutate[i] == toPermutate[start]) {
+                continue;
+            }
+            swap(toPermutate[i], toPermutate[start]);
+            generatePalindromes267_dfs(toPermutate, start + 1, mid, allResultsSet);
+            swap(toPermutate[i], toPermutate[start]);
+        }
+    }
+
     // 268. Missing Number
     int missingNumber268(vector<int>& nums) {
         int result = 0;

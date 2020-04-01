@@ -705,6 +705,17 @@ public:
             << "]\n\n";
     }
 
+    // 267. Palindrome Permutation II Test
+    void generatePalindromes267Test() {
+        cout << "267. Palindrome Permutation II test starts.\n";
+        vector<string> result = implObj->generatePalindromes267("aabbc");
+        cout << "Results = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
     // 268. Missing Number Test
     void missingNumber268Test() {
         cout << "268. Missing Number test.\n";
