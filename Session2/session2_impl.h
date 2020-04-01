@@ -1548,6 +1548,38 @@ public:
         return result.back();
     }
 
+    // 265. Paint House II
+    int minCostII265(vector<vector<int>>& costs) {
+        if (costs.empty() || costs[0].empty()) {
+            return 0;
+        }
+        vector<vector<int>> dp = costs;
+        int min1 = -1, min2 = -1;
+        int m = costs.size(), n = costs[0].size();
+        for (int i = 0; i < m; ++i) {
+            int last1 = min1, last2 = min2;
+            min1 = -1;
+            min2 = -1;
+            for (int j = 0; j < n; ++j) {
+                if (j != last1) {
+                    dp[i][j] += last1 < 0 ? 0 : dp[i - 1][last1];
+                }
+                else {
+                    dp[i][j] += last2 < 0 ? 0 : dp[i - 1][last2];
+                }
+
+                if (min1 == -1 || dp[i][j] < dp[i][min1]) {
+                    min2 = min1;
+                    min1 = j;
+                }
+                else if (min2 < 0 || dp[i][j] < dp[i][min2]) {
+                    min2 = j;
+                }
+            }
+        }
+        return dp.back()[min1];
+    }
+
     // 268. Missing Number
     int missingNumber268(vector<int>& nums) {
         int result = 0;

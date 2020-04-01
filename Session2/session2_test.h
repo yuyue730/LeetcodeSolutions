@@ -689,6 +689,14 @@ public:
         cout << "7-th Ugly Number = [" << implObj->nthUglyNumber264(7) << "]\n\n";
     }
 
+    // 265. Paint House II Test
+    void minCostII265Test() {
+        cout << "265. Paint House II test starts.\n";
+        vector<vector<int>> costs = {{1, 5, 3}, {2, 9, 4}};
+        int result = implObj->minCostII265(costs);
+        cout << "Minimal costs = [" << result << "]\n\n";
+    }
+
     // 268. Missing Number Test
     void missingNumber268Test() {
         cout << "268. Missing Number test.\n";

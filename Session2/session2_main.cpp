@@ -63,6 +63,7 @@ int main() {
     testObj->singleNumber260Test();
     testObj->validTree261Test();
     testObj->nthUglyNumber264Test();
+    testObj->minCostII265Test();
     testObj->missingNumber268Test();
     testObj->alienOrder269Test();
     testObj->encodeDecode271Test();
