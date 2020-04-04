@@ -1149,6 +1149,17 @@ public:
         return;
     }
 
+    // 89. Gray Code Test
+    void grayCode89Test() {
+        cout << "89. Gray Code test starts.\n";
+        vector<int> result = implObj->grayCode89(3);
+        cout << "3 will generate result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
     // 90. Subsets II Test
     void subsetsWithDup90Test() {
         cout << "90. Subsets II test starts.\n";

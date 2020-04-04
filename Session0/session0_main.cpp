@@ -95,6 +95,7 @@ int main() {
     testObj->maximalRectangle85Test();
     testObj->partition86Test();
     testObj->merge88Test();
+    testObj->grayCode89Test();
     testObj->subsetsWithDup90Test();
     testObj->numDecodings91Test();
     testObj->reverseBetween92Test();

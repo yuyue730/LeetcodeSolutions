@@ -2564,6 +2564,18 @@ public:
         return;
     }
 
+    // 89. Gray Code
+    vector<int> grayCode89(int n) {
+        vector<int> result;
+        if (n == 0) {
+            return {0};
+        }
+        for (int i = 0; i < pow(2, n); ++i) {
+            result.push_back(i ^ (i >> 1));
+        }
+        return result;
+    }
+
     // 90. Subsets II
     vector<vector<int>> subsetsWithDup90(vector<int>& nums) {
         vector<vector<int>> result;
