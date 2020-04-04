@@ -1260,6 +1260,23 @@ public:
         unordered_map<int, list<pair<int, int>>::iterator> d_keyIterMap;
     };
 
+    // 147. Insertion Sort List
+    ListNode* insertionSortList147(ListNode* head) {
+        ListNode * dummy = new ListNode(INT_MIN);
+        ListNode * cur = dummy;
+        while (head) {
+            ListNode *next = head->next;
+            while (cur->next && cur->next->val <= head->val) {
+                cur = cur->next;
+            }
+            head->next = cur->next;
+            cur->next = head;
+            head = next;
+            cur = dummy;
+        }
+        return dummy->next;
+    }
+
     // 148. Sort List
     ListNode* sortList148(ListNode* head) {
         if (head == NULL || head->next == NULL) {

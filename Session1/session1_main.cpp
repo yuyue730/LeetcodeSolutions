@@ -53,6 +53,7 @@ int main() {
     testObj->preorderTraversal144Test();
     testObj->postorderTraversal145Test();
     testObj->LRUCache146Test();
+    testObj->insertionSortList147Test();
     testObj->sortList148Test();
     testObj->maxPoints149Test();
     testObj->evalRPN150Test();

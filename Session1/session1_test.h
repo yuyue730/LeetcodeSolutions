@@ -678,6 +678,21 @@ public:
         return;
     }
 
+    // 147. Insertion Sort List Test
+    void insertionSortList147Test() {
+        cout << "147. Insertion Sort List test starts.\n";
+        ListNode *head = new ListNode(-1);
+        ListNode *cur = head;
+        cur->next = new ListNode(5); cur = cur->next;
+        cur->next = new ListNode(3); cur = cur->next;
+        cur->next = new ListNode(4); cur = cur->next;
+        cur->next = new ListNode(0);
+
+        ListNode *result = implObj->insertionSortList147(head);
+        cout << "Please exam result pointer linked list. Result = [" 
+            << result->val << "]\n\n";
+    }
+
     // 148. Sort List Test
     void sortList148Test() {
         cout << "148. Sort List test starts.\n";
