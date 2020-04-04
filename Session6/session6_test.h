@@ -30,6 +30,15 @@ public:
         cout << "Next = [" << iterator.next() << "]\n\n"; // return ' '
     }
 
+    // 605. Can Place Flowers Test
+    void canPlaceFlowers605Test() {
+        cout << "605. Can Place Flowers test starts.\n";
+        vector<int> nums = {1, 0, 0, 0, 1, 0, 0};
+        cout << "Can plant 2 flowers = ["
+            << (implObj->canPlaceFlowers605(nums, 2) ? "True" : "False")
+            << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

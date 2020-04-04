@@ -9,6 +9,7 @@ int main() {
     cout << "\nTest for problems starts.\n";
 
     testObj->StringIterator604Test();
+    testObj->canPlaceFlowers605Test();
 
     return 0;
 }

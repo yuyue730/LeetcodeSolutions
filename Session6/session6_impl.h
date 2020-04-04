@@ -45,6 +45,31 @@ public:
     private:
         queue<pair<char, int>> charFreqQ;
     };
+
+    // 605. Can Place Flowers
+    bool canPlaceFlowers605(vector<int>& flowerbed, int n) {
+        if (flowerbed.empty()) {
+            return 0;
+        }
+        if (flowerbed[0] == 0) {
+            flowerbed.insert(flowerbed.begin(), 0);
+        }
+        if (flowerbed.back() == 0) {
+            flowerbed.push_back(0);
+        }
+
+        int count = 0, result = 0;
+        for (int i = 0; i <= flowerbed.size(); ++i) {
+            if (i < flowerbed.size() && flowerbed[i] == 0) {
+                count++;
+            }
+            else {
+                result += (count - 1) / 2;
+                count = 0;
+            }
+        }
+        return (result >= n);
+    }
 };
 
 #endif
