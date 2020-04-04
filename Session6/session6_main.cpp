@@ -8,5 +8,7 @@ int main() {
     Session6Test * testObj = new Session6Test();
     cout << "\nTest for problems starts.\n";
 
+    testObj->StringIterator604Test();
+
     return 0;
 }
