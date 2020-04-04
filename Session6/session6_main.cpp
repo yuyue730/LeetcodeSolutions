@@ -1,0 +1,12 @@
+// Leetcode Session 6 Problems main function
+#include <iostream>
+#include "session6_test.h"
+using namespace std;
+
+int main() {
+    cout << "Leetcode Session 6 Problem Solution Application starts.\n";
+    Session6Test * testObj = new Session6Test();
+    cout << "\nTest for problems starts.\n";
+
+    return 0;
+}
