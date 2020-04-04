@@ -1582,6 +1582,35 @@ public:
         }
         return result;
     }
+
+    // 600. Non-negative Integers without Consecutive Ones
+    int findIntegers600(int num) {
+        string binaryStr = "";
+        int n = num, len = 0;
+        while (n > 0) {
+            binaryStr += ((n & 1) ? "1" : "0");
+            n >>= 1;
+        }
+        len = binaryStr.size();
+        vector<int> zeros(len, 0), ones(len, 0);
+        zeros[0] = 1; ones[0] = 1;
+
+        for (int i = 1; i < len; ++i) {
+            zeros[i] = zeros[i - 1] + ones[i - 1];
+            ones[i] = zeros[i - 1];
+        }
+        int result = zeros[len - 1] + ones[len - 1];
+
+        for (int i = len - 2; i >= 0; --i) {
+            if (binaryStr[i] == '1' && binaryStr[i + 1] == '1') {
+                break;
+            }
+            else if (binaryStr[i] == '0' && binaryStr[i + 1] == '0') {
+                result -= ones[i];
+            }
+        }
+        return result;
+    }
 };
 
 #endif

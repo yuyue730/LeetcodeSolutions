@@ -63,6 +63,7 @@ int main() {
     testObj->postorder590Test();
     testObj->findLHS594Test();
     testObj->findRestaurant599Test();
+    testObj->findIntegers600Test();
 
     return 0;
 }

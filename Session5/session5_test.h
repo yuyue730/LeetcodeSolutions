@@ -663,6 +663,12 @@ public:
         cout << "]\n\n";
     }
 
+    // 600. Non-negative Integers without Consecutive Ones Test
+    void findIntegers600Test() {
+        cout << "600. Non-negative Integers without Consecutive Ones test starts.\n";
+        cout << "Num 14 will generate [" << implObj->findIntegers600(14) << "]\n\n";
+    }
+
 private:
     Session5Impl * implObj;
 };
