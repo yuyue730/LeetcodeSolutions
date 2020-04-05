@@ -10,6 +10,7 @@ int main() {
 
     testObj->StringIterator604Test();
     testObj->canPlaceFlowers605Test();
+    testObj->triangleNumber611Test();
 
     return 0;
 }

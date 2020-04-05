@@ -70,6 +70,32 @@ public:
         }
         return (result >= n);
     }
+
+    // 611. Valid Triangle Number
+    int triangleNumber611(vector<int>& nums) {
+        if (nums.size() < 3) {
+            return 0;
+        }
+        int result = 0, n = nums.size();
+        sort(nums.begin(), nums.end());
+        for (int i = 0; i < n - 2; ++i) {
+            for (int j = i + 1; j < n - 1; ++j) {
+                int left = j + 1, right = n;
+                while (left < right) {
+                    int mid = (left + right) / 2;
+                    if (nums[i] + nums[j] > nums[mid]) {
+                        left = mid + 1;
+                    }
+                    else {
+                        right = mid;
+                    }
+                }
+                result += right - j - 1;
+            }
+        }
+
+        return result;
+    }
 };
 
 #endif

@@ -39,6 +39,14 @@ public:
             << "]\n\n";
     }
 
+    // 611. Valid Triangle Number Test
+    void triangleNumber611Test() {
+        cout << "611. Valid Triangle Number test starts.\n";
+        vector<int> nums = {1, 2, 3, 4, 5};
+        int result = implObj->triangleNumber611(nums);
+        cout << "Can format [" << result << "] triangles.\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };
