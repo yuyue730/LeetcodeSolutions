@@ -12,6 +12,7 @@ int main() {
     testObj->canPlaceFlowers605Test();
     testObj->triangleNumber611Test();
     testObj->addBoldTag616Test();
+    testObj->mergeTrees617Test();
 
     return 0;
 }

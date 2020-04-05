@@ -8,6 +8,14 @@
 #include <string>
 using namespace std;
 
+// Definition for a binary tree node.
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
 class Session6Impl {
 public:
     Session6Impl() {
@@ -128,6 +136,20 @@ public:
             }
         }
         return result;
+    }
+
+    // 617. Merge Two Binary Trees
+    TreeNode* mergeTrees617(TreeNode* t1, TreeNode* t2) {
+        if (!t1 && !t2) {
+            return NULL;
+        }
+        TreeNode* cur = new TreeNode(
+            (t1 ? t1->val : 0) + (t2 ? t2->val : 0));
+        cur->left = mergeTrees617(
+            (t1 ? t1->left : NULL), (t2 ? t2->left : NULL));
+        cur->right = mergeTrees617(
+            (t1 ? t1->right : NULL), (t2 ? t2->right : NULL));
+        return cur;
     }
 };
 

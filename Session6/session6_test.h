@@ -56,6 +56,24 @@ public:
         cout << "Result string = [" << result << "]\n\n";
     }
 
+    // 617. Merge Two Binary Trees Test
+    void mergeTrees617Test() {
+        cout << "617. Merge Two Binary Trees test starts.\n";
+        TreeNode *t1 = new TreeNode(1);
+        TreeNode *cur = t1;
+        cur->left = new TreeNode(3); cur->right = new TreeNode(2);
+        cur = cur->left; cur->left = new TreeNode(5);
+
+        TreeNode *t2 = new TreeNode(2);
+        cur = t2;
+        cur->left = new TreeNode(1); cur->right = new TreeNode(3);
+        cur = t2->left; cur->right = new TreeNode(4);
+        cur = t2->right; cur->right = new TreeNode(7);
+
+        TreeNode *result = implObj->mergeTrees617(t1, t2);
+        cout << "Please exam the result tree [" << result->val << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };
