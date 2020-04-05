@@ -47,6 +47,15 @@ public:
         cout << "Can format [" << result << "] triangles.\n\n";
     }
 
+    // 616. Add Bold Tag in String Test
+    void addBoldTag616Test() {
+        cout << "616. Add Bold Tag in String test starts.\n";
+        string str = "aaabbcc";
+        vector<string> dict = {"aaa", "aab", "bc"};
+        string result = implObj->addBoldTag616(str, dict);
+        cout << "Result string = [" << result << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

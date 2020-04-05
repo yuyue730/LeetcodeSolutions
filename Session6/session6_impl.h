@@ -2,6 +2,7 @@
 #define _SESSION_6_IMPL_H
 
 #include <iostream>
+#include <vector>
 #include <queue>
 #include <sstream>
 #include <string>
@@ -94,6 +95,38 @@ public:
             }
         }
 
+        return result;
+    }
+
+    // 616. Add Bold Tag in String
+    string addBoldTag616(string s, vector<string>& dict) {
+        const int strLen = s.size();
+        vector<bool> isBold(strLen, false);
+
+        for (int i = 0; i < strLen; ++i) {
+            for (auto word: dict) {
+                const int wordLen = word.size();
+                if (i + wordLen <= strLen && s.substr(i, wordLen) == word) {
+                    for (int j = i; j < i + wordLen; ++j) {
+                        isBold[j] = true;
+                    }
+                }
+            }
+        }
+
+        string result = "";
+        bool isInBold = false;
+        for (int i = 0; i < strLen; ++i) {
+            if ((i == 0 && isBold[0]) 
+                || (i > 0 && !isBold[i - 1] && isBold[i])) {
+                result += "<b>";
+            }
+            result += s[i];
+            if ((i == strLen - 1 && isBold[i]) 
+                || (i < strLen && isBold[i] && !isBold[i + 1])) {
+                result += "</b>";
+            }
+        }
         return result;
     }
 };

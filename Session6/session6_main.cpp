@@ -11,6 +11,7 @@ int main() {
     testObj->StringIterator604Test();
     testObj->canPlaceFlowers605Test();
     testObj->triangleNumber611Test();
+    testObj->addBoldTag616Test();
 
     return 0;
 }
