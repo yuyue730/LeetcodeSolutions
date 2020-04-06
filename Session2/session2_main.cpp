@@ -26,6 +26,7 @@ int main() {
     testObj->combinationSum3_216Test();
     testObj->containsDuplicate217Test();
     testObj->getSkyline218Test();
+    testObj->containsNearbyDuplicate219Test();
     testObj->maximalSquare221Test();
     testObj->countNodes222Test();
     testObj->computeArea223Test();

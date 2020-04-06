@@ -214,6 +214,15 @@ public:
         return;
     }
 
+    // 219. Contains Duplicate II Test
+    void containsNearbyDuplicate219Test() {
+        cout << "219. Contains Duplicate II test starts.\n";
+        vector<int> nums = {1, 2, 3, 1};
+        cout << "Max distance = 3 will result in [" 
+            << (implObj->containsNearbyDuplicate219(nums, 3) ? "True" : "False")
+            << "]\n\n";
+    }
+
     // 221. Maximal Square Test
     void maximalSquare221Test() {
         cout << "221. Maximal Square test starts.\n";

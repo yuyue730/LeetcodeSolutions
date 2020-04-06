@@ -609,6 +609,21 @@ public:
         return result;
     }
 
+    // 219. Contains Duplicate II
+    bool containsNearbyDuplicate219(vector<int>& nums, int k) {
+        unordered_map<int, int> numIdxMap;
+        for (int i = 0; i < nums.size(); ++i) {
+            if (numIdxMap.find(nums[i]) != numIdxMap.end() 
+                && i - numIdxMap[nums[i]] <= k) {
+                return true;
+            }
+            else {
+                numIdxMap[nums[i]] = i;
+            }
+        }
+        return false;
+    }
+
     // 221. Maximal Square
     int maximalSquare221(vector<vector<char>>& matrix) {
         if (matrix.size() == 0 || matrix[0].size() == 0) {
