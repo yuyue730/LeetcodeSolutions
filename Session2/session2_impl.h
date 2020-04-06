@@ -511,6 +511,32 @@ public:
         return pq.top();
     }
 
+    // 216. Combination Sum III
+    vector<vector<int>> combinationSum3_216(int k, int n) {
+        vector<int> curRes;
+        vector<vector<int>> allRes;
+        combinationSum3_dfs(k, n, 1, curRes, allRes);
+        return allRes;
+    }
+    
+    void combinationSum3_dfs(
+        const int k, const int target,
+        const int nextStart,
+        vector<int> & curResult,
+        vector<vector<int>> & allResults) {
+        if (curResult.size() == k) {
+            if (target == 0) {
+                allResults.push_back(curResult);
+            }
+        }
+        
+        for (int i = nextStart; i <= 9; ++i) {
+            curResult.push_back(i);
+            combinationSum3_dfs(k, target - i, i + 1, curResult, allResults);
+            curResult.pop_back();
+        }
+    }
+
     // 217. Contains Duplicate
     bool containsDuplicate217(vector<int>& nums) {
         unordered_set<int> numSet;
@@ -581,32 +607,6 @@ public:
         }
 
         return result;
-    }
-
-    // 216. Combination Sum III
-    vector<vector<int>> combinationSum3_216(int k, int n) {
-        vector<int> curRes;
-        vector<vector<int>> allRes;
-        combinationSum3_dfs(k, n, 1, curRes, allRes);
-        return allRes;
-    }
-    
-    void combinationSum3_dfs(
-        const int k, const int target,
-        const int nextStart,
-        vector<int> & curResult,
-        vector<vector<int>> & allResults) {
-        if (curResult.size() == k) {
-            if (target == 0) {
-                allResults.push_back(curResult);
-            }
-        }
-        
-        for (int i = nextStart; i <= 9; ++i) {
-            curResult.push_back(i);
-            combinationSum3_dfs(k, target - i, i + 1, curResult, allResults);
-            curResult.pop_back();
-        }
     }
 
     // 221. Maximal Square
