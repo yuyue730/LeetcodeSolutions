@@ -62,6 +62,7 @@ int main() {
     testObj->findMin153Test();
     testObj->findMin154Test();
     testObj->MinStack155Test();
+    testObj->upsideDownBinaryTree156Test();
     testObj->read157Test();
     testObj->read158Test();
     testObj->lengthOfLongestSubstringTwoDistinct159Test();

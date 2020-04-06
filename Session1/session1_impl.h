@@ -1549,6 +1549,22 @@ public:
         return toReturn.size();
     }
 
+    // 156. Binary Tree Upside Down
+    TreeNode* upsideDownBinaryTree156(TreeNode* root) {
+        if (!root || !root->left) {
+            return root;
+        }
+
+        TreeNode *left = root->left;
+        TreeNode *right = root->right;
+        TreeNode *result = upsideDownBinaryTree156(left);
+        left->left = right;
+        left->right = root;
+        root->left = NULL;
+        root->right = NULL;
+        return result;
+    }
+
     // 157. Read N Characters Given Read4
     int read157(char *buf, int n) {
         int nCharCt = 0;

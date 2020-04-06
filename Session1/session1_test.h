@@ -770,6 +770,18 @@ public:
         return;
     }
 
+    // 156. Binary Tree Upside Down Test
+    void upsideDownBinaryTree156Test() {
+        cout << "156. Binary Tree Upside Down test.\n";
+        TreeNode *root = new TreeNode(1);
+        TreeNode *cur = root;
+        cur->left = new TreeNode(2); cur->right = new TreeNode(3);
+        cur = cur->left;
+        cur->left = new TreeNode(4); cur->right = new TreeNode(5);
+        TreeNode *result = implObj->upsideDownBinaryTree156(root);
+        cout << "Please exam result pointer value = [" << result->val << "]\n\n";
+    }
+
     // 157. Read N Characters Given Read4 Test
     void read157Test() {
         cout << "157. Read N Characters Given Read4 test starts.\n";
