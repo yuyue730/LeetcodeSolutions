@@ -82,6 +82,25 @@ public:
         cout << "Need to have [" << result << "] sessions.\n\n";
     }
 
+    // 622. Design Circular Queue Test
+    void MyCircularQueue622Test() {
+        cout << "622. Design Circular Queue test starts.\n";
+        Session6Impl::MyCircularQueue622* obj 
+            = new Session6Impl::MyCircularQueue622(3);
+        bool param_1 = obj->enQueue(3);
+        cout << "Enqueue is [" << (param_1 ? "True" : "False") << "]\n";
+        bool param_2 = obj->deQueue();
+        cout << "Dequeue is [" << (param_2 ? "True" : "False") << "]\n";
+        int param_3 = obj->Front();
+        cout << "Front is [" << param_3 << "]\n";
+        int param_4 = obj->Rear();
+        cout << "Rear is [" << param_4 << "]\n";
+        bool param_5 = obj->isEmpty();
+        cout << "isEmpty is [" << (param_5 ? "True" : "False") << "]\n";
+        bool param_6 = obj->isFull();
+        cout << "isFull is [" << (param_4 ? "True" : "False") << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

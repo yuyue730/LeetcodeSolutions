@@ -14,6 +14,7 @@ int main() {
     testObj->addBoldTag616Test();
     testObj->mergeTrees617Test();
     testObj->leastInterval621Test();
+    testObj->MyCircularQueue622Test();
 
     return 0;
 }
