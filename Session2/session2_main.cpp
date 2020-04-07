@@ -27,6 +27,7 @@ int main() {
     testObj->containsDuplicate217Test();
     testObj->getSkyline218Test();
     testObj->containsNearbyDuplicate219Test();
+    testObj->containsNearbyAlmostDuplicate220Test();
     testObj->maximalSquare221Test();
     testObj->countNodes222Test();
     testObj->computeArea223Test();

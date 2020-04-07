@@ -223,6 +223,16 @@ public:
             << "]\n\n";
     }
 
+    // 220. Contains Duplicate III Test
+    void containsNearbyAlmostDuplicate220Test() {
+        cout << "220. Contains Duplicate III test starts.\n";
+        vector<int> nums = {1, 5, 9, 1, 5, 9};
+        int k = 2, t = 3;
+        bool result = implObj->containsNearbyAlmostDuplicate220(nums, k, t);
+        cout << "Max diff be 3 and max distance be 2 will result in ["
+            << (result ? "True" : "False") << "]\n\n";
+    }
+
     // 221. Maximal Square Test
     void maximalSquare221Test() {
         cout << "221. Maximal Square test starts.\n";

@@ -6,6 +6,7 @@
 #include <stack>
 #include <queue>
 #include <set>
+#include <map>
 #include <unordered_set>
 #include <unordered_map>
 #include <sstream>
@@ -620,6 +621,29 @@ public:
             else {
                 numIdxMap[nums[i]] = i;
             }
+        }
+        return false;
+    }
+
+    // 220. Contains Duplicate III
+    bool containsNearbyAlmostDuplicate220(vector<int>& nums, int k, int t) {
+        if (nums.size() < 2) {
+            return false;
+        }
+        map<long long, int> numLatestIdxMap;
+        int left = 0;
+        for (int i = 0; i < nums.size(); ++i) {
+            if (i - left > k) {
+                numLatestIdxMap.erase(static_cast<long long>(nums[left]));
+                left++;
+            }
+            map<long long, int>::iterator iter = numLatestIdxMap.lower_bound(
+                static_cast<long long>(nums[i]) - t);
+            if (iter != numLatestIdxMap.end()
+                && abs(iter->first - static_cast<long long>(nums[i]) <= t)) {
+                return true;
+            }
+            numLatestIdxMap[nums[i]] = i;
         }
         return false;
     }
