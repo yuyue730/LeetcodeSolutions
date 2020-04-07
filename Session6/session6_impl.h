@@ -151,6 +151,27 @@ public:
             (t1 ? t1->right : NULL), (t2 ? t2->right : NULL));
         return cur;
     }
+
+    // 621. Task Scheduler
+    int leastInterval621(vector<char>& tasks, int n) {
+        vector<int> taskFreqMap(26, 0);
+        int maxFreq = 0, maxCnt = 0;
+        for (int i = 0; i < tasks.size(); ++i) {
+            taskFreqMap[tasks[i] - 'A']++;
+            if (taskFreqMap[tasks[i] - 'A'] == maxFreq) {
+                maxCnt++;
+            }
+            else if (taskFreqMap[tasks[i] - 'A'] > maxFreq) {
+                maxFreq = taskFreqMap[tasks[i] - 'A'];
+                maxCnt = 1;
+            }
+        }
+
+        int proposedEmpty = (n - (maxCnt - 1)) * (maxFreq - 1);
+        int remainingTasks = tasks.size() - maxFreq * maxCnt;
+        int idlePosition = max(0, proposedEmpty - remainingTasks);
+        return tasks.size() + idlePosition;
+    }
 };
 
 #endif

@@ -74,6 +74,14 @@ public:
         cout << "Please exam the result tree [" << result->val << "]\n\n";
     }
 
+    // 621. Task Scheduler Test
+    void leastInterval621Test() {
+        cout << "621. Task Scheduler test starts.\n";
+        vector<char> tasks = {'A', 'A', 'A', 'B', 'B', 'B', 'C'};
+        int result = implObj->leastInterval621(tasks, 2);
+        cout << "Need to have [" << result << "] sessions.\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

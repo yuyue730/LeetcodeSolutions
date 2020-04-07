@@ -13,6 +13,7 @@ int main() {
     testObj->triangleNumber611Test();
     testObj->addBoldTag616Test();
     testObj->mergeTrees617Test();
+    testObj->leastInterval621Test();
 
     return 0;
 }
