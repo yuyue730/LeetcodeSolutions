@@ -15,6 +15,7 @@ int main() {
     testObj->mergeTrees617Test();
     testObj->leastInterval621Test();
     testObj->MyCircularQueue622Test();
+    testObj->addOneRow623Test();
 
     return 0;
 }

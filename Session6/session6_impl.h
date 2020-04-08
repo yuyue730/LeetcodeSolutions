@@ -227,6 +227,49 @@ public:
         int d_size;
         vector<int> data;
     };
+
+    // 623. Add One Row to Tree
+    TreeNode* addOneRow623(TreeNode* root, int v, int d) {
+        if (!root) {
+            return NULL;
+        }
+        if (d == 1) {
+            TreeNode * newRoot = new TreeNode(v);
+            newRoot->left = root;
+            return newRoot;
+        }
+        else {
+            queue<TreeNode *> q({root});
+            while (!q.empty()) {
+                --d;
+                if (d == 0) {
+                    return root;
+                }
+                int curLevelSize = q.size();
+                for (int i = 0; i < curLevelSize; ++i) {
+                    TreeNode * front = q.front();
+                    q.pop();
+                    if (d == 1) {
+                        TreeNode * nextLeft = front->left;
+                        TreeNode * nextright = front->right;
+                        front->left = new TreeNode(v);
+                        front->left->left = nextLeft;
+                        front->right = new TreeNode(v);
+                        front->right->right = nextright;
+                    }
+                    else {
+                        if (front->left) {
+                            q.push(front->left);
+                        }
+                        if (front->right) {
+                            q.push(front->right);
+                        }
+                    }
+                }
+            }
+            return root;
+        }
+    }
 };
 
 #endif

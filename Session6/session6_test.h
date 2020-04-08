@@ -101,6 +101,19 @@ public:
         cout << "isFull is [" << (param_4 ? "True" : "False") << "]\n\n";
     }
 
+    // 623. Add One Row to Tree Test
+    void addOneRow623Test() {
+        cout << "623. Add One Row to Tree test starts.\n";
+        TreeNode * root = new TreeNode(4);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(2);
+        cur = cur->left;
+        cur->left = new TreeNode(3); cur->right = new TreeNode(1);
+
+        TreeNode * result = implObj->addOneRow623(root, 1, 3);
+        cout << "<v, d> = <1, 3> will result in [" << result->val << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };
