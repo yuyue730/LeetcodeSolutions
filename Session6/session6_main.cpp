@@ -17,6 +17,7 @@ int main() {
     testObj->MyCircularQueue622Test();
     testObj->addOneRow623Test();
     testObj->maxDistance624Test();
+    testObj->smallestFactorization625Test();
 
     return 0;
 }

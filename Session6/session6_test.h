@@ -126,6 +126,13 @@ public:
         cout << "Max Distance = [" << result << "]\n\n";
     }
 
+    // 625. Minimum Factorization Test
+    void smallestFactorization625Test() {
+        cout << "625. Minimum Factorization test starts.\n";
+        int result = implObj->smallestFactorization625(48);
+        cout << "48 will generate [" << result << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

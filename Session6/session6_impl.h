@@ -289,6 +289,26 @@ public:
                 maxTop + minPq.top().first : minTop + maxPq.top().first;
         }
     }
+
+    // 625. Minimum Factorization
+    int smallestFactorization625(int a) {
+        if (a == 1) {
+            return 1;
+        }
+        string result;
+        for (int k = 9; k >= 2; --k) {
+            while (a % k == 0) {
+                result = to_string(k) + result;
+                a /= k;
+            }
+        }
+
+        if (a > 1) {
+            return 0;
+        }
+        long long resInLL = stoll(result);
+        return resInLL > INT_MAX ? 0 : static_cast<int>(resInLL);
+    }
 };
 
 #endif
