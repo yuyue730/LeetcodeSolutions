@@ -55,6 +55,7 @@ int main() {
     testObj->shortestWordDistance245Test();
     testObj->isStrobogrammatic246Test();
     testObj->findStrobogrammatic247Test();
+    testObj->strobogrammaticInRange248Test();
     testObj->groupStrings249Test();
     testObj->countUnivalSubtrees250Test();
     testObj->Vector2D251Test();

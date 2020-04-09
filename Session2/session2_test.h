@@ -581,6 +581,13 @@ public:
         return;
     }
 
+    // 248. Strobogrammatic Number III Test
+    void strobogrammaticInRange248Test() {
+        cout << "248. Strobogrammatic Number III test starts.\n";
+        int result = implObj->strobogrammaticInRange248("100", "500");
+        cout << "[100, 500] has strobogrammatic = [" << result << "]\n\n";
+    }
+
     // 249. Group Shifted Strings Test
     void groupStrings249Test() {
         cout << "249. Group Shifted Strings test starts.\n";

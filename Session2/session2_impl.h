@@ -1329,6 +1329,41 @@ public:
         return result;
     }
 
+    // 248. Strobogrammatic Number III
+    int strobogrammaticInRange248(string low, string high) {
+        int result = 0;
+        for (int i = low.size(); i <= high.size(); ++i) {
+            strobogrammaticInRange248_rec(low, high, "", i, result);
+            strobogrammaticInRange248_rec(low, high, "0", i, result);
+            strobogrammaticInRange248_rec(low, high, "1", i, result);
+            strobogrammaticInRange248_rec(low, high, "8", i, result);
+        }
+        return result;
+    }
+
+    void strobogrammaticInRange248_rec(
+        string low, string high, string cur, int len, int &result) {
+        if (cur.size() >= len) {
+            if (cur.size() != len || (len != 1 && cur[0] == '0')) {
+                return;
+            }
+            if (cur.size() == low.size() && cur.compare(low) < 0) {
+                return;
+            }
+            if (cur.size() == high.size() && cur.compare(high) > 0) {
+                return;
+            }
+            result++;
+            return;
+        }
+
+        strobogrammaticInRange248_rec(low, high, "0" + cur + "0", len, result);
+        strobogrammaticInRange248_rec(low, high, "1" + cur + "1", len, result);
+        strobogrammaticInRange248_rec(low, high, "6" + cur + "9", len, result);
+        strobogrammaticInRange248_rec(low, high, "8" + cur + "8", len, result);
+        strobogrammaticInRange248_rec(low, high, "9" + cur + "6", len, result);
+    }
+
     // 249. Group Shifted Strings
     vector<vector<string>> groupStrings249(vector<string>& strings) {
         vector<vector<string>> result;
