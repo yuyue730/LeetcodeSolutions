@@ -1275,6 +1275,29 @@ public:
         return result;
     }
 
+    // 246. Strobogrammatic Number
+    bool isStrobogrammatic246(string num) {
+        int left = 0, right = num.size() - 1;
+        while (left <= right) {
+            if (left == right) {
+                return num[left] == '8' || num[left] == '0' || num[left] == '1';
+            }
+            if ((num[left] == '6' && num[right] == '9')
+                || (num[left] == '9' && num[right] == '6')) {
+                left++; right--;
+                continue;
+            }
+            if ((num[left] == '8' && num[right] == '8')
+                || (num[left] == '0' && num[right] == '0')
+                || (num[left] == '1' && num[right] == '1')) {
+                left++; right--;
+                continue;
+            }
+            return false;
+        }
+        return true;
+    }
+
     // 247. Strobogrammatic Number II
     vector<string> findStrobogrammatic247(int n) {
         return find_by_level(n, n);

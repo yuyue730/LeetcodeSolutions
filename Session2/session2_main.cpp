@@ -53,6 +53,7 @@ int main() {
     testObj->shortestDistance243Test();
     testObj->WordDistance244Test();
     testObj->shortestWordDistance245Test();
+    testObj->isStrobogrammatic246Test();
     testObj->findStrobogrammatic247Test();
     testObj->groupStrings249Test();
     testObj->countUnivalSubtrees250Test();

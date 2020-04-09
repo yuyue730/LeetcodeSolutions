@@ -560,6 +560,14 @@ public:
             << "]\n\n";
     }
 
+    // 246. Strobogrammatic Number Test
+    void isStrobogrammatic246Test() {
+        cout << "246. Strobogrammatic Number test starts.";
+        bool result = implObj->isStrobogrammatic246("689");
+        cout << "689 is Strobogrammatic = [" << (result ? "True" : "False") 
+            << "]\n\n";
+    }
+
     // 247. Strobogrammatic Number II Test
     void findStrobogrammatic247Test() {
         cout << "247. Strobogrammatic Number II test starts.\n";
