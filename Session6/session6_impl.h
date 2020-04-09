@@ -270,6 +270,25 @@ public:
             return root;
         }
     }
+
+    // 624. Maximum Distance in Arrays
+    int maxDistance624(vector<vector<int>>& arrays) {
+        priority_queue<pair<int, int>> minPq, maxPq;
+        for (int i = 0; i < arrays.size(); ++i) {
+            minPq.push({-arrays[i][0], i});
+            maxPq.push({arrays[i].back(), i});
+        }
+
+        if (minPq.top().second != maxPq.top().second) {
+            return minPq.top().first + maxPq.top().first;
+        }
+        else {
+            int maxTop = maxPq.top().first; maxPq.pop();
+            int minTop = minPq.top().first; minPq.pop();
+            return (maxTop + minPq.top().first > minTop + maxPq.top().first) ?
+                maxTop + minPq.top().first : minTop + maxPq.top().first;
+        }
+    }
 };
 
 #endif

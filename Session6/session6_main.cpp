@@ -16,6 +16,7 @@ int main() {
     testObj->leastInterval621Test();
     testObj->MyCircularQueue622Test();
     testObj->addOneRow623Test();
+    testObj->maxDistance624Test();
 
     return 0;
 }

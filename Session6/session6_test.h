@@ -114,6 +114,18 @@ public:
         cout << "<v, d> = <1, 3> will result in [" << result->val << "]\n\n";
     }
 
+    // 624. Maximum Distance in Arrays Test
+    void maxDistance624Test() {
+        cout << "624. Maximum Distance in Arrays test starts.\n";
+        vector<vector<int>> arrays = {
+            {1, 2, 3},
+            {4, 5},
+            {1, 2, 3}
+        };
+        int result = implObj->maxDistance624(arrays);
+        cout << "Max Distance = [" << result << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };
