@@ -1077,6 +1077,14 @@ public:
         }
     }
 
+    // 237. Delete Node in a Linked List
+    void deleteNode237(ListNode* node) {
+        ListNode* nextTmp = node->next;
+        node->val = nextTmp->val;
+        node->next = nextTmp->next;
+        delete nextTmp;
+    }
+
     // 238. Product of Array Except Self
     vector<int> productExceptSelf238(vector<int>& nums) {
         vector<int> forward(nums.size(), 1);

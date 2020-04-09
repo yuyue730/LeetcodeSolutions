@@ -44,6 +44,7 @@ int main() {
     testObj->isPalindrome234Test();
     testObj->lowestCommonAncestor235Test();
     testObj->lowestCommonAncestor236Test();
+    testObj->deleteNode237Test();
     testObj->productExceptSelf238Test();
     testObj->maxSlidingWindow239Test();
     testObj->searchMatrix240Test();

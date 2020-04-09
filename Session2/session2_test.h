@@ -452,6 +452,19 @@ public:
         return;
     }
 
+    // 237. Delete Node in a Linked List Test
+    void deleteNode237Test() {
+        cout << "237. Delete Node in a Linked List test starts.\n";
+        ListNode * head = new ListNode(4);
+        ListNode * cur = head;
+        cur->next = new ListNode(5); cur = cur->next;
+        ListNode * toDelete = cur;
+        cur->next = new ListNode(1); cur = cur->next;
+        cur->next = new ListNode(9);
+        implObj->deleteNode237(toDelete);
+        cout << "Please exam head linked list to see whether delete successfully";
+    }
+
     // 238. Product of Array Except Self Test
     void productExceptSelf238Test() {
         cout << "238. Product of Array Except Self test starts.\n";
