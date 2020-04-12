@@ -1477,6 +1477,33 @@ public:
         return end_pq.size();
     }
 
+    // 254. Factor Combinations
+    vector<vector<int>> getFactors254(int n) {
+        vector<vector<int>> allResults;
+        vector<int> curResult;
+        getFactors254_dfs(n, 2, curResult, allResults);
+        return allResults;
+    }
+
+    void getFactors254_dfs(int n, int start, 
+        vector<int> & curResult, vector<vector<int>> & allResults) {
+        if (n == 1) {
+            if (curResult.size() > 1) {
+                allResults.push_back(curResult);
+            }
+            return;
+        }
+
+        for (int i = start; i <= n; ++i) {
+            if (n % i != 0) {
+                continue;
+            }
+            curResult.push_back(i);
+            getFactors254_dfs(n / i, i, curResult, allResults);
+            curResult.pop_back();
+        }
+    }
+
     // 255. Verify Preorder Sequence in Binary Search Tree
     bool verifyPreorder255(vector<int>& preorder) {
         int min_val = INT_MIN;
@@ -1537,31 +1564,18 @@ public:
         }
     }
 
-    // 254. Factor Combinations
-    vector<vector<int>> getFactors254(int n) {
-        vector<vector<int>> allResults;
-        vector<int> curResult;
-        getFactors254_dfs(n, 2, curResult, allResults);
-        return allResults;
-    }
-
-    void getFactors254_dfs(int n, int start, 
-        vector<int> & curResult, vector<vector<int>> & allResults) {
-        if (n == 1) {
-            if (curResult.size() > 1) {
-                allResults.push_back(curResult);
+    // 258. Add Digits
+    int addDigits258(int num) {
+        while (num >= 10) {
+            int prev = num;
+            num = 0;
+            while (prev > 0) {
+                num += (prev % 10);
+                prev /= 10;
             }
-            return;
         }
-
-        for (int i = start; i <= n; ++i) {
-            if (n % i != 0) {
-                continue;
-            }
-            curResult.push_back(i);
-            getFactors254_dfs(n / i, i, curResult, allResults);
-            curResult.pop_back();
-        }
+        
+        return num;
     }
 
     // 259. 3Sum Smaller

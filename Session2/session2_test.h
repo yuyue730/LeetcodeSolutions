@@ -713,6 +713,12 @@ public:
         return;
     }
 
+    // 258. Add Digits Test
+    void addDigits258Test() {
+        cout << "258. Add Digits test starts.\n";
+        cout << "38 will generate [" << implObj->addDigits258(38) << "]\n\n";
+    }
+
     // 259. 3Sum Smaller Test
     void threeSumSmaller259Test() {
         cout << "259. 3Sum Smaller test starts.\n";

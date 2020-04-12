@@ -65,6 +65,7 @@ int main() {
     testObj->verifyPreorder255Test();
     testObj->minCost256Test();
     testObj->binaryTreePaths257Test();
+    testObj->addDigits258Test();
     testObj->threeSumSmaller259Test();
     testObj->singleNumber260Test();
     testObj->validTree261Test();
