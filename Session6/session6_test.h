@@ -157,6 +157,14 @@ public:
         cout << "Can take a total of [" << result << "] courses.\n\n";
     }
 
+    // 633. Sum of Square Numbers Test
+    void judgeSquareSum633Test() {
+        cout << "633. Sum of Square Numbers test starts.\n";
+        bool result = implObj->judgeSquareSum633(5);
+        cout << "Can 5 be judged by square sum = [" << (result ? "True" : "False")
+            << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

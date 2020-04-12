@@ -21,6 +21,7 @@ int main() {
     testObj->maximumProduct628Test();
     testObj->kInversePairs629Test();
     testObj->scheduleCourse630Test();
+    testObj->judgeSquareSum633Test();
 
     return 0;
 }

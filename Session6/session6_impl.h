@@ -6,6 +6,7 @@
 #include <queue>
 #include <sstream>
 #include <string>
+#include <math.h>
 using namespace std;
 
 // Definition for a binary tree node.
@@ -359,6 +360,20 @@ public:
         }
 
         return pq.size();
+    }
+
+    // 633. Sum of Square Numbers
+    bool judgeSquareSum633(int c) {
+        for (int i = static_cast<int>(sqrt(c)); i >= 0; --i) {
+            if (i * i == c) {
+                return true;
+            }
+            int b = c - i * i, t = static_cast<int>(sqrt(b));
+            if (t * t == b) {
+                return true;
+            }
+        }
+        return false;
     }
 };
 
