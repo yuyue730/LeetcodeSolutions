@@ -148,6 +148,14 @@ public:
         cout << "(1000, 1000) will result in [" << result << "]\n\n";
     }
 
+    // 630. Course Schedule III Test
+    void scheduleCourse630Test() {
+        cout << "630. Course Schedule III test starts.\n";
+        vector<vector<int>> courses = {
+            {100, 200}, {200, 1300}, {1000, 1250}, {2000, 3200}};
+        int result = implObj->scheduleCourse630(courses);
+        cout << "Can take a total of [" << result << "] courses.\n\n";
+    }
 
 private:
     Session6Impl * implObj;

@@ -339,6 +339,27 @@ public:
         }
         return dp.back().back();
     }
+
+    // 630. Course Schedule III
+    int scheduleCourse630(vector<vector<int>>& courses) {
+        priority_queue<int> pq;
+        int curTime = 0;
+        sort(courses.begin(), courses.end(),
+            [](const vector<int> &courseA, const vector<int> &courseB) {
+                return courseA[1] < courseB[1];
+            });
+        
+        for (int i = 0; i < courses.size(); ++i) {
+            curTime += courses[i][0];
+            pq.push(courses[i][0]);
+            if (curTime > courses[i][1]) {
+                curTime -= pq.top();
+                pq.pop();
+            }
+        }
+
+        return pq.size();
+    }
 };
 
 #endif

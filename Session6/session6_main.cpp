@@ -20,6 +20,7 @@ int main() {
     testObj->smallestFactorization625Test();
     testObj->maximumProduct628Test();
     testObj->kInversePairs629Test();
+    testObj->scheduleCourse630Test();
 
     return 0;
 }
