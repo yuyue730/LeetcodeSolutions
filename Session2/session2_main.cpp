@@ -76,6 +76,7 @@ int main() {
     testObj->generatePalindromes267Test();
     testObj->missingNumber268Test();
     testObj->alienOrder269Test();
+    testObj->closestValue270Test();
     testObj->encodeDecode271Test();
     testObj->closestKValues272Test();
     testObj->numberToWords273Test();

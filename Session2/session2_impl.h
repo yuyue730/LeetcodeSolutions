@@ -1861,6 +1861,26 @@ public:
         return (result.size() == all_alpha.size()) ? result : "";
     }
 
+    // 270. Closest Binary Search Tree Value
+    int closestValue270(TreeNode* root, double target) {
+        long long curDist = abs(root->val - target);
+        TreeNode * result = root;
+        TreeNode * curNode = root;
+        while (curNode) {
+            if (abs(curNode->val - target) <= abs(result->val - target)) {
+                result = curNode;
+            }
+            
+            if (target >= curNode->val) {
+                curNode = curNode->right;
+            } else {
+                curNode = curNode->left;
+            }
+        }
+        
+        return result->val;
+    }
+
     // 271. Encode and Decode Strings
     string encode271(vector<string>& strs) {
         string result;

@@ -801,6 +801,18 @@ public:
         return;
     }
 
+    // 270. Closest Binary Search Tree Value Test
+    void closestValue270Test() {
+        cout << "270. Closest Binary Search Tree Value test starts.\n";
+        TreeNode * root = new TreeNode(4);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(2); cur->right = new TreeNode(5);
+        cur = cur->left;
+        cur->left = new TreeNode(1); cur->right = new TreeNode(3);
+        int result = implObj->closestValue270(root, 3.714286);
+        cout << "Close node value to 3.714286 is [" << result << "]\n\n";
+    }
+
     // 271. Encode and Decode Strings Test
     void encodeDecode271Test() {
         cout << "271. Encode and Decode Strings test starts.\n";
