@@ -2015,6 +2015,28 @@ public:
         return citations.size();
     }
 
+    // 275. H-Index II
+    int hIndex275(vector<int>& citations) {
+        if (citations.empty()) {
+            return 0;
+        }
+        int left = 0, right = citations.size() - 1;
+        int len = citations.size();
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (len - mid == citations[mid]) {
+                return citations[mid];
+            }
+            if (len - mid < citations[mid]) {
+                right = mid - 1;
+            }
+            else {
+                left = mid + 1;
+            }
+        }
+        return len - left;
+    }
+
     // 277. Find the Celebrity
     bool knows277(int a, int b) {
         vector<vector<bool>> knows = {

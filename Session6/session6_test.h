@@ -133,6 +133,14 @@ public:
         cout << "48 will generate [" << result << "]\n\n";
     }
 
+    // 628. Maximum Product of Three Numbers Test
+    void maximumProduct628Test() {
+        cout << "628. Maximum Product of Three Numbers test starts.\n";
+        vector<int> nums = {1, 2, 3, 4};
+        int result = implObj->maximumProduct628(nums);
+        cout << "{1,2,3,4} will generate max product = [" << result << "]\n\n";
+    }
+
     // 629. K Inverse Pairs Array Test
     void kInversePairs629Test() {
         cout << "629. K Inverse Pairs Array test starts.\n";

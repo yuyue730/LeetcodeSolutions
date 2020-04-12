@@ -81,6 +81,7 @@ int main() {
     testObj->closestKValues272Test();
     testObj->numberToWords273Test();
     testObj->hIndex274Test();
+    testObj->hIndex275Test();
     testObj->findCelebrity277Test();
     testObj->firstBadVersion278Test();
     testObj->numSquares279Test();

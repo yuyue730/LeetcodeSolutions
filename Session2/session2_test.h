@@ -855,7 +855,6 @@ public:
         cout << "123 = [" << implObj->numberToWords273(123) << "]\n";
         cout << "12345 = [" << implObj->numberToWords273(12345) << "]\n";
         cout << "12134567 = [" << implObj->numberToWords273(12134567) << "]\n\n";
-        return;
     }
 
     // 274. H-Index Test
@@ -863,21 +862,26 @@ public:
         cout << "274. H-Index test starts.\n";
         vector<int> citations = {3, 0, 6, 1, 5};
         cout << "h idx = [" << implObj->hIndex274(citations) << "]\n\n";
-        return;
+    }
+
+    // 275. H-Index II Test
+    void hIndex275Test() {
+        cout << "275. H-Index II test starts.\n";
+        vector<int> citations = {0, 1, 3, 5, 6, 7};
+        int result = implObj->hIndex275(citations);
+        cout << "{0, 1, 3, 5, 6, 7} has h index = [" << result << "]\n\n";
     }
 
     // 277. Find the Celebrity Test
     void findCelebrity277Test() {
         cout << "277. Find the Celebrity test starts.\n";
         cout << "Result = [" << implObj->findCelebrity277(3) << "]\n\n";
-        return;
     }
 
     // 278. First Bad Version Test
     void firstBadVersion278Test() {
         cout << "278. First Bad Version test starts.\n";
         cout << "First bad version = [" << implObj->firstBadVersion278(7) << "]\n\n";
-        return;
     }
 
     // 279. Perfect Squares Test

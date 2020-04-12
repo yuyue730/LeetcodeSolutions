@@ -310,6 +310,18 @@ public:
         return resInLL > INT_MAX ? 0 : static_cast<int>(resInLL);
     }
 
+    // 628. Maximum Product of Three Numbers
+    int maximumProduct628(vector<int>& nums) {
+        if (nums.size() < 3) {
+            return 0;
+        }
+        
+        int n = nums.size();
+        sort(nums.begin(), nums.end());
+        return max(nums[0] * nums[1] * nums[n - 1],
+            nums[n - 3] * nums[n - 2] * nums[n - 1]);
+    }
+
     // 629. K Inverse Pairs Array
     int kInversePairs629(int n, int k) {
         vector<vector<int>> dp(n + 1, vector<int>(k + 1));
