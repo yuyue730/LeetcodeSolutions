@@ -309,6 +309,24 @@ public:
         long long resInLL = stoll(result);
         return resInLL > INT_MAX ? 0 : static_cast<int>(resInLL);
     }
+
+    // 629. K Inverse Pairs Array
+    int kInversePairs629(int n, int k) {
+        vector<vector<int>> dp(n + 1, vector<int>(k + 1));
+        dp[0][0] = 1;
+        int MAX = 1000000007;
+
+        for (int i = 1; i < n + 1; ++i) {
+            dp[i][0] = 1;
+            for (int j = 1; j <= k; ++j) {
+                dp[i][j] = (dp[i - 1][j] + dp[i][j - 1]) % MAX;
+                if (j >= i) {
+                    dp[i][j] = (dp[i][j] - dp[i - 1][j - i] + MAX) % MAX;
+                }
+            }
+        }
+        return dp.back().back();
+    }
 };
 
 #endif

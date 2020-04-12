@@ -133,6 +133,14 @@ public:
         cout << "48 will generate [" << result << "]\n\n";
     }
 
+    // 629. K Inverse Pairs Array Test
+    void kInversePairs629Test() {
+        cout << "629. K Inverse Pairs Array test starts.\n";
+        int result = implObj->kInversePairs629(1000, 1000);
+        cout << "(1000, 1000) will result in [" << result << "]\n\n";
+    }
+
+
 private:
     Session6Impl * implObj;
 };

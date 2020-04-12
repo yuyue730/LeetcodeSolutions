@@ -18,6 +18,7 @@ int main() {
     testObj->addOneRow623Test();
     testObj->maxDistance624Test();
     testObj->smallestFactorization625Test();
+    testObj->kInversePairs629Test();
 
     return 0;
 }
