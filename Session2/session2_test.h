@@ -872,6 +872,13 @@ public:
         cout << "{0, 1, 3, 5, 6, 7} has h index = [" << result << "]\n\n";
     }
 
+    // 276. Paint Fence Test
+    void numWays276Test() {
+        cout << "276. Paint Fence test starts.\n";
+        int result = implObj->numWays276(3, 3);
+        cout << "(n = 3, k = 3) will result in [" << result << "]\n\n";
+    }
+
     // 277. Find the Celebrity Test
     void findCelebrity277Test() {
         cout << "277. Find the Celebrity test starts.\n";

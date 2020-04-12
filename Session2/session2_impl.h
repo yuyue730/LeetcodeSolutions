@@ -2037,6 +2037,20 @@ public:
         return len - left;
     }
 
+    // 276. Paint Fence
+    int numWays276(int n, int k) {
+        if (n == 0) {
+            return 0;
+        }
+        int same = 0, diff = k;
+        for (int i = 2; i <= n; ++i) {
+            int prevDiff = diff;
+            diff = (same + diff) * (k - 1);
+            same = prevDiff;
+        }
+        return same + diff;
+    }
+
     // 277. Find the Celebrity
     bool knows277(int a, int b) {
         vector<vector<bool>> knows = {

@@ -82,6 +82,7 @@ int main() {
     testObj->numberToWords273Test();
     testObj->hIndex274Test();
     testObj->hIndex275Test();
+    testObj->numWays276Test();
     testObj->findCelebrity277Test();
     testObj->firstBadVersion278Test();
     testObj->numSquares279Test();
