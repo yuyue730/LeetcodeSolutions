@@ -69,6 +69,7 @@ int main() {
     testObj->threeSumSmaller259Test();
     testObj->singleNumber260Test();
     testObj->validTree261Test();
+    testObj->isUgly263Test();
     testObj->nthUglyNumber264Test();
     testObj->minCostII265Test();
     testObj->canPermutePalindrome266Test();

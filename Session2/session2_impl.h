@@ -1656,6 +1656,21 @@ public:
         return true;
     }
 
+    // 263. Ugly Number
+    bool isUgly263(int num) {
+        if (num == 0) {
+            return false;
+        }
+        vector<int> factors = {2, 3, 5};
+        for (int i = 0; i < factors.size(); ++i) {
+            while (num % factors[i] == 0) {
+                num /= factors[i];
+            }
+        }
+        
+        return (num == 1);
+    }
+
     // 264. Ugly Number II
     int nthUglyNumber264(int n) {
         vector<int> result = {1};

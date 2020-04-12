@@ -745,6 +745,13 @@ public:
             << (implObj->validTree261(5, edges) ? "True" : "False") << "]\n\n";
     }
 
+    // 263. Ugly Number Test
+    void isUgly263Test() {
+        cout << "263. Ugly Number test starts.\n";
+        cout << "36 is Ugly = [" << (implObj->isUgly263(36) ? "True" : "False")
+            << "]\n\n";
+    }
+
     // 264. Ugly Number II Test
     void nthUglyNumber264Test() {
         cout << "264. Ugly Number II test starts.\n";
