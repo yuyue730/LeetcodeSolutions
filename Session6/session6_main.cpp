@@ -24,6 +24,7 @@ int main() {
     testObj->judgeSquareSum633Test();
     testObj->smallestRange632Test();
     testObj->findDerangement634Test();
+    testObj->LogSystem635Test();
 
     return 0;
 }

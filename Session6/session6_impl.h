@@ -427,6 +427,41 @@ public:
         }
         return static_cast<int>(dp.back());
     }
+
+    // 635. Design Log Storage System
+    class LogSystem635 {
+    public:
+        LogSystem635() {
+            units = {"Year", "Month", "Day", "Hour", "Minute", "Second"};
+            unitsLength = {4, 7, 10, 13, 16, 19};
+        }
+        
+        void put(int id, string timestamp) {
+            idTimestampArr.push_back({id, timestamp});
+        }
+        
+        vector<int> retrieve(string s, string e, string gra) {
+            int unitLen = unitsLength[
+                find(units.begin(), units.end(), gra) - units.begin()];
+            string startTruncate = s.substr(0, unitLen);
+            string endTruncate = e.substr(0, unitLen);
+            vector<int> result;
+            for (int i = 0; i < idTimestampArr.size(); ++i) {
+                string curTimestampTruncate
+                    = idTimestampArr[i].second.substr(0, unitLen);
+                if (curTimestampTruncate.compare(startTruncate) >= 0
+                    && curTimestampTruncate.compare(endTruncate) <= 0) {
+                    result.push_back(idTimestampArr[i].first);
+                }
+            }
+            return result;
+        }
+
+    private:
+        vector<pair<int, string>> idTimestampArr;
+        vector<string> units;
+        vector<int> unitsLength;
+    };
 };
 
 #endif

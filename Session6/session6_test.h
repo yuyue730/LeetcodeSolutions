@@ -183,6 +183,23 @@ public:
         cout << "3 will have derangements = [" << result << "]\n\n";
     }
 
+    // 635. Design Log Storage System Test
+    void LogSystem635Test() {
+        cout << "635. Design Log Storage System test starts.\n";
+        Session6Impl::LogSystem635 logSys;
+        logSys.put(1, "2019:01:02:10:17:10");
+        logSys.put(2, "2019:02:03:12:20:15");
+        logSys.put(3, "2018:12:27:23:14:12");
+        logSys.put(4, "2018:12:23:21:15:13");
+        vector<int> result = logSys.retrieve("2018:12:24:10:00:00",
+            "2019:02:23:12:26:14", "Minute");
+        cout << "Retrieved ids are [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };
