@@ -2121,6 +2121,38 @@ public:
         }
     }
 
+    // 281. Zigzag Iterator
+    class ZigzagIterator281 {
+    public:
+        ZigzagIterator281(vector<int>& v1, vector<int>& v2) {
+            allV.push_back(v1);  allV.push_back(v2);
+            d_s1 = 0; d_s2 = 0;
+        }
+
+        int next() {
+            int result;
+            if (d_s1 <= d_s2) {
+                result = allV[0][d_s1];
+                d_s1++;
+            }
+            else {
+                result = allV[1][d_s2];
+                d_s2++;
+            }
+            return result;
+        }
+
+        bool hasNext() {
+            if (d_s1 == allV[0].size()) { d_s1 = INT_MAX; }
+            if (d_s2 == allV[1].size()) { d_s2 = INT_MAX; }
+            return (d_s1 < allV[0].size() || d_s2 < allV[1].size());return (d_s1 != INT_MAX || d_s2 != INT_MAX);
+        }
+
+    private:
+        vector<vector<int>> allV;
+        int d_s1, d_s2;
+    };
+
     // 282. Expression Add Operators
     vector<string> addOperators282(string num, int target) {
         vector<string> result;

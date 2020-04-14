@@ -912,6 +912,19 @@ public:
         return;
     }
 
+    // 281. Zigzag Iterator Test
+    void ZigzagIterator281Test() {
+        cout << "281. Zigzag Iterator test starts.\n";
+        vector<int> v1 = {1,2};
+        vector<int> v2 = {3,4,5};
+        Session2Impl::ZigzagIterator281 zigzagIter(v1, v2);
+        cout << "Start to print next until end \n";
+        while (zigzagIter.hasNext()) {
+            cout << "Next = [" <<  zigzagIter.next() << "]\n";
+        }
+        cout << "End of printing.\n\n";
+    }
+
     // 282. Expression Add Operators Test
     void addOperators282Test() {
         cout << "282. Expression Add Operators test starts.\n";

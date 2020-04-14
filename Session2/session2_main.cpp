@@ -87,6 +87,7 @@ int main() {
     testObj->firstBadVersion278Test();
     testObj->numSquares279Test();
     testObj->wiggleSort280Test();
+    testObj->ZigzagIterator281Test();
     testObj->addOperators282Test();
     testObj->moveZeroes283Test();
     testObj->PeekingIterator284Test();
