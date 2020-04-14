@@ -176,6 +176,13 @@ public:
         cout << "Smallest range =[" << result[0] << "," << result[1] << "]\n\n";
     }
 
+    // 634. Find the Derangement of An Array Test
+    void findDerangement634Test() {
+        cout << "634. Find the Derangement of An Array test starts.\n";
+        int result = implObj->findDerangement634(3);
+        cout << "3 will have derangements = [" << result << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

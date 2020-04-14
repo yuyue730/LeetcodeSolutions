@@ -23,6 +23,7 @@ int main() {
     testObj->scheduleCourse630Test();
     testObj->judgeSquareSum633Test();
     testObj->smallestRange632Test();
+    testObj->findDerangement634Test();
 
     return 0;
 }

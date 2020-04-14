@@ -414,6 +414,19 @@ public:
         }
         return result;
     }
+
+    // 634. Find the Derangement of An Array
+    int findDerangement634(int n) {
+        if (n == 1) {
+            return 0;
+        }
+        vector<long long> dp(n + 1);
+        dp[1] = 0; dp[2] = 1;
+        for (int i = 3; i <= n; ++i) {
+            dp[i] = (i - 1) * (dp[i - 1] + dp[i - 2]) % 1000000007;
+        }
+        return static_cast<int>(dp.back());
+    }
 };
 
 #endif
