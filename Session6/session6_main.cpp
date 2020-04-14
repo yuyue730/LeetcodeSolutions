@@ -22,6 +22,7 @@ int main() {
     testObj->kInversePairs629Test();
     testObj->scheduleCourse630Test();
     testObj->judgeSquareSum633Test();
+    testObj->smallestRange632Test();
 
     return 0;
 }

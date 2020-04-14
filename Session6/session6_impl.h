@@ -6,6 +6,7 @@
 #include <queue>
 #include <sstream>
 #include <string>
+#include <unordered_map>
 #include <math.h>
 using namespace std;
 
@@ -374,6 +375,44 @@ public:
             }
         }
         return false;
+    }
+
+    // 632. Smallest Range Covering Elements from K Lists
+    vector<int> smallestRange632(vector<vector<int>>& nums) {
+        vector<int> result;
+        if (nums.size() == 0) {
+            return result;
+        }
+
+        vector<pair<int, int>> numIdxArr;
+        int K = nums.size();
+        for (int i = 0; i < K; ++i) {
+            for (int j = 0; j < nums[i].size(); ++j) {
+                numIdxArr.push_back({nums[i][j], i});
+            }
+        }
+        sort(numIdxArr.begin(), numIdxArr.end());
+
+        int left = 0, count = 0, diff = INT_MAX;
+        unordered_map<int, int> idxFreqMap;
+        for (int right = 0; right < numIdxArr.size(); ++right) {
+            if (idxFreqMap[numIdxArr[right].second] == 0) {
+                count++;
+            }
+            idxFreqMap[numIdxArr[right].second]++;
+            while (count == K && left <= right) {
+                if (diff > numIdxArr[right].first - numIdxArr[left].first) {
+                    diff = numIdxArr[right].first - numIdxArr[left].first;
+                    result = {numIdxArr[left].first, numIdxArr[right].first};
+                }
+                idxFreqMap[numIdxArr[left].second]--;
+                if (idxFreqMap[numIdxArr[left].second] == 0) {
+                    count--;
+                }
+                left++;
+            }
+        }
+        return result;
     }
 };
 

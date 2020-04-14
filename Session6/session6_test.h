@@ -165,6 +165,17 @@ public:
             << "]\n\n";
     }
 
+    // 632. Smallest Range Covering Elements from K Lists Test
+    void smallestRange632Test() {
+        cout << "632. Smallest Range Covering Elements from K Lists test starts.\n";
+        vector<vector<int>> nums = {
+            {4,10,15,24,26},
+            {0,9,12,20},
+            {5,18,22,30}};
+        vector<int> result = implObj->smallestRange632(nums);
+        cout << "Smallest range =[" << result[0] << "," << result[1] << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };
