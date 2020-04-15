@@ -992,7 +992,6 @@ public:
             cout << "]\n";
         }
         cout << "].\n\n";
-        return;
     }
 
     // 287. Find the Duplicate Number Test
@@ -1000,7 +999,21 @@ public:
         cout << "287. Find the Duplicate Number test starts.\n";
         vector<int> nums = {1, 3, 4, 2, 2};
         cout << "Duplicate = [" << implObj->findDuplicate287(nums) << "]\n\n";
-        return;
+    }
+
+    // 288. Unique Word Abbreviation Test
+    void ValidWordAbbr288Test() {
+        cout << "288. Unique Word Abbreviation test starts.\n";
+        vector<string> dict = {"deer", "door", "cake", "card"};
+        Session2Impl::ValidWordAbbr288 abbr(dict);
+        cout << "isUnique(dear) = [" << (abbr.isUnique("dear") ? "True" : "False") 
+            << "]\n";
+        cout << "isUnique(cart) = [" << (abbr.isUnique("cart") ? "True" : "False") 
+            << "]\n";
+        cout << "isUnique(cane) = [" << (abbr.isUnique("cane") ? "True" : "False") 
+            << "]\n";
+        cout << "isUnique(make) = [" << (abbr.isUnique("make") ? "True" : "False") 
+            << "]\n\n";
     }
 
     // 289. Game of Life Test

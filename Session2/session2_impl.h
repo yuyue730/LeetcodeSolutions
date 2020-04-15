@@ -2364,6 +2364,33 @@ public:
         return right;
     }
 
+    // 288. Unique Word Abbreviation
+    class ValidWordAbbr288 {
+    public:
+        ValidWordAbbr288(vector<string>& dictionary) {
+            for (int i = 0; i < dictionary.size(); ++i) {
+                string word = dictionary[i];
+                string k = word;
+                if (word.size() > 2) {
+                    k = word[0] + to_string(word.size() - 2) + word.back();
+                }
+                abbrWordSetMap[k].insert(word);
+            }
+        }
+        
+        bool isUnique(string word) {
+            string k = word;
+            if (word.size() > 2) {
+                k = word[0] + to_string(word.size() - 2) + word.back();
+            }
+
+            return abbrWordSetMap[k].count(word) == abbrWordSetMap[k].size();
+        }
+
+    private:
+        unordered_map<string, unordered_set<string>> abbrWordSetMap;
+    };
+
     // 289. Game of Life
     void gameOfLife289(vector<vector<int>>& board) {
         const vector<pair<int, int>> direc = {

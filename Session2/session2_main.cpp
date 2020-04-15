@@ -94,6 +94,7 @@ int main() {
     testObj->inorderSuccessor285Test();
     testObj->wallsAndGates286Test();
     testObj->findDuplicate287Test();
+    testObj->ValidWordAbbr288Test();
     testObj->gameOfLife289Test();
     testObj->wordPatternMatch291Test();
     testObj->MedianFinder295Test();
