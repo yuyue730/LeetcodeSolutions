@@ -964,6 +964,15 @@ public:
         return;
     }
 
+    // 285. Inorder Successor in BST Test
+    void inorderSuccessor285Test() {
+        cout << "285. Inorder Successor in BST test starts.\n";
+        TreeNode* root = new TreeNode(2);
+        root->left = new TreeNode(1);  root->right = new TreeNode(3);
+        cout << "Next to 1 is [" << 
+            implObj->inorderSuccessor285(root, root->left)->val << "]\n\n";
+    }
+
     // 286. Walls and Gates Test
     void wallsAndGates286Test() {
         cout << "286. Walls and Gates test starts.\n";

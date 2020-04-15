@@ -91,6 +91,7 @@ int main() {
     testObj->addOperators282Test();
     testObj->moveZeroes283Test();
     testObj->PeekingIterator284Test();
+    testObj->inorderSuccessor285Test();
     testObj->wallsAndGates286Test();
     testObj->findDuplicate287Test();
     testObj->gameOfLife289Test();
