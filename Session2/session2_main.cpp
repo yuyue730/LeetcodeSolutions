@@ -96,6 +96,7 @@ int main() {
     testObj->findDuplicate287Test();
     testObj->ValidWordAbbr288Test();
     testObj->gameOfLife289Test();
+    testObj->wordPattern290Test();
     testObj->wordPatternMatch291Test();
     testObj->MedianFinder295Test();
     testObj->minTotalDistance296Test();

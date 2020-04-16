@@ -1039,12 +1039,20 @@ public:
         cout << "]\n\n";
     }
 
+    // 290. Word Pattern Test
+    void wordPattern290Test() {
+        cout << "290. Word Pattern test starts.\n";
+        string pattern = "abba", str = "dog cat cat dog";
+        bool result = implObj->wordPattern290(pattern, str);
+        cout << "[abba] with [dog cat cat dog] is [" << (result ? "True" : "False")
+            << "]\n\n";
+    }
+
     // 291. Word Pattern II Test
     void wordPatternMatch291Test() {
         cout << "291. Word Pattern II test starts.\n";
         string pattern = "abab", str = "redblueredblue";
         cout << "isMatch = [" << implObj->wordPatternMatch291(pattern, str) << "]\n\n";
-        return;
     }
 
     // 295. Find Median from Data Stream Test

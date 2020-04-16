@@ -2426,6 +2426,40 @@ public:
         }
     }
 
+    // 290. Word Pattern
+    bool wordPattern290(string pattern, string str) {
+        unordered_map<char, string> charWordMap;
+        unordered_map<string, char> wordCharMap;
+        istringstream oss(str);
+
+        for (int i = 0; i < pattern.size(); ++i) {
+            string word;
+            getline(oss, word, ' ');
+            
+            if (word.empty()) {
+                return false;
+            }
+            
+            if (charWordMap.find(pattern[i]) == charWordMap.end()
+                && wordCharMap.find(word) == wordCharMap.end()) {
+                charWordMap[pattern[i]] = word;
+                wordCharMap[word] = pattern[i];
+                continue;
+            }
+            
+            if (charWordMap[pattern[i]] == word
+                && wordCharMap[word] == pattern[i]) {
+                continue;
+            }
+            
+            return false;
+        }
+        
+        string word;
+        getline(oss, word, ' ');
+        return word.empty();
+    }
+
     // 291. Word Pattern II
     bool wordPatternMatch291(string pattern, string str) {
         unordered_map<char, string> charWordMap;
