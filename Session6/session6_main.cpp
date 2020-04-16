@@ -25,6 +25,7 @@ int main() {
     testObj->smallestRange632Test();
     testObj->findDerangement634Test();
     testObj->LogSystem635Test();
+    testObj->averageOfLevels637Test();
 
     return 0;
 }

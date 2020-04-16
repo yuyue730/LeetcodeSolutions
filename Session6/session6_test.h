@@ -200,6 +200,22 @@ public:
         cout << "]\n\n";
     }
 
+    // 637. Average of Levels in Binary Tree Test
+    void averageOfLevels637Test() {
+        cout << "637. Average of Levels in Binary Tree test starts.\n";
+        TreeNode * root = new TreeNode(3);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(9);  cur->right = new TreeNode(20);
+        cur = cur->right;
+        cur->left = new TreeNode(15);  cur->right = new TreeNode(7);
+        vector<double> result = implObj->averageOfLevels637(root);
+        cout << "Level average result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

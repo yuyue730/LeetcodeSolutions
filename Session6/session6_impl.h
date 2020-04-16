@@ -462,6 +462,34 @@ public:
         vector<string> units;
         vector<int> unitsLength;
     };
+
+    // 637. Average of Levels in Binary Tree
+    vector<double> averageOfLevels637(TreeNode* root) {
+        vector<double> result;
+        if (!root) {
+            return result;
+        }
+        
+        queue<TreeNode *> levelQ;
+        levelQ.push(root);
+        while (!levelQ.empty()) {
+            long long sum = 0, levelSize = levelQ.size();
+            for (int i = 0; i < levelSize; ++i) {
+                TreeNode * front = levelQ.front();
+                sum += front->val;
+                levelQ.pop();
+                if (front->left) {
+                    levelQ.push(front->left);
+                }
+                if (front->right) {
+                    levelQ.push(front->right);
+                }
+            }
+            
+            result.push_back(static_cast<double>(sum) / levelSize);
+        }
+        return result;
+    }
 };
 
 #endif
