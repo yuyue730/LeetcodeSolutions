@@ -2511,6 +2511,17 @@ public:
         return n % 4 != 0;
     }
 
+    // 293. Flip Game
+    vector<string> generatePossibleNextMoves293(string s) {
+        vector<string> result;
+        for (int i = 1; i < s.size(); ++i) {
+            if (s[i] == '+' && s[i - 1] == '+') {
+                result.push_back(s.substr(0, i - 1) + "--" + s.substr(i + 1));
+            }
+        }
+        return result;
+    }
+
     // 295. Find Median from Data Stream
     class MedianFinder295 {
     public:

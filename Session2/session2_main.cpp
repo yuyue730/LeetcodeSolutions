@@ -98,7 +98,8 @@ int main() {
     testObj->gameOfLife289Test();
     testObj->wordPattern290Test();
     testObj->wordPatternMatch291Test();
-    testObj->canWinNim292();
+    testObj->canWinNim292Test();
+    testObj->generatePossibleNextMoves293Test();
     testObj->MedianFinder295Test();
     testObj->minTotalDistance296Test();
     testObj->Codec297Test();

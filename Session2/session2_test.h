@@ -1056,10 +1056,21 @@ public:
     }
 
     // 292. Nim Game Test
-    void canWinNim292() {
+    void canWinNim292Test() {
         cout << "292. Nim Game test starts.\n";
         cout << "5 Can win = [" << (implObj->canWinNim292(5) ? "True" : "False")
             << "]\n\n";
+    }
+
+    // 293. Flip Game Test
+    void generatePossibleNextMoves293Test() {
+        cout << "293. Flip Game test starts.\n";
+        vector<string> result = implObj->generatePossibleNextMoves293("++++");
+        cout << "Possible next move is [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
     }
 
     // 295. Find Median from Data Stream Test
