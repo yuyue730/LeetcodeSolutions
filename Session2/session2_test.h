@@ -1055,6 +1055,13 @@ public:
         cout << "isMatch = [" << implObj->wordPatternMatch291(pattern, str) << "]\n\n";
     }
 
+    // 292. Nim Game Test
+    void canWinNim292() {
+        cout << "292. Nim Game test starts.\n";
+        cout << "5 Can win = [" << (implObj->canWinNim292(5) ? "True" : "False")
+            << "]\n\n";
+    }
+
     // 295. Find Median from Data Stream Test
     void MedianFinder295Test() {
         cout << "295. Find Median from Data Stream test starts.\n";

@@ -2506,6 +2506,11 @@ public:
         return false;
     }
 
+    // 292. Nim Game
+    bool canWinNim292(int n) {
+        return n % 4 != 0;
+    }
+
     // 295. Find Median from Data Stream
     class MedianFinder295 {
     public:
