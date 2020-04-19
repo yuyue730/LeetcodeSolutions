@@ -26,6 +26,7 @@ int main() {
     testObj->findDerangement634Test();
     testObj->LogSystem635Test();
     testObj->averageOfLevels637Test();
+    testObj->shoppingOffers638Test();
 
     return 0;
 }

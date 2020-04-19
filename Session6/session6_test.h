@@ -216,6 +216,17 @@ public:
         cout << "]\n\n";
     }
 
+    // 638. Shopping Offers Test
+    void shoppingOffers638Test() {
+        cout << "638. Shopping Offers test starts.\n";
+        vector<int> price = {2, 5};
+        vector<vector<int>> special = {
+            {3, 0, 5}, {1, 2, 10}};
+        vector<int> needs = {3, 2};
+        int result = implObj->shoppingOffers638(price, special, needs);
+        cout << "Best offer price is [" << result << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

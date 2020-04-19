@@ -490,6 +490,36 @@ public:
         }
         return result;
     }
+
+    // 638. Shopping Offers
+    int shoppingOffers638(vector<int>& price, vector<vector<int>>& special, vector<int>& needs) {
+        int result = 0;
+        for (int i = 0; i < needs.size(); ++i) {
+            result += (price[i] * needs[i]);
+        }
+
+        for (int i = 0; i < special.size(); ++i) {
+            bool isValid = true;
+            for (int j = 0; j < needs.size(); ++j) {
+                if (needs[j] < special[i][j]) {
+                    isValid = false;
+                }
+                needs[j] -= special[i][j];
+            }
+
+            if (isValid) {
+                result = min(
+                    result,
+                    shoppingOffers638(price, special, needs) + special[i].back());
+            }
+
+            for (int j = 0; j < needs.size(); ++j) {
+                needs[j] += special[i][j];
+            }
+        }
+
+        return result;
+    }
 };
 
 #endif
