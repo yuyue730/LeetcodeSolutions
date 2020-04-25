@@ -656,6 +656,25 @@ public:
         string d_data;
         unordered_map<string, int> d_sentenceFreqMap;
     };
+
+    // 643. Maximum Average Subarray I
+    double findMaxAverage643(vector<int>& nums, int k) {
+        int curSum = 0;
+        double result = 0.0;
+        int left = 0, right = 0;
+        for (; right < k; ++right) {
+            curSum += nums[right];
+            result = (double)curSum / k;
+        }
+        
+        int size = nums.size();
+        for (; right < size; ++right) {
+            curSum = curSum - nums[left] + nums[right];
+            result = max(result, (double)curSum / k);
+            left++;
+        }
+        return result;
+    }
 };
 
 #endif
