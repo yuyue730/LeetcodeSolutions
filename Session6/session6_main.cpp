@@ -27,6 +27,7 @@ int main() {
     testObj->LogSystem635Test();
     testObj->averageOfLevels637Test();
     testObj->shoppingOffers638Test();
+    testObj->MyCircularDeque641Test();
 
     return 0;
 }

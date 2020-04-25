@@ -520,6 +520,79 @@ public:
 
         return result;
     }
+
+    // 641. Design Circular Deque
+    class MyCircularDeque641 {
+    public:
+        /** Initialize your data structure here. Set the size of the deque to be k. */
+        MyCircularDeque641(int k) : d_size(k) { }
+        
+        /** Adds an item at the front of Deque. Return true if the operation is successful. */
+        bool insertFront(int value) {
+            if (isFull()) {
+                return false;
+            }
+            d_data.insert(d_data.begin(), value);
+            return true;
+        }
+        
+        /** Adds an item at the rear of Deque. Return true if the operation is successful. */
+        bool insertLast(int value) {
+            if (isFull()) {
+                return false;
+            }
+            d_data.push_back(value);
+            return true;
+        }
+        
+        /** Deletes an item from the front of Deque. Return true if the operation is successful. */
+        bool deleteFront() {
+            if (isEmpty()) {
+                return false;
+            }
+            d_data.erase(d_data.begin());
+            return true;
+        }
+        
+        /** Deletes an item from the rear of Deque. Return true if the operation is successful. */
+        bool deleteLast() {
+            if (isEmpty()) {
+                return false;
+            }
+            d_data.pop_back();
+            return true;
+        }
+        
+        /** Get the front item from the deque. */
+        int getFront() {
+            if (isEmpty()) {
+                return -1;
+            }
+            return d_data[0];
+        }
+        
+        /** Get the last item from the deque. */
+        int getRear() {
+            if (isEmpty()) {
+                return -1;
+            }
+            return d_data.back();
+        }
+        
+        /** Checks whether the circular deque is empty or not. */
+        bool isEmpty() {
+            return d_data.empty();
+        }
+        
+        /** Checks whether the circular deque is full or not. */
+        bool isFull() {
+            return d_data.size() >= d_size;
+        }
+
+    private:
+        vector<int> d_data;
+        int d_size;
+    };
 };
 
 #endif

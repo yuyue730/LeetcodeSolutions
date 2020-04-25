@@ -227,6 +227,27 @@ public:
         cout << "Best offer price is [" << result << "]\n\n";
     }
 
+    // 641. Design Circular Deque Test
+    void MyCircularDeque641Test() {
+        cout << "641. Design Circular Deque test starts.\n";
+        Session6Impl::MyCircularDeque641 circularDeque(3);
+        cout << "Can insert last 1 = [" << (circularDeque.insertLast(1) ? "True" : "False") 
+            << "]\n";
+        cout << "Can insert last 2 = [" << (circularDeque.insertLast(1) ? "True" : "False") 
+            << "]\n";
+        cout << "Can insert front 3 = [" << (circularDeque.insertFront(3) ? "True" : "False") 
+            << "]\n";
+        cout << "Can insert front 4 = [" << (circularDeque.insertFront(4) ? "True" : "False") 
+            << "]\n";
+        cout << "Get Rear = [" << circularDeque.getRear() << "]\n";
+        cout << "Is Full = [" << (circularDeque.isFull() ? "True" : "False") << "]\n";
+        cout << "Delete last = [" << (circularDeque.deleteLast() ? "True" : "False")
+            << "]\n";
+        cout << "Can insert front 4 = [" << (circularDeque.insertFront(4) ? "True" : "False")
+            << "]\n";
+        cout << "Get front = [" << circularDeque.getFront() << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };
