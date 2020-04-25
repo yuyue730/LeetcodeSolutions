@@ -28,6 +28,7 @@ int main() {
     testObj->averageOfLevels637Test();
     testObj->shoppingOffers638Test();
     testObj->MyCircularDeque641Test();
+    testObj->AutocompleteSystem642Test();
 
     return 0;
 }

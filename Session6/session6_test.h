@@ -248,6 +248,28 @@ public:
         cout << "Get front = [" << circularDeque.getFront() << "]\n\n";
     }
 
+    // 642. Design Search Autocomplete System Test
+    void AutocompleteSystem642Test() {
+        cout << "642. Design Search Autocomplete System test starts.\n";
+        vector<string> sentences = {
+            "i love you", "island","ironman", "i love leetcode"};
+        vector<int> times = {5, 3, 2, 2};
+        Session6Impl::AutocompleteSystem642 as(sentences, times);
+        vector<string> result1 = as.input('i');
+        cout << "Input i result = [";
+        for (int i = 0; i < result1.size(); ++i) {
+            cout << result1[i] << ((i == result1.size() - 1) ? "" : ", ");
+        }
+        cout << "].\n";
+        vector<string> result2 = as.input(' ');
+        cout << "Input ' ' result = [";
+        for (int i = 0; i < result2.size(); ++i) {
+            cout << result2[i] << ((i == result2.size() - 1) ? "" : ", ");
+        }
+        cout << "].\n\n";
+        return;
+    }
+
 private:
     Session6Impl * implObj;
 };

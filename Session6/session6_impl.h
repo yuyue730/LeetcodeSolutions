@@ -593,6 +593,69 @@ public:
         vector<int> d_data;
         int d_size;
     };
+
+    // 642. Design Search Autocomplete System
+    class AutocompleteSystem642 {
+    public:
+        AutocompleteSystem642(vector<string>& sentences, vector<int>& times)
+          : d_data("") {
+            int size = sentences.size();
+            for (int i = 0; i < size; ++i) {
+                d_sentenceFreqMap[sentences[i]] += times[i];
+            }
+        }
+        
+        vector<string> input(char c) {
+            vector<string> result;
+            if (c == '#') {
+                d_sentenceFreqMap[d_data]++;
+                d_data = "";
+                return result;
+            }
+
+            d_data += c;
+            auto comparatorFunc = [](
+                const pair<string, int> & a, const pair<string, int> & b) {
+                return (a.second > b.second) 
+                    || (a.second == b.second && a.first < b.first);
+            };
+            priority_queue<pair<string, int>, 
+                vector<pair<string, int>>, decltype(comparatorFunc)> pq(comparatorFunc);
+            
+            for (auto iter : d_sentenceFreqMap) {
+                string sentence = iter.first;
+                if (d_data.size() > sentence.size()) {
+                    continue;
+                }
+                bool isMatch = true;
+                for (int i = 0; i < d_data.size(); ++i) {
+                    if (d_data[i] != sentence[i]) {
+                        isMatch = false;
+                        break;
+                    }
+                }
+
+                if (isMatch) {
+                    pq.push(iter);
+                    if (pq.size() > 3) {
+                        pq.pop();
+                    }
+                }
+            }
+
+            result.resize(pq.size());
+            for (int i = pq.size() - 1; i >= 0; --i) {
+                result[i] = pq.top().first;
+                pq.pop();
+            }
+
+            return result;
+        }
+
+    private:
+        string d_data;
+        unordered_map<string, int> d_sentenceFreqMap;
+    };
 };
 
 #endif
