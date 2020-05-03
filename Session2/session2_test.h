@@ -1072,6 +1072,13 @@ public:
         }
         cout << "]\n\n";
     }
+    
+    // 294. Flip Game II Test
+    void canWin294Test() {
+        cout << "294. Flip Game II test starts.\n";
+        bool result = implObj->canWin294("++++");
+        cout << "++++ will result in [" << (result ? "True" : "False") << "]\n\n";
+    }
 
     // 295. Find Median from Data Stream Test
     void MedianFinder295Test() {

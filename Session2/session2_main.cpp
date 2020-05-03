@@ -100,6 +100,7 @@ int main() {
     testObj->wordPatternMatch291Test();
     testObj->canWinNim292Test();
     testObj->generatePossibleNextMoves293Test();
+    testObj->canWin294Test();
     testObj->MedianFinder295Test();
     testObj->minTotalDistance296Test();
     testObj->Codec297Test();

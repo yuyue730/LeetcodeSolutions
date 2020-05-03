@@ -2522,6 +2522,19 @@ public:
         return result;
     }
 
+    // 294. Flip Game II
+    bool canWin294(string s) {
+        for (int i = 1; i < s.size(); ++i) {
+            if (s[i] == '+' && s[i - 1] == '+') {
+                string next = s.substr(0, i - 1) + "--" + s.substr(i + 1);
+                if (!canWin294(next)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     // 295. Find Median from Data Stream
     class MedianFinder295 {
     public:
