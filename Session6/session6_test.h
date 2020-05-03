@@ -278,6 +278,14 @@ public:
         cout << "Max Average = [" << result << "]\n\n";
     }
 
+    // 644. Maximum Average Subarray II Test
+    void findMaxAverage644Test() {
+        cout << "644. Maximum Average Subarray II test starts.\n";
+        vector<int> nums = {1, 12, -5, -6, 50, 3};
+        double result = implObj->findMaxAverage644(nums, 4);
+        cout << "Max Average II = [" << result << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

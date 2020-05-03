@@ -675,6 +675,49 @@ public:
         }
         return result;
     }
+
+    // 644. Maximum Average Subarray II
+    double findMaxAverage644(vector<int>& nums, int k) {
+        double minNum = INT_MAX, maxNum = INT_MIN;
+        int size = nums.size();
+        for (int i = 0; i < size; ++i) {
+            minNum = nums[i] < minNum ? (double)nums[i] : minNum;
+            maxNum = nums[i] > maxNum ? (double)nums[i] : maxNum;
+        }
+
+        double error = INT_MAX, prev_mid = maxNum;
+        while (error > 1e-5) {
+            double mid = 0.5 * (minNum + maxNum);
+            if (isMidCorrectEstimate(mid, nums, k)) {
+                minNum = mid;
+            }
+            else {
+                maxNum = mid;
+            }
+            error = abs(prev_mid - mid);
+            prev_mid = mid;
+        }
+        return minNum;
+    }
+
+    bool isMidCorrectEstimate(
+        double mid, const vector<int>& nums, int k) {
+        int size = nums.size();
+        vector<double> cumulativeSum(size + 1, 0);
+        double minSum = 0;
+
+        for (int i = 1; i <= size; ++i) {
+            cumulativeSum[i] = cumulativeSum[i - 1] + (nums[i - 1] - mid);
+            if (i >= k) {
+                minSum = min(minSum, cumulativeSum[i - k]);
+            }
+            if (i >= k && cumulativeSum[i] > minSum) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 };
 
 #endif

@@ -30,6 +30,7 @@ int main() {
     testObj->MyCircularDeque641Test();
     testObj->AutocompleteSystem642Test();
     testObj->findMaxAverage643Test();
+    testObj->findMaxAverage644Test();
 
     return 0;
 }
