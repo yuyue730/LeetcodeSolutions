@@ -286,6 +286,14 @@ public:
         cout << "Max Average II = [" << result << "]\n\n";
     }
 
+    // 645. Set Mismatch Test
+    void findErrorNums645Test() {
+        cout << "645. Set Mismatch test starts.\n";
+        vector<int> nums = {1, 2, 2, 4};
+        vector<int> result = implObj->findErrorNums645(nums);
+        cout << "Missing numbers are [" << result[0] << ", " << result[1] << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

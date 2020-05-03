@@ -8,6 +8,7 @@
 #include <string>
 #include <unordered_map>
 #include <math.h>
+#include <unordered_set>
 using namespace std;
 
 // Definition for a binary tree node.
@@ -717,6 +718,24 @@ public:
         }
 
         return false;
+    }
+
+    // 645. Set Mismatch
+    vector<int> findErrorNums645(vector<int>& nums) {
+        unordered_set<int> numsSet;
+        int dupNum, arrSum = 0, n = nums.size();
+        for (int i = 0; i < n; ++i) {
+            if (!numsSet.count(nums[i])) {
+                numsSet.insert(nums[i]);
+            }
+            else {
+                dupNum = nums[i];
+            }
+            arrSum += nums[i];
+        }
+
+        int missingNum = (1 + n) * n / 2 - (arrSum - dupNum);
+        return {dupNum, missingNum};
     }
 };
 

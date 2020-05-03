@@ -31,6 +31,7 @@ int main() {
     testObj->AutocompleteSystem642Test();
     testObj->findMaxAverage643Test();
     testObj->findMaxAverage644Test();
+    testObj->findErrorNums645Test();
 
     return 0;
 }
