@@ -1126,6 +1126,20 @@ public:
         return;
     }
 
+    // 298. Binary Tree Longest Consecutive Sequence Test
+    void longestConsecutive298Test() {
+        cout << "298. Binary Tree Longest Consecutive Sequence test starts.\n";
+        TreeNode *root = new TreeNode(1);
+        TreeNode *cur = root;
+        cur->right = new TreeNode(3);
+        cur = cur->right;
+        cur->left = new TreeNode(2); cur->right = new TreeNode(4);
+        cur = cur->right; cur->right = new TreeNode(5);
+
+        int result = implObj->longestConsecutive298(root);
+        cout << "Longest consecutive sequence length = [" << result << "]\n\n";
+    }
+
     // 300. Longest Increasing Subsequence Test
     void lengthOfLIS300Test() {
         cout << "300. Longest Increasing Subsequence test starts.\n";

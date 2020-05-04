@@ -104,6 +104,7 @@ int main() {
     testObj->MedianFinder295Test();
     testObj->minTotalDistance296Test();
     testObj->Codec297Test();
+    testObj->longestConsecutive298Test();
     testObj->lengthOfLIS300Test();
 
     return 0;

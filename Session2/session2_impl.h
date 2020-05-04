@@ -2468,8 +2468,7 @@ public:
 
     bool wordPatternMatch291_rec(
         string const pattern, int pIdx, string const str, int sIdx,
-        unordered_map<char, string> &charWordMap
-    ) {
+        unordered_map<char, string> &charWordMap) {
         if (pIdx == pattern.size() && sIdx == str.size()) {
             return true;
         }
@@ -2495,7 +2494,8 @@ public:
 
                 if (!isFound) {
                     charWordMap[c] = curWord;
-                    if (wordPatternMatch291_rec(pattern, pIdx + 1, str, i + 1, charWordMap)) {
+                    if (wordPatternMatch291_rec(
+                        pattern, pIdx + 1, str, i + 1, charWordMap)) {
                         return true;
                     }
                     charWordMap.erase(c);
@@ -2658,6 +2658,34 @@ public:
             return root;
         }
     };
+
+    // 298. Binary Tree Longest Consecutive Sequence
+    int longestConsecutive298(TreeNode* root) {
+        if (!root) {
+            return 0;
+        }
+
+        int result = 1;
+        longestConsecutive298_dfs(root, 0, 0, result);
+        return result;
+    }
+
+    void longestConsecutive298_dfs(
+        TreeNode *cur, int parentVal, int length, int &result) {
+        if (!cur) {
+            return;
+        }
+        if (parentVal + 1 == cur->val) {
+            length++;
+        }
+        else {
+            length = 1;
+        }
+        result = max(result, length);
+
+        longestConsecutive298_dfs(cur->left, cur->val, length, result);
+        longestConsecutive298_dfs(cur->right, cur->val, length, result);
+    }
 
     // 300. Longest Increasing Subsequence
     int lengthOfLIS300(vector<int>& nums) {
