@@ -83,6 +83,34 @@ public:
         return (ct == 0);
     }
 
+    // 303. Range Sum Query - Immutable
+    class NumArray303 {
+    public:
+        NumArray303(vector<int>& nums) {
+            int n = nums.size();
+            d_sumVec.resize(n);
+            if (n != 0) {
+                d_sumVec[0] = nums[0];
+                for (int i = 1; i < n; ++i) {
+                    d_sumVec[i] = nums[i] + d_sumVec[i - 1];
+                }
+            }
+        }
+        
+        int sumRange(int i, int j) {
+            if (i >= d_sumVec.size() || j >= d_sumVec.size()) {
+                return 0;
+            }
+            if (i == 0) {
+                return d_sumVec[j];
+            }
+            return d_sumVec[j] - d_sumVec[i - 1];
+        }
+        
+    private:
+        vector<int> d_sumVec;
+    };
+
     // 304. Range Sum Query 2D - Immutable
     class NumMatrix304 {
     public:

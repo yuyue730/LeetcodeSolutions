@@ -23,6 +23,19 @@ public:
         return;
     }
 
+    // 303. Range Sum Query - Immutable Test
+    void NumArray303Test() {
+        cout << "303. Range Sum Query - Immutable test starts.\n";
+        vector<int> nums = {-2, 0, 3, -5, 2, -1};
+
+        Session3Impl::NumArray303 numArray(nums);
+        int result1 = numArray.sumRange(0, 2);
+        int result2 = numArray.sumRange(2, 5);
+        int result3 = numArray.sumRange(0, 5);
+        cout << "[0->2] sum = [" << result1 << "]; [2->5] sum = [" << result2 << "]"
+            << "; [0->5] sum = [" << result3 << "]\n\n";
+    }
+
     // 304. Range Sum Query 2D - Immutable Test
     void NumMatrix304Test() {
         cout << "304. Range Sum Query 2D - Immutable test starts.\n";

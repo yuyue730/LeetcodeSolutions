@@ -9,6 +9,7 @@ int main() {
     cout << "\nTest for problems starts.\n";
 
     testObj->removeInvalidParentheses301Test();
+    testObj->NumArray303Test();
     testObj->NumMatrix304Test();
     testObj->isAdditiveNumber306Test();
     testObj->maxProfit309Test();
