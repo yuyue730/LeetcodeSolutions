@@ -105,6 +105,7 @@ int main() {
     testObj->minTotalDistance296Test();
     testObj->Codec297Test();
     testObj->longestConsecutive298Test();
+    testObj->getHint299Test();
     testObj->lengthOfLIS300Test();
 
     return 0;

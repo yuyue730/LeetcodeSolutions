@@ -1140,6 +1140,13 @@ public:
         cout << "Longest consecutive sequence length = [" << result << "]\n\n";
     }
 
+    // 299. Bulls and Cows Test
+    void getHint299Test() {
+        cout << "299. Bulls and Cows test starts.\n";
+        string result = implObj->getHint299("1807", "7810");
+        cout << "'1807' and '7810' will generate [" << result << "]\n\n";
+    }
+
     // 300. Longest Increasing Subsequence Test
     void lengthOfLIS300Test() {
         cout << "300. Longest Increasing Subsequence test starts.\n";

@@ -2687,6 +2687,28 @@ public:
         longestConsecutive298_dfs(cur->right, cur->val, length, result);
     }
 
+    // 299. Bulls and Cows
+    string getHint299(string secret, string guess) {
+        unordered_map<char, int> charFreqMap;
+        int A = 0, B = 0;
+        for (int i = 0; i < secret.size(); ++i) {
+            if (secret[i] == guess[i]) {
+                ++A;
+            }
+            else {
+                charFreqMap[secret[i]]++;
+            }
+        }
+        for (int i = 0; i < guess.size(); ++i) {
+            if (secret[i] != guess[i] && charFreqMap[guess[i]]) {
+                ++B;
+                --charFreqMap[guess[i]];
+            }
+        }
+        string result = (to_string(A) + "A") + (to_string(B) + "B");
+        return result;
+    }
+
     // 300. Longest Increasing Subsequence
     int lengthOfLIS300(vector<int>& nums) {
         if (nums.empty()) {
