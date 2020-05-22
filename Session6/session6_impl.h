@@ -9,6 +9,7 @@
 #include <unordered_map>
 #include <math.h>
 #include <unordered_set>
+#include <stack>
 using namespace std;
 
 // Definition for a binary tree node.
@@ -736,6 +737,25 @@ public:
 
         int missingNum = (1 + n) * n / 2 - (arrSum - dupNum);
         return {dupNum, missingNum};
+    }
+
+    // 646. Maximum Length of Pair Chain
+    int findLongestChain646(vector<vector<int>>& pairs) {
+        sort(pairs.begin(), pairs.end(),
+            [](const vector<int> & a, const vector<int> & b){
+                return a[1] < b[1];
+            }
+        );
+        stack<vector<int>> pairStk;
+        for (auto iter : pairs) {
+            if (pairStk.empty()) {
+                pairStk.push(iter);
+            }
+            if (iter[0] > pairStk.top()[1]) {
+                pairStk.push(iter);
+            }
+        }
+        return pairStk.size();
     }
 };
 

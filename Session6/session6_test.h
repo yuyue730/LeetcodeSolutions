@@ -294,6 +294,16 @@ public:
         cout << "Missing numbers are [" << result[0] << ", " << result[1] << "]\n\n";
     }
 
+    // 646. Maximum Length of Pair Chain Test
+    void findLongestChain646Test() {
+        cout << "646. Maximum Length of Pair Chain test starts.\n";
+        vector<vector<int>> pairs = {
+            {1,2}, {2, 3}, {3, 4}
+        };
+        cout << "Max # of chains = [" << implObj->findLongestChain646(pairs) 
+            << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

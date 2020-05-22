@@ -83,6 +83,27 @@ public:
         return (ct == 0);
     }
 
+    // 302. Smallest Rectangle Enclosing Black Pixels
+    int minArea302(vector<vector<char>>& image, int x, int y) {
+        if (image.size() == 0 && image[0].size() == 0) {
+            return 0;
+        }
+        int m = image.size(), n = image[0].size();
+        int up = minArea_binarySearch(image, true, 0, x, 0, n, true);
+        int down = minArea_binarySearch(image, true, x + 1, m, 0, n, false);
+        int left = minArea_binarySearch(image, false, 0, y, up, down, true);
+        int right = minArea_binarySearch(image, false, y + 1, n, up, down, false);
+        return (down - up) * (right - left);
+    }
+
+    int minArea_binarySearch(const vector<vector<char>>& image, bool isHeight, 
+        int i, int j, int low, int high, bool isLowToHigh) {
+        while (i < j) {
+            
+        }
+        return i;
+    }
+
     // 303. Range Sum Query - Immutable
     class NumArray303 {
     public:

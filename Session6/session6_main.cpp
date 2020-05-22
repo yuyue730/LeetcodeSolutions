@@ -32,6 +32,7 @@ int main() {
     testObj->findMaxAverage643Test();
     testObj->findMaxAverage644Test();
     testObj->findErrorNums645Test();
+    testObj->findLongestChain646Test();
 
     return 0;
 }
