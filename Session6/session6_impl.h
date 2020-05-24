@@ -20,6 +20,18 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
+// Definition for TrieNode
+struct TrieNode {
+    bool isEnd;
+    TrieNode * children[26];
+
+    TrieNode() : isEnd(false) {
+        for (auto & each : children) {
+            each = NULL;
+        }
+    }
+};
+
 class Session6Impl {
 public:
     Session6Impl() {
@@ -597,66 +609,164 @@ public:
     };
 
     // 642. Design Search Autocomplete System
+    // Solution 1: Using Hashmap and Priority Queue
+    // class AutocompleteSystem642 {
+    // public:
+    //     AutocompleteSystem642(vector<string>& sentences, vector<int>& times)
+    //       : d_data("") {
+    //         int size = sentences.size();
+    //         for (int i = 0; i < size; ++i) {
+    //             d_sentenceFreqMap[sentences[i]] += times[i];
+    //         }
+    //     }
+        
+    //     vector<string> input(char c) {
+    //         vector<string> result;
+    //         if (c == '#') {
+    //             d_sentenceFreqMap[d_data]++;
+    //             d_data = "";
+    //             return result;
+    //         }
+
+    //         d_data += c;
+    //         auto comparatorFunc = [](
+    //             const pair<string, int> & a, const pair<string, int> & b) {
+    //             return (a.second > b.second) 
+    //                 || (a.second == b.second && a.first < b.first);
+    //         };
+    //         priority_queue<pair<string, int>, 
+    //             vector<pair<string, int>>, decltype(comparatorFunc)> pq(comparatorFunc);
+            
+    //         for (auto iter : d_sentenceFreqMap) {
+    //             string sentence = iter.first;
+    //             if (d_data.size() > sentence.size()) {
+    //                 continue;
+    //             }
+    //             bool isMatch = true;
+    //             for (int i = 0; i < d_data.size(); ++i) {
+    //                 if (d_data[i] != sentence[i]) {
+    //                     isMatch = false;
+    //                     break;
+    //                 }
+    //             }
+
+    //             if (isMatch) {
+    //                 pq.push(iter);
+    //                 if (pq.size() > 3) {
+    //                     pq.pop();
+    //                 }
+    //             }
+    //         }
+
+    //         result.resize(pq.size());
+    //         for (int i = pq.size() - 1; i >= 0; --i) {
+    //             result[i] = pq.top().first;
+    //             pq.pop();
+    //         }
+
+    //         return result;
+    //     }
+
+    // private:
+    //     string d_data;
+    //     unordered_map<string, int> d_sentenceFreqMap;
+    // };
+
+    // Solution 2: Using Trie Tree
+    struct AutoCompTrieNode {
+        int freq;
+        AutoCompTrieNode * children[27];
+
+        AutoCompTrieNode() : freq(0) {
+            for (auto & each : children) {
+                each = NULL;
+            }
+        }
+    };
+
     class AutocompleteSystem642 {
     public:
-        AutocompleteSystem642(vector<string>& sentences, vector<int>& times)
-          : d_data("") {
+        AutocompleteSystem642(vector<string>& sentences, vector<int>& times) :
+          d_curSentence("") {
+            d_root = new AutoCompTrieNode();
             int size = sentences.size();
             for (int i = 0; i < size; ++i) {
-                d_sentenceFreqMap[sentences[i]] += times[i];
+                insertSentence(sentences[i], times[i]);
             }
         }
         
         vector<string> input(char c) {
             vector<string> result;
             if (c == '#') {
-                d_sentenceFreqMap[d_data]++;
-                d_data = "";
-                return result;
+                insertSentence(d_curSentence, 1);
+                d_curSentence = "";
             }
-
-            d_data += c;
-            auto comparatorFunc = [](
-                const pair<string, int> & a, const pair<string, int> & b) {
-                return (a.second > b.second) 
-                    || (a.second == b.second && a.first < b.first);
-            };
-            priority_queue<pair<string, int>, 
-                vector<pair<string, int>>, decltype(comparatorFunc)> pq(comparatorFunc);
-            
-            for (auto iter : d_sentenceFreqMap) {
-                string sentence = iter.first;
-                if (d_data.size() > sentence.size()) {
-                    continue;
-                }
-                bool isMatch = true;
-                for (int i = 0; i < d_data.size(); ++i) {
-                    if (d_data[i] != sentence[i]) {
-                        isMatch = false;
-                        break;
+            else {
+                d_curSentence += c;
+                vector<pair<string, int>> sentenceFreqArr;
+                lookUpPrefix(d_curSentence, sentenceFreqArr);
+                sort(sentenceFreqArr.begin(), sentenceFreqArr.end(), 
+                    [](pair<string, int> &a, pair<string, int> &b) {
+                        return a.second > b.second &&
+                            (a.second == b.second && a.first < b.first);;
                     }
+                );
+                int resultSize = min(3, (int)sentenceFreqArr.size());
+                for (int i = 0; i < resultSize; ++i) {
+                    result.push_back(sentenceFreqArr[i].first);
                 }
-
-                if (isMatch) {
-                    pq.push(iter);
-                    if (pq.size() > 3) {
-                        pq.pop();
-                    }
-                }
-            }
-
-            result.resize(pq.size());
-            for (int i = pq.size() - 1; i >= 0; --i) {
-                result[i] = pq.top().first;
-                pq.pop();
             }
 
             return result;
         }
 
     private:
-        string d_data;
-        unordered_map<string, int> d_sentenceFreqMap;
+        void insertSentence(string sentence, int time) {
+            AutoCompTrieNode * cur = d_root;
+            for (char &c : sentence) {
+                int nextIdx = (c != ' ' ? (int)(c - 'a') : 26);
+                if (!cur->children[nextIdx]) {
+                    cur->children[nextIdx] = new AutoCompTrieNode();
+                }
+                cur = cur->children[nextIdx];
+            }
+            cur->freq += time;
+        }
+
+        void lookUpPrefix(string prefix,
+            vector<pair<string, int>> & sentenceFreqArr) {
+            sentenceFreqArr.clear();
+            AutoCompTrieNode * cur = d_root;
+            for (char & c: prefix) {
+                int nextIdx = (c != ' ' ? (int)(c - 'a') : 26);
+                if (!cur->children[nextIdx]) {
+                    return;
+                }
+                cur = cur->children[nextIdx];
+            }
+            
+            lookUpPrefix_rec(prefix, cur, sentenceFreqArr);
+        }
+
+        void lookUpPrefix_rec(string str, AutoCompTrieNode * cur,
+            vector<pair<string, int>> & sentenceFreqArr) {
+            if (cur->freq > 0) {
+                sentenceFreqArr.push_back({str, cur->freq});
+            }
+            for (int i = 0; i < 26; ++i) {
+                if (cur->children[i]) {
+                    lookUpPrefix_rec(str + (char)('a' + i), cur->children[i], 
+                        sentenceFreqArr);
+                }
+            }
+
+            if (cur->children[26]) {
+                lookUpPrefix_rec(str + ' ', cur->children[26], sentenceFreqArr);
+            }
+        }
+
+        AutoCompTrieNode * d_root;
+        string d_curSentence;
     };
 
     // 643. Maximum Average Subarray I
@@ -756,6 +866,77 @@ public:
             }
         }
         return pairStk.size();
+    }
+
+    // 647. Palindromic Substrings
+    int countSubstrings647(string s) {
+        int strLen = s.size();
+        int result = 0;
+        for (int i = 0; i < strLen; ++i) {
+            countSubstrings647_rec(s, strLen, i, i, result);
+            countSubstrings647_rec(s, strLen, i, i + 1, result);
+        }
+        return result;
+    }
+
+    void countSubstrings647_rec(const string & s, const int strLen, int left, 
+        int right, int &result) {
+        while (left >= 0 && right < strLen && s[left] == s[right]) {
+            left--;
+            right++;
+            result++;
+        }
+    }
+
+    // 648. Replace Words
+    string replaceWords648(vector<string>& dict, string sentence) {
+        TrieNode * root = new TrieNode();
+        // Insert all words in the dict into Trie Tree
+        for (auto word: dict) {
+            insertWord(word, root);
+        }
+
+        string result;
+        istringstream iss(sentence);
+        string curWord;
+        while (iss >> curWord) {
+            if (!result.empty()) {
+                result += " ";
+            }
+            result += findRoot(curWord, root);
+        }
+
+        return result;
+    }
+
+    void insertWord(const string word, TrieNode * root) {
+        TrieNode * cur = root;
+        for (int i = 0; i < word.size(); ++i) {
+            int idx = (int)(word[i] - 'a');
+            if (!cur->children[idx]) {
+                cur->children[idx] = new TrieNode();
+            }
+            cur = cur->children[idx];
+        }
+        cur->isEnd = true;
+    }
+
+    string findRoot(const string word, TrieNode * root) {
+        string curRoot = "";
+        TrieNode * cur = root;
+        for (int i = 0; i < word.size(); ++i) {
+            int idx = word[i] - 'a';
+            if (!cur->children[idx]) {
+                break;
+            }
+            curRoot += (char)('a' + idx);
+            cur = cur->children[idx];
+            
+            if (cur->isEnd) {
+                return curRoot;
+            }
+        }
+        return word;
     }
 };
 

@@ -252,7 +252,7 @@ public:
     void AutocompleteSystem642Test() {
         cout << "642. Design Search Autocomplete System test starts.\n";
         vector<string> sentences = {
-            "i love you", "island","ironman", "i love leetcode"};
+            "i love you", "island", "ironman", "i love leetcode"};
         vector<int> times = {5, 3, 2, 2};
         Session6Impl::AutocompleteSystem642 as(sentences, times);
         vector<string> result1 = as.input('i');
@@ -301,6 +301,23 @@ public:
             {1,2}, {2, 3}, {3, 4}
         };
         cout << "Max # of chains = [" << implObj->findLongestChain646(pairs) 
+            << "]\n\n";
+    }
+
+    // 647. Palindromic Substrings Test
+    void countSubstrings647Test() {
+        cout << "647. Palindromic Substrings test starts.\n";
+        int result = implObj->countSubstrings647("aaa");
+        cout << "aaa will have [" << result << "] palidromic substrings.\n\n";
+    }
+
+    // 648. Replace Words Test
+    void replaceWords648Test() {
+        cout << "648. Replace Words test starts.\n";
+        vector<string> dict = {"cat", "bat", "rat"};
+        string sentence = "the cattle was rattled by the battery";
+        string result = implObj->replaceWords648(dict, sentence);
+        cout << "[the cattle was rattled by the battery] converts to [" << result
             << "]\n\n";
     }
 

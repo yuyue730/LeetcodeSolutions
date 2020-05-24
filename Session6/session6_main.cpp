@@ -33,6 +33,8 @@ int main() {
     testObj->findMaxAverage644Test();
     testObj->findErrorNums645Test();
     testObj->findLongestChain646Test();
+    testObj->countSubstrings647Test();
+    testObj->replaceWords648Test();
 
     return 0;
 }
