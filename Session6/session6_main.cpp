@@ -36,6 +36,7 @@ int main() {
     testObj->countSubstrings647Test();
     testObj->replaceWords648Test();
     testObj->predictPartyVictory649Test();
+    testObj->minSteps650Test();
 
     return 0;
 }

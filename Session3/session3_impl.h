@@ -99,7 +99,16 @@ public:
     int minArea_binarySearch(const vector<vector<char>>& image, bool isHeight, 
         int i, int j, int low, int high, bool isLowToHigh) {
         while (i < j) {
-            
+            int K = low, mid = (i + j) / 2;
+            while (K < high 
+                && (isHeight ? image[mid][K] : image[K][mid]) == '0') {
+                ++K;
+            }
+            if (K < high == isLowToHigh) {
+                j = mid;
+            } else {
+                i = mid + 1;
+            }
         }
         return i;
     }

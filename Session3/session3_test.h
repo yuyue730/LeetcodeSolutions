@@ -23,6 +23,17 @@ public:
         return;
     }
 
+    // 302. Smallest Rectangle Enclosing Black Pixels Test
+    void minArea302Test() {
+        cout << "302. Smallest Rectangle Enclosing Black Pixels test starts.\n";
+        vector<vector<char>> pixels = {
+            {'0', '0', '1', '0'},
+            {'0', '1', '1', '0'},
+            {'0', '1', '0', '0'}
+        };
+        cout << "Minimal area will be [" << implObj->minArea302(pixels, 0, 2) << "]\n\n";
+    }
+
     // 303. Range Sum Query - Immutable Test
     void NumArray303Test() {
         cout << "303. Range Sum Query - Immutable test starts.\n";

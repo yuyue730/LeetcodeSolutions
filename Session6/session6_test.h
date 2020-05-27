@@ -329,6 +329,12 @@ public:
             implObj->predictPartyVictory649(senate) << "]\n\n";
     }
 
+    // 650. 2 Keys Keyboard Test
+    void minSteps650Test() {
+        cout << "650. 2 Keys Keyboard test starts.\n";
+        cout << "12 A's will need [" << implObj->minSteps650(12) << "] steps.\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

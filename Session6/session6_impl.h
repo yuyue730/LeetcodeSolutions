@@ -963,6 +963,19 @@ public:
         }
         return senatePair[0] > 0 ? "Radiant" : "Dire";
     }
+
+    // 650. 2 Keys Keyboard
+    int minSteps650(int n) {
+        int d = 2, result = 0;
+        while (n > 1) {
+            while (n % d == 0) {
+                result += d;
+                n /= d;
+            }
+            d++;
+        }
+        return result;
+    }
 };
 
 #endif
