@@ -35,6 +35,7 @@ int main() {
     testObj->findLongestChain646Test();
     testObj->countSubstrings647Test();
     testObj->replaceWords648Test();
+    testObj->predictPartyVictory649Test();
 
     return 0;
 }

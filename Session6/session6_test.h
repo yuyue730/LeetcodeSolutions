@@ -321,6 +321,14 @@ public:
             << "]\n\n";
     }
 
+    // 649. Dota2 Senate Test
+    void predictPartyVictory649Test() {
+        cout << "649. Dota2 Senate test starts.\n";
+        string senate = "RDD";
+        cout << "RDD will generate victory side as [" << 
+            implObj->predictPartyVictory649(senate) << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

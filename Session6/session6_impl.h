@@ -938,6 +938,31 @@ public:
         }
         return word;
     }
+
+    // 649. Dota2 Senate
+    string predictPartyVictory649(string senate) {
+        // `R` - 0 and `D` - 1
+        queue<int> actionQ;
+        vector<int> banPair(2, 0), senatePair(2, 0);
+        for (char & c : senate) {
+            int role = (c == 'R' ? 0 : 1);
+            actionQ.push(role);
+            senatePair[role]++;
+        }
+
+        while (senatePair[0] > 0 && senatePair[1] > 0) {
+            int x = actionQ.front();  actionQ.pop();
+            if (banPair[x] > 0) {
+                banPair[x]--;
+                senatePair[x]--;
+            }
+            else {
+                banPair[x ^ 1]++;
+                actionQ.push(x);
+            }
+        }
+        return senatePair[0] > 0 ? "Radiant" : "Dire";
+    }
 };
 
 #endif

@@ -6,7 +6,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "g++ -std=c++11 -g session6_main.cpp -o session6.exe",
+            "command": "g++ -std=c++17 -g session6_main.cpp -o session6.exe",
             "group": {
                 "kind": "build",
                 "isDefault": true
