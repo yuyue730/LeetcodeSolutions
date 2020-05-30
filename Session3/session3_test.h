@@ -62,6 +62,20 @@ public:
         return;
     }
 
+    // 305. Number of Islands II Test
+    void numIslands2_305Test() {
+        cout << "305. Number of Islands II test starts.\n";
+        vector<vector<int>> positions = {
+            {0, 0}, {0, 1}, {1, 2}, {2, 1}
+        };
+        vector<int> result = implObj->numIslands2_305(3, 3, positions);
+        cout << "# of islands after each step is [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
     // 306. Additive Number Test
     void isAdditiveNumber306Test() {
         cout << "306. Additive Number test starts.\n";

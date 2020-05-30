@@ -168,6 +168,94 @@ public:
         vector<vector<int>> d_dp;
     };
 
+    // 305. Number of Islands II
+    class UnionFind {
+    public:
+        UnionFind(int x) : d_count(0) {
+            for (int i = 0; i < x; ++i) {
+                d_ranks.push_back(0);
+                d_parents.push_back(-1);
+            }
+        }
+
+        int isValid(int x) {
+            return d_parents[x] >= 0;
+        }
+
+        void setParent(int x) {
+            if (isValid(x)) {
+                return;
+            }
+            d_parents[x] = x;
+            d_count++;
+        }
+
+        int findRoot(int x) {
+            if (d_parents[x] != x) {
+                d_parents[x] = findRoot(d_parents[x]);
+            }
+            return d_parents[x];
+        }
+
+        void unionNodes(int x, int y) {
+            int rootX = findRoot(x);
+            int rootY = findRoot(y);
+            if (rootX != rootY) {
+                if (d_ranks[rootX] > d_ranks[rootY]) {
+                    d_parents[rootY] = rootX;
+                }
+                else if (d_ranks[rootX] < d_ranks[rootY]) {
+                    d_parents[rootX] = rootY;
+                }
+                else {
+                    d_ranks[rootY]++;
+                    d_parents[rootX] = rootY;
+                }
+                d_count--;
+            }
+        }
+
+        int getCount() {
+            return d_count;
+        }
+        
+    private:
+        vector<int> d_ranks;
+        vector<int> d_parents;
+        int d_count;
+    };
+
+    vector<int> numIslands2_305(int m, int n, vector<vector<int>>& positions) {
+        vector<int> result;
+        UnionFind uf(m * n);
+
+        for (auto & pos : positions) {
+            vector<int> overlap;
+            int posX = pos[0], posY = pos[1];
+            if (posX - 1 >= 0 && uf.isValid((posX - 1) * n + posY)) {
+                overlap.push_back((posX - 1) * n + posY);
+            }
+            if (posX + 1 < m && uf.isValid((posX + 1) * n + posY)) {
+                overlap.push_back((posX + 1) * n + posY);
+            }
+            if (posY - 1 >= 0 && uf.isValid(posX * n + posY - 1)) {
+                overlap.push_back(posX * n + posY - 1);
+            }
+            if (posY + 1 < n && uf.isValid(posX * n + posY + 1)) {
+                overlap.push_back(posX * n + posY + 1);
+            }
+
+            int idx = posX * n + posY;
+            uf.setParent(idx);
+            for (auto & i : overlap) {
+                uf.unionNodes(i, idx);
+            }
+            result.push_back(uf.getCount());
+        } 
+
+        return result;
+    }
+
     // 306. Additive Number
     bool isAdditiveNumber306(string num) {
         if (num.size() < 3) {

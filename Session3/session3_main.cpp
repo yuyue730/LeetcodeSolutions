@@ -12,6 +12,7 @@ int main() {
     testObj->minArea302Test();
     testObj->NumArray303Test();
     testObj->NumMatrix304Test();
+    testObj->numIslands2_305Test();
     testObj->isAdditiveNumber306Test();
     testObj->maxProfit309Test();
     testObj->multiply311Test();
