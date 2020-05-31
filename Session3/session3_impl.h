@@ -312,6 +312,58 @@ public:
         }
     }
 
+    // 307. Range Sum Query - Mutable
+    class NumArray307 {
+    public:
+        NumArray307(vector<int>& nums) {
+            d_size = nums.size();
+            segTreeArr.resize(d_size * 2);
+            for (int i = d_size, j = 0; i < segTreeArr.size(); ++i, ++j) {
+                segTreeArr[i] = nums[j];
+            }
+            for (int k = d_size - 1; k > 0; --k) {
+                segTreeArr[k] = segTreeArr[k * 2] + segTreeArr[k * 2 + 1];
+            }
+        }
+        
+        void update(int i, int val) {
+            int pos = i + d_size;
+            segTreeArr[pos] = val;
+            while (pos > 0) {
+                int left = pos, right = pos;
+                if (pos % 2 == 0) {
+                    right = pos + 1;
+                }
+                else {
+                    left = pos - 1;
+                }
+                segTreeArr[pos / 2] = segTreeArr[left] + segTreeArr[right];
+                pos /= 2;
+            }
+        }
+        
+        int sumRange(int i, int j) {
+            int left = i + d_size, right = j + d_size;
+            int sum = 0;
+            while (left <= right) {
+                if (left % 2 == 1) {
+                    sum += segTreeArr[left];
+                    left++;
+                }
+                if (right % 2 == 0) {
+                    sum += segTreeArr[right];
+                    right--;
+                }
+                left /= 2; right /= 2;
+            }
+            return sum;
+        }
+
+    private:
+        vector<int> segTreeArr;
+        int d_size;
+    };
+
     // 309. Best Time to Buy and Sell Stock with Cooldown
     int maxProfit309(vector<int>& prices) {
         if (prices.empty()) {

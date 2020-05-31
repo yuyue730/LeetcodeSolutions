@@ -14,6 +14,7 @@ int main() {
     testObj->NumMatrix304Test();
     testObj->numIslands2_305Test();
     testObj->isAdditiveNumber306Test();
+    testObj->NumArray307Test();
     testObj->maxProfit309Test();
     testObj->multiply311Test();
     testObj->maxCoins312Test();

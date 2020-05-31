@@ -83,6 +83,15 @@ public:
         return;
     }
 
+    // 307. Range Sum Query - Mutable Test
+    void NumArray307Test() {
+        cout << "307. Range Sum Query - Mutable test starts.\n";
+        vector<int> nums = {2, 4, 5, 7, 8, 9};
+        Session3Impl::NumArray307 numArr(nums);
+        numArr.update(2, 10);
+        cout << "Range [1, 4] will have sum = [" << numArr.sumRange(1, 4) << "]\n\n";
+    }
+
     // 309. Best Time to Buy and Sell Stock with Cooldown Test
     void maxProfit309Test() {
         cout << "309. Best Time to Buy and Sell Stock with Cooldown test starts.\n";
