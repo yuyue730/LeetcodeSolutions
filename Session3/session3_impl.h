@@ -479,6 +479,24 @@ public:
         return dp[1][size];
     }
 
+    // 313. Super Ugly Number
+    int nthSuperUglyNumber313(int n, vector<int>& primes) {
+        vector<int> dp(n, 1), idx(primes.size(), 0);
+        int primeSize = primes.size();
+        for (int i = 1; i < n; ++i) {
+            dp[i] = INT_MAX;
+            for (int j = 0; j < primeSize; ++j) {
+                dp[i] = min(dp[i], dp[idx[j]] * primes[j]);
+            }
+            for (int j = 0; j < primeSize; ++j) {
+                if (dp[i] == dp[idx[j]] * primes[j]) {
+                    ++idx[j];
+                }
+            }
+        }
+        return dp.back();
+    }
+
     // 314. Binary Tree Vertical Order Traversal
     vector<vector<int>> verticalOrder314(TreeNode* root) {
         vector<vector<int>> result;

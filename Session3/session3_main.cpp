@@ -19,6 +19,7 @@ int main() {
     testObj->findMinHeightTrees310Test();
     testObj->multiply311Test();
     testObj->maxCoins312Test();
+    testObj->nthSuperUglyNumber313Test();
     testObj->verticalOrder314Test();
     testObj->countSmaller315Test();
     testObj->removeDuplicateLetters316Test();

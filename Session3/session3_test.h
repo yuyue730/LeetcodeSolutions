@@ -146,6 +146,14 @@ public:
         return;
     }
 
+    // 313. Super Ugly Number Test
+    void nthSuperUglyNumber313Test() {
+        cout << "313. Super Ugly Number test starts.\n";
+        vector<int> primes = {2, 7, 13, 19};
+        cout << "The 12th Super ugly number = [" 
+            << implObj->nthSuperUglyNumber313(12, primes) << "]\n\n";
+    }
+
     // 314. Binary Tree Vertical Order Traversal Test
     void verticalOrder314Test() {
         cout << "314. Binary Tree Vertical Order Traversal test starts.\n";
