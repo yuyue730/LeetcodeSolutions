@@ -100,6 +100,18 @@ public:
         return;
     }
 
+    // 310. Minimum Height Trees Test
+    void findMinHeightTrees310Test() {
+        cout << "310. Minimum Height Trees test starts.\n";
+        vector<vector<int>> edges = {{0, 3}, {1, 3}, {2, 3}, {4, 3}, {5, 4}};
+        vector<int> result = implObj->findMinHeightTrees310(6, edges);
+        cout << "Root will be [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "].\n\n";
+    }
+
     // 311. Sparse Matrix Multiplication Test
     void multiply311Test() {
         cout << "311. Sparse Matrix Multiplication test starts.\n";

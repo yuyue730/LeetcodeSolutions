@@ -16,6 +16,7 @@ int main() {
     testObj->isAdditiveNumber306Test();
     testObj->NumArray307Test();
     testObj->maxProfit309Test();
+    testObj->findMinHeightTrees310Test();
     testObj->multiply311Test();
     testObj->maxCoins312Test();
     testObj->verticalOrder314Test();

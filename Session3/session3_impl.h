@@ -387,10 +387,49 @@ public:
         return max(buy.back(), max(sell.back(), rest.back()));
     }
 
+    // 310. Minimum Height Trees
+    vector<int> findMinHeightTrees310(int n, vector<vector<int>>& edges) {
+        if (n == 1) {
+            return {0};
+        }
+        unordered_map<int, unordered_set<int>> adjacentMatrix;
+        for (auto & e: edges) {
+            adjacentMatrix[e[0]].insert(e[1]);
+            adjacentMatrix[e[1]].insert(e[0]);
+        }
+        queue<int> visitQ;
+        for (auto & iter: adjacentMatrix) {
+            if (iter.second.size() == 1) {
+                visitQ.push(iter.first);
+            }
+        }
+
+        while (n > 2) {
+            int levelSize = visitQ.size();
+            n -= levelSize;
+            for (int i = 0; i < levelSize; ++i) {
+                int curNode = visitQ.front(); visitQ.pop();
+                for (auto & nextNode : adjacentMatrix[curNode]) {
+                    adjacentMatrix[nextNode].erase(curNode);
+                    if (adjacentMatrix[nextNode].size() == 1) {
+                        visitQ.push(nextNode);
+                        
+                    }
+                }
+            }
+        }
+
+        vector<int> result;
+        while (!visitQ.empty()) {
+            result.push_back(visitQ.front());
+            visitQ.pop();
+        }
+        return result;
+    }
+
     // 311. Sparse Matrix Multiplication
     vector<vector<int>> multiply311(
-        vector<vector<int>>& A, vector<vector<int>>& B
-    ) {
+        vector<vector<int>>& A, vector<vector<int>>& B) {
         vector<vector<int>> result(A.size(), vector<int>(B[0].size(), 0));
     
         if (A[0].size() != B.size()) {
