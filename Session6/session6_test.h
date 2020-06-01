@@ -359,6 +359,19 @@ public:
         cout << "]\n\n";
     }
 
+    // 653. Two Sum IV - Input is a BST Test
+    void findTarget653Test() {
+        cout << "653. Two Sum IV - Input is a BST test starts.\n";
+        TreeNode* root = new TreeNode(5);
+        TreeNode* cur = root;
+        cur->left = new TreeNode(3); cur->right = new TreeNode(6);
+        cur = cur->left;
+        cur->left = new TreeNode(2); cur->right = new TreeNode(4);
+        root->right->right = new TreeNode(7);
+        cout << "Find 9 = [" << (implObj->findTarget653(root, 9) ? "True" : "False")
+            << "].\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

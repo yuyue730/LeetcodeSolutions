@@ -39,6 +39,7 @@ int main() {
     testObj->minSteps650Test();
     testObj->maxA651Test();
     testObj->findDuplicateSubtrees652Test();
+    testObj->findTarget653Test();
 
     return 0;
 }

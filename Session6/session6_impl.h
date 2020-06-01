@@ -1020,6 +1020,28 @@ public:
         } 
         return curEncode;
     }
+
+    // 653. Two Sum IV - Input is a BST
+    bool findTarget653(TreeNode* root, int k) {
+        unordered_set<int> targetNumSet;
+        bool isFound = false;
+        constructInorderArr(root,isFound, targetNumSet, k);
+        return isFound;
+    }
+    
+    void constructInorderArr(TreeNode* cur, bool& isFound, unordered_set<int>& targetNumSet, const int k) {
+        if (cur == NULL || isFound) {
+            return;
+        }
+        
+        if (targetNumSet.count(cur->val) > 0) {
+            isFound = true;
+            return;
+        }
+        targetNumSet.insert(k - cur->val);
+        constructInorderArr(cur->left, isFound, targetNumSet, k);
+        constructInorderArr(cur->right, isFound, targetNumSet, k);
+    }
 };
 
 #endif
