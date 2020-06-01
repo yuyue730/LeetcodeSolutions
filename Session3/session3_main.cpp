@@ -15,6 +15,7 @@ int main() {
     testObj->numIslands2_305Test();
     testObj->isAdditiveNumber306Test();
     testObj->NumArray307Test();
+    testObj->NumMatrix308Test();
     testObj->maxProfit309Test();
     testObj->findMinHeightTrees310Test();
     testObj->multiply311Test();

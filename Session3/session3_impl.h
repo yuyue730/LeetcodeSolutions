@@ -364,6 +364,56 @@ public:
         int d_size;
     };
 
+    // 308. Range Sum Query 2D - Mutable
+    class NumMatrix308 {
+    public:
+        NumMatrix308(vector<vector<int>>& matrix) {
+            if (matrix.empty() || matrix[0].empty()) {
+                return;
+            }
+
+            // Initialize d_bitMat and d_valMat
+            const int m = matrix.size(), n = matrix[0].size();
+            d_bitMat.resize(m + 1, vector<int>(n + 1, 0));
+            d_valMat.resize(m + 1, vector<int>(n + 1, 0));
+            for (int i = 0; i < m; ++i) {
+                for (int j = 0; j < n; ++j) {
+                    update(i, j, matrix[i][j]);
+                }
+            }
+        }
+        
+        void update(int row, int col, int val) {
+            int diff = val - d_valMat[row + 1][col + 1];
+            for (int i = row + 1; i < d_bitMat.size(); i += (i & -i)) {
+                for (int j = col + 1; j < d_bitMat[i].size(); j += (j & -j)) {
+                    d_bitMat[i][j] += diff;
+                }
+            }
+            d_valMat[row + 1][col + 1] = val;
+        }
+        
+        int sumRegion(int row1, int col1, int row2, int col2) {
+            return getSum(row2, col2) - getSum(row1 - 1, col2) - getSum(row2, col1 - 1) 
+                + getSum(row1 - 1, col1 - 1);
+        }
+
+        int getSum(int row, int col) {
+            int result = 0;
+            for (int i = row + 1; i > 0; i -= (i & -i)) {
+                for (int j = col + 1; j > 0; j -= (j & -j)) {
+                    result += d_bitMat[i][j];
+                }
+            }
+            return result;
+        }
+    
+    private:
+        vector<vector<int>> d_bitMat;
+        vector<vector<int>> d_valMat;
+    };
+
+
     // 309. Best Time to Buy and Sell Stock with Cooldown
     int maxProfit309(vector<int>& prices) {
         if (prices.empty()) {

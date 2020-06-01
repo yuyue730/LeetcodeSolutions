@@ -92,6 +92,26 @@ public:
         cout << "Range [1, 4] will have sum = [" << numArr.sumRange(1, 4) << "]\n\n";
     }
 
+    // 308. Range Sum Query 2D - Mutable Test
+    void NumMatrix308Test() {
+        cout << "308. Range Sum Query 2D - Mutable test starts.\n";
+        vector<vector<int>> matrix = {
+            {3, 0, 1, 4, 2},
+            {5, 6, 3, 2, 1},
+            {1, 2, 0, 1, 5},
+            {4, 1, 0, 1, 7},
+            {1, 0, 3, 0, 5}
+        };
+        Session3Impl::NumMatrix308 numMat(matrix);
+        int sum1 = numMat.sumRegion(2, 1, 4, 3);
+        cout << "Before updating the sum of (2, 1, 4, 3) = [" 
+            << numMat.sumRegion(2, 1, 4, 3) << "]\n";
+        numMat.update(3, 2, 2);
+        int sum2 = numMat.sumRegion(2, 1, 4, 3);
+        cout << "After updating the sum of (2, 1, 4, 3) = [" 
+            << numMat.sumRegion(2, 1, 4, 3) << "]\n\n";
+    }
+
     // 309. Best Time to Buy and Sell Stock with Cooldown Test
     void maxProfit309Test() {
         cout << "309. Best Time to Buy and Sell Stock with Cooldown test starts.\n";
