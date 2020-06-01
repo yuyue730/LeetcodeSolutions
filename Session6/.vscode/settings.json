@@ -5,6 +5,7 @@
         "vector": "cpp",
         "utility": "cpp",
         "string": "cpp",
-        "iterator": "cpp"
+        "iterator": "cpp",
+        "unordered_set": "cpp"
     }
 }

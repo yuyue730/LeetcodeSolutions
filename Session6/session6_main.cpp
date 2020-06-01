@@ -37,6 +37,8 @@ int main() {
     testObj->replaceWords648Test();
     testObj->predictPartyVictory649Test();
     testObj->minSteps650Test();
+    testObj->maxA651Test();
+    testObj->findDuplicateSubtrees652Test();
 
     return 0;
 }

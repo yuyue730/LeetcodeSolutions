@@ -335,6 +335,30 @@ public:
         cout << "12 A's will need [" << implObj->minSteps650(12) << "] steps.\n\n";
     }
 
+    // 651. 4 Keys Keyboard Test
+    void maxA651Test() {
+        cout << "651. 4 Keys Keyboard test starts.\n";
+        cout << "5 will have maximal [" << implObj->maxA651(5) << "] A's.\n\n";
+    }
+
+    // 652. Find Duplicate Subtrees Test
+    void findDuplicateSubtrees652Test() {
+        cout << "652. Find Duplicate Subtrees test starts.\n";
+        TreeNode* root = new TreeNode(1);
+        TreeNode* cur = root;
+        cur->left = new TreeNode(2); cur->right = new TreeNode(3);
+        cur = cur->left; cur->left = new TreeNode(4);
+        cur = root->right;
+        cur->left = new TreeNode(2); cur->right = new TreeNode(4);
+        cur = cur->left; cur->left = new TreeNode(4);
+        vector<TreeNode*> result = implObj->findDuplicateSubtrees652(root);
+        cout << "Please exam the following results [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i]->val << ((i == result.size() - 1) ? "" :", ");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

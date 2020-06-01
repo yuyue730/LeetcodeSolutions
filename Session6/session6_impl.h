@@ -976,6 +976,50 @@ public:
         }
         return result;
     }
+
+    // 651. 4 Keys Keyboard
+    int maxA651(int N) {
+        if (N == 0) {
+            return 0;
+        }
+        vector<int> dp(N + 1, 0);
+        for (int i = 1; i < dp.size(); ++i) {
+            dp[i] = dp[i - 1] + 1;
+            for (int x = 0; x < i - 1; ++x) {
+                dp[i] = max(dp[i], dp[x] * (i - 1 - x));
+            }
+        }
+        return dp.back();
+    }
+
+    // 652. Find Duplicate Subtrees
+    vector<TreeNode*> findDuplicateSubtrees652(TreeNode* root) {
+        vector<TreeNode*> result;
+        unordered_map<string, int> subtreeEncodeFreqMap;
+        findDuplicateSubtrees652_rec(root, result, subtreeEncodeFreqMap);
+        return result;
+    }
+
+    string findDuplicateSubtrees652_rec(TreeNode* cur, vector<TreeNode*>& result,
+        unordered_map<string, int>& subtreeEncodeFreqMap) {
+        if (cur == NULL) {
+            return "#";
+        }
+
+        string curEncode = to_string(cur->val) + ","
+            + findDuplicateSubtrees652_rec(cur->left, result, subtreeEncodeFreqMap)
+            + "," + findDuplicateSubtrees652_rec(cur->right, result, subtreeEncodeFreqMap);
+        if (subtreeEncodeFreqMap[curEncode] == 0) {
+            subtreeEncodeFreqMap[curEncode] = 1;
+        }
+        else {
+            if (subtreeEncodeFreqMap[curEncode] == 1) {
+                result.push_back(cur);
+            }
+            subtreeEncodeFreqMap[curEncode]++;
+        } 
+        return curEncode;
+    }
 };
 
 #endif
