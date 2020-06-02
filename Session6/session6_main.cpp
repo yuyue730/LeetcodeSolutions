@@ -40,6 +40,7 @@ int main() {
     testObj->maxA651Test();
     testObj->findDuplicateSubtrees652Test();
     testObj->findTarget653Test();
+    testObj->constructMaximumBinaryTree654Test();
 
     return 0;
 }

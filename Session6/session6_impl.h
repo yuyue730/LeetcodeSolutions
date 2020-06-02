@@ -1042,6 +1042,30 @@ public:
         constructInorderArr(cur->left, isFound, targetNumSet, k);
         constructInorderArr(cur->right, isFound, targetNumSet, k);
     }
+
+    // 654. Maximum Binary Tree
+    TreeNode* constructMaximumBinaryTree654(vector<int>& nums) {
+        return constructMBT_rec(nums, 0, nums.size() - 1);
+    }
+    
+    TreeNode* constructMBT_rec(vector<int>& nums, int left, int right) {
+        if (left > right) {
+            return NULL;
+        }
+        
+        int maxIdx = -1, maxVal = INT_MIN;
+        for (int i = left; i <= right; ++i) {
+            if (nums[i] > maxVal) {
+                maxIdx = i;
+                maxVal = nums[i];
+            }
+        }
+        
+        TreeNode* cur = new TreeNode(maxVal);
+        cur->left = constructMBT_rec(nums, left, maxIdx - 1);
+        cur->right = constructMBT_rec(nums, maxIdx + 1, right);
+        return cur;
+    }
 };
 
 #endif

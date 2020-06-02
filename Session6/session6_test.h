@@ -372,6 +372,14 @@ public:
             << "].\n\n";
     }
 
+    // 654. Maximum Binary Tree Test
+    void constructMaximumBinaryTree654Test() {
+        cout << "654. Maximum Binary Tree test starts.\n";
+        vector<int> nums = {3, 2, 1, 6, 0, 5};
+        TreeNode* result = implObj->constructMaximumBinaryTree654(nums);
+        cout << "Please exma the result tree [" << result->val << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };
