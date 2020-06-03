@@ -729,6 +729,24 @@ public:
          */
     }
 
+    // 320. Generalized Abbreviation
+    vector<string> generateAbbreviations320(string word) {
+        vector<string> result{word};
+        generateAbbreviations320_rec(result, word, 0);
+        return result;
+    }
+
+    void generateAbbreviations320_rec(vector<string>& result, string word,
+        int curPos) {
+        for (int i = curPos; i < word.size(); ++i) {
+            for (int j = 1; i + j <= word.size(); ++j) {
+                string curResult = word.substr(0, i) + to_string(j) + word.substr(i + j);
+                result.push_back(curResult);
+                generateAbbreviations320_rec(result, curResult, i + 1 + to_string(j).size());
+            }
+        }
+    }
+
     // 321. Create Maximum Number
     vector<int> maxNumber321(vector<int>& nums1, vector<int>& nums2, int k) {
         int n1 = nums1.size(), n2 = nums2.size();

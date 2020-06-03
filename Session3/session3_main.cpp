@@ -27,6 +27,7 @@ int main() {
     testObj->shortestDistance317Test();
     testObj->maxProduct318Test();
     testObj->bulbSwitch319Test();
+    testObj->generateAbbreviations320Test();
     testObj->maxNumber321Test();
     testObj->coinChange322Test();
     testObj->longestIncreasingPath329Test();

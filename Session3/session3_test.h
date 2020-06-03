@@ -246,6 +246,17 @@ public:
         return;
     }
 
+    // 320. Generalized Abbreviation Test
+    void generateAbbreviations320Test() {
+        cout << "320. Generalized Abbreviation test starts.\n";
+        vector<string> result = implObj->generateAbbreviations320("word");
+        cout << "'word' will generate [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "].\n\n";
+    }
+
     // 321. Create Maximum Number Test
     void maxNumber321Test()
     {
