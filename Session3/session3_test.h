@@ -232,6 +232,13 @@ public:
         return;
     }
 
+    // 318. Maximum Product of Word Lengths Test
+    void maxProduct318Test() {
+        cout << "318. Maximum Product of Word Lengths test starts.\n";
+        vector<string> words = {"abcw", "baz", "foo", "bar", "xtfn", "abcdef"};
+        cout << "Max Product = [" << implObj->maxProduct318(words) << "]\n\n";
+    }
+
     // 319. Bulb Switcher Test
     void bulbSwitch319Test() {
         cout << "319. Bulb Switcher test starts.\n";

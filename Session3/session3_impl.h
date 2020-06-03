@@ -682,6 +682,27 @@ public:
         return (result == INT_MAX) ? -1 : result;
     }
 
+    // 318. Maximum Product of Word Lengths
+    int maxProduct318(vector<string>& words) {
+        unordered_map<int, int> maskLenMap;
+        int result = 0;
+        for (auto & w: words) {
+            int curMask = 0;
+            for (int i = 0; i < w.size(); ++i) {
+                curMask |= (1 << static_cast<int>(w[i] - 'a'));
+            }
+            maskLenMap[curMask] = max(maskLenMap[curMask],
+                static_cast<int>(w.size()));
+            for (auto & iter : maskLenMap) {
+                if (!(iter.first & curMask)) {
+                    result = max(result, maskLenMap[curMask] * iter.second);
+                }
+            }
+        }
+
+        return result;
+    }
+
     // 319. Bulb Switcher
     int bulbSwitch319(int n) {
         int result = 0;
@@ -1920,8 +1941,7 @@ public:
     vector<double> calcEquation399(
         vector<vector<string>>& equations,
         vector<double>& values,
-        vector<vector<string>>& queries)
-    {
+        vector<vector<string>>& queries) {
         unordered_map<string, pair<string, double>> parents;
 
         assert(equations.size() == values.size());

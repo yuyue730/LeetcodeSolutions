@@ -25,6 +25,7 @@ int main() {
     testObj->countSmaller315Test();
     testObj->removeDuplicateLetters316Test();
     testObj->shortestDistance317Test();
+    testObj->maxProduct318Test();
     testObj->bulbSwitch319Test();
     testObj->maxNumber321Test();
     testObj->coinChange322Test();
