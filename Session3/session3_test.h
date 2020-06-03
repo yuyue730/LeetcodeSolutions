@@ -270,7 +270,6 @@ public:
             cout << res[i] << ((i == res.size() - 1) ? "" : ", ");
         }
         cout << "]\n\n";
-        return;
     }
 
     // 322. Coin Change Test
@@ -278,7 +277,15 @@ public:
         cout << "322. Coin Change test starts.\n";
         vector<int> coins = {1, 2, 5};
         cout << "# of coins = [" << implObj->coinChange322(coins, 11) << "]\n\n";
-        return;
+    }
+
+    // 323. Number of Connected Components in an Undirected Graph Test
+    void countComponents323Test() {
+        cout << "323. Number of Connected Components in an Undirected Graph test starts.\n";
+        int n = 5;
+        vector<vector<int>> edges = {{0, 1}, {1, 2}, {3, 4}};
+        cout << "# of connected components = ["
+            << implObj->countComponents323(n, edges) << "]\n\n";
     }
 
     // 329. Longest Increasing Path in a Matrix Test

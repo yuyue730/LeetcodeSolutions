@@ -30,6 +30,7 @@ int main() {
     testObj->generateAbbreviations320Test();
     testObj->maxNumber321Test();
     testObj->coinChange322Test();
+    testObj->countComponents323Test();
     testObj->longestIncreasingPath329Test();
     testObj->findItinerary332Test();
     testObj->largestBSTSubtree333Test();

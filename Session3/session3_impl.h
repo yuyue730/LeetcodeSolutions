@@ -803,6 +803,36 @@ public:
         return (dp.back() == amount + 1) ? -1 : dp.back();
     }
 
+    // 323. Number of Connected Components in an Undirected Graph
+    int countComponents323(int n, vector<vector<int>>& edges) {
+        unordered_map<int, vector<int>> adjacentMatrix;
+        for (auto & e: edges) {
+            adjacentMatrix[e[0]].push_back(e[1]);
+            adjacentMatrix[e[1]].push_back(e[0]);
+        }
+        vector<bool> visited(n, false);
+        int result = 0;
+        for (int i = 0; i < n; ++i) {
+            if (!visited[i]) {
+                countComponents323_rec(visited, i, adjacentMatrix);
+                ++result;
+            }
+        }
+        return result;
+    }
+
+    void countComponents323_rec(vector<bool>& visited, int curNode,
+        unordered_map<int, vector<int>>& adjacentMatrix) {
+        if (visited[curNode]) {
+            return;
+        }
+        visited[curNode] = true;
+        for (int i = 0; i < adjacentMatrix[curNode].size(); ++i) {
+            countComponents323_rec(visited, adjacentMatrix.at(curNode)[i],
+                adjacentMatrix);
+        }
+    }
+
     // 329. Longest Increasing Path in a Matrix
     int longestIncreasingPath329(vector<vector<int>>& matrix) {
         if (matrix.empty() || matrix[0].empty()) {
