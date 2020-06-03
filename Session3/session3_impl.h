@@ -833,6 +833,21 @@ public:
         }
     }
 
+    // 324. Wiggle Sort II
+    void wiggleSort324(vector<int>& nums) {
+        vector<int> tmp = nums;
+        sort(tmp.begin(), tmp.end());
+        int size = nums.size(), j = (size - 1) / 2, k = size - 1;
+        for (int i = 0; i < size; ++i) {
+            if (i % 2 == 0) {
+                nums[i] = tmp[j--];
+            }
+            else {
+                nums[i] = tmp[k--];
+            }
+        }
+    }
+
     // 329. Longest Increasing Path in a Matrix
     int longestIncreasingPath329(vector<vector<int>>& matrix) {
         if (matrix.empty() || matrix[0].empty()) {

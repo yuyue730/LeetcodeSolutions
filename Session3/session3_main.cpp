@@ -31,6 +31,7 @@ int main() {
     testObj->maxNumber321Test();
     testObj->coinChange322Test();
     testObj->countComponents323Test();
+    testObj->wiggleSort324Test();
     testObj->longestIncreasingPath329Test();
     testObj->findItinerary332Test();
     testObj->largestBSTSubtree333Test();

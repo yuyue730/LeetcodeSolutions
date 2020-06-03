@@ -288,6 +288,18 @@ public:
             << implObj->countComponents323(n, edges) << "]\n\n";
     }
 
+    // 324. Wiggle Sort II Test
+    void wiggleSort324Test() {
+        cout << "324. Wiggle Sort II test starts.\n";
+        vector<int> nums = {1, 5, 1, 1, 6, 4};
+        implObj->wiggleSort324(nums);
+        cout << "Wiggle sort result = [";
+        for (int i = 0; i < nums.size(); ++i) {
+            cout << nums[i] << ((i == nums.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
     // 329. Longest Increasing Path in a Matrix Test
     void longestIncreasingPath329Test() {
         cout << "329. Longest Increasing Path in a Matrix test starts.\n";
