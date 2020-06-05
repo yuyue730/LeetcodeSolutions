@@ -400,6 +400,20 @@ public:
             << (implObj->judgeCircle657("UD") ? "True" : "False") << "]\n\n";
     }
 
+    // 658. Find K Closest Elements Test
+    void findClosestElements658Test() {
+        cout << "658. Find K Closest Elements test starts.\n";
+        // vector<int> arr = {1, 2, 3, 4, 5};
+        // vector<int> result = implObj->findClosestElements658(arr, 4, 3);
+        vector<int> arr = {0,0,1,2,3,3,4,7,7,8};
+        vector<int> result = implObj->findClosestElements658(arr, 3, 5);
+        cout << "K cloest elements are [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" :", ");
+        }
+        cout << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

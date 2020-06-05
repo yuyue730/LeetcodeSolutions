@@ -1121,6 +1121,49 @@ public:
         
         return position[0] == 0 && position[1] == 0;
     }
+
+    // 658. Find K Closest Elements
+    vector<int> findClosestElements658(vector<int>& arr, int k, int x) {
+        vector<int> result;
+        const int size = arr.size();
+        if (x <= arr[0]) {
+            for (int i = 0; i < k; ++i) {
+                result.push_back(arr[i]);
+            }
+        }
+        else if (x >= arr.back()) {
+            for (int i = size - k; i < size; ++i) {
+                result.push_back(arr[i]);
+            }
+        }
+        else {
+            int left = 0, right = size - 1;
+            while (left < right) {
+                int mid = (left + right) / 2;
+                if (arr[mid] <= x) {
+                    left = mid + 1;
+                }
+                else {
+                    right = mid;
+                }
+            }
+            int low = right - 1, high = right;
+            while (result.size() < k) {
+                if (low < 0 || (abs(arr[low] - x) > abs(arr[high] - x))) {
+                    result.push_back(arr[high]);
+                    high++;
+                }
+                else if (high >= size || (abs(arr[low] - x) <= abs(arr[high] - x))) {
+                    result.insert(result.begin(), arr[low]);
+                    low--;
+                }
+                else {
+                    assert(false);
+                }
+            }
+        }
+        return result;
+    }
 };
 
 #endif

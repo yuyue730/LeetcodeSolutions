@@ -43,6 +43,7 @@ int main() {
     testObj->constructMaximumBinaryTree654Test();
     testObj->cheapestJump656Test();
     testObj->judgeCircle657Test();
+    testObj->findClosestElements658Test();
 
     return 0;
 }
