@@ -380,6 +380,26 @@ public:
         cout << "Please exma the result tree [" << result->val << "]\n\n";
     }
 
+    // 656. Coin Path Test
+    void cheapestJump656Test() {
+        cout << "656. Coin Path test starts.\n";
+        vector<int> A = {1, 2, 4, -1, 2};
+        int B = 2;
+        vector<int> result = implObj->cheapestJump656(A, B);
+        cout << "Cheapest jump path = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" :", ");
+        }
+        cout << "]\n\n";
+    }
+
+    // 657. Robot Return to Origin Test
+    void judgeCircle657Test() {
+        cout << "657. Robot Return to Origin test starts.\n";
+        cout << "UD will have result = [" 
+            << (implObj->judgeCircle657("UD") ? "True" : "False") << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

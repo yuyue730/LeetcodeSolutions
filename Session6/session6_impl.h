@@ -1066,6 +1066,61 @@ public:
         cur->right = constructMBT_rec(nums, maxIdx + 1, right);
         return cur;
     }
+
+    // 656. Coin Path
+    vector<int> cheapestJump656(vector<int>& A, int B) {
+        vector<int> next(A.size(), -1);
+        vector<long long> dp(A.size(), 0);
+        for (int i = A.size() - 2; i >= 0; --i) {
+            long long cost = INT_MAX;
+            for (int j = i + 1; j < A.size() & j <= i + B; ++j) {
+                if (A[j] >= 0) {
+                    // We only want to jump to A if it can move forward
+                    long long curCost = min(cost, dp[j] + A[i]);
+                    if (curCost < cost) {
+                        cost = curCost;
+                        next[i] = j;
+                    }
+                }
+            }
+            dp[i] = cost;
+        }
+
+        int i = 0;
+        vector<int> result;
+        for (; i < A.size() && next[i] > 0; i = next[i]) {
+            result.push_back(i + 1);
+        }
+
+        if (i == A.size() - 1 && A[i] >= 0) {
+            result.push_back(A.size());
+        }
+        else {
+            result.clear();
+        }
+
+        return result;
+    }
+
+    // 657. Robot Return to Origin
+    bool judgeCircle657(string moves) {
+        vector<int> position = {0, 0};
+        for (char c: moves) {
+            switch (c) {
+            case 'U':
+                position[1]++; break;
+            case 'D':
+                position[1]--; break;
+            case 'R':
+                position[0]++; break;
+            case 'L':
+                position[0]--; break;
+            default: break;
+            }
+        }
+        
+        return position[0] == 0 && position[1] == 0;
+    }
 };
 
 #endif

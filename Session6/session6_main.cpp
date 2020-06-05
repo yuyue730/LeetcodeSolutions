@@ -41,6 +41,8 @@ int main() {
     testObj->findDuplicateSubtrees652Test();
     testObj->findTarget653Test();
     testObj->constructMaximumBinaryTree654Test();
+    testObj->cheapestJump656Test();
+    testObj->judgeCircle657Test();
 
     return 0;
 }
