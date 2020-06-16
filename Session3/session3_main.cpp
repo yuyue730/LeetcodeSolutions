@@ -34,6 +34,7 @@ int main() {
     testObj->wiggleSort324Test();
     testObj->maxSubArrayLen325Test();
     testObj->isPowerOfThree326Test();
+    testObj->countRangeSum327Test();
     testObj->longestIncreasingPath329Test();
     testObj->findItinerary332Test();
     testObj->largestBSTSubtree333Test();

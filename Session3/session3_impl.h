@@ -889,6 +889,25 @@ public:
         return (n == 1);
     }
 
+    // 327. Count of Range Sum
+    int countRangeSum327(vector<int>& nums, int lower, int upper) {
+        int result = 0;
+        multiset<int> sumMS; 
+            // Multiset is a STL Data Structure that store elements following a 
+            // specific order. Elements can have equivalent values.
+        sumMS.insert(0);
+        int curSum = 0;
+        for (int i = 0; i < nums.size(); ++i) {
+            curSum += nums[i];
+            result += distance(sumMS.lower_bound(curSum - upper),
+                sumMS.upper_bound(curSum - lower));
+                // `distance(first, last)` API calculates the number of elements 
+                // between first and last.
+            sumMS.insert(curSum);
+        }
+        return result;
+    }
+
     // 329. Longest Increasing Path in a Matrix
     int longestIncreasingPath329(vector<vector<int>>& matrix) {
         if (matrix.empty() || matrix[0].empty()) {

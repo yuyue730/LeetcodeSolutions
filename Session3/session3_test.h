@@ -315,6 +315,15 @@ public:
             << (implObj->isPowerOfThree326(27) ? "True" : "False") << "]\n\n";
     }
 
+    // 327. Count of Range Sum Test
+    void countRangeSum327Test() {
+        cout << "327. Count of Range Sum test starts.\n";
+        vector<int> nums = {-2, 5, -1};
+        int lower = -2, upper = 2;
+        cout << "Range Sum count between lower = -2 and upper = 2 is [" 
+            << implObj->countRangeSum327(nums, lower, upper) << "]\n\n";
+    }
+
     // 329. Longest Increasing Path in a Matrix Test
     void longestIncreasingPath329Test() {
         cout << "329. Longest Increasing Path in a Matrix test starts.\n";
