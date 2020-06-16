@@ -876,6 +876,19 @@ public:
         return result;
     }
 
+    // 326. Power of Three
+    bool isPowerOfThree326(int n) {
+        while (n >= 3) {
+            if (n % 3 == 0) {
+                n /= 3;
+            }
+            else {
+                return false;
+            }
+        }
+        return (n == 1);
+    }
+
     // 329. Longest Increasing Path in a Matrix
     int longestIncreasingPath329(vector<vector<int>>& matrix) {
         if (matrix.empty() || matrix[0].empty()) {
@@ -904,8 +917,7 @@ public:
         vector<vector<int>> & dp,
         const vector<vector<int>> & matrix,
         const vector<pair<int, int>> & direc,
-        const int i, const int j
-    ) {
+        const int i, const int j) {
         if (dp[i][j]) {
             return dp[i][j];
         }
@@ -943,8 +955,7 @@ public:
     void findItinerary332_dfs(
         vector<string> &result,
         unordered_map<string, multiset<string>> &dest_map,
-        string cur
-    ) {
+        string cur) {
         while (dest_map[cur].size() > 0) {
             string next = *(dest_map[cur].begin());
             dest_map[cur].erase(dest_map[cur].begin());

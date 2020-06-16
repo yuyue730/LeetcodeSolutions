@@ -308,6 +308,13 @@ public:
         cout << "Max subarray size = [" << maxSize << "]\n\n";
     }
 
+    // 326. Power of Three Test
+    void isPowerOfThree326Test() {
+        cout << "326. Power of Three test starts.\n";
+        cout << "27 is the power of three = [" 
+            << (implObj->isPowerOfThree326(27) ? "True" : "False") << "]\n\n";
+    }
+
     // 329. Longest Increasing Path in a Matrix Test
     void longestIncreasingPath329Test() {
         cout << "329. Longest Increasing Path in a Matrix test starts.\n";
