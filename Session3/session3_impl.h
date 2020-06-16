@@ -848,6 +848,34 @@ public:
         }
     }
 
+    // 325. Maximum Size Subarray Sum Equals k
+    int maxSubArrayLen325(vector<int>& nums, int k) {
+        if (nums.size() == 0) {
+            return 0;
+        }
+        unordered_map<int, vector<int>> sumIdxMap;
+        vector<int> sums = nums;
+        sumIdxMap[sums[0]].push_back(0);
+        for (int i = 1; i < nums.size(); ++i) {
+            sums[i] += sums[i - 1];
+            sumIdxMap[sums[i]].push_back(i);
+        }
+
+        int result = 0;
+        for (auto iter: sumIdxMap) {
+            if (iter.first == k) {
+                result = max(result, iter.second.back() + 1);
+            }
+            else {
+                int target = iter.first - k;
+                if (sumIdxMap.find(target) != sumIdxMap.end()) {
+                    result = max(result, iter.second.back() - sumIdxMap[target][0]);
+                }
+            }
+        }
+        return result;
+    }
+
     // 329. Longest Increasing Path in a Matrix
     int longestIncreasingPath329(vector<vector<int>>& matrix) {
         if (matrix.empty() || matrix[0].empty()) {

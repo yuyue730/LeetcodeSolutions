@@ -300,6 +300,14 @@ public:
         cout << "]\n\n";
     }
 
+    // 325. Maximum Size Subarray Sum Equals k Test
+    void maxSubArrayLen325Test() {
+        cout << "325. Maximum Size Subarray Sum Equals k test starts.\n";
+        vector<int> nums = {1, -1, 5, -2, 3};
+        int maxSize = implObj->maxSubArrayLen325(nums, 3);
+        cout << "Max subarray size = [" << maxSize << "]\n\n";
+    }
+
     // 329. Longest Increasing Path in a Matrix Test
     void longestIncreasingPath329Test() {
         cout << "329. Longest Increasing Path in a Matrix test starts.\n";

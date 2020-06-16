@@ -1164,6 +1164,34 @@ public:
         }
         return result;
     }
+
+    // 659. Split Array into Consecutive Subsequences
+    bool isPossible659(vector<int>& nums) {
+        unordered_map<int, int> freqMap;
+        unordered_map<int, int> needMap;
+        for (int v : nums) {
+            freqMap[v]++;
+        }
+        
+        for (int v: nums) {
+            if (freqMap[v] == 0) {
+                continue;
+            }
+            if (needMap[v] > 0) {
+                needMap[v]--;  needMap[v + 1]++;
+            }
+            else if (freqMap[v + 1] > 0 && freqMap[v + 2] > 0) {
+                freqMap[v + 1]--;  freqMap[v + 2]--;
+                needMap[v + 3]++;
+            }
+            else {
+                return false;
+            }
+            freqMap[v]--;
+        }
+        return true;
+
+    }
 };
 
 #endif

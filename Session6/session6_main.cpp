@@ -44,6 +44,7 @@ int main() {
     testObj->cheapestJump656Test();
     testObj->judgeCircle657Test();
     testObj->findClosestElements658Test();
+    testObj->isPossible659Test();
 
     return 0;
 }

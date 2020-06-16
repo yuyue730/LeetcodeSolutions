@@ -414,6 +414,14 @@ public:
         cout << "]\n\n";
     }
 
+    // 659. Split Array into Consecutive Subsequences Test
+    void isPossible659Test() {
+        cout << "659. Split Array into Consecutive Subsequences test starts.\n";
+        vector<int> nums = {1, 2, 3, 3, 4, 4, 5, 5};
+        cout << "Can generate sequences = ["
+            << (implObj->isPossible659(nums) ? "True" : "False") << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };
