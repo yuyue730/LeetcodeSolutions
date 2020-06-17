@@ -436,6 +436,19 @@ public:
         cout << "Max width of a BT = [" << width << "]\n\n";
     }
 
+    // 663. Equal Tree Partition Test
+    void checkEqualTree663Test() {
+        cout << "663. Equal Tree Partition test starts.\n";
+        TreeNode* root = new TreeNode(5);
+        TreeNode* cur = root;
+        cur->left = new TreeNode(10); cur->right = new TreeNode(10);
+        cur = cur->right;
+        cur->left = new TreeNode(2); cur->right = new TreeNode(3);
+        bool result = implObj->checkEqualTree663(root);
+        cout << "Can split into Equal Sum Tree = [" << (result ? "True" : "False")
+            << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

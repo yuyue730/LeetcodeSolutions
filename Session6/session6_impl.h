@@ -1224,6 +1224,33 @@ public:
         
         return width;
     }
+
+    // 663. Equal Tree Partition
+    bool checkEqualTree663(TreeNode* root) {
+        vector<int> allSubSumArr;
+        int total = sumRecord(root, allSubSumArr);
+        if (total % 2 != 0) {
+            return false;
+        }
+        allSubSumArr.pop_back();
+            // We need to remove the last one since it represents total, 
+            // which will lead to a bug if total = 0
+        for (int val : allSubSumArr) {
+            if (val == total / 2) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    int sumRecord(TreeNode* cur, vector<int>& allSubSum) {
+        if (!cur) {
+            return 0;
+        }
+        int result = sumRecord(cur->left, allSubSum) + sumRecord(cur->right, allSubSum) + cur->val;
+        allSubSum.push_back(result);
+        return result;
+    }
 };
 
 #endif

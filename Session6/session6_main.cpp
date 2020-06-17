@@ -46,6 +46,7 @@ int main() {
     testObj->findClosestElements658Test();
     testObj->isPossible659Test();
     testObj->widthOfBinaryTree662Test();
+    testObj->checkEqualTree663Test();
 
     return 0;
 }
