@@ -36,6 +36,7 @@ int main() {
     testObj->isPowerOfThree326Test();
     testObj->countRangeSum327Test();
     testObj->longestIncreasingPath329Test();
+    testObj->minPatches330Test();
     testObj->findItinerary332Test();
     testObj->largestBSTSubtree333Test();
     testObj->increasingTriplet334Test();

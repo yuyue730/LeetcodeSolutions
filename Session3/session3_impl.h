@@ -959,6 +959,25 @@ public:
         return cur_max;
     }
 
+    // 330. Patching Array
+    int minPatches330(vector<int>& nums, int n) {
+        int patch = 0, curIdx = 0;
+        long long miss = 1;
+
+        while (miss <= n) {
+            if (curIdx < nums.size() && nums[curIdx] <= miss) {
+                miss += nums[curIdx];
+                curIdx++;
+            }
+            else {
+                patch++;
+                miss += miss;
+            }
+        }
+
+        return patch;
+    }
+
     // 332. Reconstruct Itinerary
     vector<string> findItinerary332(vector<vector<string>>& tickets) {
         vector<string> result;

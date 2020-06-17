@@ -336,6 +336,14 @@ public:
         return;
     }
 
+    // 330. Patching Array Test
+    void minPatches330Test() {
+        cout << "330. Patching Array test starts.\n";
+        vector<int> nums = {1, 2, 3, 8};
+        int result = implObj->minPatches330(nums, 80);
+        cout << "{1,2,3,8} and 80 will result in minPatch as [" << result << "]\n\n";
+    }
+
     // 332. Reconstruct Itinerary Test
     void findItinerary332Test() {
         cout << "332. Reconstruct Itinerary test starts.\n";
