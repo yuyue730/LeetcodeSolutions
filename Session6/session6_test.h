@@ -422,6 +422,20 @@ public:
             << (implObj->isPossible659(nums) ? "True" : "False") << "]\n\n";
     }
 
+    // 662. Maximum Width of Binary Tree Test
+    void widthOfBinaryTree662Test() {
+        cout << "662. Maximum Width of Binary Tree test starts.\n";
+        TreeNode * root = new TreeNode(1);
+        TreeNode * cur = root;
+        cur->left = new TreeNode(3); cur->right = new TreeNode(2);
+        cur = root->left;
+        cur->left = new TreeNode(5); cur->right = new TreeNode(3);
+        cur = root->right;
+        cur->right = new TreeNode(9);
+        int width = implObj->widthOfBinaryTree662(root);
+        cout << "Max width of a BT = [" << width << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

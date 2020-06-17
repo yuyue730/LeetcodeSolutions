@@ -1190,7 +1190,39 @@ public:
             freqMap[v]--;
         }
         return true;
+    }
 
+    // 662. Maximum Width of Binary Tree
+    int widthOfBinaryTree662(TreeNode* root) {
+        int width = 0;
+        queue<TreeNode *> nodeQ;
+        nodeQ.push(root);
+        vector<long long>* levelIdxVecPtr = new vector<long long>();
+        levelIdxVecPtr->push_back(0);
+        
+        while (!nodeQ.empty()) {
+            int curWidth = static_cast<int>(
+                levelIdxVecPtr->back() - levelIdxVecPtr->at(0) + 1);
+            width = max(width, curWidth);
+            
+            int curLevelSize = nodeQ.size();
+            vector<long long>* prevLevelIdxVecPtr = levelIdxVecPtr;
+            levelIdxVecPtr = new vector<long long>();
+            for (int i = 0; i < curLevelSize; ++i) {
+                TreeNode *curNode = nodeQ.front();  nodeQ.pop();
+                if (curNode->left) {
+                    levelIdxVecPtr->push_back((prevLevelIdxVecPtr->at(i) * 2) % INT_MAX);
+                    nodeQ.push(curNode->left);
+                }
+                if (curNode->right) {
+                    levelIdxVecPtr->push_back((prevLevelIdxVecPtr->at(i) * 2) % INT_MAX + 1);
+                    nodeQ.push(curNode->right);
+                }
+            }
+            prevLevelIdxVecPtr->clear();
+        }
+        
+        return width;
     }
 };
 

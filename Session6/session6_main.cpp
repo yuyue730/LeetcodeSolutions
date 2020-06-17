@@ -45,6 +45,7 @@ int main() {
     testObj->judgeCircle657Test();
     testObj->findClosestElements658Test();
     testObj->isPossible659Test();
+    testObj->widthOfBinaryTree662Test();
 
     return 0;
 }
