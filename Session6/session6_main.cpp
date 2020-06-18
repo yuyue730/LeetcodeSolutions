@@ -48,6 +48,7 @@ int main() {
     testObj->widthOfBinaryTree662Test();
     testObj->checkEqualTree663Test();
     testObj->strangePrinter664Test();
+    testObj->checkPossibility665Test();
 
     return 0;
 }

@@ -456,6 +456,14 @@ public:
             << "] steps to generate.\n\n";
     }
 
+    // 665. Non-decreasing Array Test
+    void checkPossibility665Test() {
+        cout << "665. Non-decreasing Array test starts.\n";
+        vector<int> nums = {2, 3, 3, 2, 4};
+        cout << "{2,3,3,2,4} can be modified to be mono-increasing = ["
+            << (implObj->checkPossibility665(nums) ? "True" : "False") << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };
