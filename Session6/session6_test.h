@@ -449,6 +449,13 @@ public:
             << "]\n\n";
     }
 
+    // 664. Strange Printer Test
+    void strangePrinter664Test() {
+        cout << "664. Strange Printer test starts.\n";
+        cout << "aba will need [" << implObj->strangePrinter664("aba") 
+            << "] steps to generate.\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

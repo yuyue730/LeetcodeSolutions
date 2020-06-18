@@ -1251,6 +1251,26 @@ public:
         allSubSum.push_back(result);
         return result;
     }
+
+    // 664. Strange Printer
+    int strangePrinter664(string s) {
+        if (s.empty()) {
+            return 0;
+        }
+        int size = s.size();
+        vector<vector<int>> dp(size, vector<int>(size, 0));
+        for (int i = size - 1; i >= 0; --i) {
+            for (int j = i; j < size; ++j) {
+                dp[i][j] = (i == j) ? 1 : 1 + dp[i + 1][j];
+                for (int k = i + 1; k <= j; ++k) {
+                    if (s[i] == s[k]) {
+                        dp[i][j] = min(dp[i][j], dp[i + 1][k - 1] + dp[k][j]);
+                    }
+                }
+            }
+        }
+        return dp[0][size - 1];
+    }
 };
 
 #endif
