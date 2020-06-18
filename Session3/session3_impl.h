@@ -978,6 +978,23 @@ public:
         return patch;
     }
 
+    // 331. Verify Preorder Serialization of a Binary Tree
+    bool isValidSerialization331(string preorder) {
+        int slot = 1;
+        istringstream iss(preorder);
+        string curNode;
+        while (getline(iss, curNode, ',')) {
+            slot--;
+            if (slot < 0) {
+                return false;
+            }
+            if (curNode != "#") {
+                slot += 2;
+            }
+        }
+        return slot == 0;
+    }
+
     // 332. Reconstruct Itinerary
     vector<string> findItinerary332(vector<vector<string>>& tickets) {
         vector<string> result;

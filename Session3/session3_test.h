@@ -344,6 +344,15 @@ public:
         cout << "{1,2,3,8} and 80 will result in minPatch as [" << result << "]\n\n";
     }
 
+    // 331. Verify Preorder Serialization of a Binary Tree Test
+    void isValidSerialization331Test() {
+        cout << "331. Verify Preorder Serialization of a Binary Tree test starts.\n";
+        string encode = "9,3,4,#,#,1,#,#,2,#,6,#,#";
+        cout << "Can decode into a Binary Tree = ["
+            << (implObj->isValidSerialization331(encode) ? "True" : "False") 
+            << "]\n\n";
+    }
+
     // 332. Reconstruct Itinerary Test
     void findItinerary332Test() {
         cout << "332. Reconstruct Itinerary test starts.\n";

@@ -37,6 +37,7 @@ int main() {
     testObj->countRangeSum327Test();
     testObj->longestIncreasingPath329Test();
     testObj->minPatches330Test();
+    testObj->isValidSerialization331Test();
     testObj->findItinerary332Test();
     testObj->largestBSTSubtree333Test();
     testObj->increasingTriplet334Test();
