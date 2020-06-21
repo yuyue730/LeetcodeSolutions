@@ -1135,6 +1135,40 @@ public:
         return true;
     }
 
+    // 337. House Robber III
+    int rob337(TreeNode* root) {
+        if (!root) {
+            return 0;
+        }
+        unordered_map<TreeNode *, int> nodeValMap;
+        return rob337_rec(root, nodeValMap);
+    }
+
+    int rob337_rec(TreeNode* cur, unordered_map<TreeNode *, int> &nodeValMap) {
+        if (!cur) {
+            return 0;
+        }
+        if (nodeValMap[cur]) {
+            return nodeValMap[cur];
+        }
+
+        int includeCurVal = cur->val;
+        if (cur->left) {
+            includeCurVal += rob337_rec(cur->left->left, nodeValMap)
+                + rob337_rec(cur->left->right, nodeValMap);
+        }
+        if (cur->right) {
+            includeCurVal += rob337_rec(cur->right->left, nodeValMap)
+                + rob337_rec(cur->right->right, nodeValMap);
+        }
+
+        int val = max(includeCurVal,
+            rob337_rec(cur->left, nodeValMap)
+                + rob337_rec(cur->right, nodeValMap));
+        nodeValMap[cur] = val;
+        return val;
+    }
+
     // 339. Nested List Weight Sum (Cannot build locally)
     /*
     int depthSum339(vector<NestedInteger>& nestedList) {

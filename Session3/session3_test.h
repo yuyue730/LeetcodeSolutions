@@ -412,6 +412,24 @@ public:
         return;
     }
 
+    // 337. House Robber III Test
+    void rob337Test() {
+        cout << "337. House Robber III test starts.\n";
+        TreeNode *root = new TreeNode(3);
+        TreeNode *cur = root;
+        cur->left = new TreeNode(4);
+        cur->right = new TreeNode(5);
+
+        cur = root->left;
+        cur->left = new TreeNode(1);
+        cur->right = new TreeNode(3);
+        cur = root->right;
+        cur->right = new TreeNode(1);
+
+        int result = implObj->rob337(root);
+        cout << "Max money can be robbed is [" << result << "]\n\n";
+    }
+
     // 340. Longest Substring with At Most K Distinct Characters Test
     void lengthOfLongestSubstringKDistinct340Test() {
         cout << "340. Longest Substring with At Most K Distinct Characters test starts.\n";
