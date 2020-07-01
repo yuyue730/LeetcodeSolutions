@@ -1169,6 +1169,24 @@ public:
         return val;
     }
 
+    // 338. Counting Bits
+    vector<int> countBits338(int num) {
+        vector<int> result(num + 1, 0);
+        for (int i = 0; i <= num; ++i) {
+            result[i] = hammingWeight(i);
+        }
+        return result;
+    }
+
+    int hammingWeight(int val) {
+        int result = 0;
+        while (val != 0) {
+            result++;
+            val &= (val - 1);
+        }
+        return result;
+    }
+
     // 339. Nested List Weight Sum (Cannot build locally)
     /*
     int depthSum339(vector<NestedInteger>& nestedList) {

@@ -43,6 +43,7 @@ int main() {
     testObj->increasingTriplet334Test();
     testObj->palindromePairs336Test();
     testObj->rob337Test();
+    testObj->countBits338Test();
     testObj->lengthOfLongestSubstringKDistinct340Test();
     testObj->reverseString344Test();
     testObj->MovingAverage346Test();

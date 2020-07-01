@@ -430,6 +430,17 @@ public:
         cout << "Max money can be robbed is [" << result << "]\n\n";
     }
 
+    // 338. Counting Bits Test
+    void countBits338Test() {
+        cout << "338. Counting Bits test starts.\n";
+        vector<int> result = implObj->countBits338(5);
+        cout << "5 will generate answer = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n\n";
+    }
+
     // 340. Longest Substring with At Most K Distinct Characters Test
     void lengthOfLongestSubstringKDistinct340Test() {
         cout << "340. Longest Substring with At Most K Distinct Characters test starts.\n";
