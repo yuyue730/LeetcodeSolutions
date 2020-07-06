@@ -1265,6 +1265,24 @@ public:
     };
     */
 
+    // 342. Power of Four
+    bool isPowerOfFour342(int num) {
+        if (num <= 0) {
+            return false;
+        }
+        
+        for (int i = 0; i < 31; ++i) {
+            if (i % 2 != 0) {
+                continue;
+            }
+            int mask = (1 << i);
+            if (num & mask) {
+                return (num - mask == 0);
+            }
+        }
+        return false;
+    }
+
     // 344. Reverse String
     void reverseString344(vector<char>& s) {
         int left = 0, right = s.size() - 1;

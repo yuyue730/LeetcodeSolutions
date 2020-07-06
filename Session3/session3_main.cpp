@@ -45,6 +45,7 @@ int main() {
     testObj->rob337Test();
     testObj->countBits338Test();
     testObj->lengthOfLongestSubstringKDistinct340Test();
+    testObj->isPowerOfFour342Test();
     testObj->reverseString344Test();
     testObj->MovingAverage346Test();
     testObj->topKFrequent347Test();

@@ -450,6 +450,13 @@ public:
         return;
     }
 
+    // 342. Power of Four Test
+    void isPowerOfFour342Test() {
+        cout << "342. Power of Four test starts.\n";
+        cout << "16 will result in ["
+            << (implObj->isPowerOfFour342(16) ? "True" : "False") << "]\n\n";
+    }
+
     // 344. Reverse String Test
     void reverseString344Test() {
         cout << "344. Reverse String test starts.\n";
