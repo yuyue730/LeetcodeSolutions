@@ -464,6 +464,13 @@ public:
             << (implObj->checkPossibility665(nums) ? "True" : "False") << "]\n\n";
     }
 
+    // 668. Kth Smallest Number in Multiplication Table Test
+    void findKthNumber668Test() {
+        cout << "668. Kth Smallest Number in Multiplication Table test starts.\n";
+        int result = implObj->findKthNumber668(3, 3, 5);
+        cout << "(3, 3, 5) will generate result = [" << result << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

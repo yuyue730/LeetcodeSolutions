@@ -49,6 +49,7 @@ int main() {
     testObj->checkEqualTree663Test();
     testObj->strangePrinter664Test();
     testObj->checkPossibility665Test();
+    testObj->findKthNumber668Test();
 
     return 0;
 }
