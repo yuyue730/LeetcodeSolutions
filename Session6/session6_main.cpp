@@ -50,6 +50,7 @@ int main() {
     testObj->strangePrinter664Test();
     testObj->checkPossibility665Test();
     testObj->findKthNumber668Test();
+    testObj->trimBST669Test();
 
     return 0;
 }

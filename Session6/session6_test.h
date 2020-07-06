@@ -471,6 +471,21 @@ public:
         cout << "(3, 3, 5) will generate result = [" << result << "]\n\n";
     }
 
+    // 669. Trim a Binary Search Tree Test
+    void trimBST669Test() {
+        cout << "669. Trim a Binary Search Tree test starts.\n";
+        TreeNode* root = new TreeNode(3);
+        TreeNode* cur = root;
+        cur->left = new TreeNode(2); cur->right = new TreeNode(5);
+
+        cur = root->left; cur->left = new TreeNode(1);
+        cur = root->right;
+        cur->left = new TreeNode(4); cur->right = new TreeNode(6);
+
+        TreeNode* result = implObj->trimBST669(root, 2, 4);
+        cout << "Please example result node = [" << result->val << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

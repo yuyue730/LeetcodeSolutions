@@ -1314,6 +1314,23 @@ public:
         }
         return count >= k;
     }
+
+    // 669. Trim a Binary Search Tree
+    TreeNode* trimBST669(TreeNode* root, int L, int R) {
+        if (!root) {
+            return NULL;
+        }
+        if (root->val < L) {
+            return trimBST669(root->right, L, R);
+        }
+        if (root->val > R) {
+            return trimBST669(root->left, L, R);
+        }
+
+        root->left = trimBST669(root->left, L, R);
+        root->right = trimBST669(root->right, L, R);
+        return root;
+    }
 };
 
 #endif
