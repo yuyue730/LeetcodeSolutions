@@ -486,6 +486,13 @@ public:
         cout << "Please example result node = [" << result->val << "]\n\n";
     }
 
+    // 670. Maximum Swap Test
+    void maximumSwap670Test() {
+        cout << "670. Maximum Swap test starts.\n";
+        int result = implObj->maximumSwap670(2736);
+        cout << "2736 will be converted to [" << result << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

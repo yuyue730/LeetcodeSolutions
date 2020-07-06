@@ -1331,6 +1331,32 @@ public:
         root->right = trimBST669(root->right, L, R);
         return root;
     }
+
+    // 670. Maximum Swap
+    int maximumSwap670(int num) {
+        vector<int> lastDigitPos(10, -1);
+        string numStr = to_string(num);
+        for (int i = 0; i < numStr.size(); ++i) {
+            lastDigitPos[numStr[i] - '0'] = i;
+        }
+
+        for (int i = 0; i < numStr.size(); ++i) {
+            for (int d = 9; d > numStr[i] - '0'; --d) {
+                if (lastDigitPos[d] > i) {
+                    char tmp = numStr[i];
+                    numStr[i] = numStr[lastDigitPos[d]];
+                    numStr[lastDigitPos[d]] = tmp;
+                    int result = 0;
+                    for (int i = 0; i < numStr.size(); ++i) {
+                        result = result * 10 + (numStr[i] - '0');
+                    }
+                    return result;
+                }
+            }
+        }
+
+        return num;
+    }
 };
 
 #endif
