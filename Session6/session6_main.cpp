@@ -54,6 +54,7 @@ int main() {
     testObj->maximumSwap670Test();
     testObj->findNumberOfLIS673Test();
     testObj->findLengthOfLCIS674Test();
+    testObj->cutOffTree675Test();
 
     return 0;
 }

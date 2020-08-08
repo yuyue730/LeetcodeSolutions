@@ -507,6 +507,17 @@ public:
         cout << "Length of LCIS = [" << implObj->findLengthOfLCIS674(nums) << "]\n\n";
     }
 
+    // 675. Cut Off Trees for Golf Event Test
+    void cutOffTree675Test() {
+        cout << "675. Cut Off Trees for Golf Event test starts.\n";
+        vector<vector<int>> trees = {
+            {1, 2, 3},
+            {0, 0, 4},
+            {7, 6, 5} };
+        int result = implObj->cutOffTree675(trees);
+        cout << "Min step to cut off all trees = [" << result << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

@@ -1407,6 +1407,70 @@ public:
         }
         return result;
     }
+
+    // 675. Cut Off Trees for Golf Event
+    int cutOffTree675(vector<vector<int>>& forest) {
+        int m = forest.size(), n = forest[0].size();
+        vector<vector<int>> treeHeightsPos;
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (forest[i][j] > 1) {
+                    treeHeightsPos.push_back({forest[i][j], i, j});
+                }
+            }
+        }
+        sort(treeHeightsPos.begin(), treeHeightsPos.end());
+
+        int result = 0, row = 0, col = 0;
+        for (int i = 0; i < treeHeightsPos.size(); ++i) {
+            int cnt = cutOffTree675_dfs(
+                forest, row, col, treeHeightsPos[i][1], treeHeightsPos[i][2]);
+            if (cnt == -1) {
+                return -1;
+            }
+            result += cnt;
+            row = treeHeightsPos[i][1];
+            col = treeHeightsPos[i][2];
+        }
+        return result;
+    }
+
+    int cutOffTree675_dfs(
+        vector<vector<int>>& forest, int X, int Y, int nextX, int nextY) {
+        if (X == nextX && Y == nextY) {
+            return 0;
+        }
+        int m = forest.size(), n = forest[0].size(), cnt = 0;
+        queue<pair<int, int>> bfs_q;
+        bfs_q.push({X, Y});
+        vector<vector<int>> visited(m, vector<int>(n, 0));
+        vector<pair<int, int>> directions = {
+            {1, 0}, {0, -1}, {-1, 0}, {0, 1}
+        };
+        while (!bfs_q.empty()) {
+            ++cnt;
+            int qSize = bfs_q.size();
+            for (int i = 0; i < qSize; ++i) {
+                int curX = bfs_q.front().first, curY = bfs_q.front().second;
+                bfs_q.pop();
+                for (int i = 0; i < directions.size(); ++i) {
+                    int newX = curX + directions[i].first, newY = curY + directions[i].second;
+                    if (newX < 0 || newX >= m || newY < 0 || newY >= n) {
+                    continue;
+                    }
+                    if (visited[newX][newY] == 1 || forest[newX][newY] == 0) {
+                        continue;
+                    }
+                    if (newX == nextX && newY == nextY) {
+                        return cnt;
+                    }
+                    visited[newX][newY] = 1;
+                    bfs_q.push({newX, newY});
+                }
+            }
+        }
+        return -1;
+    }
 };
 
 #endif
