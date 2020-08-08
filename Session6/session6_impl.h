@@ -1389,6 +1389,24 @@ public:
         }
         return result;
     }
+
+    // 674. Longest Continuous Increasing Subsequence
+    int findLengthOfLCIS674(vector<int>& nums) {
+        if (nums.size() == 0) {
+            return 0;
+        }
+        int result = 1, curLength = 1;
+        for (int i = 1; i < nums.size(); ++i) {
+            if (nums[i] > nums[i - 1]) {
+                curLength++;
+                result = max(result, curLength);
+            }
+            else {
+                curLength = 1;
+            }
+        }
+        return result;
+    }
 };
 
 #endif
