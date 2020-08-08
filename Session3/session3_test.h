@@ -476,6 +476,13 @@ public:
         return;
     }
 
+    // 345. Reverse Vowels of a String Test
+    void reverseVowels345Test() {
+        cout << "345. Reverse Vowels of a String test starts.\n";
+        cout << "leetcode will be reversed to [" << implObj->reverseVowels345("leetcode")
+            << "]\n\n";
+    }
+
     // 346. Moving Average from Data Stream Test
     void MovingAverage346Test() {
         cout << "346. Moving Average from Data Stream test starts.\n";

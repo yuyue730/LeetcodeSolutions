@@ -1306,6 +1306,27 @@ public:
         }
     }
 
+    // 345. Reverse Vowels of a String
+    string reverseVowels345(string s) {
+        unordered_set<char> vowels = {
+            'a', 'e', 'i', 'o', 'u',
+            'A', 'E', 'I', 'O', 'U'};
+        int left = 0, right = s.size() - 1;
+        while (left < right) {
+            while (left < right && vowels.count(s[left]) == 0) {
+                left++;
+            }
+            while (left < right && vowels.count(s[right]) == 0) {
+                right--;
+            }
+            if (left < right) {
+                swap(s[left], s[right]);
+                left++; right--;
+            }
+        }
+        return s;
+    }
+
     // 346. Moving Average from Data Stream
     class MovingAverage346 {
     public:

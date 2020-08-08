@@ -48,6 +48,7 @@ int main() {
     testObj->isPowerOfFour342Test();
     testObj->integerBreak343Test();
     testObj->reverseString344Test();
+    testObj->reverseVowels345Test();
     testObj->MovingAverage346Test();
     testObj->topKFrequent347Test();
     testObj->TicTacToe348Test();
