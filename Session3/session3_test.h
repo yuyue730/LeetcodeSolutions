@@ -624,6 +624,16 @@ public:
         cout << "]\n\n";
     }
 
+    // 356. Line Reflection Test
+    void isReflected356Test() {
+        cout << "356. Line Reflection test starts.\n";
+        vector<vector<int>> points = {
+            {1, 1}, {-1, 1}
+        };
+        cout << "is reflected = [" << (implObj->isReflected356(points) ? "True" : "False") 
+            << "]\n\n";
+    }
+
     // 359. Logger Rate Limiter Test
     void Logger359Test() {
         cout << "359. Logger Rate Limiter test starts.\n";

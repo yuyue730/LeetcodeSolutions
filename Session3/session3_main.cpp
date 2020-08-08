@@ -59,6 +59,7 @@ int main() {
     testObj->SnakeGame353Test();
     testObj->maxEnvelopes354Test();
     testObj->Twitter355Test();
+    testObj->isReflected356Test();
     testObj->Logger359Test();
     testObj->HitCounter362Test();
     testObj->maxSumSubmatrix363Test();

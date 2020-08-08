@@ -1715,6 +1715,26 @@ public:
         int m_time;
     };
 
+    // 356. Line Reflection
+    bool isReflected356(vector<vector<int>>& points) {
+        int minX = INT_MAX, maxX = INT_MIN;
+        unordered_map<int, set<int>> m;
+        for (auto p: points) {
+            minX = min(minX, p[0]);
+            maxX = max(maxX, p[0]);
+            m[p[0]].insert(p[1]);
+        }
+
+        double y = 0.5 * (minX + maxX);
+        for (auto p: points) {
+            int t = y * 2 - p[0];
+            if (m.count(t) == 0 || m[t].count(p[1]) == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     // 359. Logger Rate Limiter
     class Logger359 {
     public:
