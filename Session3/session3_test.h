@@ -547,6 +547,12 @@ public:
         return;
     }
 
+    // 351. Android Unlock Patterns Test
+    void numberOfPatterns351Test() {
+        cout << "351. Android Unlock Patterns test starts.\n";
+        cout << "<1, 3> will result in [" << implObj->numberOfPatterns351(1, 3) << "]\n\n";
+    }
+
     // 352. Data Stream as Disjoint Intervals Test
     void SummaryRanges352Test() {
         cout << "352. Data Stream as Disjoint Intervals test starts.\n";

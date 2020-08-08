@@ -1493,6 +1493,45 @@ public:
         return result;
     }
 
+    // 351. Android Unlock Patterns
+    int numberOfPatterns351(int m, int n) {
+        vector<vector<int>> jumps(10, vector<int>(10, 0));
+        jumps[1][3] = jumps[3][1] = 2;
+        jumps[4][6] = jumps[6][4] = 5;
+        jumps[7][9] = jumps[9][7] = 8;
+        jumps[1][7] = jumps[7][1] = 4;
+        jumps[2][8] = jumps[8][2] = 5;
+        jumps[3][9] = jumps[9][3] = 6;
+        jumps[1][9] = jumps[9][1] = jumps[3][7] = jumps[7][3] = 5;
+
+        int result = 0;
+        vector<bool> visited(10, false);
+        result += numberOfPatterns_vec(m, n, 1, 1, jumps, visited, 0) * 4;
+        result += numberOfPatterns_vec(m, n, 2, 1, jumps, visited, 0) * 4;
+        result += numberOfPatterns_vec(m, n, 5, 1, jumps, visited, 0);
+        return result;
+    }
+
+    int numberOfPatterns_vec(int m, int n, int num, int len,
+        const vector<vector<int>> & jumps, vector<bool> & visited, int res) {
+        if (len >= m) {
+            ++res;
+        }
+        ++len;
+        if (len > n) {
+            return res;
+        }
+        visited[num] = true;
+        for (int next = 1; next <= 9; ++next) {
+            int jump = jumps[num][next];
+            if (!visited[next] && (jump == 0 || visited[jump])) {
+                res = numberOfPatterns_vec(m, n, next, len, jumps, visited, res);
+            }
+        }
+        visited[num] = false;
+        return res;
+    }
+
     // 352. Data Stream as Disjoint Intervals
     class SummaryRanges352 {
     public:

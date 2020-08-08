@@ -54,6 +54,7 @@ int main() {
     testObj->TicTacToe348Test();
     testObj->intersection349Test();
     testObj->intersect350Test();
+    testObj->numberOfPatterns351Test();
     testObj->SummaryRanges352Test();
     testObj->SnakeGame353Test();
     testObj->maxEnvelopes354Test();
