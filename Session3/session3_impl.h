@@ -1283,6 +1283,19 @@ public:
         return false;
     }
 
+    // 343. Integer Break
+    int integerBreak343(int n) {
+        if (n <= 3) {
+            return n - 1;
+        }
+        int result = 1;
+        while (n > 4) {
+            result *= 3;
+            n -= 3;
+        }
+        return result * n;
+    }
+
     // 344. Reverse String
     void reverseString344(vector<char>& s) {
         int left = 0, right = s.size() - 1;

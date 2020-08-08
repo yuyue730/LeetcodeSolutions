@@ -457,6 +457,12 @@ public:
             << (implObj->isPowerOfFour342(16) ? "True" : "False") << "]\n\n";
     }
 
+    // 343. Integer Break Test
+    void integerBreak343Test() {
+        cout << "343. Integer Break test starts.\n";
+        cout << "10 will have answer = [" << implObj->integerBreak343(10) << "]\n\n";
+    }
+
     // 344. Reverse String Test
     void reverseString344Test() {
         cout << "344. Reverse String test starts.\n";
