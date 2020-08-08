@@ -1357,6 +1357,38 @@ public:
 
         return num;
     }
+
+    // 673. Number of Longest Increasing Subsequence
+    int findNumberOfLIS673(vector<int>& nums) {
+        int size = nums.size();
+        vector<int> cnt(size, 1), len(size, 1);
+
+        for (int i = 1; i < size; ++i) {
+            for (int j = 0; j < i; ++j) {
+                if (nums[i] > nums[j]) {
+                    if (len[i] == len[j] + 1) {
+                        cnt[i] += cnt[j];
+                    }
+                    else if (len[i] < len[j] + 1) {
+                        len[i] = len[j] + 1;
+                        cnt[i] = cnt[j];
+                    }
+                }
+            }
+        }
+
+        int result = 0, maxLength = 1;
+        for (int i = 0; i < size; ++i) {
+            if (len[i] == maxLength) {
+                result += cnt[i];
+            }
+            else if (len[i] > maxLength) {
+                result = cnt[i];
+                maxLength = len[i];
+            }
+        }
+        return result;
+    }
 };
 
 #endif

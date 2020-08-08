@@ -493,6 +493,14 @@ public:
         cout << "2736 will be converted to [" << result << "]\n\n";
     }
 
+    // 673. Number of Longest Increasing Subsequence Test
+    void findNumberOfLIS673Test() {
+        cout << "673. Number of Longest Increasing Subsequence test starts.\n";
+        vector<int> nums = {2, 2, 2, 2, 2}/*{1, 3, 5, 4, 7}*/;
+        cout << "Num of longest increasing subsequence = ["
+            << implObj->findNumberOfLIS673(nums) << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

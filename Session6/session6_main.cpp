@@ -52,6 +52,7 @@ int main() {
     testObj->findKthNumber668Test();
     testObj->trimBST669Test();
     testObj->maximumSwap670Test();
+    testObj->findNumberOfLIS673Test();
 
     return 0;
 }
