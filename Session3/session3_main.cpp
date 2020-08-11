@@ -60,6 +60,7 @@ int main() {
     testObj->maxEnvelopes354Test();
     testObj->Twitter355Test();
     testObj->isReflected356Test();
+    testObj->countNumbersWithUniqueDigits357Test();
     testObj->Logger359Test();
     testObj->HitCounter362Test();
     testObj->maxSumSubmatrix363Test();

@@ -1735,6 +1735,22 @@ public:
         return true;
     }
 
+    // 357. Count Numbers with Unique Digits
+    int countNumbersWithUniqueDigits357(int n) {
+        if (n == 0) {
+            return 1;
+        }
+        int result = 10;
+        for (int i = 2; i <= n; ++i) {
+            int curCnt = 1;
+            for (int j = 2; j <= i; ++j) {
+                curCnt *= (9 - j + 2);
+            }
+            result += curCnt * 9;
+        }
+        return result;
+    }
+
     // 359. Logger Rate Limiter
     class Logger359 {
     public:

@@ -634,6 +634,13 @@ public:
             << "]\n\n";
     }
 
+    // 357. Count Numbers with Unique Digits Test
+    void countNumbersWithUniqueDigits357Test() {
+        cout << "357. Count Numbers with Unique Digits test starts.\n";
+        cout << "2 will have [" << implObj->countNumbersWithUniqueDigits357(2)
+            << "] unique digits.\n\n";
+    }
+
     // 359. Logger Rate Limiter Test
     void Logger359Test() {
         cout << "359. Logger Rate Limiter test starts.\n";
