@@ -55,6 +55,7 @@ int main() {
     testObj->findNumberOfLIS673Test();
     testObj->findLengthOfLCIS674Test();
     testObj->cutOffTree675Test();
+    testObj->MagicDictionary676Test();
 
     return 0;
 }

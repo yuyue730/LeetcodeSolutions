@@ -518,6 +518,18 @@ public:
         cout << "Min step to cut off all trees = [" << result << "]\n\n";
     }
 
+    // 676. Implement Magic Dictionary Test
+    void MagicDictionary676Test() {
+        cout << "676. Implement Magic Dictionary test starts.\n";
+        Session6Impl::MagicDictionary676 obj;
+        obj.buildDict({"hello", "leetcode"});
+        cout << "Search hello = [" << (obj.search("hello") ? "True" : "False") << "]\n";
+        cout << "Search hhllo = [" << (obj.search("hhllo") ? "True" : "False") << "]\n";
+        cout << "Search hell = [" << (obj.search("hell") ? "True" : "False") << "]\n";
+        cout << "Search leetcoded = [" << (obj.search("leetcoded") ? "True" : "False")
+            << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

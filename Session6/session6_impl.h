@@ -1471,6 +1471,43 @@ public:
         }
         return -1;
     }
+
+    // 676. Implement Magic Dictionary
+    class MagicDictionary676 {
+    public:
+        /** Initialize your data structure here. */
+        MagicDictionary676() {}
+        
+        /** Build a dictionary through a list of words */
+        void buildDict(vector<string> dict) {
+            for (auto word: dict) {
+                d_lenWordsetMap[word.size()].insert(word);
+            }
+        }
+        
+        /** Returns if there is any word in the trie that equals to the given word after modifying exactly one character */
+        bool search(string word) {
+            for (auto dictWord: d_lenWordsetMap[word.size()]) {
+                int diffCnt = 0, i = 0;
+                for (; i < word.size(); ++i) {
+                    if (word[i] == dictWord[i]) {
+                        continue;
+                    }
+                    if (word[i] != dictWord[i] && diffCnt == 1) {
+                        break;
+                    }
+                    diffCnt++;
+                }
+                if (diffCnt == 1 && i == word.size()) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+    private:
+        unordered_map<int, unordered_set<string>> d_lenWordsetMap;
+    };
 };
 
 #endif

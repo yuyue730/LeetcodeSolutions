@@ -7,6 +7,7 @@
         "string": "cpp",
         "iterator": "cpp",
         "unordered_set": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "algorithm": "cpp"
     }
 }
