@@ -530,6 +530,16 @@ public:
             << "]\n\n";
     }
 
+    // 677. Map Sum Pairs Test
+    void MapSum677Test() {
+        cout << "677. Map Sum Pairs test starts.\n";
+        Session6Impl::MapSum677 obj;
+        obj.insert("apple", 3);
+        cout << "With [apple], sum[ap] = [" << obj.sum("ap") << "]\n";
+        obj.insert("app", 2);
+        cout << "With [app], sum[ap] = [" << obj.sum("ap") << "]\n\n";
+    }
+
 private:
     Session6Impl * implObj;
 };

@@ -7,6 +7,7 @@
 #include <sstream>
 #include <string>
 #include <unordered_map>
+#include <map>
 #include <math.h>
 #include <unordered_set>
 #include <stack>
@@ -1507,6 +1508,32 @@ public:
         
     private:
         unordered_map<int, unordered_set<string>> d_lenWordsetMap;
+    };
+
+    // 677. Map Sum Pairs
+    class MapSum677 {
+    public:
+        /** Initialize your data structure here. */
+        MapSum677() {}
+        
+        void insert(string key, int val) {
+            d_stringValMap[key] = val;
+        }
+        
+        int sum(string prefix) {
+            int result = 0;
+            for (auto iter = d_stringValMap.lower_bound(prefix);
+                iter != d_stringValMap.end(); iter++) {
+                if (iter->first.substr(0, prefix.size()) != prefix) {
+                    break;
+                }
+                result += iter->second;
+            }
+            return result;
+        }
+
+    private:
+        map<string, int> d_stringValMap;
     };
 };
 

@@ -56,6 +56,7 @@ int main() {
     testObj->findLengthOfLCIS674Test();
     testObj->cutOffTree675Test();
     testObj->MagicDictionary676Test();
+    testObj->MapSum677Test();
 
     return 0;
 }
