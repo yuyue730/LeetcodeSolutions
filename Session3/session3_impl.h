@@ -1084,6 +1084,29 @@ public:
         return false;
     }
 
+    // 335. Self Crossing
+    bool isSelfCrossing335(vector<int>& distance) {
+        if (distance.size() < 4)
+            return false;
+
+        for (int i = 0; i < distance.size(); ++i)
+        {
+            if (i >= 3 && distance[i] >= distance[i - 2]
+                && distance[i - 1] < distance[i - 3])
+                return true;
+            
+            if (i >= 4 && distance[i - 1] == distance[i - 3]
+                && distance[i - 4] + distance[i] >= distance[i - 2])
+                return true;
+
+            if (i >= 5 && distance[i - 3] > distance[i - 1]
+                && distance[i - 2] > distance[i - 4] 
+                && distance[i] >= distance[i - 2] + distance[i - 4]
+                && distance[i - 5] >= distance[i - 3] - distance[i - 1])
+                return true;
+        }
+    }
+
     // 336. Palindrome Pairs
     vector<vector<int>> palindromePairs336(vector<string>& words) {
         unordered_map<string, int> word_idx_map;
@@ -1777,6 +1800,20 @@ public:
     private:
         map<string ,int> msg_time_map;
     };
+
+    // 360. Sort Transformed Array
+    vector<int> sortTransformedArray360(vector<int>& nums, int a, int b, int c) {
+        priority_queue<int, vector<int>, greater<int>> pq;
+        for (const int x: nums) {
+            pq.push(a * x * x + b * x + c);
+        }
+        vector<int> result;
+        while (!pq.empty()) {
+            result.push_back(pq.top());
+            pq.pop();
+        }
+        return result;
+    }
 
     // 362. Design Hit Counter
     class HitCounter362 {

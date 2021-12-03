@@ -41,6 +41,7 @@ int main() {
     testObj->findItinerary332Test();
     testObj->largestBSTSubtree333Test();
     testObj->increasingTriplet334Test();
+    testObj->isSelfCrossing335();
     testObj->palindromePairs336Test();
     testObj->rob337Test();
     testObj->countBits338Test();
@@ -62,6 +63,7 @@ int main() {
     testObj->isReflected356Test();
     testObj->countNumbersWithUniqueDigits357Test();
     testObj->Logger359Test();
+    testObj->sortTransformedArray360Test();
     testObj->HitCounter362Test();
     testObj->maxSumSubmatrix363Test();
     testObj->findLeaves366Test();

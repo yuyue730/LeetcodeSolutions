@@ -387,15 +387,21 @@ public:
         cur->right = new TreeNode(7);
 
         cout << "Size of max BST = [" << implObj->largestBSTSubtree333(root) << "]\n\n";
-        return;
     }
 
     // 334. Increasing Triplet Subsequence Test
     void increasingTriplet334Test() {
-        cout << "334. Increasing Triplet Subsequence test.\n";
+        cout << "334. Increasing Triplet Subsequence test starts.\n";
         vector<int> nums = {3, 2, 5, 4, 8, 1};
         cout << "Is increasing triplet = [" << implObj->increasingTriplet334(nums) << "]\n\n";
-        return;
+    }
+
+    // 335. Self Crossing Test
+    void isSelfCrossing335() {
+        cout << "335. Self Crossing test starts.\n";
+        vector<int> distance = {1, 1, 2, 2, 1, 1};
+        cout << "Is self crossing for [1 ,1, 2, 2, 1, 1] = "
+            << (implObj->isSelfCrossing335(distance) ? "True" : "False") << "\n";
     }
 
     // 336. Palindrome Pairs Test
@@ -652,6 +658,18 @@ public:
         cout << "8, bar -> [" << logger.shouldPrintMessage(8, "bar") << "]\n";
         cout << "10, foo -> [" << logger.shouldPrintMessage(10, "foo") << "]\n";
         cout << "11, foo -> [" << logger.shouldPrintMessage(11, "foo") << "]\n\n";
+    }
+
+    // 360. Sort Transformed Array Test
+    void sortTransformedArray360Test() {
+        cout << "360. Sort Transformed Array test starts.\n";
+        vector<int> nums = {-4, -2, 2, 4};
+        vector<int> result = implObj->sortTransformedArray360(nums, 1, 3, 5);
+        cout << "Vector result = [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "]\n";
     }
 
     // 362. Design Hit Counter Test
