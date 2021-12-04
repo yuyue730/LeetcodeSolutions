@@ -669,7 +669,19 @@ public:
         for (int i = 0; i < result.size(); ++i) {
             cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
         }
-        cout << "]\n";
+        cout << "]\n\n";
+    }
+
+    // 361. Bomb Enemy Test
+    void maxKilledEnemies361Test() {
+        cout << "361. Bomb Enemy test starts.\n";
+        vector<vector<char>> grid = {
+            {'0', 'E', '0', '0'},
+            {'E', '0', 'W', 'E'},
+            {'0', 'E', '0', '0'}
+        };
+        cout << "Max killed enemies = [" << implObj->maxKilledEnemies361(grid)
+            << "]\n\n";
     }
 
     // 362. Design Hit Counter Test

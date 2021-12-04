@@ -64,6 +64,7 @@ int main() {
     testObj->countNumbersWithUniqueDigits357Test();
     testObj->Logger359Test();
     testObj->sortTransformedArray360Test();
+    testObj->maxKilledEnemies361Test();
     testObj->HitCounter362Test();
     testObj->maxSumSubmatrix363Test();
     testObj->findLeaves366Test();

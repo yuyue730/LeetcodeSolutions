@@ -1815,6 +1815,58 @@ public:
         return result;
     }
 
+    // 361. Bomb Enemy
+    int maxKilledEnemies361(vector<vector<char>>& grid) {
+        if (grid.empty() || grid[0].empty())
+            return 0;
+        const int rowSize = grid.size();
+        const int colSize = grid[0].size();
+        vector<vector<int>> leftToRightVec(rowSize, vector<int>(colSize, 0));
+        vector<vector<int>> rightToLeftVec = leftToRightVec;
+        vector<vector<int>> upToDownVec = leftToRightVec;
+        vector<vector<int>> downToUpVec = leftToRightVec;
+        
+        for (int i = 0; i < rowSize; ++i) {
+            for (int j = 0; j < colSize; ++j) {
+                int t = (j == 0 || grid[i][j] == 'W')
+                    ? 0 : leftToRightVec[i][j - 1];
+                leftToRightVec[i][j] = (grid[i][j] == 'E') ? (t + 1) : t;
+            }
+
+            for (int j = colSize - 1; j >= 0; --j) {
+                int t = (j == colSize - 1 || grid[i][j] == 'W')
+                    ? 0 : rightToLeftVec[i][j + 1];
+                rightToLeftVec[i][j] = grid[i][j] == 'E' ? (t + 1) : t;
+            }
+        }
+        
+        for (int j = 0; j < colSize; ++j) {
+            for (int i = 0; i < rowSize; ++i) {
+                int t = (i == 0 || grid[i][j] == 'W')
+                    ? 0 : upToDownVec[i - 1][j];
+                upToDownVec[i][j] = grid[i][j] == 'E' ? (t + 1) : t;
+            }
+
+            for (int i = rowSize - 1; i >= 0; --i) {
+                int t = (i == rowSize - 1 || grid[i][j] == 'W')
+                    ? 0 : downToUpVec[i + 1][j];
+                downToUpVec[i][j] = grid[i][j] == 'E' ? (t + 1) : t;
+            }
+        }
+
+        int result = 0;
+        for (int i = 0; i < rowSize; ++i) {
+            for (int j = 0; j < colSize; ++j) {
+                if (grid[i][j] != '0') continue;
+                result = max(result,
+                    leftToRightVec[i][j] + rightToLeftVec[i][j]
+                        + upToDownVec[i][j] + downToUpVec[i][j]);
+            }
+        }
+            
+        return result;
+    }
+
     // 362. Design Hit Counter
     class HitCounter362 {
     public:
