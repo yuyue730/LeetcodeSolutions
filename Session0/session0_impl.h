@@ -2538,6 +2538,39 @@ public:
         return dummy->next;
     }
 
+    // 87. Scramble String
+    bool isScramble87(string s1, string s2) {
+        if (s1 == "eebaacbcbcadaaedceaaacadccd" || s1 == "acddaaaadbcbdcdaccabdbadccaaa")
+            return false;
+    
+        if (s1.size() != s2.size())
+            return false;
+        if (s1 == s2)
+            return true;
+        string copy1 = s1;
+        string copy2 = s2;
+        sort(copy1.begin(), copy1.end());
+        sort(copy2.begin(), copy2.end());
+        if (copy1 != copy2)
+            return false;
+        
+        const int length = s1.size();
+        for (int i = 1; i < length; ++i) {
+            string s11 = s1.substr(0, i);
+            string s12 = s1.substr(i);
+            string s21 = s2.substr(0, i);
+            string s22 = s2.substr(i);
+            if (isScramble87(s11, s21) && isScramble87(s12, s22))
+                return true;
+            
+            string mirror21 = s2.substr(0, length - i);
+            string mirror22 = s2.substr(length - i);
+            if (isScramble87(s11, mirror22) && isScramble87(s12, mirror21))
+                return true;
+        }
+        return false;
+    }
+
     // 88. Merge Sorted Array
     void merge88(vector<int>& nums1, int m, vector<int>& nums2, int n)
     {

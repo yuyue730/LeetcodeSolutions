@@ -1135,6 +1135,15 @@ public:
         return;
     }
 
+    // 87. Scramble String Test
+    void isScramble87Test() {
+        cout << "87. Scramble String test starts.\n";
+        string s1 = "great", s2 = "rgeat";
+        cout << "great and rgeat are scramble = ["
+            << (implObj->isScramble87(s1, s2) ? "True" : "False")
+            << "]\n\n";
+    }
+
     // 88. Merge Sorted Array Test
     void merge88Test() {
         cout << "88. Merge Sorted Array test starts.\n";
