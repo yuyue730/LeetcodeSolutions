@@ -1760,9 +1760,8 @@ public:
 
     // 357. Count Numbers with Unique Digits
     int countNumbersWithUniqueDigits357(int n) {
-        if (n == 0) {
-            return 1;
-        }
+        if (n == 0)  return 1;
+
         int result = 10;
         for (int i = 2; i <= n; ++i) {
             int curCnt = 1;
@@ -1770,6 +1769,45 @@ public:
                 curCnt *= (9 - j + 2);
             }
             result += curCnt * 9;
+        }
+        return result;
+    }
+
+    // 358. Rearrange String k Distance Apart
+    string rearrangeString358(string s, int k) {
+        if (k == 0) return s;
+        int len = s.size();
+        if (k > len) return "";
+
+        string result;
+        unordered_map<char, int> charFreqMap;
+        for (auto& c: s) {
+            ++charFreqMap[c];
+        }
+
+        priority_queue<pair<int, char>> pq;
+        for (auto& iter: charFreqMap) {
+            pq.push({iter.second, iter.first});
+        }
+
+        while (!pq.empty())
+        {
+            vector<pair<int, char>> tempIterVec;
+            int count = min(len, k);
+            for (int i = 0; i < count; ++i) {
+                if (pq.empty()) return "";
+                auto temp = pq.top(); pq.pop();
+                result.push_back(temp.second);
+
+                --temp.first;
+                if (temp.first > 0)
+                    tempIterVec.push_back({temp.first, temp.second});
+                --len;
+            }
+
+            for (auto iter: tempIterVec) {
+                pq.push(iter);
+            }
         }
         return result;
     }

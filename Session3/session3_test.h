@@ -647,6 +647,14 @@ public:
             << "] unique digits.\n\n";
     }
 
+    // 358. Rearrange String k Distance Apart Test
+    void rearrangeString358() {
+        cout << "358. Rearrange String k Distance Apart test starts.\n";
+        string s = "aaadbbcc";
+        cout << "aaadbbcc and 2 will generate [" << implObj->rearrangeString358(s, 2)
+            << "].\n\n";
+    }
+
     // 359. Logger Rate Limiter Test
     void Logger359Test() {
         cout << "359. Logger Rate Limiter test starts.\n";

@@ -62,6 +62,7 @@ int main() {
     testObj->Twitter355Test();
     testObj->isReflected356Test();
     testObj->countNumbersWithUniqueDigits357Test();
+    testObj->rearrangeString358();
     testObj->Logger359Test();
     testObj->sortTransformedArray360Test();
     testObj->maxKilledEnemies361Test();
