@@ -70,6 +70,7 @@ int main() {
     testObj->maxSumSubmatrix363Test();
     testObj->canMeasureWater365Test();
     testObj->findLeaves366Test();
+    testObj->isPerfectSquare367Test();
     testObj->getSum371Test();
     testObj->kthSmallest378Test();
     testObj->PhoneDirectory379Test();

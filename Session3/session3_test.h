@@ -749,6 +749,15 @@ public:
         return;
     }
 
+    // 367. Valid Perfect Square Test
+    void isPerfectSquare367Test() {
+        cout << "367. Valid Perfect Square test starts.\n";
+        cout << "16 is perfect square = ["
+            << (implObj->isPerfectSquare367(16) ? "True" : "False") << "]\n";
+        cout << "14 is perfect square = ["
+            << (implObj->isPerfectSquare367(14) ? "True" : "False") << "]\n\n";
+    }
+
     // 371. Sum of Two Integers Test
     void getSum371Test() {
         cout << "371. Sum of Two Integers test starts.\n";
