@@ -717,6 +717,13 @@ public:
         return;
     }
 
+    // 365. Water and Jug Problem Test
+    void canMeasureWater365Test() {
+        cout << "365. Water and Jug Problem test starts.\n";
+        cout << "Use 3 and 5 to get 4 is ["
+            << (implObj->canMeasureWater365(3, 5, 4) ? "True" : "False") << "].\n\n";
+    }
+
     // 366. Find Leaves of Binary Tree Test
     void findLeaves366Test() {
         cout << "366. Find Leaves of Binary Tree test starts.\n";

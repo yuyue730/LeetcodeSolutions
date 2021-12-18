@@ -68,6 +68,7 @@ int main() {
     testObj->maxKilledEnemies361Test();
     testObj->HitCounter362Test();
     testObj->maxSumSubmatrix363Test();
+    testObj->canMeasureWater365Test();
     testObj->findLeaves366Test();
     testObj->getSum371Test();
     testObj->kthSmallest378Test();

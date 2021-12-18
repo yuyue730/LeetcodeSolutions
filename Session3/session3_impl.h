@@ -2011,6 +2011,18 @@ public:
         return result;
     }*/
 
+    // 365. Water and Jug Problem
+    bool canMeasureWater365(int jug1Capacity, int jug2Capacity, int targetCapacity) {
+        return targetCapacity == 0
+            ? true 
+            : ((jug1Capacity + jug2Capacity >= targetCapacity) 
+               && targetCapacity % gcd(jug1Capacity, jug2Capacity) == 0); 
+    }
+    
+    int gcd(int x, int y) {
+        return y == 0 ? x : gcd(y, x % y);
+    }
+
     // 366. Find Leaves of Binary Tree
     vector<vector<int>> findLeaves366(TreeNode* root) {
         vector<vector<int>> result;
