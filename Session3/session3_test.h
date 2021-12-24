@@ -758,11 +758,22 @@ public:
             << (implObj->isPerfectSquare367(14) ? "True" : "False") << "]\n\n";
     }
 
+    // 368. Largest Divisible Subset Test
+    void largestDivisibleSubset368Test() {
+        cout << "368. Largest Divisible Subset test starts.\n";
+        vector<int> nums = {2, 4, 7, 8};
+        vector<int> result = implObj->largestDivisibleSubset368(nums);
+        cout << "{2, 4, 7, 8} will generates result as [";
+        for (int i = 0; i < result.size(); ++i) {
+            cout << result[i] << ((i == result.size() - 1) ? "" : ", ");
+        }
+        cout << "].\n\n";
+    }
+
     // 371. Sum of Two Integers Test
     void getSum371Test() {
         cout << "371. Sum of Two Integers test starts.\n";
         cout << "1 + 2 = [" << implObj->getSum371(1, 2) << "]\n\n";
-        return;
     }
 
     // 378. Kth Smallest Element in a Sorted Matrix Test

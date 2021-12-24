@@ -2062,6 +2062,37 @@ public:
         return false;
     }
 
+    // 368. Largest Divisible Subset
+    vector<int> largestDivisibleSubset368(vector<int>& nums) {
+        vector<int> results;
+        if (nums.size() == 0) return results;
+        
+        sort(nums.begin(), nums.end());
+        const size_t size = nums.size();
+        
+        vector<vector<int>> allEDSes;
+        for (size_t i = 0; i < size; ++i) {
+            vector<int> curMaxEDS;
+            for (size_t j = 0; j < i; ++j) {
+                if (nums[i] % nums[j] == 0
+                    && allEDSes[j].size() > curMaxEDS.size()) {
+                    curMaxEDS = allEDSes[j];
+                }
+            }
+            
+            curMaxEDS.push_back(nums[i]);
+            allEDSes.push_back(curMaxEDS);
+        }
+
+        for (size_t i = 0; i < size; ++i) {
+            if (allEDSes[i].size() > results.size()) {
+                results = allEDSes[i];
+            }
+        }
+        
+        return results;
+    }
+
     // 371. Sum of Two Integers
     int getSum371(int a, int b) {
         if (b == 0) {
