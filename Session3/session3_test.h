@@ -770,6 +770,27 @@ public:
         cout << "].\n\n";
     }
 
+    // 369. Plus One Linked List Test
+    void plusOne369Test() {
+        cout << "369. Plus One Linked List test starts.\n";
+        ListNode* head = new ListNode(1);
+        ListNode* cur = head;
+        cur->next = new ListNode(3); cur = cur->next;
+        cur->next = new ListNode(9);
+
+        implObj->plusOne369(head);
+        cout << "Add one result for linked list is:\n";
+        cur = head;
+        while (cur) {
+            cout << cur->val;
+            if (cur->next) {
+                cout << "->";
+            }
+            cur = cur->next;
+        }
+        cout << "\n\n";
+    }
+
     // 371. Sum of Two Integers Test
     void getSum371Test() {
         cout << "371. Sum of Two Integers test starts.\n";

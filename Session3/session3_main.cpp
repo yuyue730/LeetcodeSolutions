@@ -72,6 +72,7 @@ int main() {
     testObj->findLeaves366Test();
     testObj->isPerfectSquare367Test();
     testObj->largestDivisibleSubset368Test();
+    testObj->plusOne369Test();
     testObj->getSum371Test();
     testObj->kthSmallest378Test();
     testObj->PhoneDirectory379Test();

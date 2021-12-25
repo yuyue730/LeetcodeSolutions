@@ -19,6 +19,14 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+
 class Session3Impl {
 public:
     Session3Impl() {
@@ -2091,6 +2099,47 @@ public:
         }
         
         return results;
+    }
+
+    // 369. Plus One Linked List
+    ListNode* plusOne369(ListNode* head) {
+        ListNode* newHead = reverseList(head);
+        
+        ListNode* cur = newHead;
+        int carry = 1;
+        ListNode* pre;
+        while (cur && carry == 1) {
+            pre = cur;
+            if (cur->val == 9) {
+                cur->val = 0;
+                cur = cur->next;
+            }
+            else {
+                cur->val++;
+                carry = 0;
+            }
+        }
+        
+        if (carry == 1) {
+            pre->next = new ListNode(1);
+            cur = pre->next;
+        }
+        ListNode* result = reverseList(newHead);
+        return result;
+    }
+    
+    ListNode* reverseList(ListNode* head) {
+        if (!head) return NULL;
+        
+        ListNode* pre = NULL;
+        ListNode* cur = head;
+        while (cur) {
+            ListNode* tmp = cur->next;
+            cur->next = pre;
+            pre = cur;
+            cur = tmp;
+        }
+        return pre;
     }
 
     // 371. Sum of Two Integers
