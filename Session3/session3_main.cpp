@@ -74,6 +74,7 @@ int main() {
     testObj->largestDivisibleSubset368Test();
     testObj->plusOne369Test();
     testObj->getSum371Test();
+    testObj->getMoneyAmount375Test();
     testObj->kthSmallest378Test();
     testObj->PhoneDirectory379Test();
     testObj->RandomizedSet380Test();

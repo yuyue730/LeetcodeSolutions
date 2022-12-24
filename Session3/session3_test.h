@@ -797,6 +797,12 @@ public:
         cout << "1 + 2 = [" << implObj->getSum371(1, 2) << "]\n\n";
     }
 
+    // 375. Guess Number Higher or Lower II Test
+    void getMoneyAmount375Test() {
+        cout << "375. Guess Number Higher or Lower II Test starts.\n";
+        cout << "n = 10 result = [" << implObj->getMoneyAmount375(10) << "]\n\n";
+    }
+
     // 378. Kth Smallest Element in a Sorted Matrix Test
     void kthSmallest378Test() {
         cout << "378. Kth Smallest Element in a Sorted Matrix test starts.\n";
