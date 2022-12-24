@@ -803,6 +803,13 @@ public:
         cout << "n = 10 result = [" << implObj->getMoneyAmount375(10) << "]\n\n";
     }
 
+    // 376. Wiggle Subsequence Test
+    void wiggleMaxLength376Test() {
+        cout << "376. Wiggle Subsequence Test starts.\n";
+        vector<int> nums = {1,7,4,9,2,5};;
+        cout << "Max length = [" << implObj->wiggleMaxLength376(nums) << "]\n\n";
+    }
+
     // 378. Kth Smallest Element in a Sorted Matrix Test
     void kthSmallest378Test() {
         cout << "378. Kth Smallest Element in a Sorted Matrix test starts.\n";
