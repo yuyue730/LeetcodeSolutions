@@ -2180,6 +2180,25 @@ public:
         return dp[start][end];
     }
 
+    // 376. Wiggle Subsequence
+    int wiggleMaxLength376(vector<int>& nums) {
+        const int size = nums.size();
+        vector<int> p(size, 1);
+        vector<int> q(size, 1);
+
+        for (int i = 0; i < size; ++i) {
+            for (int j = 0; j < i; ++j) {
+                if (nums[i] > nums[j]) {
+                    p[i] = max(p[i], q[j] + 1);   
+                } else {
+                    q[i] = max(q[i], p[j] + 1);
+                }
+            }
+        }
+
+        return max(p.back(), q.back());
+    }
+
     // 378. Kth Smallest Element in a Sorted Matrix
     int kthSmallest378(vector<vector<int>>& matrix, int k) {
         int left = matrix[0][0], right = matrix.back().back();
