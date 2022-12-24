@@ -2153,6 +2153,33 @@ public:
         return getSum371(curSum, carry);
     }
 
+    // 375. Guess Number Higher or Lower II
+    int getMoneyAmount375(int n) {
+        vector<vector<int>> dp(n + 1, vector<int>(n + 1, 0));
+        return getMoneyAmount375_rec(1, n, dp);
+    }
+
+    int getMoneyAmount375_rec(const int start, const int end, vector<vector<int>>& dp) {
+        if (start >= end) {
+            return 0;
+        }
+        if (dp[start][end] > 0) {
+            // This interval has already been calculated, directly return cached value
+            return dp[start][end];
+        }
+
+        int globalMin = INT_MAX;
+        for (int k = start; k <= end; ++k) {
+            int localMax = k + max(
+                getMoneyAmount375_rec(start, k - 1, dp), getMoneyAmount375_rec(k + 1, end, dp));
+            globalMin = min(globalMin, localMax);
+        }
+
+        // Store the calculated interval and return
+        dp[start][end] = globalMin;
+        return dp[start][end];
+    }
+
     // 378. Kth Smallest Element in a Sorted Matrix
     int kthSmallest378(vector<vector<int>>& matrix, int k) {
         int left = matrix[0][0], right = matrix.back().back();
