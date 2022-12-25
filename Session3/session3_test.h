@@ -810,6 +810,14 @@ public:
         cout << "Max length = [" << implObj->wiggleMaxLength376(nums) << "]\n\n";
     }
 
+    // 377. Combination Sum IV Test
+    void combinationSum4_377Test() {
+        cout << "377. Combination Sum IV Test starts.\n";
+        vector<int> nums = {1, 2, 3};
+        cout << "Target = 4, # of combinations = [" << implObj->combinationSum4_377(nums, 4)
+            << "]\n\n";
+    }
+
     // 378. Kth Smallest Element in a Sorted Matrix Test
     void kthSmallest378Test() {
         cout << "378. Kth Smallest Element in a Sorted Matrix test starts.\n";
