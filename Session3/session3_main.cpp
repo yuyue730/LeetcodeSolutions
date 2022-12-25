@@ -76,6 +76,7 @@ int main() {
     testObj->getSum371Test();
     testObj->getMoneyAmount375Test();
     testObj->wiggleMaxLength376Test();
+    testObj->combinationSum4_377Test();
     testObj->kthSmallest378Test();
     testObj->PhoneDirectory379Test();
     testObj->RandomizedSet380Test();
