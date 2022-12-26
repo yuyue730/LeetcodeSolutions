@@ -898,6 +898,15 @@ public:
         cout << "\n";
     }
 
+    // 383. Ransom Note Test
+    void canConstruct383Test() {
+        cout << "383. Ransom Note test starts.\n";
+        string ransomNote = "aa", magazine = "aab";
+        cout << "<aa, aab> result = ["
+            << (implObj->canConstruct383(ransomNote, magazine) ? "True" : "False")
+            << "]\n\n";
+    }
+
     // 384. Shuffle an Array Test
     void Solution384Test() {
         cout << "384. Shuffle an Array test starts.\n";
