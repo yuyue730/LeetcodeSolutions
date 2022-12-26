@@ -879,6 +879,25 @@ public:
         cout << "]\n\n";
     }
 
+    // 382. Linked List Random Node Test
+    void Solution382Test() {
+        cout << "382. Linked List Random Node test starts.\n";
+        ListNode* head = new ListNode(1);
+        ListNode* cur = head;
+        for (int i = 2; i < 5; ++i) {
+            cur->next = new ListNode(i);
+            cur = cur->next;
+        }
+
+        Session3Impl::Solution382 solution(head);
+        for (int i = 0; i < 15; ++i) {
+            cout << "Index = [" << i << "] get randome = ["
+                << solution.getRandom() << "]\n";
+        }
+
+        cout << "\n";
+    }
+
     // 384. Shuffle an Array Test
     void Solution384Test() {
         cout << "384. Shuffle an Array test starts.\n";
