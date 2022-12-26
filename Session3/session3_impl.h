@@ -2365,6 +2365,36 @@ public:
         unordered_map<int, priority_queue<int>> idxHeapMap;
     };
 
+    // 382. Linked List Random Node
+    class Solution382 {
+    public:
+        // Calculate the length of the array list, store its header node
+        Solution382(ListNode* head): head(head) {
+            length = 0;
+            ListNode* cur = head;
+            while (cur) {
+                cur = cur->next;
+                ++length;
+            }
+        }
+
+        // Get a randome number `t` between 0 and length, take `t` steps forward to
+        // that node
+        int getRandom() {
+            int t = rand() % length;
+            ListNode* cur = head;
+            while (t > 0) {
+                cur = cur->next;
+                --t;
+            }
+            return cur->val;
+        }
+    
+    private:
+        int length;
+        ListNode* head;
+    };
+
     // 384. Shuffle an Array
     class Solution384 {
     public:
