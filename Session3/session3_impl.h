@@ -2395,6 +2395,23 @@ public:
         ListNode* head;
     };
 
+    // 383. Ransom Note
+    bool canConstruct383(string ransomNote, string magazine) {
+        vector<int> isPresent(26, 0);
+        for (int i = 0; i < magazine.size(); ++i) {
+            ++isPresent[magazine[i] - 'a'];
+        }
+
+        for (int i = 0; i < ransomNote.size(); ++i) {
+            const char c = ransomNote[i];
+            --isPresent[c - 'a'];
+            if (isPresent[c - 'a'] < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     // 384. Shuffle an Array
     class Solution384 {
     public:
