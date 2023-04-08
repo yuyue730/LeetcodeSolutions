@@ -87,6 +87,10 @@ int main() {
     testObj->lexicalOrder386Test();
     testObj->firstUniqChar387Test();
     testObj->lengthLongestPath388Test();
+    testObj->findTheDifference389Test();
+    testObj->lastRemaining390Test();
+    testObj->isRectangleCover391Test();
+    testObj->isSubsequence392Test();
     testObj->validUtf8_393Test();
     testObj->decodeString394Test();
     testObj->longestSubstring395Test();

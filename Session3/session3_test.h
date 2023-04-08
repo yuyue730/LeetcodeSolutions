@@ -943,7 +943,6 @@ public:
         cout << "387. First Unique Character in a String test starts.\n";
         cout << "First unique index of leetcode is [" << implObj->firstUniqChar387("leetcode") 
             << "]\n\n";
-        return;
     }
 
     // 388. Longest Absolute File Path Test
@@ -951,7 +950,40 @@ public:
         cout << "388. Longest Absolute File Path test starts.\n";
         string s = "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext";
         cout << "Max len = [" << implObj->lengthLongestPath388(s) << "]\n\n";
-        return;
+    }
+
+    // 389. Find the Difference Test
+    void findTheDifference389Test() {
+        cout << "389. Find the Difference test starts.\n";
+        cout << "Diff = [" << implObj->findTheDifference389("abcd", "abcde") << "]\n\n";
+    }
+
+    // 390. Elimination Game Test
+    void lastRemaining390Test() {
+        cout << "390. Elimination Game test starts.\n";
+        cout << "Last remain for 10 = [" << implObj->lastRemaining390(10) << "]\n\n";
+    }
+
+    // 391. Elimination Game Test
+    void isRectangleCover391Test() {
+        cout << "391. Elimination Game test starts.\n";
+        vector<vector<int>> rectangles = {
+            {1, 1, 3, 3},
+            {3, 1, 4, 2},
+            {3, 2, 4, 4},
+            {1, 3, 2, 4},
+            {2, 3, 3, 4}};
+        cout << "Is rectangle covered = ["
+            << (implObj->isRectangleCover391(rectangles) ? "True" : "False")
+            << "]\n\n";
+    }
+
+    // 392. Is Subsequence Test
+    void isSubsequence392Test() {
+        cout << "392. Is Subsequence test starts.\n";
+        cout << "'abc' and 'ahbgdc' => ["
+            << (implObj->isSubsequence392("abc", "ahbgdc") ? "True" : "False")
+            << "]\n\n";
     }
 
     // 393. UTF-8 Validation Test
@@ -959,14 +991,12 @@ public:
         cout << "393. UTF-8 Validation test starts.\n";
         vector<int> data = {248, 130, 1};
         cout << "Is valid = [" << implObj->validUtf8_393(data) << "]\n\n";
-        return;
     }
 
     // 394. Decode String Test
     void decodeString394Test() {
         cout << "394. Decode String test starts.\n";
         cout << "Decode 3[a2[c]] = [" << implObj->decodeString394("3[a2[c]]") << "]\n\n";
-        return;
     }
 
     // 395. Longest Substring with At Least K Repeating Characters Test
@@ -983,11 +1013,11 @@ public:
     {
         cout << "399. Evaluate Division test starts.\n";
         vector<vector<string>> equations = {
-            {"a", "e"}, {"b", "e"}// {"a", "b"}, {"b", "c"}
+            {"a", "b"}, {"b", "c"}
         };
-        vector<double> values = {4.0, 3.0};//{2.0, 3.0};
+        vector<double> values = {2.0, 3.0};
         vector<vector<string>> queries = {
-            {"a", "b"}, {"e", "e"}, {"x", "x"}//{"a", "c"}, {"b", "a"}, {"a", "e"}, {"a", "a"}, {"x", "x"}
+            {"a", "c"}, {"b", "a"}, {"a", "e"}, {"a", "a"}, {"x", "x"}
         };
         vector<double> results = implObj->calcEquation399(equations, values, queries);
         cout << "Result = [";

@@ -2438,6 +2438,41 @@ public:
         vector<int> d_nums;
     };
 
+    /* 385. Mini Parser -- This problem can only be run online.
+    NestedInteger deserialize(string s) {
+        // 1. Corner case (1), if s is empty, return empty NestedInteger.
+        if (s.empty()) {
+            return NestedInteger();
+        }
+        // 2. s[0] is not '[', meaning this is a pure number.
+        if (s[0] != '[') {
+            return NestedInteger(stoi(s));
+        }
+        // 3. If this is not a pure number string, then it must have a size more than 2.
+        // "[1]" is the most basic string.
+        // If s is "[]", just return an empty `NestedInteger` object.
+        if (s.size() <= 2) {
+            return NestedInteger();
+        }
+
+        // Iterate through the string to generate nested object
+        int start = 1, count = 0;
+        NestedInteger result;
+        const int size = s.size();
+        for (int i = 1; i < size; ++i) {
+            if (count == 0 && (s[i] == ',' || i == size - 1)) {
+                // 4. Get the first inner object and deserialize it.
+                result.add(deserialize(s.substr(start, i - start)));
+                start = i + 1;
+            } else if (s[i] == '[') {
+                count++;
+            } else if (s[i] == ']') {
+                count--;
+            }
+        }
+        return result;
+    }*/
+
     // 386. Lexicographical Numbers
     vector<int> lexicalOrder386(int n) {
         vector<int> result;
@@ -2509,6 +2544,96 @@ public:
         }
 
         return result;
+    }
+
+    // 389. Find the Difference
+    char findTheDifference389(string s, string t) {
+        vector<int> frequency(26);
+        for (const char c : s) {
+            ++frequency[c - 'a'];
+        }
+        for (const char c : t) {
+            --frequency[c - 'a'];
+            if (frequency[c - 'a'] < 0) {
+                return c;
+            }
+        }
+        throw new exception();
+    }
+
+    // 390. Elimination Game
+    int lastRemaining390(int n) {
+        return n == 1 ? 1 : 2 * (n / 2 - lastRemaining390(n / 2) + 1);
+    }
+
+    // 391. Elimination Game
+    bool isRectangleCover391(vector<vector<int>>& rectangles) {
+        if (rectangles.empty() || rectangles[0].empty()) {
+            return false;
+        }
+
+        int x_min = INT_MAX, y_min = INT_MAX;
+        int x_max = INT_MIN, y_max = INT_MIN;
+        long area = 0;
+        map<pair<int, int>, int> pointsCnt;
+
+        for (const auto& rec: rectangles) {
+            // update area
+            area += static_cast<long>(rec[2] - rec[0]) * (rec[3] - rec[1]);
+
+            // Increment points count
+            ++pointsCnt[{rec[0], rec[1]}];
+            ++pointsCnt[{rec[0], rec[3]}];
+            ++pointsCnt[{rec[2], rec[1]}];
+            ++pointsCnt[{rec[2], rec[3]}];
+
+            // Update max and min points
+            x_min = min(x_min, rec[0]);
+            x_max = max(x_max, rec[2]);
+            y_min = min(y_min, rec[1]);
+            y_max = max(y_max, rec[3]);
+        }
+
+        for (const auto pc: pointsCnt) {
+            bool isCorner = is_corner(pc.first, x_min, y_min, x_max, y_max);
+            if (is_corner(pc.first, x_min, y_min, x_max, y_max)) {
+                if (pc.second != 1) {
+                    return false;
+                }
+            } else if (pc.second % 2 != 0) {
+                return false;
+            }
+        }
+
+        return area == static_cast<long>(x_max - x_min) * (y_max - y_min);
+    }
+
+    bool is_corner(
+        const pair<int, int> point,
+        const int x_min,
+        const int y_min,
+        const int x_max,
+        const int y_max) {
+        const int x = point.first, y = point.second;
+        return (x == x_min && y == y_min)
+            || (x == x_min && y == y_max)
+            || (x == x_max && y == y_min)
+            || (x == x_max && y == y_max);
+    }
+
+    // 392. Is Subsequence
+    bool isSubsequence392(string s, string t) {
+        int i = 0, j = 0;
+        while (i < s.size() && j < t.size()) {
+            if (s[i] == t[j]) {
+                ++i;
+                ++j;
+            } else {
+                ++j;
+            }
+        }
+
+        return i == s.size();
     }
 
     // 393. UTF-8 Validation
