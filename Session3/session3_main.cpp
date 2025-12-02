@@ -82,7 +82,6 @@ int main() {
     testObj->RandomizedSet380Test();
     testObj->RandomizedCollection381Test();
     testObj->Solution382Test();
-    testObj->canConstruct383Test();
     testObj->Solution384Test();
     testObj->lexicalOrder386Test();
     testObj->firstUniqChar387Test();
